@@ -2,1453 +2,2289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MeraHisab — Personal Finance, Simplified</title>
-
-<meta name="description" content="MeraHisab — premium personal finance management. Organize income, expenses, accounts and savings with a privacy-focused experience.">
-
-<meta name="theme-color" content="#08111f">
-
-<style>
-
-/* =========================
-   MERAHISAB PREMIUM 2.1
-========================= */
-
-:root {
-    --bg: #08111f;
-    --bg2: #0c1728;
-    --surface: #101d30;
-    --surface2: #14243a;
-    --gold: #d6b46a;
-    --gold2: #f1dba5;
-    --white: #f7f8fb;
-    --muted: #a6b2c3;
-    --line: rgba(214,180,106,.22);
-    --radius: 20px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--white);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
-.container {
-    width: min(1160px, 92%);
-    margin: auto;
-}
-
-/* BACKGROUND */
-
-body::before {
-    content: "";
-    position: fixed;
-    top: -200px;
-    left: -150px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(214,180,106,.08), transparent 70%);
-    pointer-events: none;
-    z-index: -1;
-}
-
-/* HEADER */
-
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(8,17,31,.93);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--line);
-}
-
-.header-inner {
-    min-height: 78px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.brand-mark {
-    width: 43px;
-    height: 43px;
-    border: 1px solid var(--gold);
-    border-radius: 13px;
-    display: grid;
-    place-items: center;
-    color: var(--gold2);
-    font-size: 21px;
-    background: linear-gradient(145deg, #182944, #0a1424);
-    box-shadow: 0 0 20px rgba(214,180,106,.08);
-}
-
-.brand-name {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: .5px;
-}
-
-.brand-name span {
-    color: var(--gold2);
-}
-
-.brand-tag {
-    font-size: 9px;
-    letter-spacing: 2.3px;
-    color: var(--muted);
-    margin-top: -3px;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.nav a {
-    color: #c7d0dc;
-    font-size: 12px;
-    transition: .25s;
-}
-
-.nav a:hover {
-    color: var(--gold2);
-}
-
-.nav-cta {
-    padding: 10px 15px;
-    border-radius: 9px;
-    background: var(--gold);
-    color: #08111f !important;
-    font-weight: 700;
-}
-
-/* HERO */
-
-.hero {
-    padding: 90px 0 80px;
-    position: relative;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.08fr .92fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    border: 1px solid var(--line);
-    background: rgba(214,180,106,.05);
-    border-radius: 30px;
-    padding: 7px 13px;
-    color: var(--gold2);
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-}
-
-.eyebrow-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 10px var(--gold);
-}
-
-.hero h1 {
-    font-size: clamp(38px, 5.3vw, 65px);
-    line-height: 1.12;
-    letter-spacing: -1.8px;
-    font-weight: 700;
-    margin-bottom: 22px;
-}
-
-.hero h1 .gold {
-    color: var(--gold2);
-}
-
-.hero-description {
-    max-width: 520px;
-    color: var(--muted);
-    font-size: 16px;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: 13px 21px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 650;
-    transition: .25s;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #f0d99d, #c9a55b);
-    color: #08111f;
-    box-shadow: 0 8px 25px rgba(214,180,106,.12);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(214,180,106,.23);
-}
-
-.btn-secondary {
-    border: 1px solid rgba(214,180,106,.45);
-    color: var(--gold2);
-    background: rgba(214,180,106,.04);
-}
-
-.btn-secondary:hover {
-    background: rgba(214,180,106,.1);
-}
-
-.hero-note {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin-top: 25px;
-    color: #93a1b3;
-    font-size: 12px;
-}
-
-/* APP PREVIEW */
-
-.preview-wrap {
-    position: relative;
-    padding: 10px;
-}
-
-.preview-glow {
-    position: absolute;
-    inset: 5%;
-    background: radial-gradient(circle, rgba(214,180,106,.16), transparent 70%);
-    filter: blur(30px);
-}
-
-.dashboard {
-    position: relative;
-    background: #0e1a2c;
-    border: 1px solid rgba(214,180,106,.35);
-    border-radius: 24px;
-    padding: 21px;
-    box-shadow: 0 30px 80px rgba(0,0,0,.35);
-    transform: rotate(-1deg);
-}
-.dash-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.dash-logo {
-    color: #e6c783;
-    font-size: 18px;
-    font-weight: 800;
-}
-
-.dash-label {
-    color: #91a0b5;
-    font-size: 11px;
-}
-
-.dash-profile {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #e6c783, #a98242);
-    display: grid;
-    place-items: center;
-    color: #101b2b;
-    font-weight: 800;
-}
-
-.balance-card {
-    background: linear-gradient(135deg, #172b45, #243d5d);
-    border: 1px solid rgba(230,199,131,.25);
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 16px;
-}
-
-.balance-label {
-    color: #aab8c9;
-    font-size: 12px;
-}
-
-.balance-amount {
-    color: #f4d99e;
-    font-size: 30px;
-    font-weight: 800;
-    margin: 8px 0 16px;
-}
-
-.balance-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.balance-stat {
-    font-size: 12px;
-    color: #c5d0dd;
-}
-
-.income-color {
-    color: #67d6a0;
-}
-
-.expense-color {
-    color: #ff9b9b;
-}
-
-.dash-actions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 17px 0;
-}
-
-.dash-action {
-    background: #14243a;
-    border: 1px solid rgba(230,199,131,.2);
-    border-radius: 13px;
-    padding: 13px 6px;
-    text-align: center;
-}
-
-.dash-action-icon {
-    color: #e6c783;
-    font-size: 20px;
-    margin-bottom: 6px;
-}
-
-.dash-action-text {
-    color: #dce5ef;
-    font-size: 11px;
-}
-
-.dash-section-head {
-    color: #e6c783;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 18px 0 10px;
-}
-
-.account-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #14243a;
-    border-radius: 11px;
-    padding: 12px;
-    margin-bottom: 8px;
-}
-
-.account-icon {
-    color: #e6c783;
-    margin-right: 9px;
-}
-
-.account-name {
-    color: #dce5ef;
-    font-size: 12px;
-}
-
-.account-amount {
-    color: #f4d99e;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.preview-caption {
-    text-align: center;
-    color: #9aa9bb;
-    font-size: 11px;
-    margin-top: 14px;
-}
-/* FEATURES SECTION */
-
-.section {
-    padding: 85px 0;
-}
-
-.section-heading {
-    max-width: 680px;
-    margin: 0 auto 45px;
-    text-align: center;
-}
-
-.section-heading h2 {
-    color: #f4d99e;
-    font-size: clamp(28px, 4vw, 40px);
-    margin-bottom: 13px;
-}
-
-.section-heading p {
-    color: #aab8c9;
-    line-height: 1.8;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.feature-card {
-    background: linear-gradient(145deg, #11233a, #0c192b);
-    border: 1px solid rgba(230,199,131,.18);
-    border-radius: 18px;
-    padding: 25px;
-    transition: transform .25s ease, border-color .25s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(230,199,131,.55);
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    background: rgba(230,199,131,.12);
-    color: #e6c783;
-    font-size: 22px;
-    margin-bottom: 18px;
-}
-
-.feature-card h3 {
-    color: #f4d99e;
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    color: #aab8c9;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* PRIVACY SECTION */
-
-.privacy-section {
-    background: linear-gradient(135deg, #10223a, #0a1728);
-    border-top: 1px solid rgba(230,199,131,.15);
-    border-bottom: 1px solid rgba(230,199,131,.15);
-}
-
-.privacy-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
-    align-items: center;
-}
-
-.privacy-content h2 {
-    color: #f4d99e;
-    font-size: clamp(28px, 4vw, 38px);
-    margin-bottom: 18px;
-}
-
-.privacy-content p {
-    color: #b4c0cf;
-    line-height: 1.8;
-    margin-bottom: 14px;
-}
-
-.privacy-points {
-    display: grid;
-    gap: 13px;
-}
-
-.privacy-point {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    background: rgba(255,255,255,.035);
-    border: 1px solid rgba(230,199,131,.14);
-    border-radius: 12px;
-    padding: 14px;
-    color: #dce5ef;
-    font-size: 14px;
-}
-
-.privacy-point span {
-    color: #e6c783;
-    font-size: 18px;
-}
-/* ABOUT SECTION */
-
-.about-content {
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-content h2 {
-    color: #f4d99e;
-    font-size: clamp(28px, 4vw, 38px);
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #b4c0cf;
-    line-height: 1.9;
-    margin-bottom: 15px;
-}
-
-/* FAQ SECTION */
-
-.faq-list {
-    max-width: 850px;
-    margin: 0 auto;
-    display: grid;
-    gap: 13px;
-}
-
-.faq-item {
-    background: #102139;
-    border: 1px solid rgba(230,199,131,.18);
-    border-radius: 14px;
-    padding: 20px;
-}
-
-.faq-item h3 {
-    color: #f4d99e;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.faq-item p {
-    color: #aab8c9;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* DOWNLOAD SECTION */
-
-.download-section {
-    text-align: center;
-    background: linear-gradient(135deg, #172b45, #0c192b);
-    border-top: 1px solid rgba(230,199,131,.2);
-    border-bottom: 1px solid rgba(230,199,131,.2);
-}
-
-.download-section h2 {
-    color: #f4d99e;
-    font-size: clamp(28px, 4vw, 40px);
-    margin-bottom: 15px;
-}
-
-.download-section p {
-    color: #b4c0cf;
-    max-width: 650px;
-    margin: 0 auto 25px;
-    line-height: 1.8;
-}
-
-.download-note {
-    color: #e6c783;
-    font-size: 13px;
-    margin-top: 14px;
-}
-
-/* FOOTER */
-
-.footer {
-    padding: 35px 0;
-    background: #07111f;
-    border-top: 1px solid rgba(230,199,131,.15);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
-}
-
-.footer-brand {
-    color: #e6c783;
-    font-weight: 800;
-    font-size: 18px;
-}
-
-.footer-copy {
-    color: #8998aa;
-    font-size: 12px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 17px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #aab8c9;
-    font-size: 12px;
-}
-/* TIME TOOLS SECTION */
-
-.time-tools-section {
-    background: linear-gradient(145deg, #0d1c30, #101f34);
-    border-top: 1px solid rgba(230,199,131,.18);
-    border-bottom: 1px solid rgba(230,199,131,.18);
-}
-
-.time-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-}
-
-.time-card {
-    background: linear-gradient(145deg, #172b45, #0c192b);
-    border: 1px solid rgba(230,199,131,.28);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 18px 45px rgba(0,0,0,.2);
-}
-
-.time-card h3 {
-    color: #e6c783;
-    font-size: 18px;
-    margin-bottom: 18px;
-}
-
-.live-time {
-    color: #f4d99e;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-align: center;
-    padding: 18px 0 8px;
-    font-variant-numeric: tabular-nums;
-}
-
-.live-date {
-    color: #aab8c9;
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.time-zone {
-    color: #8fa2b9;
-    text-align: center;
-    font-size: 11px;
-}
-
-.stopwatch-display {
-    color: #f4d99e;
-    font-size: clamp(34px, 5vw, 46px);
-    font-weight: 800;
-    text-align: center;
-    padding: 20px 0;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 2px;
-}
-
-.stopwatch-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.timer-btn {
-    border: 1px solid rgba(230,199,131,.5);
-    background: #1b3452;
-    color: #f4d99e;
-    padding: 11px 20px;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: .2s ease;
-}
-
-.timer-btn:hover:not(:disabled) {
-    background: #294768;
-    transform: translateY(-2px);
-}
-
-.timer-btn:disabled {
-    opacity: .4;
-    cursor: not-allowed;
-}
-
-.lap-heading {
-    color: #e6c783;
-    font-size: 14px;
-    margin: 22px 0 10px;
-}
-
-.lap-list {
-    list-style: none;
-    max-height: 180px;
-    overflow-y: auto;
-}
-
-.lap-list li {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    color: #c4d0de;
-    font-size: 13px;
-    padding: 10px 4px;
-    border-bottom: 1px solid rgba(230,199,131,.12);
-    font-variant-numeric: tabular-nums;
-}
-
-.lap-empty {
-    color: #8293a8;
-    font-size: 12px;
-    text-align: center;
-    padding: 12px 0;
-}
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 900px) {
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080f20">
+
+  <title>MeraHisab — Personal Finance, Simplified</title>
+  <meta name="description" content="MeraHisab is a personal expense tracker designed to help you manage income, expenses, savings and accounts with privacy in mind.">
+  <meta name="keywords" content="MeraHisab, expense tracker, income tracker, personal finance, offline expense manager">
+  <meta name="author" content="MeraHisab">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080f20;
+      --bg2: #0d172b;
+      --surface: #111e34;
+      --surface2: #172640;
+      --surface3: #1c2d49;
+      --gold: #d8b878;
+      --gold2: #f0d9a6;
+      --white: #f8f6f0;
+      --muted: #aab5c7;
+      --muted2: #7e8ba1;
+      --line: rgba(216, 184, 120, 0.18);
+      --green: #65c99a;
+      --red: #ed8585;
+      --radius: 20px;
+      --radius-sm: 13px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      --container: 1160px;
     }
 
-    .privacy-content {
-        grid-template-columns: 1fr;
-        gap: 28px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .time-tools-grid {
-        grid-template-columns: 1fr;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
-}
 
-@media (max-width: 650px) {
+    body {
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 85% 5%, rgba(36, 64, 105, 0.22), transparent 28rem),
+        var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
     .container {
-        width: min(100% - 30px, 1120px);
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
     }
 
     .section {
-        padding: 65px 0;
+      padding: 100px 0;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr;
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 48px;
+      text-align: center;
     }
 
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
     }
 
-    .footer-links {
-        justify-content: center;
+    .section-kicker::before,
+    .section-kicker::after {
+      width: 22px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+      opacity: 0.7;
     }
 
-    .balance-amount {
-        font-size: 26px;
+    .section-heading h2 {
+      margin-bottom: 14px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .gold {
+      color: var(--gold2);
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: #172033;
+      box-shadow: 0 9px 28px rgba(216, 184, 120, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: #f4dfb4;
+    }
+
+    .btn-secondary {
+      border-color: rgba(216, 184, 120, 0.42);
+      background: rgba(255, 255, 255, 0.025);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      background: rgba(216, 184, 120, 0.08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--gold2);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 14px var(--gold);
+    }
+
+    /* HEADER */
+    .header {
+      position: relative;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 15, 32, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      border: 1px solid rgba(240, 217, 166, 0.55);
+      border-radius: 14px;
+      background: linear-gradient(145deg, #243654, #101c31);
+      color: var(--gold2);
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      box-shadow: 0 5px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .brand-tag {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted2);
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 23px;
+    }
+
+    .nav a:not(.nav-cta) {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:not(.nav-cta):hover {
+      color: var(--gold2);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border: 1px solid rgba(216, 184, 120, 0.5);
+      border-radius: 999px;
+      color: var(--gold2);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: rgba(216, 184, 120, 0.1);
+    }
+
+     
+    /* TIME TOOLS SECTION */
+    .time-tools-section {
+      position: relative;
+      padding: 34px 0 42px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(216, 184, 120, 0.07), transparent 65%),
+        var(--bg2);
+    }
+
+    .time-tools-heading {
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .time-tools-heading h2 {
+      margin-bottom: 5px;
+      color: var(--gold2);
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+    }
+
+    .time-tools-heading p {
+      color: var(--muted2);
+      font-size: 0.78rem;
+    }
+
+    .time-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     .time-card {
-        padding: 20px 16px;
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(25, 42, 67, 0.96), rgba(14, 26, 45, 0.98));
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.17);
+    }
+
+    .time-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .time-card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .time-card-icon {
+      display: grid;
+      width: 35px;
+      height: 35px;
+      flex-shrink: 0;
+      place-items: center;
+      border: 1px solid rgba(216, 184, 120, 0.28);
+      border-radius: 11px;
+      background: rgba(216, 184, 120, 0.09);
+      color: var(--gold2);
+      font-size: 1.05rem;
+    }
+
+    .time-zone {
+      color: var(--muted2);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .live-time {
+      margin: 8px 0 3px;
+      color: var(--gold2);
+      font-size: clamp(2.1rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.045em;
+      line-height: 1.2;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .live-date {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .clock-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .clock-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px rgba(101, 201, 154, 0.6);
+    }
+
+    .stopwatch-display {
+      margin: 12px 0 20px;
+      color: var(--gold2);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.045em;
+      line-height: 1.2;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
     }
 
     .stopwatch-buttons {
-        gap: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
     }
 
     .timer-btn {
-        padding: 10px 14px;
-        font-size: 13px;
+      min-width: 76px;
+      min-height: 37px;
+      padding: 8px 14px;
+      border: 1px solid rgba(216, 184, 120, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
-}
-</style>
+
+    .timer-btn:hover:not(:disabled) {
+      border-color: var(--gold);
+      background: rgba(216, 184, 120, 0.12);
+    }
+
+    .timer-btn.start {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: #172033;
+    }
+
+    .timer-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.35;
+    }
+
+    .lap-heading {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .lap-list {
+      display: flex;
+      max-height: 112px;
+      flex-direction: column;
+      gap: 7px;
+      overflow-y: auto;
+      padding-top: 9px;
+    }
+
+    .lap-row {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr 1fr;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .lap-row span:nth-child(2),
+    .lap-row span:nth-child(3) {
+      text-align: right;
+    }
+
+    .lap-row span:last-child {
+      color: var(--gold2);
+    }
+
+    .lap-empty {
+      padding: 10px 0 2px;
+      color: var(--muted2);
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 92px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      position: absolute;
+      top: 5%;
+      right: -180px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(216, 184, 120, 0.08);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      align-items: center;
+      gap: 58px;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin-bottom: 22px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.7rem, 5.2vw, 4.55rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-description {
+      max-width: 530px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 24px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted2);
+      font-size: 0.76rem;
+    }
+
+    .hero-note span {
+      color: var(--green);
+    }
+
+    /* DASHBOARD PREVIEW */
+    .preview-wrap {
+      position: relative;
+      max-width: 510px;
+      margin-inline: auto;
+    }
+
+    .preview-glow {
+      position: absolute;
+      inset: 12% -8%;
+      border-radius: 50%;
+      background: rgba(216, 184, 120, 0.13);
+      filter: blur(70px);
+      pointer-events: none;
+    }
+
+    .dashboard {
+      position: relative;
+      padding: 25px;
+      border: 1px solid rgba(216, 184, 120, 0.3);
+      border-radius: 25px;
+      background: linear-gradient(145deg, #182943, #0d192d);
+      box-shadow: var(--shadow);
+    }
+
+    .dash-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .dash-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold2);
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .dash-logo-mark {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(216, 184, 120, 0.1);
+    }
+
+    .dash-label {
+      color: var(--muted2);
+      font-size: 0.65rem;
+    }
+
+    .dash-profile {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(216, 184, 120, 0.15);
+      color: var(--gold2);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .balance-card {
+      padding: 23px;
+      border: 1px solid rgba(240, 217, 166, 0.26);
+      border-radius: 18px;
+      background: linear-gradient(125deg, #263d5c, #172b45);
+    }
+
+    .balance-label {
+      color: #c1cada;
+      font-size: 0.75rem;
+    }
+
+    .balance-amount {
+      margin: 7px 0 20px;
+      color: var(--gold2);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.015em;
+    }
+
+    .balance-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .balance-stat {
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .balance-stat small {
+      display: block;
+      margin-bottom: 3px;
+      color: #c1cada;
+      font-size: 0.68rem;
+    }
+
+    .balance-stat strong {
+      font-size: 0.95rem;
+    }
+
+    .income-color {
+      color: var(--green);
+    }
+
+    .expense-color {
+      color: var(--red);
+    }
+
+    .dash-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 17px 0 23px;
+    }
+
+    .dash-action {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 14px 6px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.025);
+      text-align: center;
+    }
+
+    .dash-action-icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(216, 184, 120, 0.1);
+      color: var(--gold2);
+      font-size: 1rem;
+    }
+
+    .dash-action-text {
+      color: var(--muted);
+      font-size: 0.65rem;
+      font-weight: 600;
+    }
+
+    .dash-section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .dash-section-head span:last-child {
+      color: var(--gold);
+      font-size: 0.68rem;
+    }
+
+    .account-row {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .account-row:last-child {
+      border-bottom: 0;
+    }
+
+    .account-icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(216, 184, 120, 0.09);
+      font-size: 0.9rem;
+    }
+
+    .account-name {
+      flex: 1;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    .account-amount {
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .preview-caption {
+      margin-top: 17px;
+      color: var(--muted2);
+      font-size: 0.7rem;
+      text-align: center;
+    }
+
+     
+    /* FEATURES SECTION */
+    .features-section {
+      background: var(--bg);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-height: 220px;
+      padding: 27px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(23, 38, 64, 0.82), rgba(14, 26, 45, 0.9));
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(216, 184, 120, 0.55);
+    }
+
+    .feature-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      place-items: center;
+      border: 1px solid rgba(216, 184, 120, 0.25);
+      border-radius: 15px;
+      background: rgba(216, 184, 120, 0.09);
+      color: var(--gold2);
+      font-size: 1.35rem;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: var(--white);
+      font-size: 1.05rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.8;
+    }
+
+    /* PRIVACY SECTION */
+    .privacy-section {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 10% 50%, rgba(216, 184, 120, 0.08), transparent 50%),
+        var(--bg2);
+    }
+
+    .privacy-content {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .privacy-visual {
+      display: grid;
+      min-height: 330px;
+      place-items: center;
+    }
+
+    .privacy-shield {
+      display: grid;
+      width: 220px;
+      height: 220px;
+      place-items: center;
+      border: 1px solid rgba(216, 184, 120, 0.35);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(216, 184, 120, 0.14), rgba(216, 184, 120, 0.025) 68%);
+      box-shadow:
+        0 0 0 22px rgba(216, 184, 120, 0.025),
+        0 0 0 44px rgba(216, 184, 120, 0.018);
+      color: var(--gold2);
+      font-size: 5rem;
+    }
+
+    .privacy-text h2 {
+      margin-bottom: 17px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .privacy-text > p {
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+
+    .privacy-points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .privacy-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .privacy-check {
+      display: grid;
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+      place-items: center;
+      border: 1px solid rgba(101, 201, 154, 0.3);
+      border-radius: 50%;
+      background: rgba(101, 201, 154, 0.09);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .privacy-point strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--white);
+      font-size: 0.87rem;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      background: var(--bg);
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(23, 38, 64, 0.7), rgba(14, 26, 45, 0.8));
+      text-align: center;
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.9;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-highlight {
+      color: var(--gold2);
+      font-weight: 700;
+    }
+
+     
+    /* FAQ SECTION */
+    .faq-section {
+      border-top: 1px solid var(--line);
+      background: var(--bg2);
+    }
+
+    .faq-list {
+      display: grid;
+      max-width: 820px;
+      gap: 13px;
+      margin: auto;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .faq-item summary {
+      position: relative;
+      padding: 19px 52px 19px 20px;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      color: var(--gold);
+      content: "+";
+      font-size: 1.4rem;
+      transform: translateY(-50%);
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 20px 19px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.8;
+    }
+
+    /* DOWNLOAD SECTION */
+    .download-section {
+      position: relative;
+      padding: 90px 0;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(216, 184, 120, 0.13), transparent 65%),
+        var(--bg);
+    }
+
+    .download-content {
+      max-width: 760px;
+      margin: auto;
+      padding: 48px 30px;
+      border: 1px solid rgba(216, 184, 120, 0.3);
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(25, 42, 67, 0.9), rgba(14, 26, 45, 0.96));
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .download-content h2 {
+      margin-bottom: 15px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .download-content p {
+      max-width: 570px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .download-note {
+      margin-top: 15px;
+      color: var(--muted2);
+      font-size: 0.72rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 38px 0 24px;
+      border-top: 1px solid var(--line);
+      background: #070d19;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding-bottom: 25px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .footer-brand .brand-mark {
+      width: 38px;
+      height: 38px;
+      font-size: 1.2rem;
+    }
+
+    .footer-copy {
+      color: var(--muted2);
+      font-size: 0.76rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.78rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold2);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      color: var(--muted2);
+      font-size: 0.7rem;
+    }
+
+    .footer-bottom a {
+      color: var(--gold);
+    }
+
+     
+    /* TABLET RESPONSIVE */
+    @media (max-width: 1000px) {
+      .nav {
+        gap: 14px;
+      }
+
+      .nav a:not(.nav-cta) {
+        font-size: 0.78rem;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .privacy-content {
+        gap: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 20px;
+      }
+
+      .container {
+        width: min(100% - 32px, var(--container));
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .header-inner {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 17px;
+        overflow-x: auto;
+        padding: 3px 0 6px;
+        white-space: nowrap;
+        scrollbar-width: thin;
+      }
+
+      .nav a:not(.nav-cta) {
+        font-size: 0.76rem;
+      }
+
+      .nav-cta {
+        min-height: 36px;
+        padding: 7px 13px;
+        font-size: 0.74rem;
+      }
+
+      .time-tools-section {
+        padding: 27px 0 30px;
+      }
+
+      .time-tools-grid {
+        grid-template-columns: 1fr;
+        max-width: 470px;
+        gap: 13px;
+      }
+
+      .time-card {
+        padding: 20px;
+      }
+
+      .live-time {
+        font-size: 2.6rem;
+      }
+
+      .stopwatch-display {
+        font-size: 2.35rem;
+      }
+
+      .hero {
+        padding: 65px 0 75px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.45rem, 11vw, 3.5rem);
+      }
+
+      .hero-description {
+        font-size: 0.93rem;
+      }
+
+      .preview-wrap {
+        width: 100%;
+      }
+
+      .dashboard {
+        padding: 19px;
+      }
+
+      .balance-amount {
+        font-size: 1.8rem;
+      }
+
+      .privacy-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .privacy-visual {
+        min-height: 230px;
+      }
+
+      .privacy-shield {
+        width: 165px;
+        height: 165px;
+        font-size: 3.8rem;
+      }
+
+      .privacy-text {
+        text-align: center;
+      }
+
+      .privacy-points {
+        text-align: left;
+      }
+
+      .download-section {
+        padding: 65px 0;
+      }
+
+      .download-content {
+        padding: 35px 22px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    /* SMALL MOBILE */
+    @media (max-width: 430px) {
+      .brand-name {
+        font-size: 1.2rem;
+      }
+
+      .brand-tag {
+        font-size: 0.57rem;
+      }
+
+      .time-card {
+        padding: 17px 14px;
+      }
+
+      .time-card-top {
+        gap: 6px;
+      }
+
+      .time-zone {
+        font-size: 0.61rem;
+      }
+
+      .live-time {
+        font-size: 2.2rem;
+      }
+
+      .stopwatch-display {
+        font-size: 2rem;
+      }
+
+      .timer-btn {
+        min-width: 68px;
+        padding: 8px 10px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .dashboard {
+        padding: 15px;
+      }
+
+      .balance-card {
+        padding: 18px;
+      }
+
+      .balance-amount {
+        font-size: 1.55rem;
+      }
+
+      .dash-actions {
+        gap: 6px;
+      }
+
+      .dash-action {
+        padding: 11px 4px;
+      }
+
+      .dash-action-text {
+        font-size: 0.59rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .about-content {
+        padding: 25px 19px;
+      }
+
+      .footer-links {
+        gap: 14px;
+      }
+    }
+
+    /* ACCESSIBILITY */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+     
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
 
-<header class="site-header">
-    <div class="container header-content">
-        <a href="#home" class="brand">MeraHisab</a>
+      <a href="#home" class="brand" aria-label="MeraHisab Home">
+        <span class="brand-mark">M</span>
+        <span>
+          <span class="brand-name">MeraHisab</span>
+          <span class="brand-tag">Personal Finance, Simplified</span>
+        </span>
+      </a>
 
-        <nav class="main-nav">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#time-tools">Time Tools</a>
-            <a href="#about">About</a>
-            <a href="#faq">FAQ</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download" class="nav-cta">Get Started</a>
+      </nav>
 
-        <a href="#download" class="header-cta">Explore App</a>
     </div>
-</header>
+  </header>
 
-<!-- HERO SECTION -->
-
-<main id="home">
-
-<section class="hero">
-    <div class="container hero-content">
-        <div class="hero-text">
-            <span class="hero-tag">YOUR PERSONAL FINANCE COMPANION</span>
-
-            <h1>Your Money.<br>
-                Your Goals.<br>
-                <span>Your Control.</span>
-            </h1>
-
-            <p>
-                Manage your income, expenses, savings and financial goals
-                with a simple, organized and privacy-focused experience.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#features" class="primary-btn">Explore Features</a>
-                <a href="#about" class="secondary-btn">Know More</a>
-            </div>
-        </div>
-
-        <div class="hero-preview">
-            <div class="dashboard">
-                <div class="dash-top">
-                    <div>
-                        <div class="dash-logo">MeraHisab</div>
-                        <div class="dash-label">PERSONAL FINANCE</div>
-                    </div>
-                    <div class="dash-profile">M</div>
-                </div>
-                <div class="balance-card">
-                    <div class="balance-label">TOTAL BALANCE</div>
-                    <div class="balance-amount">₹1,24,850</div>
-
-                    <div class="balance-bottom">
-                        <div class="balance-stat">
-                            Income<br>
-                            <strong class="income-color">₹45,000</strong>
-                        </div>
-
-                        <div class="balance-stat">
-                            Expenses<br>
-                            <strong class="expense-color">₹18,650</strong>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dash-actions">
-                    <div class="dash-action">
-                        <div class="dash-action-icon">＋</div>
-                        <div class="dash-action-text">Income</div>
-                    </div>
-
-                    <div class="dash-action">
-                        <div class="dash-action-icon">−</div>
-                        <div class="dash-action-text">Expense</div>
-                    </div>
-
-                    <div class="dash-action">
-                        <div class="dash-action-icon">▤</div>
-                        <div class="dash-action-text">Reports</div>
-                    </div>
-                </div>
-
-                <div class="dash-section-head">MY ACCOUNTS</div>
-
-                <div class="account-row">
-                    <div class="account-name">
-                        <span class="account-icon">◆</span>
-                        Requirement Account
-                    </div>
-                    <div class="account-amount">₹35,000</div>
-                </div>
-
-                <div class="account-row">
-                    <div class="account-name">
-                        <span class="account-icon">◆</span>
-                        Investment Account
-                    </div>
-                    <div class="account-amount">₹42,000</div>
-                </div>
-
-                <div class="account-row">
-                    <div class="account-name">
-                        <span class="account-icon">◆</span>
-                        Saving Account
-                    </div>
-                    <div class="account-amount">₹28,500</div>
-                </div>
-
-                <div class="preview-caption">
-                    Illustrative app preview
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TIME TOOLS SECTION -->
-
-<section class="section time-tools-section" id="time-tools">
+   
+  <!-- TIME TOOLS: CLOCK AND STOPWATCH -->
+  <section class="time-tools-section" id="time-tools">
     <div class="container">
-        <div class="section-heading">
-            <h2>Time Tools</h2>
-            <p>
-                Check the live Indian Standard Time and use the stopwatch
-                for your everyday timing needs.
-            </p>
-        </div>
 
-        <div class="time-tools-grid">
-            <div class="time-card">
-                <h3>Live Clock</h3>
-                <div class="live-time" id="liveClock">--:--:--</div>
-                <div class="live-date" id="liveDate">Loading date...</div>
-                <div class="time-zone">Indian Standard Time (IST)</div>
+      <div class="time-tools-heading">
+        <h2>Time at Your Fingertips</h2>
+        <p>Stay on time. Stay productive.</p>
+      </div>
+
+      <div class="time-tools-grid">
+
+        <!-- LIVE CLOCK -->
+        <div class="time-card">
+
+          <div class="time-card-top">
+            <div class="time-card-title">
+              <span class="time-card-icon">◷</span>
+              <span>Live Clock</span>
             </div>
 
-            <div class="time-card">
-                <h3>Stopwatch</h3>
-                <div class="stopwatch-display" id="stopwatchDisplay">
-                    00:00:00.00
-                </div>
+            <span class="time-zone">INDIAN STANDARD TIME</span>
+          </div>
 
-                <div class="stopwatch-buttons">
-                    <button class="timer-btn" id="startStopwatch" type="button">
-                        Start
-                    </button>
+          <div
+            class="live-time"
+            id="liveClock"
+            role="timer"
+            aria-live="off"
+          >
+            00:00:00 AM
+          </div>
 
-                    <button class="timer-btn" id="lapStopwatch" type="button" disabled>
-                        Lap
-                    </button>
+          <div class="live-date" id="liveDate">
+            Loading date...
+          </div>
 
-                    <button class="timer-btn" id="resetStopwatch" type="button" disabled>
-                        Reset
-                    </button>
-                </div>
+          <div class="clock-status">
+            <span class="clock-status-dot"></span>
+            <span>Live • Asia/Kolkata</span>
+          </div>
 
-                <div class="lap-heading">Lap Records</div>
-                <ul class="lap-list" id="lapList">
-                    <li class="lap-empty">Your lap records will appear here.</li>
-                </ul>
-            </div>
         </div>
+
+        <!-- STOPWATCH -->
+        <div class="time-card">
+
+          <div class="time-card-top">
+            <div class="time-card-title">
+              <span class="time-card-icon">⏱</span>
+              <span>Stopwatch</span>
+            </div>
+
+            <span class="time-zone">PRECISION TIMER</span>
+          </div>
+
+          <div
+            class="stopwatch-display"
+            id="stopwatchDisplay"
+            role="timer"
+            aria-live="off"
+          >
+            00:00:00.00
+          </div>
+
+          <div class="stopwatch-buttons">
+
+            <button
+              type="button"
+              class="timer-btn start"
+              id="startStopwatch"
+            >
+              Start
+            </button>
+
+            <button
+              type="button"
+              class="timer-btn"
+              id="lapStopwatch"
+              disabled
+            >
+              Lap
+            </button>
+
+            <button
+              type="button"
+              class="timer-btn"
+              id="resetStopwatch"
+              disabled
+            >
+              Reset
+            </button>
+
+          </div>
+
+          <div class="lap-heading">
+            <span>Lap</span>
+            <span>Lap Time / Total</span>
+          </div>
+
+          <div
+            class="lap-list"
+            id="lapList"
+            aria-live="polite"
+          >
+            <div class="lap-empty" id="lapEmpty">
+              Your lap records will appear here
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
-</section>
-<!-- FEATURES SECTION -->
+  </section>
 
-<section class="section" id="features">
-    <div class="container">
+   
+  <!-- MAIN CONTENT -->
+  <main id="home">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            SMART PERSONAL FINANCE
+          </div>
+
+          <h1>
+            Take Control of Your Money.
+            <span class="gold">Own Your Future.</span>
+          </h1>
+
+          <p class="hero-description">
+            Manage your daily income, expenses, savings and accounts
+            with MeraHisab. A simple and organized way to understand
+            where your money goes and keep your finances under control.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#download" class="btn btn-primary">
+              Get Started <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="#features" class="btn btn-secondary">
+              Explore Features
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span aria-hidden="true">✓</span>
+            Designed with privacy and simplicity in mind
+          </div>
+
+        </div>
+
+        <!-- DASHBOARD PREVIEW -->
+        <div class="preview-wrap">
+
+          <div class="preview-glow"></div>
+
+          <div class="dashboard">
+
+            <div class="dash-top">
+
+              <div>
+                <div class="dash-logo">
+                  <span class="dash-logo-mark">M</span>
+                  MeraHisab
+                </div>
+
+                <div class="dash-label">PERSONAL FINANCE DASHBOARD</div>
+              </div>
+
+              <div class="dash-profile">M</div>
+
+            </div>
+
+            <!-- BALANCE CARD -->
+            <div class="balance-card">
+
+              <div class="balance-label">Total Available Balance</div>
+
+              <div class="balance-amount">₹1,25,850.00</div>
+
+              <div class="balance-bottom">
+
+                <div class="balance-stat">
+                  <small>Monthly Income</small>
+                  <strong class="income-color">₹45,000</strong>
+                </div>
+
+                <div class="balance-stat">
+                  <small>Monthly Expenses</small>
+                  <strong class="expense-color">₹18,500</strong>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- QUICK ACTIONS -->
+            <div class="dash-actions">
+
+              <div class="dash-action">
+                <span class="dash-action-icon">＋</span>
+                <span class="dash-action-text">New Entry</span>
+              </div>
+
+              <div class="dash-action">
+                <span class="dash-action-icon">↗</span>
+                <span class="dash-action-text">Reports</span>
+              </div>
+
+              <div class="dash-action">
+                <span class="dash-action-icon">▤</span>
+                <span class="dash-action-text">Accounts</span>
+              </div>
+
+            </div>
+
+            <!-- ACCOUNT LIST -->
+            <div class="dash-section-head">
+              <span>My Accounts</span>
+              <span>View All →</span>
+            </div>
+
+            <div class="account-row">
+              <span class="account-icon">🏠</span>
+              <span class="account-name">Requirement Account</span>
+              <strong class="account-amount">₹35,000</strong>
+            </div>
+
+            <div class="account-row">
+              <span class="account-icon">📈</span>
+              <span class="account-name">Investment Account</span>
+              <strong class="account-amount">₹40,000</strong>
+            </div>
+
+            <div class="account-row">
+              <span class="account-icon">💰</span>
+              <span class="account-name">Saving Account</span>
+              <strong class="account-amount">₹30,000</strong>
+            </div>
+
+            <div class="account-row">
+              <span class="account-icon">🎁</span>
+              <span class="account-name">Donation Account</span>
+              <strong class="account-amount">₹8,000</strong>
+            </div>
+
+          </div>
+
+          <div class="preview-caption">
+            A simple view of your personal finance dashboard
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+     
+    <!-- FEATURES SECTION -->
+    <section class="section features-section" id="features">
+      <div class="container">
+
         <div class="section-heading">
-            <h2>Powerful Features</h2>
-            <p>
-                Everything you need to manage your personal finances
-                in one simple and organized place.
-            </p>
+          <div class="section-kicker">POWERFUL FEATURES</div>
+
+          <h2>
+            Everything You Need.
+            <span class="gold">One Place.</span>
+          </h2>
+
+          <p>
+            Organize your personal finances with useful tools
+            designed to make everyday money management simpler.
+          </p>
         </div>
 
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">₹</div>
-                <h3>Income & Expense Tracking</h3>
-                <p>
-                    Record your daily income and expenses and keep
-                    your financial activity organized.
-                </p>
-            </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">▤</div>
-                <h3>Account Management</h3>
-                <p>
-                    Organize your money across different accounts
-                    and manage individual account balances.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⌕</div>
-                <h3>Smart Search & Filters</h3>
-                <p>
-                    Find transactions quickly using dates, accounts,
-                    categories and other search filters.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">▥</div>
-                <h3>Detailed Reports</h3>
-                <p>
-                    Review daily, monthly and yearly financial
-                    summaries with clear reports.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">◷</div>
-                <h3>Budget & Balance Tracking</h3>
-                <p>
-                    Monitor your available balance, income,
-                    expenses and financial progress.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">✎</div>
-                <h3>Notes & Task Planning</h3>
-                <p>
-                    Keep important notes and organize your
-                    pending and completed tasks.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">♧</div>
-                <h3>Backup & Restore</h3>
-                <p>
-                    Create a backup and restore your saved data
-                    when needed.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⇩</div>
-                <h3>PDF & Excel Reports</h3>
-                <p>
-                    Export financial reports in PDF and Excel
-                    formats for your records.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">◈</div>
-                <h3>Offline Privacy</h3>
-                <p>
-                    Your financial records are designed to stay
-                    stored locally on your device.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- PRIVACY SECTION -->
-
-<section class="section privacy-section" id="privacy">
-    <div class="container privacy-content">
-        <div>
-            <h2>Your Privacy Matters</h2>
+          <article class="feature-card">
+            <div class="feature-icon">₹</div>
+            <h3>Income & Expense Tracking</h3>
             <p>
-                MeraHisab is designed with a strong focus on personal
-                financial privacy. Your financial information should
-                remain under your control.
+              Record daily income and expenses and keep track
+              of your money in an organized way.
             </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">▤</div>
+            <h3>Multiple Accounts</h3>
             <p>
-                The app is designed for local, offline data storage
-                without requiring a central server for everyday
-                expense tracking.
+              Organize Requirement, Investment, Saving,
+              Donation and other dedicated accounts.
             </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Smart Reports</h3>
+            <p>
+              Understand your financial activity through
+              daily, monthly and yearly reports.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Smart Search & Filters</h3>
+            <p>
+              Find transactions using dates, accounts,
+              categories, amounts and details.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>Backup & Restore</h3>
+            <p>
+              Create a backup of your records and restore
+              your saved data when needed.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>Notes & Task Planning</h3>
+            <p>
+              Keep useful notes, organize pending tasks
+              and maintain a record of completed work.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Monthly Balance Carry Forward</h3>
+            <p>
+              Keep track of your account balances as
+              your financial activity moves from month to month.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>PDF & Excel Reports</h3>
+            <p>
+              Prepare printable PDF reports and editable
+              Excel reports for your records.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⏱</div>
+            <h3>Time Management Tools</h3>
+            <p>
+              Use the built-in live clock and stopwatch
+              while managing your daily activities.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+     
+    <!-- PRIVACY SECTION -->
+    <section class="section privacy-section" id="privacy">
+      <div class="container privacy-content">
+
+        <div class="privacy-visual">
+          <div class="privacy-shield" aria-hidden="true">
+            🔒
+          </div>
         </div>
 
-        <div class="privacy-points">
+        <div class="privacy-text">
+
+          <div class="section-kicker">YOUR PRIVACY MATTERS</div>
+
+          <h2>
+            Your Money.
+            Your Data.
+            <span class="gold">Your Control.</span>
+          </h2>
+
+          <p>
+            MeraHisab is designed with a privacy-first approach.
+            Your personal financial information should remain
+            under your control.
+          </p>
+
+          <div class="privacy-points">
+
             <div class="privacy-point">
-                <span>✓</span>
-                Local device data storage
+              <span class="privacy-check">✓</span>
+              <div>
+                <strong>Local Data Storage</strong>
+                Personal records are intended to remain stored
+                on your device.
+              </div>
             </div>
 
             <div class="privacy-point">
-                <span>✓</span>
-                No online account required for basic use
+              <span class="privacy-check">✓</span>
+              <div>
+                <strong>No Account on a Website Required</strong>
+                Manage your personal records without needing
+                an online registration account.
+              </div>
             </div>
 
             <div class="privacy-point">
-                <span>✓</span>
-                Offline expense management
+              <span class="privacy-check">✓</span>
+              <div>
+                <strong>Privacy-Focused Design</strong>
+                Your financial information is meant to stay
+                private and under your control.
+              </div>
             </div>
 
             <div class="privacy-point">
-                <span>✓</span>
-                User-controlled backup and restore
+              <span class="privacy-check">✓</span>
+              <div>
+                <strong>Backup Control</strong>
+                Keep control of your backup files and
+                where you choose to store them.
+              </div>
             </div>
 
-            <div class="privacy-point">
-                <span>✓</span>
-                Privacy-focused app experience
-            </div>
+          </div>
         </div>
-    </div>
-</section>
 
-<!-- ABOUT SECTION -->
+      </div>
+    </section>
 
-<section class="section" id="about">
-    <div class="container about-content">
-        <h2>About MeraHisab</h2>
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
 
-        <p>
-            MeraHisab is a personal finance management app created
-            to make everyday money tracking simple and convenient.
-        </p>
-
-        <p>
-            Whether you want to record income, manage expenses,
-            organize accounts, review reports or keep track of
-            your savings, MeraHisab brings these activities
-            together in one place.
-        </p>
-
-        <p>
-            Our goal is to provide a clean, useful and privacy-focused
-            financial management experience.
-        </p>
-    </div>
-</section>
-<!-- FAQ SECTION -->
-
-<section class="section" id="faq">
-    <div class="container">
         <div class="section-heading">
-            <h2>Frequently Asked Questions</h2>
-            <p>
-                Find answers to common questions about MeraHisab.
-            </p>
+          <div class="section-kicker">ABOUT MERAHISAB</div>
+
+          <h2>
+            A Smarter Way to
+            <span class="gold">Manage Money.</span>
+          </h2>
+
+          <p>
+            Simple financial organization for everyday life.
+          </p>
+        </div>
+
+        <div class="about-content">
+
+          <p>
+            <span class="about-highlight">MeraHisab</span>
+            is a personal finance management application designed
+            to help you record income, expenses, savings and
+            account balances in one organized place.
+          </p>
+
+          <p>
+            Whether you want to understand your daily spending,
+            review monthly expenses or organize different
+            financial accounts, MeraHisab brings useful
+            money-management tools together.
+          </p>
+
+          <p>
+            Our aim is to make personal finance tracking
+            simple, clear and convenient.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+     
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">HELP & INFORMATION</div>
+
+          <h2>
+            Frequently Asked
+            <span class="gold">Questions.</span>
+          </h2>
+
+          <p>
+            Find answers to common questions about MeraHisab.
+          </p>
         </div>
 
         <div class="faq-list">
-            <div class="faq-item">
-                <h3>1. What is MeraHisab?</h3>
-                <p>
-                    MeraHisab is a personal finance app that helps
-                    you record income, expenses, savings and
-                    manage your accounts.
-                </p>
-            </div>
 
-            <div class="faq-item">
-                <h3>2. Does MeraHisab work offline?</h3>
-                <p>
-                    The app is designed to support local,
-                    offline financial data management.
-                </p>
+          <details class="faq-item">
+            <summary>What is MeraHisab?</summary>
+            <div class="faq-answer">
+              MeraHisab is a personal finance application
+              that helps you organize income, expenses,
+              savings and account balances.
             </div>
+          </details>
 
-            <div class="faq-item">
-                <h3>3. Where is my financial data stored?</h3>
-                <p>
-                    Financial records are designed to be stored
-                    locally on your device.
-                </p>
+          <details class="faq-item">
+            <summary>Can I track income and expenses?</summary>
+            <div class="faq-answer">
+              Yes. You can record your income and expenses
+              and review your financial activity through
+              available reports.
             </div>
+          </details>
 
-            <div class="faq-item">
-                <h3>4. Can I create reports?</h3>
-                <p>
-                    Yes. You can generate financial reports
-                    and export them in supported formats.
-                </p>
+          <details class="faq-item">
+            <summary>Does MeraHisab support multiple accounts?</summary>
+            <div class="faq-answer">
+              Yes. MeraHisab is designed to organize your
+              finances into separate accounts and
+              subcategories.
             </div>
+          </details>
 
-            <div class="faq-item">
-                <h3>5. Can I back up my data?</h3>
-                <p>
-                    Yes. The app includes backup and restore
-                    functionality for your records.
-                </p>
+          <details class="faq-item">
+            <summary>Can I create a backup?</summary>
+            <div class="faq-answer">
+              Yes. The app includes backup and restore
+              functionality so you can manage your
+              saved records.
             </div>
+          </details>
 
-            <div class="faq-item">
-                <h3>6. Is MeraHisab available on Android?</h3>
-                <p>
-                    MeraHisab is being developed for Android.
-                    Availability and download details will be
-                    updated here.
-                </p>
+          <details class="faq-item">
+            <summary>Where is my personal data stored?</summary>
+            <div class="faq-answer">
+              MeraHisab is designed for local data storage.
+              Please read the Privacy Policy for details
+              about data handling and backup files.
             </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I contact MeraHisab support?</summary>
+            <div class="faq-answer">
+              You can contact us using the Contact Us
+              option below or through our support email.
+            </div>
+          </details>
+
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- DOWNLOAD SECTION -->
+    <!-- DOWNLOAD / CONTACT SECTION -->
+    <section class="download-section" id="download">
+      <div class="container">
 
-<section class="section download-section" id="download">
+        <div class="download-content">
+
+          <div class="section-kicker">START ORGANIZING TODAY</div>
+
+          <h2>
+            Make Every Rupee
+            <span class="gold">Count.</span>
+          </h2>
+
+          <p>
+            Bring clarity to your personal finances.
+            Organize your income, expenses and savings
+            with MeraHisab.
+          </p>
+
+          <a
+            href="contact.html"
+            class="btn btn-primary"
+          >
+            Contact Us <span aria-hidden="true">→</span>
+          </a>
+
+          <div class="download-note">
+            MeraHisab — Personal Finance, Simplified
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
-        <h2>Take Control of Your Money</h2>
 
-        <p>
-            Keep your income, expenses and financial records
-            organized with MeraHisab.
-        </p>
+      <div class="footer-content">
 
-        <a href="contact.html" class="primary-btn">
-            Contact Us
+        <a href="#home" class="footer-brand">
+          <span class="brand-mark">M</span>
+
+          <span>
+            <span class="brand-name">MeraHisab</span>
+            <span class="brand-tag">Personal Finance, Simplified</span>
+          </span>
         </a>
 
-        <div class="download-note">
-            Android availability details coming soon.
-        </div>
-    </div>
-</section>
-
-</main>
-<!-- FOOTER -->
-
-<footer class="footer">
-    <div class="container footer-content">
-        <div>
-            <div class="footer-brand">MeraHisab</div>
-            <div class="footer-copy">
-                Your Money. Your Goals. Your Control.
-            </div>
-        </div>
-
         <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="contact.html">Contact</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="contact.html">Contact</a>
         </div>
 
-        <div class="footer-copy">
-            © 2026 MeraHisab. All rights reserved.
-        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="currentYear">2026</span> MeraHisab. All rights reserved.
+        </span>
+
+        <span>
+          Designed with care and
+          <a href="#home">privacy in mind.</a>
+        </span>
+      </div>
+
     </div>
-</footer>
+  </footer>
 
-<!-- JAVASCRIPT -->
+   
+  <script>
+    // =====================================
+    // MERAHISAB LIVE CLOCK - INDIA TIME
+    // =====================================
 
-<script>
-/* LIVE CLOCK - INDIA */
+    function updateLiveClock() {
+      const clockElement = document.getElementById("liveClock");
+      const dateElement = document.getElementById("liveDate");
 
-function updateLiveClock() {
-    const now = new Date();
+      const now = new Date();
 
-    const time = new Intl.DateTimeFormat("en-IN", {
-        timeZone: "Asia/Kolkata",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-    }).format(now);
+      if (clockElement) {
+        clockElement.textContent = new Intl.DateTimeFormat("en-IN", {
+          timeZone: "Asia/Kolkata",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true
+        }).format(now);
+      }
 
-    const date = new Intl.DateTimeFormat("en-IN", {
-        timeZone: "Asia/Kolkata",
-        weekday: "long",
-        day: "2-digit",
-        month: "long",
-        year: "numeric"
-    }).format(now);
+      if (dateElement) {
+        dateElement.textContent = new Intl.DateTimeFormat("en-IN", {
+          timeZone: "Asia/Kolkata",
+          weekday: "long",
+          day: "2-digit",
+          month: "long",
+          year: "numeric"
+        }).format(now);
+      }
+    }
 
-    document.getElementById("liveClock").textContent = time;
-    document.getElementById("liveDate").textContent = date;
-}
-
-updateLiveClock();
-setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+    setInterval(updateLiveClock, 1000);
 
 
-/* STOPWATCH */
+    // =====================================
+    // MERAHISAB STOPWATCH
+    // =====================================
 
-const stopwatchDisplay = document.getElementById("stopwatchDisplay");
-const startStopwatch = document.getElementById("startStopwatch");
-const lapStopwatch = document.getElementById("lapStopwatch");
-const resetStopwatch = document.getElementById("resetStopwatch");
-const lapList = document.getElementById("lapList");
+    const stopwatchDisplay =
+      document.getElementById("stopwatchDisplay");
 
-let isRunning = false;
-let startTime = 0;
-let elapsedTime = 0;
-let animationFrame = null;
-let previousLapTime = 0;
-let lapNumber = 0;
+    const startStopwatchButton =
+      document.getElementById("startStopwatch");
 
-function formatStopwatchTime(milliseconds) {
-    const totalCentiseconds = Math.floor(milliseconds / 10);
+    const lapStopwatchButton =
+      document.getElementById("lapStopwatch");
 
-    const centiseconds = totalCentiseconds % 100;
-    const totalSeconds = Math.floor(totalCentiseconds / 100);
+    const resetStopwatchButton =
+      document.getElementById("resetStopwatch");
 
-    const seconds = totalSeconds % 60;
-    const totalMinutes = Math.floor(totalSeconds / 60);
+    const lapList =
+      document.getElementById("lapList");
 
-    const minutes = totalMinutes % 60;
-    const hours = Math.floor(totalMinutes / 60);
+    const lapEmpty =
+      document.getElementById("lapEmpty");
 
-    return (
+    let stopwatchRunning = false;
+    let stopwatchStartTime = 0;
+    let elapsedBeforeStart = 0;
+    let animationFrameId = null;
+    let lapNumber = 0;
+
+    function formatStopwatchTime(milliseconds) {
+      const totalCentiseconds = Math.floor(milliseconds / 10);
+
+      const centiseconds = totalCentiseconds % 100;
+
+      const totalSeconds = Math.floor(totalCentiseconds / 100);
+
+      const seconds = totalSeconds % 60;
+
+      const totalMinutes = Math.floor(totalSeconds / 60);
+
+      const minutes = totalMinutes % 60;
+
+      const hours = Math.floor(totalMinutes / 60);
+
+      return (
         String(hours).padStart(2, "0") + ":" +
         String(minutes).padStart(2, "0") + ":" +
         String(seconds).padStart(2, "0") + "." +
         String(centiseconds).padStart(2, "0")
-    );
-}
-
-function updateStopwatchDisplay() {
-    const currentTime = elapsedTime + (
-        isRunning ? performance.now() - startTime : 0
-    );
-
-    stopwatchDisplay.textContent =
-        formatStopwatchTime(currentTime);
-
-    if (isRunning) {
-        animationFrame = requestAnimationFrame(updateStopwatchDisplay);
-    }
-}
-
-function startTimer() {
-    if (isRunning) return;
-
-    isRunning = true;
-    startTime = performance.now();
-
-    startStopwatch.textContent = "Pause";
-    lapStopwatch.disabled = false;
-    resetStopwatch.disabled = true;
-
-    updateStopwatchDisplay();
-}
-
-function pauseTimer() {
-    if (!isRunning) return;
-
-    elapsedTime += performance.now() - startTime;
-    isRunning = false;
-
-    cancelAnimationFrame(animationFrame);
-
-    stopwatchDisplay.textContent =
-        formatStopwatchTime(elapsedTime);
-
-    startStopwatch.textContent = "Resume";
-    lapStopwatch.disabled = true;
-    resetStopwatch.disabled = false;
-}
-
-function resetTimer() {
-    if (isRunning) return;
-
-    elapsedTime = 0;
-    previousLapTime = 0;
-    lapNumber = 0;
-
-    stopwatchDisplay.textContent = "00:00:00.00";
-    lapList.innerHTML = "";
-
-    const emptyMessage = document.createElement("li");
-    emptyMessage.className = "lap-empty";
-    emptyMessage.textContent = "Your lap records will appear here.";
-    lapList.appendChild(emptyMessage);
-
-    startStopwatch.textContent = "Start";
-    lapStopwatch.disabled = true;
-    resetStopwatch.disabled = true;
-}
-
-function recordLap() {
-    if (!isRunning) return;
-
-    const currentTime =
-        elapsedTime + performance.now() - startTime;
-
-    const lapDuration = currentTime - previousLapTime;
-
-    previousLapTime = currentTime;
-    lapNumber++;
-
-    const emptyMessage = lapList.querySelector(".lap-empty");
-
-    if (emptyMessage) {
-        emptyMessage.remove();
+      );
     }
 
-    const lapItem = document.createElement("li");
+    function getElapsedTime() {
+      if (stopwatchRunning) {
+        return elapsedBeforeStart +
+          (performance.now() - stopwatchStartTime);
+      }
 
-    const lapLabel = document.createElement("span");
-    lapLabel.textContent = "Lap " + lapNumber;
+      return elapsedBeforeStart;
+    }
 
-    const lapDurationText = document.createElement("span");
-    lapDurationText.textContent =
+    function updateStopwatchDisplay() {
+      if (stopwatchDisplay) {
+        stopwatchDisplay.textContent =
+          formatStopwatchTime(getElapsedTime());
+      }
+    }
+
+    function stopwatchAnimation() {
+      if (!stopwatchRunning) return;
+
+      updateStopwatchDisplay();
+
+      animationFrameId =
+        requestAnimationFrame(stopwatchAnimation);
+    }
+
+    function startStopwatch() {
+      if (stopwatchRunning) {
+        // Pause
+        elapsedBeforeStart = getElapsedTime();
+        stopwatchRunning = false;
+
+        if (animationFrameId !== null) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+
+        startStopwatchButton.textContent = "Resume";
+        startStopwatchButton.setAttribute(
+          "aria-label",
+          "Resume stopwatch"
+        );
+
+        updateStopwatchDisplay();
+        return;
+      }
+
+      // Start or Resume
+      stopwatchStartTime = performance.now();
+      stopwatchRunning = true;
+
+      startStopwatchButton.textContent = "Pause";
+      startStopwatchButton.setAttribute(
+        "aria-label",
+        "Pause stopwatch"
+      );
+
+      stopwatchAnimation();
+    }
+
+    function addStopwatchLap() {
+      if (!stopwatchRunning) return;
+
+      lapNumber++;
+
+      const currentTime = getElapsedTime();
+
+      const previousLapTime =
+        window.lastLapElapsedTime || 0;
+
+      const lapDuration =
+        currentTime - previousLapTime;
+
+      window.lastLapElapsedTime = currentTime;
+
+      if (lapEmpty) {
+        lapEmpty.style.display = "none";
+      }
+
+      const lapRow = document.createElement("div");
+      lapRow.className = "lap-row";
+
+      const lapIndex = document.createElement("span");
+      lapIndex.textContent = "Lap " + lapNumber;
+
+      const lapTime = document.createElement("span");
+      lapTime.textContent =
         formatStopwatchTime(lapDuration);
 
-    const totalDurationText = document.createElement("span");
-    totalDurationText.textContent =
+      const totalTime = document.createElement("span");
+      totalTime.textContent =
         formatStopwatchTime(currentTime);
 
-    lapItem.appendChild(lapLabel);
-    lapItem.appendChild(lapDurationText);
-    lapItem.appendChild(totalDurationText);
+      lapRow.appendChild(lapIndex);
+      lapRow.appendChild(lapTime);
+      lapRow.appendChild(totalTime);
 
-    lapList.prepend(lapItem);
-}
-
-startStopwatch.addEventListener("click", function () {
-    if (isRunning) {
-        pauseTimer();
-    } else {
-        startTimer();
+      if (lapList) {
+        lapList.prepend(lapRow);
+      }
     }
-});
 
-lapStopwatch.addEventListener("click", recordLap);
+    function resetStopwatch() {
+      stopwatchRunning = false;
+      elapsedBeforeStart = 0;
+      stopwatchStartTime = 0;
+      lapNumber = 0;
 
-resetStopwatch.addEventListener("click", resetTimer);
+      window.lastLapElapsedTime = 0;
 
-</script>
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+
+      if (startStopwatchButton) {
+        startStopwatchButton.textContent = "Start";
+        startStopwatchButton.setAttribute(
+          "aria-label",
+          "Start stopwatch"
+        );
+      }
+
+      if (lapList) {
+        lapList
+          .querySelectorAll(".lap-row")
+          .forEach(row => row.remove());
+      }
+
+      if (lapEmpty) {
+        lapEmpty.style.display = "block";
+      }
+
+      updateStopwatchDisplay();
+    }
+
+    if (startStopwatchButton) {
+      startStopwatchButton.addEventListener(
+        "click",
+        startStopwatch
+      );
+    }
+
+    if (lapStopwatchButton) {
+      lapStopwatchButton.addEventListener(
+        "click",
+        addStopwatchLap
+      );
+    }
+
+    if (resetStopwatchButton) {
+      resetStopwatchButton.addEventListener(
+        "click",
+        resetStopwatch
+      );
+    }
+
+    updateStopwatchDisplay();
+
+
+    // =====================================
+    // AUTOMATIC COPYRIGHT YEAR
+    // =====================================
+
+    const currentYearElement =
+      document.getElementById("currentYear");
+
+    if (currentYearElement) {
+      currentYearElement.textContent =
+        new Date().getFullYear();
+    }
+
+  </script>
 
 </body>
 </html>
+
+
+   
+     
+     
+     
