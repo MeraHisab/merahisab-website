@@ -1,173 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="MeraHisab - A smarter way to manage your personal income, expenses and accounts.">
-<title>MeraHisab – Your Money. Your Control.</title>
+<title>MeraHisab - Your Money, Your Control</title>
+<meta name="description" content="MeraHisab - Premium offline personal finance and expense tracker.">
 <style>
-:root{--navy:#071426;--navy2:#0d2039;--gold:#e6bd69;--light:#f7f3e9;--muted:#b9c4d2}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:white;line-height:1.6}
-a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:10;background:#071426ed;border-bottom:1px solid #b88d493d;backdrop-filter:blur(12px)}
-nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:23px;font-weight:800;color:var(--gold);letter-spacing:.4px}
-.logo span{color:white}
-.links{display:flex;gap:24px;align-items:center;font-size:14px;color:var(--muted)}
-.links a:hover{color:var(--gold)}
-.btn{display:inline-block;padding:12px 21px;border-radius:9px;background:linear-gradient(135deg,#f1d28b,#c8953e);color:#101827;font-weight:700;border:0}
-.hero{max-width:1150px;margin:auto;padding:85px 22px 75px;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
-.tag{display:inline-block;border:1px solid #d5ad5c66;color:var(--gold);border-radius:30px;padding:7px 14px;font-size:12px;letter-spacing:1px}
-h1{font-size:clamp(42px,6vw,67px);line-height:1.1;margin:22px 0;color:white}
-h1 span{color:var(--gold)}
-.hero p{color:var(--muted);font-size:17px;max-width:550px;margin-bottom:28px}
-.hero-art{border:1px solid #d9b76c66;border-radius:25px;padding:25px;background:linear-gradient(145deg,#132b49,#09172a);box-shadow:0 25px 70px #0007}
-.dash-top{display:flex;justify-content:space-between;color:var(--gold);font-weight:bold;margin-bottom:20px}
-.balance{background:#ffffff0b;border:1px solid #ffffff18;border-radius:15px;padding:22px;margin-bottom:15px}
-.balance small,.stat small{color:var(--muted)}
-.balance strong{display:block;font-size:32px;color:var(--gold);margin-top:5px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stat{padding:17px;border-radius:13px;background:#ffffff0b;border:1px solid #ffffff15}
-.stat strong{display:block;font-size:21px;margin-top:5px}
-section{padding:72px 22px}
-.section-inner{max-width:1100px;margin:auto}
-.section-title{text-align:center;font-size:34px;margin-bottom:12px}
-.section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 38px}
-.gold{color:var(--gold)}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.card{background:linear-gradient(145deg,#102642,#0a192c);border:1px solid #d4ae5b38;border-radius:16px;padding:23px}
-.card .ico{font-size:27px;margin-bottom:12px}
-.card h3{color:var(--gold);font-size:18px;margin-bottom:7px}
-.card p{font-size:14px;color:var(--muted)}
-.privacy{background:#0c1d32}
-.privacy-box{max-width:850px;margin:auto;text-align:center;border:1px solid #d4ae5b66;border-radius:20px;padding:38px;background:linear-gradient(135deg,#102642,#091629)}
-.privacy-box p{color:var(--muted);margin:14px 0 0}
-.preview{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
-.preview-panel{background:linear-gradient(145deg,#152d4b,#091629);border:1px solid #d4ae5b55;border-radius:20px;padding:25px}
-.preview-line{height:12px;border-radius:20px;background:#ffffff18;margin:13px 0}
-.preview-line.goldline{background:#cba557;width:65%}
-.faq{max-width:800px;margin:auto}
-details{background:#10233b;border:1px solid #ffffff18;border-radius:12px;padding:17px 20px;margin:12px 0}
-summary{cursor:pointer;color:var(--gold);font-weight:bold}
-details p{color:var(--muted);padding-top:12px;font-size:14px}
-footer{border-top:1px solid #d4ae5b44;padding:35px 22px;text-align:center;color:var(--muted)}
-footer strong{color:var(--gold)}
-footer p{font-size:13px;margin-top:8px}
-@media(max-width:750px){
-.links{gap:12px;font-size:12px}.links a:nth-child(2),.links a:nth-child(3){display:none}
-.hero{grid-template-columns:1fr;padding-top:55px;gap:35px}
-.features{grid-template-columns:1fr 1fr}
-.preview{grid-template-columns:1fr}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:#071426;color:#f4f6fb;font-family:Arial,sans-serif}
+header{position:sticky;top:0;z-index:99;background:#071426ee;border-bottom:1px solid #233650;padding:14px 5%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:bold;color:#e6bd69;font-size:20px}
+nav{display:flex;gap:22px}
+nav a{color:#dbe3ee;text-decoration:none;font-size:14px}
+nav a:hover{color:#e6bd69}
+.btn{display:inline-block;background:#e6bd69;color:#071426;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:bold}
+.btn:hover{opacity:.85}
+section{padding:65px 5%;scroll-margin-top:80px}
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;min-height:450px}
+h1{font-size:42px;line-height:1.15}
+h1 span,h2 span{color:#e6bd69}
+p{color:#b9c6d8;line-height:1.7}
+.panel,.card,.faq, .privacy-box{background:#10233b;border:1px solid #263d59;border-radius:14px;padding:20px}
+.panel h3{color:#e6bd69}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card h3{color:#e6bd69;font-size:16px}
+.card p{font-size:13px}
+.center{text-align:center}
+.privacy-box{max-width:750px;margin:auto;text-align:center}
+.faq{margin:10px auto;max-width:750px}
+summary{cursor:pointer;color:#e6bd69;font-weight:bold}
+details p{padding-top:10px}
+footer{text-align:center;border-top:1px solid #243750;padding:30px;color:#aebbd0}
+@media(max-width:700px){
+ nav{gap:10px}
+ nav a{font-size:11px}
+ .hero{grid-template-columns:1fr;padding-top:35px}
+ h1{font-size:36px}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ header{padding:12px 3%}
+ .btn{padding:9px 12px;font-size:12px}
 }
-@media(max-width:440px){.features{grid-template-columns:1fr}.section-title{font-size:28px}.logo{font-size:20px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}nav{gap:7px}}
 </style>
 </head>
 <body>
+
 <header>
+<a href="#home" class="logo">MeraHisab</a>
 <nav>
-<a class="logo" href="#">Mera<span>Hisab</span></a>
-<div class="links">
 <a href="#features">Features</a>
 <a href="#privacy">Privacy</a>
 <a href="#about">About</a>
 <a href="#faq">FAQ</a>
-</div>
-<a class="btn" href="#download">Explore App</a>
 </nav>
+<a href="#download" class="btn">Explore App</a>
 </header>
 
-<main>
-<div class="hero">
+<section class="hero" id="home">
 <div>
-<div class="tag">SMART PERSONAL FINANCE</div>
+<p>✦ SMART PERSONAL FINANCE</p>
 <h1>Your Money.<br><span>Your Control.</span></h1>
 <p>Manage your income, expenses and accounts with clarity. MeraHisab helps you understand your money and stay organised every day.</p>
-<a class="btn" href="#features">Discover Features →</a>
+<a href="#features" class="btn">Discover Features →</a>
 </div>
-<div class="hero-art">
-<div class="dash-top"><span>✦ MeraHisab</span><span>PRIVATE</span></div>
-<div class="balance"><small>Account Overview</small><strong>Manage with clarity</strong><small>Your finances, organised in one place</small></div>
-<div class="stats">
-<div class="stat"><small>Income</small><strong>Track it</strong></div>
-<div class="stat"><small>Expenses</small><strong>Control it</strong></div>
-<div class="stat"><small>Reports</small><strong>Understand</strong></div>
-<div class="stat"><small>Budget</small><strong>Plan ahead</strong></div>
+<div class="panel">
+<h3>✦ MeraHisab &nbsp;&nbsp; PRIVATE</h3>
+<div class="panel">
+<p>Account Overview</p>
+<h3>Manage with clarity</h3>
+<p>Your finances, organised in one place</p>
 </div>
-</div>
-</div>
-
-<section id="features">
-<div class="section-inner">
-<h2 class="section-title">Everything in <span class="gold">One Place</span></h2>
-<p class="section-sub">Useful tools designed to make everyday money management simpler.</p>
-<div class="features">
-<div class="card"><div class="ico">💰</div><h3>Income Tracking</h3><p>Keep a clear record of your income entries.</p></div>
-<div class="card"><div class="ico">🧾</div><h3>Expense Tracking</h3><p>Record and review your daily expenses.</p></div>
-<div class="card"><div class="ico">🏦</div><h3>Six Main Accounts</h3><p>Organise finances across six fixed account categories.</p></div>
-<div class="card"><div class="ico">📊</div><h3>Reports & Graphs</h3><p>Review your financial activity with summaries and charts.</p></div>
-<div class="card"><div class="ico">🎯</div><h3>Monthly Budget</h3><p>Plan your monthly spending and monitor your budget.</p></div>
-<div class="card"><div class="ico">🔎</div><h3>Smart Search</h3><p>Find entries using filters and search options.</p></div>
-<div class="card"><div class="ico">🔁</div><h3>Recurring Entries</h3><p>Organise entries that repeat regularly.</p></div>
-<div class="card"><div class="ico">📝</div><h3>Notes & Tasks</h3><p>Keep notes, reminders and tasks organised.</p></div>
-<div class="card"><div class="ico">💾</div><h3>Backup & Restore</h3><p>Create a backup and restore your saved app data.</p></div>
+<div class="grid">
+<div class="card">Income<br><h3>Track it</h3></div>
+<div class="card">Expenses<br><h3>Control it</h3></div>
+<div class="card">Reports<br><h3>Understand</h3></div>
+<div class="card">Budget<br><h3>Plan ahead</h3></div>
 </div>
 </div>
 </section>
 
-<section class="privacy" id="privacy">
+<section id="features">
+<div class="center">
+<h2>Everything in <span>One Place</span></h2>
+<p>Useful tools designed to make everyday money management simpler.</p>
+</div>
+<div class="grid">
+<div class="card"><h3>💰 Income Tracking</h3><p>Keep a clear record of your income entries.</p></div>
+<div class="card"><h3>🧾 Expense Tracking</h3><p>Record and review your daily expenses.</p></div>
+<div class="card"><h3>🏦 Six Main Accounts</h3><p>Organise finances across six fixed account categories.</p></div>
+<div class="card"><h3>📊 Reports & Graphs</h3><p>Review your financial activity with summaries and charts.</p></div>
+<div class="card"><h3>🎯 Monthly Budget</h3><p>Plan your monthly spending and monitor your budget.</p></div>
+<div class="card"><h3>🔎 Smart Search</h3><p>Find entries using filters and search options.</p></div>
+<div class="card"><h3>🔁 Recurring Entries</h3><p>Organise entries that repeat regularly.</p></div>
+<div class="card"><h3>📝 Notes & Tasks</h3><p>Keep notes, reminders and tasks organised.</p></div>
+<div class="card"><h3>💾 Backup & Restore</h3><p>Create a backup and restore your saved app data.</p></div>
+</div>
+</section>
+
+<section id="privacy">
 <div class="privacy-box">
-<div class="ico">🔒</div>
-<h2 class="section-title">Privacy Matters</h2>
-<p>MeraHisab is being built with a privacy-first approach, with a focus on keeping personal financial information under the user's control. The app is intended for local, on-device data handling. Review the final app privacy details before using it.</p>
+<h2>🔒 <span>Privacy Matters</span></h2>
+<p>MeraHisab is being built with a privacy-first approach, with a focus on keeping personal financial information under the user's control. The app is intended for local, on-device data handling. Review the final app privacy details before use.</p>
 </div>
 </section>
 
 <section id="about">
-<div class="section-inner preview">
+<div class="hero">
 <div>
-<h2 class="section-title" style="text-align:left">Meet <span class="gold">MeraHisab</span></h2>
-<p style="color:var(--muted);margin-top:15px">A personal finance companion designed to bring income, expenses, accounts and reports together in a simple experience. Our goal is to make everyday financial tracking clear and convenient.</p>
+<h2>Meet <span>MeraHisab</span></h2>
+<p>A personal finance companion designed to bring income, expenses, accounts and reports together in a simple experience. Our goal is to make everyday financial tracking clear and convenient.</p>
 </div>
-<div class="preview-panel">
-<h3 class="gold">Simple. Organised. Clear.</h3>
-<div class="preview-line goldline"></div>
-<div class="preview-line"></div>
-<div class="preview-line"></div>
-<div class="preview-line goldline"></div>
-<div class="preview-line"></div>
+<div class="panel">
+<h3>Simple. Organised. Clear.</h3>
+<p>Income ━━━━━━━━━</p>
+<p>Expenses ━━━━━━━</p>
+<p>Accounts ━━━━━━━━━</p>
+<p>Reports ━━━━━━━━</p>
 </div>
 </div>
 </section>
 
 <section id="faq">
-<div class="section-inner">
-<h2 class="section-title">Frequently Asked <span class="gold">Questions</span></h2>
-<div class="faq">
-<details><summary>What is MeraHisab?</summary><p>MeraHisab is a personal income and expense tracking app project.</p></details>
-<details><summary>Can I track income and expenses?</summary><p>Yes. The app is being developed to help you record and review income and expenses.</p></details>
-<details><summary>Is the app available to download?</summary><p>The website is an early project page. The official download link will be added after the app is published.</p></details>
-<details><summary>Where can I get support?</summary><p>Support and contact details will be added here when they are ready.</p></details>
-</div>
-</div>
+<div class="center"><h2>Frequently Asked <span>Questions</span></h2></div>
+<details class="faq">
+<summary>What is MeraHisab?</summary>
+<p>MeraHisab is a personal finance app designed to help organise income, expenses, accounts and financial reports.</p>
+</details>
+<details class="faq">
+<summary>Can I track income and expenses?</summary>
+<p>Yes. MeraHisab is designed to track income and expenses and organise them across accounts and categories.</p>
+</details>
+<details class="faq">
+<summary>Is the app available to download?</summary>
+<p>The app is currently under development. Download information will be available here after release.</p>
+</details>
+<details class="faq">
+<summary>Where can I get support?</summary>
+<p>Support and contact details will be added here when available.</p>
+</details>
 </section>
 
-<section id="download">
-<div class="section-inner" style="text-align:center">
-<h2 class="section-title">Your finances, <span class="gold">made clearer.</span></h2>
-<p class="section-sub">MeraHisab app download information will be available here after release.</p>
-<span class="tag">COMING SOON</span>
-</div>
+<section id="download" class="center">
+<h2>Your finances, <span>made clearer.</span></h2>
+<p>MeraHisab app download information will be available here after release.</p>
+<div class="panel" style="display:inline-block">COMING SOON</div>
 </section>
-</main>
 
 <footer>
-<strong>MeraHisab</strong>
+<p><strong style="color:#e6bd69">MeraHisab</strong></p>
 <p>Your Money. Your Control.</p>
 <p>© 2026 MeraHisab. All rights reserved.</p>
-<p>Official website project.</p>
+<p>Official website</p>
+<a href="#home" style="color:#e6bd69">↑ Back to Top</a>
 </footer>
+
 </body>
 </html>
