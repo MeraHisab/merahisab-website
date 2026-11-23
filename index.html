@@ -1579,7 +1579,105 @@ iframe {
     border-radius: 14px;
   }
 }
+/* PREMIUM MOTIVATIONAL TICKER */
 
+.motivation-ticker {
+  width: 100%;
+  padding: 16px 20px;
+  margin: 18px auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(12, 24, 48, 0.96),
+    rgba(20, 35, 64, 0.96)
+  );
+
+  border: 1px solid rgba(212, 175, 110, 0.35);
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.16),
+    inset 0 0 18px rgba(212, 175, 110, 0.04);
+}
+
+.motivation-ticker::before,
+.motivation-ticker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.motivation-ticker::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(12, 24, 48, 1),
+    transparent
+  );
+}
+
+.motivation-ticker::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(12, 24, 48, 1),
+    transparent
+  );
+}
+
+.motivation-label {
+  color: #d6b36a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.motivation-text {
+  color: #f4e5c3;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.motivation-text.fade-out {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+@media (max-width: 600px) {
+  .motivation-ticker {
+    padding: 13px 12px;
+    margin: 12px auto;
+    border-radius: 11px;
+  }
+
+  .motivation-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .motivation-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
 
      
   </style>
@@ -1588,6 +1686,23 @@ iframe {
 <body>
 
   <!-- HEADER -->
+  <!-- PREMIUM MOTIVATIONAL TICKER -->
+
+<section class="motivation-ticker" aria-label="Daily motivation">
+
+  <div class="motivation-label">
+    ✦ DAILY INSPIRATION ✦
+  </div>
+
+  <div
+    class="motivation-text"
+    id="motivationText"
+    aria-live="polite"
+  >
+    हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।
+  </div>
+
+</section>
 
 <header class="header">
   <div class="container header-inner">
@@ -2353,6 +2468,99 @@ iframe {
     }
 
     updateStopwatchDisplay();
+    // PREMIUM RANDOM MOTIVATIONAL LINES
+
+const motivationLines = [
+  "हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।",
+  "आज की समझदारी, कल की आर्थिक आजादी है।",
+  "अपने पैसों को समझिए, अपने भविष्य को संवारिए।",
+  "छोटी शुरुआत ही बड़ी सफलता की नींव होती है।",
+  "अनुशासन आपकी सफलता की सबसे बड़ी ताकत है।",
+  "हर दिन एक नया अवसर लेकर आता है।",
+  "सपने बड़े रखिए और शुरुआत आज से कीजिए।",
+  "आपकी मेहनत ही आपकी असली पूंजी है।",
+  "समय और पैसा दोनों की कद्र करना सीखिए।",
+  "सही योजना, सफलता का पहला कदम है।",
+  "बचत एक आदत है, जो भविष्य बदल सकती है।",
+  "धीरे चलिए, लेकिन लगातार आगे बढ़ते रहिए।",
+  "आज का एक सही फैसला कल की बड़ी खुशी बन सकता है।",
+  "आर्थिक समझदारी जीवन को आसान बनाती है।",
+  "खर्च पर नियंत्रण, सपनों पर नहीं।",
+  "हर रुपया एक जिम्मेदारी और एक अवसर है।",
+  "सफलता रातों-रात नहीं, रोज़ के प्रयासों से आती है।",
+  "अपने लक्ष्य को याद रखिए और आगे बढ़ते रहिए।",
+  "Consistency is the key to success.",
+  "Small steps create big achievements.",
+  "Your future is built by today's decisions.",
+  "Make every rupee count.",
+  "Smart habits create a better tomorrow.",
+  "Dream big. Plan wisely. Stay consistent.",
+  "Success begins with discipline.",
+  "Believe in progress, not perfection.",
+  "Every day is a fresh opportunity.",
+  "Financial discipline brings peace of mind.",
+  "Stay focused on what truly matters.",
+  "Your goals deserve your consistency.",
+  "Progress is better than perfection.",
+  "Build habits that build your future.",
+  "A better future starts today.",
+  "Keep learning. Keep growing. Keep moving.",
+  "Patience and discipline create success.",
+  "The best investment is a better habit.",
+  "Plan today. Achieve tomorrow.",
+  "Your journey is your strength.",
+  "Be consistent, even on difficult days.",
+  "Great things begin with small steps.",
+  "सकारात्मक सोच और निरंतर प्रयास सफलता की राह बनाते हैं।",
+  "आपका आज, आपके कल की कहानी लिख रहा है।",
+  "हर दिन कुछ बेहतर करने का मौका है।",
+  "अपने लक्ष्य के प्रति ईमानदार रहिए।",
+  "खुद पर विश्वास रखिए और प्रयास जारी रखिए।",
+  "सही दिशा में उठाया छोटा कदम भी महत्वपूर्ण है।",
+  "समझदारी से लिया फैसला आपकी ताकत है।",
+  "अपनी प्रगति को पहचानिए और आगे बढ़िए।",
+  "आपकी आदतें आपके भविष्य का निर्माण करती हैं।",
+  "आज बेहतर बनिए, कल और बेहतर होगा।"
+];
+
+const motivationElement =
+  document.getElementById("motivationText");
+
+let previousMotivationIndex = -1;
+
+function showRandomMotivation() {
+
+  if (!motivationElement) return;
+
+  let randomIndex;
+
+  do {
+    randomIndex = Math.floor(
+      Math.random() * motivationLines.length
+    );
+  } while (
+    randomIndex === previousMotivationIndex
+    );
+
+  previousMotivationIndex = randomIndex;
+
+  motivationElement.classList.add("fade-out");
+
+  setTimeout(() => {
+
+    motivationElement.textContent =
+      motivationLines[randomIndex];
+
+    motivationElement.classList.remove("fade-out");
+
+  }, 550);
+}
+
+// First line
+showRandomMotivation();
+
+// Change line continuously
+setInterval(showRandomMotivation, 7000);
 
 
     // =====================================
