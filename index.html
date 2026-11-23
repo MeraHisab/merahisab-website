@@ -1518,7 +1518,43 @@ iframe {
     padding-right: 16px;
   }
 }
+    
+/* PRIVACY SECTION DESKTOP ALIGNMENT FIX */
 
+.privacy-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 40px;
+}
+
+.privacy-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  position: relative;
+}
+
+.privacy-shield {
+  position: relative;
+  margin: 0 auto 24px;
+  transform: none;
+  z-index: 2;
+}
+
+.privacy-text {
+  min-width: 0;
+  position: relative;
+}
+
+@media (max-width: 760px) {
+  .privacy-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
 
      
   </style>
