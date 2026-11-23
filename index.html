@@ -181,13 +181,19 @@
     }
 
     /* HEADER */
-    .header {
-      position: relative;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(8, 15, 32, 0.94);
-      backdrop-filter: blur(16px);
-    }
+   
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(10, 20, 38, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 164, 91, 0.22);
+}
+
 
     .header-inner {
       display: flex;
