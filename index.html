@@ -1379,7 +1379,140 @@
   .clock-only-grid {
     width: 90%;
   }
+
+  
+/* OFFLINE PRIVACY HIGHLIGHT */
+
+.offline-highlight {
+  background: rgba(201, 164, 91, 0.10);
+  border: 1px solid rgba(201, 164, 91, 0.55);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 12px;
 }
+
+.offline-highlight strong {
+  display: block;
+  color: #d5ad65;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.offline-highlight p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+}
+    
+/* DESKTOP LAYOUT FIX */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header-inner,
+.hero-grid,
+.privacy-content,
+.about-content,
+.download-content {
+  min-width: 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand,
+.nav,
+.nav-cta {
+  min-width: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 36px;
+}
+
+.preview-wrap,
+.dashboard,
+.features-grid,
+.privacy-visual {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+@media (min-width: 1001px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .hero-grid > *,
+  .privacy-content > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 
      
   </style>
@@ -1740,6 +1873,22 @@
           </p>
 
           <div class="privacy-points">
+
+            
+<div class="privacy-point offline-highlight">
+  <span class="privacy-check">✓</span>
+  <div>
+    <strong>Works Without Internet</strong>
+    <p>
+      MeraHisab is designed to work offline.
+      No internet connection is required for
+      everyday expense and income tracking.
+      Your financial data stays stored locally
+      on your device.
+    </p>
+  </div>
+</div>
+
 
             <div class="privacy-point">
               <span class="privacy-check">✓</span>
