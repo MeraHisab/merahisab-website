@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Download MeraHisab | Personal Finance App</title>
+
+<meta name="description" content="Download MeraHisab, your offline personal income and expense tracker for Android.">
+
+<style>
+:root {
+  --bg: #081321;
+  --bg2: #101e32;
+  --card: #13243a;
+  --gold: #d4ad68;
+  --gold-light: #f0d49b;
+  --text: #f5f5f7;
+  --muted: #aab6c7;
+  --border: rgba(212,173,104,0.20);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8,19,33,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #e5c47f, #ad8240);
+  color: #101b2c;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.brand-tag {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.home-link {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HERO */
+
+.hero {
+  padding: 65px 0 45px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 9px 14px;
+  border-radius: 50px;
+  background: rgba(212,173,104,0.10);
+  border: 1px solid var(--border);
+  color: var(--gold-light);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.12;
+  margin: 0 0 20px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.download-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 17px 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e4c47f, #bd914d);
+  color: #101b2c;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 12px 32px rgba(190,145,77,0.20);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(190,145,77,0.30);
+}
+
+.download-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.hero-image {
+  background: linear-gradient(145deg, #142640, #091524);
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.30);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+.image-caption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 13px;
+}
+
+/* HIGHLIGHTS */
+
+.highlights {
+  padding: 25px 0 55px;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.highlight-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 23px;
+  text-align: center;
+}
+
+.highlight-icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.highlight-card h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: var(--gold-light);
+}
+
+.highlight-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* APP INFORMATION */
+
+.information {
+  padding: 55px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  margin: 0 0 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.feature-card {
+  padding: 22px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  border-radius: 16px;
+}
+
+.feature-card h3 {
+  color: var(--gold-light);
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.feature-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* PRIVACY */
+
+.privacy {
+  padding: 35px 0 60px;
+}
+
+.privacy-box {
+  background: linear-gradient(135deg, #13253c, #0d192b);
+  border: 1px solid rgba(212,173,104,0.35);
+  border-radius: 22px;
+  padding: 30px;
+  text-align: center;
+}
+
+.privacy-box h2 {
+  color: var(--gold-light);
+  margin-top: 0;
+}
+
+.privacy-box p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 750px;
+  margin: auto;
+}
+
+/* FINAL DOWNLOAD */
+
+.final-download {
+  padding: 30px 0 75px;
+}
+
+.final-card {
+  max-width: 650px;
+  margin: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 32px;
+  text-align: center;
+}
+
+.final-card h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.final-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.final-card .download-btn {
+  margin-top: 22px;
+}
+
+/* FOOTER */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 25px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .highlight-grid,
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .header-inner {
+    min-height: 66px;
+  }
+
+  .hero {
+    padding-top: 38px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .highlight-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-box,
+  .final-card {
+    padding: 23px 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+      <span class="brand-mark">M</span>
+
+      <span>
+        <span class="brand-name">MeraHisab</span>
+        <span class="brand-tag">Personal Finance, Simplified</span>
+      </span>
+    </a>
+
+    <a href="index.html" class="home-link">
+      ← Back to Home
+    </a>
+
+  </div>
+</header>
+
+
+<!-- HERO / DOWNLOAD INTRO -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <span class="badge">
+        ✦ Personal Finance • Android App
+      </span>
+
+      <h1>
+        Take Control of
+        <span class="gold">Your Money</span>
+      </h1>
+
+      <p class="hero-description">
+        Manage your income, expenses, accounts and financial
+        records with MeraHisab. A simple, organized personal
+        finance experience designed for your everyday life.
+      </p>
+
+      <div class="hero-buttons">
+        <a
+          href="MeraHisab.apk"
+          class="download-btn"
+          download
+        >
+          ⬇ Download MeraHisab APK
+        </a>
+      </div>
+
+      <div class="download-note">
+        Android Application • APK File<br>
+        Download only when you are ready to install.
+      </div>
+
+    </div>
+
+
+    <!-- REAL APP SCREENSHOT -->
+
+    <div class="hero-image">
+
+      <img
+        src="merahisab-dashboard.png"
+        alt="MeraHisab application dashboard screenshot"
+      >
+
+      <div class="image-caption">
+        MeraHisab — App Dashboard Preview
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- APP HIGHLIGHTS -->
+
+<section class="highlights">
+  <div class="container highlight-grid">
+
+    <div class="highlight-card">
+      <div class="highlight-icon">🔒</div>
+      <h3>Privacy Focused</h3>
+      <p>
+        Designed to keep your personal financial
+        information on your own device.
+      </p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">📶</div>
+      <h3>Works Offline</h3>
+      <p>
+        Use the app for everyday tracking without
+        requiring an internet connection.
+      </p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon">📊</div>
+      <h3>Easy Tracking</h3>
+      <p>
+        Keep income, expenses and account records
+        organized in one place.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- APP INFORMATION -->
+
+<section class="information">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Everything in <span class="gold">One Place</span></h2>
+
+      <p>
+        Helpful tools to organize your personal financial records.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>Income & Expenses</h3>
+        <p>
+          Record daily income and expenses and
+          review your financial activity.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Multiple Accounts</h3>
+        <p>
+          Organize transactions across your
+          different accounts and categories.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Smart Search</h3>
+        <p>
+          Find transactions using available
+          search and filter options.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Reports</h3>
+        <p>
+          Review account summaries and
+          income and expense reports.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Backup & Restore</h3>
+        <p>
+          Manage your backups to help preserve
+          your personal app data.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Notes & Tasks</h3>
+        <p>
+          Keep useful notes and tasks organized
+          alongside your daily routine.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PRIVACY / OFFLINE -->
+
+<section class="privacy">
+  <div class="container">
+
+    <div class="privacy-box">
+
+      <h2>Privacy. Simplicity. Offline Access.</h2>
+
+      <p>
+        MeraHisab is designed for local personal financial
+        tracking. Everyday income and expense tracking is
+        intended to work without internet access. Your
+        financial records are intended to remain on your
+        device rather than requiring an online account.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FINAL DOWNLOAD BUTTON -->
+
+<section class="final-download">
+  <div class="container">
+
+    <div class="final-card">
+
+      <h2>Ready to Get Started?</h2>
+
+      <p>
+        Download MeraHisab for your Android device
+        and organize your personal finances.
+      </p>
+
+      <a
+        href="MeraHisab.apk"
+        class="download-btn"
+        download
+      >
+        ⬇ Download App
+      </a>
+
+      <div class="download-note">
+        APK Download • Android
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="container">
+
+    © <span id="currentYear"></span> MeraHisab
+
+    <br><br>
+
+    <a href="index.html">Back to Main Website</a>
+
+  </div>
+</footer>
+
+
+<script>
+document.getElementById("currentYear").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
