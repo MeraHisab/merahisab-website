@@ -1555,6 +1555,31 @@ iframe {
     gap: 24px;
   }
 }
+    
+/* REAL MERAHISAB DASHBOARD IMAGE */
+
+.real-dashboard-image {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 1px solid rgba(201, 164, 91, 0.45);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.30);
+}
+
+.preview-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .real-dashboard-image {
+    border-radius: 14px;
+  }
+}
+
 
      
   </style>
@@ -1576,7 +1601,11 @@ iframe {
     </a>
 
    
-<a href="MeraHisab.apk"
+
+<a href="download.html" class="nav-cta">
+  Download App
+</a>
+
    class="nav-cta"
    download>
   Download App
@@ -1681,9 +1710,17 @@ iframe {
         </div>
 
         <!-- DASHBOARD PREVIEW -->
-        <div class="preview-wrap">
+       
+<div class="preview-wrap">
+  <div class="preview-glow"></div>
 
-          <div class="preview-glow"></div>
+  <img
+    src="merahisab-dashboard.png"
+    alt="MeraHisab App Dashboard"
+    class="real-dashboard-image"
+  >
+</div>
+
 
           <div class="dashboard">
 
