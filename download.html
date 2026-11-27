@@ -1,678 +1,797 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Download MeraHisab | Personal Finance App</title>
-
-<meta name="description" content="Download MeraHisab, your offline personal income and expense tracker for Android.">
-
-<style>
-:root {
-  --bg: #081321;
-  --bg2: #101e32;
-  --card: #13243a;
-  --gold: #d4ad68;
-  --gold-light: #f0d49b;
-  --text: #f5f5f7;
-  --muted: #aab6c7;
-  --border: rgba(212,173,104,0.20);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-.container {
-  width: 100%;
-  max-width: 1120px;
-  margin: auto;
-  padding: 0 24px;
-}
-
-/* HEADER */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(8,19,33,0.96);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: white;
-}
-
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 13px;
-  background: linear-gradient(135deg, #e5c47f, #ad8240);
-  color: #101b2c;
-  font-size: 24px;
-  font-weight: 900;
-}
-
-.brand-name {
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.brand-tag {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 3px;
-}
-
-.home-link {
-  color: var(--gold-light);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-/* HERO */
-
-.hero {
-  padding: 65px 0 45px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 42px;
-  align-items: center;
-}
-
-.badge {
-  display: inline-flex;
-  padding: 9px 14px;
-  border-radius: 50px;
-  background: rgba(212,173,104,0.10);
-  border: 1px solid var(--border);
-  color: var(--gold-light);
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: clamp(34px, 5vw, 56px);
-  line-height: 1.12;
-  margin: 0 0 20px;
-}
-
-.gold {
-  color: var(--gold);
-}
-
-.hero-description {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 520px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.download-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 17px 22px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #e4c47f, #bd914d);
-  color: #101b2c;
-  font-size: 17px;
-  font-weight: 800;
-  text-decoration: none;
-  border: none;
-  box-shadow: 0 12px 32px rgba(190,145,77,0.20);
-  transition: transform .2s, box-shadow .2s;
-}
-
-.download-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 38px rgba(190,145,77,0.30);
-}
-
-.download-note {
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 12px;
-  line-height: 1.7;
-}
-
-.hero-image {
-  background: linear-gradient(145deg, #142640, #091524);
-  padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.30);
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 15px;
-}
-
-.image-caption {
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 13px;
-}
-
-/* HIGHLIGHTS */
-
-.highlights {
-  padding: 25px 0 55px;
-}
-
-.highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.highlight-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  padding: 23px;
-  text-align: center;
-}
-
-.highlight-icon {
-  font-size: 26px;
-  margin-bottom: 12px;
-}
-
-.highlight-card h3 {
-  font-size: 16px;
-  margin: 0 0 8px;
-  color: var(--gold-light);
-}
-
-.highlight-card p {
-  margin: 0;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* APP INFORMATION */
-
-.information {
-  padding: 55px 0;
-  border-top: 1px solid var(--border);
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.section-heading h2 {
-  font-size: 32px;
-  margin: 0 0 12px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.feature-card {
-  padding: 22px;
-  border: 1px solid var(--border);
-  background: var(--bg2);
-  border-radius: 16px;
-}
-
-.feature-card h3 {
-  color: var(--gold-light);
-  font-size: 16px;
-  margin: 0 0 10px;
-}
-
-.feature-card p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* PRIVACY */
-
-.privacy {
-  padding: 35px 0 60px;
-}
-
-.privacy-box {
-  background: linear-gradient(135deg, #13253c, #0d192b);
-  border: 1px solid rgba(212,173,104,0.35);
-  border-radius: 22px;
-  padding: 30px;
-  text-align: center;
-}
-
-.privacy-box h2 {
-  color: var(--gold-light);
-  margin-top: 0;
-}
-
-.privacy-box p {
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 750px;
-  margin: auto;
-}
-
-/* FINAL DOWNLOAD */
-
-.final-download {
-  padding: 30px 0 75px;
-}
-
-.final-card {
-  max-width: 650px;
-  margin: auto;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 32px;
-  text-align: center;
-}
-
-.final-card h2 {
-  margin-top: 0;
-  font-size: 28px;
-}
-
-.final-card p {
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.final-card .download-btn {
-  margin-top: 22px;
-}
-
-/* FOOTER */
-
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 25px 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.footer a {
-  color: var(--gold-light);
-  text-decoration: none;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 850px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-image {
-    max-width: 600px;
-    margin: auto;
-  }
-
-  .highlight-grid,
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding-left: 17px;
-    padding-right: 17px;
-  }
-
-  .header-inner {
-    min-height: 66px;
-  }
-
-  .hero {
-    padding-top: 38px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .highlight-grid,
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .privacy-box,
-  .final-card {
-    padding: 23px 18px;
-  }
-
-  .section-heading h2 {
-    font-size: 27px;
-  }
-}
-</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Download Android App | MeraHisab</title>
+
+    <meta name="description"
+          content="Official Android app download center for MeraHisab and Royal Khata.">
+
+    <meta name="theme-color" content="#081321">
+
+    <link rel="canonical"
+          href="https://merahisab.store/download.html">
+
+    <link rel="stylesheet" href="upgrade.css">
+
+    <script defer src="upgrade.js"></script>
+
+    <style>
+
+        .download-hero {
+            background: linear-gradient(
+                135deg,
+                #081321,
+                #182b43
+            );
+            border: 1px solid #d4af37;
+            border-radius: 24px;
+            padding: clamp(24px, 5vw, 56px);
+            text-align: center;
+            color: #f5f5f7;
+            margin-bottom: 28px;
+        }
+
+        .download-hero h1 {
+            color: #e5c788;
+        }
+
+        .download-section {
+            margin-top: 28px;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(
+                135deg,
+                #f0d49b,
+                #c39a51
+            );
+            color: #081321;
+            padding: 16px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            margin: 18px 0;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .download-button:hover {
+            filter: brightness(1.08);
+        }
+
+        .download-button:focus-visible {
+            outline: 3px solid #d4af37;
+            outline-offset: 4px;
+        }
+
+        .download-status {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #d4af37;
+            border-radius: 20px;
+            color: #e5c788;
+            font-size: 14px;
+        }
+
+        .download-details {
+            line-height: 1.9;
+            overflow-wrap: anywhere;
+        }
+
+        .checksum {
+            font-family: monospace;
+            font-size: 13px;
+            overflow-wrap: anywhere;
+            word-break: break-all;
+            padding: 16px;
+            border: 1px solid #a58a52;
+            border-radius: 12px;
+            background: rgba(212,175,55,0.08);
+        }
+
+        .download-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .installation-list {
+            padding-left: 24px;
+            line-height: 1.9;
+        }
+
+        .installation-list li {
+            margin-bottom: 12px;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+
+            .download-button {
+                width: 100%;
+            }
+
+            .download-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+    <header class="site">
 
-<header class="header">
-  <div class="container header-inner">
+        <div class="container">
 
-    <a href="index.html" class="brand">
-      <span class="brand-mark">M</span>
+            <strong>MeraHisab</strong>
 
-      <span>
-        <span class="brand-name">MeraHisab</span>
-        <span class="brand-tag">Personal Finance, Simplified</span>
-      </span>
-    </a>
+            <nav aria-label="Main navigation">
 
-    <a href="index.html" class="home-link">
-      ← Back to Home
-    </a>
+                <a href="index.html">Home</a>
 
-  </div>
-</header>
+                <a href="downloads.html">Apps</a>
 
+                <a href="compare.html">Compare</a>
 
-<!-- HERO / DOWNLOAD INTRO -->
+                <a href="index.html#features">Features</a>
 
-<section class="hero">
-  <div class="container hero-grid">
+                <a href="tools.html">Tools</a>
 
-    <div class="hero-content">
+                <a href="privacy.html">Privacy</a>
 
-      <span class="badge">
-        ✦ Personal Finance • Android App
-      </span>
+                <a href="about.html">About</a>
 
-      <h1>
-        Take Control of
-        <span class="gold">Your Money</span>
-      </h1>
+                <a href="contact.html">Support</a>
 
-      <p class="hero-description">
-        Manage your income, expenses, accounts and financial
-        records with MeraHisab. A simple, organized personal
-        finance experience designed for your everyday life.
-      </p>
+                <button id="theme" type="button">
+                    Theme
+                </button>
 
-      <div class="hero-buttons">
-        <a
-          href="MeraHisab.apk"
-          class="download-btn"
-          download
-        >
-          ⬇ Download MeraHisab APK
-        </a>
-      </div>
+            </nav>
 
-      <div class="download-note">
-        Android Application • APK File<br>
-        Download only when you are ready to install.
-      </div>
+        </div>
 
-    </div>
+    </header>
 
+    <main class="shell">
 
-    <!-- REAL APP SCREENSHOT -->
-
-    <div class="hero-image">
-
-      <img
-        src="merahisab-dashboard.png"
-        alt="MeraHisab application dashboard screenshot"
-      >
-
-      <div class="image-caption">
-        MeraHisab — App Dashboard Preview
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- APP HIGHLIGHTS -->
-
-<section class="highlights">
-  <div class="container highlight-grid">
-
-    <div class="highlight-card">
-      <div class="highlight-icon">🔒</div>
-      <h3>Privacy Focused</h3>
-      <p>
-        Designed to keep your personal financial
-        information on your own device.
-      </p>
-    </div>
-
-    <div class="highlight-card">
-      <div class="highlight-icon">📶</div>
-      <h3>Works Offline</h3>
-      <p>
-        Use the app for everyday tracking without
-        requiring an internet connection.
-      </p>
-    </div>
-
-    <div class="highlight-card">
-      <div class="highlight-icon">📊</div>
-      <h3>Easy Tracking</h3>
-      <p>
-        Keep income, expenses and account records
-        organized in one place.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- APP INFORMATION -->
-
-<section class="information">
-  <div class="container">
-
-    <div class="section-heading">
-      <h2>Everything in <span class="gold">One Place</span></h2>
-
-      <p>
-        Helpful tools to organize your personal financial records.
-      </p>
-    </div>
-
-    <div class="feature-grid">
-
-      <div class="feature-card">
-        <h3>Income & Expenses</h3>
         <p>
-          Record daily income and expenses and
-          review your financial activity.
+
+            <a href="index.html">Home</a>
+
+            /
+
+            <a href="downloads.html">Apps</a>
+
+            / Download
+
         </p>
-      </div>
 
-      <div class="feature-card">
-        <h3>Multiple Accounts</h3>
-        <p>
-          Organize transactions across your
-          different accounts and categories.
-        </p>
-      </div>
+        <!-- MERAHISAB DOWNLOAD -->
 
-      <div class="feature-card">
-        <h3>Smart Search</h3>
-        <p>
-          Find transactions using available
-          search and filter options.
-        </p>
-      </div>
+        <section id="merahisabDownload">
 
-      <div class="feature-card">
-        <h3>Reports</h3>
-        <p>
-          Review account summaries and
-          income and expense reports.
-        </p>
-      </div>
+            <div class="download-hero">
 
-      <div class="feature-card">
-        <h3>Backup & Restore</h3>
-        <p>
-          Manage your backups to help preserve
-          your personal app data.
-        </p>
-      </div>
+                <span class="download-status">
 
-      <div class="feature-card">
-        <h3>Notes & Tasks</h3>
-        <p>
-          Keep useful notes and tasks organized
-          alongside your daily routine.
-        </p>
-      </div>
+                    Available for Android
 
-    </div>
-  </div>
-</section>
+                </span>
 
+                <h1>Download MeraHisab</h1>
 
-<!-- PRIVACY / OFFLINE -->
+                <p>
 
-<section class="privacy">
-  <div class="container">
+                    Your Money. Your Control.
 
-    <div class="privacy-box">
+                </p>
 
-      <h2>Privacy. Simplicity. Offline Access.</h2>
+                <p>
 
-      <p>
-        MeraHisab is designed for local personal financial
-        tracking. Everyday income and expense tracking is
-        intended to work without internet access. Your
-        financial records are intended to remain on your
-        device rather than requiring an online account.
-      </p>
+                    Manage your personal finances
+                    with MeraHisab.
 
-    </div>
+                </p>
 
-  </div>
-</section>
+                <a class="download-button"
+                   href="MeraHisab.apk"
+                   download="MeraHisab.apk">
 
+                    Download Android APK
 
-<!-- FINAL DOWNLOAD BUTTON -->
+                </a>
 
-<section class="final-download">
-  <div class="container">
+                <p>
 
-    <div class="final-card">
+                    APK Size: Approximately 12.18 MiB
 
-      <h2>Ready to Get Started?</h2>
+                </p>
 
-      <p>
-        Download MeraHisab for your Android device
-        and organize your personal finances.
-      </p>
+                <p>
 
-      <a
-        href="MeraHisab.apk"
-        class="download-btn"
-        download
-      >
-        ⬇ Download App
-      </a>
+                    Official Website: merahisab.store
 
-      <div class="download-note">
-        APK Download • Android
-      </div>
+                </p>
 
-    </div>
+            </div>
 
-  </div>
-</section>
+            <!-- APPLICATION DETAILS -->
 
+            <section class="upgrade-card">
 
-<!-- FOOTER -->
+                <h2>Application Details</h2>
 
-<footer class="footer">
-  <div class="container">
+                <div class="download-details">
 
-    © <span id="currentYear"></span> MeraHisab
+                    <p>
 
-    <br><br>
+                        <strong>Application:</strong>
+                        MeraHisab
 
-    <a href="index.html">Back to Main Website</a>
+                    </p>
 
-  </div>
-</footer>
+                    <p>
 
+                        <strong>Platform:</strong>
+                        Android
 
-<script>
-document.getElementById("currentYear").textContent =
-  new Date().getFullYear();
-</script>
+                    </p>
+
+                    <p>
+
+                        <strong>File Type:</strong>
+                        APK
+
+                    </p>
+
+                    <p>
+
+                        <strong>File Name:</strong>
+                        MeraHisab.apk
+
+                    </p>
+
+                    <p>
+
+                        <strong>File Size:</strong>
+                        12.18 MiB
+
+                    </p>
+
+                    <p>
+
+                        <strong>Distribution:</strong>
+                        Official Website
+
+                    </p>
+
+                </div>
+
+                <a class="action"
+                   href="merahisab.html">
+
+                    View Application Details
+
+                </a>
+
+            </section>
+
+            <!-- FILE INTEGRITY -->
+
+            <section class="upgrade-card download-section">
+
+                <h2>Download Integrity</h2>
+
+                <p>
+
+                    Use the SHA-256 checksum below
+                    to verify the downloaded APK
+                    against this published release.
+
+                </p>
+
+                <div class="checksum"
+                     id="apkChecksum">40acd9153f051bb9cab6504c0895d5feb59466f2585068285497956b91dbf43f</div>
+
+                <div class="download-actions">
+
+                    <button class="action"
+                            id="copyChecksum"
+                            type="button">
+
+                        Copy SHA-256
+
+                    </button>
+
+                </div>
+
+                <p id="copyStatus"
+                   role="status"
+                   aria-live="polite">
+
+                </p>
+
+                <p>
+
+                    If the checksum does not match,
+                    do not install the downloaded file.
+
+                </p>
+
+                <p>
+
+                    A matching checksum verifies
+                    file integrity against the
+                    published reference. It does
+                    not guarantee that an app is
+                    free from security risks.
+
+                </p>
+
+            </section>
+
+            <!-- INSTALLATION GUIDE -->
+
+            <section class="upgrade-card download-section">
+
+                <h2>Android Installation Guide</h2>
+
+                <ol class="installation-list">
+
+                    <li>
+
+                        Tap the Download Android APK
+                        button.
+
+                    </li>
+
+                    <li>
+
+                        Wait until the file download
+                        is complete.
+
+                    </li>
+
+                    <li>
+
+                        Open the downloaded APK
+                        from your Downloads folder.
+
+                    </li>
+
+                    <li>
+
+                        If Android requests permission,
+                        review the warning carefully
+                        and verify the source before
+                        allowing installation.
+
+                    </li>
+
+                    <li>
+
+                        Follow the Android installation
+                        instructions.
+
+                    </li>
+
+                    <li>
+
+                        After installation, disable
+                        permission to install unknown
+                        apps if you enabled it.
+
+                    </li>
+
+                    <li>
+
+                        Open MeraHisab and follow
+                        the in-app instructions.
+
+                    </li>
+
+                </ol>
+
+                <p>
+
+                    Installation settings may differ
+                    depending on your Android version
+                    and device manufacturer.
+
+                </p>
+
+            </section>
+
+            <!-- UPDATE SAFETY -->
+
+            <section class="upgrade-card download-section">
+
+                <h2>Before Updating Your App</h2>
+
+                <p>
+
+                    Create a backup of your existing
+                    financial records using available
+                    in-app backup or export features.
+
+                </p>
+
+                <p>
+
+                    Keep a separate copy of important
+                    financial records before updating.
+
+                </p>
+
+                <p>
+
+                    Do not uninstall an existing app
+                    without confirming that your data
+                    has been backed up.
+
+                </p>
+
+                <p>
+
+                    Installing an update requires
+                    compatible application identity
+                    and signing credentials.
+
+                </p>
+
+            </section>
+
+        </section>
+
+        <!-- ROYAL KHATA DOWNLOAD -->
+
+        <section id="royalDownload" hidden>
+
+            <div class="download-hero">
+
+                <span class="download-status">
+
+                    Download Not Available
+
+                </span>
+
+                <h1>Royal Khata</h1>
+
+                <p>
+
+                    Digital Khata &amp;
+                    Credit-Debit Management
+
+                </p>
+
+                <p>
+
+                    The Royal Khata APK is not
+                    currently available through
+                    this download page.
+
+                </p>
+
+                <a class="download-button"
+                   href="royal-khata.html">
+
+                    Explore Royal Khata
+
+                </a>
+
+            </div>
+
+            <section class="upgrade-card">
+
+                <h2>Download Availability</h2>
+
+                <p>
+
+                    An official download option
+                    will be provided when the APK
+                    is published.
+
+                </p>
+
+                <p>
+
+                    Avoid unofficial APK files
+                    claiming to be Royal Khata.
+
+                </p>
+
+                <a class="action"
+                   href="downloads.html">
+
+                    Return to Download Center
+
+                </a>
+
+            </section>
+
+        </section>
+
+        <!-- INVALID APP SELECTION -->
+
+        <section id="invalidDownload" hidden>
+
+            <div class="download-hero">
+
+                <h1>Application Not Found</h1>
+
+                <p>
+
+                    The selected application
+                    is not available.
+
+                </p>
+
+                <a class="download-button"
+                   href="downloads.html">
+
+                    Browse Available Apps
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- SECURITY INFORMATION -->
+
+        <section class="upgrade-card download-section">
+
+            <h2>Safe Download Guidelines</h2>
+
+            <ul class="installation-list">
+
+                <li>
+
+                    Download applications only
+                    from trusted official sources.
+
+                </li>
+
+                <li>
+
+                    Keep Google Play Protect
+                    enabled on your Android device.
+
+                </li>
+
+                <li>
+
+                    Review application permissions
+                    before granting access.
+
+                </li>
+
+                <li>
+
+                    Never share passwords,
+                    PINs or recovery keys.
+
+                </li>
+
+                <li>
+
+                    Maintain regular backups
+                    of important financial data.
+
+                </li>
+
+            </ul>
+
+            <a class="action"
+               href="privacy.html">
+
+                Privacy &amp; Security Information
+
+            </a>
+
+        </section>
+
+        <!-- SUPPORT -->
+
+        <section class="upgrade-card download-section">
+
+            <h2>Need Download Assistance?</h2>
+
+            <p>
+
+                If you experience installation
+                problems, download errors or
+                compatibility issues, visit
+                our support page.
+
+            </p>
+
+            <div class="download-actions">
+
+                <a class="action"
+                   href="contact.html">
+
+                    Contact Support
+
+                </a>
+
+                <a class="action"
+                   href="downloads.html">
+
+                    All Applications
+
+                </a>
+
+                <a class="action"
+                   href="index.html">
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="site">
+
+        <div class="container">
+
+            <h2>MeraHisab</h2>
+
+            <p>Your Money. Your Control.</p>
+
+            <nav aria-label="Footer navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="compare.html">Compare</a>
+
+                <a href="tools.html">Tools</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <p>
+
+                Official Website:
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <p>
+
+                &copy; <span data-year></span>
+
+                MeraHisab. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- DOWNLOAD PAGE ENGINE -->
+
+    <script>
+
+        (() => {
+
+            "use strict";
+
+            const get = id =>
+                document.getElementById(id);
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+            const app = (
+                params.get("app") ?? "merahisab"
+            ).trim().toLowerCase();
+
+            const isMeraHisab =
+                app === "merahisab" ||
+                app === "mera-hisab";
+
+            const isRoyalKhata =
+                app === "roy-khata" ||
+                app === "royal-khata" ||
+                app === "royalkhata";
+
+            get("merahisabDownload").hidden =
+                !isMeraHisab;
+
+            get("royalDownload").hidden =
+                !isRoyalKhata;
+
+            get("invalidDownload").hidden =
+                !isMeraHisab && !isRoyalKhata;
+
+            if (isRoyalKhata) {
+
+                document.title =
+                    "Royal Khata Download | MeraHisab";
+
+            } else if (isMeraHisab) {
+
+                document.title =
+                    "Download MeraHisab | Android APK";
+
+            } else {
+
+                document.title =
+                    "Application Not Found | MeraHisab";
+
+            }
+
+            get("copyChecksum").addEventListener(
+                "click",
+                async () => {
+
+                    const checksum =
+                        get("apkChecksum")
+                            .textContent.trim();
+
+                    try {
+
+                        await navigator.clipboard
+                            .writeText(checksum);
+
+                        get("copyStatus").textContent =
+                            "SHA-256 checksum copied.";
+
+                    } catch (error) {
+
+                        get("copyStatus").textContent =
+                            "Please select and copy the checksum manually.";
+
+                    }
+
+                }
+            );
+
+        })();
+
+    </script>
 
 </body>
-</html>
+
+                  </html>
