@@ -1,0 +1,66 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- OFFICIAL HOMEPAGE -->
+
+    <url>
+        <loc>https://merahisab.store/</loc>
+    </url>
+
+    <!-- MERAHISAB APPLICATION -->
+
+    <url>
+        <loc>https://merahisab.store/merahisab.html</loc>
+    </url>
+
+    <!-- ROYAL KHATA APPLICATION -->
+
+    <url>
+        <loc>https://merahisab.store/royal-khata.html</loc>
+    </url>
+
+    <!-- OFFICIAL DOWNLOAD CENTER -->
+
+    <url>
+        <loc>https://merahisab.store/downloads.html</loc>
+    </url>
+
+    <!-- MERAHISAB APK DOWNLOAD -->
+
+    <url>
+        <loc>https://merahisab.store/download.html</loc>
+    </url>
+
+    <!-- APPLICATION COMPARISON -->
+
+    <url>
+        <loc>https://merahisab.store/compare.html</loc>
+    </url>
+
+    <!-- FINANCIAL CALCULATORS AND TOOLS -->
+
+    <url>
+        <loc>https://merahisab.store/tools.html</loc>
+    </url>
+
+    <!-- PRIVACY AND DATA PROTECTION -->
+
+    <url>
+        <loc>https://merahisab.store/privacy.html</loc>
+    </url>
+
+    <!-- ABOUT MERAHISAB -->
+
+    <url>
+        <loc>https://merahisab.store/about.html</loc>
+    </url>
+
+    <!-- CONTACT AND SUPPORT -->
+
+    <url>
+        <loc>https://merahisab.store/contact.html</loc>
+    </url>
+
+</urlset>
