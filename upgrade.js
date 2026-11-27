@@ -1,1282 +1,1186 @@
-
-/* ==========================================
-   MERAHISAB SHARED WEBSITE ENGINE
-   Version: 2.1.0
-   Official: https://merahisab.store/
-========================================== */
-
+/* MeraHisab shared website engine — version 3.0.0
+ * Save as /upgrade.js beside index.html.
+ * Official website: https://merahisab.store/
+ */
 (function () {
-
-"use strict";
-
-if (window.MeraHisabUpgrade) {
-  return;
-}
-
-/* ==========================================
-   WEBSITE CONFIGURATION
-========================================== */
-
-const CONFIG = Object.freeze({
-
-  version: "2.1.0",
-
-  securityScript: "/security.js",
-
-  themeStorageKey: "mh-theme",
-
-  defaultTheme: "dark",
-
-  languageStylesheet: "/language.css",
-
-  languageScripts: [
-
-    "/language.js",
-
-    "/language-content.js",
-
-    "/language-integration.js"
-
-  ]
-
-});
-
-let languageStatus = "pending";
-
-let languagePromise = null;
-
-let initialized = false;
-let securityStatus = "pending";
-let securityPromise = null;
-
-/* ==========================================
-   SAFE LOCAL STORAGE
-========================================== */
-
-function readStorage(key) {
-
-  try {
-
-    return localStorage.getItem(key);
-
-  } catch (error) {
-
-    return null;
-
-  }
-
-}
-
-function writeStorage(key,value) {
-
-  try {
-
-    localStorage.setItem(key,value);
-
-    return true;
-
-  } catch (error) {
-
-    return false;
-
-  }
-
-}
-
-/* ==========================================
-   THEME MANAGEMENT
-========================================== */
-
-const supportedThemes = [
-
-  "dark",
-
-  "light",
-
-  "system"
-
-];
-
-const systemTheme = window.matchMedia(
-
-  "(prefers-color-scheme: dark)"
-
-);
-
-function normalizeTheme(theme) {
-
-  return supportedThemes.includes(theme)
-
-    ? theme
-
-    : CONFIG.defaultTheme;
-
-}
-
-let currentTheme = normalizeTheme(
-
-  readStorage(CONFIG.themeStorageKey)
-
-);
-
-function getResolvedTheme() {
-
-  if (currentTheme === "system") {
-
-    return systemTheme.matches
-
-      ? "dark"
-
-      : "light";
-
-  }
-
-  return currentTheme;
-
-}
-
-function applyTheme() {
-
-  const resolved = getResolvedTheme();
-
-  document.documentElement.dataset.theme =
-    resolved;
-
-  document.documentElement.dataset.themeMode =
-    currentTheme;
-
-  document.documentElement.style.colorScheme =
-    resolved;
-
-  const meta = document.querySelector(
-
-    'meta[name="theme-color"]'
-
-  );
-
-  if (meta) {
-
-    meta.setAttribute(
-
-      "content",
-
-      resolved === "dark"
-
-        ? "#080f20"
-
-        : "#faf6ed"
-
-    );
-
-  }
-
-  updateThemeControls();
-
-}
-
-function setTheme(theme,persist = true) {
-
-  currentTheme = normalizeTheme(theme);
-
-  if (persist) {
-
-    writeStorage(
-
-      CONFIG.themeStorageKey,
-
-      currentTheme
-
-    );
-
-  }
-
-  applyTheme();
-
-  window.dispatchEvent(
-
-    new CustomEvent(
-
-      "merahisab:themechange",
-
-      {
-
-        detail: {
-
-          mode: currentTheme,
-
-          resolved: getResolvedTheme()
-
-        }
-
-      }
-
-    )
-
-  );
-
-  return currentTheme;
-
-}
-
-function translate(key,fallback) {
-
-  const engine = window.MeraHisabLanguage;
-
-  if (
-
-    engine &&
-
-    typeof engine.t === "function"
-
-  ) {
-
-    return engine.t(key,fallback);
-
-  }
-
-  return fallback;
-
-}
-
-/* ==========================================
-   THEME CONTROL LABELS
-========================================== */
-
-function getThemeLabel(theme) {
-
-  const labels = {
-
-    dark: translate(
-
-      "feature.darkMode",
-
-      "Dark Mode"
-
-    ),
-
-    light: translate(
-
-      "feature.lightMode",
-
-      "Light Mode"
-
-    ),
-
-    system: translate(
-
-      "feature.systemTheme",
-
-      "System Theme"
-
-    )
-
+  "use strict";
+  if (window.MeraHisabUpgrade) return;
+
+  const CONFIG = Object.freeze({
+    version: "3.0.0", themeKey: "mh-theme", defaultTheme: "dark",
+    assetTimeout: 15000, retryDelay: 5000
+  });
+
+  const root = document.documentElement;
+  const modes = ["dark", "light", "system"];
+  const icons = { dark: "🌙", light: "☀️", system: "◐" };
+  const assets = new Map();
+
+  const systems = {
+    language: {
+      status: "pending",
+      promise: null,
+      error: null,
+      attempts: 0
+    },
+    security: {
+      status: "pending",
+      promise: null,
+      error: null,
+      attempts: 0
+    }
   };
 
-  return labels[theme];
+  const frame = window.requestAnimationFrame
+    ? window.requestAnimationFrame.bind(window)
+    : callback => setTimeout(callback, 16);
 
-}
+  let initialized = false;
+  let layoutFrame = null;
+  let headerOffset = 20;
+  let header = null;
+  let headerObserver = null;
+  let retryTimer = null;
+  let languageStylesReady = false;
+  let languageScriptsReady = false;
+  let lastAppearance = "";
+  let lastRetry = 0;
+  let legacyRender = null;
 
-function updateThemeControls() {
+  let initialRepairAllowed = Boolean(window.location.hash);
+  const initialHash = window.location.hash;
+  const repairDeadline = Date.now() + 5000;
 
-  const button = document.getElementById(
+  let systemQuery = null;
 
-    "theme"
+  try {
+    systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  } catch {}
 
-  );
-
-  if (button) {
-
-    const label = getThemeLabel(
-
-      currentTheme
-
-    );
-
-    button.setAttribute(
-
-      "aria-label",
-
-      label
-
-    );
-
-    button.setAttribute(
-
-      "title",
-
-      label
-
-    );
-
-    button.dataset.themeMode =
-      currentTheme;
-
-    if (button.children.length === 0) {
-
-      const icons = {
-
-        dark: "🌙",
-
-        light: "☀️",
-
-        system: "◐"
-
-      };
-
-      button.textContent =
-
-        icons[currentTheme] + " " + label;
-
+  function readTheme() {
+    try {
+      return window.localStorage.getItem(CONFIG.themeKey);
+    } catch {
+      return undefined;
     }
-
   }
 
-  document.querySelectorAll(
-
-    "[data-theme-select]"
-
-  ).forEach(function (control) {
-
-    if (control.tagName === "SELECT") {
-
-      control.value = currentTheme;
-
-    }
-
-  });
-
-}
-
-/* ==========================================
-   THEME SWITCHING
-========================================== */
-
-function cycleTheme() {
-
-  const index = supportedThemes.indexOf(
-
-    currentTheme
-
-  );
-
-  const next = supportedThemes[
-
-    (index + 1) % supportedThemes.length
-
-  ];
-
-  setTheme(next);
-
-}
-
-function initializeThemeControls() {
-
-  const button = document.getElementById(
-
-    "theme"
-
-  );
-
-  if (button) {
-
-    button.onclick = cycleTheme;
-
-    if (button.tagName === "BUTTON") {
-
-      button.type = "button";
-
-    }
-
+  function normalizeTheme(value) {
+    return modes.includes(value) ? value : CONFIG.defaultTheme;
   }
 
-  document.querySelectorAll(
+  let currentTheme = normalizeTheme(readTheme());
 
-    "[data-theme-select]"
+  function language() {
+    const engine = window.MeraHisabLanguage;
 
-  ).forEach(function (control) {
+    if (engine && typeof engine.getLanguage === "function") {
+      return engine.getLanguage();
+    }
 
-    if (control.tagName === "SELECT") {
+    return root.dataset.language === "hi" ||
+      /^hi(?:-|$)/i.test(root.lang)
+      ? "hi"
+      : "en";
+  }
 
-      control.addEventListener(
+  function translate(key, english, hindi = english) {
+    const fallback = language() === "hi" ? hindi : english;
+    const engine = window.MeraHisabLanguage;
 
-        "change",
+    return engine && typeof engine.t === "function"
+      ? engine.t(key, fallback)
+      : fallback;
+  }
 
-        function () {
+  function getResolvedTheme() {
+    if (currentTheme !== "system") return currentTheme;
 
-          setTheme(control.value);
+    return systemQuery
+      ? (systemQuery.matches ? "dark" : "light")
+      : CONFIG.defaultTheme;
+  }
 
+  function themeLabel(mode) {
+    const labels = {
+      dark: ["feature.darkMode", "Dark Mode", "डार्क मोड"],
+      light: ["feature.lightMode", "Light Mode", "लाइट मोड"],
+      system: ["feature.systemTheme", "System Theme", "सिस्टम थीम"]
+    };
+
+    return translate(...labels[mode]);
+  }
+
+  function setText(element, value) {
+    if (element && element.textContent !== value) {
+      element.textContent = value;
+    }
+  }
+
+  function updateThemeControls() {
+    const button = document.getElementById("theme");
+    const next = modes[
+      (modes.indexOf(currentTheme) + 1) % modes.length
+    ];
+
+    if (button) {
+      const label = themeLabel(currentTheme);
+
+      const action = language() === "hi"
+        ? `थीम: ${label}। ${themeLabel(next)} पर जाएँ।`
+        : `Theme: ${label}. Switch to ${themeLabel(next)}.`;
+
+      button.setAttribute("aria-label", action);
+      button.setAttribute("title", action);
+      button.setAttribute("data-no-translate", "true");
+      button.dataset.themeMode = currentTheme;
+
+      if (button.tagName === "BUTTON") {
+        button.type = "button";
+      }
+
+      const labelNode = button.querySelector("[data-theme-label]");
+      const iconNode = button.querySelector("[data-theme-icon]");
+
+      if (labelNode) {
+        setText(labelNode, label);
+      } else if (!button.children.length) {
+        setText(button, icons[currentTheme] + " " + label);
+      }
+
+      if (iconNode) {
+        if (
+          !iconNode.children.length &&
+          iconNode.namespaceURI !== "http://www.w3.org/2000/svg"
+        ) {
+          setText(iconNode, icons[currentTheme]);
         }
 
-      );
-
+        iconNode.setAttribute("aria-hidden", "true");
+      }
     }
 
-  });
+    document.querySelectorAll(
+      "select[data-theme-select]"
+    ).forEach(select => {
+      select.value = currentTheme;
+    });
 
-  updateThemeControls();
-
-}
-
-/* ==========================================
-   SYSTEM THEME DETECTION
-========================================== */
-
-function handleSystemThemeChange() {
-
-  if (currentTheme === "system") {
-
-    applyTheme();
-
+    scheduleLayout();
   }
 
-}
+  function applyTheme(notify = true) {
+    const resolved = getResolvedTheme();
+    const appearance = currentTheme + ":" + resolved;
+    const changed = appearance !== lastAppearance;
 
-if (
+    lastAppearance = appearance;
 
-  typeof systemTheme.addEventListener ===
-  "function"
-
-) {
-
-  systemTheme.addEventListener(
-
-    "change",
-
-    handleSystemThemeChange
-
-  );
-
-} else if (
-
-  typeof systemTheme.addListener ===
-  "function"
-
-) {
-
-  systemTheme.addListener(
-
-    handleSystemThemeChange
-
-  );
-
-}
-
-/* ==========================================
-   CROSS TAB THEME SYNCHRONIZATION
-========================================== */
-
-window.addEventListener(
-
-  "storage",
-
-  function (event) {
+    root.dataset.theme = resolved;
+    root.dataset.themeMode = currentTheme;
+    root.style.colorScheme = resolved;
 
     if (
-
-      event.key === CONFIG.themeStorageKey
-
+      document.body &&
+      document.body.hasAttribute("data-theme")
     ) {
-
-      setTheme(
-
-        event.newValue ||
-        CONFIG.defaultTheme,
-
-        false
-
-      );
-
+      document.body.dataset.theme = resolved;
     }
 
-  }
-
-);
-
-/* APPLY THEME AS EARLY AS POSSIBLE */
-
-applyTheme();
-
-/* ==========================================
-   COPYRIGHT YEAR
-========================================== */
-
-function updateCopyrightYear() {
-
-  const year = new Date().getFullYear();
-
-  document.querySelectorAll(
-
-    "[data-year]"
-
-  ).forEach(function (element) {
-
-    element.textContent = year;
-
-  });
-
-}
-
-/* ==========================================
-   STYLESHEET LOADER
-========================================== */
-
-function loadStylesheet(path) {
-
-  return new Promise(function (resolve,reject) {
-
-    const absoluteURL = new URL(
-
-      path,
-
-      window.location.origin
-
-    ).href;
-
-    const existing = Array.from(
-
-      document.querySelectorAll(
-
-        'link[rel="stylesheet"]'
-
-      )
-
-    ).find(function (link) {
-
-      return link.href === absoluteURL;
-
+    document.querySelectorAll(
+      'meta[name="theme-color"]'
+    ).forEach(meta => {
+      meta.setAttribute(
+        "content",
+        resolved === "dark" ? "#080f20" : "#faf6ed"
+      );
     });
-
-    if (existing && existing.sheet) {
-
-      resolve();
-
-      return;
-
-    }
-
-    const link = existing ||
-
-      document.createElement("link");
-
-    const timeout = window.setTimeout(
-
-      function () {
-
-        cleanup();
-
-        reject(
-
-          new Error("Stylesheet timeout")
-
-        );
-
-      },
-
-      15000
-
-    );
-
-    function cleanup() {
-
-      clearTimeout(timeout);
-
-      link.removeEventListener(
-
-        "load",
-
-        handleLoad
-
-      );
-
-      link.removeEventListener(
-
-        "error",
-
-        handleError
-
-      );
-
-    }
-
-    function handleLoad() {
-
-      cleanup();
-
-      resolve();
-
-    }
-
-    function handleError() {
-
-      cleanup();
-
-      reject(
-
-        new Error("Stylesheet unavailable")
-
-      );
-
-    }
-
-    link.addEventListener(
-
-      "load",
-
-      handleLoad
-
-    );
-
-    link.addEventListener(
-
-      "error",
-
-      handleError
-
-    );
-
-    if (!existing) {
-
-      link.rel = "stylesheet";
-
-      link.href = absoluteURL;
-
-      document.head.appendChild(link);
-
-    }
-
-  });
-
-}
-
-/* ==========================================
-   SCRIPT AVAILABILITY CHECK
-========================================== */
-
-function isScriptReady(path) {
-
-  if (path === CONFIG.securityScript) {
-    return Boolean(window.MeraHisabSecurity &&
-      typeof window.MeraHisabSecurity.initialize === "function");
-  }
-
-  if (path === "/language.js") {
-
-    return Boolean(
-
-      window.MeraHisabLanguage
-
-    );
-
-  }
-
-  if (path === "/language-content.js") {
-
-    return Boolean(
-
-      window.MeraHisabLanguageContent
-
-    );
-
-  }
-
-  if (path === "/language-integration.js") {
-
-    return Boolean(
-
-      window.MeraHisabLanguageIntegration
-
-    );
-
-  }
-
-  return false;
-
-}
-
-/* ==========================================
-   SAFE SEQUENTIAL SCRIPT LOADER
-========================================== */
-
-function loadScript(path) {
-
-  return new Promise(function (resolve,reject) {
-
-    if (isScriptReady(path)) {
-
-      resolve();
-
-      return;
-
-    }
-
-    const absoluteURL = new URL(
-
-      path,
-
-      window.location.origin
-
-    ).href;
-
-    const existing = Array.from(
-
-      document.querySelectorAll("script[src]")
-
-    ).find(function (script) {
-
-      return script.src === absoluteURL;
-
-    });
-
-    const script = existing ||
-
-      document.createElement("script");
-
-    const timeout = window.setTimeout(
-
-      function () {
-
-        cleanup();
-
-        reject(
-
-          new Error("Script loading timeout")
-
-        );
-
-      },
-
-      15000
-
-    );
-
-    function cleanup() {
-
-      clearTimeout(timeout);
-
-      script.removeEventListener(
-
-        "load",
-
-        handleLoad
-
-      );
-
-      script.removeEventListener(
-
-        "error",
-
-        handleError
-
-      );
-
-    }
-
-    function handleLoad() {
-
-      cleanup();
-
-      if (isScriptReady(path)) {
-
-        resolve();
-
-      } else {
-
-        reject(
-
-          new Error("Required script API unavailable")
-
-        );
-
-      }
-
-    }
-
-    function handleError() {
-
-      cleanup();
-
-      reject(
-
-        new Error("Unable to load " + path)
-
-      );
-
-    }
-
-    script.addEventListener(
-
-      "load",
-
-      handleLoad
-
-    );
-
-    script.addEventListener(
-
-      "error",
-
-      handleError
-
-    );
-
-    if (!existing) {
-
-      script.src = absoluteURL;
-
-      script.async = false;
-
-      document.head.appendChild(script);
-
-    }
-
-  });
-
-}
-
-/* ==========================================
-   SHARED SECURITY SYSTEM
-========================================== */
-
-function loadSecuritySystem() {
-  if (securityPromise) return securityPromise;
-
-  securityStatus = "loading";
-  securityPromise = (async function () {
-    try {
-      await loadScript(CONFIG.securityScript);
-      const security = window.MeraHisabSecurity;
-      if (security.initialize() !== true) {
-        throw new Error("Security initialization failed");
-      }
-      securityStatus = "ready";
-      return true;
-    } catch (error) {
-      securityStatus = "unavailable";
-      console.warn("MeraHisab security system:", error.message);
-      return false;
-    }
-  })();
-  return securityPromise;
-}
-
-/* ==========================================
-   SHARED LANGUAGE SYSTEM
-========================================== */
-
-function loadLanguageSystem() {
-
-  if (languagePromise) {
-
-    return languagePromise;
-
-  }
-
-  languageStatus = "loading";
-
-  languagePromise = (async function () {
-
-    try {
-
-      await loadStylesheet(
-
-        CONFIG.languageStylesheet
-
-      );
-
-      for (
-
-        const path of CONFIG.languageScripts
-
-      ) {
-
-        await loadScript(path);
-
-      }
-
-      const content =
-
-        window.MeraHisabLanguageContent;
-
-      const integration =
-
-        window.MeraHisabLanguageIntegration;
-
-      if (
-
-        !content.register() ||
-
-        !integration.initialize()
-
-      ) {
-
-        throw new Error(
-
-          "Language initialization failed"
-
-        );
-
-      }
-
-      languageStatus = "ready";
-
-      updateThemeControls();
-
-      window.dispatchEvent(
-
-        new CustomEvent(
-
-          "merahisab:languageready"
-
-        )
-
-      );
-
-      return true;
-
-    } catch (error) {
-
-      languageStatus = "unavailable";
-
-      console.warn(
-
-        "MeraHisab language system:",
-
-        error.message
-
-      );
-
-      return false;
-
-    }
-
-  })();
-
-  return languagePromise;
-
-}
-
-/* ==========================================
-   LANGUAGE CHANGE SUPPORT
-========================================== */
-
-window.addEventListener(
-
-  "merahisab:languagechange",
-
-  function () {
 
     updateThemeControls();
 
+    if (notify && changed) {
+      window.dispatchEvent(
+        new CustomEvent("merahisab:themechange", {
+          detail: {
+            mode: currentTheme,
+            resolved
+          }
+        })
+      );
+    }
   }
 
-);
+  function setTheme(value, persist = true) {
+    currentTheme = normalizeTheme(value);
 
-/* ==========================================
-   LEGACY CALCULATOR COMPATIBILITY
-========================================== */
+    if (persist) {
+      try {
+        window.localStorage.setItem(
+          CONFIG.themeKey,
+          currentTheme
+        );
+      } catch {}
+    }
 
-function initializeLegacyCalculator() {
-
-  const form = document.querySelector(
-
-    "#calc"
-
-  );
-
-  const result = document.querySelector(
-
-    "#result"
-
-  );
-
-  if (!form || !result) {
-
-    return;
-
+    applyTheme();
+    return currentTheme;
   }
 
-  const amount = form.elements.namedItem(
+  // Match the shared CSS to the real header,
+  // including wrapped Hindi navigation.
+  function measureHeader() {
+    let offset = 20;
 
-    "amount"
+    if (header && header.isConnected) {
+      const style = window.getComputedStyle(header);
+      const height = header.getBoundingClientRect().height;
+      const top = Number.parseFloat(style.top);
 
-  );
+      if (
+        ["sticky", "fixed"].includes(style.position) &&
+        Number.isFinite(top) &&
+        height > 0 &&
+        style.display !== "none" &&
+        style.visibility !== "hidden"
+      ) {
+        offset = Math.ceil(
+          height + Math.max(0, top) + 16
+        );
+      }
+    }
 
-  const rate = form.elements.namedItem(
+    headerOffset = offset;
 
-    "rate"
-
-  );
-
-  const years = form.elements.namedItem(
-
-    "years"
-
-  );
-
-  const kind = form.elements.namedItem(
-
-    "kind"
-
-  );
-
-  if (
-
-    !amount ||
-
-    !rate ||
-
-    !years ||
-
-    !kind
-
-  ) {
-
-    return;
-
-  }
-
-  form.onsubmit = function (event) {
-
-    event.preventDefault();
-
-    const a = Number(amount.value);
-
-    const r = Number(rate.value) / 100;
-
-    const n = Number(years.value);
-
-    const k = kind.value;
+    const value = offset + "px";
 
     if (
-
-      amount.value.trim() === "" ||
-
-      rate.value.trim() === "" ||
-
-      years.value.trim() === "" ||
-
-      !Number.isFinite(a) ||
-
-      !Number.isFinite(r) ||
-
-      !Number.isFinite(n) ||
-
-      a < 0 ||
-
-      r < 0 ||
-
-      n <= 0
-
+      root.style.getPropertyValue("--mh-scroll-offset") !== value
     ) {
+      root.style.setProperty("--mh-scroll-offset", value);
+    }
 
-      result.textContent = translate(
+    return offset;
+  }
 
-        "calculator.invalidInput",
+  function scheduleLayout() {
+    if (!initialized || layoutFrame !== null) return;
 
-        "Please enter valid values."
+    layoutFrame = frame(() => {
+      layoutFrame = null;
+      measureHeader();
+    });
+  }
 
-      );
+  function cancelInitialRepair() {
+    initialRepairAllowed = false;
+  }
 
+  function repairInitialFragment() {
+    if (!initialRepairAllowed) return;
+
+    initialRepairAllowed = false;
+
+    if (
+      Date.now() > repairDeadline ||
+      window.location.hash !== initialHash
+    ) {
       return;
-
     }
 
-    let value;
+    let target;
 
-    switch (k) {
-
-      case "simple":
-
-        value = a * r * n;
-
-        break;
-
-      case "compound":
-
-        value = a *
-
-          (Math.pow(1 + r,n) - 1);
-
-        break;
-
-      case "emi":
-
-        const monthlyRate = r / 12;
-
-        const months = n * 12;
-
-        value = monthlyRate === 0
-
-          ? a / months
-
-          : a * monthlyRate /
-
-            (1 - Math.pow(
-
-              1 + monthlyRate,
-
-              -months
-
-            ));
-
-        break;
-
-      case "percentage":
-
-        value = a * r;
-
-        break;
-
-      default:
-
-        value = NaN;
-
-    }
-
-    if (!Number.isFinite(value)) {
-
-      result.textContent = translate(
-
-        "calculator.invalidInput",
-
-        "Please enter valid values."
-
+    try {
+      target = document.getElementById(
+        decodeURIComponent(initialHash.slice(1))
       );
-
+    } catch {
       return;
-
     }
 
-    const engine = window.MeraHisabLanguage;
+    const offset = measureHeader();
 
-    result.textContent = engine
+    if (
+      !target ||
+      !target.isConnected ||
+      offset <= 20
+    ) {
+      return;
+    }
 
-      ? engine.formatCurrency(value)
+    const top = target.getBoundingClientRect().top;
 
-      : new Intl.NumberFormat(
+    // Correct only an obscured target near the top.
+    // Never jump across the page.
+    if (top >= -48 && top < offset - 1) {
+      window.scrollBy({
+        top: top - offset,
+        left: 0,
+        behavior: "instant"
+      });
+    }
+  }
 
-          "en-IN",
+  function initializeLayout() {
+    header = document.querySelector(
+      "header.header, header.site"
+    );
 
-          {
+    measureHeader();
 
-            style: "currency",
+    if (
+      header &&
+      typeof ResizeObserver === "function"
+    ) {
+      headerObserver = new ResizeObserver(scheduleLayout);
+      headerObserver.observe(header);
+    } else if (
+      header &&
+      typeof MutationObserver === "function"
+    ) {
+      headerObserver = new MutationObserver(scheduleLayout);
 
-            currency: "INR"
+      headerObserver.observe(header, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+    }
 
-          }
+    window.addEventListener(
+      "resize",
+      scheduleLayout,
+      { passive: true }
+    );
 
-        ).format(value);
+    window.addEventListener(
+      "load",
+      scheduleLayout,
+      { once: true }
+    );
 
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener(
+        "resize",
+        scheduleLayout,
+        { passive: true }
+      );
+    }
+
+    if (document.fonts) {
+      document.fonts.ready
+        .then(scheduleLayout)
+        .catch(() => {});
+
+      if (document.fonts.addEventListener) {
+        document.fonts.addEventListener(
+          "loadingdone",
+          scheduleLayout
+        );
+      }
+    }
+
+    try {
+      const navigation =
+        performance.getEntriesByType("navigation")[0];
+
+      if (
+        navigation &&
+        navigation.type === "back_forward"
+      ) {
+        cancelInitialRepair();
+      }
+    } catch {}
+
+    [
+      "wheel",
+      "touchstart",
+      "pointerdown",
+      "keydown"
+    ].forEach(type => {
+      window.addEventListener(
+        type,
+        cancelInitialRepair,
+        {
+          passive: true,
+          once: true
+        }
+      );
+    });
+
+    window.addEventListener("hashchange", () => {
+      cancelInitialRepair();
+      scheduleLayout();
+    });
+  }
+
+  // Only these fixed, same-origin assets can be inserted.
+  const scriptChecks = {
+    "/security.js": () => hasMethods(
+      window.MeraHisabSecurity,
+      ["initialize", "getStatus"]
+    ),
+
+    "/language.js": () => hasMethods(
+      window.MeraHisabLanguage,
+      [
+        "getLanguage",
+        "setLanguage",
+        "t",
+        "apply",
+        "addTranslations"
+      ]
+    ),
+
+    "/language-content.js": () => hasMethods(
+      window.MeraHisabLanguageContent,
+      [
+        "register",
+        "getKeys",
+        "getTranslation"
+      ]
+    ),
+
+    "/language-integration.js": () => hasMethods(
+      window.MeraHisabLanguageIntegration,
+      [
+        "initialize",
+        "refresh",
+        "getStatus"
+      ]
+    )
   };
 
-}
+  function hasMethods(api, methods) {
+    return Boolean(
+      api &&
+      methods.every(
+        name => typeof api[name] === "function"
+      )
+    );
+  }
 
-/* ==========================================
-   PUBLIC WEBSITE API
-========================================== */
+  function loadAsset(path) {
+    const stylesheet = path === "/language.css";
 
-window.MeraHisabUpgrade = Object.freeze({
+    if (
+      !stylesheet &&
+      !Object.prototype.hasOwnProperty.call(
+        scriptChecks,
+        path
+      )
+    ) {
+      return Promise.reject(
+        new Error("Asset path not allowed.")
+      );
+    }
 
-  version: CONFIG.version,
+    let url;
 
-  setTheme: setTheme,
+    try {
+      url = new URL(path, window.location.origin);
 
-  getTheme: function () {
+      if (
+        url.origin !== window.location.origin ||
+        !["https:", "http:"].includes(url.protocol)
+      ) {
+        throw new Error(
+          "Use the website through HTTP or HTTPS."
+        );
+      }
+    } catch (error) {
+      return Promise.reject(error);
+    }
 
-    return currentTheme;
+    if (!stylesheet && scriptChecks[path]()) {
+      return Promise.resolve(true);
+    }
 
-  },
+    if (assets.has(url.href)) {
+      return assets.get(url.href);
+    }
 
-  getResolvedTheme: getResolvedTheme,
+    const selector = stylesheet
+      ? 'link[rel="stylesheet"]'
+      : "script[src]";
 
-  loadLanguageSystem: loadLanguageSystem,
+    let element = Array.from(
+      document.querySelectorAll(selector)
+    ).find(node =>
+      (stylesheet ? node.href : node.src) === url.href
+    );
 
-  loadSecuritySystem: loadSecuritySystem,
+    if (
+      stylesheet &&
+      element &&
+      element.sheet &&
+      !element.disabled
+    ) {
+      return Promise.resolve(true);
+    }
 
-  getStatus: function () {
+    if (
+      element &&
+      (
+        element.dataset.mhAssetState === "failed" ||
+        element.disabled
+      )
+    ) {
+      element.remove();
+      element = null;
+    }
 
-    return {
+    const existing = Boolean(element);
 
-      version: CONFIG.version,
+    element = element || document.createElement(
+      stylesheet ? "link" : "script"
+    );
 
-      initialized: initialized,
+    const promise = new Promise((resolve, reject) => {
+      let settled = false;
+      let timer;
 
-      theme: currentTheme,
+      function finish(error) {
+        if (settled) return;
 
-      resolvedTheme: getResolvedTheme(),
+        settled = true;
+        clearTimeout(timer);
 
-      languageStatus: languageStatus,
+        element.removeEventListener("load", onLoad);
+        element.removeEventListener("error", onError);
 
-      securityStatus: securityStatus,
+        element.dataset.mhAssetState =
+          error ? "failed" : "ready";
 
-      language:
+        if (error) {
+          element.remove();
+          reject(error);
+        } else {
+          resolve(true);
+        }
+      }
 
-        window.MeraHisabLanguage
+      function onLoad() {
+        const ready = stylesheet
+          ? Boolean(element.sheet)
+          : scriptChecks[path]();
 
-          ? window.MeraHisabLanguage.getLanguage()
+        finish(
+          ready
+            ? null
+            : new Error(
+              "Required asset API unavailable: " + path
+            )
+        );
+      }
 
-          : "en",
+      function onError() {
+        finish(
+          new Error("Unable to load " + path)
+        );
+      }
 
-      secureContext:
+      element.addEventListener("load", onLoad);
+      element.addEventListener("error", onError);
 
-        window.isSecureContext === true,
+      timer = setTimeout(
+        () => finish(
+          new Error("Loading timed out: " + path)
+        ),
+        CONFIG.assetTimeout
+      );
 
-      browserOnline:
+      if (!existing) {
+        if (stylesheet) {
+          element.rel = "stylesheet";
+          element.href = url.href;
+        } else {
+          element.src = url.href;
+          element.async = false;
+        }
 
-        navigator.onLine
+        try {
+          document.head.appendChild(element);
+        } catch (error) {
+          finish(error);
+        }
+      }
+    });
 
+    assets.set(url.href, promise);
+
+    const removePending = () => {
+      if (assets.get(url.href) === promise) {
+        assets.delete(url.href);
+      }
     };
 
+    promise.then(removePending, removePending);
+
+    return promise;
   }
 
-});
+  function scheduleRetry() {
+    if (
+      retryTimer !== null ||
+      navigator.onLine === false ||
+      document.visibilityState === "hidden"
+    ) {
+      return;
+    }
 
-/* ==========================================
-   WEBSITE INITIALIZATION
-========================================== */
+    const retryable = Object.values(systems).some(
+      item =>
+        !item.promise &&
+        item.status !== "ready" &&
+        item.attempts < 2
+    );
 
-function initialize() {
+    if (!retryable) return;
 
-  if (initialized) {
+    retryTimer = setTimeout(() => {
+      retryTimer = null;
 
-    return;
+      if (
+        navigator.onLine === false ||
+        document.visibilityState === "hidden"
+      ) {
+        return;
+      }
 
+      if (systems.language.attempts < 2) {
+        loadLanguageSystem();
+      }
+
+      if (systems.security.attempts < 2) {
+        loadSecuritySystem();
+      }
+    }, CONFIG.retryDelay);
   }
 
-  initialized = true;
+  function runSystem(name, work) {
+    const item = systems[name];
 
-  updateCopyrightYear();
+    if (item.promise) return item.promise;
 
-  initializeThemeControls();
+    if (item.status === "ready") {
+      return Promise.resolve(true);
+    }
 
-  initializeLegacyCalculator();
+    item.status = "loading";
+    item.error = null;
+    item.attempts++;
 
-  loadLanguageSystem();
+    item.promise = Promise.resolve()
+      .then(work)
+      .then(
+        ready => {
+          item.status = ready ? "ready" : "partial";
 
-  loadSecuritySystem();
+          if (!ready) {
+            item.error =
+              "Language styles unavailable; translation scripts are ready.";
+          }
 
-}
+          return ready;
+        },
+        error => {
+          item.status = "unavailable";
 
-if (document.readyState === "loading") {
+          item.error = error instanceof Error
+            ? error.message
+            : "Module unavailable.";
 
-  document.addEventListener(
+          return false;
+        }
+      )
+      .then(ready => {
+        item.promise = null;
 
-    "DOMContentLoaded",
+        scheduleLayout();
+        scheduleRetry();
+
+        return ready;
+      });
+
+    return item.promise;
+  }
+
+  function loadSecuritySystem() {
+    return runSystem("security", async () => {
+      await domReady;
+      await loadAsset("/security.js");
+
+      if (
+        window.MeraHisabSecurity.initialize() !== true
+      ) {
+        throw new Error(
+          "Security initialization failed."
+        );
+      }
+
+      return true;
+    });
+  }
+
+  function loadLanguageSystem() {
+    return runSystem("language", async () => {
+      await domReady;
+
+      const styles = loadAsset("/language.css").then(
+        () => {
+          languageStylesReady = true;
+          return true;
+        },
+        () => {
+          languageStylesReady = false;
+          return false;
+        }
+      );
+
+      await loadAsset("/language.js");
+      await loadAsset("/language-content.js");
+
+      if (
+        window.MeraHisabLanguageContent.register() !== true
+      ) {
+        throw new Error(
+          "Language registration failed."
+        );
+      }
+
+      await loadAsset("/language-integration.js");
+
+      const integration =
+        window.MeraHisabLanguageIntegration;
+
+      if (
+        integration.initialize() !== true ||
+        integration.refresh() !== true
+      ) {
+        throw new Error(
+          "Language integration failed."
+        );
+      }
+
+      languageScriptsReady = true;
+      languageStylesReady = await styles;
+
+      updateThemeControls();
+
+      if (legacyRender) {
+        legacyRender();
+      }
+
+      if (languageStylesReady) {
+        window.dispatchEvent(
+          new CustomEvent(
+            "merahisab:languageready"
+          )
+        );
+      }
+
+      return languageStylesReady;
+    });
+  }
+
+  function retryPending() {
+    return Promise.all([
+      loadLanguageSystem(),
+      loadSecuritySystem()
+    ]);
+  }
+
+  function retryOnConnection() {
+    if (
+      navigator.onLine === false ||
+      Date.now() - lastRetry < CONFIG.retryDelay
+    ) {
+      return;
+    }
+
+    lastRetry = Date.now();
+    retryPending();
+  }
+
+  function updateCopyrightYear() {
+    const year = new Intl.DateTimeFormat("en", {
+      timeZone: "Asia/Kolkata",
+      year: "numeric"
+    }).format(new Date());
+
+    document.querySelectorAll(
+      "[data-year], #currentYear, #copyrightYear"
+    ).forEach(node => setText(node, year));
+  }
+
+  // Compatibility only:
+  // current tools.html owns its separate calculator engine.
+  function initializeLegacyCalculator() {
+    const form = document.getElementById("calc");
+    const output = document.getElementById("result");
+
+    if (!form || !output || !form.elements) return;
+
+    const fields = [
+      "amount",
+      "rate",
+      "years",
+      "kind"
+    ].map(name => form.elements.namedItem(name));
+
+    if (fields.some(field => !field)) return;
+
+    let result = null;
+    let invalid = false;
+
+    legacyRender = () => {
+      if (invalid) {
+        setText(
+          output,
+          translate(
+            "calculator.invalidInput",
+            "Please enter valid values.",
+            "कृपया सही मान भरें।"
+          )
+        );
+      } else if (result !== null) {
+        setText(
+          output,
+          new Intl.NumberFormat(
+            language() === "hi" ? "hi-IN" : "en-IN",
+            {
+              style: "currency",
+              currency: "INR",
+              maximumFractionDigits: 2
+            }
+          ).format(result)
+        );
+      }
+    };
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const [amount, rate, years, kind] = fields;
+
+      const a = Number(amount.value);
+      const r = Number(rate.value) / 100;
+      const n = Number(years.value);
+
+      const percentage = [
+        "percent",
+        "percentage"
+      ].includes(kind.value);
+
+      invalid =
+        !amount.value.trim() ||
+        !rate.value.trim() ||
+        !Number.isFinite(a) ||
+        !Number.isFinite(r) ||
+        a < 0 ||
+        r < 0 ||
+        (
+          !percentage &&
+          (
+            !years.value.trim() ||
+            !Number.isFinite(n) ||
+            n <= 0
+          )
+        );
+
+      result = null;
+
+      if (!invalid) {
+        switch (kind.value) {
+          case "simple":
+            result = a * r * n;
+            break;
+
+          case "compound":
+            result = a * Math.expm1(
+              n * Math.log1p(r)
+            );
+            break;
+
+          case "emi": {
+            const monthly = r / 12;
+            const months = n * 12;
+
+            result = monthly === 0
+              ? a / months
+              : a * monthly /
+                -Math.expm1(
+                  -months * Math.log1p(monthly)
+                );
+
+            break;
+          }
+
+          case "percent":
+          case "percentage":
+            result = a * r;
+            break;
+
+          default:
+            invalid = true;
+        }
+
+        if (!Number.isFinite(result)) {
+          invalid = true;
+        }
+      }
+
+      legacyRender();
+    });
+
+    const clearResult = () => {
+      result = null;
+      invalid = false;
+      setText(output, "");
+    };
+
+    form.addEventListener("input", clearResult);
+    form.addEventListener("change", clearResult);
+    form.addEventListener("reset", clearResult);
+  }
+
+  const domReady = document.readyState === "loading"
+    ? new Promise(resolve => {
+      document.addEventListener(
+        "DOMContentLoaded",
+        resolve,
+        { once: true }
+      );
+    })
+    : Promise.resolve();
+
+  function initialize() {
+    if (initialized) return true;
+    if (!document.body) return false;
+
+    initialized = true;
+
+    updateCopyrightYear();
+    initializeLayout();
+    applyTheme(false);
+    initializeLegacyCalculator();
+
+    document.addEventListener("click", event => {
+      if (event.defaultPrevented) return;
+
+      const button = event.target instanceof Element
+        ? event.target.closest("#theme")
+        : null;
+
+      if (
+        !button ||
+        button.disabled ||
+        button.getAttribute("aria-disabled") === "true"
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      setTheme(
+        modes[
+          (modes.indexOf(currentTheme) + 1) %
+          modes.length
+        ]
+      );
+    });
+
+    document.addEventListener("change", event => {
+      if (
+        event.target instanceof Element &&
+        event.target.matches(
+          "select[data-theme-select]"
+        )
+      ) {
+        setTheme(event.target.value);
+      }
+    });
+
+    const onSystemChange = () => {
+      if (currentTheme === "system") {
+        applyTheme();
+      }
+    };
+
+    if (
+      systemQuery &&
+      systemQuery.addEventListener
+    ) {
+      systemQuery.addEventListener(
+        "change",
+        onSystemChange
+      );
+    } else if (
+      systemQuery &&
+      systemQuery.addListener
+    ) {
+      systemQuery.addListener(onSystemChange);
+    }
+
+    window.addEventListener("storage", event => {
+      if (
+        event.key !== CONFIG.themeKey &&
+        event.key !== null
+      ) {
+        return;
+      }
+
+      try {
+        if (
+          event.storageArea &&
+          event.storageArea !== window.localStorage
+        ) {
+          return;
+        }
+      } catch {
+        return;
+      }
+
+      setTheme(
+        event.key === null
+          ? CONFIG.defaultTheme
+          : event.newValue,
+        false
+      );
+    });
+
+    window.addEventListener(
+      "merahisab:languagechange",
+      () => {
+        updateThemeControls();
+
+        if (legacyRender) {
+          legacyRender();
+        }
+      }
+    );
+
+    window.addEventListener(
+      "merahisab:languagecontentready",
+      scheduleLayout
+    );
+
+    window.addEventListener(
+      "merahisab:languageready",
+      scheduleLayout
+    );
+
+    window.addEventListener(
+      "online",
+      retryOnConnection
+    );
+
+    window.addEventListener("pageshow", event => {
+      if (event.persisted) {
+        cancelInitialRepair();
+      }
+
+      const saved = readTheme();
+
+      if (saved !== undefined) {
+        setTheme(saved, false);
+      }
+
+      updateCopyrightYear();
+      scheduleLayout();
+    });
+
+    document.addEventListener(
+      "visibilitychange",
+      () => {
+        if (document.visibilityState === "visible") {
+          updateCopyrightYear();
+          scheduleLayout();
+          scheduleRetry();
+        }
+      }
+    );
+
+    try {
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.addEventListener(
+          "controllerchange",
+          retryOnConnection
+        );
+      }
+    } catch {}
+
+    const languageWork = loadLanguageSystem();
+
+    loadSecuritySystem();
+
+    const fonts = document.fonts
+      ? document.fonts.ready.catch(() => {})
+      : Promise.resolve();
+
+    const pageLoaded = document.readyState === "complete"
+      ? Promise.resolve()
+      : new Promise(resolve => {
+        window.addEventListener(
+          "load",
+          resolve,
+          { once: true }
+        );
+      });
+
+    Promise.all([
+      languageWork,
+      fonts,
+      pageLoaded
+    ]).then(() => frame(repairInitialFragment));
+
+    return true;
+  }
+
+  window.MeraHisabUpgrade = Object.freeze({
+    version: CONFIG.version,
 
     initialize,
 
-    {once: true}
+    setTheme,
 
-  );
+    getTheme: () => currentTheme,
 
-} else {
+    getResolvedTheme,
 
-  initialize();
+    loadLanguageSystem,
 
-}
+    loadSecuritySystem,
 
+    retryPending,
+
+    refreshLayout: scheduleLayout,
+
+    getStatus: () => ({
+      version: CONFIG.version,
+      initialized,
+      theme: currentTheme,
+      resolvedTheme: getResolvedTheme(),
+
+      languageStatus: systems.language.status,
+      securityStatus: systems.security.status,
+
+      languageStylesReady,
+      languageScriptsReady,
+
+      language: language(),
+      headerOffset,
+
+      secureContext: window.isSecureContext === true,
+      browserOnline: navigator.onLine,
+
+      errors: {
+        language: systems.language.error,
+        security: systems.security.error
+      }
+    })
+  });
+
+  applyTheme(false);
+  domReady.then(initialize);
 })();
-
-/* ==========================================
-   END OF MERAHISAB SHARED WEBSITE ENGINE
-========================================== */
