@@ -1,76 +1,44 @@
 <!DOCTYPE html>
+
 <html lang="en-IN">
 <head>
-
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-3BCo8pktzXzdcdi2YHu3aRHJBVt8gPhF3NoEmfoJOvU='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>MeraHisab — Personal Finance & Digital Khata</title>
-
-  <meta name="description" content="Explore MeraHisab and Royal Khata, personal finance management, digital khata, expense tracking and useful financial tools.">
-
-  <meta name="keywords" content="MeraHisab, Royal Khata, expense tracker, digital khata, personal finance, financial calculator">
-
-  <meta name="author" content="MeraHisab">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://merahisab.store/">
-
-  <!-- SOCIAL MEDIA SEO -->
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MeraHisab">
-  <meta property="og:title" content="MeraHisab — Personal Finance, Simplified">
-  <meta property="og:description" content="Discover MeraHisab, Royal Khata and useful financial management tools.">
-  <meta property="og:url" content="https://merahisab.store/">
-  <meta property="og:image" content="https://merahisab.store/merahisab-dashboard.png">
-  <meta property="og:locale" content="en_IN">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MeraHisab">
-  <meta name="twitter:description" content="Personal Finance, Simplified">
-  <meta name="twitter:image" content="https://merahisab.store/merahisab-dashboard.png">
-
-  <!-- PWA INTEGRATION -->
-
-  <link rel="manifest" href="/manifest.json">
-
-  <meta name="application-name" content="MeraHisab">
-  <meta name="theme-color" content="#080f20">
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="MeraHisab">
-
-  <link rel="apple-touch-icon" href="/icons/icon-192.png">
-
-  <link rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/icons/icon-192.png">
-
-  <link rel="stylesheet" href="/upgrade.css">
-  <link rel="stylesheet" href="/pwa.css">
-
-  <script defer src="/upgrade.js"></script>
-  <script defer src="/pwa.js"></script>
-
-  <!-- FONT CONFIGURATION -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-        rel="stylesheet">
-
-  <!-- PREMIUM WEBSITE DESIGN -->
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-2GWleX2zYQmBwb1dFORlRasjhYiy8S0Tg0TqPAZODSI='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MeraHisab — Personal Finance &amp; Digital Khata</title>
+<meta content="Explore MeraHisab and Royal Khata, personal finance management, digital khata, expense tracking and useful financial tools." name="description"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="MeraHisab" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://merahisab.store/" rel="canonical"/>
+<!-- SOCIAL MEDIA SEO -->
+<meta content="website" property="og:type"/>
+<meta content="MeraHisab" property="og:site_name"/>
+<meta content="MeraHisab — Personal Finance, Simplified" property="og:title"/>
+<meta content="Discover MeraHisab, Royal Khata and useful financial management tools." property="og:description"/>
+<meta content="https://merahisab.store/" property="og:url"/>
+<meta content="https://merahisab.store/merahisab-dashboard.png" property="og:image"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="MeraHisab" name="twitter:title"/>
+<meta content="Personal Finance, Simplified" name="twitter:description"/>
+<meta content="https://merahisab.store/merahisab-dashboard.png" name="twitter:image"/>
+<!-- PWA INTEGRATION -->
+<link href="/manifest.json" rel="manifest"/>
+<meta content="MeraHisab" name="application-name"/>
+<meta content="#080f20" name="theme-color"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MeraHisab" name="apple-mobile-web-app-title"/>
+<link href="/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="/icons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/upgrade.css" rel="stylesheet"/>
+<link href="/pwa.css" rel="stylesheet"/>
+<script defer="" src="/upgrade.js"></script>
+<script defer="" src="/pwa.js"></script>
+<!-- PREMIUM WEBSITE DESIGN -->
+<style>
 
     :root {
       --bg: #080f20;
@@ -121,7 +89,7 @@
         var(--bg);
 
       color: var(--white);
-      font-family: "DM Sans", Arial, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
       line-height: 1.6;
     }
 
@@ -200,7 +168,7 @@
     .section-heading h2 {
       margin-bottom: 14px;
       color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: clamp(2rem,4vw,3rem);
       line-height: 1.2;
     }
@@ -313,7 +281,7 @@
       );
 
       color: var(--gold2);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: 1.45rem;
       font-weight: 800;
     }
@@ -321,7 +289,7 @@
     .brand-name {
       display: block;
       color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: 1.35rem;
       font-weight: 800;
       line-height: 1.1;
@@ -462,7 +430,7 @@
     .time-tools-heading h2 {
       margin-bottom: 5px;
       color: var(--gold2);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: 1.45rem;
     }
 
@@ -758,7 +726,7 @@
       max-width: 650px;
       margin-bottom: 22px;
       color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: clamp(2.4rem,5.2vw,4.55rem);
       line-height: 1.12;
       letter-spacing: -0.035em;
@@ -919,7 +887,7 @@
 
     .app-card h3 {
       color: var(--gold2);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: 1.65rem;
     }
 
@@ -1141,7 +1109,7 @@
     .privacy-text h2 {
       margin-bottom: 17px;
       color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: clamp(2rem,4vw,3rem);
       line-height: 1.2;
     }
@@ -1383,7 +1351,7 @@
     .download-content h2 {
       margin-bottom: 15px;
       color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
       font-size: clamp(2rem,4vw,3rem);
       line-height: 1.2;
     }
@@ -1968,271 +1936,170 @@
 
     /* END OF PART 3 */
 
+
+    /* Final homepage compatibility and accessibility. */
+    html:root { scroll-padding-top: var(--mh-scroll-offset, 110px); }
+    .header-inner, .brand, .brand-text, .nav, .hero-content, .time-card,
+    .app-card, .feature-card, .footer-column { min-width: 0; }
+    .brand { max-width: 100%; flex-shrink: 1; }
+    .brand-text { overflow-wrap: anywhere; }
+    .nav { max-width: 100%; }
+    .nav > a, .nav-cta { min-height: 44px; }
+    .nav a[aria-current="page"] { color: var(--gold2); text-decoration: underline; text-underline-offset: .35em; }
+    .timer-btn, .btn { overflow-wrap: anywhere; white-space: normal; }
+    .stopwatch-display, .live-time { font-variant-numeric: tabular-nums; }
+    #pwaMount { margin-block: 24px 48px; }
+    #pwaMount:empty { display: none; }
+    html[data-language="hi"] body { font-family: system-ui, "Nirmala UI", Mangal, "Noto Sans Devanagari", sans-serif; }
+    html[data-language="hi"] :is(h1,h2,.brand-name,.brand-mark) { font-family: inherit; line-height: 1.3; }
+    html[data-theme="light"] :is(.btn-primary,.timer-btn.start) { background: linear-gradient(135deg,#f0d9a6,#d8b878); color:#172033; }
+    html[data-theme="light"] :is(.btn-primary,.timer-btn.start):hover { background:#f4dfb4; color:#172033; }
+    @media (max-width: 760px) { html:root { scroll-padding-top: var(--mh-scroll-offset, 20px); } }
+    @media (max-width: 360px) { .container { padding-inline: 12px; } .nav { gap: 4px 10px; } .hero-buttons > *, .app-card-actions > *, .download-actions > * { max-width: 100%; } }
+    @media print { .motivation-ticker, .header, .time-tools-section, #pwaMount, .footer { display:none !important; } .section { padding: 16px 0; } }
+
   </style>
-
-</head>
-
-
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MeraHisab", "url": "https://merahisab.store/", "inLanguage": ["en-IN", "hi-IN"]}</script></head>
 <body>
-
-  <!-- ACCESSIBILITY -->
-
-  <a href="#home" class="skip-link">
+<!-- ACCESSIBILITY -->
+<a class="skip-link" data-home-hi="मुख्य सामग्री पर जाएँ" data-no-translate="true" href="#home">
     Skip to main content
   </a>
-
-  <!-- PREMIUM MOTIVATIONAL TICKER -->
-
-  <section class="motivation-ticker"
-           aria-label="Daily motivation">
-
-    <div class="motivation-label">
+<!-- PREMIUM MOTIVATIONAL TICKER -->
+<section aria-label="Daily motivation" class="motivation-ticker" data-home-aria-hi="दैनिक प्रेरणा">
+<div class="motivation-label" data-home-hi="✦ दैनिक प्रेरणा ✦" data-no-translate="true">
       ✦ DAILY INSPIRATION ✦
     </div>
-
-    <div class="motivation-text"
-         id="motivationText"
-         lang="hi">
+<div class="motivation-text" data-no-translate="true" id="motivationText" lang="hi">
       हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।
     </div>
-
-  </section>
-
-  <!-- PREMIUM WEBSITE HEADER -->
-
-  <header class="header">
-
-    <div class="container header-inner">
-
-      <a href="/index.html" class="brand">
-
-        <span class="brand-mark">M</span>
-
-        <span class="brand-text">
-
-          <span class="brand-name">
+</section>
+<!-- PREMIUM WEBSITE HEADER -->
+<header class="header">
+<div class="container header-inner">
+<a class="brand" href="/index.html">
+<span class="brand-mark">M</span>
+<span class="brand-text">
+<span class="brand-name">
             MeraHisab
           </span>
-
-          <span class="brand-tag">
+<span class="brand-tag" data-home-hi="व्यक्तिगत वित्त, आसान तरीके से" data-no-translate="true">
             Personal Finance, Simplified
           </span>
-
-        </span>
-
-      </a>
-
-      <nav class="nav" aria-label="Main navigation">
-
-        <a href="#home">Home</a>
-
-        <a href="#apps">Applications</a>
-
-        <a href="#features">Features</a>
-
-        <a href="/tools.html">Tools</a>
-
-        <a href="/compare.html">Compare</a>
-
-        <a href="/privacy.html">Privacy</a>
-
-        <a href="/about.html">About</a>
-
-        <a href="/contact.html">Contact</a>
-
-        <button type="button"
-                id="theme"
-                class="timer-btn"
-                aria-label="Change website theme">
+</span>
+</a>
+<nav aria-label="Main navigation" class="nav" data-home-aria-hi="मुख्य नेविगेशन">
+<a aria-current="page" data-home-hi="होम" data-no-translate="true" href="#home">Home</a>
+<a data-home-hi="ऐप्स" data-no-translate="true" href="#apps">Applications</a>
+<a data-home-hi="विशेषताएँ" data-no-translate="true" href="#features">Features</a>
+<a data-home-hi="उपकरण" data-no-translate="true" href="/tools.html">Tools</a>
+<a data-home-hi="तुलना" data-no-translate="true" href="/compare.html">Compare</a>
+<a data-home-hi="गोपनीयता" data-no-translate="true" href="/privacy.html">Privacy</a>
+<a data-home-hi="हमारे बारे में" data-no-translate="true" href="/about.html">About</a>
+<a data-home-hi="संपर्क" data-no-translate="true" href="/contact.html">Contact</a>
+<button aria-label="Change website theme" class="timer-btn" data-no-translate="true" id="theme" type="button">
           Theme
         </button>
-
-      </nav>
-
-      <a href="/downloads.html"
-         class="nav-cta">
+</nav>
+<a class="nav-cta" data-home-hi="ऐप डाउनलोड करें" data-no-translate="true" href="/downloads.html">
         Download Apps
       </a>
-
-    </div>
-
-  </header>
-
-  <!-- TIME MANAGEMENT TOOLS -->
-
-  <section class="time-tools-section"
-           id="time-tools">
-
-    <div class="container">
-
-      <div class="time-tools-heading">
-
-        <h2>Time at Your Fingertips</h2>
-
-        <p>Stay on time. Stay productive.</p>
-
-      </div>
-
-      <div class="time-tools-grid">
-
-        <!-- LIVE INDIAN CLOCK -->
-
-        <article class="time-card">
-
-          <div class="time-card-top">
-
-            <div class="time-card-title">
-
-              <span class="time-card-icon"
-                    aria-hidden="true">
+</div>
+</header>
+<main id="home" tabindex="-1">
+<!-- TIME MANAGEMENT TOOLS -->
+<section class="time-tools-section" id="time-tools">
+<div class="container">
+<div class="time-tools-heading">
+<h2 data-home-hi="समय की जानकारी आपकी उंगलियों पर" data-no-translate="true">Time at Your Fingertips</h2>
+<p data-home-hi="समय का ध्यान रखें। उत्पादक बने रहें।" data-no-translate="true">Stay on time. Stay productive.</p>
+</div>
+<div class="time-tools-grid">
+<!-- LIVE INDIAN CLOCK -->
+<article class="time-card">
+<div class="time-card-top">
+<div class="time-card-title">
+<span aria-hidden="true" class="time-card-icon">
                 ◷
               </span>
-
-              <span>Live Clock</span>
-
-            </div>
-
-            <span class="time-zone">
+<span data-home-hi="लाइव घड़ी" data-no-translate="true">Live Clock</span>
+</div>
+<span class="time-zone" data-home-hi="भारतीय मानक समय" data-no-translate="true">
               INDIAN STANDARD TIME
             </span>
-
-          </div>
-
-          <div class="live-time"
-               id="liveClock"
-               role="timer"
-               aria-live="off">
+</div>
+<div aria-live="off" class="live-time" data-no-translate="true" id="liveClock" role="timer">
             00:00:00
           </div>
-
-          <div class="live-date"
-               id="liveDate">
+<div class="live-date" data-no-translate="true" id="liveDate">
             Loading date...
           </div>
-
-          <div class="clock-status">
-
-            <span class="clock-status-dot"></span>
-
-            <span>Live • Asia/Kolkata</span>
-
-          </div>
-
-        </article>
-
-        <!-- PREMIUM STOPWATCH -->
-
-        <article class="time-card">
-
-          <div class="time-card-top">
-
-            <div class="time-card-title">
-
-              <span class="time-card-icon"
-                    aria-hidden="true">
+<div class="clock-status">
+<span class="clock-status-dot"></span>
+<span data-home-hi="लाइव • भारतीय मानक समय" data-no-translate="true">Live • Asia/Kolkata</span>
+</div>
+</article>
+<!-- PREMIUM STOPWATCH -->
+<article class="time-card">
+<div class="time-card-top">
+<div class="time-card-title">
+<span aria-hidden="true" class="time-card-icon">
                 ⏱
               </span>
-
-              <span>Stopwatch</span>
-
-            </div>
-
-            <span class="time-zone">
+<span data-home-hi="स्टॉपवॉच" data-no-translate="true">Stopwatch</span>
+</div>
+<span class="time-zone" data-home-hi="सटीक टाइमर" data-no-translate="true">
               PRECISION TIMER
             </span>
-
-          </div>
-
-          <div class="stopwatch-display"
-               id="stopwatchDisplay"
-               role="timer"
-               aria-live="off">
+</div>
+<div aria-live="off" class="stopwatch-display" data-no-translate="true" id="stopwatchDisplay" role="timer">
             00:00:00.00
           </div>
-
-          <div class="stopwatch-buttons">
-
-            <button type="button"
-                    class="timer-btn start"
-                    id="startStopwatch">
+<div class="stopwatch-buttons">
+<button class="timer-btn start" data-no-translate="true" id="startStopwatch" type="button">
               Start
             </button>
-
-            <button type="button"
-                    class="timer-btn"
-                    id="lapStopwatch"
-                    disabled>
+<button class="timer-btn" data-home-hi="लैप" data-no-translate="true" disabled="" id="lapStopwatch" type="button">
               Lap
             </button>
-
-            <button type="button"
-                    class="timer-btn"
-                    id="resetStopwatch">
+<button class="timer-btn" data-home-hi="रीसेट करें" data-no-translate="true" id="resetStopwatch" type="button">
               Reset
             </button>
-
-          </div>
-
-          <div class="lap-heading">
-
-            <span>Lap</span>
-
-            <span>Lap Time</span>
-
-            <span>Total Time</span>
-
-          </div>
-
-          <div class="lap-list"
-               id="lapList"
-               aria-label="Recorded laps">
-
-            <p class="lap-empty"
-               id="lapEmpty">
+</div>
+<div class="lap-heading">
+<span data-home-hi="लैप" data-no-translate="true">Lap</span>
+<span data-home-hi="लैप का समय" data-no-translate="true">Lap Time</span>
+<span data-home-hi="कुल समय" data-no-translate="true">Total Time</span>
+</div>
+<div aria-label="Recorded laps" class="lap-list" data-home-aria-hi="दर्ज किए गए लैप" data-no-translate="true" id="lapList">
+<p class="lap-empty" data-home-hi="कोई लैप दर्ज नहीं है" data-no-translate="true" id="lapEmpty">
               No laps recorded
             </p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- MAIN WEBSITE CONTENT -->
+<!-- PREMIUM HERO SECTION -->
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-content">
+<div class="eyebrow">
+<span class="eyebrow-dot"></span>
+
+            <span data-home-hi="स्मार्ट व्यक्तिगत वित्त" data-no-translate="true">SMART PERSONAL FINANCE</span>
 
           </div>
+<h1>
 
-        </article>
+            <span data-home-hi="अपने पैसे पर नियंत्रण रखें।" data-no-translate="true">Take Control of Your Money.</span>
 
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- MAIN WEBSITE CONTENT -->
-
-  <main id="home">
-
-    <!-- PREMIUM HERO SECTION -->
-
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-
-            <span class="eyebrow-dot"></span>
-
-            SMART PERSONAL FINANCE
-
-          </div>
-
-          <h1>
-
-            Take Control of Your Money.
-
-            <span class="gold">
+            <span class="gold" data-home-hi="अपना भविष्य सँवारें।" data-no-translate="true">
               Own Your Future.
             </span>
-
-          </h1>
-
-          <p class="hero-description">
+</h1>
+<p class="hero-description" data-home-hi="MeraHisab के साथ दैनिक आय, खर्च, बचत और खातों का प्रबंधन करें। रोजमर्रा के वित्तीय प्रबंधन को आसान बनाने वाले उपकरण और डिजिटल खाता समाधान जानें।" data-no-translate="true">
 
             Manage your daily income, expenses,
             savings and accounts with MeraHisab.
@@ -2242,127 +2109,77 @@
             to simplify everyday money management.
 
           </p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="/downloads.html">
 
-          <div class="hero-buttons">
-
-            <a href="/downloads.html"
-               class="btn btn-primary">
-
-              Download Applications
+              <span data-home-hi="ऐप डाउनलोड करें" data-no-translate="true">Download Applications</span>
 
               <span aria-hidden="true">→</span>
-
-            </a>
-
-            <a href="#apps"
-               class="btn btn-secondary">
+</a>
+<a class="btn btn-secondary" data-home-hi="ऐप्स के बारे में जानें" data-no-translate="true" href="#apps">
 
               Explore Applications
 
             </a>
+</div>
+<div class="hero-note">
+<span aria-hidden="true">✓</span>
+
+            <span data-home-hi="गोपनीयता और सरलता को ध्यान में रखकर बनाया गया" data-no-translate="true">Designed with privacy and simplicity in mind</span>
 
           </div>
-
-          <div class="hero-note">
-
-            <span aria-hidden="true">✓</span>
-
-            Designed with privacy and simplicity in mind
-
-          </div>
-
-        </div>
-
-        <!-- REAL MERAHISAB DASHBOARD -->
-
-        <div class="preview-wrap">
-
-          <div class="preview-glow"></div>
-
-          <a href="/merahisab.html"
-             class="dashboard-download-link">
-
-            <img
-              src="/merahisab-dashboard.png"
-              alt="MeraHisab personal finance application dashboard"
-              class="real-dashboard-image"
-              decoding="async"
-              fetchpriority="high">
-
-          </a>
-
-          <div class="preview-caption">
+</div>
+<!-- REAL MERAHISAB DASHBOARD -->
+<div class="preview-wrap">
+<div class="preview-glow"></div>
+<a class="dashboard-download-link" href="/merahisab.html">
+<img alt="MeraHisab personal finance application dashboard" class="real-dashboard-image" data-home-alt-hi="MeraHisab व्यक्तिगत वित्त ऐप का डैशबोर्ड" decoding="async" fetchpriority="high" height="1536" src="/merahisab-dashboard.png" width="1024"/>
+</a>
+<div class="preview-caption" data-home-hi="MeraHisab ऐप का डैशबोर्ड देखें" data-no-translate="true">
 
             Explore the MeraHisab Application Dashboard
 
           </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- APPLICATION DISCOVERY -->
-
-    <section class="section apps-section"
-             id="apps">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
+</div>
+</div>
+</section>
+<!-- APPLICATION DISCOVERY -->
+<section class="section apps-section" id="apps">
+<div class="container">
+<div class="section-heading">
+<div class="section-kicker" data-home-hi="हमारे ऐप्स" data-no-translate="true">
 
             OUR APPLICATIONS
 
           </div>
+<h2>
 
-          <h2>
+            <span data-home-hi="स्मार्ट ऐप्स।" data-no-translate="true">Smart Applications.</span>
 
-            Smart Applications.
-
-            <span class="gold">
+            <span class="gold" data-home-hi="बेहतर वित्तीय प्रबंधन।" data-no-translate="true">
               Better Financial Management.
             </span>
-
-          </h2>
-
-          <p>
+</h2>
+<p data-home-hi="हमारे ऐप्स देखें और अपनी वित्तीय जरूरतों के लिए उपयुक्त समाधान चुनें।" data-no-translate="true">
 
             Explore our applications and choose
             the right solution for your financial needs.
 
           </p>
-
-        </div>
-
-        <div class="apps-grid">
-
-          <!-- MERAHISAB APPLICATION -->
-
-          <article class="app-card">
-
-            <div class="app-card-icon">
-
-              <img
-                src="/icons/shortcut-merahisab.png"
-                alt="MeraHisab icon"
-                width="68"
-                height="68"
-                loading="lazy">
-
-            </div>
-
-            <span class="app-status available">
+</div>
+<div class="apps-grid">
+<!-- MERAHISAB APPLICATION -->
+<article class="app-card">
+<div class="app-card-icon">
+<img alt="MeraHisab icon" height="68" loading="lazy" src="/icons/shortcut-merahisab.png" width="68"/>
+</div>
+<span class="app-status available" data-home-hi="● उपलब्ध" data-no-translate="true">
 
               ● Available
 
             </span>
-
-            <h3>MeraHisab</h3>
-
-            <p>
+<h3>MeraHisab</h3>
+<p data-home-hi="आय, खर्च, बचत, खाते, रिपोर्ट, नोट्स और दैनिक वित्तीय गतिविधियों को व्यवस्थित करने के लिए बनाया गया व्यक्तिगत वित्त प्रबंधन ऐप।" data-no-translate="true">
 
               A personal finance management application
               designed to organize income, expenses,
@@ -2370,51 +2187,31 @@
               everyday financial activities.
 
             </p>
-
-            <div class="app-card-actions">
-
-              <a href="/merahisab.html"
-                 class="btn btn-secondary">
+<div class="app-card-actions">
+<a class="btn btn-secondary" data-home-hi="ऐप के बारे में जानें" data-no-translate="true" href="/merahisab.html">
 
                 Explore App
 
               </a>
-
-              <a href="/download.html"
-                 class="btn btn-primary">
+<a class="btn btn-primary" data-home-hi="डाउनलोड करें" data-no-translate="true" href="/download.html">
 
                 Download
 
               </a>
-
-            </div>
-
-          </article>
-
-          <!-- ROYAL KHATA APPLICATION -->
-
-          <article class="app-card">
-
-            <div class="app-card-icon">
-
-              <img
-                src="/icons/shortcut-royal-khata.png"
-                alt="Royal Khata icon"
-                width="68"
-                height="68"
-                loading="lazy">
-
-            </div>
-
-            <span class="app-status">
+</div>
+</article>
+<!-- ROYAL KHATA APPLICATION -->
+<article class="app-card">
+<div class="app-card-icon">
+<img alt="Royal Khata icon" height="68" loading="lazy" src="/icons/shortcut-royal-khata.png" width="68"/>
+</div>
+<span class="app-status" data-home-hi="● रिलीज लंबित" data-no-translate="true">
 
               ● Release Pending
 
             </span>
-
-            <h3>Royal Khata</h3>
-
-            <p>
+<h3>Royal Khata</h3>
+<p data-home-hi="क्रेडिट और डेबिट रिकॉर्ड, खाता प्रबंधन और लेनदेन ट्रैक करने के लिए बनाया गया डिजिटल खाता ऐप। उपलब्ध होने पर आधिकारिक डाउनलोड जानकारी दी जाएगी।" data-no-translate="true">
 
               A digital khata application designed
               for organized credit and debit records,
@@ -2424,290 +2221,198 @@
               provided when available.
 
             </p>
-
-            <div class="app-card-actions">
-
-              <a href="/royal-khata.html"
-                 class="btn btn-primary">
+<div class="app-card-actions">
+<a class="btn btn-primary" data-home-hi="Royal Khata के बारे में जानें" data-no-translate="true" href="/royal-khata.html">
 
                 Explore Royal Khata
 
               </a>
-
-              <button type="button"
-                      class="btn btn-secondary"
-                      disabled>
+<button class="btn btn-secondary" data-home-hi="डाउनलोड लंबित" data-no-translate="true" disabled="" type="button">
 
                 Download Pending
 
               </button>
-
-            </div>
-
-          </article>
-
-        </div>
-
-        <div class="app-section-links">
-
-          <a href="/downloads.html">
+</div>
+</article>
+</div>
+<div class="app-section-links">
+<a data-home-hi="↓ डाउनलोड केंद्र" data-no-translate="true" href="/downloads.html">
 
             ↓ Download Center
 
           </a>
-
-          <a href="/compare.html">
+<a data-home-hi="⇄ ऐप्स की तुलना करें" data-no-translate="true" href="/compare.html">
 
             ⇄ Compare Applications
 
           </a>
-
-          <a href="/tools.html">
+<a data-home-hi="₹ वित्तीय उपकरण" data-no-translate="true" href="/tools.html">
 
             ₹ Financial Tools
 
           </a>
+<a data-home-hi="सहायता और समर्थन" data-no-translate="true" href="/contact.html">
 
-          <a href="/contact.html">
-
-            Help & Support
+            Help &amp; Support
 
           </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PREMIUM FEATURES SECTION -->
-
-    <section class="section features-section"
-             id="features">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
+</div>
+</div>
+</section>
+<!-- PREMIUM FEATURES SECTION -->
+<section class="section features-section" id="features">
+<div class="container">
+<div class="section-heading">
+<div class="section-kicker" data-home-hi="उपयोगी विशेषताएँ" data-no-translate="true">
 
             POWERFUL FEATURES
 
           </div>
+<h2>
 
-          <h2>
+            <span data-home-hi="आपकी सभी जरूरतें।" data-no-translate="true">Everything You Need.</span>
 
-            Everything You Need.
-
-            <span class="gold">
+            <span class="gold" data-home-hi="एक ही जगह।" data-no-translate="true">
               One Place.
             </span>
+</h2>
+<p data-home-hi="दैनिक वित्तीय प्रबंधन को आसान बनाने वाले उपकरणों से अपने वित्त व्यवस्थित करें। ऐप की बताई गई सुविधाएँ उसके डिजाइन के उद्देश्य हैं; अपने इंस्टॉल किए गए संस्करण में उनकी उपलब्धता जाँचें।" data-no-translate="true">
 
-          </h2>
-
-          <p>
-
-            Organize your personal finances
-            with useful tools designed to make
-            everyday money management simpler.
+            Organize your personal finances with useful tools designed to make everyday money management simpler. App features are described as intended capabilities; confirm their availability in the installed version.
 
           </p>
-
-        </div>
-
-        <div class="features-grid">
-
-          <article class="feature-card">
-
-            <div class="feature-icon">₹</div>
-
-            <h3>Income & Expense Tracking</h3>
-
-            <p>
+</div>
+<div class="features-grid">
+<article class="feature-card">
+<div class="feature-icon">₹</div>
+<h3 data-home-hi="आय और खर्च का हिसाब" data-no-translate="true">Income &amp; Expense Tracking</h3>
+<p data-home-hi="दैनिक आय और खर्च दर्ज करें तथा अपने पैसे का व्यवस्थित हिसाब रखें।" data-no-translate="true">
 
               Record daily income and expenses
               and keep track of your money
               in an organized way.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">▤</div>
-
-            <h3>Multiple Accounts</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">▤</div>
+<h3 data-home-hi="एकाधिक खाते" data-no-translate="true">Multiple Accounts</h3>
+<p data-home-hi="जरूरत, निवेश, बचत, दान और अन्य अलग-अलग खातों को व्यवस्थित करें।" data-no-translate="true">
 
               Organize Requirement, Investment,
               Saving, Donation and other
               dedicated accounts.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">📊</div>
-
-            <h3>Smart Reports</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">📊</div>
+<h3 data-home-hi="स्मार्ट रिपोर्ट" data-no-translate="true">Smart Reports</h3>
+<p data-home-hi="दैनिक, मासिक और वार्षिक रिपोर्ट से वित्तीय गतिविधियाँ समझें।" data-no-translate="true">
 
               Understand your financial activity
               through daily, monthly and yearly
               reports.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">🔎</div>
-
-            <h3>Smart Search & Filters</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">🔎</div>
+<h3 data-home-hi="स्मार्ट खोज और फिल्टर" data-no-translate="true">Smart Search &amp; Filters</h3>
+<p data-home-hi="तारीख, खाते, श्रेणी, राशि और विवरण के आधार पर लेनदेन खोजें।" data-no-translate="true">
 
               Find transactions using dates,
               accounts, categories, amounts
               and details.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">🔐</div>
-
-            <h3>Backup & Restore</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">🔐</div>
+<h3 data-home-hi="बैकअप और पुनर्स्थापना" data-no-translate="true">Backup &amp; Restore</h3>
+<p data-home-hi="वित्तीय रिकॉर्ड का बैकअप बनाएँ और जरूरत पर सहेजा हुआ डेटा वापस पाएँ।" data-no-translate="true">
 
               Create backups of your financial
               records and restore your saved
               data when needed.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">📝</div>
-
-            <h3>Notes & Task Planning</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">📝</div>
+<h3 data-home-hi="नोट्स और कार्य योजना" data-no-translate="true">Notes &amp; Task Planning</h3>
+<p data-home-hi="उपयोगी नोट्स रखें, लंबित काम व्यवस्थित करें और पूरे हुए काम का रिकॉर्ड रखें।" data-no-translate="true">
 
               Keep useful notes, organize
               pending tasks and maintain a
               record of completed work.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">📅</div>
-
-            <h3>Monthly Balance Carry Forward</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">📅</div>
+<h3 data-home-hi="मासिक शेष आगे ले जाना" data-no-translate="true">Monthly Balance Carry Forward</h3>
+<p data-home-hi="महीने बदलने पर भी अपने खातों की शेष राशि का हिसाब रखें।" data-no-translate="true">
 
               Keep track of your account balances
               as your financial activity moves
               from month to month.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">📄</div>
-
-            <h3>PDF & Excel Reports</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">📄</div>
+<h3 data-home-hi="PDF और Excel रिपोर्ट" data-no-translate="true">PDF &amp; Excel Reports</h3>
+<p data-home-hi="अपने रिकॉर्ड के लिए प्रिंट योग्य PDF और संपादन योग्य Excel रिपोर्ट तैयार करें।" data-no-translate="true">
 
               Prepare printable PDF reports
               and editable Excel reports
               for your records.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">⏱</div>
-
-            <h3>Time Management Tools</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">⏱</div>
+<h3 data-home-hi="समय प्रबंधन उपकरण" data-no-translate="true">Time Management Tools</h3>
+<p data-home-hi="दैनिक गतिविधियों के दौरान वेबसाइट की भारतीय समय वाली घड़ी और स्टॉपवॉच इस्तेमाल करें।" data-no-translate="true">
 
               Use the website's live Indian clock
               and stopwatch while managing
               your daily activities.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">🧮</div>
-
-            <h3>Financial Calculators</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">🧮</div>
+<h3 data-home-hi="वित्तीय कैलकुलेटर" data-no-translate="true">Financial Calculators</h3>
+<p data-home-hi="बचत, निवेश, ऋण और रोजमर्रा की गणना के लिए वित्तीय कैलकुलेटर देखें।" data-no-translate="true">
 
               Explore financial calculators
               for savings, investments,
               loans and everyday calculations.
 
             </p>
-
-            <a href="/tools.html"
-               class="btn btn-secondary"
-               style="margin-top:16px">
+<a class="btn btn-secondary" data-home-hi="उपकरण देखें" data-no-translate="true" href="/tools.html" style="margin-top:16px">
 
               Explore Tools
 
             </a>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">📱</div>
-
-            <h3>Installable Website</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">📱</div>
+<h3 data-home-hi="इंस्टॉल की जा सकने वाली वेबसाइट" data-no-translate="true">Installable Website</h3>
+<p data-home-hi="MeraHisab में संगत डिवाइस पर वेबसाइट इंस्टॉल करने के लिए प्रोग्रेसिव वेब ऐप की व्यवस्था है।" data-no-translate="true">
 
               MeraHisab includes Progressive Web
               App infrastructure designed to support
               installation on compatible devices.
 
             </p>
-
-          </article>
-
-          <article class="feature-card">
-
-            <div class="feature-icon">🌐</div>
-
-            <h3>Offline Website Support</h3>
-
-            <p>
+</article>
+<article class="feature-card">
+<div class="feature-icon">🌐</div>
+<h3 data-home-hi="ऑफलाइन वेबसाइट सुविधा" data-no-translate="true">Offline Website Support</h3>
+<p data-home-hi="सफल ऑफलाइन सेटअप के बाद पहले से कैश किए गए सार्वजनिक पेज बिना इंटरनेट के उपलब्ध रह सकते हैं।" data-no-translate="true">
 
               Previously cached public pages
               may remain accessible without
@@ -2715,62 +2420,44 @@
               successful offline setup.
 
             </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PRIVACY AND SECURITY SECTION -->
-
-    <section class="section privacy-section"
-             id="privacy">
-
-      <div class="container privacy-content">
-
-        <div class="privacy-visual">
-
-          <div class="privacy-shield"
-               aria-hidden="true">
+</article>
+</div>
+</div>
+</section>
+<!-- PRIVACY AND SECURITY SECTION -->
+<section class="section privacy-section" id="privacy">
+<div class="container privacy-content">
+<div class="privacy-visual">
+<div aria-hidden="true" class="privacy-shield">
 
             🔒
 
           </div>
-
-          <p class="privacy-visual-caption">
+<p class="privacy-visual-caption" data-home-hi="गोपनीयता पर केंद्रित वित्तीय प्रबंधन। आपकी निजी जानकारी की जिम्मेदारी से सुरक्षा जरूरी है।" data-no-translate="true">
 
             Privacy-focused financial management.
             Your personal information deserves
             responsible protection.
 
           </p>
-
-        </div>
-
-        <div class="privacy-text">
-
-          <div class="section-kicker">
+</div>
+<div class="privacy-text">
+<div class="section-kicker" data-home-hi="आपकी गोपनीयता महत्वपूर्ण है" data-no-translate="true">
 
             YOUR PRIVACY MATTERS
 
           </div>
+<h2>
 
-          <h2>
+            <span data-home-hi="आपका पैसा। आपका डेटा।" data-no-translate="true">Your Money.
 
-            Your Money.
+            Your Data.</span>
 
-            Your Data.
-
-            <span class="gold">
+            <span class="gold" data-home-hi="आपका नियंत्रण।" data-no-translate="true">
               Your Control.
             </span>
-
-          </h2>
-
-          <p>
+</h2>
+<p data-home-hi="MeraHisab को गोपनीयता को प्राथमिकता देकर बनाया गया है। आपकी निजी वित्तीय जानकारी आपके नियंत्रण में रहनी चाहिए।" data-no-translate="true">
 
             MeraHisab is designed with a
             privacy-first approach.
@@ -2779,22 +2466,16 @@
             should remain under your control.
 
           </p>
-
-          <div class="privacy-points">
-
-            <div class="privacy-point offline-highlight">
-
-              <span class="privacy-check">✓</span>
-
-              <div>
-
-                <strong>
+<div class="privacy-points">
+<div class="privacy-point offline-highlight">
+<span class="privacy-check">✓</span>
+<div>
+<strong data-home-hi="ऑफलाइन ऐप डिजाइन" data-no-translate="true">
 
                   Offline Application Design
 
                 </strong>
-
-                <p>
+<p data-home-hi="MeraHisab Android ऐप निरंतर इंटरनेट के बिना दैनिक आय और खर्च का हिसाब रखने के उद्देश्य से बनाया गया है।" data-no-translate="true">
 
                   The MeraHisab Android application
                   is designed for everyday income
@@ -2803,167 +2484,116 @@
                   connection.
 
                 </p>
+</div>
+</div>
+<div class="privacy-point">
+<span class="privacy-check">✓</span>
+<div>
+<strong data-home-hi="स्थानीय डेटा संग्रहण" data-no-translate="true">Local Data Storage</strong>
 
-              </div>
-
-            </div>
-
-            <div class="privacy-point">
-
-              <span class="privacy-check">✓</span>
-
-              <div>
-
-                <strong>Local Data Storage</strong>
-
-                Personal financial records are
+                <span data-home-hi="निजी वित्तीय रिकॉर्ड आपके डिवाइस पर स्थानीय रूप से रखने का उद्देश्य है।" data-no-translate="true">Personal financial records are
                 intended to remain stored locally
-                on your device.
+                on your device.</span>
 
               </div>
+</div>
+<div class="privacy-point">
+<span class="privacy-check">✓</span>
+<div>
+<strong data-home-hi="वेबसाइट खाते की जरूरत नहीं" data-no-translate="true">No Website Account Required</strong>
 
-            </div>
-
-            <div class="privacy-point">
-
-              <span class="privacy-check">✓</span>
-
-              <div>
-
-                <strong>No Website Account Required</strong>
-
-                Explore our public website without
-                creating an online account.
+                <span data-home-hi="ऑनलाइन खाता बनाए बिना हमारी सार्वजनिक वेबसाइट देखें।" data-no-translate="true">Explore our public website without
+                creating an online account.</span>
 
               </div>
+</div>
+<div class="privacy-point">
+<span class="privacy-check">✓</span>
+<div>
+<strong data-home-hi="गोपनीयता केंद्रित डिजाइन" data-no-translate="true">Privacy-Focused Design</strong>
 
-            </div>
-
-            <div class="privacy-point">
-
-              <span class="privacy-check">✓</span>
-
-              <div>
-
-                <strong>Privacy-Focused Design</strong>
-
-                Our approach emphasizes responsible
-                handling of personal information.
+                <span data-home-hi="हमारा दृष्टिकोण निजी जानकारी के जिम्मेदार प्रबंधन पर जोर देता है।" data-no-translate="true">Our approach emphasizes responsible
+                handling of personal information.</span>
 
               </div>
+</div>
+<div class="privacy-point">
+<span class="privacy-check">✓</span>
+<div>
+<strong data-home-hi="बैकअप पर नियंत्रण" data-no-translate="true">Backup Control</strong>
 
-            </div>
-
-            <div class="privacy-point">
-
-              <span class="privacy-check">✓</span>
-
-              <div>
-
-                <strong>Backup Control</strong>
-
-                Keep control of your backup files
-                and choose where you store them.
+                <span data-home-hi="अपनी बैकअप फाइलों पर नियंत्रण रखें और उनका स्थान खुद चुनें।" data-no-translate="true">Keep control of your backup files
+                and choose where you store them.</span>
 
               </div>
+</div>
+<div class="privacy-point">
+<span class="privacy-check">✓</span>
+<div>
+<strong data-home-hi="सार्वजनिक वेबसाइट कैश" data-no-translate="true">Public Website Cache</strong>
 
-            </div>
-
-            <div class="privacy-point">
-
-              <span class="privacy-check">✓</span>
-
-              <div>
-
-                <strong>Public Website Cache</strong>
-
-                Website offline caching is intended
+                <span data-home-hi="वेबसाइट का ऑफलाइन कैश स्वीकृत सार्वजनिक संसाधनों के लिए है, निजी वित्तीय रिकॉर्ड के लिए नहीं।" data-no-translate="true">Website offline caching is intended
                 for approved public website resources,
-                not personal financial records.
+                not personal financial records.</span>
 
               </div>
-
-            </div>
-
-          </div>
-
-          <div class="privacy-actions">
-
-            <a href="/privacy.html"
-               class="btn btn-primary">
+</div>
+</div>
+<div class="privacy-actions">
+<a class="btn btn-primary" data-home-hi="गोपनीयता नीति पढ़ें" data-no-translate="true" href="/privacy.html">
 
               Read Privacy Policy
 
             </a>
+<a class="btn btn-secondary" data-home-hi="गोपनीयता और सहायता" data-no-translate="true" href="/contact.html">
 
-            <a href="/contact.html"
-               class="btn btn-secondary">
-
-              Privacy & Support
+              Privacy &amp; Support
 
             </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ABOUT MERAHISAB -->
-
-    <section class="section about-section"
-             id="about">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT MERAHISAB -->
+<section class="section about-section" id="about">
+<div class="container">
+<div class="section-heading">
+<div class="section-kicker" data-home-hi="MeraHisab के बारे में" data-no-translate="true">
 
             ABOUT MERAHISAB
 
           </div>
+<h2>
 
-          <h2>
+            <span data-home-hi="एक बेहतर तरीका" data-no-translate="true">A Smarter Way to</span>
 
-            A Smarter Way to
-
-            <span class="gold">
+            <span class="gold" data-home-hi="पैसों के प्रबंधन का।" data-no-translate="true">
               Manage Money.
             </span>
-
-          </h2>
-
-          <p>
+</h2>
+<p data-home-hi="दैनिक जीवन के लिए आसान वित्तीय व्यवस्था।" data-no-translate="true">
 
             Simple financial organization
             for everyday life.
 
           </p>
-
-        </div>
-
-        <div class="about-content">
-
-          <p>
-
-            <span class="about-highlight">
+</div>
+<div class="about-content">
+<p>
+<span class="about-highlight">
 
               MeraHisab
 
             </span>
 
-            is a personal finance management
+            <span data-home-hi="एक व्यक्तिगत वित्त प्रबंधन ऐप है, जिसका उद्देश्य आय, खर्च, बचत और खाते की शेष राशि एक जगह व्यवस्थित करना है।" data-no-translate="true">is a personal finance management
             application designed to help you
             record income, expenses, savings
             and account balances in one
-            organized place.
+            organized place.</span>
 
           </p>
-
-          <p>
+<p data-home-hi="दैनिक खर्च समझना हो, मासिक खर्च देखना हो या अलग-अलग वित्तीय खाते व्यवस्थित करना हो, MeraHisab उपयोगी उपकरण एक जगह लाता है।" data-no-translate="true">
 
             Whether you want to understand
             your daily spending, review monthly
@@ -2973,100 +2603,74 @@
             tools together.
 
           </p>
-
-          <p>
-
-            <span class="about-highlight">
+<p>
+<span class="about-highlight">
 
               Royal Khata
 
             </span>
 
-            is designed around digital khata
+            <span data-home-hi="डिजिटल खाता प्रबंधन, क्रेडिट और डेबिट रिकॉर्ड तथा व्यवस्थित लेनदेन के लिए बनाया जा रहा है।" data-no-translate="true">is designed around digital khata
             management, credit and debit
-            records and organized transactions.
+            records and organized transactions.</span>
 
           </p>
-
-          <p>
+<p data-home-hi="हमारा उद्देश्य वित्तीय हिसाब को सरल, स्पष्ट, सुविधाजनक और जिम्मेदार बनाना है।" data-no-translate="true">
 
             Our aim is to make financial
             tracking simple, clear,
             convenient and responsible.
 
           </p>
-
-          <div class="about-actions">
-
-            <a href="/about.html"
-               class="btn btn-primary">
+<div class="about-actions">
+<a class="btn btn-primary" data-home-hi="हमारे बारे में और जानें" data-no-translate="true" href="/about.html">
 
               Learn More About Us
 
             </a>
-
-            <a href="/compare.html"
-               class="btn btn-secondary">
+<a class="btn btn-secondary" data-home-hi="ऐप्स की तुलना करें" data-no-translate="true" href="/compare.html">
 
               Compare Applications
 
             </a>
+</div>
+</div>
+</div>
+</section>
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section class="section faq-section" id="faq">
+<div class="container">
+<div class="section-heading">
+<div class="section-kicker" data-home-hi="सहायता और जानकारी" data-no-translate="true">
+
+            HELP &amp; INFORMATION
 
           </div>
+<h2>
 
-        </div>
+            <span data-home-hi="अक्सर पूछे जाने वाले" data-no-translate="true">Frequently Asked</span>
 
-      </div>
-
-    </section>
-
-    <!-- FREQUENTLY ASKED QUESTIONS -->
-
-    <section class="section faq-section"
-             id="faq">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
-
-            HELP & INFORMATION
-
-          </div>
-
-          <h2>
-
-            Frequently Asked
-
-            <span class="gold">
+            <span class="gold" data-home-hi="प्रश्न।" data-no-translate="true">
 
               Questions.
 
             </span>
-
-          </h2>
-
-          <p>
+</h2>
+<p data-home-hi="MeraHisab और Royal Khata से जुड़े सामान्य प्रश्नों के उत्तर जानें।" data-no-translate="true">
 
             Find answers to common questions
             about MeraHisab and Royal Khata.
 
           </p>
-
-        </div>
-
-        <div class="faq-list">
-
-          <details class="faq-item">
-
-            <summary>
+</div>
+<div class="faq-list">
+<details class="faq-item">
+<summary data-home-hi="MeraHisab क्या है?" data-no-translate="true">
 
               What is MeraHisab?
 
             </summary>
-
-            <div class="faq-answer">
+<div class="faq-answer" data-home-hi="MeraHisab एक व्यक्तिगत वित्त ऐप है, जो आय, खर्च, बचत और खातों की शेष राशि व्यवस्थित करने में मदद के लिए बनाया गया है।" data-no-translate="true">
 
               MeraHisab is a personal finance
               application that helps organize
@@ -3074,46 +2678,38 @@
               and account balances.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="Royal Khata क्या है?" data-no-translate="true">
 
               What is Royal Khata?
 
             </summary>
+<div class="faq-answer">
 
-            <div class="faq-answer">
-
-              Royal Khata is designed for digital
+              <span data-home-hi="Royal Khata डिजिटल खाता प्रबंधन और व्यवस्थित क्रेडिट-डेबिट रिकॉर्ड के लिए बनाया जा रहा है। अधिक जानकारी के लिए" data-no-translate="true">Royal Khata is designed for digital
               khata management and organized
               credit and debit records.
 
-              Visit the
+              Visit the</span>
 
-              <a href="/royal-khata.html">
+              <a data-home-hi="Royal Khata पेज" data-no-translate="true" href="/royal-khata.html">
 
                 Royal Khata page
 
               </a>
 
-              for more information.
+              <span data-home-hi="देखें।" data-no-translate="true">for more information.</span>
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या मैं आय और खर्च का हिसाब रख सकता हूं?" data-no-translate="true">
 
               Can I track income and expenses?
 
             </summary>
-
-            <div class="faq-answer">
+<div class="faq-answer" data-home-hi="MeraHisab आय और खर्च दर्ज करने तथा उपलब्ध रिपोर्ट से वित्तीय गतिविधि देखने के लिए बनाया गया है।" data-no-translate="true">
 
               MeraHisab is designed to record
               income and expenses and review
@@ -3121,85 +2717,67 @@
               available reports.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या MeraHisab में कई खातों की सुविधा है?" data-no-translate="true">
 
               Does MeraHisab support multiple accounts?
 
             </summary>
-
-            <div class="faq-answer">
+<div class="faq-answer" data-home-hi="MeraHisab अलग खातों और उपश्रेणियों में वित्त व्यवस्थित करने के लिए बनाया गया है।" data-no-translate="true">
 
               MeraHisab is designed to organize
               finances into separate accounts
               and subcategories.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या मैं बैकअप बना सकता हूं?" data-no-translate="true">
 
               Can I create a backup?
 
             </summary>
+<div class="faq-answer" data-home-hi="MeraHisab सहेजे गए रिकॉर्ड के बैकअप और पुनर्स्थापन का समर्थन करने के उद्देश्य से बनाया गया है। इंस्टॉल किए गए संस्करण में विकल्प जाँचें। जरूरी बैकअप सुरक्षित जगह रखें।" data-no-translate="true">
 
-            <div class="faq-answer">
-
-              MeraHisab includes backup and
-              restore functionality for
-              managing saved records.
+              MeraHisab is designed to support backup and restore for managing saved records. Confirm the available options in your installed version.
 
               Keep important backup files
               in a safe location.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="मेरा निजी डेटा कहां संग्रहित होता है?" data-no-translate="true">
 
               Where is my personal data stored?
 
             </summary>
+<div class="faq-answer">
 
-            <div class="faq-answer">
-
-              MeraHisab is designed for
+              <span data-home-hi="MeraHisab स्थानीय डेटा स्टोरेज के उद्देश्य से बनाया गया है। हमारी" data-no-translate="true">MeraHisab is designed for
               local data storage.
 
-              Read our
+              Read our</span>
 
-              <a href="/privacy.html">
+              <a data-home-hi="गोपनीयता नीति" data-no-translate="true" href="/privacy.html">
 
                 Privacy Policy
 
               </a>
 
-              for further information about
-              data handling and backup files.
+              <span data-home-hi="डेटा और बैकअप संबंधी जानकारी के लिए पढ़ें।" data-no-translate="true">for further information about
+              data handling and backup files.</span>
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या मैं अपने फोन पर वेबसाइट इंस्टॉल कर सकता हूं?" data-no-translate="true">
 
               Can I install the website on my phone?
 
             </summary>
-
-            <div class="faq-answer">
+<div class="faq-answer" data-home-hi="वेबसाइट में PWA समर्थन है। इंस्टॉलेशन की उपलब्धता ब्राउजर, डिवाइस और सफल PWA सेटअप पर निर्भर है। वेबसाइट इंस्टॉल करना Android APK इंस्टॉल करने से अलग है।" data-no-translate="true">
 
               The website includes Progressive
               Web App support.
@@ -3212,18 +2790,14 @@
               from installing the Android APK.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या इंटरनेट के बिना वेबसाइट इस्तेमाल कर सकते हैं?" data-no-translate="true">
 
               Can I use the website without internet?
 
             </summary>
-
-            <div class="faq-answer">
+<div class="faq-answer" data-home-hi="सफल PWA सेटअप के बाद कैश किए गए सार्वजनिक पेज ऑफलाइन उपलब्ध रह सकते हैं। डाउनलोड, कैश में न मौजूद संसाधन और कुछ अन्य सुविधाओं के लिए इंटरनेट जरूरी हो सकता है।" data-no-translate="true">
 
               Previously cached public pages
               may remain accessible offline
@@ -3234,43 +2808,35 @@
               require an internet connection.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="ऐप कहां से डाउनलोड करें?" data-no-translate="true">
 
               Where can I download the applications?
 
             </summary>
+<div class="faq-answer">
 
-            <div class="faq-answer">
+              <span data-home-hi="आधिकारिक" data-no-translate="true">Visit the official</span>
 
-              Visit the official
-
-              <a href="/downloads.html">
+              <a data-home-hi="डाउनलोड केंद्र" data-no-translate="true" href="/downloads.html">
 
                 Download Center
 
               </a>
 
-              for available application
-              downloads and release information.
+              <span data-home-hi="पर उपलब्ध ऐप डाउनलोड और रिलीज की जानकारी देखें।" data-no-translate="true">for available application
+              downloads and release information.</span>
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या Royal Khata डाउनलोड के लिए उपलब्ध है?" data-no-translate="true">
 
               Is Royal Khata available for download?
 
             </summary>
-
-            <div class="faq-answer">
+<div class="faq-answer" data-home-hi="Royal Khata की डाउनलोड जानकारी अभी लंबित है। उपलब्ध होने पर आधिकारिक लिंक दिया जाएगा।" data-no-translate="true">
 
               Royal Khata download information
               is currently pending.
@@ -3279,99 +2845,78 @@
               be provided when available.
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="क्या वित्तीय कैलकुलेटर उपलब्ध हैं?" data-no-translate="true">
 
               Are financial calculators available?
 
             </summary>
+<div class="faq-answer">
 
-            <div class="faq-answer">
+              <span data-home-hi="देखें:" data-no-translate="true">Visit the</span>
 
-              Visit the
-
-              <a href="/tools.html">
+              <a data-home-hi="वित्तीय उपकरण" data-no-translate="true" href="/tools.html">
 
                 Financial Tools
 
               </a>
 
-              page to explore available
+              <span data-home-hi="पेज पर उपलब्ध कैलकुलेटर और समय प्रबंधन उपकरण देखें। गणना के परिणाम केवल जानकारी के लिए अनुमान हैं।" data-no-translate="true">page to explore available
               calculators and time-management tools.
 
               Calculator results are estimates
-              for informational purposes.
+              for informational purposes.</span>
 
             </div>
-
-          </details>
-
-          <details class="faq-item">
-
-            <summary>
+</details>
+<details class="faq-item">
+<summary data-home-hi="MeraHisab सहायता से संपर्क कैसे करें?" data-no-translate="true">
 
               How can I contact MeraHisab support?
 
             </summary>
+<div class="faq-answer">
 
-            <div class="faq-answer">
+              <span data-home-hi="हमारा" data-no-translate="true">Visit our</span>
 
-              Visit our
+              <a data-home-hi="संपर्क और सहायता" data-no-translate="true" href="/contact.html">
 
-              <a href="/contact.html">
-
-                Contact & Support
+                Contact &amp; Support
 
               </a>
 
-              page for available support options.
+              <span data-home-hi="पेज उपलब्ध सहायता विकल्पों के लिए देखें। वेबसाइट अभी सहायता अनुरोध स्वतः भेजे जाने की गारंटी नहीं देती।" data-no-translate="true">page for available support options.
 
               The website does not currently
               guarantee automatic delivery
-              of support requests.
+              of support requests.</span>
 
             </div>
-
-          </details>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PREMIUM DOWNLOAD SECTION -->
-
-    <section class="download-section"
-             id="download">
-
-      <div class="container">
-
-        <div class="download-content">
-
-          <div class="section-kicker">
+</details>
+</div>
+</div>
+</section>
+<!-- PREMIUM DOWNLOAD SECTION -->
+<section class="download-section" id="download">
+<div class="container">
+<div class="download-content">
+<div class="section-kicker" data-home-hi="आज से व्यवस्था शुरू करें" data-no-translate="true">
 
             START ORGANIZING TODAY
 
           </div>
+<h2>
 
-          <h2>
+            <span data-home-hi="हर रुपये का" data-no-translate="true">Make Every Rupee</span>
 
-            Make Every Rupee
-
-            <span class="gold">
+            <span class="gold" data-home-hi="सही हिसाब रखें।" data-no-translate="true">
 
               Count.
 
             </span>
-
-          </h2>
-
-          <p>
+</h2>
+<p data-home-hi="अपने व्यक्तिगत वित्त को स्पष्ट बनाएँ। आधिकारिक वेबसाइट पर MeraHisab, Royal Khata और उपयोगी वित्तीय उपकरण देखें।" data-no-translate="true">
 
             Bring clarity to your personal finances.
 
@@ -3380,727 +2925,215 @@
             through our official website.
 
           </p>
+<div class="download-actions">
+<a class="btn btn-primary" href="/downloads.html">
 
-          <div class="download-actions">
-
-            <a href="/downloads.html"
-               class="btn btn-primary">
-
-              Download Center
+              <span data-home-hi="डाउनलोड केंद्र" data-no-translate="true">Download Center</span>
 
               <span aria-hidden="true">↓</span>
-
-            </a>
-
-            <a href="/tools.html"
-               class="btn btn-secondary">
+</a>
+<a class="btn btn-secondary" data-home-hi="वित्तीय उपकरण" data-no-translate="true" href="/tools.html">
 
               Financial Tools
 
             </a>
-
-            <a href="/contact.html"
-               class="btn btn-secondary">
+<a class="btn btn-secondary" data-home-hi="हमसे संपर्क करें" data-no-translate="true" href="/contact.html">
 
               Contact Us
 
             </a>
+</div>
+<div class="download-note">
+
+            <span data-home-hi="आधिकारिक वेबसाइट: merahisab.store" data-no-translate="true">Official Website: merahisab.store</span>
+
+            <br/>
+
+            <span data-home-hi="ऐप केवल विश्वसनीय और आधिकारिक स्रोतों से डाउनलोड करें।" data-no-translate="true">Download applications only from
+            trusted and official sources.</span>
 
           </div>
-
-          <div class="download-note">
-
-            Official Website: merahisab.store
-
-            <br>
-
-            Download applications only from
-            trusted and official sources.
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- PREMIUM WEBSITE FOOTER -->
-
-  <footer class="footer">
-
-    <div class="container">
-
-      <div class="footer-content">
-
-        <!-- FOOTER BRAND -->
-
-        <div class="footer-column">
-
-          <a href="/index.html"
-             class="footer-brand">
-
-            <span class="brand-mark">M</span>
-
-            <span>
-
-              <span class="brand-name">
+</div>
+</div>
+</section>
+<section aria-label="Website installation and offline settings" class="container" data-home-aria-hi="वेबसाइट इंस्टॉलेशन और ऑफलाइन सेटिंग्स" id="pwaMount"></section>
+</main>
+<!-- PREMIUM WEBSITE FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<!-- FOOTER BRAND -->
+<div class="footer-column">
+<a class="footer-brand" href="/index.html">
+<span class="brand-mark">M</span>
+<span>
+<span class="brand-name">
 
                 MeraHisab
 
               </span>
-
-              <span class="brand-tag">
+<span class="brand-tag" data-home-hi="व्यक्तिगत वित्त, आसान तरीके से" data-no-translate="true">
 
                 Personal Finance, Simplified
 
               </span>
-
-            </span>
-
-          </a>
-
-          <p class="footer-copy">
+</span>
+</a>
+<p class="footer-copy" data-home-hi="स्मार्ट वित्तीय व्यवस्था, डिजिटल खाता समाधान और उपयोगी वित्तीय उपकरण।" data-no-translate="true">
 
             Smart financial organization,
             digital khata solutions and
             useful financial tools.
 
           </p>
-
-          <div class="footer-domain">
-
-            <a href="https://merahisab.store/">
+<div class="footer-domain">
+<a href="https://merahisab.store/">
 
               merahisab.store
 
             </a>
-
-          </div>
-
-        </div>
-
-        <!-- APPLICATION LINKS -->
-
-        <div class="footer-column">
-
-          <h3>Applications</h3>
-
-          <div class="footer-links">
-
-            <a href="/merahisab.html">
+</div>
+</div>
+<!-- APPLICATION LINKS -->
+<div class="footer-column">
+<h3 data-home-hi="ऐप्स" data-no-translate="true">Applications</h3>
+<div class="footer-links">
+<a href="/merahisab.html">
 
               MeraHisab
 
             </a>
-
-            <a href="/royal-khata.html">
+<a href="/royal-khata.html">
 
               Royal Khata
 
             </a>
-
-            <a href="/downloads.html">
+<a data-home-hi="डाउनलोड केंद्र" data-no-translate="true" href="/downloads.html">
 
               Download Center
 
             </a>
-
-            <a href="/compare.html">
+<a data-home-hi="ऐप्स की तुलना करें" data-no-translate="true" href="/compare.html">
 
               Compare Applications
 
             </a>
-
-          </div>
-
-        </div>
-
-        <!-- WEBSITE RESOURCES -->
-
-        <div class="footer-column">
-
-          <h3>Resources</h3>
-
-          <div class="footer-links">
-
-            <a href="/index.html">
+</div>
+</div>
+<!-- WEBSITE RESOURCES -->
+<div class="footer-column">
+<h3 data-home-hi="संसाधन" data-no-translate="true">Resources</h3>
+<div class="footer-links">
+<a data-home-hi="होम" data-no-translate="true" href="/index.html">
 
               Home
 
             </a>
-
-            <a href="#features">
+<a data-home-hi="विशेषताएँ" data-no-translate="true" href="#features">
 
               Features
 
             </a>
-
-            <a href="/tools.html">
+<a data-home-hi="वित्तीय उपकरण" data-no-translate="true" href="/tools.html">
 
               Financial Tools
 
             </a>
+<a data-home-hi="घड़ी और स्टॉपवॉच" data-no-translate="true" href="#time-tools">
 
-            <a href="#time-tools">
-
-              Clock & Stopwatch
+              Clock &amp; Stopwatch
 
             </a>
-
-            <a href="#faq">
+<a data-home-hi="अक्सर पूछे जाने वाले प्रश्न" data-no-translate="true" href="#faq">
 
               Frequently Asked Questions
 
             </a>
-
-          </div>
-
-        </div>
-
-        <!-- SUPPORT AND PRIVACY -->
-
-        <div class="footer-column">
-
-          <h3>Help & Information</h3>
-
-          <div class="footer-links">
-
-            <a href="/about.html">
+</div>
+</div>
+<!-- SUPPORT AND PRIVACY -->
+<div class="footer-column">
+<h3 data-home-hi="सहायता और जानकारी" data-no-translate="true">Help &amp; Information</h3>
+<div class="footer-links">
+<a data-home-hi="हमारे बारे में" data-no-translate="true" href="/about.html">
 
               About Us
 
             </a>
-
-            <a href="/privacy.html">
+<a data-home-hi="गोपनीयता नीति" data-no-translate="true" href="/privacy.html">
 
               Privacy Policy
 
             </a>
+<a data-home-hi="संपर्क और सहायता" data-no-translate="true" href="/contact.html">
 
-            <a href="/contact.html">
-
-              Contact & Support
+              Contact &amp; Support
 
             </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <span>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>
 
           © <span id="currentYear">2026</span>
 
-          MeraHisab. All rights reserved.
+          <span data-home-hi="MeraHisab। सर्वाधिकार सुरक्षित।" data-no-translate="true">MeraHisab. All rights reserved.</span>
 
         </span>
+<span>
 
-        <span>
+          <span data-home-hi="सावधानी और" data-no-translate="true">Designed with care and</span>
 
-          Designed with care and
-
-          <a href="/privacy.html">
+          <a data-home-hi="गोपनीयता को ध्यान में रखकर बनाया गया।" data-no-translate="true" href="/privacy.html">
 
             privacy in mind.
 
           </a>
-
-        </span>
-
-      </div>
-
-    </div>
-
-  </footer>
-
-  <!-- JAVASCRIPT APPLICATION ENGINE -->
-
-  <script>
-
-    (function () {
-
-      "use strict";
-
-      /* =====================================
-         DUPLICATE INITIALIZATION PROTECTION
-         ===================================== */
-
-      if (window.__merahisabHomeInitialized) {
-
-        return;
-
-      }
-
-      window.__merahisabHomeInitialized = true;
-
-
-      /* =====================================
-         LIVE INDIAN STANDARD TIME CLOCK
-         ===================================== */
-
-      const clockElement =
-        document.getElementById("liveClock");
-
-      const dateElement =
-        document.getElementById("liveDate");
-
-      const timeFormatter =
-        new Intl.DateTimeFormat("en-IN", {
-
-          timeZone: "Asia/Kolkata",
-
-          hour: "2-digit",
-
-          minute: "2-digit",
-
-          second: "2-digit",
-
-          hourCycle: "h23"
-
-        });
-
-      const dateFormatter =
-        new Intl.DateTimeFormat("en-IN", {
-
-          timeZone: "Asia/Kolkata",
-
-          weekday: "long",
-
-          day: "2-digit",
-
-          month: "long",
-
-          year: "numeric"
-
-        });
-
-      function updateLiveClock() {
-
-        const now = new Date();
-
-        if (clockElement) {
-
-          clockElement.textContent =
-            timeFormatter.format(now);
-
-        }
-
-        if (dateElement) {
-
-          dateElement.textContent =
-            dateFormatter.format(now);
-
-        }
-
-      }
-
-      updateLiveClock();
-
-      window.setInterval(
-        updateLiveClock,
-        1000
-      );
-
-
-      /* =====================================
-         ADVANCED STOPWATCH ENGINE
-         ===================================== */
-
-      const stopwatchDisplay =
-        document.getElementById(
-          "stopwatchDisplay"
-        );
-
-      const startButton =
-        document.getElementById(
-          "startStopwatch"
-        );
-
-      const lapButton =
-        document.getElementById(
-          "lapStopwatch"
-        );
-
-      const resetButton =
-        document.getElementById(
-          "resetStopwatch"
-        );
-
-      const lapList =
-        document.getElementById(
-          "lapList"
-        );
-
-      const lapEmpty =
-        document.getElementById(
-          "lapEmpty"
-        );
-
-      let stopwatchRunning = false;
-
-      let stopwatchStartTime = 0;
-
-      let elapsedBeforeStart = 0;
-
-      let animationFrameId = null;
-
-      let lapNumber = 0;
-
-      let previousLapTime = 0;
-
-      const MAX_VISIBLE_LAPS = 100;
-
-
-      function formatStopwatchTime(milliseconds) {
-
-        const safeTime =
-          Math.max(0, milliseconds);
-
-        const totalCentiseconds =
-          Math.floor(safeTime / 10);
-
-        const centiseconds =
-          totalCentiseconds % 100;
-
-        const totalSeconds =
-          Math.floor(totalCentiseconds / 100);
-
-        const seconds =
-          totalSeconds % 60;
-
-        const totalMinutes =
-          Math.floor(totalSeconds / 60);
-
-        const minutes =
-          totalMinutes % 60;
-
-        const hours =
-          Math.floor(totalMinutes / 60);
-
-        return (
-
-          String(hours).padStart(2, "0") +
-
-          ":" +
-
-          String(minutes).padStart(2, "0") +
-
-          ":" +
-
-          String(seconds).padStart(2, "0") +
-
-          "." +
-
-          String(centiseconds).padStart(2, "0")
-
-        );
-
-      }
-
-
-      function getElapsedTime() {
-
-        if (stopwatchRunning) {
-
-          return elapsedBeforeStart +
-
-            (performance.now() -
-             stopwatchStartTime);
-
-        }
-
-        return elapsedBeforeStart;
-
-      }
-
-
-      function updateStopwatchDisplay() {
-
-        if (!stopwatchDisplay) {
-
-          return;
-
-        }
-
-        stopwatchDisplay.textContent =
-
-          formatStopwatchTime(
-            getElapsedTime()
-          );
-
-      }
-
-
-      function cancelStopwatchAnimation() {
-
-        if (animationFrameId !== null) {
-
-          cancelAnimationFrame(
-            animationFrameId
-          );
-
-          animationFrameId = null;
-
-        }
-
-      }
-
-
-      function stopwatchAnimation() {
-
-        if (!stopwatchRunning) {
-
-          animationFrameId = null;
-
-          return;
-
-        }
-
-        updateStopwatchDisplay();
-
-        animationFrameId =
-          requestAnimationFrame(
-            stopwatchAnimation
-          );
-
-      }
-
-
-      function updateStopwatchButtons() {
-
-        if (startButton) {
-
-          if (stopwatchRunning) {
-
-            startButton.textContent =
-              "Pause";
-
-            startButton.setAttribute(
-              "aria-label",
-              "Pause stopwatch"
-            );
-
-          } else if (elapsedBeforeStart > 0) {
-
-            startButton.textContent =
-              "Resume";
-
-            startButton.setAttribute(
-              "aria-label",
-              "Resume stopwatch"
-            );
-
-          } else {
-
-            startButton.textContent =
-              "Start";
-
-            startButton.setAttribute(
-              "aria-label",
-              "Start stopwatch"
-            );
-
-          }
-
-        }
-
-        if (lapButton) {
-
-          lapButton.disabled =
-            !stopwatchRunning;
-
-        }
-
-      }
-
-
-      function toggleStopwatch() {
-
-        if (stopwatchRunning) {
-
-          elapsedBeforeStart =
-            getElapsedTime();
-
-          stopwatchRunning = false;
-
-          cancelStopwatchAnimation();
-
-          updateStopwatchDisplay();
-
-          updateStopwatchButtons();
-
-          return;
-
-        }
-
-        cancelStopwatchAnimation();
-
-        stopwatchStartTime =
-          performance.now();
-
-        stopwatchRunning = true;
-
-        updateStopwatchButtons();
-
-        stopwatchAnimation();
-
-      }
-
-
-      function addStopwatchLap() {
-
-        if (!stopwatchRunning || !lapList) {
-
-          return;
-
-        }
-
-        lapNumber++;
-
-        const currentTime =
-          getElapsedTime();
-
-        const lapDuration =
-          currentTime - previousLapTime;
-
-        previousLapTime =
-          currentTime;
-
-        if (lapEmpty) {
-
-          lapEmpty.hidden = true;
-
-        }
-
-        const lapRow =
-          document.createElement("div");
-
-        lapRow.className = "lap-row";
-
-        const lapIndex =
-          document.createElement("span");
-
-        lapIndex.textContent =
-          "Lap " + lapNumber;
-
-        const lapTime =
-          document.createElement("span");
-
-        lapTime.textContent =
-          formatStopwatchTime(lapDuration);
-
-        const totalTime =
-          document.createElement("span");
-
-        totalTime.textContent =
-          formatStopwatchTime(currentTime);
-
-        lapRow.appendChild(lapIndex);
-
-        lapRow.appendChild(lapTime);
-
-        lapRow.appendChild(totalTime);
-
-        lapList.prepend(lapRow);
-
-        const recordedLaps =
-          lapList.querySelectorAll(".lap-row");
-
-        if (recordedLaps.length >
-            MAX_VISIBLE_LAPS) {
-
-          recordedLaps[
-            recordedLaps.length - 1
-          ].remove();
-
-        }
-
-      }
-
-
-      function resetStopwatch() {
-
-        stopwatchRunning = false;
-
-        stopwatchStartTime = 0;
-
-        elapsedBeforeStart = 0;
-
-        lapNumber = 0;
-
-        previousLapTime = 0;
-
-        cancelStopwatchAnimation();
-
-        if (lapList) {
-
-          lapList
-            .querySelectorAll(".lap-row")
-            .forEach(function (row) {
-
-              row.remove();
-
-            });
-
-        }
-
-        if (lapEmpty) {
-
-          lapEmpty.hidden = false;
-
-        }
-
-        updateStopwatchDisplay();
-
-        updateStopwatchButtons();
-
-      }
-
-
-      if (startButton) {
-
-        startButton.addEventListener(
-          "click",
-          toggleStopwatch
-        );
-
-      }
-
-      if (lapButton) {
-
-        lapButton.addEventListener(
-          "click",
-          addStopwatchLap
-        );
-
-      }
-
-      if (resetButton) {
-
-        resetButton.addEventListener(
-          "click",
-          resetStopwatch
-        );
-
-      }
-
-      updateStopwatchDisplay();
-
-      updateStopwatchButtons();
-
-
-      /* =====================================
-         PREMIUM MOTIVATIONAL TICKER
-         ===================================== */
-
-      const motivationLines = [
+</span>
+</div>
+</div>
+</footer>
+<!-- JAVASCRIPT APPLICATION ENGINE -->
+<script>
+(function () {
+  "use strict";
+  if (window.__merahisabHomeInitialized) return;
+  window.__merahisabHomeInitialized = true;
+  const $ = id => document.getElementById(id);
+  const lang = () => window.MeraHisabLanguage?.getLanguage?.() || (document.documentElement.dataset.language === "hi" ? "hi" : "en");
+  const tr = (en, hi) => lang() === "hi" ? hi : en;
+  const set = (node, text) => { if (node && node.textContent !== text) node.textContent = text; };
+  const translations = Array.from(document.querySelectorAll("[data-home-hi]")).map(el => [el,el.textContent,el.dataset.homeHi]);
+  const attributes = Array.from(document.querySelectorAll("[data-home-alt-hi],[data-home-aria-hi]")).flatMap(el => [ ["alt", "homeAltHi"], ["aria-label", "homeAriaHi"] ].filter(([,k]) => el.dataset[k]).map(([a,k]) => [el,a,el.getAttribute(a),el.dataset[k]]));
+  let timeFormat, dateFormat, locale;
+  function updateClock() {
+    const next = lang() === "hi" ? "hi-IN" : "en-IN";
+    if (locale !== next) {
+      locale = next;
+      timeFormat = new Intl.DateTimeFormat(locale,{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"});
+      dateFormat = new Intl.DateTimeFormat(locale,{timeZone:"Asia/Kolkata",weekday:"long",day:"2-digit",month:"long",year:"numeric"});
+    }
+    const now = new Date(); set($("liveClock"),timeFormat.format(now)); set($("liveDate"),dateFormat.format(now));
+  }
+  let clockTimer = null;
+  function tick() { clockTimer = null; if (document.hidden) return; updateClock(); clockTimer = setTimeout(tick, 1000 - Date.now()%1000 + 15); }
+  const start = $("startStopwatch"), lap = $("lapStopwatch"), reset = $("resetStopwatch"), list = $("lapList");
+  let running = false, started = 0, accumulated = 0, previous = 0, lapCount = 0, frame = null;
+  function elapsed() { return accumulated + (running ? performance.now()-started : 0); }
+  function format(ms) { const t=Math.floor(Math.max(0,ms)/10), pad=n=>String(n).padStart(2,"0"); return `${pad(Math.floor(t/360000))}:${pad(Math.floor(t/6000)%60)}:${pad(Math.floor(t/100)%60)}.${pad(t%100)}`; }
+  function draw() { set($("stopwatchDisplay"),format(elapsed())); }
+  function stopFrame() { if(frame!==null) cancelAnimationFrame(frame); frame=null; }
+  function animate() { frame=null; if(!running||document.hidden)return; draw(); frame=requestAnimationFrame(animate); }
+  function buttons() {
+    const label = running ? tr("Pause","रोकें") : accumulated>0 ? tr("Resume","जारी रखें") : tr("Start","शुरू करें");
+    set(start,label); start.setAttribute("aria-label",running?tr("Pause stopwatch","स्टॉपवॉच रोकें"):accumulated>0?tr("Resume stopwatch","स्टॉपवॉच जारी रखें"):tr("Start stopwatch","स्टॉपवॉच शुरू करें"));
+    lap.disabled=!running;
+  }
+  start.addEventListener("click",()=>{ if(running){accumulated=elapsed();running=false;stopFrame();}else{started=performance.now();running=true;stopFrame();animate();}draw();buttons(); });
+  lap.addEventListener("click",()=>{ if(!running)return;const total=elapsed(),split=total-previous;previous=total;lapCount++;const row=document.createElement("div");row.className="lap-row";row.dataset.lapNumber=String(lapCount);[tr("Lap ","लैप ")+lapCount,format(split),format(total)].forEach(text=>{const span=document.createElement("span");span.textContent=text;row.append(span);});list.prepend(row);$("lapEmpty").hidden=true;const rows=list.querySelectorAll(".lap-row");if(rows.length>100)rows[rows.length-1].remove(); });
+  reset.addEventListener("click",()=>{running=false;started=accumulated=previous=lapCount=0;stopFrame();list.querySelectorAll(".lap-row").forEach(row=>row.remove());$("lapEmpty").hidden=false;draw();buttons();});
+  const quotes = [
 
         "हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।",
 
@@ -4203,389 +3236,26 @@
         "आज बेहतर बनिए, कल और बेहतर होगा।"
 
       ];
-
-
-      const motivationElement =
-        document.getElementById(
-          "motivationText"
-        );
-
-      let previousMotivationIndex = -1;
-
-      let motivationTimeout = null;
-
-      let motivationInterval = null;
-
-      const reducedMotion =
-        window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        );
-
-
-      function showRandomMotivation() {
-
-        if (!motivationElement ||
-            motivationLines.length === 0) {
-
-          return;
-
-        }
-
-        let randomIndex =
-          Math.floor(
-
-            Math.random() *
-            motivationLines.length
-
-          );
-
-        if (motivationLines.length > 1) {
-
-          while (
-            randomIndex ===
-            previousMotivationIndex
-          ) {
-
-            randomIndex =
-              Math.floor(
-
-                Math.random() *
-                motivationLines.length
-
-              );
-
-          }
-
-        }
-
-        previousMotivationIndex =
-          randomIndex;
-
-        const nextLine =
-          motivationLines[randomIndex];
-
-        function updateMotivationText() {
-
-          motivationElement.textContent =
-            nextLine;
-
-          motivationElement.lang =
-            /[\u0900-\u097F]/.test(nextLine)
-              ? "hi"
-              : "en";
-
-          motivationElement.classList.remove(
-            "fade-out"
-          );
-
-          motivationTimeout = null;
-
-        }
-
-        if (motivationTimeout !== null) {
-
-          clearTimeout(motivationTimeout);
-
-        }
-
-        if (reducedMotion.matches) {
-
-          updateMotivationText();
-
-          return;
-
-        }
-
-        motivationElement.classList.add(
-          "fade-out"
-        );
-
-        motivationTimeout =
-          window.setTimeout(
-
-            updateMotivationText,
-
-            550
-
-          );
-
-      }
-
-
-      function startMotivationTicker() {
-
-        if (!motivationElement ||
-            motivationInterval !== null) {
-
-          return;
-
-        }
-
-        motivationInterval =
-          window.setInterval(
-
-            function () {
-
-              if (!document.hidden &&
-                  !reducedMotion.matches) {
-
-                showRandomMotivation();
-
-              }
-
-            },
-
-            7000
-
-          );
-
-      }
-
-
-      if (motivationElement) {
-
-        showRandomMotivation();
-
-        startMotivationTicker();
-
-      }
-
-
-      /* =====================================
-         TICKER PAUSE AND RESUME CONTROL
-         ===================================== */
-
-      if (motivationElement) {
-
-        const tickerSection =
-          motivationElement.closest(
-            ".motivation-ticker"
-          );
-
-        if (tickerSection) {
-
-          const tickerButton =
-            document.createElement("button");
-
-          tickerButton.type = "button";
-
-          tickerButton.className =
-            "timer-btn";
-
-          tickerButton.style.marginTop =
-            "10px";
-
-          tickerButton.textContent =
-            "Pause Quotes";
-
-          tickerButton.addEventListener(
-
-            "click",
-
-            function () {
-
-              if (motivationInterval !== null) {
-
-                clearInterval(
-                  motivationInterval
-                );
-
-                motivationInterval = null;
-
-                if (motivationTimeout !== null) {
-
-                  clearTimeout(
-                    motivationTimeout
-                  );
-
-                  motivationTimeout = null;
-
-                }
-
-                motivationElement.classList.remove(
-                  "fade-out"
-                );
-
-                tickerButton.textContent =
-                  "Resume Quotes";
-
-              } else {
-
-                showRandomMotivation();
-
-                startMotivationTicker();
-
-                tickerButton.textContent =
-                  "Pause Quotes";
-
-              }
-
-            }
-
-          );
-
-          tickerSection.appendChild(
-            tickerButton
-          );
-
-        }
-
-      }
-
-
-      /* =====================================
-         PAGE VISIBILITY MANAGEMENT
-         ===================================== */
-
-      document.addEventListener(
-
-        "visibilitychange",
-
-        function () {
-
-          if (!document.hidden) {
-
-            updateLiveClock();
-
-            updateStopwatchDisplay();
-
-          }
-
-        }
-
-      );
-
-
-      /* =====================================
-         AUTOMATIC COPYRIGHT YEAR
-         ===================================== */
-
-      const currentYearElement =
-        document.getElementById(
-          "currentYear"
-        );
-
-      if (currentYearElement) {
-
-        currentYearElement.textContent =
-
-          new Intl.DateTimeFormat(
-
-            "en-IN",
-
-            {
-
-              timeZone: "Asia/Kolkata",
-
-              year: "numeric"
-
-            }
-
-          ).format(new Date());
-
-      }
-
-
-      /* =====================================
-         DASHBOARD IMAGE ERROR HANDLING
-         ===================================== */
-
-      const dashboardImage =
-        document.querySelector(
-          ".real-dashboard-image"
-        );
-
-      if (dashboardImage) {
-
-        function handleDashboardImageError() {
-
-          dashboardImage.hidden = true;
-
-          const previewWrap =
-            dashboardImage.closest(
-              ".preview-wrap"
-            );
-
-          if (!previewWrap) {
-
-            return;
-
-          }
-
-          const previewCaption =
-            previewWrap.querySelector(
-              ".preview-caption"
-            );
-
-          if (previewCaption) {
-
-            previewCaption.textContent =
-              "Dashboard preview is currently unavailable. Visit the MeraHisab application page for more information.";
-
-          }
-
-          const dashboardLink =
-            dashboardImage.closest("a");
-
-          if (dashboardLink) {
-
-            dashboardLink.textContent =
-              "Explore MeraHisab";
-
-            dashboardLink.classList.add(
-              "btn",
-              "btn-secondary"
-            );
-
-          }
-
-        }
-
-        dashboardImage.addEventListener(
-
-          "error",
-
-          handleDashboardImageError,
-
-          { once: true }
-
-        );
-
-        if (dashboardImage.complete &&
-            dashboardImage.naturalWidth === 0) {
-
-          handleDashboardImageError();
-
-        }
-
-      }
-
-
-      /* =====================================
-         PWA ENGINE INFORMATION
-         ===================================== */
-
-      /*
-        PWA registration, installation,
-        cache management and update handling
-        are managed by /pwa.js.
-
-        Shared website theme management
-        is handled by /upgrade.js.
-
-        Do not register another service
-        worker from this inline script.
-      */
-
-    })();
-
-  </script>
-
-  <!-- JAVASCRIPT DISABLED FALLBACK -->
-
-  <noscript>
-
-    <div style="
+  const quote=$("motivationText"), ticker=quote.closest(".motivation-ticker"), motion=matchMedia("(prefers-reduced-motion: reduce)");
+  let quoteTimer=null, last=-1, paused=motion.matches;
+  const tickerButton=document.createElement("button");tickerButton.type="button";tickerButton.className="timer-btn";tickerButton.style.marginTop="10px";tickerButton.setAttribute("data-no-translate","true");ticker.append(tickerButton);
+  function nextQuote(){const candidates=quotes.map((text,i)=>({text,i})).filter(x=>lang()==="hi" ? /[\u0900-\u097f]/.test(x.text) : !/[\u0900-\u097f]/.test(x.text));const pool=candidates.length?candidates:quotes.map((text,i)=>({text,i}));const options=pool.filter(x=>x.i!==last);const selected=(options.length?options:pool)[Math.floor(Math.random()*(options.length||pool.length))];if(selected){last=selected.i;set(quote,selected.text);quote.lang=/[\u0900-\u097f]/.test(selected.text)?"hi":"en";}}
+  function tickerState(){clearInterval(quoteTimer);quoteTimer=null;set(tickerButton,paused?tr("Resume Quotes","प्रेरक विचार जारी रखें"):tr("Pause Quotes","प्रेरक विचार रोकें"));if(!paused&&!document.hidden)quoteTimer=setInterval(nextQuote,7000);}
+  tickerButton.addEventListener("click",()=>{paused=!paused;if(!paused)nextQuote();tickerState();});
+  const motionChange=e=>{if(e.matches){paused=true;tickerState();}};if(motion.addEventListener)motion.addEventListener("change",motionChange);else motion.addListener?.(motionChange);
+  const image=document.querySelector(".real-dashboard-image"), caption=document.querySelector(".preview-caption");let imageFailed=false;
+  function imageFallback(){imageFailed=true;image.hidden=true;const link=image.closest("a");link.classList.add("btn","btn-secondary");let fallback=link.querySelector("[data-home-fallback]");if(!fallback){fallback=document.createElement("span");fallback.dataset.homeFallback="true";fallback.setAttribute("data-no-translate","true");link.append(fallback);}set(fallback,tr("Explore MeraHisab","MeraHisab के बारे में जानें"));set(caption,tr("Dashboard preview is currently unavailable.","डैशबोर्ड का पूर्वावलोकन अभी उपलब्ध नहीं है।"));}
+  image.addEventListener("error",imageFallback,{once:true});if(image.complete&&!image.naturalWidth)imageFallback();
+  function applyLanguage(){const hindi=lang()==="hi";translations.forEach(([el,en,hi])=>set(el,hindi?hi:en));attributes.forEach(([el,a,en,hi])=>el.setAttribute(a,hindi?hi:en));updateClock();buttons();list.querySelectorAll(".lap-row").forEach(row=>set(row.firstElementChild,tr("Lap ","लैप ")+row.dataset.lapNumber));nextQuote();tickerState();if(imageFailed)imageFallback();}
+  window.addEventListener("merahisab:languagechange",applyLanguage);window.addEventListener("merahisab:languageready",applyLanguage);
+  document.addEventListener("visibilitychange",()=>{clearTimeout(clockTimer);clockTimer=null;stopFrame();if(!document.hidden){tick();if(running)animate();draw();}tickerState();});
+  window.addEventListener("pageshow",()=>{draw();updateClock();});
+  applyLanguage();tick();draw();
+})();
+</script>
+<!-- JAVASCRIPT DISABLED FALLBACK -->
+<noscript>
+<div style="
       padding:20px;
       text-align:center;
       background:#172640;
@@ -4600,11 +3270,7 @@
       require JavaScript.
 
     </div>
-
-  </noscript>
-
-  <!-- MERAHISAB WEBSITE COMPLETE -->
-
+</noscript>
+<!-- MERAHISAB WEBSITE COMPLETE -->
 </body>
 </html>
-  
