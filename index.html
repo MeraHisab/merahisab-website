@@ -1500,3 +1500,413 @@ iframe {
 
 @media (max-width: 1000px) {
   .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+    
+/* PRIVACY SECTION DESKTOP ALIGNMENT FIX */
+
+.privacy-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 40px;
+}
+
+.privacy-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  position: relative;
+}
+
+.privacy-shield {
+  position: relative;
+  margin: 0 auto 24px;
+  transform: none;
+  z-index: 2;
+}
+
+.privacy-text {
+  min-width: 0;
+  position: relative;
+}
+
+@media (max-width: 760px) {
+  .privacy-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+    
+/* REAL MERAHISAB DASHBOARD IMAGE */
+
+.real-dashboard-image {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 1px solid rgba(201, 164, 91, 0.45);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.30);
+}
+
+.preview-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .real-dashboard-image {
+    border-radius: 14px;
+  }
+}
+/* PREMIUM MOTIVATIONAL TICKER */
+
+.motivation-ticker {
+  width: 100%;
+  padding: 16px 20px;
+  margin: 18px auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(12, 24, 48, 0.96),
+    rgba(20, 35, 64, 0.96)
+  );
+
+  border: 1px solid rgba(212, 175, 110, 0.35);
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.16),
+    inset 0 0 18px rgba(212, 175, 110, 0.04);
+}
+
+.motivation-ticker::before,
+.motivation-ticker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.motivation-ticker::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(12, 24, 48, 1),
+    transparent
+  );
+}
+
+.motivation-ticker::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(12, 24, 48, 1),
+    transparent
+  );
+}
+
+.motivation-label {
+  color: #d6b36a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.motivation-text {
+  color: #f4e5c3;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+
+  opacity: 1;
+  transform: translateY(0);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.motivation-text.fade-out {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+@media (max-width: 600px) {
+  .motivation-ticker {
+    padding: 13px 12px;
+    margin: 12px auto;
+    border-radius: 11px;
+  }
+
+  .motivation-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .motivation-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+     
+  </style>
+<link rel="stylesheet" href="upgrade.css"><script defer src="upgrade.js"></script></head>
+
+<body>
+
+  <!-- HEADER -->
+  <!-- PREMIUM MOTIVATIONAL TICKER -->
+
+<section class="motivation-ticker" aria-label="Daily motivation">
+
+  <div class="motivation-label">
+    ✦ DAILY INSPIRATION ✦
+  </div>
+
+  <div
+    class="motivation-text"
+    id="motivationText"
+    aria-live="polite"
+  >
+    हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।
+  </div>
+
+</section>
+
+<header class="header">
+  <div class="container header-inner">
+
+    <a href="#home" class="brand">
+      <span class="brand-mark">M</span>
+      <span class="brand-text">
+        <span class="brand-name">MeraHisab</span>
+        <span class="brand-tag">Personal Finance, Simplified</span>
+      </span>
+    </a>
+
+    <a href="download.html" class="nav-cta">
+      Download App
+    </a>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#about">App Information</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+  </div>
+</header>
+
+   
+  <!-- TIME TOOLS: CLOCK AND STOPWATCH -->
+  <section class="time-tools-section" id="time-tools">
+    <div class="container">
+
+      <div class="time-tools-heading">
+        <h2>Time at Your Fingertips</h2>
+        <p>Stay on time. Stay productive.</p>
+      </div>
+
+      <div class="time-tools-grid">
+
+        <!-- LIVE CLOCK -->
+        <div class="time-card">
+
+          <div class="time-card-top">
+            <div class="time-card-title">
+              <span class="time-card-icon">◷</span>
+              <span>Live Clock</span>
+            </div>
+
+            <span class="time-zone">INDIAN STANDARD TIME</span>
+          </div>
+
+          <div
+            class="live-time"
+            id="liveClock"
+            role="timer"
+            aria-live="off"
+          >
+            00:00:00 AM
+          </div>
+
+          <div class="live-date" id="liveDate">
+            Loading date...
+          </div>
+
+          <div class="clock-status">
+            <span class="clock-status-dot"></span>
+            <span>Live • Asia/Kolkata</span>
+          </div>
+
+        </div>
+   
+<div class="time-card"><h3>Stopwatch</h3><div class="stopwatch-display" id="stopwatchDisplay">00:00:00.00</div><div class="stopwatch-buttons"><button class="btn btn-primary" id="startStopwatch">Start</button><button class="btn btn-secondary" id="lapStopwatch">Lap</button><button class="btn btn-secondary" id="resetStopwatch">Reset</button></div><div id="lapList"><p id="lapEmpty">No laps recorded</p></div></div></div></div></section>
+  <!-- MAIN CONTENT -->
+  <main id="home">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            SMART PERSONAL FINANCE
+          </div>
+
+          <h1>
+            Take Control of Your Money.
+            <span class="gold">Own Your Future.</span>
+          </h1>
+
+          <p class="hero-description">
+            Manage your daily income, expenses, savings and accounts
+            with MeraHisab. A simple and organized way to understand
+            where your money goes and keep your finances under control.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#download" class="btn btn-primary">
+              Get Started <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="#features" class="btn btn-secondary">
+              Explore Features
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span aria-hidden="true">✓</span>
+            Designed with privacy and simplicity in mind
+          </div>
+
+        </div>
+
+    <!-- DASHBOARD PREVIEW -->
+
+<div class="preview-wrap">
+  <div class="preview-glow"></div>
+
+  <a href="download.html" class="dashboard-download-link">
+
+    <img
+      src="merahisab-dashboard.png"
+      alt="MeraHisab App Dashboard"
+      class="real-dashboard-image"
+    >
+
+  </a>
+
+  <div class="preview-caption">
+    Click the Dashboard to Explore and Download MeraHisab
+  </div>
+
+</div>
+     
+    </div></section>
+<section class="section" id="apps"><div class="container"><h2>Discover our applications</h2><div class="upgrade-grid"><article class="upgrade-card"><h3>MeraHisab</h3><p>Personal income and expense management.</p><a class="btn btn-primary" href="merahisab.html">Explore &amp; Download</a></article><article class="upgrade-card"><h3>Royal Khata</h3><p>Discover Royal Khata. Release information pending.</p><a class="btn btn-primary" href="royal-khata.html">Explore app</a></article></div><a href="downloads.html">Download center</a> · <a href="compare.html">Compare apps</a> · <a href="tools.html">Financial tools</a></div></section>
+    <!-- FEATURES SECTION -->
+    <section class="section features-section" id="features">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">POWERFUL FEATURES</div>
+
+          <h2>
+            Everything You Need.
+            <span class="gold">One Place.</span>
+          </h2>
+
+          <p>
+            Organize your personal finances with useful tools
+            designed to make everyday money management simpler.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <article class="feature-card">
+            <div class="feature-icon">₹</div>
+            <h3>Income & Expense Tracking</h3>
+            <p>
+              Record daily income and expenses and keep track
+              of your money in an organized way.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">▤</div>
+            <h3>Multiple Accounts</h3>
+            <p>
+              Organize Requirement, Investment, Saving,
+              Donation and other dedicated accounts.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Smart Reports</h3>
+            <p>
+              Understand your financial activity through
+              daily, monthly and yearly reports.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Smart Search & Filters</h3>
+            <p>
+              Find transactions using dates, accounts,
+              categories, amounts and details.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>Backup & Restore</h3>
+            <p>
+              Create a backup of your records and restore
+              your saved data when needed.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>Notes & Task Planning</h3>
+            <p>
