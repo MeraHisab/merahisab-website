@@ -1,0 +1,651 @@
+
+/* ==========================================
+   MERAHISAB LANGUAGE STYLESHEET
+   Version: 1.0.0
+   Official: https://merahisab.store/
+========================================== */
+
+/* LANGUAGE DESIGN VARIABLES */
+
+:root {
+
+  --mh-lang-gold: #d4af37;
+  --mh-lang-gold-light: #f0d9a6;
+  --mh-lang-bg: #101e35;
+  --mh-lang-text: #f8f6f0;
+  --mh-lang-border: rgba(212,175,55,.45);
+  --mh-lang-hover: rgba(212,175,55,.12);
+  --mh-lang-focus: rgba(212,175,55,.25);
+  --mh-lang-shadow: rgba(0,0,0,.18);
+
+}
+
+/* SYSTEM LIGHT THEME */
+
+@media (prefers-color-scheme: light) {
+
+  :root:not([data-theme="dark"]) {
+
+    --mh-lang-bg: #ffffff;
+    --mh-lang-text: #172033;
+    --mh-lang-border: rgba(118,80,24,.4);
+    --mh-lang-hover: rgba(212,175,55,.10);
+    --mh-lang-shadow: rgba(0,0,0,.08);
+
+  }
+
+}
+
+/* EXPLICIT LIGHT THEME */
+
+html[data-theme="light"],
+body[data-theme="light"] {
+
+  --mh-lang-bg: #ffffff;
+  --mh-lang-text: #172033;
+  --mh-lang-border: rgba(118,80,24,.4);
+  --mh-lang-hover: rgba(212,175,55,.10);
+  --mh-lang-shadow: rgba(0,0,0,.08);
+
+}
+
+/* EXPLICIT DARK THEME */
+
+html[data-theme="dark"],
+body[data-theme="dark"] {
+
+  --mh-lang-bg: #101e35;
+  --mh-lang-text: #f8f6f0;
+  --mh-lang-border: rgba(212,175,55,.45);
+  --mh-lang-hover: rgba(212,175,55,.12);
+  --mh-lang-shadow: rgba(0,0,0,.18);
+
+}
+
+/* ==========================================
+   LANGUAGE SWITCHER CONTAINER
+========================================== */
+
+.mh-language-switcher {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 5px 8px;
+
+  border: 1px solid var(--mh-lang-border);
+  border-radius: 24px;
+
+  background: var(--mh-lang-bg);
+  color: var(--mh-lang-text);
+
+  box-shadow:
+    0 3px 12px var(--mh-lang-shadow);
+
+  box-sizing: border-box;
+
+  vertical-align: middle;
+
+}
+
+.mh-language-switcher * {
+
+  box-sizing: border-box;
+
+}
+
+/* LANGUAGE ICON */
+
+.mh-language-switcher::before {
+
+  content: "\1F310";
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 17px;
+  line-height: 1;
+
+}
+
+/* ==========================================
+   LANGUAGE LABEL
+========================================== */
+
+.mh-language-label {
+
+  display: inline-block;
+
+  margin: 0;
+
+  color: var(--mh-lang-text);
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  white-space: nowrap;
+
+}
+
+/* ==========================================
+   LANGUAGE SELECT CONTROL
+========================================== */
+
+.mh-language-select {
+
+  display: inline-block;
+
+  min-width: 100px;
+  max-width: 100%;
+  min-height: 44px;
+
+  margin: 0;
+
+  padding: 8px 12px;
+
+  border: 1px solid var(--mh-lang-border);
+  border-radius: 20px;
+
+  background: var(--mh-lang-bg);
+  color: var(--mh-lang-text);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  appearance: auto;
+
+  transition:
+    border-color .2s ease,
+    background-color .2s ease,
+    box-shadow .2s ease;
+
+}
+
+/* SELECT OPTIONS */
+
+.mh-language-select option {
+
+  background: var(--mh-lang-bg);
+  color: var(--mh-lang-text);
+
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
+/* HOVER EFFECT */
+
+@media (hover: hover) {
+
+  .mh-language-select:hover {
+
+    border-color: var(--mh-lang-gold);
+
+    box-shadow:
+      0 0 10px var(--mh-lang-focus);
+
+  }
+
+  .mh-language-switcher:hover {
+
+    border-color: var(--mh-lang-gold);
+
+  }
+
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.mh-language-select:focus-visible {
+
+  outline: 3px solid var(--mh-lang-gold);
+
+  outline-offset: 3px;
+
+}
+
+/* DISABLED CONTROL */
+
+.mh-language-select:disabled {
+
+  opacity: .55;
+
+  cursor: not-allowed;
+
+}
+
+/* ==========================================
+   LANGUAGE MOUNT POINT
+========================================== */
+
+#languageMount {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  min-width: 0;
+
+  max-width: 100%;
+
+}
+
+#merahisabLanguageSwitcher {
+
+  flex-shrink: 0;
+
+}
+
+/* ==========================================
+   SCREEN READER ANNOUNCEMENTS
+========================================== */
+
+.mh-language-announcement {
+
+  position: absolute !important;
+
+  width: 1px !important;
+
+  height: 1px !important;
+
+  padding: 0 !important;
+
+  margin: -1px !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0,0,0,0) !important;
+
+  clip-path: inset(50%) !important;
+
+  white-space: nowrap !important;
+
+  border: 0 !important;
+
+}
+
+/* ==========================================
+   ENGLISH TYPOGRAPHY
+========================================== */
+
+html[data-language="en"] {
+
+  --mh-language-font:
+
+    system-ui,
+
+    -apple-system,
+
+    BlinkMacSystemFont,
+
+    "Segoe UI",
+
+    Arial,
+
+    sans-serif;
+
+}
+
+html[data-language="en"] .mh-language-select {
+
+  font-family: var(--mh-language-font);
+
+}
+
+/* ==========================================
+   HINDI TYPOGRAPHY
+========================================== */
+
+html[data-language="hi"] {
+
+  --mh-language-font:
+
+    "Noto Sans Devanagari",
+
+    "Nirmala UI",
+
+    Mangal,
+
+    "Kohinoor Devanagari",
+
+    system-ui,
+
+    sans-serif;
+
+}
+
+html[data-language="hi"] body {
+
+  font-family: var(--mh-language-font);
+
+  line-height: 1.75;
+
+}
+
+html[data-language="hi"] h1,
+html[data-language="hi"] h2,
+html[data-language="hi"] h3,
+html[data-language="hi"] h4,
+html[data-language="hi"] h5,
+html[data-language="hi"] h6 {
+
+  font-family: var(--mh-language-font);
+
+  line-height: 1.45;
+
+  letter-spacing: normal;
+
+  text-transform: none;
+
+  overflow-wrap: break-word;
+
+}
+
+html[data-language="hi"] p,
+html[data-language="hi"] li,
+html[data-language="hi"] label,
+html[data-language="hi"] summary {
+
+  line-height: 1.8;
+
+  letter-spacing: normal;
+
+}
+
+html[data-language="hi"] button,
+html[data-language="hi"] input,
+html[data-language="hi"] textarea,
+html[data-language="hi"] select {
+
+  font-family: var(--mh-language-font);
+
+}
+
+html[data-language="hi"] [data-i18n] {
+
+  letter-spacing: normal;
+
+  text-transform: none;
+
+  overflow-wrap: break-word;
+
+}
+
+html[data-language="hi"] header nav a {
+
+  line-height: 1.65;
+
+}
+
+/* LANGUAGE OPTION FONT SUPPORT */
+
+.mh-language-select option[lang="hi"] {
+
+  font-family:
+
+    "Noto Sans Devanagari",
+
+    "Nirmala UI",
+
+    Mangal,
+
+    system-ui,
+
+    sans-serif;
+
+}
+
+.mh-language-select option[lang="en"] {
+
+  font-family:
+
+    system-ui,
+
+    Arial,
+
+    sans-serif;
+
+}
+
+/* ==========================================
+   RESPONSIVE NAVIGATION SUPPORT
+========================================== */
+
+header nav:has(.mh-language-switcher) {
+
+  flex-wrap: wrap;
+
+  min-width: 0;
+
+  max-width: 100%;
+
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .mh-language-switcher {
+
+    gap: 6px;
+
+    padding: 4px 7px;
+
+  }
+
+  .mh-language-label {
+
+    font-size: 11px;
+
+  }
+
+  .mh-language-select {
+
+    min-width: 95px;
+
+    font-size: 13px;
+
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .mh-language-switcher {
+
+    max-width: 100%;
+
+    gap: 5px;
+
+    padding: 4px 6px;
+
+  }
+
+  .mh-language-label {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip-path: inset(50%);
+
+    white-space: nowrap;
+
+  }
+
+  .mh-language-select {
+
+    min-width: 90px;
+
+    min-height: 44px;
+
+    font-size: 16px;
+
+    padding: 7px 9px;
+
+  }
+
+  .mh-language-switcher::before {
+
+    font-size: 16px;
+
+  }
+
+  #languageMount {
+
+    justify-content: center;
+
+  }
+
+  html[data-language="hi"] h1 {
+
+    line-height: 1.45;
+
+  }
+
+  html[data-language="hi"] h2 {
+
+    line-height: 1.5;
+
+  }
+
+}
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 360px) {
+
+  .mh-language-switcher {
+
+    padding: 3px 5px;
+
+  }
+
+  .mh-language-select {
+
+    min-width: 80px;
+
+    padding: 6px;
+
+  }
+
+  .mh-language-switcher::before {
+
+    font-size: 14px;
+
+  }
+
+}
+
+/* ==========================================
+   HIGH CONTRAST ACCESSIBILITY
+========================================== */
+
+@media (prefers-contrast: more) {
+
+  .mh-language-switcher,
+  .mh-language-select {
+
+    border-width: 2px;
+
+    border-color: currentColor;
+
+  }
+
+}
+
+/* WINDOWS HIGH CONTRAST MODE */
+
+@media (forced-colors: active) {
+
+  .mh-language-switcher,
+  .mh-language-select {
+
+    background: Canvas;
+
+    color: CanvasText;
+
+    border: 1px solid ButtonText;
+
+    box-shadow: none;
+
+  }
+
+  .mh-language-select:focus-visible {
+
+    outline: 3px solid Highlight;
+
+  }
+
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mh-language-switcher,
+  .mh-language-select {
+
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
+
+/* ==========================================
+   PRINT OPTIMIZATION
+========================================== */
+
+@media print {
+
+  .mh-language-switcher,
+
+  .mh-language-announcement,
+
+  #languageMount {
+
+    display: none !important;
+
+  }
+
+}
+
+/* ==========================================
+   END OF MERAHISAB LANGUAGE STYLESHEET
+========================================== */
