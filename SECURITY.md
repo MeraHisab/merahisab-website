@@ -1,81 +1,77 @@
 
 # MeraHisab Security Policy
 
-## 1. Official Website
+**Policy Version:** 2.0.0  
+**Status:** Development Draft — Pending Final Review
+
+## 1. Official Information
 
 - Website: https://merahisab.store/
 - Repository: https://github.com/merahisab/merahisab-website
-- Applications: MeraHisab and Royal Khata
+- Products: MeraHisab and Royal Khata
+- Hosting: GitHub Pages
 
 ## 2. Security Commitment
 
-MeraHisab aims to protect user privacy,
-financial information and application integrity.
+MeraHisab aims to develop responsible security and privacy controls for financial record management.
 
-Our security priorities include:
+Security priorities include:
 
-- Data privacy
 - Data minimization
+- Financial data protection
 - Secure application distribution
-- Website security
+- Input validation
+- Secure software updates
 - Safe backup and recovery
 - Responsible vulnerability disclosure
-- Secure software updates
+- User privacy
+- Security testing
 
-These priorities do not constitute a guarantee
-that every security risk has been eliminated.
+These priorities do not constitute a security certification or guarantee.
 
 ## 3. Supported Products
 
-| Product | Security Status |
-| --- | --- |
-| MeraHisab Website | Under active development |
-| MeraHisab Android App | Version verification pending |
-| Royal Khata | Under development |
-| Website PWA | Under development |
+| Product | Status |
+|---|---|
+| MeraHisab Website | Under development and review |
+| MeraHisab Android APK | Release verification pending |
+| Royal Khata | Official release pending |
+| Website PWA | Integration testing pending |
 
-Security support periods will be published
-after release and version verification.
+Supported application versions and security maintenance periods will be published after verification.
 
-## 4. Reporting a Vulnerability
+## 4. Reporting Security Vulnerabilities
 
-Security reporting information:
+Support information:
 
 https://merahisab.store/contact.html
 
-The contact page currently provides a local
-request preparation interface.
+A verified private security reporting channel is pending configuration.
 
-It does not automatically submit security
-reports to a support team.
+The support page currently prepares local request drafts only. It does not automatically submit vulnerability reports.
 
-A verified private security reporting channel
-has not yet been configured.
-
-Do not publish sensitive vulnerability details
-in public GitHub issues.
+Do not publish confidential security findings in public GitHub issues.
 
 ## 5. Information to Include
 
-A security report may include:
+A sanitized security report may contain:
 
-- Affected website page or application
-- Application version
+- Affected product
+- Affected application version
+- Affected website URL
 - Browser and operating system
-- Vulnerability description
-- Steps to reproduce the issue
-- Expected behavior
-- Actual behavior
+- Description of the issue
+- Authorized reproduction steps
+- Expected and actual behavior
 - Potential security impact
 - Sanitized screenshots
-- Suggested remediation, if available
+- Suggested remediation
 
-Never include real customer financial records
-or unnecessary personal information.
+Include only information necessary to understand the issue.
 
-## 6. Sensitive Information
+## 6. Confidential Information
 
-Never disclose:
+Never include:
 
 - Passwords
 - PINs
@@ -83,229 +79,215 @@ Never disclose:
 - Recovery keys
 - Encryption keys
 - Authentication tokens
-- Private backup files
-- Bank account credentials
-- Customer financial records
 - Private signing keys
+- Banking credentials
+- Aadhaar or PAN numbers
+- Customer financial records
+- Confidential backup files
 
-Remove sensitive information from screenshots,
-logs and technical reports.
+Remove sensitive information from logs, screenshots and reports.
 
 ## 7. Responsible Disclosure
 
-Security researchers should:
+Security testing must:
 
 - Respect user privacy.
-- Avoid accessing other users' information.
-- Avoid modifying or deleting data.
-- Avoid disrupting website availability.
-- Use only authorized testing environments.
+- Remain within authorized environments.
+- Avoid accessing other users' records.
+- Avoid modifying or deleting information.
+- Avoid denial-of-service activity.
 - Avoid social engineering.
-- Avoid denial-of-service testing.
-- Avoid publishing exploitable details
-  before responsible remediation.
+- Avoid service disruption.
+- Follow applicable laws.
+- Protect confidential vulnerability details.
 
-This policy does not grant authorization
-to access restricted systems or user data.
+This policy does not authorize unrestricted security testing or access to private systems.
 
 ## 8. Security Review Scope
 
-Security reviews may cover:
+Security reviews may include:
 
 - Public website pages
 - Client-side JavaScript
-- Website forms
+- Content Security Policy
 - Input validation
 - Cross-site scripting prevention
 - External link handling
+- APK distribution
 - Browser storage
-- Service worker behavior
+- PWA service worker
 - Offline cache management
-- Application download integrity
 - Privacy-related functionality
 
-Third-party infrastructure is subject
-to its respective provider's policies.
+Third-party infrastructure remains subject to its provider's policies.
 
-## 9. Application Download Security
+## 9. Secure Application Downloads
 
-Download applications only through
-officially published download channels.
-
-Official download center:
+Official Download Center:
 
 https://merahisab.store/downloads.html
 
+MeraHisab APK information:
+
+https://merahisab.store/download.html
+
 Users should:
 
-- Verify the official website address.
-- Confirm application version information.
-- Compare the APK SHA-256 checksum with
-  a verified official reference.
-- Verify application signing information
-  when available.
-- Avoid modified or unofficial APK files.
-- Maintain secure backups before updates.
+- Verify the official website domain.
+- Use HTTPS.
+- Check application version information.
+- Compare APK checksums.
+- Verify signing information when available.
+- Keep Android security protection enabled.
+- Avoid modified and unofficial APK files.
+- Maintain verified backups before updates.
 
-A matching checksum confirms file integrity
-against the reference checksum.
+## 10. APK Integrity Information
 
-It does not independently prove that
-an application is free from malware.
+Repository APK reference:
 
-## 10. APK Integrity Verification
+- File: MeraHisab.apk
+- Size: 12,766,801 bytes
+- Approximate size: 12.18 MiB
+- SHA-256:
 
-Official APK metadata should include:
+    40acd9153f051bb9cab6504c0895d5feb59466f2585068285497956b91dbf43f
 
-- Application name
-- Version name
-- Version code
-- File size
-- SHA-256 checksum
-- Signing certificate fingerprint
-- Release information
+The checksum above corresponds to the repository APK inspected during website development.
 
-Unverified metadata must be clearly marked
-as pending verification.
+Application version, Android compatibility and signing certificate verification remain pending.
+
+A matching checksum does not establish malware safety or independently verify developer authenticity.
+
+Update all published APK metadata whenever the APK changes.
 
 ## 11. Website Security
 
-Website security reviews should consider:
+Website security controls are designed to include:
 
-- HTTPS configuration
-- Content Security Policy compatibility
-- Cross-site scripting risks
-- Safe DOM manipulation
-- External resource restrictions
-- Secure external links
-- Browser storage protection
-- Dependency integrity
-- Service worker security
-- Cache isolation
+- Same-origin script restrictions
+- Hash-based Content Security Policy
+- Inline event-handler restrictions
+- Safe DOM text handling
+- External link validation
+- Secure browser context checks
+- HTTPS deployment
+- Restricted network access
+- Local calculator processing
 
-Hosting limitations must be documented.
+The implementation and deployed behavior require verification.
 
 ## 12. PWA Cache Security
 
-The website service worker is designed
-to cache approved public resources.
+The service worker is designed to cache approved public website resources only.
 
-The cache policy should exclude:
+Excluded resources include:
 
 - APK downloads
-- Private backup files
-- Authentication requests
+- Private backups
 - Financial databases
-- Sensitive user information
-- Unauthorized external resources
-- Support request contents
+- Authentication endpoints
+- Contact forms and support requests
+- Requests containing authorization headers
+- Range requests
+- URLs containing query parameters
+- Unapproved external resources
 
-Cache behavior must be verified through
-browser testing.
+PWA cache operations must not delete native Android application records, localStorage or IndexedDB.
+
+Clearing optional offline resources may preserve essential offline fallback files.
 
 ## 13. Data Protection
 
 Users should:
 
-- Protect their devices with screen locks.
-- Keep operating systems updated.
+- Protect device access.
 - Maintain secure backups.
-- Protect recovery credentials.
-- Avoid sharing financial information
-  through public support channels.
+- Verify recovery procedures.
+- Avoid sharing confidential records.
+- Protect authentication credentials.
 - Review application permissions.
 
-Application encryption and recovery features
-must be independently verified before
-being described as implemented protections.
+Native application encryption, data retention and recovery implementation require separate technical verification.
 
 ## 14. Security Incident Management
 
-The proposed incident management process:
+Proposed incident response procedures include:
 
-1. Receive a security report.
-2. Review the reported issue.
-3. Assess the potential impact.
-4. Reproduce the issue safely.
-5. Prepare appropriate remediation.
-6. Validate the security fix.
-7. Publish an update when necessary.
-8. Document relevant security improvements.
+1. Identify the issue.
+2. Assess the potential impact.
+3. Protect affected information.
+4. Contain the issue.
+5. Develop and verify remediation.
+6. Release appropriate updates.
+7. Provide legally required notifications where applicable.
+8. Review preventive improvements.
 
-Response times are not guaranteed.
+Formal incident response responsibilities remain subject to operator approval.
 
 ## 15. Security Updates
 
-Security updates may include:
+Application and website updates should undergo:
 
-- Vulnerability fixes
-- Dependency updates
-- Improved input validation
-- Cache security improvements
-- Privacy improvements
-- Download integrity corrections
-- Browser compatibility fixes
+- Code review
+- Dependency review
+- Security review
+- Functional testing
+- Compatibility testing
+- Regression testing
+- Release integrity verification
 
-Users should install verified updates
-when they become available.
+The service worker uses controlled update activation.
 
 ## 16. Bug Bounty
 
-No official paid bug bounty program
-is currently announced.
+No official paid bug bounty program is currently announced.
 
-Submission of a security report does not
-create an entitlement to financial rewards.
+This policy does not promise compensation or a response deadline.
 
 ## 17. Privacy Policy
 
-Official privacy information:
+Privacy and data protection information:
 
 https://merahisab.store/privacy.html
 
-Privacy practices must reflect the actual
-behavior of the website and applications.
+Support information:
+
+https://merahisab.store/contact.html
 
 ## 18. Security Limitations
 
-No website or application can guarantee
-complete protection against every threat.
+No website, application or storage system can guarantee absolute security.
 
-Security depends on multiple factors,
-including:
+Browser diagnostics and checksum comparisons are limited technical checks.
 
-- Software implementation
-- Hosting infrastructure
-- Device security
-- Browser security
-- User practices
-- Application updates
-
-Security claims must be supported
-by appropriate verification.
+They are not independent security audits.
 
 ## 19. Policy Maintenance
 
-This policy should be reviewed whenever:
+Review this policy whenever:
 
-- New applications are released.
+- Application versions change.
 - Security features change.
-- Hosting infrastructure changes.
-- Reporting channels are configured.
-- Significant vulnerabilities are identified.
-- Privacy practices change.
+- Data processing changes.
+- Reporting channels change.
+- Applicable legal obligations change.
+- Significant security incidents occur.
 
-## 20. Policy Information
+## 20. Pending Verification
 
-- Policy Version: 1.0.0
-- Policy Status: Development Draft
-- Security Contact: Pending Configuration
-- Official Domain: merahisab.store
+- Private security reporting channel
+- Official privacy and support contact
+- APK signing certificate
+- Application permissions
+- Native application encryption
+- Backup and recovery implementation
+- Deployed HTTPS configuration
+- Browser security testing
+- Final policy approval
 
 ---
 
 MeraHisab
 
-Your Money, Your Hisab
-
-Security | Privacy | Integrity | Transparency
+https://merahisab.store/
