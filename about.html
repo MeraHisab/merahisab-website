@@ -1,1413 +1,2457 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="en-IN">
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>About Us | MeraHisab & Royal Khata</title>
+<title>About MeraHisab — Personal Finance & Digital Khata</title>
 
-    <meta name="description"
-          content="Learn about MeraHisab, Royal Khata, our mission, vision and approach to personal finance and digital khata management.">
+<meta name="description"
+content="Learn about MeraHisab, Royal Khata, our mission, financial management tools, development roadmap and data protection principles.">
 
-    <meta name="theme-color" content="#081321">
+<meta name="author" content="MeraHisab">
 
-    <meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
 
-    <meta property="og:title"
-          content="About MeraHisab">
+<link rel="canonical"
+href="https://merahisab.store/about.html">
 
-    <meta property="og:description"
-          content="Personal Finance and Digital Khata Solutions.">
+<!-- SOCIAL MEDIA SEO -->
 
-    <meta property="og:url"
-          content="https://merahisab.store/about.html">
+<meta property="og:type" content="website">
 
-    <link rel="canonical"
-          href="https://merahisab.store/about.html">
+<meta property="og:site_name" content="MeraHisab">
 
-    <link rel="stylesheet" href="upgrade.css">
+<meta property="og:title"
+content="About MeraHisab — Our Mission and Applications">
 
-    <script defer src="upgrade.js"></script>
+<meta property="og:description"
+content="Discover MeraHisab, Royal Khata and our vision for simple digital financial management.">
 
-    <style>
+<meta property="og:url"
+content="https://merahisab.store/about.html">
 
-        .about-hero {
-            background: linear-gradient(
-                135deg,
-                #081321,
-                #182b43,
-                #26364d
-            );
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            padding: clamp(24px, 5vw, 64px);
-            text-align: center;
-            color: #f5f5f7;
-            margin-bottom: 28px;
-        }
+<meta property="og:image"
+content="https://merahisab.store/icons/icon-512.png">
 
-        .about-hero h1 {
-            color: #e5c788;
-            font-size: clamp(32px, 5vw, 54px);
-            overflow-wrap: anywhere;
-        }
+<meta name="twitter:card" content="summary">
 
-        .about-label {
-            display: inline-block;
-            padding: 8px 16px;
-            border: 1px solid #d4af37;
-            border-radius: 20px;
-            color: #e5c788;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
+<!-- PWA INTEGRATION -->
 
-        .about-section {
-            margin-top: 28px;
-            line-height: 1.9;
-            overflow-wrap: anywhere;
-            scroll-margin-top: 100px;
-        }
+<link rel="manifest" href="/manifest.json">
 
-        .about-section h2 {
-            margin-bottom: 16px;
-        }
+<meta name="application-name" content="MeraHisab">
 
-        .about-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
+<meta name="theme-color" content="#080f20">
 
-        .about-card {
-            min-width: 0;
-            box-sizing: border-box;
-            overflow-wrap: anywhere;
-        }
+<meta name="mobile-web-app-capable" content="yes">
 
-        .about-symbol {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: rgba(212,175,55,0.12);
-            border: 1px solid #a58a52;
-            font-size: 26px;
-            margin-bottom: 12px;
-        }
+<meta name="apple-mobile-web-app-capable" content="yes">
 
-        .about-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
+<meta name="apple-mobile-web-app-status-bar-style"
+content="default">
 
-        .about-notice {
-            padding: 18px;
-            border: 1px solid #a58a52;
-            border-radius: 12px;
-            background: rgba(212,175,55,0.08);
-            margin: 20px 0;
-        }
+<meta name="apple-mobile-web-app-title"
+content="MeraHisab">
 
-        .about-card ul {
-            padding-left: 22px;
-            line-height: 1.9;
-        }
+<link rel="apple-touch-icon"
+href="/icons/icon-192.png">
 
-        .about-card li {
-            margin-bottom: 8px;
-        }
+<link rel="icon"
+type="image/png"
+sizes="192x192"
+href="/icons/icon-192.png">
 
-        .about-status {
-            display: inline-block;
-            border: 1px solid #a58a52;
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
+<link rel="stylesheet" href="/upgrade.css">
 
-        .about-roadmap {
-            border-left: 2px solid #a58a52;
-            padding-left: 20px;
-            margin: 20px 0;
-        }
+<link rel="stylesheet" href="/pwa.css">
 
-        .about-roadmap article {
-            position: relative;
-            margin-bottom: 24px;
-        }
+<script defer src="/upgrade.js"></script>
 
-        .about-roadmap article::before {
-            content: "";
-            position: absolute;
-            left: -27px;
-            top: 10px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #d4af37;
-        }
+<script defer src="/pwa.js"></script>
 
-        @media (max-width: 600px) {
+<style>
 
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
+.ab-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 18px;
+  box-sizing: border-box;
+}
 
-            .about-actions {
-                flex-direction: column;
-            }
+.ab-page * {
+  box-sizing: border-box;
+}
 
-            .about-hero {
-                padding: 28px 18px;
-            }
+.ab-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  opacity: .85;
+}
 
-            .about-section {
-                scroll-margin-top: 80px;
-            }
+.ab-hero {
+  padding: 45px 25px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 26px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(212,175,55,.16),
+      transparent 65%
+    ),
+    linear-gradient(
+      145deg,
+      #172640,
+      #080f20
+    );
+  color: #f8f6f0;
+  text-align: center;
+}
 
-        }
+.ab-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 24px;
+}
 
-    </style>
+.ab-hero h1 {
+  color: #f0d9a6;
+  font-size: clamp(32px,6vw,54px);
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.ab-hero p {
+  max-width: 780px;
+  margin: 15px auto;
+  color: #c4cddd;
+  line-height: 1.9;
+}
+
+.ab-eyebrow {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 30px;
+  color: #f0d9a6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ab-section {
+  margin: 38px 0;
+  scroll-margin-top: 100px;
+}
+
+.ab-title {
+  font-size: clamp(24px,4vw,34px);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.ab-subtitle {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: .85;
+}
+
+.ab-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
+
+.ab-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
+
+.ab-grid-four {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 16px;
+}
+
+.ab-card {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
+
+.ab-card h3 {
+  margin: 14px 0;
+}
+
+.ab-card p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.ab-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  background: rgba(212,175,55,.08);
+  font-size: 24px;
+}
+
+.ab-app-icon {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 18px;
+}
+
+.ab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ab-center {
+  justify-content: center;
+}
+
+.ab-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid #d4af37;
+  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ab-primary {
+  background: linear-gradient(
+    135deg,
+    #f0d9a6,
+    #d4af37
+  );
+  color: #101827;
+}
+
+.ab-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.ab-stat {
+  text-align: center;
+}
+
+.ab-stat strong {
+  display: block;
+  font-size: clamp(24px,4vw,36px);
+  color: #d4af37;
+  margin-bottom: 8px;
+}
+
+.ab-stat span {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ab-status {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ab-status-available {
+  border-color: #32976b;
+}
+
+.ab-notice {
+  padding: 18px;
+  margin-top: 18px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 14px;
+  background: rgba(212,175,55,.07);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.ab-list {
+  padding-left: 22px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.ab-list li {
+  margin: 7px 0;
+}
+
+.ab-timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.ab-stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ab-stage-number {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #f0d9a6,
+    #d4af37
+  );
+  color: #101827;
+  font-weight: 800;
+}
+
+.ab-stage h3 {
+  margin-top: 4px;
+}
+
+.ab-info-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(128,128,128,.22);
+  font-size: 14px;
+}
+
+.ab-info-row:last-child {
+  border-bottom: 0;
+}
+
+.ab-faq details {
+  padding: 17px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 13px;
+}
+
+.ab-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.ab-faq p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.ab-message {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ab-page :focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* LIGHT THEME */
+
+html[data-theme="light"] .ab-hero,
+body[data-theme="light"] .ab-hero {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f3ead7
+  );
+  color: #172033;
+}
+
+html[data-theme="light"] .ab-hero h1,
+body[data-theme="light"] .ab-hero h1,
+html[data-theme="light"] .ab-eyebrow,
+body[data-theme="light"] .ab-eyebrow,
+html[data-theme="light"] .ab-stat strong {
+  color: #765018;
+}
+
+html[data-theme="light"] .ab-hero p,
+body[data-theme="light"] .ab-hero p {
+  color: #46546a;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:900px) {
+
+  .ab-grid-three,
+  .ab-grid-four {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:650px) {
+
+  .ab-page {
+    padding: 18px 12px;
+  }
+
+  .ab-grid,
+  .ab-grid-three {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .ab-hero {
+    padding: 28px 16px;
+  }
+
+  .ab-card {
+    padding: 17px;
+  }
+
+  .ab-buttons {
+    flex-direction: column;
+  }
+
+  .ab-button {
+    width: 100%;
+  }
+
+}
+
+@media(max-width:350px) {
+
+  .ab-grid-four {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+}
+
+@media print {
+
+  header.site,
+  footer.site,
+  .ab-buttons,
+  #pwaMount,
+  .pwa-panel {
+    display: none !important;
+  }
+
+  .ab-page,
+  .ab-hero,
+  .ab-card {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .ab-hero h1,
+  .ab-hero p,
+  .ab-eyebrow,
+  .ab-stat strong {
+    color: black !important;
+  }
+
+  .ab-card {
+    break-inside: avoid;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <header class="site">
+<!-- WEBSITE HEADER -->
 
-        <div class="container">
+<header class="site">
 
-            <strong>MeraHisab</strong>
+<div class="container">
 
-            <nav aria-label="Main navigation">
+<strong>MeraHisab</strong>
 
-                <a href="index.html">Home</a>
+<nav aria-label="Main navigation">
 
-                <a href="downloads.html">Apps</a>
+<a href="/index.html">Home</a>
 
-                <a href="compare.html">Compare</a>
+<a href="/downloads.html">Apps</a>
 
-                <a href="index.html#features">Features</a>
+<a href="/compare.html">Compare</a>
 
-                <a href="tools.html">Tools</a>
+<a href="/index.html#features">Features</a>
 
-                <a href="privacy.html">Privacy</a>
+<a href="/tools.html">Tools</a>
 
-                <a href="about.html"
-                   aria-current="page">
+<a href="/privacy.html">Privacy</a>
 
-                    About
+<a href="/about.html" aria-current="page">
+About
+</a>
 
-                </a>
+<a href="/contact.html">Support</a>
 
-                <a href="contact.html">Support</a>
+<button
+id="theme"
+type="button"
+aria-label="Change website theme">
 
-                <button id="theme" type="button">
+Theme
 
-                    Theme
+</button>
 
-                </button>
+</nav>
 
-            </nav>
+</div>
 
-        </div>
+</header>
 
-    </header>
+<main class="shell ab-page">
 
-    <main class="shell">
+<nav class="ab-breadcrumb"
+aria-label="Breadcrumb">
 
-        <p>
+<a href="/index.html">Home</a>
 
-            <a href="index.html">Home</a>
+<span>›</span>
 
-            / About Us
+<span aria-current="page">About Us</span>
 
-        </p>
+</nav>
 
-        <!-- BRAND HERO -->
+<!-- ABOUT HERO -->
 
-        <section class="about-hero">
+<section class="ab-hero">
 
-            <span class="about-label">
+<img
+src="/icons/icon-192.png"
+class="ab-logo"
+alt="MeraHisab brand logo"
+width="100"
+height="100">
 
-                PERSONAL FINANCE &amp; DIGITAL KHATA
+<div style="margin-top:18px">
 
-            </span>
+<span class="ab-eyebrow">
 
-            <h1>About MeraHisab</h1>
+SMART FINANCE • DIGITAL KHATA
 
-            <h2>Your Money. Your Control.</h2>
+</span>
 
-            <p>
+</div>
 
-                Simplifying financial management
-                through practical, accessible
-                and user-focused digital tools.
+<h1>About MeraHisab</h1>
 
-            </p>
+<p>
 
-            <p>
+Simple Financial Management.
+Organized Records.
+Better Financial Awareness.
 
-                MeraHisab &amp; Royal Khata
+</p>
 
-            </p>
+<p>
 
-            <p>
+MeraHisab is a digital financial
+management project focused on
+helping individuals and businesses
+organize their financial records
+through accessible applications
+and practical financial tools.
 
-                Official Website: merahisab.store
+</p>
 
-            </p>
+<div class="ab-buttons ab-center">
 
-            <div class="about-actions"
-                 style="justify-content:center;">
+<a href="/downloads.html"
+class="ab-button ab-primary">
 
-                <a class="action"
-                   href="downloads.html">
+Explore Our Applications
 
-                    Explore Our Apps
+</a>
 
-                </a>
+<a href="/tools.html"
+class="ab-button">
 
-                <a class="action"
-                   href="compare.html">
+Financial Tools
 
-                    Compare Applications
+</a>
 
-                </a>
+<a href="#ourMission"
+class="ab-button">
 
-            </div>
+Our Mission
 
-        </section>
+</a>
 
-        <!-- ABOUT BRAND -->
+</div>
 
-        <section class="upgrade-card about-section">
+</section>
 
-            <h2>Who We Are</h2>
+<!-- BRAND OVERVIEW -->
 
-            <p>
+<section class="ab-section">
 
-                MeraHisab is a digital financial
-                management project focused on
-                simplifying everyday financial
-                record keeping.
+<div class="ab-grid-four">
 
-            </p>
+<article class="upgrade-card ab-card ab-stat">
 
-            <p>
+<strong>02</strong>
 
-                Our goal is to help individuals,
-                families, shopkeepers and small
-                businesses organize their
-                financial information through
-                practical digital solutions.
+<span>Application Projects</span>
 
-            </p>
+</article>
 
-            <p>
+<article class="upgrade-card ab-card ab-stat">
 
-                Our application portfolio
-                includes MeraHisab for personal
-                finance management and Royal Khata
-                for digital ledger and credit-debit
-                management.
+<strong>01</strong>
 
-            </p>
+<span>Official Website</span>
 
-            <p>
+</article>
 
-                We aim to combine simplicity,
-                accessibility, privacy-conscious
-                design and responsible financial
-                record management.
+<article class="upgrade-card ab-card ab-stat">
 
-            </p>
+<strong>PWA</strong>
 
-        </section>
+<span>Website Installation Support</span>
 
-        <!-- MISSION VISION VALUES -->
+</article>
 
-        <section class="about-section">
+<article class="upgrade-card ab-card ab-stat">
 
-            <h2>Our Mission, Vision &amp; Values</h2>
+<strong>India</strong>
 
-            <div class="about-grid">
+<span>Indian Financial Context</span>
 
-                <article class="upgrade-card about-card">
+</article>
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+</div>
 
-                        &#127919;
+</section>
 
-                    </span>
+<!-- OUR STORY -->
 
-                    <h3>Our Mission</h3>
+<section class="ab-section">
 
-                    <p>
+<h2 class="ab-title">Our Story</h2>
 
-                        To make everyday financial
-                        record management simple,
-                        accessible and convenient
-                        for individuals and
-                        small businesses.
+<article class="upgrade-card ab-card">
 
-                    </p>
+<p>
 
-                </article>
+Managing everyday financial records
+can become difficult when information
+is scattered across notebooks,
+messages and multiple documents.
 
-                <article class="upgrade-card about-card">
+</p>
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+<p>
 
-                        &#128161;
+MeraHisab is being developed with
+the objective of making financial
+record management more organized,
+accessible and understandable.
 
-                    </span>
+</p>
 
-                    <h3>Our Vision</h3>
+<p>
 
-                    <p>
+The project brings together two
+application concepts:
 
-                        To develop reliable digital
-                        financial management tools
-                        that help users understand,
-                        organize and manage their
-                        financial records.
+MeraHisab for personal financial
+management and Royal Khata for
+digital credit and debit records.
 
-                    </p>
+</p>
 
-                </article>
+<p>
 
-                <article class="upgrade-card about-card">
+The official website also brings
+application information, financial
+calculators, download resources,
+privacy information and support
+guidance into one place.
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+</p>
 
-                        &#128142;
+</article>
 
-                    </span>
+</section>
 
-                    <h3>Our Values</h3>
+<!-- MISSION AND VISION -->
 
-                    <ul>
+<section class="ab-section"
+id="ourMission">
 
-                        <li>User privacy</li>
+<h2 class="ab-title">
 
-                        <li>Data protection</li>
+Our Mission & Vision
 
-                        <li>Simplicity</li>
+</h2>
 
-                        <li>Transparency</li>
+<div class="ab-grid">
 
-                        <li>Accessibility</li>
+<article class="upgrade-card ab-card">
 
-                        <li>Continuous improvement</li>
+<div class="ab-icon">🎯</div>
 
-                    </ul>
+<h3>Our Mission</h3>
 
-                </article>
+<p>
 
-            </div>
+Make financial record management
+simpler through practical digital
+applications, clear information
+and accessible financial tools.
 
-        </section>
+</p>
 
-        <!-- APPLICATION PORTFOLIO -->
+<ul class="ab-list">
 
-        <section class="about-section">
+<li>Simplify everyday financial records.</li>
 
-            <h2>Our Applications</h2>
+<li>Improve financial awareness.</li>
 
-            <div class="about-grid">
+<li>Encourage organized bookkeeping.</li>
 
-                <!-- MERAHISAB -->
+<li>Promote responsible data management.</li>
 
-                <article class="upgrade-card about-card">
+</ul>
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+</article>
 
-                        &#128176;
+<article class="upgrade-card ab-card">
 
-                    </span>
+<div class="ab-icon">🌐</div>
 
-                    <h3>MeraHisab</h3>
+<h3>Our Vision</h3>
 
-                    <span class="about-status">
+<p>
 
-                        Personal Finance Management
+Build an accessible financial
+management ecosystem that supports
+individuals, families, professionals
+and small businesses.
 
-                    </span>
+</p>
 
-                    <p>
+<ul class="ab-list">
 
-                        A financial management
-                        application designed to help
-                        users organize their personal
-                        financial records.
+<li>Easy-to-understand interfaces.</li>
 
-                    </p>
+<li>Practical financial utilities.</li>
 
-                    <h4>Primary Focus</h4>
+<li>Privacy-conscious development.</li>
 
-                    <ul>
+<li>Continuous product improvement.</li>
 
-                        <li>Personal finance tracking</li>
+</ul>
 
-                        <li>Income and expense management</li>
+</article>
 
-                        <li>Financial record organization</li>
+</div>
 
-                        <li>Financial summaries</li>
+</section>
 
-                        <li>Everyday money management</li>
+<!-- OUR APPLICATIONS -->
 
-                    </ul>
+<section class="ab-section"
+id="ourApplications">
 
-                    <div class="about-actions">
+<h2 class="ab-title">
 
-                        <a class="action"
-                           href="merahisab.html">
+Our Applications
 
-                            Learn More
+</h2>
 
-                        </a>
+<p class="ab-subtitle">
 
-                        <a class="action"
-                           href="download.html?app=merahisab">
+Two application projects designed
+for different financial record
+management requirements.
 
-                            Download App
+</p>
 
-                        </a>
+<div class="ab-grid">
 
-                    </div>
+<article class="upgrade-card ab-card">
 
-                </article>
+<img
+src="/icons/shortcut-merahisab.png"
+class="ab-app-icon"
+alt="MeraHisab application icon"
+width="78"
+height="78"
+loading="lazy">
 
-                <!-- ROYAL KHATA -->
+<h3>MeraHisab</h3>
 
-                <article class="upgrade-card about-card">
+<span class="ab-status ab-status-available">
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+ANDROID DOWNLOAD LISTED
 
-                        &#128210;
+</span>
 
-                    </span>
+<p>
 
-                    <h3>Royal Khata</h3>
+A personal financial management
+application intended to help users
+organize everyday financial records.
 
-                    <span class="about-status">
+</p>
 
-                        Digital Khata Management
+<h4>Primary Focus</h4>
 
-                    </span>
+<ul class="ab-list">
 
-                    <p>
+<li>Personal income records.</li>
 
-                        A digital ledger project
-                        designed for organized
-                        credit-debit management
-                        and account record keeping.
+<li>Daily expense management.</li>
 
-                    </p>
+<li>Account and balance organization.</li>
 
-                    <h4>Primary Focus</h4>
+<li>Savings and financial awareness.</li>
 
-                    <ul>
+<li>Personal financial record keeping.</li>
 
-                        <li>Digital khata records</li>
+</ul>
 
-                        <li>Credit and debit tracking</li>
+<div class="ab-buttons">
 
-                        <li>Customer account management</li>
+<a href="/merahisab.html"
+class="ab-button">
 
-                        <li>Transaction history</li>
+View Application
 
-                        <li>Business ledger organization</li>
+</a>
 
-                    </ul>
+<a href="/download.html"
+class="ab-button ab-primary">
 
-                    <div class="about-actions">
+Download Information
 
-                        <a class="action"
-                           href="royal-khata.html">
+</a>
 
-                            Learn More
+</div>
 
-                        </a>
+</article>
 
-                        <a class="action"
-                           href="download.html?app=royal-khata">
+<article class="upgrade-card ab-card">
 
-                            Check Availability
+<img
+src="/icons/shortcut-royal-khata.png"
+class="ab-app-icon"
+alt="Royal Khata application icon"
+width="78"
+height="78"
+loading="lazy">
 
-                        </a>
+<h3>Royal Khata</h3>
 
-                    </div>
+<span class="ab-status">
 
-                </article>
+UNDER DEVELOPMENT
 
-            </div>
+</span>
 
-            <div class="about-notice">
+<p>
 
-                Application features and
-                availability may vary depending
-                on the release version and
-                development status.
+A digital khata application project
+focused on credit, debit and
+business ledger management.
 
-            </div>
+</p>
 
-                      </section>
+<h4>Planned Focus</h4>
 
-              <!-- PRIVACY AND SECURITY -->
+<ul class="ab-list">
 
-        <section class="about-section">
+<li>Digital customer ledgers.</li>
 
-            <h2>Privacy &amp; Security Commitment</h2>
+<li>Credit and debit records.</li>
 
-            <div class="about-grid">
+<li>Outstanding balance management.</li>
 
-                <article class="upgrade-card about-card">
+<li>Transaction history.</li>
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+<li>Business bookkeeping organization.</li>
 
-                        &#128274;
+</ul>
 
-                    </span>
+<div class="ab-buttons">
 
-                    <h3>Privacy-Conscious Design</h3>
+<a href="/royal-khata.html"
+class="ab-button">
 
-                    <p>
+View Application
 
-                        We aim to respect user privacy
-                        and minimize unnecessary
-                        exposure of personal and
-                        financial information.
+</a>
 
-                    </p>
+<button
+type="button"
+class="ab-button"
+disabled>
 
-                </article>
+APK Release Pending
 
-                <article class="upgrade-card about-card">
+</button>
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+</div>
 
-                        &#128737;
+</article>
 
-                    </span>
+</div>
 
-                    <h3>Data Protection</h3>
+<div class="ab-notice">
 
-                    <p>
+Application descriptions represent
+their intended product focus.
 
-                        We prioritize responsible
-                        data handling and the
-                        development of appropriate
-                        security safeguards.
+Individual features, security controls
+and release availability should be
+confirmed against the actual released
+application versions.
 
-                    </p>
+</div>
 
-                </article>
+<div class="ab-buttons ab-center">
 
-                <article class="upgrade-card about-card">
+<a href="/compare.html"
+class="ab-button ab-primary">
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+Compare Both Applications
 
-                        &#128190;
+</a>
 
-                    </span>
+</div>
 
-                    <h3>Backup &amp; Recovery</h3>
+</section>
 
-                    <p>
+<!-- WHO WE SERVE -->
 
-                        We encourage secure financial
-                        backups and responsible
-                        management of recovery
-                        information.
+<section class="ab-section">
 
-                    </p>
+<h2 class="ab-title">
 
-                </article>
+Who Can Benefit?
 
-                <article class="upgrade-card about-card">
+</h2>
 
-                    <span class="about-symbol"
-                          aria-hidden="true">
+<div class="ab-grid-three">
 
-                        &#128273;
+<article class="upgrade-card ab-card">
 
-                    </span>
+<div class="ab-icon">👤</div>
 
-                    <h3>User Control</h3>
+<h3>Individuals</h3>
 
-                    <p>
+<p>
 
-                        Our development approach
-                        emphasizes giving users
-                        meaningful control over
-                        their financial records.
+Organize personal income,
+expenses and everyday financial
+information.
 
-                    </p>
+</p>
 
-                </article>
+</article>
 
-            </div>
+<article class="upgrade-card ab-card">
 
-            <div class="about-actions">
+<div class="ab-icon">🏠</div>
 
-                <a class="action"
-                   href="privacy.html">
+<h3>Families</h3>
 
-                    Read Privacy &amp; Security Policy
+<p>
 
-                </a>
+Develop better awareness of
+household spending, savings
+and financial planning.
 
-            </div>
+</p>
 
-        </section>
+</article>
 
-        <!-- DEVELOPMENT PHILOSOPHY -->
+<article class="upgrade-card ab-card">
 
-        <section class="upgrade-card about-section">
+<div class="ab-icon">🏪</div>
 
-            <h2>Our Development Philosophy</h2>
+<h3>Small Businesses</h3>
 
-            <p>
+<p>
 
-                Financial management should
-                be practical, understandable
-                and accessible.
+Organize business credit,
+debit and customer ledger records
+through suitable digital tools.
 
-            </p>
+</p>
 
-            <p>
+</article>
 
-                Our development approach
-                focuses on balancing useful
-                features with simplicity,
-                performance and responsible
-                data management.
+<article class="upgrade-card ab-card">
 
-            </p>
+<div class="ab-icon">💼</div>
 
-            <ul>
+<h3>Professionals</h3>
 
-                <li>Simple and intuitive interfaces.</li>
+<p>
 
-                <li>Responsible data handling.</li>
+Maintain organized financial
+information for everyday
+record management.
 
-                <li>Performance optimization.</li>
+</p>
 
-                <li>Reliable financial calculations.</li>
+</article>
 
-                <li>Accessible application design.</li>
+<article class="upgrade-card ab-card">
 
-                <li>Secure backup and recovery goals.</li>
+<div class="ab-icon">🎓</div>
 
-                <li>Continuous security improvements.</li>
+<h3>Students</h3>
 
-                <li>Regular maintenance and updates.</li>
+<p>
 
-                <li>User feedback and improvement.</li>
+Learn financial concepts
+and explore practical
+financial calculators.
 
-            </ul>
+</p>
 
-        </section>
+</article>
 
-        <!-- USER EXPERIENCE -->
+<article class="upgrade-card ab-card">
 
-        <section class="about-section">
+<div class="ab-icon">🧾</div>
 
-            <h2>User Experience &amp; Accessibility</h2>
+<h3>Independent Workers</h3>
 
-            <div class="about-grid">
+<p>
 
-                <article class="upgrade-card about-card">
+Keep track of earnings,
+expenses and financial
+record management needs.
 
-                    <h3>Simple Financial Management</h3>
+</p>
 
-                    <p>
+</article>
 
-                        Designed around everyday
-                        financial record keeping
-                        and practical user needs.
+</div>
 
-                    </p>
+</section>
 
-                </article>
+<!-- CORE VALUES -->
 
-                <article class="upgrade-card about-card">
+<section class="ab-section">
 
-                    <h3>Responsive Experience</h3>
+<h2 class="ab-title">
 
-                    <p>
+Our Core Values
 
-                        Our website aims to provide
-                        a comfortable browsing
-                        experience across mobile,
-                        tablet and desktop devices.
+</h2>
 
-                    </p>
+<div class="ab-grid-three">
 
-                </article>
+<article class="upgrade-card ab-card">
 
-                <article class="upgrade-card about-card">
+<div class="ab-icon">✨</div>
 
-                    <h3>Visual Comfort</h3>
+<h3>Simplicity</h3>
 
-                    <p>
+<p>
 
-                        Theme preferences and
-                        readable interfaces are
-                        part of our approach
-                        to visual accessibility.
+Financial management tools
+should be understandable
+and convenient to use.
 
-                    </p>
+</p>
 
-                </article>
+</article>
 
-                <article class="upgrade-card about-card">
+<article class="upgrade-card ab-card">
 
-                    <h3>Language Accessibility</h3>
+<div class="ab-icon">🔒</div>
 
-                    <p>
+<h3>Privacy</h3>
 
-                        We aim to improve Hindi
-                        and English language
-                        accessibility across
-                        supported features.
+<p>
 
-                    </p>
+Respect financial information
+and prioritize appropriate
+data protection practices.
 
-                </article>
+</p>
 
-            </div>
+</article>
 
-        </section>
+<article class="upgrade-card ab-card">
 
-        <!-- FINANCIAL TOOLS -->
+<div class="ab-icon">🛡</div>
 
-        <section class="upgrade-card about-section">
+<h3>Security</h3>
 
-            <h2>Free Financial Tools</h2>
+<p>
 
-            <p>
+Develop and review safeguards
+against unauthorized access
+and accidental data loss.
 
-                Alongside our applications,
-                the MeraHisab website provides
-                browser-based financial
-                calculators and everyday utilities.
+</p>
 
-            </p>
+</article>
 
-            <div class="about-grid">
+<article class="upgrade-card ab-card">
 
-                <article class="about-card">
+<div class="ab-icon">📋</div>
 
-                    <h3>Interest &amp; Loans</h3>
+<h3>Transparency</h3>
 
-                    <ul>
+<p>
 
-                        <li>Simple Interest Calculator</li>
+Clearly distinguish available
+features from planned features
+and unverified claims.
 
-                        <li>Compound Interest Calculator</li>
+</p>
 
-                        <li>Loan EMI Calculator</li>
+</article>
 
-                    </ul>
+<article class="upgrade-card ab-card">
 
-                </article>
+<div class="ab-icon">📱</div>
 
-                <article class="about-card">
+<h3>Accessibility</h3>
 
-                    <h3>Investment &amp; Savings</h3>
+<p>
 
-                    <ul>
+Design website experiences
+for different screen sizes
+and user requirements.
 
-                        <li>SIP Calculator</li>
+</p>
 
-                        <li>Lumpsum Calculator</li>
+</article>
 
-                        <li>Fixed Deposit Calculator</li>
+<article class="upgrade-card ab-card">
 
-                    </ul>
+<div class="ab-icon">🚀</div>
 
-                </article>
+<h3>Continuous Improvement</h3>
 
-                <article class="about-card">
+<p>
 
-                    <h3>Business &amp; Everyday Tools</h3>
+Improve product functionality,
+usability, reliability and
+security through development
+and testing.
 
-                    <ul>
+</p>
 
-                        <li>GST Calculator</li>
+</article>
 
-                        <li>Percentage Calculator</li>
+</div>
 
-                        <li>Discount Calculator</li>
+</section>
 
-                        <li>Profit &amp; Loss Calculator</li>
+<!-- WEBSITE ECOSYSTEM -->
 
-                        <li>Monthly Budget Calculator</li>
+<section class="ab-section">
 
-                    </ul>
+<h2 class="ab-title">
 
-                </article>
+The MeraHisab Website Ecosystem
 
-                <article class="about-card">
+</h2>
 
-                    <h3>Daily Utilities</h3>
+<div class="ab-grid">
 
-                    <ul>
+<article class="upgrade-card ab-card">
 
-                        <li>Live Indian Standard Time</li>
+<div class="ab-icon">📲</div>
 
-                        <li>Automatic Date Display</li>
+<h3>Application Center</h3>
 
-                        <li>Digital Stopwatch</li>
+<p>
 
-                    </ul>
+Explore application information,
+product comparisons and available
+download resources.
 
-                </article>
+</p>
 
-            </div>
+<div class="ab-buttons">
 
-            <div class="about-actions">
+<a href="/downloads.html"
+class="ab-button">
 
-                <a class="action"
-                   href="tools.html">
+Open Application Center
 
-                    Explore All Financial Tools
+</a>
 
-                </a>
+</div>
 
-            </div>
+</article>
 
-            <p>
+<article class="upgrade-card ab-card">
 
-                Calculator results are estimates
-                and should not be treated as
-                professional financial advice.
+<div class="ab-icon">🧮</div>
 
-            </p>
+<h3>Financial Tools</h3>
 
-        </section>
+<p>
 
-        <!-- DEVELOPMENT ROADMAP -->
+Access browser-based financial
+calculators and useful everyday
+utilities.
 
-        <section class="upgrade-card about-section">
+</p>
 
-            <h2>Our Development Roadmap</h2>
+<div class="ab-buttons">
 
-            <p>
+<a href="/tools.html"
+class="ab-button">
 
-                Our future development priorities
-                focus on improving functionality,
-                reliability, accessibility
-                and data protection.
+Explore Financial Tools
 
-            </p>
+</a>
 
-            <div class="about-roadmap">
+</div>
 
-                <article>
+</article>
 
-                    <h3>01. Website Experience</h3>
+<article class="upgrade-card ab-card">
 
-                    <p>
+<div class="ab-icon">🌐</div>
 
-                        Improve website navigation,
-                        responsive design, application
-                        information and download
-                        accessibility.
+<h3>Progressive Web App</h3>
 
-                    </p>
+<p>
 
-                </article>
+Explore website installation,
+supported offline resources
+and browser storage management.
 
-                <article>
+</p>
 
-                    <h3>02. Application Improvements</h3>
+<div class="ab-buttons">
 
-                    <p>
+<a href="#pwaMount"
+class="ab-button">
 
-                        Continue improving personal
-                        finance and digital khata
-                        management capabilities.
+Website Installation
 
-                    </p>
+</a>
 
-                </article>
+</div>
 
-                <article>
+</article>
 
-                    <h3>03. Security &amp; Privacy</h3>
+<article class="upgrade-card ab-card">
 
-                    <p>
+<div class="ab-icon">🔐</div>
 
-                        Evaluate and strengthen
-                        application security,
-                        privacy controls and
-                        data protection mechanisms.
+<h3>Privacy & Data Protection</h3>
 
-                    </p>
+<p>
 
-                </article>
+Understand privacy information,
+browser storage, data protection
+principles and security guidance.
 
-                <article>
+</p>
 
-                    <h3>04. Backup &amp; Recovery</h3>
+<div class="ab-buttons">
 
-                    <p>
+<a href="/privacy.html"
+class="ab-button">
 
-                        Improve backup reliability,
-                        restoration workflows
-                        and recovery key management
-                        where applicable.
+Privacy Information
 
-                    </p>
+</a>
 
-                </article>
+</div>
 
-                <article>
+</article>
 
-                    <h3>05. Performance &amp; Stability</h3>
+<article class="upgrade-card ab-card">
 
-                    <p>
+<div class="ab-icon">📦</div>
 
-                        Optimize application
-                        performance, resource
-                        usage and compatibility.
+<h3>Download Information</h3>
 
-                    </p>
+<p>
 
-                </article>
+Find Android APK download
+information and installation
+guidance.
 
-                <article>
+</p>
 
-                    <h3>06. Accessibility &amp; Language</h3>
+<div class="ab-buttons">
 
-                    <p>
+<a href="/download.html"
+class="ab-button">
 
-                        Improve language support,
-                        visual accessibility
-                        and overall usability.
+APK Download Page
 
-                    </p>
+</a>
 
-                </article>
+</div>
 
-                <article>
+</article>
 
-                    <h3>07. Testing &amp; Quality Assurance</h3>
+<article class="upgrade-card ab-card">
 
-                    <p>
+<div class="ab-icon">💬</div>
 
-                        Conduct functional,
-                        compatibility, security
-                        and reliability testing
-                        before appropriate releases.
+<h3>Help & Support</h3>
 
-                    </p>
+<p>
 
-                </article>
+Explore available support
+information and prepare
+a support request.
 
-                <article>
+</p>
 
-                    <h3>08. Continuous Improvement</h3>
+<div class="ab-buttons">
 
-                    <p>
+<a href="/contact.html"
+class="ab-button">
 
-                        Evaluate user feedback
-                        and introduce improvements
-                        according to development
-                        priorities.
+Contact & Support
 
-                    </p>
+</a>
 
-                </article>
+</div>
 
-            </div>
+</article>
 
-            <div class="about-notice">
+</div>
 
-                Roadmap items represent development
-                goals and do not guarantee specific
-                features, completion dates or
-                release schedules.
+</section>
 
-            </div>
+<!-- SECURITY PRINCIPLES -->
 
-        </section>
+<section class="ab-section">
 
-        <!-- IMPORTANT INFORMATION -->
+<h2 class="ab-title">
 
-        <section class="upgrade-card about-section">
+Privacy & Security Commitment
 
-            <h2>Important Information</h2>
+</h2>
 
-            <p>
+<p class="ab-subtitle">
 
-                MeraHisab and Royal Khata
-                are financial record management
-                tools.
+Development priorities for
+responsible financial data management.
 
-            </p>
+</p>
 
-            <p>
+<div class="ab-grid-three">
 
-                They are not intended to replace
-                professional financial, investment,
-                legal or accounting advice.
+<article class="upgrade-card ab-card">
 
-            </p>
+<div class="ab-icon">🔑</div>
 
-            <p>
+<h3>Data Protection</h3>
 
-                Users should independently verify
-                important financial calculations
-                and maintain appropriate backups
-                of their records.
+<p>
 
-            </p>
+Prioritize appropriate protection
+for personal and business
+financial information.
 
-        </section>
+</p>
 
-        <!-- OFFICIAL WEBSITE -->
+</article>
 
-        <section class="upgrade-card about-section">
+<article class="upgrade-card ab-card">
 
-            <h2>Official Website &amp; Distribution</h2>
+<div class="ab-icon">💾</div>
 
-            <p>
+<h3>Backup & Recovery</h3>
 
-                <strong>Brand:</strong>
-                MeraHisab
+<p>
 
-            </p>
+Encourage reliable backup
+and recovery practices
+to reduce accidental data loss.
 
-            <p>
+</p>
 
-                <strong>Applications:</strong>
-                MeraHisab and Royal Khata
+</article>
 
-            </p>
+<article class="upgrade-card ab-card">
 
-            <p>
+<div class="ab-icon">🔍</div>
 
-                <strong>Official Website:</strong>
+<h3>Security Verification</h3>
 
-                <a href="https://merahisab.store/">
+<p>
 
-                    merahisab.store
+Review application permissions,
+file integrity, data handling
+and security controls.
 
-                </a>
+</p>
 
-            </p>
+</article>
 
-            <p>
+<article class="upgrade-card ab-card">
 
-                <strong>Application Platform:</strong>
-                Android
+<div class="ab-icon">👤</div>
 
-            </p>
+<h3>User Control</h3>
 
-            <p>
+<p>
 
-                <strong>Website Hosting:</strong>
-                GitHub Pages
+Support clear information
+about storage, privacy settings
+and available data controls.
 
-            </p>
+</p>
 
-            <p>
+</article>
 
-                Always use trusted official
-                distribution channels to
-                obtain application files
-                and release information.
+<article class="upgrade-card ab-card">
 
-            </p>
+<div class="ab-icon">⚙</div>
 
-            <div class="about-actions">
+<h3>Reliable Development</h3>
 
-                <a class="action"
-                   href="downloads.html">
+<p>
 
-                    Official Download Center
+Improve software stability
+through structured development,
+review and testing.
 
-                </a>
+</p>
 
-                <button class="action"
-                        id="copyWebsite"
-                        type="button">
+</article>
 
-                    Copy Website Link
+<article class="upgrade-card ab-card">
 
-                </button>
+<div class="ab-icon">📄</div>
 
-            </div>
+<h3>Clear Documentation</h3>
 
-            <p id="aboutActionStatus"
-               role="status"
-               aria-live="polite">
+<p>
 
-            </p>
+Provide understandable information
+about application functionality,
+limitations and privacy practices.
 
-        </section>
+</p>
 
-        <!-- CONTACT AND SUPPORT -->
+</article>
 
-        <section class="upgrade-card about-section">
+</div>
 
-            <h2>Contact &amp; Support</h2>
+<div class="ab-notice">
 
-            <p>
+These are development principles,
+not a guarantee that every security
+feature is currently implemented.
 
-                We welcome constructive
-                feedback, feature suggestions
-                and technical issue reports.
+Application encryption, backup
+recovery, signing certificates and
+data processing require separate
+technical verification.
 
-            </p>
+</div>
 
-            <ul>
+<div class="ab-buttons ab-center">
 
-                <li>Application support</li>
+<a href="/privacy.html"
+class="ab-button ab-primary">
 
-                <li>Website support</li>
+Read Privacy Information
 
-                <li>Feature suggestions</li>
+</a>
 
-                <li>Bug reports</li>
+</div>
 
-                <li>Privacy-related questions</li>
+</section>
 
-                <li>Security vulnerability reports</li>
+<!-- DEVELOPMENT ROADMAP -->
 
-                <li>Download and installation assistance</li>
+<section class="ab-section"
+id="roadmap">
 
-            </ul>
+<h2 class="ab-title">
 
-            <div class="about-notice">
+Development Roadmap
 
-                Never include passwords,
-                application PINs, OTPs,
-                recovery keys or confidential
-                financial records in support
-                requests.
+</h2>
 
-            </div>
+<p class="ab-subtitle">
 
-            <div class="about-actions">
+Our planned development and
+improvement stages.
 
-                <a class="action"
-                   href="contact.html">
+</p>
 
-                    Contact Support
+<div class="ab-timeline">
 
-                </a>
+<article class="upgrade-card ab-card ab-stage">
 
-                <a class="action"
-                   href="privacy.html">
+<div class="ab-stage-number">01</div>
 
-                    Privacy Information
+<div>
 
-                </a>
+<h3>Website Foundation</h3>
 
-            </div>
+<span class="ab-status">
 
-        </section>
+IMPLEMENTATION STAGE
 
-        <!-- FINAL CALL TO ACTION -->
+</span>
 
-        <section class="about-hero about-section">
+<p>
 
-            <span class="about-label">
+Official domain, website structure,
+application pages, download resources
+and shared design components.
 
-                MERAHISAB
+</p>
 
-            </span>
+</div>
 
-            <h2>Your Money. Your Control.</h2>
+</article>
 
-            <p>
+<article class="upgrade-card ab-card ab-stage">
 
-                Organize your finances.
-                Understand your records.
-                Make informed decisions.
+<div class="ab-stage-number">02</div>
 
-            </p>
+<div>
 
-            <div class="about-actions"
-                 style="justify-content:center;">
+<h3>Premium Website Experience</h3>
 
-                <a class="action"
-                   href="downloads.html">
+<span class="ab-status">
 
-                    Explore Our Applications
+IMPLEMENTATION STAGE
 
-                </a>
+</span>
 
-                <a class="action"
-                   href="tools.html">
+<p>
 
-                    Use Free Financial Tools
+Responsive layouts, improved
+navigation, theme support,
+financial tools and consistent
+brand presentation.
 
-                </a>
+</p>
 
-                <a class="action"
-                   href="index.html">
+</div>
 
-                    Back to Home
+</article>
 
-                </a>
+<article class="upgrade-card ab-card ab-stage">
 
-            </div>
+<div class="ab-stage-number">03</div>
 
-        </section>
+<div>
 
-    </main>
+<h3>Progressive Web App Integration</h3>
 
-    <!-- PREMIUM FOOTER -->
+<span class="ab-status">
 
-    <footer class="site">
+IN PROGRESS
 
-        <div class="container">
+</span>
 
-            <h2>MeraHisab</h2>
+<p>
 
-            <p>Your Money. Your Control.</p>
+Website installation, offline
+resources, service worker updates
+and storage diagnostics.
 
-            <p>
+</p>
 
-                Personal Finance &amp;
-                Digital Khata Solutions
+</div>
 
-            </p>
+</article>
 
-            <nav aria-label="Footer navigation">
+<article class="upgrade-card ab-card ab-stage">
 
-                <a href="index.html">Home</a>
+<div class="ab-stage-number">04</div>
 
-                <a href="downloads.html">Apps</a>
+<div>
 
-                <a href="merahisab.html">MeraHisab</a>
+<h3>Security, Privacy & Accessibility</h3>
 
-                <a href="royal-khata.html">Royal Khata</a>
+<span class="ab-status">
 
-                <a href="compare.html">Compare</a>
+PLANNED REVIEW
 
-                <a href="tools.html">Tools</a>
+</span>
 
-                <a href="privacy.html">Privacy</a>
+<p>
 
-                <a href="about.html"
-                   aria-current="page">
+Review data protection information,
+website security, accessibility,
+application integrity and
+privacy requirements.
 
-                    About
+</p>
 
-                </a>
+</div>
 
-                <a href="contact.html">Contact</a>
+</article>
 
-            </nav>
+<article class="upgrade-card ab-card ab-stage">
 
-            <p>
+<div class="ab-stage-number">05</div>
 
-                Official Website:
+<div>
 
-                <a href="https://merahisab.store/">
+<h3>Royal Khata Development</h3>
 
-                    merahisab.store
+<span class="ab-status">
 
-                </a>
+UNDER DEVELOPMENT
 
-            </p>
+</span>
 
-            <p>
+<p>
 
-                &copy; <span data-year></span>
+Build digital ledger functionality,
+credit and debit management,
+customer records and appropriate
+data protection features.
 
-                MeraHisab. All Rights Reserved.
+</p>
 
-            </p>
+</div>
 
-        </div>
+</article>
 
-    </footer>
+<article class="upgrade-card ab-card ab-stage">
 
-    <!-- ABOUT PAGE ENGINE -->
+<div class="ab-stage-number">06</div>
 
-    <script>
+<div>
 
-        (() => {
+<h3>Comprehensive Testing</h3>
 
-            "use strict";
+<span class="ab-status">
 
-            const copyButton =
-                document.getElementById(
-                    "copyWebsite"
-                );
+PENDING
 
-            const status =
-                document.getElementById(
-                    "aboutActionStatus"
-                );
+</span>
 
-            const website =
-                "https://merahisab.store/";
+<p>
 
-            copyButton.addEventListener(
-                "click",
-                async () => {
+Review functionality, mobile
+and desktop layouts, accessibility,
+offline behavior, performance
+and security before final approval.
 
-                    try {
+</p>
 
-                        if (!navigator.clipboard) {
+</div>
 
-                            throw new Error(
-                                "Clipboard unavailable"
-                            );
+</article>
 
-                        }
+<article class="upgrade-card ab-card ab-stage">
 
-                        await navigator.clipboard
-                            .writeText(website);
+<div class="ab-stage-number">07</div>
 
-                        status.textContent =
-                            "Official website link copied.";
+<div>
 
-                    } catch (error) {
+<h3>Future Improvements</h3>
 
-                        status.textContent =
-                            "Please copy this link manually: " +
-                            website;
+<span class="ab-status">
 
-                    }
+PLANNED
 
-                }
-            );
+</span>
 
-        })();
+<p>
 
-    </script>
+Evaluate multilingual support,
+additional financial tools,
+product improvements and
+user feedback.
+
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+<div class="ab-notice">
+
+Roadmap items are development
+objectives and may change according
+to technical requirements.
+
+No fixed release dates or
+completion guarantees are provided.
+
+</div>
+
+</section>
+
+<!-- BRAND INFORMATION -->
+
+<section class="ab-section">
+
+<h2 class="ab-title">
+
+Official Brand Information
+
+</h2>
+
+<div class="ab-grid">
+
+<article class="upgrade-card ab-card">
+
+<h3>Website Identity</h3>
+
+<div class="ab-info-row">
+
+<span>Brand Name</span>
+
+<strong>MeraHisab</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Official Domain</span>
+
+<strong>merahisab.store</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Website Category</span>
+
+<strong>Financial Management</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Hosting Platform</span>
+
+<strong>GitHub Pages</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Website Format</span>
+
+<strong>Responsive Web / PWA</strong>
+
+</div>
+
+</article>
+
+<article class="upgrade-card ab-card">
+
+<h3>Application Identity</h3>
+
+<div class="ab-info-row">
+
+<span>Personal Finance</span>
+
+<strong>MeraHisab</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Digital Ledger</span>
+
+<strong>Royal Khata</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Application Platform</span>
+
+<strong>Android</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Royal Khata Release</span>
+
+<strong>Pending</strong>
+
+</div>
+
+<div class="ab-info-row">
+
+<span>Support Information</span>
+
+<a href="/contact.html">
+
+View Support
+
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- FINANCIAL DISCLAIMER -->
+
+<section class="ab-section">
+
+<article class="upgrade-card ab-card">
+
+<div class="ab-icon">⚖</div>
+
+<h2>Important Financial Disclaimer</h2>
+
+<p>
+
+MeraHisab and Royal Khata are
+intended as financial record
+management application projects.
+
+</p>
+
+<p>
+
+The website's calculators and
+financial information are provided
+for general informational and
+calculation purposes.
+
+</p>
+
+<p>
+
+They do not constitute personalized
+investment, banking, taxation,
+accounting or legal advice.
+
+</p>
+
+<p>
+
+Calculator results depend on the
+inputs, assumptions and calculation
+methods used.
+
+Users should independently verify
+important financial decisions.
+
+</p>
+
+<p>
+
+The website does not represent
+itself as a bank, payment service,
+lending institution or regulated
+investment advisory service.
+
+</p>
+
+</article>
+
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+
+<section class="ab-section ab-faq">
+
+<h2 class="ab-title">
+
+Frequently Asked Questions
+
+</h2>
+
+<details class="upgrade-card">
+
+<summary>What is MeraHisab?</summary>
+
+<p>
+
+MeraHisab is a financial management
+project that includes a personal
+finance application and an official
+website with financial tools.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>What is Royal Khata?</summary>
+
+<p>
+
+Royal Khata is a digital ledger
+application project focused on
+credit, debit and business
+financial records.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Are MeraHisab and Royal Khata the same application?</summary>
+
+<p>
+
+No. They are separate application
+projects with different financial
+management objectives.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>What is the official website?</summary>
+
+<p>
+
+The official project website is
+https://merahisab.store/.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Is Royal Khata available for download?</summary>
+
+<p>
+
+Royal Khata's APK release is
+currently pending.
+
+Visit its application page for
+development information.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Can I install the website on my phone?</summary>
+
+<p>
+
+Supported browsers may allow
+installation of the website
+as a Progressive Web App.
+
+Availability depends on the browser,
+device and successful PWA setup.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Is website installation the same as APK installation?</summary>
+
+<p>
+
+No. A PWA installs the website
+experience, while an Android APK
+installs a separate native
+Android application.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Can the website work offline?</summary>
+
+<p>
+
+Selected public website resources
+may work offline after successful
+service worker installation
+and caching.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Where can I read about privacy?</summary>
+
+<p>
+
+Visit the Privacy & Data Protection
+page for privacy information,
+storage details and security
+guidance.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Does MeraHisab provide financial advice?</summary>
+
+<p>
+
+The website provides financial
+information, record management
+resources and calculation tools,
+not personalized financial advice.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>How can I suggest an improvement?</summary>
+
+<p>
+
+Visit the Contact & Support page
+to prepare feedback using the
+available support options.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Where can I download MeraHisab?</summary>
+
+<p>
+
+Visit the official Download Center
+or the MeraHisab APK Download page.
+
+Review the available installation
+and security information before
+installing an APK.
+
+</p>
+
+</details>
+
+</section>
+
+<!-- SHARE WEBSITE -->
+
+<section class="ab-section">
+
+<article class="upgrade-card ab-card">
+
+<h2>Share MeraHisab</h2>
+
+<p>
+
+Share the official website with
+friends, family and others interested
+in financial record management.
+
+</p>
+
+<div class="ab-buttons">
+
+<button
+type="button"
+id="shareWebsite"
+class="ab-button ab-primary">
+
+Share Website
+
+</button>
+
+<button
+type="button"
+id="copyWebsite"
+class="ab-button">
+
+Copy Website Link
+
+</button>
+
+<a
+href="https://merahisab.store/"
+class="ab-button">
+
+Open Official Website
+
+</a>
+
+</div>
+
+<p
+id="shareStatus"
+class="ab-message"
+role="status"
+aria-live="polite">
+
+</p>
+
+</article>
+
+</section>
+
+<!-- PWA INSTALLATION PANEL -->
+
+<section class="ab-section"
+id="pwaMount">
+
+<!-- PWA panel generated by pwa.js -->
+
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+
+<section class="ab-section ab-hero">
+
+<h2>Organize Your Financial Journey</h2>
+
+<p>
+
+Explore MeraHisab applications,
+digital financial resources
+and practical calculation tools.
+
+</p>
+
+<div class="ab-buttons ab-center">
+
+<a href="/downloads.html"
+class="ab-button ab-primary">
+
+Explore Applications
+
+</a>
+
+<a href="/tools.html"
+class="ab-button">
+
+Use Financial Tools
+
+</a>
+
+<a href="/contact.html"
+class="ab-button">
+
+Contact & Support
+
+</a>
+
+<a href="/index.html"
+class="ab-button">
+
+Return Home
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- WEBSITE FOOTER -->
+
+<footer class="site">
+
+<div class="container">
+
+© <span data-year>2026</span>
+MeraHisab. All rights reserved.
+
+<br>
+
+<a href="/index.html">Home</a>
+
+·
+
+<a href="/privacy.html">Privacy</a>
+
+·
+
+<a href="/contact.html">Contact</a>
+
+·
+
+<a href="/downloads.html">Downloads</a>
+
+<br>
+
+<a href="https://merahisab.store/">
+
+merahisab.store
+
+</a>
+
+</div>
+
+</footer>
+
+<!-- ABOUT PAGE ENGINE -->
+
+<script>
+
+(function () {
+
+"use strict";
+
+if (window.__merahisabAboutInitialized) {
+
+  return;
+
+}
+
+window.__merahisabAboutInitialized = true;
+
+const WEBSITE_URL =
+  "https://merahisab.store/";
+
+const shareButton =
+  document.getElementById("shareWebsite");
+
+const copyButton =
+  document.getElementById("copyWebsite");
+
+const shareStatus =
+  document.getElementById("shareStatus");
+
+
+/* COPY WEBSITE LINK */
+
+async function copyWebsiteLink() {
+
+  try {
+
+    if (
+      !navigator.clipboard ||
+      !navigator.clipboard.writeText
+    ) {
+
+      throw new Error("Clipboard unavailable.");
+
+    }
+
+    await navigator.clipboard.writeText(
+      WEBSITE_URL
+    );
+
+    shareStatus.textContent =
+      "Official website link copied.";
+
+    return true;
+
+  } catch (error) {
+
+    shareStatus.textContent =
+      "Automatic copying is unavailable. Copy this link manually: " +
+      WEBSITE_URL;
+
+    return false;
+
+  }
+
+}
+
+copyButton.addEventListener(
+  "click",
+  copyWebsiteLink
+);
+
+
+/* NATIVE WEBSITE SHARING */
+
+shareButton.addEventListener(
+  "click",
+  async function () {
+
+    if (
+      typeof navigator.share !== "function"
+    ) {
+
+      await copyWebsiteLink();
+
+      return;
+
+    }
+
+    shareButton.disabled = true;
+
+    try {
+
+      await navigator.share({
+
+        title: "MeraHisab",
+
+        text:
+          "Explore MeraHisab applications and financial tools.",
+
+        url: WEBSITE_URL
+
+      });
+
+      shareStatus.textContent =
+        "Website sharing action completed.";
+
+    } catch (error) {
+
+      if (
+        error &&
+        error.name === "AbortError"
+      ) {
+
+        shareStatus.textContent =
+          "Sharing cancelled.";
+
+      } else {
+
+        shareStatus.textContent =
+          "Sharing is unavailable. Use the Copy Website Link button.";
+
+      }
+
+    } finally {
+
+      shareButton.disabled = false;
+
+    }
+
+  }
+
+);
+
+
+/* AUTOMATIC COPYRIGHT YEAR */
+
+document.querySelectorAll(
+  "[data-year]"
+).forEach(function (element) {
+
+  element.textContent =
+    String(new Date().getFullYear());
+
+});
+
+
+/* APPLICATION ICON FALLBACK */
+
+document.querySelectorAll(
+  ".ab-logo, .ab-app-icon"
+).forEach(function (image) {
+
+  function handleImageError() {
+
+    image.hidden = true;
+
+  }
+
+  image.addEventListener(
+    "error",
+    handleImageError
+  );
+
+  if (
+    image.complete &&
+    image.naturalWidth === 0
+  ) {
+
+    handleImageError();
+
+  }
+
+});
+
+})();
+
+</script>
+
+<noscript>
+
+<div style="
+padding:20px;
+text-align:center;
+background:#172640;
+color:#f0d9a6;
+">
+
+JavaScript is disabled.
+
+About information and navigation
+remain available.
+
+Website sharing, theme controls
+and PWA management require JavaScript.
+
+</div>
+
+</noscript>
 
 </body>
 
-  </html>
+</html>
