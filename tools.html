@@ -1,949 +1,1076 @@
+
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-oqWssofqbuIKMNRt29vVQ23HxGOE4YJzdvarS4/y7F0='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 
-<title>Financial Calculators & Smart Tools — MeraHisab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Financial Calculators &amp; Smart Tools | MeraHisab</title>
 
-<meta name="description" content="Free financial calculators including EMI, SIP, FD, RD, interest, GST, discount, percentage, savings goal, inflation, IST clock and stopwatch.">
+<meta name="description" content="Explore 11 free financial calculators including EMI, SIP, FD, RD, GST, discount, savings goal, inflation, interest and percentage calculations. Includes IST clock and stopwatch.">
 
 <meta name="author" content="MeraHisab">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#080f20">
+<meta name="application-name" content="MeraHisab">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MeraHisab">
 
 <link rel="canonical" href="https://merahisab.store/tools.html">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MeraHisab">
-<meta property="og:title" content="MeraHisab Financial Calculators">
-<meta property="og:description" content="Useful financial calculators and everyday smart tools.">
+<meta property="og:title" content="Financial Calculators & Smart Tools">
+<meta property="og:description" content="11 financial calculators, Indian Standard Time clock and stopwatch.">
 <meta property="og:url" content="https://merahisab.store/tools.html">
 <meta property="og:image" content="https://merahisab.store/icons/icon-512.png">
 <meta name="twitter:card" content="summary">
 
-<!-- PWA INTEGRATION -->
-
-<link rel="manifest" href="/manifest.json">
-<meta name="application-name" content="MeraHisab">
-<meta name="theme-color" content="#080f20">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="MeraHisab">
-
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
-<link rel="icon" type="image/png" href="/icons/icon-192.png">
-
 <link rel="stylesheet" href="/upgrade.css">
 <link rel="stylesheet" href="/pwa.css">
 
-<script defer src="/upgrade.js"></script>
-<script defer src="/pwa.js"></script>
+<script src="/upgrade.js" defer></script>
+<script src="/pwa.js" defer></script>
 
 <style>
+/* MERAHISAB FINANCIAL TOOLS
+   Final Master Version 2.0.0 */
 
 .ft-page {
-  width: 100%;
-  max-width: 1200px;
+  width: min(1200px, calc(100% - 32px));
   margin: auto;
-  padding: 28px 18px;
-  box-sizing: border-box;
+  padding: 26px 0 48px;
+  min-width: 0;
 }
 
 .ft-page * {
   box-sizing: border-box;
 }
 
+.ft-page h1,
+.ft-page h2,
+.ft-page h3 {
+  color: var(--mh-accent, #f0d9a6);
+  overflow-wrap: anywhere;
+}
+
+.ft-page p {
+  line-height: 1.75;
+}
+
+.ft-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
 .ft-hero {
-  padding: 42px 22px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 24px;
-  background: radial-gradient(
-    circle at top,
-    rgba(212,175,55,.13),
-    transparent 65%
-  ), linear-gradient(145deg,#172640,#080f20);
-  color: #f8f6f0;
+  padding: clamp(24px, 6vw, 60px) 20px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 26px;
+  background: var(--mh-surface, #14243b);
+  color: var(--mh-text, #f8f6f0);
   text-align: center;
+  box-shadow: var(--mh-shadow);
 }
 
 .ft-hero h1 {
-  color: #f0d9a6;
-  font-size: clamp(28px,5vw,48px);
+  margin: 18px 0;
+  font-size: clamp(28px, 5vw, 48px);
   line-height: 1.2;
 }
 
 .ft-hero p {
-  max-width: 700px;
-  margin: 15px auto;
-  color: #c4cddd;
-  line-height: 1.8;
+  max-width: 780px;
+  margin: 12px auto 24px;
+  color: var(--mh-muted, #b9c5d6);
 }
 
 .ft-eyebrow {
   display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid rgba(212,175,55,.4);
+  padding: 7px 15px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
   border-radius: 30px;
-  color: #f0d9a6;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
+  color: var(--mh-accent, #f0d9a6);
 }
 
 .ft-section {
-  margin: 35px 0;
-  scroll-margin-top: 100px;
+  margin: 42px 0;
+  min-width: 0;
 }
 
 .ft-title {
   text-align: center;
-  font-size: clamp(23px,4vw,32px);
-  margin-bottom: 18px;
+  font-size: clamp(24px, 4vw, 34px);
+  margin-bottom: 12px;
 }
 
 .ft-description {
-  max-width: 720px;
-  margin: 12px auto 24px;
   text-align: center;
-  line-height: 1.8;
-  opacity: .85;
+  max-width: 780px;
+  margin: 0 auto 24px;
+  color: var(--mh-muted, #b9c5d6);
 }
 
 .ft-grid {
   display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.ft-calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
 }
 
 .ft-card {
   min-width: 0;
-  padding: 22px;
-  border: 1px solid rgba(212,175,55,.28);
-  border-radius: 18px;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 22px;
+  background: var(--mh-surface, #14243b);
+  color: var(--mh-text, #f8f6f0);
+  box-shadow: var(--mh-shadow);
   overflow-wrap: anywhere;
 }
 
 .ft-card h3 {
-  margin: 8px 0 12px;
+  margin-top: 0;
+  font-size: 21px;
+  line-height: 1.4;
 }
 
-.ft-card p {
-  line-height: 1.7;
-}
-
-.ft-icon {
-  display: grid;
-  width: 45px;
-  height: 45px;
-  place-items: center;
-  margin-bottom: 12px;
-  border: 1px solid rgba(212,175,55,.35);
-  border-radius: 12px;
-  background: rgba(212,175,55,.08);
-  font-size: 23px;
-}
-
-.ft-label {
+.ft-card label {
   display: block;
-  margin: 15px 0 6px;
-  font-size: 13px;
-  font-weight: 700;
+  margin: 14px 0;
 }
 
-.ft-input,
-.ft-select {
+.ft-card label span {
+  display: block;
+  font-weight: 650;
+  margin-bottom: 7px;
+}
+
+.ft-card input,
+.ft-card select,
+.ft-search {
   display: block;
   width: 100%;
   min-width: 0;
-  min-height: 45px;
-  padding: 11px 12px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 10px;
-  background: transparent;
-  color: inherit;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 11px;
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-text, #f8f6f0);
   font: inherit;
 }
 
-.ft-select option {
-  background: #172640;
-  color: #ffffff;
+.ft-card input:focus,
+.ft-card select:focus,
+.ft-search:focus {
+  outline: 3px solid var(--mh-focus, #94c7ff);
+  outline-offset: 2px;
 }
 
-.ft-buttons {
+.ft-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 10px;
   margin-top: 18px;
 }
 
-.ft-button {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
+.ft-hero .ft-actions {
   justify-content: center;
-  padding: 10px 18px;
-  border: 1px solid #d4af37;
-  border-radius: 25px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
 }
 
-.ft-primary {
-  background: linear-gradient(135deg,#f0d9a6,#d4af37);
+.ft-page button,
+.ft-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 11px 16px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 12px;
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-text, #f8f6f0);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.ft-page button[type="submit"],
+.ft-page .ft-primary,
+.ft-page button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #f0d9a6, #d8b878);
+  border-color: #b59452;
   color: #101827;
 }
 
-.ft-button:disabled {
-  opacity: .45;
+.ft-page button:disabled {
+  opacity: .5;
   cursor: not-allowed;
 }
 
-.ft-result {
-  padding: 17px;
-  margin-top: 18px;
-  border: 1px solid rgba(212,175,55,.35);
-  border-radius: 12px;
-  background: rgba(212,175,55,.07);
+.ft-page :is(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--mh-focus, #94c7ff);
+  outline-offset: 3px;
 }
 
-.ft-result-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(128,128,128,.2);
-  font-size: 14px;
-}
-
-.ft-result-row:last-child {
-  border-bottom: 0;
-}
-
-.ft-result-row strong {
-  font-variant-numeric: tabular-nums;
-}
-
-.ft-error {
-  margin-top: 12px;
-  padding: 10px;
-  border-left: 3px solid #d95757;
-  font-size: 13px;
-}
-
-.ft-note {
-  margin-top: 15px;
-  font-size: 12px;
-  line-height: 1.8;
-  opacity: .85;
-}
-
-.ft-search {
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.ft-filter-bar {
+.ft-filter-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.ft-filter[aria-pressed="true"] {
-  background: #d4af37;
-  color: #101827;
+  gap: 10px;
+  margin: 16px 0;
 }
 
 .ft-count {
-  margin: 12px 0;
-  font-size: 13px;
-  opacity: .85;
+  color: var(--mh-muted, #b9c5d6);
+  font-size: 14px;
 }
 
-.ft-time {
-  margin: 18px 0 8px;
-  text-align: center;
-  font-size: clamp(26px,5vw,46px);
-  font-weight: 700;
+.ft-result {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 14px;
+  background: var(--mh-surface-raised, #172640);
+}
+
+.ft-result p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--mh-border, #44536a);
+}
+
+.ft-result p:last-child {
+  border-bottom: 0;
+}
+
+.ft-result strong {
+  color: var(--mh-accent, #f0d9a6);
   font-variant-numeric: tabular-nums;
-  letter-spacing: 1px;
+  overflow-wrap: anywhere;
 }
 
-.ft-date {
+.ft-message {
+  font-size: 14px;
+  color: var(--mh-accent, #f0d9a6);
+  overflow-wrap: anywhere;
+}
+
+.ft-message:empty {
+  display: none;
+}
+
+.ft-small {
+  font-size: 13px;
+  color: var(--mh-muted, #b9c5d6);
+}
+
+.ft-notice {
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 15px;
+  background: var(--mh-surface-raised, #172640);
+}
+
+.ft-time-card {
   text-align: center;
-  line-height: 1.8;
 }
 
-.ft-clock-status {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 12px;
-  opacity: .8;
+.ft-time-card .ft-actions {
+  justify-content: center;
 }
 
-.ft-stopwatch {
-  font-size: clamp(24px,5vw,42px);
+.ft-time-display {
+  margin: 25px 0 12px;
+  padding: 15px 8px;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 16px;
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-accent, #f0d9a6);
+  font-size: clamp(25px, 5vw, 45px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: .015em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 
 .ft-lap-wrap {
-  max-height: 240px;
+  width: 100%;
+  max-height: 300px;
   overflow: auto;
   margin-top: 18px;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 12px;
 }
 
 .ft-lap-table {
   width: 100%;
+  min-width: 280px;
   border-collapse: collapse;
-  font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
 
 .ft-lap-table th,
 .ft-lap-table td {
-  padding: 10px 6px;
-  border-bottom: 1px solid rgba(128,128,128,.2);
+  padding: 10px;
+  border-bottom: 1px solid var(--mh-border, #44536a);
+  font-size: 13px;
   text-align: center;
 }
 
-.ft-notice {
-  padding: 18px;
-  margin: 20px 0;
-  border: 1px solid rgba(212,175,55,.35);
-  border-radius: 14px;
-  background: rgba(212,175,55,.07);
-  font-size: 13px;
-  line-height: 1.8;
+.ft-lap-table th {
+  color: var(--mh-accent, #f0d9a6);
+  background: var(--mh-surface-raised, #172640);
 }
 
 .ft-faq details {
   padding: 16px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(212,175,55,.25);
-  border-radius: 12px;
+  margin: 12px 0;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 14px;
+  background: var(--mh-surface, #14243b);
 }
 
 .ft-faq summary {
+  min-height: 36px;
   cursor: pointer;
   font-weight: 700;
 }
 
-.ft-page :focus-visible {
-  outline: 3px solid #d4af37;
-  outline-offset: 3px;
+.ft-faq details p {
+  color: var(--mh-muted, #b9c5d6);
 }
 
-[hidden] {
+.ft-page [hidden] {
   display: none !important;
 }
 
-html[data-theme="light"] .ft-hero,
-body[data-theme="light"] .ft-hero {
-  background: linear-gradient(145deg,#ffffff,#f3ead7);
-  color: #172033;
+@media (max-width: 1000px) {
+  .ft-calculator-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-html[data-theme="light"] .ft-hero h1,
-body[data-theme="light"] .ft-hero h1,
-html[data-theme="light"] .ft-eyebrow,
-body[data-theme="light"] .ft-eyebrow {
-  color: #765018;
-}
-
-html[data-theme="light"] .ft-hero p,
-body[data-theme="light"] .ft-hero p {
-  color: #46546a;
-}
-
-html[data-theme="light"] .ft-select option,
-body[data-theme="light"] .ft-select option {
-  background: #ffffff;
-  color: #172033;
-}
-
-@media(max-width:650px) {
-
+@media (max-width: 650px) {
   .ft-page {
-    padding: 18px 12px;
+    width: calc(100% - 24px);
+    padding-top: 18px;
   }
 
-  .ft-grid {
-    grid-template-columns: minmax(0,1fr);
-  }
-
-  .ft-card {
-    padding: 17px;
+  .ft-grid,
+  .ft-calculator-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .ft-hero {
-    padding: 30px 16px;
+    border-radius: 20px;
   }
 
-  .ft-buttons > .ft-button {
+  .ft-hero .ft-button {
+    flex: 1 1 100%;
+  }
+
+  .ft-filter-row button {
     flex: 1 1 auto;
   }
 
+  .ft-card input,
+  .ft-card select,
+  .ft-search {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-page *,
+  .ft-page *::before,
+  .ft-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .ft-page button[aria-pressed="true"] {
+    outline: 2px solid Highlight;
+  }
 }
 
 @media print {
+  .ft-page {
+    width: 100%;
+    padding: 0;
+  }
 
-  header.site,
-  footer.site,
-  .ft-filter-bar,
+  .ft-actions,
+  .ft-filter-row,
   .ft-search,
-  .ft-buttons,
+  .ft-breadcrumb,
+  #toolCount,
   #pwaMount,
-  .pwa-panel {
+  header.site,
+  footer.site {
     display: none !important;
   }
 
-  .ft-page,
-  .ft-card,
-  .ft-hero,
-  .ft-result {
-    background: white !important;
-    color: black !important;
-    box-shadow: none !important;
-  }
-
-  .ft-hero h1,
-  .ft-hero p,
-  .ft-eyebrow {
-    color: black !important;
+  .ft-grid,
+  .ft-calculator-grid {
+    display: block;
   }
 
   .ft-card {
+    margin-bottom: 18px;
     break-inside: avoid;
+    box-shadow: none;
   }
 
-}
+  .ft-lap-wrap {
+    overflow: visible;
+    max-height: none;
+  }
 
+  .ft-result {
+    break-inside: avoid;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<a class="skip-link" href="#mainContent">
+Skip to main content
+</a>
+
 <header class="site">
 <div class="container">
 
-<strong>MeraHisab</strong>
+<strong>
+<a href="/" aria-label="MeraHisab Home">MeraHisab</a>
+</strong>
 
 <nav aria-label="Main navigation">
 
-<a href="/index.html">Home</a>
-<a href="/downloads.html">Apps</a>
+<a href="/">Home</a>
+<a href="/merahisab.html">MeraHisab</a>
+<a href="/royal-khata.html">Royal Khata</a>
 <a href="/compare.html">Compare</a>
-<a href="/index.html#features">Features</a>
+<a href="/downloads.html">Downloads</a>
 <a href="/tools.html" aria-current="page">Tools</a>
 <a href="/privacy.html">Privacy</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Support</a>
 
-<button id="theme" type="button" aria-label="Change website theme">
-Theme
-</button>
+<button type="button" id="theme">Dark Mode</button>
 
 </nav>
 </div>
 </header>
 
-<main class="shell ft-page">
+<main class="ft-page" id="mainContent">
 
-<!-- HERO SECTION -->
+<div id="toolsContent" data-no-translate="true">
+
+<div class="ft-breadcrumb">
+
+<a href="/" data-hi="होम">Home</a>
+
+<span aria-hidden="true">/</span>
+
+<span data-hi="वित्तीय उपकरण">Financial Tools</span>
+
+</div>
 
 <section class="ft-hero">
 
-<span class="ft-eyebrow">
-SMART FINANCIAL TOOLKIT
+<span class="ft-eyebrow"
+data-hi="मुफ्त वित्तीय उपकरण">
+FREE FINANCIAL TOOLS
 </span>
 
-<h1>Financial Calculators & Smart Tools</h1>
+<h1 data-hi="वित्तीय कैलकुलेटर और स्मार्ट उपकरण">
+Financial Calculators &amp; Smart Tools
+</h1>
 
-<p>
-Calculate loans, investments, interest,
-taxes, savings and everyday financial
-estimates using convenient browser-based tools.
+<p data-hi="ऋण, निवेश, बचत, ब्याज, GST, छूट और महंगाई की गणना करने के लिए 11 आसान वित्तीय कैलकुलेटर का उपयोग करें।">
+Use 11 convenient financial calculators for loans, investments, savings, interest, GST, discounts and inflation.
 </p>
 
-<div class="ft-buttons" style="justify-content:center">
+<div class="ft-actions">
 
-<a href="#financial-calculators" class="ft-button ft-primary">
+<a class="ft-button ft-primary"
+href="#financial-calculators"
+data-hi="कैलकुलेटर उपयोग करें">
 Explore Calculators
 </a>
 
-<a href="#time-tools" class="ft-button">
-Clock & Stopwatch
+<a class="ft-button"
+href="#time-tools"
+data-hi="घड़ी और स्टॉपवॉच">
+Clock &amp; Stopwatch
 </a>
 
 </div>
-</section>
 
-<!-- LIVE CLOCK AND STOPWATCH -->
+</section>
 
 <section class="ft-section" id="time-tools">
 
-<h2 class="ft-title">
-Time & Productivity Tools
+<h2 class="ft-title"
+data-hi="घड़ी और स्टॉपवॉच">
+Clock &amp; Stopwatch
 </h2>
+
+<p class="ft-description"
+data-hi="भारतीय मानक समय देखें और स्टॉपवॉच से समय तथा लैप रिकॉर्ड करें।">
+View Indian Standard Time and measure elapsed time with the stopwatch.
+</p>
 
 <div class="ft-grid">
 
-<article class="upgrade-card ft-card">
+<article class="ft-card ft-time-card">
 
-<div class="ft-icon">🕒</div>
+<h3 data-hi="भारतीय मानक समय">
+Indian Standard Time
+</h3>
 
-<h3>Indian Standard Time</h3>
+<p class="ft-small">Asia/Kolkata · UTC+05:30</p>
 
-<p>Asia/Kolkata · UTC +05:30</p>
-
-<div class="ft-time" id="istClock">
+<div class="ft-time-display"
+id="istClock"
+data-no-translate="true">
 --:--:--
 </div>
 
-<div class="ft-date" id="istDate">
-Loading date...
-</div>
+<p id="istDate"></p>
 
-<div class="ft-clock-status">
-Live IST · Based on your device clock
-</div>
+<p class="ft-small"
+data-hi="समय आपके डिवाइस की घड़ी पर आधारित है। यह किसी आधिकारिक टाइम सर्वर से सिंक्रोनाइज नहीं है।">
+The clock uses your device time. It is not synchronized with an official time server.
+</p>
 
 </article>
 
-<article class="upgrade-card ft-card">
+<article class="ft-card ft-time-card">
 
-<div class="ft-icon">⏱</div>
+<h3 data-hi="स्टॉपवॉच">Stopwatch</h3>
 
-<h3>Digital Stopwatch</h3>
-
-<div class="ft-time ft-stopwatch" id="stopwatchDisplay">
+<div class="ft-time-display"
+id="stopwatchDisplay"
+data-no-translate="true">
 00:00:00.00
 </div>
 
-<div class="ft-buttons">
+<div class="ft-actions">
 
-<button type="button" id="swStart" class="ft-button ft-primary">
+<button type="button"
+id="swStart"
+class="ft-primary">
 Start
 </button>
 
-<button type="button" id="swPause" class="ft-button" disabled>
+<button type="button"
+id="swPause"
+disabled
+data-hi="रोकें">
 Pause
 </button>
 
-<button type="button" id="swLap" class="ft-button" disabled>
+<button type="button"
+id="swLap"
+disabled
+data-hi="लैप">
 Lap
 </button>
 
-<button type="button" id="swReset" class="ft-button" disabled>
+<button type="button"
+id="swReset"
+disabled
+data-hi="रीसेट">
 Reset
 </button>
 
 </div>
 
-<p id="swStatus" role="status" class="ft-note">
-Ready to start.
-</p>
-
-<div class="ft-lap-wrap">
+<div class="ft-lap-wrap"
+tabindex="0"
+role="region"
+aria-label="Stopwatch lap records">
 
 <table class="ft-lap-table">
 
 <thead>
 <tr>
-<th scope="col">Lap</th>
-<th scope="col">Split</th>
-<th scope="col">Total</th>
+<th scope="col" data-hi="लैप">Lap</th>
+<th scope="col" data-hi="लैप समय">Lap Time</th>
+<th scope="col" data-hi="कुल समय">Total Time</th>
 </tr>
 </thead>
 
-<tbody id="swLapList">
+<tbody id="swLapList"></tbody>
 
-<tr>
-<td colspan="3">No laps recorded.</td>
-</tr>
-
-</tbody>
 </table>
 
 </div>
+
+<p class="ft-small"
+data-hi="अधिकतम 100 लैप। पेज रीलोड करने पर रिकॉर्ड मिट जाएंगे।">
+Maximum 100 laps. Records are cleared when the page is reloaded.
+</p>
+
 </article>
 
 </div>
-</section>
 
-<!-- FINANCIAL CALCULATORS -->
+</section>
 
 <section class="ft-section" id="financial-calculators">
 
-<h2 class="ft-title">
-Financial Calculators
+<h2 class="ft-title"
+data-hi="11 वित्तीय कैलकुलेटर">
+11 Financial Calculators
 </h2>
 
-<p class="ft-description">
-Choose from 11 useful financial calculators.
-All calculation logic runs in your browser.
+<p class="ft-description"
+data-hi="अपनी जरूरत के अनुसार कैलकुलेटर चुनें। सभी गणनाएं आपके ब्राउजर में स्थानीय रूप से की जाती हैं।">
+Choose a calculator for your needs. Calculations are performed locally in your browser.
 </p>
 
-<label class="ft-label" for="toolSearch">
+<div class="ft-notice">
+
+<strong data-hi="महत्वपूर्ण वित्तीय सूचना">
+Important Financial Notice
+</strong>
+
+<p data-hi="सभी परिणाम अनुमान हैं। निवेश प्रतिफल की गारंटी नहीं है। वास्तविक ब्याज, कर, बैंक शुल्क और बाजार की स्थितियां अलग हो सकती हैं।">
+All results are estimates. Investment returns are not guaranteed. Actual interest, taxes, bank charges and market conditions may differ.
+</p>
+
+</div>
+
+<div class="ft-card">
+
+<label for="toolSearch"
+data-hi="कैलकुलेटर खोजें">
 Search Calculators
 </label>
 
-<input
-  id="toolSearch"
-  class="ft-input ft-search"
-  type="search"
-  placeholder="Search EMI, SIP, GST, savings..."
-  autocomplete="off">
+<input type="search"
+id="toolSearch"
+class="ft-search"
+maxlength="100"
+autocomplete="off"
+spellcheck="false"
+placeholder="Search calculators">
 
-<div class="ft-filter-bar" role="group" aria-label="Calculator categories">
+<div class="ft-filter-row"
+role="group"
+aria-label="Calculator categories">
 
-<button type="button" class="ft-button ft-filter" data-category="all" aria-pressed="true">
+<button type="button"
+data-filter="all"
+aria-pressed="true"
+data-hi="सभी उपकरण">
 All Tools
 </button>
 
-<button type="button" class="ft-button ft-filter" data-category="loan" aria-pressed="false">
-Loans
+<button type="button"
+data-filter="loan"
+aria-pressed="false"
+data-hi="ऋण और ब्याज">
+Loan &amp; Interest
 </button>
 
-<button type="button" class="ft-button ft-filter" data-category="investment" aria-pressed="false">
-Investments
+<button type="button"
+data-filter="investment"
+aria-pressed="false"
+data-hi="निवेश">
+Investment
 </button>
 
-<button type="button" class="ft-button ft-filter" data-category="tax" aria-pressed="false">
-Tax & Shopping
+<button type="button"
+data-filter="tax"
+aria-pressed="false"
+data-hi="कर और सामान्य गणना">
+Tax &amp; General
 </button>
 
-<button type="button" class="ft-button ft-filter" data-category="planning" aria-pressed="false">
+<button type="button"
+data-filter="planning"
+aria-pressed="false"
+data-hi="वित्तीय योजना">
 Financial Planning
 </button>
 
 </div>
 
-<div id="toolCount" class="ft-count" aria-live="polite">
-Loading calculators...
-</div>
+<p class="ft-count"
+id="toolCount"
+role="status"
+aria-live="polite">
+11 calculators
+</p>
 
-<div class="ft-grid" id="calculatorGrid">
+<div class="ft-actions">
 
-<!-- Calculators are generated locally by JavaScript. -->
-
-</div>
-
-<div id="noTools" class="ft-notice" hidden>
-No matching calculators found.
-Try another search or category.
-</div>
-
-<div class="ft-buttons" style="justify-content:center">
-
-<button type="button" class="ft-button" id="resetFilters">
+<button type="button"
+id="resetFilters"
+data-hi="फिल्टर रीसेट करें">
 Reset Filters
 </button>
 
-<button type="button" class="ft-button" id="resetAll">
+<button type="button"
+id="resetAll"
+data-hi="सभी कैलकुलेटर रीसेट करें">
 Reset All Calculators
 </button>
 
-<button type="button" class="ft-button ft-primary" id="printTools">
+<button type="button"
+id="printTools"
+class="ft-primary"
+data-hi="प्रिंट करें / PDF में सहेजें">
 Print / Save as PDF
 </button>
 
 </div>
 
-</section>
+</div>
 
-<!-- PRIVACY INFORMATION -->
+<div class="ft-section ft-calculator-grid"
+id="calculatorGrid">
+</div>
+
+<noscript>
+<div class="ft-notice">
+JavaScript is required to use the financial calculators and stopwatch.
+</div>
+</noscript>
+
+</section>
 
 <section class="ft-section">
 
-<h2 class="ft-title">
-Privacy & Calculation Information
+<h2 class="ft-title"
+data-hi="गोपनीयता और सुरक्षित गणना">
+Privacy &amp; Secure Calculations
 </h2>
 
 <div class="ft-grid">
 
-<article class="upgrade-card ft-card">
+<article class="ft-card">
 
-<div class="ft-icon">🔒</div>
+<h3 data-hi="स्थानीय गणना">
+Local Calculations
+</h3>
 
-<h3>Local Calculations</h3>
-
-<p>
-Calculator inputs are processed locally
-by the calculator engine on this page.
-The engine does not submit financial
-inputs to a server.
+<p data-hi="कैलकुलेटर में भरी गई वित्तीय राशियों को यह गणना प्रणाली किसी सर्वर पर नहीं भेजती है।">
+This calculator engine does not transmit your entered financial amounts to a server.
 </p>
 
 </article>
 
-<article class="upgrade-card ft-card">
+<article class="ft-card">
 
-<div class="ft-icon">💾</div>
+<h3 data-hi="वित्तीय रिकॉर्ड सहेजे नहीं जाते">
+No Financial Record Storage
+</h3>
 
-<h3>No Saved Financial Inputs</h3>
-
-<p>
-The calculator engine does not save
-entered amounts or calculation results
-to localStorage or IndexedDB.
+<p data-hi="कैलकुलेटर की जानकारी localStorage या किसी वित्तीय डेटाबेस में सहेजी नहीं जाती। ब्राउजर अपने व्यवहार के अनुसार कुछ फॉर्म मान याद रख सकता है।">
+Calculator inputs are not stored by this engine in localStorage or a financial database. Your browser may retain some form values according to its own behavior.
 </p>
 
 </article>
 
-<article class="upgrade-card ft-card">
+<article class="ft-card">
 
-<div class="ft-icon">📱</div>
+<h3 data-hi="ऑफलाइन उपयोग">
+Offline Access
+</h3>
 
-<h3>Responsive Tools</h3>
-
-<p>
-Use financial calculators on mobile,
-tablet and desktop devices with
-a responsive layout.
+<p data-hi="वेबसाइट की जरूरी फाइलें सफलतापूर्वक कैश होने पर कैलकुलेटर ऑफलाइन भी चल सकते हैं।">
+Calculators can work offline when the required website resources have been cached successfully.
 </p>
 
 </article>
 
-<article class="upgrade-card ft-card">
+<article class="ft-card">
 
-<div class="ft-icon">🌐</div>
+<h3 data-hi="सुरक्षित उपयोग">
+Safe Usage
+</h3>
 
-<h3>Offline Access</h3>
-
-<p>
-Calculators may work offline when
-the website and required resources
-have been successfully cached by
-the supported PWA service worker.
+<p data-hi="कैलकुलेटर में किसी भी प्रकार का पासवर्ड, PIN, OTP, बैंक लॉगिन या रिकवरी कुंजी भरने की जरूरत नहीं है।">
+Never enter passwords, PINs, OTPs, bank login credentials or recovery keys into calculator fields.
 </p>
 
 </article>
 
 </div>
 
-<div class="ft-notice">
+<div class="ft-actions">
 
-<strong>Financial Disclaimer:</strong>
-
-Calculator results are mathematical estimates,
-not guaranteed investment returns, official
-bank quotations or personalized financial advice.
-
-Actual interest rates, taxes, fees,
-rounding rules and investment returns
-may differ.
+<a class="ft-button ft-primary"
+href="/privacy.html"
+data-hi="गोपनीयता नीति पढ़ें">
+Read Privacy Policy
+</a>
 
 </div>
 
 </section>
-
-<!-- FAQ SECTION -->
 
 <section class="ft-section ft-faq">
 
-<h2 class="ft-title">
+<h2 class="ft-title"
+data-hi="अक्सर पूछे जाने वाले प्रश्न">
 Frequently Asked Questions
 </h2>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Are these calculators free?</summary>
+<summary data-hi="क्या सभी कैलकुलेटर मुफ्त हैं?">
+Are these calculators free?
+</summary>
 
-<p>
-The calculators on this website can
-be used without a calculator subscription.
+<p data-hi="हां। इस वेबसाइट के सभी 11 वित्तीय कैलकुलेटर का उपयोग बिना भुगतान के किया जा सकता है।">
+Yes. All 11 financial calculators on this website are available without payment.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>What is EMI?</summary>
+<summary data-hi="EMI क्या है?">
+What is EMI?
+</summary>
 
-<p>
-EMI means Equated Monthly Instalment.
-The EMI calculator estimates fixed monthly
-loan repayments using the reducing-balance
-interest formula.
+<p data-hi="EMI समान मासिक किस्त है। इसमें ऋण का मूलधन और ब्याज शामिल होता है। यह कैलकुलेटर घटती शेष राशि और स्थिर ब्याज दर के आधार पर अनुमान देता है।">
+EMI means Equated Monthly Instalment. It includes loan principal and interest. This calculator estimates EMI using a fixed interest rate and reducing balance.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>What is SIP?</summary>
+<summary data-hi="SIP क्या है?">
+What is SIP?
+</summary>
 
-<p>
-SIP means Systematic Investment Plan.
-The calculator estimates the future value
-of regular monthly investments using
-an assumed annual return.
-Actual market returns are not guaranteed.
+<p data-hi="SIP नियमित अंतराल पर निश्चित राशि निवेश करने का तरीका है। कैलकुलेटर अनुमानित प्रतिफल पर भविष्य का मूल्य बताता है। वास्तविक प्रतिफल की गारंटी नहीं है।">
+A Systematic Investment Plan involves investing a fixed amount regularly. The calculator estimates future value using an assumed return, which is not guaranteed.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>What is the difference between FD and RD?</summary>
+<summary data-hi="FD और RD में क्या अंतर है?">
+What is the difference between FD and RD?
+</summary>
 
-<p>
-A fixed deposit generally begins with
-a lump-sum deposit. A recurring deposit
-uses regular contributions over time.
-Bank-specific calculation rules may differ.
+<p data-hi="FD में एकमुश्त राशि जमा की जाती है, जबकि RD में नियमित मासिक जमा होती है। वास्तविक बैंक ब्याज और परिपक्वता नियम अलग हो सकते हैं।">
+An FD involves a lump-sum deposit, while an RD involves regular monthly deposits. Actual bank interest and maturity rules may differ.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Can I calculate GST?</summary>
+<summary data-hi="क्या GST की गणना कर सकते हैं?">
+Can I calculate GST?
+</summary>
 
-<p>
-Yes. The GST calculator supports adding
-GST to a base amount and extracting
-GST from a tax-inclusive amount.
-Enter the applicable tax rate yourself.
+<p data-hi="हां। आप अपनी राशि और लागू GST दर भरकर GST जोड़ सकते हैं या पहले से शामिल GST निकाल सकते हैं। कैलकुलेटर स्वयं लागू कर दर तय नहीं करता।">
+Yes. Enter your amount and applicable GST rate to add GST or extract included GST. The calculator does not determine which tax rate applies.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Are investment returns guaranteed?</summary>
+<summary data-hi="क्या निवेश प्रतिफल की गारंटी है?">
+Are investment returns guaranteed?
+</summary>
 
-<p>
-No. Investment calculators use assumed
-rates for illustrative estimates.
-They do not predict actual market returns.
+<p data-hi="नहीं। SIP, FD, RD और अन्य निवेश गणनाएं दिए गए मानों और निर्धारित गणितीय धारणाओं पर आधारित अनुमान हैं।">
+No. SIP, FD, RD and other investment calculations are estimates based on entered values and mathematical assumptions.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Does the calculator save my financial details?</summary>
+<summary data-hi="क्या कैलकुलेटर मेरी वित्तीय जानकारी सहेजता है?">
+Does the calculator save my financial details?
+</summary>
 
-<p>
-The calculator engine does not persist
-your entered amounts or results.
-Your browser may independently retain
-information according to its settings.
+<p data-hi="इस कैलकुलेटर का कोड वित्तीय इनपुट को स्थायी रूप से सहेजता या अपलोड नहीं करता। ब्राउजर की अपनी फॉर्म और प्रिंट सुविधाएं अलग से लागू हो सकती हैं।">
+The calculator code does not persistently store or upload financial inputs. Browser form and printing behavior may apply separately.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Can I use the tools without internet?</summary>
+<summary data-hi="क्या बिना इंटरनेट के उपकरण चला सकते हैं?">
+Can I use the tools without internet?
+</summary>
 
-<p>
-Offline use depends on successful PWA
-installation or caching of the required
-website resources.
+<p data-hi="यदि जरूरी वेबसाइट संसाधन पहले से सफलतापूर्वक कैश हैं, तो कैलकुलेटर ऑफलाइन चल सकते हैं।">
+Calculators can work offline if the required website resources have already been cached successfully.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Can I save calculator results as PDF?</summary>
+<summary data-hi="क्या गणना परिणाम PDF में सहेज सकते हैं?">
+Can I save calculator results as PDF?
+</summary>
 
-<p>
-Use the Print / Save as PDF button.
-PDF availability depends on your browser
-and operating system.
+<p data-hi="प्रिंट करें / PDF में सहेजें बटन दबाएं। यदि ब्राउजर में उपलब्ध हो तो Save as PDF विकल्प चुनें।">
+Use the Print / Save as PDF button and choose Save as PDF if supported by your browser.
 </p>
 
 </details>
 
-<details class="upgrade-card">
+<details>
 
-<summary>Is the IST clock synchronized with an official time server?</summary>
+<summary data-hi="क्या IST घड़ी किसी आधिकारिक टाइम सर्वर से जुड़ी है?">
+Is the IST clock synchronized with an official time server?
+</summary>
 
-<p>
-No. It displays Indian Standard Time
-using your device clock and browser
-time-zone conversion.
+<p data-hi="नहीं। यह आपके डिवाइस की तारीख और समय को Asia/Kolkata टाइम जोन में दिखाती है।">
+No. It displays your device date and time using the Asia/Kolkata time zone.
 </p>
 
 </details>
 
 </section>
 
-<!-- USEFUL LINKS -->
-
 <section class="ft-section">
 
-<h2 class="ft-title">
-Explore MeraHisab Applications
+<h2 class="ft-title"
+data-hi="हमारे वित्तीय ऐप्स">
+Explore Our Applications
 </h2>
 
 <div class="ft-grid">
 
-<article class="upgrade-card ft-card">
+<article class="ft-card">
 
 <h3>MeraHisab</h3>
 
-<p>
-Explore personal income, expense,
-savings and account management.
+<p data-hi="व्यक्तिगत आय, खर्च, बचत और वित्तीय प्रबंधन के लिए डिजाइन किया गया ऐप।">
+An application designed for personal income, expenses, savings and financial management.
 </p>
 
-<div class="ft-buttons">
+<div class="ft-actions">
 
-<a href="/merahisab.html" class="ft-button ft-primary">
-Application Details
+<a class="ft-button"
+href="/merahisab.html"
+data-hi="अधिक जानें">
+Learn More
 </a>
 
-<a href="/download.html" class="ft-button">
-Download Page
+<a class="ft-button ft-primary"
+href="/download.html"
+data-hi="MeraHisab डाउनलोड करें">
+Download MeraHisab
 </a>
 
 </div>
+
 </article>
 
-<article class="upgrade-card ft-card">
+<article class="ft-card">
 
 <h3>Royal Khata</h3>
 
-<p>
-Explore the planned digital credit,
-debit and customer account management
-application.
+<p data-hi="क्रेडिट, डेबिट और डिजिटल खाता प्रबंधन के लिए प्रस्तावित ऐप।">
+A planned application for credit, debit and digital khata management.
 </p>
 
-<div class="ft-buttons">
+<div class="ft-actions">
 
-<a href="/royal-khata.html" class="ft-button ft-primary">
-Application Details
+<a class="ft-button"
+href="/royal-khata.html"
+data-hi="Royal Khata के बारे में जानें">
+Explore Royal Khata
 </a>
 
-<a href="/compare.html" class="ft-button">
-Compare Applications
-</a>
+<button type="button"
+disabled
+data-hi="रिलीज बाकी">
+Release Pending
+</button>
 
 </div>
+
 </article>
 
 </div>
+
+<div class="ft-actions">
+
+<a class="ft-button"
+href="/compare.html"
+data-hi="ऐप्स की तुलना करें">
+Compare Applications
+</a>
+
+<a class="ft-button"
+href="/downloads.html"
+data-hi="डाउनलोड केंद्र">
+Download Center
+</a>
+
+<a class="ft-button"
+href="/contact.html"
+data-hi="संपर्क और सहायता">
+Contact &amp; Support
+</a>
+
+</div>
+
 </section>
 
-<!-- PWA INSTALLATION PANEL -->
+</div>
 
-<section class="ft-section" id="pwaMount">
-
-<!-- Generated automatically by pwa.js -->
-
-</section>
+<div id="pwaMount"></div>
 
 </main>
 
@@ -951,1605 +1078,101 @@ Compare Applications
 
 <div class="container">
 
-© <span data-year>2026</span> MeraHisab.
-All rights reserved.
+<strong>MeraHisab</strong>
 
-<br>
+<p>Your Money, Your Hisab</p>
 
-<a href="/index.html">Home</a>
-·
-<a href="/privacy.html">Privacy</a>
-·
-<a href="/contact.html">Contact</a>
-·
+<nav aria-label="Footer navigation">
+
+<a href="/">Home</a>
 <a href="/downloads.html">Downloads</a>
+<a href="/compare.html">Compare</a>
+<a href="/tools.html">Tools</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Support</a>
 
-<br>
+</nav>
 
-<a href="https://merahisab.store/">
-merahisab.store
-</a>
+<p class="ft-small">
+
+&copy; <span data-year>2026</span> MeraHisab.
+
+<span data-i18n="footer.rights">
+All rights reserved.
+</span>
+
+</p>
 
 </div>
-
 </footer>
 
 <script>
-
-(function () {
-
-"use strict";
-
-if (window.__merahisabToolsInitialized) {
-  return;
-}
-
-window.__merahisabToolsInitialized = true;
-
-/* =================================
-   LIVE INDIAN STANDARD TIME
-================================= */
-
-const clockElement =
-  document.getElementById("istClock");
-
-const dateElement =
-  document.getElementById("istDate");
-
-const timeFormatter =
-  new Intl.DateTimeFormat("en-IN", {
-    timeZone: "Asia/Kolkata",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true
-  });
-
-const dateFormatter =
-  new Intl.DateTimeFormat("en-IN", {
-    timeZone: "Asia/Kolkata",
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
-
-function updateClock() {
-
-  const now = new Date();
-
-  clockElement.textContent =
-    timeFormatter.format(now);
-
-  dateElement.textContent =
-    dateFormatter.format(now);
-
-}
-
-updateClock();
-
-window.setInterval(updateClock, 1000);
-
-
-/* =================================
-   PRECISION STOPWATCH
-================================= */
-
-const stopwatchDisplay =
-  document.getElementById("stopwatchDisplay");
-
-const startButton =
-  document.getElementById("swStart");
-
-const pauseButton =
-  document.getElementById("swPause");
-
-const lapButton =
-  document.getElementById("swLap");
-
-const resetButton =
-  document.getElementById("swReset");
-
-const lapList =
-  document.getElementById("swLapList");
-
-const swStatus =
-  document.getElementById("swStatus");
-
-let running = false;
-let startedAt = 0;
-let accumulated = 0;
-let previousLap = 0;
-let lapCount = 0;
-let frameId = null;
-
-function elapsedTime() {
-
-  return accumulated +
-    (running ? performance.now() - startedAt : 0);
-
-}
-
-function formatStopwatch(milliseconds) {
-
-  const total =
-    Math.floor(Math.max(0,milliseconds) / 10);
-
-  const centiseconds = total % 100;
-
-  const seconds =
-    Math.floor(total / 100) % 60;
-
-  const minutes =
-    Math.floor(total / 6000) % 60;
-
-  const hours =
-    Math.floor(total / 360000);
-
-  return [
-    String(hours).padStart(2,"0"),
-    String(minutes).padStart(2,"0"),
-    String(seconds).padStart(2,"0")
-  ].join(":") +
-  "." +
-  String(centiseconds).padStart(2,"0");
-
-}
-
-function renderStopwatch() {
-
-  stopwatchDisplay.textContent =
-    formatStopwatch(elapsedTime());
-
-}
-
-function stopwatchLoop() {
-
-  renderStopwatch();
-
-  if (running) {
-
-    frameId =
-      requestAnimationFrame(stopwatchLoop);
-
-  }
-
-}
-
-function updateStopwatchButtons() {
-
-  startButton.disabled = running;
-
-  pauseButton.disabled = !running;
-
-  lapButton.disabled =
-    !running || lapCount >= 100;
-
-  resetButton.disabled =
-    !running && accumulated === 0 && lapCount === 0;
-
-  startButton.textContent =
-    !running && accumulated > 0
-      ? "Resume"
-      : "Start";
-
-}
-
-startButton.addEventListener("click", function () {
-
-  if (running) return;
-
-  startedAt = performance.now();
-
-  running = true;
-
-  swStatus.textContent = "Stopwatch running.";
-
-  updateStopwatchButtons();
-
-  stopwatchLoop();
-
-});
-
-pauseButton.addEventListener("click", function () {
-
-  if (!running) return;
-
-  accumulated = elapsedTime();
-
-  running = false;
-
-  if (frameId !== null) {
-
-    cancelAnimationFrame(frameId);
-
-    frameId = null;
-
-  }
-
-  renderStopwatch();
-
-  updateStopwatchButtons();
-
-  swStatus.textContent = "Stopwatch paused.";
-
-});
-
-lapButton.addEventListener("click", function () {
-
-  if (!running || lapCount >= 100) return;
-
-  const total = elapsedTime();
-
-  const split = total - previousLap;
-
-  previousLap = total;
-
-  lapCount++;
-
-  if (lapCount === 1) {
-
-    lapList.replaceChildren();
-
-  }
-
-  const row = document.createElement("tr");
-
-  [
-    String(lapCount),
-    formatStopwatch(split),
-    formatStopwatch(total)
-  ].forEach(function (value) {
-
-    const cell = document.createElement("td");
-
-    cell.textContent = value;
-
-    row.appendChild(cell);
-
-  });
-
-  lapList.prepend(row);
-
-  swStatus.textContent =
-    "Lap " + lapCount + " recorded." +
-    (lapCount === 100 ? " Maximum laps reached." : "");
-
-  updateStopwatchButtons();
-
-});
-
-resetButton.addEventListener("click", function () {
-
-  running = false;
-
-  if (frameId !== null) {
-
-    cancelAnimationFrame(frameId);
-
-    frameId = null;
-
-  }
-
-  accumulated = 0;
-  startedAt = 0;
-  previousLap = 0;
-  lapCount = 0;
-
-  lapList.replaceChildren();
-
-  const row = document.createElement("tr");
-
-  const cell = document.createElement("td");
-
-  cell.colSpan = 3;
-
-  cell.textContent = "No laps recorded.";
-
-  row.appendChild(cell);
-
-  lapList.appendChild(row);
-
-  renderStopwatch();
-
-  updateStopwatchButtons();
-
-  swStatus.textContent = "Stopwatch reset.";
-
-});
-
-updateStopwatchButtons();
-
-
-/* =================================
-   FINANCIAL CALCULATION ENGINE
-================================= */
-
-const currencyFormatter =
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
-
-function money(value) {
-
-  if (!Number.isFinite(value)) {
-
-    throw new Error("Result exceeds calculation limits.");
-
-  }
-
-  return currencyFormatter.format(value);
-
-}
-
-function field(
-  key,
-  label,
-  value,
-  min,
-  max,
-  step
-) {
-
-  return {
-    key: key,
-    label: label,
-    value: value,
-    min: min,
-    max: max,
-    step: step || "any"
-  };
-
-}
-
-function selectField(
-  key,
-  label,
-  value,
-  options
-) {
-
-  return {
-    key: key,
-    label: label,
-    value: value,
-    options: options
-  };
-
-}
-
-const MAX_AMOUNT = 100000000000;
-
-const MAX_RATE = 100;
-
-const MAX_YEARS = 50;
-
-function futureAnnuity(payment, rate, periods) {
-
-  if (rate === 0) {
-
-    return payment * periods;
-
-  }
-
-  return payment *
-    Math.expm1(periods * Math.log1p(rate)) /
-    rate;
-
-}
-
-
-/* =================================
-   1. EMI CALCULATOR
-================================= */
-
-const calculators = [
-
-{
-
-  id: "emi",
-
-  name: "Loan EMI Calculator",
-
-  icon: "🏦",
-
-  category: "loan",
-
-  description:
-    "Estimate monthly reducing-balance loan repayments.",
-
-  fields: [
-
-    field("principal","Loan Amount (₹)",500000,1,MAX_AMOUNT),
-
-    field("rate","Annual Interest Rate (%)",10,0,MAX_RATE),
-
-    field("months","Loan Tenure (Months)",60,1,600,1)
-
-  ],
-
-  calculate: function (v) {
-
-    const r = v.rate / 1200;
-
-    const n = v.months;
-
-    const emi = r === 0
-      ? v.principal / n
-      : v.principal * r /
-        (-Math.expm1(-n * Math.log1p(r)));
-
-    const total = emi * n;
-
-    return [
-
-      ["Monthly EMI",money(emi)],
-
-      ["Principal Amount",money(v.principal)],
-
-      ["Total Interest",money(Math.max(0,total-v.principal))],
-
-      ["Total Repayment",money(total)]
-
-    ];
-
-  },
-
-  note:
-    "Assumes a fixed rate and equal monthly payments. Processing fees and other charges are excluded."
-
-},
-
-
-/* =================================
-   2. SIP CALCULATOR
-================================= */
-
-{
-
-  id: "sip",
-
-  name: "SIP Calculator",
-
-  icon: "📈",
-
-  category: "investment",
-
-  description:
-    "Estimate the future value of monthly investments.",
-
-  fields: [
-
-    field("monthly","Monthly Investment (₹)",5000,1,MAX_AMOUNT),
-
-    field("rate","Expected Annual Return (%)",12,0,MAX_RATE),
-
-    field("years","Investment Period (Years)",10,1,MAX_YEARS,1),
-
-    selectField(
-      "timing",
-      "Monthly Investment Timing",
-      "end",
-      [
-        ["end","End of Month"],
-        ["begin","Beginning of Month"]
-      ]
-    )
-
-  ],
-
-  calculate: function (v) {
-
-    const r = v.rate / 1200;
-
-    const n = v.years * 12;
-
-    const invested = v.monthly * n;
-
-    const maturity =
-      futureAnnuity(v.monthly,r,n) *
-      (v.timing === "begin" ? 1+r : 1);
-
-    return [
-
-      ["Total Investment",money(invested)],
-
-      ["Estimated Returns",money(maturity-invested)],
-
-      ["Estimated Future Value",money(maturity)]
-
-    ];
-
-  },
-
-  note:
-    "Uses a constant assumed return divided into monthly periods. Market returns are not guaranteed."
-
-},
-
-
-/* =================================
-   3. FD CALCULATOR
-================================= */
-
-{
-
-  id: "fd",
-
-  name: "Fixed Deposit Calculator",
-
-  icon: "💰",
-
-  category: "investment",
-
-  description:
-    "Estimate fixed deposit maturity and interest.",
-
-  fields: [
-
-    field("principal","Deposit Amount (₹)",100000,1,MAX_AMOUNT),
-
-    field("rate","Annual Interest Rate (%)",7,0,MAX_RATE),
-
-    field("years","Deposit Period (Years)",5,0.25,MAX_YEARS),
-
-    selectField(
-      "frequency",
-      "Compounding Frequency",
-      "4",
-      [
-        ["1","Annually"],
-        ["2","Half-Yearly"],
-        ["4","Quarterly"],
-        ["12","Monthly"]
-      ]
-    )
-
-  ],
-
-  calculate: function (v) {
-
-    const n = Number(v.frequency);
-
-    const maturity =
-      v.principal *
-      Math.pow(
-        1 + v.rate / (100*n),
-        n*v.years
-      );
-
-    return [
-
-      ["Deposit Amount",money(v.principal)],
-
-      ["Estimated Interest",money(maturity-v.principal)],
-
-      ["Maturity Amount",money(maturity)]
-
-    ];
-
-  },
-
-  note:
-    "Uses compound-interest estimates. Actual bank maturity, partial-period interest and TDS may differ."
-
-},
-
-
-/* =================================
-   4. RD CALCULATOR
-================================= */
-
-{
-
-  id: "rd",
-
-  name: "Recurring Deposit Calculator",
-
-  icon: "🏛",
-
-  category: "investment",
-
-  description:
-    "Estimate maturity from regular monthly deposits.",
-
-  fields: [
-
-    field("monthly","Monthly Deposit (₹)",5000,1,MAX_AMOUNT),
-
-    field("rate","Annual Interest Rate (%)",7,0,MAX_RATE),
-
-    field("months","Deposit Period (Months)",60,1,600,1)
-
-  ],
-
-  calculate: function (v) {
-
-    const r =
-      Math.expm1(
-        Math.log1p(v.rate/400)/3
-      );
-
-    const invested =
-      v.monthly * v.months;
-
-    const maturity =
-      futureAnnuity(v.monthly,r,v.months) *
-      (1+r);
-
-    return [
-
-      ["Total Deposits",money(invested)],
-
-      ["Estimated Interest",money(maturity-invested)],
-
-      ["Estimated Maturity",money(maturity)]
-
-    ];
-
-  },
-
-  note:
-    "Assumes beginning-of-month deposits and an equivalent monthly rate derived from quarterly compounding. Actual bank RD rules may differ."
-
-},
-
-
-/* =================================
-   5. SIMPLE INTEREST
-================================= */
-
-{
-
-  id: "simple-interest",
-
-  name: "Simple Interest Calculator",
-
-  icon: "₹",
-
-  category: "loan",
-
-  description:
-    "Calculate interest without compounding.",
-
-  fields: [
-
-    field("principal","Principal Amount (₹)",100000,1,MAX_AMOUNT),
-
-    field("rate","Annual Interest Rate (%)",8,0,MAX_RATE),
-
-    field("years","Time Period (Years)",2,0.01,MAX_YEARS)
-
-  ],
-
-  calculate: function (v) {
-
-    const interest =
-      v.principal*v.rate*v.years/100;
-
-    return [
-
-      ["Principal Amount",money(v.principal)],
-
-      ["Simple Interest",money(interest)],
-
-      ["Total Amount",money(v.principal+interest)]
-
-    ];
-
-  },
-
-  note:
-    "Formula: Principal × Annual Rate × Years ÷ 100."
-
-},
-
-
-/* =================================
-   6. COMPOUND INTEREST
-================================= */
-
-{
-
-  id: "compound-interest",
-
-  name: "Compound Interest Calculator",
-
-  icon: "📊",
-
-  category: "investment",
-
-  description:
-    "Calculate interest earned on principal and accumulated interest.",
-
-  fields: [
-
-    field("principal","Principal Amount (₹)",100000,1,MAX_AMOUNT),
-
-    field("rate","Annual Interest Rate (%)",10,0,MAX_RATE),
-
-    field("years","Time Period (Years)",5,0.01,MAX_YEARS),
-
-    selectField(
-      "frequency",
-      "Compounding Frequency",
-      "1",
-      [
-        ["1","Annually"],
-        ["2","Half-Yearly"],
-        ["4","Quarterly"],
-        ["12","Monthly"],
-        ["365","Daily"]
-      ]
-    )
-
-  ],
-
-  calculate: function (v) {
-
-    const n = Number(v.frequency);
-
-    const amount =
-      v.principal *
-      Math.pow(
-        1+v.rate/(100*n),
-        n*v.years
-      );
-
-    return [
-
-      ["Principal Amount",money(v.principal)],
-
-      ["Compound Interest",money(amount-v.principal)],
-
-      ["Final Amount",money(amount)]
-
-    ];
-
-  },
-
-  note:
-    "Assumes a constant interest rate and regular compounding without withdrawals."
-
-},
-
-
-/* =================================
-   7. GST CALCULATOR
-================================= */
-
-{
-
-  id: "gst",
-
-  name: "GST Calculator",
-
-  icon: "🧾",
-
-  category: "tax",
-
-  description:
-    "Add GST or extract GST from an inclusive amount.",
-
-  fields: [
-
-    field("amount","Amount (₹)",1000,0,MAX_AMOUNT),
-
-    field("rate","GST Rate (%)",18,0,MAX_RATE),
-
-    selectField(
-      "mode",
-      "Calculation Type",
-      "add",
-      [
-        ["add","Add GST"],
-        ["remove","Extract Included GST"]
-      ]
-    )
-
-  ],
-
-  calculate: function (v) {
-
-    const base =
-      v.mode === "add"
-      ? v.amount
-      : v.amount/(1+v.rate/100);
-
-    const tax =
-      v.mode === "add"
-      ? base*v.rate/100
-      : v.amount-base;
-
-    return [
-
-      ["Taxable Amount",money(base)],
-
-      ["GST Amount",money(tax)],
-
-      ["Total Including GST",money(base+tax)]
-
-    ];
-
-  },
-
-  note:
-    "Enter the legally applicable GST rate yourself. This tool does not determine product tax classifications."
-
-},
-
-
-/* =================================
-   8. DISCOUNT CALCULATOR
-================================= */
-
-{
-
-  id: "discount",
-
-  name: "Discount Calculator",
-
-  icon: "🏷",
-
-  category: "tax",
-
-  description:
-    "Calculate your savings and discounted price.",
-
-  fields: [
-
-    field("price","Original Price (₹)",2000,0,MAX_AMOUNT),
-
-    field("discount","Discount (%)",20,0,100)
-
-  ],
-
-  calculate: function (v) {
-
-    const savings =
-      v.price*v.discount/100;
-
-    return [
-
-      ["Original Price",money(v.price)],
-
-      ["Discount Savings",money(savings)],
-
-      ["Final Price",money(v.price-savings)]
-
-    ];
-
-  },
-
-  note:
-    "Additional taxes, delivery charges and coupon restrictions are excluded."
-
-},
-
-
-/* =================================
-   9. PERCENTAGE CALCULATOR
-================================= */
-
-{
-
-  id: "percentage",
-
-  name: "Percentage Calculator",
-
-  icon: "%",
-
-  category: "tax",
-
-  description:
-    "Find a percentage of an amount and adjusted totals.",
-
-  fields: [
-
-    field("amount","Base Amount (₹)",1000,0,MAX_AMOUNT),
-
-    field("percentage","Percentage (%)",15,0,10000)
-
-  ],
-
-  calculate: function (v) {
-
-    const result =
-      v.amount*v.percentage/100;
-
-    return [
-
-      ["Percentage Amount",money(result)],
-
-      ["Amount After Increase",money(v.amount+result)],
-
-      ["Amount After Decrease",money(v.amount-result)]
-
-    ];
-
-  },
-
-  note:
-    "A decrease above 100% produces a negative mathematical result."
-
-},
-
-
-/* =================================
-   10. SAVINGS GOAL CALCULATOR
-================================= */
-
-{
-
-  id: "savings-goal",
-
-  name: "Savings Goal Calculator",
-
-  icon: "🎯",
-
-  category: "planning",
-
-  description:
-    "Estimate monthly savings needed to reach a financial goal.",
-
-  fields: [
-
-    field("target","Target Amount (₹)",1000000,1,MAX_AMOUNT),
-
-    field("current","Current Savings (₹)",100000,0,MAX_AMOUNT),
-
-    field("rate","Expected Annual Return (%)",6,0,MAX_RATE),
-
-    field("months","Target Period (Months)",60,1,600,1)
-
-  ],
-
-  calculate: function (v) {
-
-    const r = v.rate/1200;
-
-    const existingFuture =
-      v.current*Math.pow(1+r,v.months);
-
-    const remaining =
-      Math.max(0,v.target-existingFuture);
-
-    const factor =
-      futureAnnuity(1,r,v.months);
-
-    const monthly =
-      remaining/factor;
-
-    return [
-
-      ["Target Amount",money(v.target)],
-
-      ["Estimated Future Value of Current Savings",money(existingFuture)],
-
-      ["Required Monthly Savings",money(monthly)],
-
-      ["Total New Contributions",money(monthly*v.months)]
-
-    ];
-
-  },
-
-  note:
-    "Assumes end-of-month contributions, constant returns and no withdrawals. Round contributions upward when planning."
-
-},
-
-
-/* =================================
-   11. INFLATION CALCULATOR
-================================= */
-
-{
-
-  id: "inflation",
-
-  name: "Inflation Calculator",
-
-  icon: "📉",
-
-  category: "planning",
-
-  description:
-    "Estimate future costs and changes in purchasing power.",
-
-  fields: [
-
-    field("amount","Current Amount (₹)",100000,0,MAX_AMOUNT),
-
-    field("rate","Annual Inflation Rate (%)",6,0,MAX_RATE),
-
-    field("years","Time Period (Years)",10,0.01,MAX_YEARS)
-
-  ],
-
-  calculate: function (v) {
-
-    const factor =
-      Math.pow(1+v.rate/100,v.years);
-
-    const futureCost =
-      v.amount*factor;
-
-    const purchasingPower =
-      v.amount/factor;
-
-    return [
-
-      ["Current Amount",money(v.amount)],
-
-      ["Estimated Future Cost",money(futureCost)],
-
-      ["Additional Amount Required",money(futureCost-v.amount)],
-
-      ["Future Purchasing Power in Today's Rupees",money(purchasingPower)]
-
-    ];
-
-  },
-
-  note:
-    "Assumes a constant inflation rate. Actual inflation and individual spending patterns may differ."
-
-}
-
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id), root=$('toolsContent');
+const hi=()=>document.documentElement.dataset.language==='hi'||/^hi(?:-|$)/i.test(document.documentElement.lang);
+const t=(en,h)=>hi()?h:en;
+const labels=[...root.querySelectorAll('[data-hi]')].map(e=>[e,e.textContent]);
+const money=n=>{if(!Number.isFinite(n))throw Error('range');return new Intl.NumberFormat(hi()?'hi-IN':'en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(n);};
+const field=(en,h,v,min=0,max=1e11,step='any')=>({en,h,v,min,max,step});
+const select=(en,h,v,options)=>({en,h,v,options});
+const amount=(en,h,v,min=1)=>field(en,h,v,min);
+const rate=(en='Annual rate (%)',h='वार्षिक दर (%)',v=8)=>field(en,h,v,0,100);
+const years=(v=5,min=.01)=>field('Years','वर्ष',v,min,50);
+const months=(v=60)=>field('Months','महीने',v,1,600,1);
+const frequency=()=>select('Compounding','चक्रवृद्धि अवधि',4,[[1,'Yearly','वार्षिक'],[2,'Half-yearly','छमाही'],[4,'Quarterly','तिमाही'],[12,'Monthly','मासिक'],[365,'Daily','दैनिक']]);
+const ann=(r,n)=>r===0?n:Math.expm1(n*Math.log1p(r))/r;
+const result=(en,h,n)=>[en,h,n];
+const total=n=>result('Total amount','कुल राशि',n);
+const interest=n=>result('Interest / returns','ब्याज / प्रतिफल',n);
+const defs=[
+['emi','loan','Loan EMI Calculator','ऋण EMI कैलकुलेटर',[amount('Loan amount (₹)','ऋण राशि (₹)',500000),rate(undefined,undefined,10),months()],([a,r,n])=>{r/=1200;const e=r===0?a/n:a*r/-Math.expm1(-n*Math.log1p(r));return [result('Monthly EMI','मासिक EMI',e),result('Principal','मूलधन',a),interest(Math.max(0,e*n-a)),total(e*n)];},'Fixed rate, reducing balance; fees excluded.','स्थिर दर, घटती शेष राशि; शुल्क शामिल नहीं।'],
+['sip','investment','SIP Calculator','SIP कैलकुलेटर',[amount('Monthly investment (₹)','मासिक निवेश (₹)',5000),rate('Expected annual return (%)','अनुमानित वार्षिक प्रतिफल (%)',12),field('Years','वर्ष',10,1,50,1),select('Payment timing','निवेश का समय',0,[[0,'End of month','महीने के अंत में'],[1,'Beginning of month','महीने की शुरुआत में']])],([a,r,y,b])=>{r/=1200;const n=y*12,f=a*ann(r,n)*(b?1+r:1);return [result('Total invested','कुल निवेश',a*n),interest(f-a*n),total(f)];},'Monthly compounding; returns are not guaranteed.','मासिक चक्रवृद्धि; प्रतिफल की गारंटी नहीं।'],
+['fd','investment','Fixed Deposit Calculator','FD कैलकुलेटर',[amount('Deposit (₹)','जमा राशि (₹)',100000),rate(undefined,undefined,7),years(5,.25),frequency()],([a,r,y,n])=>{const f=a*Math.exp(n*y*Math.log1p(r/100/n));return [result('Deposit','जमा राशि',a),interest(f-a),total(f)];},'Estimated maturity; bank rules and tax may differ.','अनुमानित परिपक्वता; बैंक नियम और कर अलग हो सकते हैं।'],
+['rd','investment','Recurring Deposit Calculator','RD कैलकुलेटर',[amount('Monthly deposit (₹)','मासिक जमा (₹)',5000),rate(undefined,undefined,7),months()],([a,r,n])=>{r=Math.expm1(Math.log1p(r/400)/3);const f=a*ann(r,n)*(1+r);return [result('Total deposits','कुल जमा',a*n),interest(f-a*n),total(f)];},'Beginning-of-month deposits; equivalent monthly rate from quarterly compounding.','महीने की शुरुआत में जमा; तिमाही चक्रवृद्धि से समतुल्य मासिक दर।'],
+['simple','loan','Simple Interest Calculator','साधारण ब्याज कैलकुलेटर',[amount('Principal (₹)','मूलधन (₹)',100000),rate(),years(2)],([a,r,y])=>{const i=a*r*y/100;return [result('Principal','मूलधन',a),interest(i),total(a+i)];},'Principal × annual rate × years ÷ 100.','मूलधन × वार्षिक दर × वर्ष ÷ 100।'],
+['compound','investment','Compound Interest Calculator','चक्रवृद्धि ब्याज कैलकुलेटर',[amount('Principal (₹)','मूलधन (₹)',100000),rate(undefined,undefined,10),years(),frequency()],([a,r,y,n])=>{const f=a*Math.exp(n*y*Math.log1p(r/100/n));return [result('Principal','मूलधन',a),interest(f-a),total(f)];},'Constant rate; no withdrawals.','स्थिर दर; निकासी नहीं।'],
+['gst','tax','GST Calculator','GST कैलकुलेटर',[amount('Amount (₹)','राशि (₹)',1000,0),rate('GST rate (%)','GST दर (%)',18),select('Calculation','गणना',0,[[0,'Add GST','GST जोड़ें'],[1,'Extract included GST','शामिल GST निकालें']])],([a,r,m])=>{const b=m?a/(1+r/100):a,g=m?a-b:b*r/100;return [result('Taxable amount','कर योग्य राशि',b),result('GST amount','GST राशि',g),total(b+g)];},'Enter the applicable GST rate yourself.','लागू GST दर स्वयं भरें।'],
+['discount','tax','Discount Calculator','छूट कैलकुलेटर',[amount('Original price (₹)','मूल कीमत (₹)',2000,0),field('Discount (%)','छूट (%)',20,0,100)],([a,r])=>[result('Original price','मूल कीमत',a),result('Discount savings','छूट की राशि',a*r/100),result('Final price','अंतिम कीमत',a*(1-r/100))],'Taxes and delivery charges excluded.','कर और डिलीवरी शुल्क शामिल नहीं।'],
+['percentage','tax','Percentage Calculator','प्रतिशत कैलकुलेटर',[amount('Base amount (₹)','आधार राशि (₹)',1000,0),field('Percentage (%)','प्रतिशत (%)',15,0,10000)],([a,r])=>[result('Percentage amount','प्रतिशत राशि',a*r/100),result('After increase','वृद्धि के बाद',a*(1+r/100)),result('After decrease','कमी के बाद',a*(1-r/100))],'A decrease above 100% gives a negative result.','100% से अधिक कमी पर ऋणात्मक परिणाम मिलता है।'],
+['goal','planning','Savings Goal Calculator','बचत लक्ष्य कैलकुलेटर',[amount('Target (₹)','लक्ष्य (₹)',1000000),amount('Current savings (₹)','वर्तमान बचत (₹)',100000,0),rate('Expected annual return (%)','अनुमानित वार्षिक प्रतिफल (%)',6),months()],([a,b,r,n])=>{r/=1200;const f=b*Math.exp(n*Math.log1p(r)),m=Math.max(0,a-f)/ann(r,n);return [result('Target','लक्ष्य',a),result('Future value of current savings','वर्तमान बचत का भविष्य मूल्य',f),result('Required monthly savings','आवश्यक मासिक बचत',m),result('Total new contributions','कुल नई जमा',m*n)];},'End-of-month contributions; round monthly savings upward.','महीने के अंत में जमा; मासिक बचत को ऊपर की ओर पूर्णांकित करें।'],
+['inflation','planning','Inflation Calculator','महंगाई कैलकुलेटर',[amount('Current amount (₹)','वर्तमान राशि (₹)',100000,0),rate('Inflation rate (%)','महंगाई दर (%)',6),years(10)],([a,r,y])=>{const f=Math.exp(y*Math.log1p(r/100));return [result('Current amount','वर्तमान राशि',a),result('Future cost','भविष्य की कीमत',a*f),result('Additional amount','अतिरिक्त राशि',a*(f-1)),result('Future purchasing power in today’s rupees','आज के रुपयों में भविष्य की क्रय शक्ति',a/f)];},'Constant inflation assumption; actual costs may differ.','स्थिर महंगाई की धारणा; वास्तविक कीमतें अलग हो सकती हैं।']
 ];
-
-
-/* =================================
-   CALCULATOR INTERFACE GENERATOR
-================================= */
-
-const calculatorGrid =
-  document.getElementById("calculatorGrid");
-
-function createElement(tag,className,text) {
-
-  const element =
-    document.createElement(tag);
-
-  if (className) {
-
-    element.className = className;
-
-  }
-
-  if (text !== undefined) {
-
-    element.textContent = text;
-
-  }
-
-  return element;
-
+function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function button(en,h){const e=node('button',t(en,h));e.type='button';e.dataset.en=en;e.dataset.hi=h;return e;}
+const cards=[];
+for(const [id,cat,en,h,fields,calc,note,noteHi] of defs){
+ const card=node('article',undefined,'ft-card'), title=node('h3',t(en,h)), form=node('form'), output=node('div',undefined,'ft-result'), msg=node('p',undefined,'ft-message');
+ card.id='calculator-'+id;card.append(title,form);form.autocomplete='off';output.hidden=true;msg.setAttribute('role','status');
+ const inputs=fields.map((f,i)=>{const label=node('label'), caption=node('span',t(f.en,f.h)), input=node(f.options?'select':'input');input.id=id+'-'+i;label.htmlFor=input.id;label.append(caption,input);if(f.options){for(const [v,e,h] of f.options){const opt=node('option',t(e,h));opt.value=String(v);opt.defaultSelected=String(v)===String(f.v);input.append(opt);}}else{input.type='number';input.required=true;input.min=f.min;input.max=f.max;input.step=f.step;input.defaultValue=f.v;}input.value=String(f.v);form.append(label);return {f,input,caption};});
+ const controls=node('div',undefined,'ft-actions'), submit=button('Calculate','गणना करें'), reset=button('Reset','रीसेट'), copy=button('Copy result','परिणाम कॉपी करें');submit.type='submit';reset.type='reset';copy.disabled=true;controls.append(submit,reset,copy);form.append(controls);const tip=node('p',t(note,noteHi),'ft-small');card.append(output,msg,tip);$('calculatorGrid').append(card);
+ let values=null,status='';
+ const clear=()=>{values=null;status='';output.replaceChildren();output.hidden=true;copy.disabled=true;msg.textContent='';};
+ function render(){title.textContent=t(en,h);tip.textContent=t(note,noteHi);inputs.forEach(({f,input,caption})=>{caption.textContent=t(f.en,f.h);if(f.options)f.options.forEach(([,e,h],i)=>input.options[i].textContent=t(e,h));});[submit,reset,copy].forEach(b=>b.textContent=t(b.dataset.en,b.dataset.hi));if(values){output.replaceChildren(...values.map(([e,h,n])=>{const line=node('p');line.append(node('span',t(e,h)),node('strong',money(n)));return line;}));}msg.textContent=status==='error'?t('Enter valid values within the limits.','सीमा के भीतर सही मान भरें।'):status==='copied'?t('Copied.','कॉपी किया गया।'):status==='copyFailed'?t('Copy unavailable. Select the result manually.','कॉपी उपलब्ध नहीं। परिणाम स्वयं चुनें।'):'';}
+ form.addEventListener('submit',e=>{e.preventDefault();clear();try{if(!form.reportValidity())return;const v=inputs.map(({input})=>Number(input.value));if(!v.every(Number.isFinite)||inputs.some(({input})=>input.value===''))throw Error('input');values=calc(v);values.forEach(x=>money(x[2]));output.hidden=false;copy.disabled=false;}catch{clear();status='error';}render();});
+ form.addEventListener('input',clear);form.addEventListener('reset',clear);
+ copy.addEventListener('click',async()=>{if(!values)return;try{await navigator.clipboard.writeText(title.textContent+'\n'+values.map(([e,h,n])=>t(e,h)+': '+money(n)).join('\n'));status='copied';}catch{status='copyFailed';}render();});
+ cards.push({card,cat,form,render,search:[en,h,note,noteHi,...fields.flatMap(f=>[f.en,f.h])].join(' ').toLowerCase()});
 }
-
-calculators.forEach(function (config) {
-
-  const card =
-    createElement(
-      "article",
-      "upgrade-card ft-card"
-    );
-
-  card.dataset.tool = config.id;
-
-  card.dataset.category = config.category;
-
-  card.dataset.search =
-    (
-      config.name + " " +
-      config.description + " " +
-      config.fields.map(function (f) {
-        return f.label;
-      }).join(" ")
-    ).toLowerCase();
-
-  card.id = "tool-" + config.id;
-
-  const icon =
-    createElement(
-      "div",
-      "ft-icon",
-      config.icon
-    );
-
-  icon.setAttribute("aria-hidden","true");
-
-  card.appendChild(icon);
-
-  card.appendChild(
-    createElement("h3","",config.name)
-  );
-
-  card.appendChild(
-    createElement("p","",config.description)
-  );
-
-  const form =
-    createElement("form","ft-calculator-form");
-
-  form.autocomplete = "off";
-
-  const controls = {};
-
-  config.fields.forEach(function (definition) {
-
-    const id =
-      config.id + "-" + definition.key;
-
-    const label =
-      createElement(
-        "label",
-        "ft-label",
-        definition.label
-      );
-
-    label.htmlFor = id;
-
-    form.appendChild(label);
-
-    let input;
-
-    if (definition.options) {
-
-      input =
-        createElement("select","ft-select");
-
-      definition.options.forEach(function (option) {
-
-        const node =
-          createElement("option","",option[1]);
-
-        node.value = option[0];
-
-        node.defaultSelected =
-          option[0] === String(definition.value);
-
-        input.appendChild(node);
-
-      });
-
-    } else {
-
-      input =
-        createElement("input","ft-input");
-
-      input.type = "number";
-
-      input.inputMode =
-        definition.step === 1
-        ? "numeric"
-        : "decimal";
-
-      input.min = String(definition.min);
-
-      input.max = String(definition.max);
-
-      input.step = String(definition.step);
-
-      input.defaultValue =
-        String(definition.value);
-
-    }
-
-    input.id = id;
-
-    input.name = definition.key;
-
-    input.required = true;
-
-    input.autocomplete = "off";
-
-    controls[definition.key] = input;
-
-    form.appendChild(input);
-
-  });
-
-  const buttons =
-    createElement("div","ft-buttons");
-
-  const calculateButton =
-    createElement(
-      "button",
-      "ft-button ft-primary",
-      "Calculate"
-    );
-
-  calculateButton.type = "submit";
-
-  const reset =
-    createElement(
-      "button",
-      "ft-button",
-      "Reset"
-    );
-
-  reset.type = "reset";
-
-  const copy =
-    createElement(
-      "button",
-      "ft-button",
-      "Copy Result"
-    );
-
-  copy.type = "button";
-
-  copy.disabled = true;
-
-  buttons.append(
-    calculateButton,
-    reset,
-    copy
-  );
-
-  form.appendChild(buttons);
-
-  const error =
-    createElement("div","ft-error");
-
-  error.hidden = true;
-
-  error.setAttribute("role","alert");
-
-  form.appendChild(error);
-
-  const result =
-    createElement("div","ft-result");
-
-  result.hidden = true;
-
-  result.setAttribute("aria-live","polite");
-
-  form.appendChild(result);
-
-  const copyStatus =
-    createElement("p","ft-note");
-
-  copyStatus.setAttribute("role","status");
-
-  form.appendChild(copyStatus);
-
-  let resultText = "";
-
-  function clearResult() {
-
-    result.hidden = true;
-
-    result.replaceChildren();
-
-    error.hidden = true;
-
-    error.textContent = "";
-
-    resultText = "";
-
-    copy.disabled = true;
-
-    copyStatus.textContent = "";
-
-  }
-
-  form.addEventListener("submit",function (event) {
-
-    event.preventDefault();
-
-    clearResult();
-
-    if (!form.checkValidity()) {
-
-      form.reportValidity();
-
-      return;
-
-    }
-
-    try {
-
-      const values = {};
-
-      config.fields.forEach(function (definition) {
-
-        const input =
-          controls[definition.key];
-
-        if (definition.options) {
-
-          values[definition.key] =
-            input.value;
-
-        } else {
-
-          const value =
-            input.valueAsNumber;
-
-          if (
-            !Number.isFinite(value) ||
-            value < definition.min ||
-            value > definition.max ||
-            (
-              definition.step === 1 &&
-              !Number.isInteger(value)
-            )
-          ) {
-
-            throw new Error(
-              "Enter a valid value for " +
-              definition.label + "."
-            );
-
-          }
-
-          values[definition.key] = value;
-
-        }
-
-      });
-
-      const rows =
-        config.calculate(values);
-
-      const lines = [config.name];
-
-      rows.forEach(function (item) {
-
-        const row =
-          createElement("div","ft-result-row");
-
-        row.appendChild(
-          createElement("span","",item[0])
-        );
-
-        row.appendChild(
-          createElement("strong","",item[1])
-        );
-
-        result.appendChild(row);
-
-        lines.push(
-          item[0] + ": " + item[1]
-        );
-
-      });
-
-      lines.push("");
-
-      lines.push(
-        "Estimate only — MeraHisab"
-      );
-
-      lines.push(
-        "https://merahisab.store/tools.html"
-      );
-
-      resultText = lines.join("\n");
-
-      result.hidden = false;
-
-      copy.disabled = false;
-
-    } catch (exception) {
-
-      error.textContent =
-        exception.message ||
-        "Unable to calculate. Check the entered values.";
-
-      error.hidden = false;
-
-    }
-
-  });
-
-  form.addEventListener("reset",clearResult);
-
-  form.addEventListener("input",clearResult);
-
-  form.addEventListener("change",clearResult);
-
-  copy.addEventListener("click",async function () {
-
-    if (!resultText) return;
-
-    try {
-
-      if (
-        !navigator.clipboard ||
-        !navigator.clipboard.writeText
-      ) {
-
-        throw new Error("Clipboard unavailable.");
-
-      }
-
-      await navigator.clipboard.writeText(resultText);
-
-      copyStatus.textContent =
-        "Result copied successfully.";
-
-    } catch (exception) {
-
-      copyStatus.textContent =
-        "Automatic copying is unavailable. Select and copy the displayed result manually.";
-
-    }
-
-  });
-
-  card.appendChild(form);
-
-  card.appendChild(
-    createElement(
-      "p",
-      "ft-note",
-      config.note
-    )
-  );
-
-  calculatorGrid.appendChild(card);
-
-});
-
-
-/* =================================
-   LIVE SEARCH AND FILTERS
-================================= */
-
-const search =
-  document.getElementById("toolSearch");
-
-const count =
-  document.getElementById("toolCount");
-
-const noTools =
-  document.getElementById("noTools");
-
-const filterButtons =
-  Array.from(
-    document.querySelectorAll(".ft-filter")
-  );
-
-const cards =
-  Array.from(
-    calculatorGrid.querySelectorAll("[data-tool]")
-  );
-
-let activeCategory = "all";
-
-function updateFilters() {
-
-  const query =
-    search.value.trim().toLowerCase();
-
-  let visible = 0;
-
-  cards.forEach(function (card) {
-
-    const categoryMatch =
-      activeCategory === "all" ||
-      card.dataset.category === activeCategory;
-
-    const searchMatch =
-      card.dataset.search.includes(query);
-
-    card.hidden =
-      !(categoryMatch && searchMatch);
-
-    if (!card.hidden) visible++;
-
-  });
-
-  filterButtons.forEach(function (button) {
-
-    button.setAttribute(
-      "aria-pressed",
-      String(
-        button.dataset.category === activeCategory
-      )
-    );
-
-  });
-
-  count.textContent =
-    "Showing " + visible +
-    " of " + cards.length +
-    " calculators.";
-
-  noTools.hidden = visible !== 0;
-
-}
-
-search.addEventListener(
-  "input",
-  updateFilters
-);
-
-filterButtons.forEach(function (button) {
-
-  button.addEventListener("click",function () {
-
-    activeCategory =
-      button.dataset.category;
-
-    updateFilters();
-
-  });
-
-});
-
-document
-  .getElementById("resetFilters")
-  .addEventListener("click",function () {
-
-    search.value = "";
-
-    activeCategory = "all";
-
-    updateFilters();
-
-  });
-
-document
-  .getElementById("resetAll")
-  .addEventListener("click",function () {
-
-    const confirmed =
-      window.confirm(
-        "Reset all calculator inputs and results?"
-      );
-
-    if (!confirmed) return;
-
-    document
-      .querySelectorAll(".ft-calculator-form")
-      .forEach(function (form) {
-
-        form.reset();
-
-      });
-
-  });
-
-document
-  .getElementById("printTools")
-  .addEventListener("click",function () {
-
-    window.print();
-
-  });
-
-updateFilters();
-
+let category='all';
+const filters=[...root.querySelectorAll('[data-filter]')];
+function filter(){const terms=$('toolSearch').value.toLowerCase().trim().split(/\s+/).filter(Boolean);let count=0;cards.forEach(c=>{const show=(category==='all'||category===c.cat)&&terms.every(q=>c.search.includes(q));c.card.hidden=!show;if(show)count++;});filters.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===category)));$('toolCount').textContent=t(`${count} of ${cards.length} calculators`,`${cards.length} में से ${count} कैलकुलेटर`);}
+filters.forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;filter();}));$('toolSearch').addEventListener('input',filter);$('resetFilters').addEventListener('click',()=>{category='all';$('toolSearch').value='';filter();});$('resetAll').addEventListener('click',()=>{if(confirm(t('Reset all calculators?','सभी कैलकुलेटर रीसेट करें?')))cards.forEach(c=>c.form.reset());});$('printTools').addEventListener('click',()=>window.print());
+function clock(){const d=new Date(),locale=hi()?'hi-IN':'en-IN';$('istClock').textContent=new Intl.DateTimeFormat(locale,{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(d);$('istDate').textContent=new Intl.DateTimeFormat(locale,{timeZone:'Asia/Kolkata',dateStyle:'full'}).format(d);}
+let clockTimer;function clockLoop(){clearTimeout(clockTimer);clock();if(!document.hidden)clockTimer=setTimeout(clockLoop,1000-Date.now()%1000);}
+let running=false,started=0,acc=0,raf=0,laps=[];
+const elapsed=()=>acc+(running?performance.now()-started:0);
+function format(ms){const c=Math.floor(ms/10);return [Math.floor(c/360000),Math.floor(c/6000)%60,Math.floor(c/100)%60].map(n=>String(n).padStart(2,'0')).join(':')+'.'+String(c%100).padStart(2,'0');}
+function swRender(){ $('stopwatchDisplay').textContent=format(elapsed());$('swStart').disabled=running;$('swStart').textContent=acc?t('Resume','जारी रखें'):t('Start','शुरू करें');$('swPause').disabled=!running;$('swLap').disabled=!running||laps.length>=100;$('swReset').disabled=!running&&!acc&&!laps.length;}
+function tick(){swRender();if(running&&!document.hidden)raf=requestAnimationFrame(tick);}
+function drawLaps(){const body=$('swLapList');body.replaceChildren();if(!laps.length){const tr=node('tr'),td=node('td',t('No laps recorded.','कोई लैप दर्ज नहीं।'));td.colSpan=3;tr.append(td);body.append(tr);}else laps.forEach((v,i)=>{const tr=node('tr');[i+1,format(v-(laps[i-1]||0)),format(v)].forEach(x=>tr.append(node('td',x)));body.prepend(tr);});}
+$('swStart').addEventListener('click',()=>{if(running)return;started=performance.now();running=true;tick();});$('swPause').addEventListener('click',()=>{if(!running)return;acc=elapsed();running=false;cancelAnimationFrame(raf);swRender();});$('swLap').addEventListener('click',()=>{if(running&&laps.length<100){laps.push(elapsed());drawLaps();swRender();}});$('swReset').addEventListener('click',()=>{running=false;acc=0;started=0;laps=[];cancelAnimationFrame(raf);drawLaps();swRender();});
+document.addEventListener('visibilitychange',()=>{clockLoop();cancelAnimationFrame(raf);if(!document.hidden)tick();});
+function language(){labels.forEach(([e,en])=>e.textContent=t(en,e.dataset.hi));$('toolSearch').placeholder=t('Search calculators','कैलकुलेटर खोजें');cards.forEach(c=>c.render());filter();clock();drawLaps();swRender();document.title=t('Financial Calculators & Smart Tools | MeraHisab','वित्तीय कैलकुलेटर और उपकरण | MeraHisab');}
+window.addEventListener('merahisab:languagechange',language);window.addEventListener('merahisab:languageready',language);language();clockLoop();
 })();
-
 </script>
-
-<noscript>
-
-<div style="
-  padding:20px;
-  text-align:center;
-  background:#172640;
-  color:#f0d9a6;
-">
-
-JavaScript is disabled.
-
-Financial calculators, live clock,
-stopwatch, theme controls and PWA
-features require JavaScript.
-
-</div>
-
-</noscript>
 
 </body>
 </html>
