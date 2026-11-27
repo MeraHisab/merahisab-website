@@ -1,1926 +1,2555 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-IN">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>Financial Calculators & Smart Tools — MeraHisab</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+<meta name="description" content="Free financial calculators including EMI, SIP, FD, RD, interest, GST, discount, percentage, savings goal, inflation, IST clock and stopwatch.">
 
-    <title>Financial Tools & Calculators | MeraHisab</title>
+<meta name="author" content="MeraHisab">
+<meta name="robots" content="index, follow">
 
-    <meta name="description"
-          content="Free financial calculators, EMI calculator, SIP calculator, GST calculator, interest calculator and useful utilities by MeraHisab.">
+<link rel="canonical" href="https://merahisab.store/tools.html">
 
-    <meta name="theme-color" content="#080f20">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MeraHisab">
+<meta property="og:title" content="MeraHisab Financial Calculators">
+<meta property="og:description" content="Useful financial calculators and everyday smart tools.">
+<meta property="og:url" content="https://merahisab.store/tools.html">
+<meta property="og:image" content="https://merahisab.store/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
 
-    <link rel="canonical"
-          href="https://merahisab.store/tools.html">
+<!-- PWA INTEGRATION -->
 
-    <link rel="stylesheet" href="upgrade.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="application-name" content="MeraHisab">
+<meta name="theme-color" content="#080f20">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MeraHisab">
 
-    <script defer src="upgrade.js"></script>
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="icon" type="image/png" href="/icons/icon-192.png">
 
-    <style>
+<link rel="stylesheet" href="/upgrade.css">
+<link rel="stylesheet" href="/pwa.css">
 
-        .tools-hero {
-            background: linear-gradient(
-                135deg,
-                #081322,
-                #14253d,
-                #26364d
-            );
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            padding: clamp(24px, 5vw, 60px);
-            text-align: center;
-            color: #f8f6f0;
-            margin-bottom: 28px;
-        }
+<script defer src="/upgrade.js"></script>
+<script defer src="/pwa.js"></script>
 
-        .tools-hero h1 {
-            color: #e5c788;
-        }
+<style>
 
-        .tools-section {
-            margin-top: 28px;
-        }
+.ft-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 18px;
+  box-sizing: border-box;
+}
 
-        .tool-card {
-            min-width: 0;
-        }
+.ft-page * {
+  box-sizing: border-box;
+}
 
-        .tool-card label {
-            display: block;
-            margin: 14px 0 6px;
-            font-weight: 600;
-        }
+.ft-hero {
+  padding: 42px 22px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 24px;
+  background: radial-gradient(
+    circle at top,
+    rgba(212,175,55,.13),
+    transparent 65%
+  ), linear-gradient(145deg,#172640,#080f20);
+  color: #f8f6f0;
+  text-align: center;
+}
 
-        .tool-card input,
-        .tool-card select {
-            box-sizing: border-box;
-            width: 100%;
-            min-width: 0;
-            padding: 12px;
-            border: 1px solid #a58a52;
-            border-radius: 10px;
-            background: #101c2d;
-            color: #f8f6f0;
-            font: inherit;
-        }
+.ft-hero h1 {
+  color: #f0d9a6;
+  font-size: clamp(28px,5vw,48px);
+  line-height: 1.2;
+}
 
-        html[data-theme=light] .tool-card input,
-        html[data-theme=light] .tool-card select {
-            background: #ffffff;
-            color: #14253d;
-        }
+.ft-hero p {
+  max-width: 700px;
+  margin: 15px auto;
+  color: #c4cddd;
+  line-height: 1.8;
+}
 
-        .tool-card button {
-            margin-top: 16px;
-            cursor: pointer;
-        }
+.ft-eyebrow {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 30px;
+  color: #f0d9a6;
+  font-size: 12px;
+  font-weight: 700;
+}
 
-        .tool-card button:focus-visible,
-        .tool-card input:focus-visible,
-        .tool-card select:focus-visible {
-            outline: 2px solid #d4af37;
-            outline-offset: 3px;
-        }
+.ft-section {
+  margin: 35px 0;
+  scroll-margin-top: 100px;
+}
 
-        .tool-result {
-            margin-top: 20px;
-            padding: 16px;
-            border: 1px solid #a58a52;
-            border-radius: 12px;
-            background: rgba(212,175,55,0.07);
-            line-height: 1.8;
-            overflow-wrap: anywhere;
-            white-space: pre-line;
-        }
+.ft-title {
+  text-align: center;
+  font-size: clamp(23px,4vw,32px);
+  margin-bottom: 18px;
+}
 
-        .tool-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.ft-description {
+  max-width: 720px;
+  margin: 12px auto 24px;
+  text-align: center;
+  line-height: 1.8;
+  opacity: .85;
+}
 
-        .tool-note {
-            font-size: 13px;
-            line-height: 1.7;
-        }
+.ft-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
 
-        .digital-display {
-            font-size: clamp(26px, 5vw, 42px);
-            font-weight: 700;
-            font-variant-numeric: tabular-nums;
-            text-align: center;
-            margin: 24px 0;
-            overflow-wrap: anywhere;
-        }
+.ft-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
 
-        .tool-navigation {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 24px;
-        }
+.ft-card h3 {
+  margin: 8px 0 12px;
+}
 
-        .tool-navigation a {
-            padding: 8px 14px;
-            border: 1px solid #a58a52;
-            border-radius: 20px;
-            color: #e5c788;
-            text-decoration: none;
-        }
+.ft-card p {
+  line-height: 1.7;
+}
 
-        @media (max-width: 600px) {
+.ft-icon {
+  display: grid;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  margin-bottom: 12px;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  background: rgba(212,175,55,.08);
+  font-size: 23px;
+}
 
-            .tool-actions button {
-                flex: 1 1 auto;
-            }
+.ft-label {
+  display: block;
+  margin: 15px 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
 
-            .tool-card input,
-            .tool-card select {
-                font-size: 16px;
-            }
+.ft-input,
+.ft-select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 11px 12px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
 
-        }
+.ft-select option {
+  background: #172640;
+  color: #ffffff;
+}
 
-    </style>
+.ft-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
 
+.ft-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border: 1px solid #d4af37;
+  border-radius: 25px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ft-primary {
+  background: linear-gradient(135deg,#f0d9a6,#d4af37);
+  color: #101827;
+}
+
+.ft-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.ft-result {
+  padding: 17px;
+  margin-top: 18px;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  background: rgba(212,175,55,.07);
+}
+
+.ft-result-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(128,128,128,.2);
+  font-size: 14px;
+}
+
+.ft-result-row:last-child {
+  border-bottom: 0;
+}
+
+.ft-result-row strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.ft-error {
+  margin-top: 12px;
+  padding: 10px;
+  border-left: 3px solid #d95757;
+  font-size: 13px;
+}
+
+.ft-note {
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 1.8;
+  opacity: .85;
+}
+
+.ft-search {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.ft-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.ft-filter[aria-pressed="true"] {
+  background: #d4af37;
+  color: #101827;
+}
+
+.ft-count {
+  margin: 12px 0;
+  font-size: 13px;
+  opacity: .85;
+}
+
+.ft-time {
+  margin: 18px 0 8px;
+  text-align: center;
+  font-size: clamp(26px,5vw,46px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.ft-date {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.ft-clock-status {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  opacity: .8;
+}
+
+.ft-stopwatch {
+  font-size: clamp(24px,5vw,42px);
+}
+
+.ft-lap-wrap {
+  max-height: 240px;
+  overflow: auto;
+  margin-top: 18px;
+}
+
+.ft-lap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ft-lap-table th,
+.ft-lap-table td {
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(128,128,128,.2);
+  text-align: center;
+}
+
+.ft-notice {
+  padding: 18px;
+  margin: 20px 0;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 14px;
+  background: rgba(212,175,55,.07);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ft-faq details {
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 12px;
+}
+
+.ft-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.ft-page :focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html[data-theme="light"] .ft-hero,
+body[data-theme="light"] .ft-hero {
+  background: linear-gradient(145deg,#ffffff,#f3ead7);
+  color: #172033;
+}
+
+html[data-theme="light"] .ft-hero h1,
+body[data-theme="light"] .ft-hero h1,
+html[data-theme="light"] .ft-eyebrow,
+body[data-theme="light"] .ft-eyebrow {
+  color: #765018;
+}
+
+html[data-theme="light"] .ft-hero p,
+body[data-theme="light"] .ft-hero p {
+  color: #46546a;
+}
+
+html[data-theme="light"] .ft-select option,
+body[data-theme="light"] .ft-select option {
+  background: #ffffff;
+  color: #172033;
+}
+
+@media(max-width:650px) {
+
+  .ft-page {
+    padding: 18px 12px;
+  }
+
+  .ft-grid {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .ft-card {
+    padding: 17px;
+  }
+
+  .ft-hero {
+    padding: 30px 16px;
+  }
+
+  .ft-buttons > .ft-button {
+    flex: 1 1 auto;
+  }
+
+}
+
+@media print {
+
+  header.site,
+  footer.site,
+  .ft-filter-bar,
+  .ft-search,
+  .ft-buttons,
+  #pwaMount,
+  .pwa-panel {
+    display: none !important;
+  }
+
+  .ft-page,
+  .ft-card,
+  .ft-hero,
+  .ft-result {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .ft-hero h1,
+  .ft-hero p,
+  .ft-eyebrow {
+    color: black !important;
+  }
+
+  .ft-card {
+    break-inside: avoid;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <header class="site">
+<header class="site">
+<div class="container">
 
-        <div class="container">
+<strong>MeraHisab</strong>
 
-            <strong>MeraHisab</strong>
+<nav aria-label="Main navigation">
 
-            <nav aria-label="Main navigation">
+<a href="/index.html">Home</a>
+<a href="/downloads.html">Apps</a>
+<a href="/compare.html">Compare</a>
+<a href="/index.html#features">Features</a>
+<a href="/tools.html" aria-current="page">Tools</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Support</a>
 
-                <a href="index.html">Home</a>
+<button id="theme" type="button" aria-label="Change website theme">
+Theme
+</button>
 
-                <a href="downloads.html">Apps</a>
+</nav>
+</div>
+</header>
 
-                <a href="compare.html">Compare</a>
+<main class="shell ft-page">
 
-                <a href="index.html#features">Features</a>
+<!-- HERO SECTION -->
 
-                <a href="tools.html"
-                   aria-current="page">Tools</a>
+<section class="ft-hero">
 
-                <a href="privacy.html">Privacy</a>
+<span class="ft-eyebrow">
+SMART FINANCIAL TOOLKIT
+</span>
 
-                <a href="about.html">About</a>
+<h1>Financial Calculators & Smart Tools</h1>
 
-                <a href="contact.html">Support</a>
+<p>
+Calculate loans, investments, interest,
+taxes, savings and everyday financial
+estimates using convenient browser-based tools.
+</p>
 
-                <button id="theme" type="button">
-                    Theme
-                </button>
+<div class="ft-buttons" style="justify-content:center">
 
-            </nav>
+<a href="#financial-calculators" class="ft-button ft-primary">
+Explore Calculators
+</a>
 
-        </div>
+<a href="#time-tools" class="ft-button">
+Clock & Stopwatch
+</a>
 
-    </header>
+</div>
+</section>
 
-    <main class="shell">
+<!-- LIVE CLOCK AND STOPWATCH -->
 
-        <p>
-            <a href="index.html">Home</a>
-            / Financial Tools
-        </p>
+<section class="ft-section" id="time-tools">
 
-        <section class="tools-hero">
+<h2 class="ft-title">
+Time & Productivity Tools
+</h2>
 
-            <p>SMART FINANCIAL UTILITIES</p>
+<div class="ft-grid">
 
-            <h1>Financial Tools &amp; Calculators</h1>
+<article class="upgrade-card ft-card">
 
-            <p>
+<div class="ft-icon">🕒</div>
 
-                Calculate, plan and manage
-                your finances with convenient
-                browser-based tools.
+<h3>Indian Standard Time</h3>
 
-            </p>
+<p>Asia/Kolkata · UTC +05:30</p>
 
-            <p>
+<div class="ft-time" id="istClock">
+--:--:--
+</div>
 
-                No account required.
-                No calculator data submitted
-                to a server by these tools.
+<div class="ft-date" id="istDate">
+Loading date...
+</div>
 
-            </p>
+<div class="ft-clock-status">
+Live IST · Based on your device clock
+</div>
 
-            <nav class="tool-navigation"
-                 aria-label="Tools navigation">
+</article>
 
-                <a href="#interest-tools">Interest</a>
+<article class="upgrade-card ft-card">
 
-                <a href="#investment-tools">Investment</a>
+<div class="ft-icon">⏱</div>
 
-                <a href="#business-tools">Business</a>
+<h3>Digital Stopwatch</h3>
 
-                <a href="#daily-tools">Utilities</a>
+<div class="ft-time ft-stopwatch" id="stopwatchDisplay">
+00:00:00.00
+</div>
 
-            </nav>
+<div class="ft-buttons">
 
-        </section>
-                <!-- INTEREST CALCULATORS -->
+<button type="button" id="swStart" class="ft-button ft-primary">
+Start
+</button>
 
-        <section id="interest-tools"
-                 class="tools-section">
+<button type="button" id="swPause" class="ft-button" disabled>
+Pause
+</button>
 
-            <h2>Interest &amp; Loan Calculators</h2>
+<button type="button" id="swLap" class="ft-button" disabled>
+Lap
+</button>
 
-            <div class="upgrade-grid">
+<button type="button" id="swReset" class="ft-button" disabled>
+Reset
+</button>
 
-                <!-- Simple Interest -->
+</div>
 
-                <article class="upgrade-card tool-card">
+<p id="swStatus" role="status" class="ft-note">
+Ready to start.
+</p>
 
-                    <h3>Simple Interest Calculator</h3>
+<div class="ft-lap-wrap">
 
-                    <form id="simpleForm">
+<table class="ft-lap-table">
 
-                        <label for="simpleAmount">
-                            Principal Amount (INR)
-                        </label>
+<thead>
+<tr>
+<th scope="col">Lap</th>
+<th scope="col">Split</th>
+<th scope="col">Total</th>
+</tr>
+</thead>
 
-                        <input id="simpleAmount"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="100000"
-                               required>
+<tbody id="swLapList">
 
-                        <label for="simpleRate">
-                            Annual Interest Rate (%)
-                        </label>
+<tr>
+<td colspan="3">No laps recorded.</td>
+</tr>
 
-                        <input id="simpleRate"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="8"
-                               required>
+</tbody>
+</table>
 
-                        <label for="simpleYears">
-                            Time Period (Years)
-                        </label>
+</div>
+</article>
 
-                        <input id="simpleYears"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="5"
-                               required>
+</div>
+</section>
 
-                        <div class="tool-actions">
+<!-- FINANCIAL CALCULATORS -->
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate
-                            </button>
+<section class="ft-section" id="financial-calculators">
 
-                            <button type="reset">
-                                Reset
-                            </button>
+<h2 class="ft-title">
+Financial Calculators
+</h2>
 
-                        </div>
+<p class="ft-description">
+Choose from 11 useful financial calculators.
+All calculation logic runs in your browser.
+</p>
 
-                        <div id="simpleResult"
-                             class="tool-result"
-                             aria-live="polite">
+<label class="ft-label" for="toolSearch">
+Search Calculators
+</label>
 
-                            Enter details to calculate.
+<input
+  id="toolSearch"
+  class="ft-input ft-search"
+  type="search"
+  placeholder="Search EMI, SIP, GST, savings..."
+  autocomplete="off">
 
-                        </div>
+<div class="ft-filter-bar" role="group" aria-label="Calculator categories">
 
-                    </form>
+<button type="button" class="ft-button ft-filter" data-category="all" aria-pressed="true">
+All Tools
+</button>
 
-                </article>
+<button type="button" class="ft-button ft-filter" data-category="loan" aria-pressed="false">
+Loans
+</button>
 
-                <!-- Compound Interest -->
+<button type="button" class="ft-button ft-filter" data-category="investment" aria-pressed="false">
+Investments
+</button>
 
-                <article class="upgrade-card tool-card">
+<button type="button" class="ft-button ft-filter" data-category="tax" aria-pressed="false">
+Tax & Shopping
+</button>
 
-                    <h3>Compound Interest Calculator</h3>
+<button type="button" class="ft-button ft-filter" data-category="planning" aria-pressed="false">
+Financial Planning
+</button>
 
-                    <form id="compoundForm">
+</div>
 
-                        <label for="compoundAmount">
-                            Principal Amount (INR)
-                        </label>
+<div id="toolCount" class="ft-count" aria-live="polite">
+Loading calculators...
+</div>
 
-                        <input id="compoundAmount"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="100000"
-                               required>
+<div class="ft-grid" id="calculatorGrid">
 
-                        <label for="compoundRate">
-                            Annual Interest Rate (%)
-                        </label>
+<!-- Calculators are generated locally by JavaScript. -->
 
-                        <input id="compoundRate"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="8"
-                               required>
+</div>
 
-                        <label for="compoundYears">
-                            Time Period (Years)
-                        </label>
+<div id="noTools" class="ft-notice" hidden>
+No matching calculators found.
+Try another search or category.
+</div>
 
-                        <input id="compoundYears"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="5"
-                               required>
+<div class="ft-buttons" style="justify-content:center">
 
-                        <label for="compoundFrequency">
-                            Compounding Frequency
-                        </label>
+<button type="button" class="ft-button" id="resetFilters">
+Reset Filters
+</button>
 
-                        <select id="compoundFrequency">
+<button type="button" class="ft-button" id="resetAll">
+Reset All Calculators
+</button>
 
-                            <option value="1">
-                                Annually
-                            </option>
+<button type="button" class="ft-button ft-primary" id="printTools">
+Print / Save as PDF
+</button>
 
-                            <option value="2">
-                                Half Yearly
-                            </option>
+</div>
 
-                            <option value="4">
-                                Quarterly
-                            </option>
+</section>
 
-                            <option value="12">
-                                Monthly
-                            </option>
+<!-- PRIVACY INFORMATION -->
 
-                        </select>
+<section class="ft-section">
 
-                        <div class="tool-actions">
+<h2 class="ft-title">
+Privacy & Calculation Information
+</h2>
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate
-                            </button>
+<div class="ft-grid">
 
-                            <button type="reset">
-                                Reset
-                            </button>
+<article class="upgrade-card ft-card">
 
-                        </div>
+<div class="ft-icon">🔒</div>
 
-                        <div id="compoundResult"
-                             class="tool-result"
-                             aria-live="polite">
+<h3>Local Calculations</h3>
 
-                            Enter details to calculate.
+<p>
+Calculator inputs are processed locally
+by the calculator engine on this page.
+The engine does not submit financial
+inputs to a server.
+</p>
 
-                        </div>
+</article>
 
-                    </form>
+<article class="upgrade-card ft-card">
 
-                </article>
+<div class="ft-icon">💾</div>
 
-                <!-- EMI Calculator -->
+<h3>No Saved Financial Inputs</h3>
 
-                <article class="upgrade-card tool-card">
+<p>
+The calculator engine does not save
+entered amounts or calculation results
+to localStorage or IndexedDB.
+</p>
 
-                    <h3>Loan EMI Calculator</h3>
+</article>
 
-                    <form id="emiForm">
+<article class="upgrade-card ft-card">
 
-                        <label for="emiAmount">
-                            Loan Amount (INR)
-                        </label>
+<div class="ft-icon">📱</div>
 
-                        <input id="emiAmount"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="500000"
-                               required>
+<h3>Responsive Tools</h3>
 
-                        <label for="emiRate">
-                            Annual Interest Rate (%)
-                        </label>
+<p>
+Use financial calculators on mobile,
+tablet and desktop devices with
+a responsive layout.
+</p>
 
-                        <input id="emiRate"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="10"
-                               required>
+</article>
 
-                        <label for="emiMonths">
-                            Loan Duration (Months)
-                        </label>
+<article class="upgrade-card ft-card">
 
-                        <input id="emiMonths"
-                               type="number"
-                               min="1"
-                               max="1200"
-                               step="1"
-                               value="60"
-                               required>
+<div class="ft-icon">🌐</div>
 
-                        <div class="tool-actions">
+<h3>Offline Access</h3>
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate EMI
-                            </button>
+<p>
+Calculators may work offline when
+the website and required resources
+have been successfully cached by
+the supported PWA service worker.
+</p>
 
-                            <button type="reset">
-                                Reset
-                            </button>
+</article>
 
-                        </div>
+</div>
 
-                        <div id="emiResult"
-                             class="tool-result"
-                             aria-live="polite">
+<div class="ft-notice">
 
-                            Enter details to calculate.
+<strong>Financial Disclaimer:</strong>
 
-                        </div>
+Calculator results are mathematical estimates,
+not guaranteed investment returns, official
+bank quotations or personalized financial advice.
 
-                    </form>
+Actual interest rates, taxes, fees,
+rounding rules and investment returns
+may differ.
 
-                </article>
+</div>
 
-            </div>
+</section>
 
-        </section>
-                <!-- INVESTMENT CALCULATORS -->
+<!-- FAQ SECTION -->
 
-        <section id="investment-tools"
-                 class="tools-section">
+<section class="ft-section ft-faq">
 
-            <h2>Investment &amp; Savings Calculators</h2>
+<h2 class="ft-title">
+Frequently Asked Questions
+</h2>
 
-            <div class="upgrade-grid">
+<details class="upgrade-card">
 
-                <!-- SIP Calculator -->
+<summary>Are these calculators free?</summary>
 
-                <article class="upgrade-card tool-card">
+<p>
+The calculators on this website can
+be used without a calculator subscription.
+</p>
 
-                    <h3>SIP Calculator</h3>
+</details>
 
-                    <form id="sipForm">
+<details class="upgrade-card">
 
-                        <label for="sipAmount">
-                            Monthly Investment (INR)
-                        </label>
+<summary>What is EMI?</summary>
 
-                        <input id="sipAmount"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="5000"
-                               required>
+<p>
+EMI means Equated Monthly Instalment.
+The EMI calculator estimates fixed monthly
+loan repayments using the reducing-balance
+interest formula.
+</p>
 
-                        <label for="sipRate">
-                            Expected Annual Return (%)
-                        </label>
+</details>
 
-                        <input id="sipRate"
-                               type="number"
-                               min="-99"
-                               step="0.01"
-                               value="12"
-                               required>
+<details class="upgrade-card">
 
-                        <label for="sipYears">
-                            Investment Period (Years)
-                        </label>
+<summary>What is SIP?</summary>
 
-                        <input id="sipYears"
-                               type="number"
-                               min="1"
-                               max="100"
-                               step="1"
-                               value="10"
-                               required>
+<p>
+SIP means Systematic Investment Plan.
+The calculator estimates the future value
+of regular monthly investments using
+an assumed annual return.
+Actual market returns are not guaranteed.
+</p>
 
-                        <div class="tool-actions">
+</details>
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate SIP
-                            </button>
+<details class="upgrade-card">
 
-                            <button type="reset">
-                                Reset
-                            </button>
+<summary>What is the difference between FD and RD?</summary>
 
-                        </div>
+<p>
+A fixed deposit generally begins with
+a lump-sum deposit. A recurring deposit
+uses regular contributions over time.
+Bank-specific calculation rules may differ.
+</p>
 
-                        <div id="sipResult"
-                             class="tool-result"
-                             aria-live="polite">
+</details>
 
-                            Enter details to calculate.
+<details class="upgrade-card">
 
-                        </div>
+<summary>Can I calculate GST?</summary>
 
-                        <p class="tool-note">
+<p>
+Yes. The GST calculator supports adding
+GST to a base amount and extracting
+GST from a tax-inclusive amount.
+Enter the applicable tax rate yourself.
+</p>
 
-                            Assumes investments at the
-                            beginning of each month
-                            and a constant return.
-                            Actual returns may vary.
+</details>
 
-                        </p>
+<details class="upgrade-card">
 
-                    </form>
+<summary>Are investment returns guaranteed?</summary>
 
-                </article>
+<p>
+No. Investment calculators use assumed
+rates for illustrative estimates.
+They do not predict actual market returns.
+</p>
 
-                <!-- Lumpsum Calculator -->
+</details>
 
-                <article class="upgrade-card tool-card">
+<details class="upgrade-card">
 
-                    <h3>Lumpsum Calculator</h3>
+<summary>Does the calculator save my financial details?</summary>
 
-                    <form id="lumpForm">
+<p>
+The calculator engine does not persist
+your entered amounts or results.
+Your browser may independently retain
+information according to its settings.
+</p>
 
-                        <label for="lumpAmount">
-                            Investment Amount (INR)
-                        </label>
+</details>
 
-                        <input id="lumpAmount"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="100000"
-                               required>
+<details class="upgrade-card">
 
-                        <label for="lumpRate">
-                            Expected Annual Return (%)
-                        </label>
+<summary>Can I use the tools without internet?</summary>
 
-                        <input id="lumpRate"
-                               type="number"
-                               min="-99"
-                               step="0.01"
-                               value="12"
-                               required>
+<p>
+Offline use depends on successful PWA
+installation or caching of the required
+website resources.
+</p>
 
-                        <label for="lumpYears">
-                            Investment Period (Years)
-                        </label>
+</details>
 
-                        <input id="lumpYears"
-                               type="number"
-                               min="0"
-                               max="100"
-                               step="0.01"
-                               value="10"
-                               required>
+<details class="upgrade-card">
 
-                        <div class="tool-actions">
+<summary>Can I save calculator results as PDF?</summary>
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate
-                            </button>
+<p>
+Use the Print / Save as PDF button.
+PDF availability depends on your browser
+and operating system.
+</p>
 
-                            <button type="reset">
-                                Reset
-                            </button>
+</details>
 
-                        </div>
+<details class="upgrade-card">
 
-                        <div id="lumpResult"
-                             class="tool-result"
-                             aria-live="polite">
+<summary>Is the IST clock synchronized with an official time server?</summary>
 
-                            Enter details to calculate.
+<p>
+No. It displays Indian Standard Time
+using your device clock and browser
+time-zone conversion.
+</p>
 
-                        </div>
+</details>
 
-                    </form>
+</section>
 
-                </article>
+<!-- USEFUL LINKS -->
 
-                <!-- FD Calculator -->
+<section class="ft-section">
 
-                <article class="upgrade-card tool-card">
+<h2 class="ft-title">
+Explore MeraHisab Applications
+</h2>
 
-                    <h3>Fixed Deposit Calculator</h3>
+<div class="ft-grid">
 
-                    <form id="fdForm">
+<article class="upgrade-card ft-card">
 
-                        <label for="fdAmount">
-                            Deposit Amount (INR)
-                        </label>
+<h3>MeraHisab</h3>
 
-                        <input id="fdAmount"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="100000"
-                               required>
+<p>
+Explore personal income, expense,
+savings and account management.
+</p>
 
-                        <label for="fdRate">
-                            Annual Interest Rate (%)
-                        </label>
+<div class="ft-buttons">
 
-                        <input id="fdRate"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="7.5"
-                               required>
+<a href="/merahisab.html" class="ft-button ft-primary">
+Application Details
+</a>
 
-                        <label for="fdYears">
-                            Deposit Period (Years)
-                        </label>
+<a href="/download.html" class="ft-button">
+Download Page
+</a>
 
-                        <input id="fdYears"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="5"
-                               required>
+</div>
+</article>
 
-                        <label for="fdFrequency">
-                            Compounding Frequency
-                        </label>
+<article class="upgrade-card ft-card">
 
-                        <select id="fdFrequency">
+<h3>Royal Khata</h3>
 
-                            <option value="4">
-                                Quarterly
-                            </option>
+<p>
+Explore the planned digital credit,
+debit and customer account management
+application.
+</p>
 
-                            <option value="12">
-                                Monthly
-                            </option>
+<div class="ft-buttons">
 
-                            <option value="2">
-                                Half Yearly
-                            </option>
+<a href="/royal-khata.html" class="ft-button ft-primary">
+Application Details
+</a>
 
-                            <option value="1">
-                                Annually
-                            </option>
+<a href="/compare.html" class="ft-button">
+Compare Applications
+</a>
 
-                        </select>
+</div>
+</article>
 
-                        <div class="tool-actions">
+</div>
+</section>
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate FD
-                            </button>
+<!-- PWA INSTALLATION PANEL -->
 
-                            <button type="reset">
-                                Reset
-                            </button>
+<section class="ft-section" id="pwaMount">
 
-                        </div>
+<!-- Generated automatically by pwa.js -->
 
-                        <div id="fdResult"
-                             class="tool-result"
-                             aria-live="polite">
+</section>
 
-                            Enter details to calculate.
+</main>
 
-                        </div>
+<footer class="site">
 
-                        <p class="tool-note">
+<div class="container">
 
-                            Estimated cumulative deposit
-                            value before taxes.
+© <span data-year>2026</span> MeraHisab.
+All rights reserved.
 
-                        </p>
+<br>
 
-                    </form>
+<a href="/index.html">Home</a>
+·
+<a href="/privacy.html">Privacy</a>
+·
+<a href="/contact.html">Contact</a>
+·
+<a href="/downloads.html">Downloads</a>
 
-                </article>
+<br>
 
-            </div>
+<a href="https://merahisab.store/">
+merahisab.store
+</a>
 
-        </section>
-                <!-- BUSINESS CALCULATORS -->
+</div>
 
-        <section id="business-tools"
-                 class="tools-section">
+</footer>
 
-            <h2>Business &amp; Everyday Calculators</h2>
+<script>
 
-            <div class="upgrade-grid">
+(function () {
 
-                <!-- GST Calculator -->
+"use strict";
 
-                <article class="upgrade-card tool-card">
+if (window.__merahisabToolsInitialized) {
+  return;
+}
 
-                    <h3>GST Calculator</h3>
+window.__merahisabToolsInitialized = true;
 
-                    <form id="gstForm">
+/* =================================
+   LIVE INDIAN STANDARD TIME
+================================= */
 
-                        <label for="gstAmount">
-                            Amount (INR)
-                        </label>
+const clockElement =
+  document.getElementById("istClock");
 
-                        <input id="gstAmount"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="1000"
-                               required>
+const dateElement =
+  document.getElementById("istDate");
 
-                        <label for="gstRate">
-                            Applicable GST Rate (%)
-                        </label>
+const timeFormatter =
+  new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
 
-                        <input id="gstRate"
-                               type="number"
-                               min="0"
-                               max="100"
-                               step="0.01"
-                               value="18"
-                               required>
+const dateFormatter =
+  new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
 
-                        <label for="gstMode">
-                            Calculation Type
-                        </label>
+function updateClock() {
 
-                        <select id="gstMode">
+  const now = new Date();
 
-                            <option value="add">
-                                Add GST
-                            </option>
+  clockElement.textContent =
+    timeFormatter.format(now);
 
-                            <option value="remove">
-                                Remove GST
-                            </option>
+  dateElement.textContent =
+    dateFormatter.format(now);
 
-                        </select>
+}
 
-                        <div class="tool-actions">
+updateClock();
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate GST
-                            </button>
+window.setInterval(updateClock, 1000);
 
-                            <button type="reset">
-                                Reset
-                            </button>
 
-                        </div>
+/* =================================
+   PRECISION STOPWATCH
+================================= */
 
-                        <div id="gstResult"
-                             class="tool-result"
-                             aria-live="polite">
+const stopwatchDisplay =
+  document.getElementById("stopwatchDisplay");
 
-                            Enter details to calculate.
+const startButton =
+  document.getElementById("swStart");
 
-                        </div>
+const pauseButton =
+  document.getElementById("swPause");
 
-                        <p class="tool-note">
+const lapButton =
+  document.getElementById("swLap");
 
-                            Enter the applicable GST rate
-                            for your product or service.
+const resetButton =
+  document.getElementById("swReset");
 
-                        </p>
+const lapList =
+  document.getElementById("swLapList");
 
-                    </form>
+const swStatus =
+  document.getElementById("swStatus");
 
-                </article>
+let running = false;
+let startedAt = 0;
+let accumulated = 0;
+let previousLap = 0;
+let lapCount = 0;
+let frameId = null;
 
-                <!-- Percentage Calculator -->
+function elapsedTime() {
 
-                <article class="upgrade-card tool-card">
+  return accumulated +
+    (running ? performance.now() - startedAt : 0);
 
-                    <h3>Percentage Calculator</h3>
+}
 
-                    <form id="percentageForm">
+function formatStopwatch(milliseconds) {
 
-                        <label for="percentageAmount">
-                            Total Amount
-                        </label>
+  const total =
+    Math.floor(Math.max(0,milliseconds) / 10);
 
-                        <input id="percentageAmount"
-                               type="number"
-                               step="any"
-                               value="1000"
-                               required>
+  const centiseconds = total % 100;
 
-                        <label for="percentageRate">
-                            Percentage (%)
-                        </label>
+  const seconds =
+    Math.floor(total / 100) % 60;
 
-                        <input id="percentageRate"
-                               type="number"
-                               step="any"
-                               value="20"
-                               required>
+  const minutes =
+    Math.floor(total / 6000) % 60;
 
-                        <div class="tool-actions">
+  const hours =
+    Math.floor(total / 360000);
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate
-                            </button>
+  return [
+    String(hours).padStart(2,"0"),
+    String(minutes).padStart(2,"0"),
+    String(seconds).padStart(2,"0")
+  ].join(":") +
+  "." +
+  String(centiseconds).padStart(2,"0");
 
-                            <button type="reset">
-                                Reset
-                            </button>
+}
 
-                        </div>
+function renderStopwatch() {
 
-                        <div id="percentageResult"
-                             class="tool-result"
-                             aria-live="polite">
+  stopwatchDisplay.textContent =
+    formatStopwatch(elapsedTime());
 
-                            Enter details to calculate.
+}
 
-                        </div>
+function stopwatchLoop() {
 
-                    </form>
+  renderStopwatch();
 
-                </article>
+  if (running) {
 
-                <!-- Discount Calculator -->
+    frameId =
+      requestAnimationFrame(stopwatchLoop);
 
-                <article class="upgrade-card tool-card">
+  }
 
-                    <h3>Discount Calculator</h3>
+}
 
-                    <form id="discountForm">
+function updateStopwatchButtons() {
 
-                        <label for="discountAmount">
-                            Original Price (INR)
-                        </label>
+  startButton.disabled = running;
 
-                        <input id="discountAmount"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="2000"
-                               required>
+  pauseButton.disabled = !running;
 
-                        <label for="discountRate">
-                            Discount (%)
-                        </label>
+  lapButton.disabled =
+    !running || lapCount >= 100;
 
-                        <input id="discountRate"
-                               type="number"
-                               min="0"
-                               max="100"
-                               step="0.01"
-                               value="20"
-                               required>
+  resetButton.disabled =
+    !running && accumulated === 0 && lapCount === 0;
 
-                        <div class="tool-actions">
+  startButton.textContent =
+    !running && accumulated > 0
+      ? "Resume"
+      : "Start";
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate Discount
-                            </button>
+}
 
-                            <button type="reset">
-                                Reset
-                            </button>
+startButton.addEventListener("click", function () {
 
-                        </div>
+  if (running) return;
 
-                        <div id="discountResult"
-                             class="tool-result"
-                             aria-live="polite">
+  startedAt = performance.now();
 
-                            Enter details to calculate.
+  running = true;
 
-                        </div>
+  swStatus.textContent = "Stopwatch running.";
 
-                    </form>
+  updateStopwatchButtons();
 
-                </article>
+  stopwatchLoop();
 
-                <!-- Profit Loss Calculator -->
+});
 
-                <article class="upgrade-card tool-card">
+pauseButton.addEventListener("click", function () {
 
-                    <h3>Profit &amp; Loss Calculator</h3>
+  if (!running) return;
 
-                    <form id="profitForm">
+  accumulated = elapsedTime();
 
-                        <label for="costPrice">
-                            Cost Price (INR)
-                        </label>
+  running = false;
 
-                        <input id="costPrice"
-                               type="number"
-                               min="0.01"
-                               step="0.01"
-                               value="1000"
-                               required>
+  if (frameId !== null) {
 
-                        <label for="sellingPrice">
-                            Selling Price (INR)
-                        </label>
+    cancelAnimationFrame(frameId);
 
-                        <input id="sellingPrice"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="1200"
-                               required>
+    frameId = null;
 
-                        <div class="tool-actions">
+  }
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate
-                            </button>
+  renderStopwatch();
 
-                            <button type="reset">
-                                Reset
-                            </button>
+  updateStopwatchButtons();
 
-                        </div>
+  swStatus.textContent = "Stopwatch paused.";
 
-                        <div id="profitResult"
-                             class="tool-result"
-                             aria-live="polite">
+});
 
-                            Enter details to calculate.
+lapButton.addEventListener("click", function () {
 
-                        </div>
+  if (!running || lapCount >= 100) return;
 
-                    </form>
+  const total = elapsedTime();
 
-                </article>
+  const split = total - previousLap;
 
-                <!-- Budget Calculator -->
+  previousLap = total;
 
-                <article class="upgrade-card tool-card">
+  lapCount++;
 
-                    <h3>Monthly Budget Calculator</h3>
+  if (lapCount === 1) {
 
-                    <form id="budgetForm">
+    lapList.replaceChildren();
 
-                        <label for="budgetIncome">
-                            Monthly Income (INR)
-                        </label>
+  }
 
-                        <input id="budgetIncome"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="30000"
-                               required>
+  const row = document.createElement("tr");
 
-                        <label for="budgetExpense">
-                            Monthly Expenses (INR)
-                        </label>
+  [
+    String(lapCount),
+    formatStopwatch(split),
+    formatStopwatch(total)
+  ].forEach(function (value) {
 
-                        <input id="budgetExpense"
-                               type="number"
-                               min="0"
-                               step="0.01"
-                               value="20000"
-                               required>
+    const cell = document.createElement("td");
 
-                        <div class="tool-actions">
+    cell.textContent = value;
 
-                            <button class="action"
-                                    type="submit">
-                                Calculate Budget
-                            </button>
+    row.appendChild(cell);
 
-                            <button type="reset">
-                                Reset
-                            </button>
+  });
 
-                        </div>
+  lapList.prepend(row);
 
-                        <div id="budgetResult"
-                             class="tool-result"
-                             aria-live="polite">
+  swStatus.textContent =
+    "Lap " + lapCount + " recorded." +
+    (lapCount === 100 ? " Maximum laps reached." : "");
 
-                            Enter details to calculate.
+  updateStopwatchButtons();
 
-                        </div>
+});
 
-                    </form>
+resetButton.addEventListener("click", function () {
 
-                </article>
+  running = false;
 
-            </div>
+  if (frameId !== null) {
 
-        </section>
-                <!-- DAILY UTILITIES -->
+    cancelAnimationFrame(frameId);
 
-        <section id="daily-tools"
-                 class="tools-section">
+    frameId = null;
 
-            <h2>Daily Utilities</h2>
+  }
 
-            <div class="upgrade-grid">
+  accumulated = 0;
+  startedAt = 0;
+  previousLap = 0;
+  lapCount = 0;
 
-                <!-- Digital Clock -->
+  lapList.replaceChildren();
 
-                <article class="upgrade-card tool-card">
+  const row = document.createElement("tr");
 
-                    <h3>Indian Standard Time</h3>
+  const cell = document.createElement("td");
 
-                    <div id="digitalClock"
-                         class="digital-display">
+  cell.colSpan = 3;
 
-                        --:--:--
+  cell.textContent = "No laps recorded.";
 
-                    </div>
+  row.appendChild(cell);
 
-                    <p id="digitalDate"
-                       style="text-align:center;">
+  lapList.appendChild(row);
 
-                    </p>
+  renderStopwatch();
 
-                    <p style="text-align:center;">
+  updateStopwatchButtons();
 
-                        Asia/Kolkata — IST
+  swStatus.textContent = "Stopwatch reset.";
 
-                    </p>
+});
 
-                    <p class="tool-note">
+updateStopwatchButtons();
 
-                        Based on your device clock.
 
-                    </p>
+/* =================================
+   FINANCIAL CALCULATION ENGINE
+================================= */
 
-                </article>
+const currencyFormatter =
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
 
-                <!-- Stopwatch -->
+function money(value) {
 
-                <article class="upgrade-card tool-card">
+  if (!Number.isFinite(value)) {
 
-                    <h3>Digital Stopwatch</h3>
+    throw new Error("Result exceeds calculation limits.");
 
-                    <div id="stopwatchDisplay"
-                         class="digital-display">
+  }
 
-                        00:00:00.00
+  return currencyFormatter.format(value);
 
-                    </div>
+}
 
-                    <div class="tool-actions">
+function field(
+  key,
+  label,
+  value,
+  min,
+  max,
+  step
+) {
 
-                        <button id="stopwatchStart"
-                                class="action"
-                                type="button">
+  return {
+    key: key,
+    label: label,
+    value: value,
+    min: min,
+    max: max,
+    step: step || "any"
+  };
 
-                            Start
+}
 
-                        </button>
+function selectField(
+  key,
+  label,
+  value,
+  options
+) {
 
-                        <button id="stopwatchPause"
-                                type="button">
+  return {
+    key: key,
+    label: label,
+    value: value,
+    options: options
+  };
 
-                            Pause
+}
 
-                        </button>
+const MAX_AMOUNT = 100000000000;
 
-                        <button id="stopwatchReset"
-                                type="button">
+const MAX_RATE = 100;
 
-                            Reset
+const MAX_YEARS = 50;
 
-                        </button>
+function futureAnnuity(payment, rate, periods) {
 
-                    </div>
+  if (rate === 0) {
 
-                </article>
+    return payment * periods;
 
-            </div>
+  }
 
-        </section>
+  return payment *
+    Math.expm1(periods * Math.log1p(rate)) /
+    rate;
 
-        <!-- PRIVACY -->
+}
 
-        <section class="upgrade-card tools-section">
 
-            <h2>Calculator Privacy</h2>
+/* =================================
+   1. EMI CALCULATOR
+================================= */
 
-            <p>
+const calculators = [
 
-                These calculators perform
-                calculations locally in your
-                browser using JavaScript.
+{
 
-            </p>
+  id: "emi",
 
-            <p>
+  name: "Loan EMI Calculator",
 
-                The calculator code does not
-                transmit or permanently store
-                your entered financial amounts.
+  icon: "🏦",
 
-            </p>
+  category: "loan",
 
-            <p>
+  description:
+    "Estimate monthly reducing-balance loan repayments.",
 
-                Please avoid entering sensitive
-                information on shared devices.
+  fields: [
 
-            </p>
+    field("principal","Loan Amount (₹)",500000,1,MAX_AMOUNT),
 
-            <a class="action" href="privacy.html">
+    field("rate","Annual Interest Rate (%)",10,0,MAX_RATE),
 
-                Privacy Information
+    field("months","Loan Tenure (Months)",60,1,600,1)
 
-            </a>
+  ],
 
-        </section>
+  calculate: function (v) {
 
-        <!-- DISCLAIMER -->
+    const r = v.rate / 1200;
 
-        <section class="upgrade-card tools-section">
+    const n = v.months;
 
-            <h2>Financial Disclaimer</h2>
+    const emi = r === 0
+      ? v.principal / n
+      : v.principal * r /
+        (-Math.expm1(-n * Math.log1p(r)));
 
-            <p>
+    const total = emi * n;
 
-                These calculators are provided
-                for general information and
-                educational purposes.
+    return [
 
-            </p>
+      ["Monthly EMI",money(emi)],
 
-            <p>
+      ["Principal Amount",money(v.principal)],
 
-                Calculated results are estimates.
-                Actual loan payments, taxes,
-                investment returns and deposit
-                maturity amounts may differ.
+      ["Total Interest",money(Math.max(0,total-v.principal))],
 
-            </p>
+      ["Total Repayment",money(total)]
 
-            <p>
+    ];
 
-                Investment returns are not
-                guaranteed. Consult a qualified
-                financial professional before
-                making important financial decisions.
+  },
 
-            </p>
+  note:
+    "Assumes a fixed rate and equal monthly payments. Processing fees and other charges are excluded."
 
-        </section>
+},
 
-        <!-- APPLICATIONS -->
 
-        <section class="tools-hero tools-section">
+/* =================================
+   2. SIP CALCULATOR
+================================= */
 
-            <h2>Explore Our Financial Apps</h2>
+{
 
-            <p>
+  id: "sip",
 
-                Discover MeraHisab and Royal Khata.
+  name: "SIP Calculator",
 
-            </p>
+  icon: "📈",
 
-            <a class="action"
-               href="downloads.html">
+  category: "investment",
 
-                Visit Download Center
+  description:
+    "Estimate the future value of monthly investments.",
 
-            </a>
+  fields: [
 
-        </section>
+    field("monthly","Monthly Investment (₹)",5000,1,MAX_AMOUNT),
 
-    </main>
+    field("rate","Expected Annual Return (%)",12,0,MAX_RATE),
 
-    <!-- PREMIUM FOOTER -->
+    field("years","Investment Period (Years)",10,1,MAX_YEARS,1),
 
-    <footer class="site">
+    selectField(
+      "timing",
+      "Monthly Investment Timing",
+      "end",
+      [
+        ["end","End of Month"],
+        ["begin","Beginning of Month"]
+      ]
+    )
 
-        <div class="container">
+  ],
 
-            <h2>MeraHisab</h2>
+  calculate: function (v) {
 
-            <p>Your Money. Your Control.</p>
+    const r = v.rate / 1200;
 
-            <nav aria-label="Footer navigation">
+    const n = v.years * 12;
 
-                <a href="index.html">Home</a>
+    const invested = v.monthly * n;
 
-                <a href="downloads.html">Apps</a>
+    const maturity =
+      futureAnnuity(v.monthly,r,n) *
+      (v.timing === "begin" ? 1+r : 1);
 
-                <a href="compare.html">Compare</a>
+    return [
 
-                <a href="privacy.html">Privacy</a>
+      ["Total Investment",money(invested)],
 
-                <a href="about.html">About</a>
+      ["Estimated Returns",money(maturity-invested)],
 
-                <a href="contact.html">Contact</a>
+      ["Estimated Future Value",money(maturity)]
 
-            </nav>
+    ];
 
-            <p>
+  },
 
-                Official Website:
+  note:
+    "Uses a constant assumed return divided into monthly periods. Market returns are not guaranteed."
 
-                <a href="https://merahisab.store/">
+},
 
-                    merahisab.store
 
-                </a>
+/* =================================
+   3. FD CALCULATOR
+================================= */
 
-            </p>
+{
 
-            <p>
+  id: "fd",
 
-                &copy; <span data-year></span>
+  name: "Fixed Deposit Calculator",
 
-                MeraHisab. All Rights Reserved.
+  icon: "💰",
 
-            </p>
+  category: "investment",
 
-        </div>
+  description:
+    "Estimate fixed deposit maturity and interest.",
 
-    </footer>
-        <!-- FINANCIAL CALCULATOR ENGINE -->
+  fields: [
 
-    <script>
+    field("principal","Deposit Amount (₹)",100000,1,MAX_AMOUNT),
 
-        (() => {
+    field("rate","Annual Interest Rate (%)",7,0,MAX_RATE),
 
-            "use strict";
+    field("years","Deposit Period (Years)",5,0.25,MAX_YEARS),
 
-            const get = id =>
-                document.getElementById(id);
+    selectField(
+      "frequency",
+      "Compounding Frequency",
+      "4",
+      [
+        ["1","Annually"],
+        ["2","Half-Yearly"],
+        ["4","Quarterly"],
+        ["12","Monthly"]
+      ]
+    )
 
-            const num = id =>
-                get(id).valueAsNumber;
+  ],
 
-            const moneyFormatter =
-                new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    maximumFractionDigits: 2
-                });
+  calculate: function (v) {
 
-            const numberFormatter =
-                new Intl.NumberFormat("en-IN", {
-                    maximumFractionDigits: 2
-                });
+    const n = Number(v.frequency);
 
-            function money(value) {
+    const maturity =
+      v.principal *
+      Math.pow(
+        1 + v.rate / (100*n),
+        n*v.years
+      );
 
-                if (!Number.isFinite(value)) {
-                    throw new Error("Invalid result");
-                }
+    return [
 
-                return moneyFormatter.format(value);
+      ["Deposit Amount",money(v.principal)],
 
-            }
+      ["Estimated Interest",money(maturity-v.principal)],
 
-            function number(value) {
+      ["Maturity Amount",money(maturity)]
 
-                if (!Number.isFinite(value)) {
-                    throw new Error("Invalid result");
-                }
+    ];
 
-                return numberFormatter.format(value);
+  },
 
-            }
+  note:
+    "Uses compound-interest estimates. Actual bank maturity, partial-period interest and TDS may differ."
 
-            function show(id, lines) {
+},
 
-                get(id).textContent =
-                    lines.join("\n");
 
-            }
+/* =================================
+   4. RD CALCULATOR
+================================= */
 
-            function bind(formId, resultId, calculate) {
+{
 
-                const form = get(formId);
+  id: "rd",
 
-                form.addEventListener(
-                    "submit",
-                    event => {
+  name: "Recurring Deposit Calculator",
 
-                        event.preventDefault();
+  icon: "🏛",
 
-                        if (!form.checkValidity()) {
-                            form.reportValidity();
-                            return;
-                        }
+  category: "investment",
 
-                        try {
+  description:
+    "Estimate maturity from regular monthly deposits.",
 
-                            calculate();
+  fields: [
 
-                        } catch (error) {
+    field("monthly","Monthly Deposit (₹)",5000,1,MAX_AMOUNT),
 
-                            show(resultId, [
-                                "Unable to calculate.",
-                                "Please check your input values."
-                            ]);
+    field("rate","Annual Interest Rate (%)",7,0,MAX_RATE),
 
-                        }
+    field("months","Deposit Period (Months)",60,1,600,1)
 
-                    }
-                );
+  ],
 
-                form.addEventListener(
-                    "reset",
-                    () => {
+  calculate: function (v) {
 
-                        show(resultId, [
-                            "Enter details to calculate."
-                        ]);
+    const r =
+      Math.expm1(
+        Math.log1p(v.rate/400)/3
+      );
 
-                    }
-                );
+    const invested =
+      v.monthly * v.months;
 
-            }
+    const maturity =
+      futureAnnuity(v.monthly,r,v.months) *
+      (1+r);
 
-            // Simple Interest
+    return [
 
-            bind(
-                "simpleForm",
-                "simpleResult",
-                () => {
+      ["Total Deposits",money(invested)],
 
-                    const p = num("simpleAmount");
+      ["Estimated Interest",money(maturity-invested)],
 
-                    const r = num("simpleRate") / 100;
+      ["Estimated Maturity",money(maturity)]
 
-                    const t = num("simpleYears");
+    ];
 
-                    const interest = p * r * t;
+  },
 
-                    show("simpleResult", [
+  note:
+    "Assumes beginning-of-month deposits and an equivalent monthly rate derived from quarterly compounding. Actual bank RD rules may differ."
 
-                        "Principal: " + money(p),
+},
 
-                        "Total Interest: " +
-                            money(interest),
 
-                        "Total Amount: " +
-                            money(p + interest)
+/* =================================
+   5. SIMPLE INTEREST
+================================= */
 
-                    ]);
+{
 
-                }
+  id: "simple-interest",
+
+  name: "Simple Interest Calculator",
+
+  icon: "₹",
+
+  category: "loan",
+
+  description:
+    "Calculate interest without compounding.",
+
+  fields: [
+
+    field("principal","Principal Amount (₹)",100000,1,MAX_AMOUNT),
+
+    field("rate","Annual Interest Rate (%)",8,0,MAX_RATE),
+
+    field("years","Time Period (Years)",2,0.01,MAX_YEARS)
+
+  ],
+
+  calculate: function (v) {
+
+    const interest =
+      v.principal*v.rate*v.years/100;
+
+    return [
+
+      ["Principal Amount",money(v.principal)],
+
+      ["Simple Interest",money(interest)],
+
+      ["Total Amount",money(v.principal+interest)]
+
+    ];
+
+  },
+
+  note:
+    "Formula: Principal × Annual Rate × Years ÷ 100."
+
+},
+
+
+/* =================================
+   6. COMPOUND INTEREST
+================================= */
+
+{
+
+  id: "compound-interest",
+
+  name: "Compound Interest Calculator",
+
+  icon: "📊",
+
+  category: "investment",
+
+  description:
+    "Calculate interest earned on principal and accumulated interest.",
+
+  fields: [
+
+    field("principal","Principal Amount (₹)",100000,1,MAX_AMOUNT),
+
+    field("rate","Annual Interest Rate (%)",10,0,MAX_RATE),
+
+    field("years","Time Period (Years)",5,0.01,MAX_YEARS),
+
+    selectField(
+      "frequency",
+      "Compounding Frequency",
+      "1",
+      [
+        ["1","Annually"],
+        ["2","Half-Yearly"],
+        ["4","Quarterly"],
+        ["12","Monthly"],
+        ["365","Daily"]
+      ]
+    )
+
+  ],
+
+  calculate: function (v) {
+
+    const n = Number(v.frequency);
+
+    const amount =
+      v.principal *
+      Math.pow(
+        1+v.rate/(100*n),
+        n*v.years
+      );
+
+    return [
+
+      ["Principal Amount",money(v.principal)],
+
+      ["Compound Interest",money(amount-v.principal)],
+
+      ["Final Amount",money(amount)]
+
+    ];
+
+  },
+
+  note:
+    "Assumes a constant interest rate and regular compounding without withdrawals."
+
+},
+
+
+/* =================================
+   7. GST CALCULATOR
+================================= */
+
+{
+
+  id: "gst",
+
+  name: "GST Calculator",
+
+  icon: "🧾",
+
+  category: "tax",
+
+  description:
+    "Add GST or extract GST from an inclusive amount.",
+
+  fields: [
+
+    field("amount","Amount (₹)",1000,0,MAX_AMOUNT),
+
+    field("rate","GST Rate (%)",18,0,MAX_RATE),
+
+    selectField(
+      "mode",
+      "Calculation Type",
+      "add",
+      [
+        ["add","Add GST"],
+        ["remove","Extract Included GST"]
+      ]
+    )
+
+  ],
+
+  calculate: function (v) {
+
+    const base =
+      v.mode === "add"
+      ? v.amount
+      : v.amount/(1+v.rate/100);
+
+    const tax =
+      v.mode === "add"
+      ? base*v.rate/100
+      : v.amount-base;
+
+    return [
+
+      ["Taxable Amount",money(base)],
+
+      ["GST Amount",money(tax)],
+
+      ["Total Including GST",money(base+tax)]
+
+    ];
+
+  },
+
+  note:
+    "Enter the legally applicable GST rate yourself. This tool does not determine product tax classifications."
+
+},
+
+
+/* =================================
+   8. DISCOUNT CALCULATOR
+================================= */
+
+{
+
+  id: "discount",
+
+  name: "Discount Calculator",
+
+  icon: "🏷",
+
+  category: "tax",
+
+  description:
+    "Calculate your savings and discounted price.",
+
+  fields: [
+
+    field("price","Original Price (₹)",2000,0,MAX_AMOUNT),
+
+    field("discount","Discount (%)",20,0,100)
+
+  ],
+
+  calculate: function (v) {
+
+    const savings =
+      v.price*v.discount/100;
+
+    return [
+
+      ["Original Price",money(v.price)],
+
+      ["Discount Savings",money(savings)],
+
+      ["Final Price",money(v.price-savings)]
+
+    ];
+
+  },
+
+  note:
+    "Additional taxes, delivery charges and coupon restrictions are excluded."
+
+},
+
+
+/* =================================
+   9. PERCENTAGE CALCULATOR
+================================= */
+
+{
+
+  id: "percentage",
+
+  name: "Percentage Calculator",
+
+  icon: "%",
+
+  category: "tax",
+
+  description:
+    "Find a percentage of an amount and adjusted totals.",
+
+  fields: [
+
+    field("amount","Base Amount (₹)",1000,0,MAX_AMOUNT),
+
+    field("percentage","Percentage (%)",15,0,10000)
+
+  ],
+
+  calculate: function (v) {
+
+    const result =
+      v.amount*v.percentage/100;
+
+    return [
+
+      ["Percentage Amount",money(result)],
+
+      ["Amount After Increase",money(v.amount+result)],
+
+      ["Amount After Decrease",money(v.amount-result)]
+
+    ];
+
+  },
+
+  note:
+    "A decrease above 100% produces a negative mathematical result."
+
+},
+
+
+/* =================================
+   10. SAVINGS GOAL CALCULATOR
+================================= */
+
+{
+
+  id: "savings-goal",
+
+  name: "Savings Goal Calculator",
+
+  icon: "🎯",
+
+  category: "planning",
+
+  description:
+    "Estimate monthly savings needed to reach a financial goal.",
+
+  fields: [
+
+    field("target","Target Amount (₹)",1000000,1,MAX_AMOUNT),
+
+    field("current","Current Savings (₹)",100000,0,MAX_AMOUNT),
+
+    field("rate","Expected Annual Return (%)",6,0,MAX_RATE),
+
+    field("months","Target Period (Months)",60,1,600,1)
+
+  ],
+
+  calculate: function (v) {
+
+    const r = v.rate/1200;
+
+    const existingFuture =
+      v.current*Math.pow(1+r,v.months);
+
+    const remaining =
+      Math.max(0,v.target-existingFuture);
+
+    const factor =
+      futureAnnuity(1,r,v.months);
+
+    const monthly =
+      remaining/factor;
+
+    return [
+
+      ["Target Amount",money(v.target)],
+
+      ["Estimated Future Value of Current Savings",money(existingFuture)],
+
+      ["Required Monthly Savings",money(monthly)],
+
+      ["Total New Contributions",money(monthly*v.months)]
+
+    ];
+
+  },
+
+  note:
+    "Assumes end-of-month contributions, constant returns and no withdrawals. Round contributions upward when planning."
+
+},
+
+
+/* =================================
+   11. INFLATION CALCULATOR
+================================= */
+
+{
+
+  id: "inflation",
+
+  name: "Inflation Calculator",
+
+  icon: "📉",
+
+  category: "planning",
+
+  description:
+    "Estimate future costs and changes in purchasing power.",
+
+  fields: [
+
+    field("amount","Current Amount (₹)",100000,0,MAX_AMOUNT),
+
+    field("rate","Annual Inflation Rate (%)",6,0,MAX_RATE),
+
+    field("years","Time Period (Years)",10,0.01,MAX_YEARS)
+
+  ],
+
+  calculate: function (v) {
+
+    const factor =
+      Math.pow(1+v.rate/100,v.years);
+
+    const futureCost =
+      v.amount*factor;
+
+    const purchasingPower =
+      v.amount/factor;
+
+    return [
+
+      ["Current Amount",money(v.amount)],
+
+      ["Estimated Future Cost",money(futureCost)],
+
+      ["Additional Amount Required",money(futureCost-v.amount)],
+
+      ["Future Purchasing Power in Today's Rupees",money(purchasingPower)]
+
+    ];
+
+  },
+
+  note:
+    "Assumes a constant inflation rate. Actual inflation and individual spending patterns may differ."
+
+}
+
+];
+
+
+/* =================================
+   CALCULATOR INTERFACE GENERATOR
+================================= */
+
+const calculatorGrid =
+  document.getElementById("calculatorGrid");
+
+function createElement(tag,className,text) {
+
+  const element =
+    document.createElement(tag);
+
+  if (className) {
+
+    element.className = className;
+
+  }
+
+  if (text !== undefined) {
+
+    element.textContent = text;
+
+  }
+
+  return element;
+
+}
+
+calculators.forEach(function (config) {
+
+  const card =
+    createElement(
+      "article",
+      "upgrade-card ft-card"
+    );
+
+  card.dataset.tool = config.id;
+
+  card.dataset.category = config.category;
+
+  card.dataset.search =
+    (
+      config.name + " " +
+      config.description + " " +
+      config.fields.map(function (f) {
+        return f.label;
+      }).join(" ")
+    ).toLowerCase();
+
+  card.id = "tool-" + config.id;
+
+  const icon =
+    createElement(
+      "div",
+      "ft-icon",
+      config.icon
+    );
+
+  icon.setAttribute("aria-hidden","true");
+
+  card.appendChild(icon);
+
+  card.appendChild(
+    createElement("h3","",config.name)
+  );
+
+  card.appendChild(
+    createElement("p","",config.description)
+  );
+
+  const form =
+    createElement("form","ft-calculator-form");
+
+  form.autocomplete = "off";
+
+  const controls = {};
+
+  config.fields.forEach(function (definition) {
+
+    const id =
+      config.id + "-" + definition.key;
+
+    const label =
+      createElement(
+        "label",
+        "ft-label",
+        definition.label
+      );
+
+    label.htmlFor = id;
+
+    form.appendChild(label);
+
+    let input;
+
+    if (definition.options) {
+
+      input =
+        createElement("select","ft-select");
+
+      definition.options.forEach(function (option) {
+
+        const node =
+          createElement("option","",option[1]);
+
+        node.value = option[0];
+
+        node.defaultSelected =
+          option[0] === String(definition.value);
+
+        input.appendChild(node);
+
+      });
+
+    } else {
+
+      input =
+        createElement("input","ft-input");
+
+      input.type = "number";
+
+      input.inputMode =
+        definition.step === 1
+        ? "numeric"
+        : "decimal";
+
+      input.min = String(definition.min);
+
+      input.max = String(definition.max);
+
+      input.step = String(definition.step);
+
+      input.defaultValue =
+        String(definition.value);
+
+    }
+
+    input.id = id;
+
+    input.name = definition.key;
+
+    input.required = true;
+
+    input.autocomplete = "off";
+
+    controls[definition.key] = input;
+
+    form.appendChild(input);
+
+  });
+
+  const buttons =
+    createElement("div","ft-buttons");
+
+  const calculateButton =
+    createElement(
+      "button",
+      "ft-button ft-primary",
+      "Calculate"
+    );
+
+  calculateButton.type = "submit";
+
+  const reset =
+    createElement(
+      "button",
+      "ft-button",
+      "Reset"
+    );
+
+  reset.type = "reset";
+
+  const copy =
+    createElement(
+      "button",
+      "ft-button",
+      "Copy Result"
+    );
+
+  copy.type = "button";
+
+  copy.disabled = true;
+
+  buttons.append(
+    calculateButton,
+    reset,
+    copy
+  );
+
+  form.appendChild(buttons);
+
+  const error =
+    createElement("div","ft-error");
+
+  error.hidden = true;
+
+  error.setAttribute("role","alert");
+
+  form.appendChild(error);
+
+  const result =
+    createElement("div","ft-result");
+
+  result.hidden = true;
+
+  result.setAttribute("aria-live","polite");
+
+  form.appendChild(result);
+
+  const copyStatus =
+    createElement("p","ft-note");
+
+  copyStatus.setAttribute("role","status");
+
+  form.appendChild(copyStatus);
+
+  let resultText = "";
+
+  function clearResult() {
+
+    result.hidden = true;
+
+    result.replaceChildren();
+
+    error.hidden = true;
+
+    error.textContent = "";
+
+    resultText = "";
+
+    copy.disabled = true;
+
+    copyStatus.textContent = "";
+
+  }
+
+  form.addEventListener("submit",function (event) {
+
+    event.preventDefault();
+
+    clearResult();
+
+    if (!form.checkValidity()) {
+
+      form.reportValidity();
+
+      return;
+
+    }
+
+    try {
+
+      const values = {};
+
+      config.fields.forEach(function (definition) {
+
+        const input =
+          controls[definition.key];
+
+        if (definition.options) {
+
+          values[definition.key] =
+            input.value;
+
+        } else {
+
+          const value =
+            input.valueAsNumber;
+
+          if (
+            !Number.isFinite(value) ||
+            value < definition.min ||
+            value > definition.max ||
+            (
+              definition.step === 1 &&
+              !Number.isInteger(value)
+            )
+          ) {
+
+            throw new Error(
+              "Enter a valid value for " +
+              definition.label + "."
             );
 
-            // Compound Interest
+          }
 
-            bind(
-                "compoundForm",
-                "compoundResult",
-                () => {
+          values[definition.key] = value;
 
-                    const p = num("compoundAmount");
+        }
 
-                    const r = num("compoundRate") / 100;
+      });
 
-                    const t = num("compoundYears");
+      const rows =
+        config.calculate(values);
 
-                    const n = Number(
-                        get("compoundFrequency").value
-                    );
+      const lines = [config.name];
 
-                    const total =
-                        p * Math.pow(
-                            1 + r / n,
-                            n * t
-                        );
+      rows.forEach(function (item) {
 
-                    show("compoundResult", [
+        const row =
+          createElement("div","ft-result-row");
 
-                        "Principal: " + money(p),
+        row.appendChild(
+          createElement("span","",item[0])
+        );
 
-                        "Compound Interest: " +
-                            money(total - p),
+        row.appendChild(
+          createElement("strong","",item[1])
+        );
 
-                        "Total Amount: " +
-                            money(total)
+        result.appendChild(row);
 
-                    ]);
+        lines.push(
+          item[0] + ": " + item[1]
+        );
 
-                }
-            );
+      });
 
-            // EMI Calculator
+      lines.push("");
 
-            bind(
-                "emiForm",
-                "emiResult",
-                () => {
+      lines.push(
+        "Estimate only — MeraHisab"
+      );
 
-                    const p = num("emiAmount");
+      lines.push(
+        "https://merahisab.store/tools.html"
+      );
 
-                    const r = num("emiRate") / 1200;
+      resultText = lines.join("\n");
 
-                    const n = num("emiMonths");
+      result.hidden = false;
 
-                    const emi = r === 0
-                        ? p / n
-                        : p * r / (
-                            -Math.expm1(
-                                -n * Math.log1p(r)
-                            )
-                        );
+      copy.disabled = false;
 
-                    const total = emi * n;
+    } catch (exception) {
 
-                    show("emiResult", [
+      error.textContent =
+        exception.message ||
+        "Unable to calculate. Check the entered values.";
 
-                        "Monthly EMI: " +
-                            money(emi),
+      error.hidden = false;
 
-                        "Principal: " +
-                            money(p),
+    }
 
-                        "Total Interest: " +
-                            money(
-                                Math.max(0, total - p)
-                            ),
+  });
 
-                        "Total Payment: " +
-                            money(total)
+  form.addEventListener("reset",clearResult);
 
-                    ]);
+  form.addEventListener("input",clearResult);
 
-                }
-            );
+  form.addEventListener("change",clearResult);
 
-            // SIP Calculator
+  copy.addEventListener("click",async function () {
 
-            bind(
-                "sipForm",
-                "sipResult",
-                () => {
+    if (!resultText) return;
 
-                    const p = num("sipAmount");
+    try {
 
-                    const r = num("sipRate") / 1200;
+      if (
+        !navigator.clipboard ||
+        !navigator.clipboard.writeText
+      ) {
 
-                    const n = num("sipYears") * 12;
+        throw new Error("Clipboard unavailable.");
 
-                    const invested = p * n;
+      }
 
-                    const total = r === 0
-                        ? invested
-                        : p * (
-                            Math.expm1(
-                                n * Math.log1p(r)
-                            ) / r
-                        ) * (1 + r);
+      await navigator.clipboard.writeText(resultText);
 
-                    show("sipResult", [
+      copyStatus.textContent =
+        "Result copied successfully.";
 
-                        "Total Investment: " +
-                            money(invested),
+    } catch (exception) {
 
-                        "Estimated Gain / Loss: " +
-                            money(total - invested),
+      copyStatus.textContent =
+        "Automatic copying is unavailable. Select and copy the displayed result manually.";
 
-                        "Estimated Future Value: " +
-                            money(total)
+    }
 
-                    ]);
+  });
 
-                }
-            );
+  card.appendChild(form);
 
-            // Lumpsum Calculator
+  card.appendChild(
+    createElement(
+      "p",
+      "ft-note",
+      config.note
+    )
+  );
 
-            bind(
-                "lumpForm",
-                "lumpResult",
-                () => {
+  calculatorGrid.appendChild(card);
 
-                    const p = num("lumpAmount");
+});
 
-                    const r = num("lumpRate") / 100;
 
-                    const t = num("lumpYears");
+/* =================================
+   LIVE SEARCH AND FILTERS
+================================= */
 
-                    const total =
-                        p * Math.pow(1 + r, t);
+const search =
+  document.getElementById("toolSearch");
 
-                    show("lumpResult", [
+const count =
+  document.getElementById("toolCount");
 
-                        "Invested Amount: " +
-                            money(p),
+const noTools =
+  document.getElementById("noTools");
 
-                        "Estimated Gain / Loss: " +
-                            money(total - p),
+const filterButtons =
+  Array.from(
+    document.querySelectorAll(".ft-filter")
+  );
 
-                        "Estimated Future Value: " +
-                            money(total)
+const cards =
+  Array.from(
+    calculatorGrid.querySelectorAll("[data-tool]")
+  );
 
-                    ]);
+let activeCategory = "all";
 
-                }
-            );
+function updateFilters() {
 
-            // Fixed Deposit Calculator
+  const query =
+    search.value.trim().toLowerCase();
 
-            bind(
-                "fdForm",
-                "fdResult",
-                () => {
+  let visible = 0;
 
-                    const p = num("fdAmount");
+  cards.forEach(function (card) {
 
-                    const r = num("fdRate") / 100;
+    const categoryMatch =
+      activeCategory === "all" ||
+      card.dataset.category === activeCategory;
 
-                    const t = num("fdYears");
+    const searchMatch =
+      card.dataset.search.includes(query);
 
-                    const n = Number(
-                        get("fdFrequency").value
-                    );
+    card.hidden =
+      !(categoryMatch && searchMatch);
 
-                    const total =
-                        p * Math.pow(
-                            1 + r / n,
-                            n * t
-                        );
+    if (!card.hidden) visible++;
 
-                    show("fdResult", [
+  });
 
-                        "Deposit Amount: " +
-                            money(p),
+  filterButtons.forEach(function (button) {
 
-                        "Estimated Interest: " +
-                            money(total - p),
+    button.setAttribute(
+      "aria-pressed",
+      String(
+        button.dataset.category === activeCategory
+      )
+    );
 
-                        "Maturity Amount: " +
-                            money(total)
+  });
 
-                    ]);
+  count.textContent =
+    "Showing " + visible +
+    " of " + cards.length +
+    " calculators.";
 
-                }
-            );
+  noTools.hidden = visible !== 0;
 
-            // GST Calculator
+}
 
-            bind(
-                "gstForm",
-                "gstResult",
-                () => {
+search.addEventListener(
+  "input",
+  updateFilters
+);
 
-                    const amount = num("gstAmount");
+filterButtons.forEach(function (button) {
 
-                    const rate = num("gstRate") / 100;
+  button.addEventListener("click",function () {
 
-                    const mode = get("gstMode").value;
+    activeCategory =
+      button.dataset.category;
 
-                    const base = mode === "add"
-                        ? amount
-                        : amount / (1 + rate);
+    updateFilters();
 
-                    const tax = base * rate;
+  });
 
-                    const total = base + tax;
+});
 
-                    show("gstResult", [
+document
+  .getElementById("resetFilters")
+  .addEventListener("click",function () {
 
-                        "Amount Before GST: " +
-                            money(base),
+    search.value = "";
 
-                        "GST Amount: " +
-                            money(tax),
+    activeCategory = "all";
 
-                        "Amount Including GST: " +
-                            money(total)
+    updateFilters();
 
-                    ]);
+  });
 
-                }
-            );
+document
+  .getElementById("resetAll")
+  .addEventListener("click",function () {
 
-            // Percentage Calculator
+    const confirmed =
+      window.confirm(
+        "Reset all calculator inputs and results?"
+      );
 
-            bind(
-                "percentageForm",
-                "percentageResult",
-                () => {
+    if (!confirmed) return;
 
-                    const amount =
-                        num("percentageAmount");
+    document
+      .querySelectorAll(".ft-calculator-form")
+      .forEach(function (form) {
 
-                    const rate =
-                        num("percentageRate");
+        form.reset();
 
-                    const result =
-                        amount * rate / 100;
+      });
 
-                    show("percentageResult", [
+  });
 
-                        "Percentage Value: " +
-                            number(result),
+document
+  .getElementById("printTools")
+  .addEventListener("click",function () {
 
-                        "After Addition: " +
-                            number(amount + result),
+    window.print();
 
-                        "After Subtraction: " +
-                            number(amount - result)
+  });
 
-                    ]);
+updateFilters();
 
-                }
-            );
+})();
 
-            // Discount Calculator
+</script>
 
-            bind(
-                "discountForm",
-                "discountResult",
-                () => {
+<noscript>
 
-                    const price =
-                        num("discountAmount");
+<div style="
+  padding:20px;
+  text-align:center;
+  background:#172640;
+  color:#f0d9a6;
+">
 
-                    const rate =
-                        num("discountRate") / 100;
+JavaScript is disabled.
 
-                    const discount = price * rate;
+Financial calculators, live clock,
+stopwatch, theme controls and PWA
+features require JavaScript.
 
-                    show("discountResult", [
+</div>
 
-                        "Original Price: " +
-                            money(price),
-
-                        "You Save: " +
-                            money(discount),
-
-                        "Final Price: " +
-                            money(price - discount)
-
-                    ]);
-
-                }
-            );
-
-            // Profit and Loss Calculator
-
-            bind(
-                "profitForm",
-                "profitResult",
-                () => {
-
-                    const cost = num("costPrice");
-
-                    const selling = num("sellingPrice");
-
-                    const difference = selling - cost;
-
-                    const percentage =
-                        Math.abs(difference) /
-                        cost * 100;
-
-                    const status = difference > 0
-                        ? "Profit"
-                        : difference < 0
-                        ? "Loss"
-                        : "Break Even";
-
-                    show("profitResult", [
-
-                        "Status: " + status,
-
-                        "Amount: " +
-                            money(Math.abs(difference)),
-
-                        "Percentage on Cost: " +
-                            number(percentage) + "%"
-
-                    ]);
-
-                }
-            );
-
-            // Monthly Budget Calculator
-
-            bind(
-                "budgetForm",
-                "budgetResult",
-                () => {
-
-                    const income = num("budgetIncome");
-
-                    const expense = num("budgetExpense");
-
-                    const balance = income - expense;
-
-                    const rate = income > 0
-                        ? balance / income * 100
-                        : null;
-
-                    show("budgetResult", [
-
-                        "Monthly Income: " +
-                            money(income),
-
-                        "Monthly Expenses: " +
-                            money(expense),
-
-                        "Monthly Balance: " +
-                            money(balance),
-
-                        "Savings Rate: " +
-                            (
-                                rate === null
-                                ? "Not applicable"
-                                : number(rate) + "%"
-                            ),
-
-                        "Status: " +
-                            (
-                                balance > 0
-                                ? "Surplus"
-                                : balance < 0
-                                ? "Deficit"
-                                : "Balanced"
-                            )
-
-                    ]);
-
-                }
-            );
-
-            // Indian Standard Time
-
-            const clockFormatter =
-                new Intl.DateTimeFormat("en-IN", {
-
-                    timeZone: "Asia/Kolkata",
-
-                    hour: "2-digit",
-
-                    minute: "2-digit",
-
-                    second: "2-digit",
-
-                    hour12: true
-
-                });
-
-            const dateFormatter =
-                new Intl.DateTimeFormat("en-IN", {
-
-                    timeZone: "Asia/Kolkata",
-
-                    weekday: "long",
-
-                    day: "numeric",
-
-                    month: "long",
-
-                    year: "numeric"
-
-                });
-
-            function updateClock() {
-
-                const now = new Date();
-
-                get("digitalClock").textContent =
-                    clockFormatter.format(now);
-
-                get("digitalDate").textContent =
-                    dateFormatter.format(now);
-
-            }
-
-            updateClock();
-
-            setInterval(updateClock, 1000);
-
-            // Stopwatch Engine
-
-            let elapsed = 0;
-
-            let startedAt = 0;
-
-            let stopwatchTimer = null;
-
-            function pad(value) {
-
-                return String(value).padStart(2, "0");
-
-            }
-
-            function renderStopwatch() {
-
-                const current = elapsed + (
-                    stopwatchTimer !== null
-                    ? performance.now() - startedAt
-                    : 0
-                );
-
-                const centiseconds =
-                    Math.floor(current / 10) % 100;
-
-                const seconds =
-                    Math.floor(current / 1000) % 60;
-
-                const minutes =
-                    Math.floor(current / 60000) % 60;
-
-                const hours =
-                    Math.floor(current / 3600000);
-
-                get("stopwatchDisplay").textContent =
-
-                    pad(hours) + ":" +
-
-                    pad(minutes) + ":" +
-
-                    pad(seconds) + "." +
-
-                    pad(centiseconds);
-
-            }
-
-            get("stopwatchStart").addEventListener(
-                "click",
-                () => {
-
-                    if (stopwatchTimer !== null) {
-                        return;
-                    }
-
-                    startedAt = performance.now();
-
-                    stopwatchTimer = setInterval(
-                        renderStopwatch,
-                        30
-                    );
-
-                    renderStopwatch();
-
-                }
-            );
-
-            get("stopwatchPause").addEventListener(
-                "click",
-                () => {
-
-                    if (stopwatchTimer === null) {
-                        return;
-                    }
-
-                    elapsed +=
-                        performance.now() - startedAt;
-
-                    clearInterval(stopwatchTimer);
-
-                    stopwatchTimer = null;
-
-                    renderStopwatch();
-
-                }
-            );
-
-            get("stopwatchReset").addEventListener(
-                "click",
-                () => {
-
-                    clearInterval(stopwatchTimer);
-
-                    stopwatchTimer = null;
-
-                    elapsed = 0;
-
-                    startedAt = 0;
-
-                    renderStopwatch();
-
-                }
-            );
-
-            renderStopwatch();
-
-        })();
-
-    </script>
+</noscript>
 
 </body>
-
-  </html>
+</html>
