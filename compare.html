@@ -1,791 +1,2887 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Compare Apps | MeraHisab & Royal Khata</title>
+  <title>Compare MeraHisab & Royal Khata — Choose the Right Application</title>
 
-    <meta name="description"
-          content="Compare MeraHisab and Royal Khata applications, features and download availability.">
+  <meta name="description"
+        content="Compare MeraHisab personal finance management and Royal Khata digital credit-debit management applications, features and release information.">
 
-    <meta name="theme-color" content="#080f20">
+  <meta name="author" content="MeraHisab">
 
-    <link rel="canonical"
-          href="https://merahisab.store/compare.html">
+  <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="upgrade.css">
+  <link rel="canonical"
+        href="https://merahisab.store/compare.html">
 
-    <script defer src="upgrade.js"></script>
+  <!-- SOCIAL MEDIA SEO -->
 
-    <style>
+  <meta property="og:type" content="website">
 
-        .compare-hero {
-            background: linear-gradient(
-                135deg,
-                #081322,
-                #14253d,
-                #26364d
-            );
-            color: #f8f6f0;
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            padding: clamp(24px, 5vw, 60px);
-            text-align: center;
-            margin-bottom: 28px;
-        }
+  <meta property="og:site_name" content="MeraHisab">
 
-        .compare-hero h1 {
-            color: #e5c788;
-        }
+  <meta property="og:title"
+        content="Compare MeraHisab and Royal Khata">
 
-        .compare-section {
-            margin-top: 28px;
-        }
+  <meta property="og:description"
+        content="Choose the right application for personal finance or digital khata management.">
 
-        .app-emblem {
-            display: grid;
-            place-items: center;
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            border: 1px solid #d4af37;
-            background: #081322;
-            color: #e5c788;
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
+  <meta property="og:url"
+        content="https://merahisab.store/compare.html">
 
-        .app-status {
-            display: inline-block;
-            border: 1px solid currentColor;
-            border-radius: 30px;
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 600;
-        }
+  <meta property="og:image"
+        content="https://merahisab.store/icons/icon-512.png">
 
-        .status-available {
-            color: #86efac;
-        }
+  <meta name="twitter:card" content="summary">
 
-        .status-development {
-            color: #e5c788;
-        }
+  <!-- PWA INTEGRATION -->
 
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-        }
+  <link rel="manifest" href="/manifest.json">
 
-        .compare-table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
+  <meta name="application-name" content="MeraHisab">
 
-        .compare-table th,
-        .compare-table td {
-            padding: 15px 10px;
-            border-bottom: 1px solid #806b45;
-            text-align: left;
-            vertical-align: top;
-            overflow-wrap: anywhere;
-        }
+  <meta name="theme-color" content="#080f20">
 
-        .compare-table thead th {
-            background: #081322;
-            color: #e5c788;
-        }
+  <meta name="mobile-web-app-capable" content="yes">
 
-        .compare-table tbody tr:hover {
-            background: rgba(212, 175, 55, 0.06);
-        }
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-        .compare-note {
-            border-left: 3px solid #d4af37;
-            padding: 12px 16px;
-            margin-top: 20px;
-        }
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="default">
 
-        .compare-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
+  <meta name="apple-mobile-web-app-title"
+        content="MeraHisab">
 
-        html[data-theme=light] .status-available {
-            color: #166534;
-        }
+  <link rel="apple-touch-icon"
+        href="/icons/icon-192.png">
 
-        html[data-theme=light] .status-development {
-            color: #78551a;
-        }
+  <link rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/icons/icon-192.png">
 
-        @media (max-width: 600px) {
+  <!-- SHARED WEBSITE ENGINE -->
 
-            .compare-table th,
-            .compare-table td {
-                padding: 10px 5px;
-                font-size: 12px;
-            }
+  <link rel="stylesheet" href="/upgrade.css">
 
-            .compare-actions .action {
-                width: 100%;
-                text-align: center;
-            }
+  <link rel="stylesheet" href="/pwa.css">
 
-        }
+  <script defer src="/upgrade.js"></script>
 
-    </style>
+  <script defer src="/pwa.js"></script>
+
+  <!-- PREMIUM COMPARISON DESIGN -->
+
+  <style>
+
+    .cp-page {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 18px;
+      box-sizing: border-box;
+    }
+
+    .cp-page * {
+      box-sizing: border-box;
+    }
+
+    .cp-breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    .cp-hero {
+      padding: 45px 24px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 24px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(212,175,55,0.13),
+          transparent 65%
+        ),
+        linear-gradient(
+          145deg,
+          #172640,
+          #080f20
+        );
+
+      color: #f8f6f0;
+      text-align: center;
+    }
+
+    .cp-hero h1 {
+      margin: 15px 0;
+      color: #f0d9a6;
+      font-size: clamp(30px,5vw,50px);
+      line-height: 1.2;
+    }
+
+    .cp-hero p {
+      max-width: 700px;
+      margin: 15px auto;
+      color: #c4cddd;
+      line-height: 1.8;
+    }
+
+    .cp-eyebrow {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 30px;
+      color: #f0d9a6;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .cp-versus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin: 25px 0;
+    }
+
+    .cp-versus img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 20px;
+    }
+
+    .cp-versus span {
+      color: #f0d9a6;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .cp-section {
+      margin: 38px 0;
+    }
+
+    .cp-title {
+      margin-bottom: 12px;
+      font-size: clamp(24px,4vw,34px);
+      text-align: center;
+    }
+
+    .cp-description {
+      max-width: 740px;
+      margin: 0 auto 25px;
+      text-align: center;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
+
+    .cp-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .cp-grid-three {
+      display: grid;
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .cp-card {
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 18px;
+      overflow-wrap: break-word;
+    }
+
+    .cp-card h3 {
+      margin: 12px 0;
+    }
+
+    .cp-card p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .cp-app-heading {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .cp-app-icon {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 17px;
+    }
+
+    .cp-app-name {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .cp-app-category {
+      margin-top: 5px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .cp-status {
+      display: inline-block;
+      padding: 6px 12px;
+      margin: 10px 0;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 30px;
+      background: rgba(212,175,55,0.08);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cp-status-available {
+      border-color: rgba(101,201,154,0.4);
+      background: rgba(101,201,154,0.1);
+    }
+
+    .cp-list {
+      padding-left: 22px;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .cp-list li {
+      padding: 4px 0;
+    }
+
+    .cp-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .cp-button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border: 1px solid #d4af37;
+      border-radius: 30px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .cp-button-primary {
+      background: linear-gradient(
+        135deg,
+        #f0d9a6,
+        #d4af37
+      );
+      color: #101827;
+    }
+
+    .cp-button-secondary {
+      background: transparent;
+      color: inherit;
+    }
+
+    .cp-button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    /* COMPARISON TABLE */
+
+    .cp-table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 16px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .cp-table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .cp-table caption {
+      padding: 15px;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .cp-table th,
+    .cp-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(128,128,128,0.2);
+      vertical-align: middle;
+      overflow-wrap: break-word;
+    }
+
+    .cp-table thead th {
+      background: #172640;
+      color: #f0d9a6;
+      font-size: 14px;
+    }
+
+    .cp-table tbody th {
+      width: 36%;
+      font-weight: 600;
+    }
+
+    .cp-table tbody tr:nth-child(even) {
+      background: rgba(128,128,128,0.05);
+    }
+
+    .cp-table tbody tr:hover {
+      background: rgba(212,175,55,0.07);
+    }
+
+    .cp-table tbody tr:last-child th,
+    .cp-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .cp-table-note {
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
+
+    .cp-table-category th {
+      background: rgba(212,175,55,0.1);
+      font-weight: 700;
+    }
+
+    /* COMPARISON FILTERS */
+
+    .cp-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .cp-filter {
+      padding: 10px 16px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 25px;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .cp-filter[aria-pressed="true"] {
+      background: #d4af37;
+      color: #101827;
+      font-weight: 700;
+    }
+
+    .cp-search {
+      width: 100%;
+      padding: 13px 15px;
+      margin: 8px 0;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 12px;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+    }
+
+    .cp-result-count {
+      margin: 10px 0;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    /* APPLICATION SELECTOR */
+
+    .cp-question {
+      margin: 20px 0;
+      padding: 18px;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 14px;
+    }
+
+    .cp-question legend {
+      padding: 0 8px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .cp-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px 10px;
+      margin: 8px 0;
+      border: 1px solid rgba(128,128,128,0.2);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .cp-option input {
+      flex-shrink: 0;
+      margin-top: 4px;
+      accent-color: #d4af37;
+    }
+
+    .cp-option:focus-within {
+      border-color: #d4af37;
+    }
+
+    .cp-result {
+      padding: 22px;
+      margin-top: 22px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 15px;
+      background: rgba(212,175,55,0.07);
+    }
+
+    .cp-result h3 {
+      margin-top: 0;
+    }
+
+    .cp-result p {
+      line-height: 1.8;
+    }
+
+    .cp-feature-icon {
+      display: grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 12px;
+      background: rgba(212,175,55,0.08);
+      font-size: 22px;
+    }
+
+    .cp-notice {
+      padding: 17px;
+      margin-top: 20px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 13px;
+      background: rgba(212,175,55,0.07);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* FAQ */
+
+    .cp-faq details {
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 13px;
+    }
+
+    .cp-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .cp-faq details p {
+      margin-top: 12px;
+      line-height: 1.8;
+    }
+
+    .cp-page a:focus-visible,
+    .cp-page button:focus-visible,
+    .cp-page input:focus-visible,
+    .cp-page summary:focus-visible,
+    .cp-table-wrap:focus-visible {
+      outline: 3px solid #d4af37;
+      outline-offset: 4px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* LIGHT THEME */
+
+    html[data-theme="light"] .cp-hero,
+    body[data-theme="light"] .cp-hero {
+      background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f3ead7
+      );
+      color: #172033;
+    }
+
+    html[data-theme="light"] .cp-hero h1,
+    body[data-theme="light"] .cp-hero h1,
+    html[data-theme="light"] .cp-eyebrow,
+    body[data-theme="light"] .cp-eyebrow,
+    html[data-theme="light"] .cp-versus span,
+    body[data-theme="light"] .cp-versus span {
+      color: #765018;
+    }
+
+    html[data-theme="light"] .cp-hero p,
+    body[data-theme="light"] .cp-hero p {
+      color: #46546a;
+    }
+
+    html[data-theme="light"] .cp-table thead th,
+    body[data-theme="light"] .cp-table thead th {
+      background: #f3ead7;
+      color: #56390e;
+    }
+
+    /* TABLET RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .cp-grid-three {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+    }
+
+    /* MOBILE RESPONSIVE */
+
+    @media (max-width: 650px) {
+
+      .cp-page {
+        padding: 18px 14px;
+      }
+
+      .cp-grid,
+      .cp-grid-three {
+        grid-template-columns:
+          minmax(0,1fr);
+      }
+
+      .cp-hero {
+        padding: 30px 18px;
+      }
+
+      .cp-card {
+        padding: 18px;
+      }
+
+      .cp-buttons {
+        flex-direction: column;
+      }
+
+      .cp-button {
+        width: 100%;
+      }
+
+      .cp-versus {
+        gap: 15px;
+      }
+
+      .cp-versus img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .cp-table th,
+      .cp-table td {
+        padding: 12px;
+        font-size: 13px;
+      }
+
+      .cp-question {
+        padding: 12px;
+        min-width: 0;
+      }
+
+    }
+
+    /* PRINT SUPPORT */
+
+    @media print {
+
+      header.site,
+      footer.site,
+      .cp-filter-bar,
+      .cp-search,
+      .cp-buttons,
+      #app-selector,
+      #pwaMount,
+      .pwa-panel {
+        display: none !important;
+      }
+
+      .cp-page {
+        max-width: none;
+        padding: 0;
+        background: white;
+        color: black;
+      }
+
+      .cp-hero,
+      .cp-card,
+      .cp-table thead th {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+      }
+
+      .cp-hero h1,
+      .cp-hero p,
+      .cp-eyebrow,
+      .cp-versus span {
+        color: black !important;
+      }
+
+      .cp-table-wrap {
+        overflow: visible;
+      }
+
+      .cp-table {
+        min-width: 0;
+        font-size: 10px;
+      }
+
+      .cp-table th,
+      .cp-table td {
+        padding: 7px;
+      }
+
+      .cp-table tr {
+        break-inside: avoid;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-    <header class="site">
+  <!-- WEBSITE HEADER -->
 
-        <div class="container">
+  <header class="site">
 
-            <strong>MeraHisab</strong>
+    <div class="container">
 
-            <nav aria-label="Main navigation">
+      <strong>MeraHisab</strong>
 
-                <a href="index.html">Home</a>
+      <nav aria-label="Main navigation">
 
-                <a href="downloads.html">Apps</a>
+        <a href="/index.html">Home</a>
 
-                <a href="compare.html"
-                   aria-current="page">Compare</a>
+        <a href="/downloads.html">Apps</a>
 
-                <a href="index.html#features">Features</a>
+        <a href="/compare.html"
+           aria-current="page">Compare</a>
 
-                <a href="tools.html">Tools</a>
+        <a href="/index.html#features">Features</a>
 
-                <a href="privacy.html">Privacy</a>
+        <a href="/tools.html">Tools</a>
 
-                <a href="about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
 
-                <a href="contact.html">Support</a>
+        <a href="/about.html">About</a>
 
-                <button id="theme" type="button">
-                    Theme
-                </button>
+        <a href="/contact.html">Support</a>
 
-            </nav>
+        <button id="theme"
+                type="button"
+                aria-label="Change website theme">
+
+          Theme
+
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN COMPARISON PAGE -->
+
+  <main class="shell cp-page">
+
+    <nav class="cp-breadcrumb"
+         aria-label="Breadcrumb">
+
+      <a href="/index.html">Home</a>
+
+      <span>›</span>
+
+      <span aria-current="page">
+
+        Compare Applications
+
+      </span>
+
+    </nav>
+
+    <!-- COMPARISON HERO -->
+
+    <section class="cp-hero">
+
+      <span class="cp-eyebrow">
+
+        APPLICATION COMPARISON
+
+      </span>
+
+      <div class="cp-versus">
+
+        <img
+          src="/icons/shortcut-merahisab.png"
+          alt="MeraHisab icon"
+          width="80"
+          height="80">
+
+        <span>VS</span>
+
+        <img
+          src="/icons/shortcut-royal-khata.png"
+          alt="Royal Khata icon"
+          width="80"
+          height="80">
+
+      </div>
+
+      <h1>MeraHisab vs Royal Khata</h1>
+
+      <p>
+
+        Two applications with different purposes.
+
+        Discover the differences between
+        personal finance management and
+        digital khata management to choose
+        the right solution for your needs.
+
+      </p>
+
+      <div class="cp-buttons">
+
+        <a href="#comparison-table"
+           class="cp-button cp-button-primary">
+
+          Compare Features
+
+        </a>
+
+        <a href="#app-selector"
+           class="cp-button cp-button-secondary">
+
+          Find My Application
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- APPLICATION OVERVIEW -->
+
+    <section class="cp-section">
+
+      <h2 class="cp-title">
+
+        Meet Our Applications
+
+      </h2>
+
+      <div class="cp-grid">
+
+        <!-- MERAHISAB -->
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-app-heading">
+
+            <img
+              src="/icons/shortcut-merahisab.png"
+              alt="MeraHisab icon"
+              class="cp-app-icon"
+              width="70"
+              height="70">
+
+            <div>
+
+              <div class="cp-app-name">
+
+                MeraHisab
+
+              </div>
+
+              <div class="cp-app-category">
+
+                Personal Finance Management
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <span class="cp-status cp-status-available">
+
+            Android Download
+
+          </span>
+
+          <p>
+
+            Designed for individuals and
+            families who want to organize
+            personal income, expenses,
+            savings and financial accounts.
+
+          </p>
+
+          <h3>Primary Purpose</h3>
+
+          <ul class="cp-list">
+
+            <li>Personal income tracking</li>
+
+            <li>Daily expense management</li>
+
+            <li>Savings organization</li>
+
+            <li>Multiple financial accounts</li>
+
+            <li>Personal financial reports</li>
+
+            <li>Notes and task organization</li>
+
+          </ul>
+
+          <div class="cp-buttons">
+
+            <a href="/merahisab.html"
+               class="cp-button cp-button-secondary">
+
+              Application Details
+
+            </a>
+
+            <a href="/download.html"
+               class="cp-button cp-button-primary">
+
+              Download MeraHisab
+
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- ROYAL KHATA -->
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-app-heading">
+
+            <img
+              src="/icons/shortcut-royal-khata.png"
+              alt="Royal Khata icon"
+              class="cp-app-icon"
+              width="70"
+              height="70">
+
+            <div>
+
+              <div class="cp-app-name">
+
+                Royal Khata
+
+              </div>
+
+              <div class="cp-app-category">
+
+                Digital Khata Management
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <span class="cp-status">
+
+            Official Release Pending
+
+          </span>
+
+          <p>
+
+            Designed for users, shopkeepers
+            and small businesses who want
+            organized credit, debit and
+            customer account records.
+
+          </p>
+
+          <h3>Planned Primary Purpose</h3>
+
+          <ul class="cp-list">
+
+            <li>Digital khata management</li>
+
+            <li>Credit transaction records</li>
+
+            <li>Debit transaction records</li>
+
+            <li>Customer account management</li>
+
+            <li>Account statements</li>
+
+            <li>Backup and recovery options</li>
+
+          </ul>
+
+          <div class="cp-buttons">
+
+            <a href="/royal-khata.html"
+               class="cp-button cp-button-secondary">
+
+              Application Details
+
+            </a>
+
+            <button type="button"
+                    class="cp-button cp-button-primary"
+                    disabled>
+
+              Download Pending
+
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- DETAILED COMPARISON TABLE -->
+
+    <section class="cp-section"
+             id="comparison-table">
+
+      <h2 class="cp-title">
+
+        Detailed Feature Comparison
+
+      </h2>
+
+      <p class="cp-description">
+
+        Compare application purposes,
+        financial features, data protection
+        and release information.
+
+      </p>
+
+      <article class="upgrade-card cp-card">
+
+        <label for="comparisonSearch">
+
+          <strong>Search Features</strong>
+
+        </label>
+
+        <input type="search"
+               id="comparisonSearch"
+               class="cp-search"
+               autocomplete="off"
+               placeholder="Search income, backup, credit, reports...">
+
+        <!-- CATEGORY FILTERS -->
+
+        <div class="cp-filter-bar"
+             role="group"
+             aria-label="Filter comparison features">
+
+          <button type="button"
+                  class="cp-filter"
+                  data-filter="all"
+                  aria-pressed="true">
+
+            All Features
+
+          </button>
+
+          <button type="button"
+                  class="cp-filter"
+                  data-filter="general"
+                  aria-pressed="false">
+
+            General
+
+          </button>
+
+          <button type="button"
+                  class="cp-filter"
+                  data-filter="finance"
+                  aria-pressed="false">
+
+            Finance
+
+          </button>
+
+          <button type="button"
+                  class="cp-filter"
+                  data-filter="reports"
+                  aria-pressed="false">
+
+            Reports
+
+          </button>
+
+          <button type="button"
+                  class="cp-filter"
+                  data-filter="security"
+                  aria-pressed="false">
+
+            Security
+
+          </button>
+
+          <button type="button"
+                  class="cp-filter"
+                  data-filter="release"
+                  aria-pressed="false">
+
+            Release
+
+          </button>
 
         </div>
 
-    </header>
+        <div class="cp-result-count"
+             id="comparisonCount"
+             aria-live="polite">
 
-    <main class="shell">
+          Showing all comparison features.
 
-        <!-- Breadcrumb -->
+        </div>
 
-        <p>
+        <div class="cp-table-wrap"
+             tabindex="0"
+             role="region"
+             aria-label="Scrollable application comparison table">
 
-            <a href="index.html">Home</a>
+          <table class="cp-table"
+                 id="comparisonTable">
 
-            /
+            <caption>
 
-            <a href="downloads.html">Apps</a>
+              MeraHisab and Royal Khata
+              feature comparison
 
-            / Compare
+            </caption>
+
+            <thead>
+
+              <tr>
+
+                <th scope="col">Feature</th>
+
+                <th scope="col">MeraHisab</th>
+
+                <th scope="col">Royal Khata</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <!-- GENERAL -->
+
+              <tr class="cp-table-category"
+                  data-heading="general">
+
+                <th colspan="3" scope="rowgroup">
+
+                  General Information
+
+                </th>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Primary Purpose</th>
+
+                <td>Personal Finance</td>
+
+                <td>Digital Khata</td>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Target Users</th>
+
+                <td>Individuals and families</td>
+
+                <td>Khata users and businesses</td>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Platform</th>
+
+                <td>Android</td>
+
+                <td>Android — planned</td>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Dashboard</th>
+
+                <td>Personal finance dashboard</td>
+
+                <td>Credit-debit dashboard — planned</td>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Offline Management</th>
+
+                <td>Designed for offline use</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Hindi & English</th>
+
+                <td>Availability to be verified</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="general">
+
+                <th scope="row">Application Themes</th>
+
+                <td>Availability to be verified</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <!-- FINANCE -->
+
+              <tr class="cp-table-category"
+                  data-heading="finance">
+
+                <th colspan="3" scope="rowgroup">
+
+                  Financial Management
+
+                </th>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Income Tracking</th>
+
+                <td>Core feature</td>
+
+                <td>Not the primary focus</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Expense Tracking</th>
+
+                <td>Core feature</td>
+
+                <td>Not the primary focus</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Savings Management</th>
+
+                <td>Core feature</td>
+
+                <td>Not the primary focus</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Multiple Accounts</th>
+
+                <td>Personal financial accounts</td>
+
+                <td>Khata accounts — planned</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Credit Management</th>
+
+                <td>Not the primary focus</td>
+
+                <td>Core planned feature</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Debit Management</th>
+
+                <td>Not the primary focus</td>
+
+                <td>Core planned feature</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Customer Accounts</th>
+
+                <td>Not the primary focus</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Monthly Summary</th>
+
+                <td>Income and expenses</td>
+
+                <td>Credit and debit — planned</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Balance Management</th>
+
+                <td>Personal account balances</td>
+
+                <td>Khata balances — planned</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Transaction History</th>
+
+                <td>Personal transactions</td>
+
+                <td>Khata transactions — planned</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Payment Reminders</th>
+
+                <td>Availability to be verified</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="finance">
+
+                <th scope="row">Notes & Tasks</th>
+
+                <td>Described feature</td>
+
+                <td>Transaction notes — planned</td>
+
+              </tr>
+
+              <!-- REPORTS -->
+
+              <tr class="cp-table-category"
+                  data-heading="reports">
+
+                <th colspan="3" scope="rowgroup">
+
+                  Reports & Productivity
+
+                </th>
+
+              </tr>
+
+              <tr data-category="reports">
+
+                <th scope="row">Financial Reports</th>
+
+                <td>Personal financial reports</td>
+
+                <td>Khata reports — planned</td>
+
+              </tr>
+
+              <tr data-category="reports">
+
+                <th scope="row">PDF Export</th>
+
+                <td>Described feature</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="reports">
+
+                <th scope="row">Excel Export</th>
+
+                <td>Described feature</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="reports">
+
+                <th scope="row">Search & Filters</th>
+
+                <td>Described feature</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="reports">
+
+                <th scope="row">Customer Statements</th>
+
+                <td>Not the primary focus</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <!-- SECURITY -->
+
+              <tr class="cp-table-category"
+                  data-heading="security">
+
+                <th colspan="3" scope="rowgroup">
+
+                  Security & Data Protection
+
+                </th>
+
+              </tr>
+
+              <tr data-category="security">
+
+                <th scope="row">Local Data Storage</th>
+
+                <td>Design objective</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="security">
+
+                <th scope="row">Backup & Restore</th>
+
+                <td>Described feature</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="security">
+
+                <th scope="row">Application Lock</th>
+
+                <td>Verification pending</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="security">
+
+                <th scope="row">Recovery Key</th>
+
+                <td>Verification pending</td>
+
+                <td>Planned</td>
+
+              </tr>
+
+              <tr data-category="security">
+
+                <th scope="row">Data Encryption</th>
+
+                <td>Verification pending</td>
+
+                <td>Implementation to be verified</td>
+
+              </tr>
+
+              <tr data-category="security">
+
+                <th scope="row">Backup Protection</th>
+
+                <td>Verification pending</td>
+
+                <td>Implementation to be verified</td>
+
+              </tr>
+
+              <!-- RELEASE -->
+
+              <tr class="cp-table-category"
+                  data-heading="release">
+
+                <th colspan="3" scope="rowgroup">
+
+                  Download & Release Information
+
+                </th>
+
+              </tr>
+
+              <tr data-category="release">
+
+                <th scope="row">APK Download</th>
+
+                <td>Download page available</td>
+
+                <td>Release pending</td>
+
+              </tr>
+
+              <tr data-category="release">
+
+                <th scope="row">Application Version</th>
+
+                <td>Verification pending</td>
+
+                <td>Not published</td>
+
+              </tr>
+
+              <tr data-category="release">
+
+                <th scope="row">APK File Size</th>
+
+                <td>Verification pending</td>
+
+                <td>Not available</td>
+
+              </tr>
+
+              <tr data-category="release">
+
+                <th scope="row">Android Compatibility</th>
+
+                <td>Verification pending</td>
+
+                <td>Pending release</td>
+
+              </tr>
+
+              <tr data-category="release">
+
+                <th scope="row">SHA-256 Checksum</th>
+
+                <td>Verification pending</td>
+
+                <td>Pending release</td>
+
+              </tr>
+
+              <tr data-category="release">
+
+                <th scope="row">Signing Certificate</th>
+
+                <td>Verification pending</td>
+
+                <td>Pending release</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p class="cp-table-note">
+
+          On smaller screens, scroll the
+          comparison table horizontally.
 
         </p>
 
-        <!-- Premium Hero -->
+        <div class="cp-notice">
 
-        <section class="compare-hero">
+          <strong>Feature Status:</strong>
 
-            <p>CHOOSE YOUR APPLICATION</p>
+          MeraHisab feature descriptions
+          represent the stated application
+          design and capabilities.
 
-            <h1>Compare Our Apps</h1>
+          Royal Khata features are planned
+          and must not be treated as
+          confirmed released functionality.
 
-            <p>
-
-                Two applications.
-                Different financial management needs.
-                One professional experience.
-
-            </p>
-
-            <div class="compare-actions">
-
-                <a class="action"
-                   href="merahisab.html">
-
-                    Explore MeraHisab
-
-                </a>
-
-                <a class="action"
-                   href="royal-khata.html">
-
-                    Explore Royal Khata
-
-                </a>
-
-            </div>
-
-        </section>
-
-        <!-- Application Cards -->
-
-        <div class="upgrade-grid">
-
-            <article class="upgrade-card">
-
-                <div class="app-emblem"
-                     aria-hidden="true">
-
-                    MH
-
-                </div>
-
-                <span class="app-status status-available">
-
-                    APK AVAILABLE
-
-                </span>
-
-                <h2>MeraHisab</h2>
-
-                <p>
-
-                    Personal Finance Management
-
-                </p>
-
-                <p>
-
-                    Designed to help users organize
-                    personal financial records,
-                    income, expenses and accounts.
-
-                </p>
-
-                <a class="action"
-                   href="merahisab.html">
-
-                    View Details &amp; Download
-
-                </a>
-
-            </article>
-
-            <article class="upgrade-card">
-
-                <div class="app-emblem"
-                     aria-hidden="true">
-
-                    RK
-
-                </div>
-
-                <span class="app-status status-development">
-
-                    UNDER DEVELOPMENT
-
-                </span>
-
-                <h2>Royal Khata</h2>
-
-                <p>
-
-                    Financial Record Management
-
-                </p>
-
-                <p>
-
-                    Designed for organized credit,
-                    debit and financial record
-                    management.
-
-                </p>
-
-                <a class="action"
-                   href="royal-khata.html">
-
-                    View Application Details
-
-                </a>
-
-            </article>
+          Final feature availability,
+          compatibility and security
+          require verification.
 
         </div>
 
-        <!-- Comparison Table -->
+        <div class="cp-buttons">
 
-        <section class="upgrade-card compare-section">
+          <button type="button"
+                  id="resetComparison"
+                  class="cp-button cp-button-secondary">
 
-            <h2>Application Comparison</h2>
+            Reset Filters
 
-            <div class="table-wrapper">
+          </button>
 
-                <table class="compare-table">
+          <button type="button"
+                  id="printComparison"
+                  class="cp-button cp-button-primary">
 
-                    <thead>
+            Print / Save as PDF
 
-                        <tr>
-
-                            <th scope="col">Feature</th>
-
-                            <th scope="col">MeraHisab</th>
-
-                            <th scope="col">Royal Khata</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-
-                            <th scope="row">
-                                Primary Purpose
-                            </th>
-
-                            <td>Personal Finance</td>
-
-                            <td>Financial Records</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">Platform</th>
-
-                            <td>Android</td>
-
-                            <td>Android (Planned)</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">Dashboard</th>
-
-                            <td>Screenshot Available</td>
-
-                            <td>Planned</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Income &amp; Expenses
-                            </th>
-
-                            <td>Designed for Tracking</td>
-
-                            <td>Pending Verification</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Credit &amp; Debit
-                            </th>
-
-                            <td>Pending Verification</td>
-
-                            <td>Planned</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Account Management
-                            </th>
-
-                            <td>Designed for Management</td>
-
-                            <td>Planned</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Financial Reports
-                            </th>
-
-                            <td>Pending Verification</td>
-
-                            <td>Planned</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Offline Support
-                            </th>
-
-                            <td>Designed for Offline Use</td>
-
-                            <td>Planned</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Backup &amp; Restore
-                            </th>
-
-                            <td>Pending Verification</td>
-
-                            <td>Planned</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Data Encryption
-                            </th>
-
-                            <td>Pending Verification</td>
-
-                            <td>Pending Verification</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                App Version
-                            </th>
-
-                            <td>Pending Verification</td>
-
-                            <td>Not Announced</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                APK Size
-                            </th>
-
-                            <td>12.18 MiB</td>
-
-                            <td>Pending Release</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Pricing
-                            </th>
-
-                            <td>Pending Confirmation</td>
-
-                            <td>Not Announced</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th scope="row">
-                                Download Status
-                            </th>
-
-                            <td>APK Available</td>
-
-                            <td>Not Available</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-            <div class="compare-note">
-
-                Planned features are subject to
-                development and testing.
-                Application specifications will
-                be updated after verification.
-
-            </div>
-
-        </section>
-
-        <!-- Application Selection Guide -->
-
-        <section class="compare-section">
-
-            <h2>Which App Should You Choose?</h2>
-
-            <div class="upgrade-grid">
-
-                <article class="upgrade-card">
-
-                    <h3>Choose MeraHisab</h3>
-
-                    <p>
-
-                        Explore MeraHisab if you
-                        are looking for an application
-                        focused on personal finance
-                        and financial records.
-
-                    </p>
-
-                    <a class="action"
-                       href="merahisab.html">
-
-                        Explore MeraHisab
-
-                    </a>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Explore Royal Khata</h3>
-
-                    <p>
-
-                        Explore Royal Khata if
-                        your requirements include
-                        organized credit and debit
-                        record management.
-
-                    </p>
-
-                    <p>
-
-                        Currently under development.
-
-                    </p>
-
-                    <a class="action"
-                       href="royal-khata.html">
-
-                        Explore Royal Khata
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- Privacy -->
-
-        <section class="upgrade-card compare-section">
-
-            <h2>Privacy &amp; Security</h2>
-
-            <p>
-
-                Financial privacy and data
-                protection are important
-                design objectives for our
-                applications.
-
-            </p>
-
-            <p>
-
-                Review the individual application
-                pages for verified information
-                about security, permissions
-                and data storage.
-
-            </p>
-
-            <a class="action"
-               href="privacy.html">
-
-                Read Privacy Information
-
-            </a>
-
-        </section>
-
-        <!-- FAQ -->
-
-        <section class="upgrade-card compare-section">
-
-            <h2>Frequently Asked Questions</h2>
-
-            <details>
-
-                <summary>
-
-                    Are MeraHisab and Royal Khata
-                    separate applications?
-
-                </summary>
-
-                <p>
-
-                    Yes. Both applications have
-                    separate information and
-                    download pages.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-
-                    Which application can I
-                    download now?
-
-                </summary>
-
-                <p>
-
-                    The MeraHisab APK is available.
-                    Royal Khata is currently
-                    under development.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-
-                    Where can I find official
-                    application updates?
-
-                </summary>
-
-                <p>
-
-                    Visit the official application
-                    pages on merahisab.store.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-
-                    How can I contact support?
-
-                </summary>
-
-                <p>
-
-                    Visit our
-
-                    <a href="contact.html">
-
-                        Contact &amp; Support Page
-
-                    </a>.
-
-                </p>
-
-            </details>
-
-        </section>
-
-        <!-- Download Center -->
-
-        <section class="compare-hero compare-section">
-
-            <h2>Explore Our Applications</h2>
-
-            <p>
-
-                Discover application information
-                and official download options.
-
-            </p>
-
-            <a class="action"
-               href="downloads.html">
-
-                Visit Download Center
-
-            </a>
-
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-
-    <footer class="site">
-
-        <div class="container">
-
-            <h2>MeraHisab</h2>
-
-            <p>Your Money. Your Control.</p>
-
-            <nav aria-label="Footer navigation">
-
-                <a href="index.html">Home</a>
-
-                <a href="downloads.html">Apps</a>
-
-                <a href="merahisab.html">MeraHisab</a>
-
-                <a href="royal-khata.html">Royal Khata</a>
-
-                <a href="privacy.html">Privacy</a>
-
-                <a href="about.html">About</a>
-
-                <a href="contact.html">Contact</a>
-
-            </nav>
-
-            <p>
-
-                Official Website:
-
-                <a href="https://merahisab.store/">
-
-                    merahisab.store
-
-                </a>
-
-            </p>
-
-            <p>
-
-                &copy; <span data-year></span>
-
-                MeraHisab. All Rights Reserved.
-
-            </p>
+          </button>
 
         </div>
 
-    </footer>
+      </article>
+
+    </section>
+
+    <!-- INTERACTIVE APPLICATION SELECTOR -->
+
+    <section class="cp-section"
+             id="app-selector">
+
+      <h2 class="cp-title">
+
+        Which Application Is Right for You?
+
+      </h2>
+
+      <p class="cp-description">
+
+        Answer three simple questions
+        to find the application that
+        best matches your intended use.
+
+      </p>
+
+      <article class="upgrade-card cp-card">
+
+        <form id="appSelectorForm">
+
+          <!-- QUESTION ONE -->
+
+          <fieldset class="cp-question">
+
+            <legend>
+
+              1. What do you want to manage?
+
+            </legend>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="purpose"
+                     value="personal"
+                     required>
+
+              <span>
+
+                Personal income, expenses
+                and savings
+
+              </span>
+
+            </label>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="purpose"
+                     value="khata">
+
+              <span>
+
+                Customer credit, debit
+                and digital khata
+
+              </span>
+
+            </label>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="purpose"
+                     value="both">
+
+              <span>
+
+                Both personal finances
+                and digital khata
+
+              </span>
+
+            </label>
+
+          </fieldset>
+
+          <!-- QUESTION TWO -->
+
+          <fieldset class="cp-question">
+
+            <legend>
+
+              2. Who will use the application?
+
+            </legend>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="userType"
+                     value="personal"
+                     required>
+
+              <span>
+
+                Individual or family
+
+              </span>
+
+            </label>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="userType"
+                     value="khata">
+
+              <span>
+
+                Shopkeeper or small business
+
+              </span>
+
+            </label>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="userType"
+                     value="both">
+
+              <span>
+
+                Personal and business use
+
+              </span>
+
+            </label>
+
+          </fieldset>
+
+          <!-- QUESTION THREE -->
+
+          <fieldset class="cp-question">
+
+            <legend>
+
+              3. Which reports are most important?
+
+            </legend>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="reports"
+                     value="personal"
+                     required>
+
+              <span>
+
+                Income, expenses and savings reports
+
+              </span>
+
+            </label>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="reports"
+                     value="khata">
+
+              <span>
+
+                Credit, debit and customer statements
+
+              </span>
+
+            </label>
+
+            <label class="cp-option">
+
+              <input type="radio"
+                     name="reports"
+                     value="both">
+
+              <span>
+
+                Both types of financial reports
+
+              </span>
+
+            </label>
+
+          </fieldset>
+
+          <div class="cp-buttons">
+
+            <button type="submit"
+                    class="cp-button cp-button-primary">
+
+              Find My Application
+
+            </button>
+
+            <button type="reset"
+                    class="cp-button cp-button-secondary">
+
+              Reset Answers
+
+            </button>
+
+          </div>
+
+        </form>
+
+        <!-- APPLICATION SELECTOR RESULT -->
+
+        <div class="cp-result"
+             id="selectorResult"
+             aria-live="polite"
+             hidden>
+
+          <h3 id="selectorTitle"></h3>
+
+          <p id="selectorDescription"></p>
+
+          <div class="cp-buttons">
+
+            <a href="/merahisab.html"
+               id="selectorMeraHisab"
+               class="cp-button cp-button-primary"
+               hidden>
+
+              Explore MeraHisab
+
+            </a>
+
+            <a href="/royal-khata.html"
+               id="selectorRoyalKhata"
+               class="cp-button cp-button-secondary"
+               hidden>
+
+              Explore Royal Khata
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="cp-notice">
+
+          This selector uses simple
+          application-purpose matching.
+
+          Your answers are processed locally
+          by this selector and are not
+          submitted to a server.
+
+          The recommendation does not
+          confirm feature availability
+          or application suitability
+          for regulated accounting.
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- COMMON USE CASES -->
+
+    <section class="cp-section">
+
+      <h2 class="cp-title">
+
+        Common Use Cases
+
+      </h2>
+
+      <div class="cp-grid-three">
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">🏠</div>
+
+          <h3>Household Expenses</h3>
+
+          <p>
+
+            Track everyday household
+            spending and family finances.
+
+          </p>
+
+          <strong>Suggested: MeraHisab</strong>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">💰</div>
+
+          <h3>Personal Savings</h3>
+
+          <p>
+
+            Organize savings and
+            personal financial accounts.
+
+          </p>
+
+          <strong>Suggested: MeraHisab</strong>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">₹</div>
+
+          <h3>Salary & Income</h3>
+
+          <p>
+
+            Maintain records of salary,
+            income and personal expenses.
+
+          </p>
+
+          <strong>Suggested: MeraHisab</strong>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">🏪</div>
+
+          <h3>Shopkeeper Khata</h3>
+
+          <p>
+
+            Maintain organized credit
+            and debit customer records.
+
+          </p>
+
+          <strong>
+
+            Planned Solution: Royal Khata
+
+          </strong>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">👥</div>
+
+          <h3>Customer Accounts</h3>
+
+          <p>
+
+            Organize individual customer
+            balances and transaction history.
+
+          </p>
+
+          <strong>
+
+            Planned Solution: Royal Khata
+
+          </strong>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">📒</div>
+
+          <h3>Credit & Debit Records</h3>
+
+          <p>
+
+            Maintain separate digital
+            khata transaction records.
+
+          </p>
+
+          <strong>
+
+            Planned Solution: Royal Khata
+
+          </strong>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SECURITY COMPARISON -->
+
+    <section class="cp-section">
+
+      <h2 class="cp-title">
+
+        Privacy & Data Protection
+
+      </h2>
+
+      <div class="cp-grid">
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">🔐</div>
+
+          <h3>MeraHisab</h3>
+
+          <p>
+
+            Designed around personal
+            financial record management,
+            local storage and backup control.
+
+            Actual security implementation
+            requires verification.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <div class="cp-feature-icon">🛡</div>
+
+          <h3>Royal Khata</h3>
+
+          <p>
+
+            Planned security capabilities
+            include access protection,
+            backup management and
+            recovery-key functionality.
+
+            Final implementation must be
+            verified before release.
+
+          </p>
+
+        </article>
+
+      </div>
+
+      <div class="cp-notice">
+
+        Neither application should be
+        considered independently security-audited
+        without documented verification.
+
+        Keep important financial backups
+        secure and review the Privacy Policy.
+
+      </div>
+
+      <div class="cp-buttons">
+
+        <a href="/privacy.html"
+           class="cp-button cp-button-secondary">
+
+          Read Privacy Policy
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+
+    <section class="cp-section cp-faq">
+
+      <h2 class="cp-title">
+
+        Frequently Asked Questions
+
+      </h2>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          What is the main difference?
+
+        </summary>
+
+        <p>
+
+          MeraHisab focuses on personal
+          income, expenses and savings.
+
+          Royal Khata focuses on credit,
+          debit and digital khata records.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Which application is better for personal finance?
+
+        </summary>
+
+        <p>
+
+          MeraHisab is designed specifically
+          for personal finance management.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Which application is better for shopkeepers?
+
+        </summary>
+
+        <p>
+
+          Royal Khata is designed around
+          digital khata and customer
+          account management.
+
+          Its official release is pending.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Can I use both applications?
+
+        </summary>
+
+        <p>
+
+          The applications are intended
+          for different financial purposes.
+
+          You may choose to use both
+          when both applications are available.
+
+          Cross-application data synchronization
+          has not been confirmed.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Do both applications support backup?
+
+        </summary>
+
+        <p>
+
+          Backup and restore are described
+          MeraHisab features and planned
+          Royal Khata capabilities.
+
+          Backup formats and recovery
+          behavior require verification.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Can I transfer data between the applications?
+
+        </summary>
+
+        <p>
+
+          Direct data migration and
+          cross-application compatibility
+          have not been confirmed.
+
+          Do not assume that one application's
+          backup can be restored in the other.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Are all listed Royal Khata features available?
+
+        </summary>
+
+        <p>
+
+          No. Royal Khata features listed
+          on this page are planned capabilities
+          and require development and testing.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Are both applications available for download?
+
+        </summary>
+
+        <p>
+
+          MeraHisab has a dedicated download page.
+
+          Royal Khata's official APK
+          release is pending.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Can I save this comparison as PDF?
+
+        </summary>
+
+        <p>
+
+          Yes. Use the Print / Save as PDF
+          button and choose Save as PDF
+          if your browser or operating
+          system supports that option.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Where can I find more information?
+
+        </summary>
+
+        <p>
+
+          Visit the individual application
+          pages, Download Center or
+          Contact & Support page.
+
+        </p>
+
+      </details>
+
+    </section>
+
+    <!-- FINAL APPLICATION LINKS -->
+
+    <section class="cp-section">
+
+      <h2 class="cp-title">
+
+        Choose Your Application
+
+      </h2>
+
+      <div class="cp-grid">
+
+        <article class="upgrade-card cp-card">
+
+          <h3>MeraHisab</h3>
+
+          <p>
+
+            Organize your personal
+            financial life.
+
+          </p>
+
+          <div class="cp-buttons">
+
+            <a href="/merahisab.html"
+               class="cp-button cp-button-secondary">
+
+              Learn More
+
+            </a>
+
+            <a href="/download.html"
+               class="cp-button cp-button-primary">
+
+              Download MeraHisab
+
+            </a>
+
+          </div>
+
+        </article>
+
+        <article class="upgrade-card cp-card">
+
+          <h3>Royal Khata</h3>
+
+          <p>
+
+            Explore the planned digital
+            khata management experience.
+
+          </p>
+
+          <div class="cp-buttons">
+
+            <a href="/royal-khata.html"
+               class="cp-button cp-button-primary">
+
+              Explore Royal Khata
+
+            </a>
+
+            <button type="button"
+                    class="cp-button cp-button-secondary"
+                    disabled>
+
+              Release Pending
+
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PWA INSTALLATION PANEL -->
+
+    <section class="cp-section"
+             id="pwaMount">
+
+      <!--
+        PWA installation, updates,
+        cache management and diagnostics
+        are generated by pwa.js.
+      -->
+
+    </section>
+
+  </main>
+
+  <!-- WEBSITE FOOTER -->
+
+  <footer class="site">
+
+    <div class="container">
+
+      © <span data-year>2026</span>
+
+      MeraHisab. All rights reserved.
+
+      <br>
+
+      <a href="/index.html">Home</a>
+
+      ·
+
+      <a href="/privacy.html">Privacy</a>
+
+      ·
+
+      <a href="/contact.html">Contact</a>
+
+      ·
+
+      <a href="/downloads.html">Downloads</a>
+
+      <br>
+
+      <a href="https://merahisab.store/">
+
+        merahisab.store
+
+      </a>
+
+    </div>
+
+  </footer>
+
+  <!-- INTERACTIVE COMPARISON ENGINE -->
+
+  <script>
+
+    (function () {
+
+      "use strict";
+
+      if (window.__merahisabCompareInitialized) {
+
+        return;
+
+      }
+
+      window.__merahisabCompareInitialized = true;
+
+
+      /* COMPARISON TABLE FILTERS */
+
+      const searchInput =
+        document.getElementById(
+          "comparisonSearch"
+        );
+
+      const countElement =
+        document.getElementById(
+          "comparisonCount"
+        );
+
+      const featureRows =
+        Array.from(
+          document.querySelectorAll(
+            "#comparisonTable tr[data-category]"
+          )
+        );
+
+      const categoryHeadings =
+        Array.from(
+          document.querySelectorAll(
+            "#comparisonTable tr[data-heading]"
+          )
+        );
+
+      const filterButtons =
+        Array.from(
+          document.querySelectorAll(
+            ".cp-filter[data-filter]"
+          )
+        );
+
+      const resetComparison =
+        document.getElementById(
+          "resetComparison"
+        );
+
+      const printComparison =
+        document.getElementById(
+          "printComparison"
+        );
+
+      let activeCategory = "all";
+
+
+      function updateComparison() {
+
+        const query =
+          searchInput.value
+            .trim()
+            .toLowerCase();
+
+        let visibleCount = 0;
+
+        const visibleCategories =
+          new Set();
+
+        featureRows.forEach(
+          function (row) {
+
+            const category =
+              row.dataset.category;
+
+            const categoryMatches =
+
+              activeCategory === "all" ||
+
+              category === activeCategory;
+
+            const searchMatches =
+
+              row.textContent
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .includes(query);
+
+            const visible =
+
+              categoryMatches &&
+              searchMatches;
+
+            row.hidden = !visible;
+
+            if (visible) {
+
+              visibleCount++;
+
+              visibleCategories.add(
+                category
+              );
+
+            }
+
+          }
+        );
+
+        categoryHeadings.forEach(
+          function (heading) {
+
+            heading.hidden =
+
+              !visibleCategories.has(
+                heading.dataset.heading
+              );
+
+          }
+        );
+
+        filterButtons.forEach(
+          function (button) {
+
+            button.setAttribute(
+
+              "aria-pressed",
+
+              String(
+
+                button.dataset.filter ===
+                activeCategory
+
+              )
+
+            );
+
+          }
+        );
+
+        if (visibleCount === 0) {
+
+          countElement.textContent =
+
+            "No matching features found. " +
+            "Try another search or reset filters.";
+
+        } else {
+
+          countElement.textContent =
+
+            "Showing " +
+
+            visibleCount +
+
+            " of " +
+
+            featureRows.length +
+
+            " comparison features.";
+
+        }
+
+      }
+
+
+      filterButtons.forEach(
+        function (button) {
+
+          button.addEventListener(
+
+            "click",
+
+            function () {
+
+              activeCategory =
+                button.dataset.filter;
+
+              updateComparison();
+
+            }
+
+          );
+
+        }
+      );
+
+
+      searchInput.addEventListener(
+
+        "input",
+
+        updateComparison
+
+      );
+
+
+      resetComparison.addEventListener(
+
+        "click",
+
+        function () {
+
+          activeCategory = "all";
+
+          searchInput.value = "";
+
+          updateComparison();
+
+        }
+
+      );
+
+
+      printComparison.addEventListener(
+
+        "click",
+
+        function () {
+
+          window.print();
+
+        }
+
+      );
+
+
+      updateComparison();
+
+
+      /* APPLICATION RECOMMENDATION ENGINE */
+
+      const selectorForm =
+        document.getElementById(
+          "appSelectorForm"
+        );
+
+      const selectorResult =
+        document.getElementById(
+          "selectorResult"
+        );
+
+      const selectorTitle =
+        document.getElementById(
+          "selectorTitle"
+        );
+
+      const selectorDescription =
+        document.getElementById(
+          "selectorDescription"
+        );
+
+      const meraHisabLink =
+        document.getElementById(
+          "selectorMeraHisab"
+        );
+
+      const royalKhataLink =
+        document.getElementById(
+          "selectorRoyalKhata"
+        );
+
+
+      function clearRecommendation() {
+
+        selectorResult.hidden = true;
+
+        selectorTitle.textContent = "";
+
+        selectorDescription.textContent = "";
+
+        meraHisabLink.hidden = true;
+
+        royalKhataLink.hidden = true;
+
+      }
+
+
+      selectorForm.addEventListener(
+
+        "submit",
+
+        function (event) {
+
+          event.preventDefault();
+
+          if (!selectorForm.checkValidity()) {
+
+            selectorForm.reportValidity();
+
+            return;
+
+          }
+
+          const answers =
+            new FormData(selectorForm);
+
+          const purpose =
+            answers.get("purpose");
+
+          const userType =
+            answers.get("userType");
+
+          const reports =
+            answers.get("reports");
+
+          let personalScore = 0;
+
+          let khataScore = 0;
+
+
+          function addScore(value, weight) {
+
+            if (value === "personal") {
+
+              personalScore += weight;
+
+            } else if (value === "khata") {
+
+              khataScore += weight;
+
+            } else if (value === "both") {
+
+              personalScore += weight;
+
+              khataScore += weight;
+
+            }
+
+          }
+
+
+          addScore(purpose, 3);
+
+          addScore(userType, 1);
+
+          addScore(reports, 2);
+
+
+          clearRecommendation();
+
+
+          if (purpose === "both" ||
+              personalScore === khataScore) {
+
+            selectorTitle.textContent =
+
+              "Both Applications May Be Useful";
+
+            selectorDescription.textContent =
+
+              "MeraHisab matches your personal " +
+              "finance needs, while Royal Khata " +
+              "is intended for credit-debit and " +
+              "customer account management. " +
+              "Royal Khata is not yet available " +
+              "for official download.";
+
+            meraHisabLink.hidden = false;
+
+            royalKhataLink.hidden = false;
+
+          } else if (
+            personalScore > khataScore
+          ) {
+
+            selectorTitle.textContent =
+
+              "Suggested Application: MeraHisab";
+
+            selectorDescription.textContent =
+
+              "Your answers indicate that " +
+              "personal income, expenses, " +
+              "savings and financial accounts " +
+              "are your main priorities. " +
+              "Explore MeraHisab and verify " +
+              "that its available features " +
+              "meet your requirements.";
+
+            meraHisabLink.hidden = false;
+
+          } else {
+
+            selectorTitle.textContent =
+
+              "Suggested Planned Application: Royal Khata";
+
+            selectorDescription.textContent =
+
+              "Your answers indicate that " +
+              "credit, debit and customer " +
+              "account management are your " +
+              "main priorities. Royal Khata " +
+              "is designed for this purpose, " +
+              "but its official release " +
+              "is still pending.";
+
+            royalKhataLink.hidden = false;
+
+          }
+
+          selectorResult.hidden = false;
+
+        }
+
+      );
+
+
+      selectorForm.addEventListener(
+
+        "reset",
+
+        clearRecommendation
+
+      );
+
+
+      selectorForm.addEventListener(
+
+        "change",
+
+        clearRecommendation
+
+      );
+
+    })();
+
+  </script>
+
+  <!-- JAVASCRIPT DISABLED FALLBACK -->
+
+  <noscript>
+
+    <div style="
+      padding:20px;
+      text-align:center;
+      background:#172640;
+      color:#f0d9a6;
+    ">
+
+      JavaScript is disabled.
+
+      The comparison table remains readable,
+      but interactive filters, application
+      recommendations, theme controls and
+      PWA features require JavaScript.
+
+    </div>
+
+  </noscript>
 
 </body>
 
-                      </html>
+</html>
