@@ -1,1688 +1,197 @@
-/* ==================================================
-   MERAHISAB PREMIUM PWA DESIGN ENGINE
-   Official Website: https://merahisab.store/
-   Design Version: 1.0.0
-   ================================================== */
-
-
-/* ==================================================
-   01. PREMIUM DESIGN VARIABLES
-   ================================================== */
-
-:root {
-
-    --pwa-navy: #081321;
-    --pwa-navy-light: #15263c;
-    --pwa-navy-card: #101e30;
-
-    --pwa-gold: #d4af37;
-    --pwa-gold-light: #e5c788;
-    --pwa-gold-dark: #85651d;
-
-    --pwa-radius-small: 10px;
-    --pwa-radius-medium: 16px;
-    --pwa-radius-large: 24px;
-
-    --pwa-transition: 180ms ease;
-
+/* MeraHisab PWA design v2.0.0 | https://merahisab.store/
+   Replace /pwa.css. All component styles are scoped to the PWA panel. */
+#merahisabPwaPanel {
+  color-scheme: dark;
+  --pwa-background: #081321;
+  --pwa-surface: #101e30;
+  --pwa-surface-secondary: #15263c;
+  --pwa-text: #f1f5f9;
+  --pwa-muted: #b9c5d6;
+  --pwa-border: #44536a;
+  --pwa-control-border: #a08a5d;
+  --pwa-accent: #e5c788;
+  --pwa-gold: #d4af37;
+  --pwa-focus: #94c7ff;
+  --pwa-success: #86efac;
+  --pwa-success-bg: #143324;
+  --pwa-warning: #fde68a;
+  --pwa-warning-bg: #3a2e15;
+  --pwa-danger: #fca5a5;
+  --pwa-danger-bg: #401e24;
+  --pwa-info: #bfdbfe;
+  --pwa-info-bg: #172d4b;
+  --pwa-shadow: 0 12px 36px rgba(0,0,0,.22);
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 32px auto;
+  padding: clamp(16px, 3vw, 36px);
+  background: var(--pwa-background);
+  color: var(--pwa-text);
+  border: 1px solid var(--pwa-border);
+  border-top: 3px solid var(--pwa-gold);
+  border-radius: 24px;
+  box-shadow: var(--pwa-shadow);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  container-type: inline-size;
 }
-
-
-/* ==================================================
-   02. LIGHT THEME VARIABLES
-   ================================================== */
-
-.pwa-panel {
-
+/* Theme engine sets html[data-theme] to the resolved mode. */
+@media (prefers-color-scheme: light) {
+  html:not([data-theme]) #merahisabPwaPanel {
     color-scheme: light;
-
-    --pwa-background: #ffffff;
-    --pwa-surface: #f7f8fa;
-    --pwa-surface-secondary: #edf1f5;
-
-    --pwa-text: #101e30;
-    --pwa-muted: #526176;
-
-    --pwa-border: #d8dfe7;
-    --pwa-accent: #85651d;
-
-    --pwa-button-background: #ffffff;
-    --pwa-button-text: #101e30;
-
+    --pwa-background: #fff;
+    --pwa-surface: #faf6ed;
+    --pwa-surface-secondary: #f3ead7;
+    --pwa-text: #14243b;
+    --pwa-muted: #46546a;
+    --pwa-border: #cfc3ac;
+    --pwa-control-border: #8b754e;
+    --pwa-accent: #765018;
+    --pwa-focus: #155a9c;
     --pwa-success: #166534;
     --pwa-success-bg: #dcfce7;
-
     --pwa-warning: #854d0e;
     --pwa-warning-bg: #fef3c7;
-
     --pwa-danger: #b91c1c;
     --pwa-danger-bg: #fee2e2;
-
     --pwa-info: #1e40af;
     --pwa-info-bg: #dbeafe;
-
-    --pwa-shadow:
-        0 8px 28px rgba(8,19,33,0.08);
-
+    --pwa-shadow: 0 8px 28px rgba(20,36,59,.08);
+  }
 }
-
-
-/* ==================================================
-   03. SYSTEM DARK THEME
-   ================================================== */
-
-@media (prefers-color-scheme: dark) {
-
-    .pwa-panel {
-
-        color-scheme: dark;
-
-        --pwa-background: #081321;
-        --pwa-surface: #101e30;
-        --pwa-surface-secondary: #15263c;
-
-        --pwa-text: #f1f5f9;
-        --pwa-muted: #b4c0d0;
-
-        --pwa-border: #34445a;
-        --pwa-accent: #e5c788;
-
-        --pwa-button-background: #15263c;
-        --pwa-button-text: #e5c788;
-
-        --pwa-success: #86efac;
-        --pwa-success-bg: #143324;
-
-        --pwa-warning: #fde68a;
-        --pwa-warning-bg: #3a2e15;
-
-        --pwa-danger: #fca5a5;
-        --pwa-danger-bg: #401e24;
-
-        --pwa-info: #bfdbfe;
-        --pwa-info-bg: #172d4b;
-
-        --pwa-shadow:
-            0 12px 36px rgba(0,0,0,0.25);
-
-    }
-
+html[data-theme="light"] #merahisabPwaPanel {
+  color-scheme: light;
+  --pwa-background: #fff;
+  --pwa-surface: #faf6ed;
+  --pwa-surface-secondary: #f3ead7;
+  --pwa-text: #14243b;
+  --pwa-muted: #46546a;
+  --pwa-border: #cfc3ac;
+  --pwa-control-border: #8b754e;
+  --pwa-accent: #765018;
+  --pwa-focus: #155a9c;
+  --pwa-success: #166534;
+  --pwa-success-bg: #dcfce7;
+  --pwa-warning: #854d0e;
+  --pwa-warning-bg: #fef3c7;
+  --pwa-danger: #b91c1c;
+  --pwa-danger-bg: #fee2e2;
+  --pwa-info: #1e40af;
+  --pwa-info-bg: #dbeafe;
+  --pwa-shadow: 0 8px 28px rgba(20,36,59,.08);
 }
-
-
-/* ==================================================
-   04. EXPLICIT DARK THEME
-   ================================================== */
-
-[data-theme="dark"] .pwa-panel,
-[data-mode="dark"] .pwa-panel,
-.dark .pwa-panel,
-.dark-mode .pwa-panel {
-
-    color-scheme: dark;
-
-    --pwa-background: #081321;
-    --pwa-surface: #101e30;
-    --pwa-surface-secondary: #15263c;
-
-    --pwa-text: #f1f5f9;
-    --pwa-muted: #b4c0d0;
-
-    --pwa-border: #34445a;
-    --pwa-accent: #e5c788;
-
-    --pwa-button-background: #15263c;
-    --pwa-button-text: #e5c788;
-
-    --pwa-success: #86efac;
-    --pwa-success-bg: #143324;
-
-    --pwa-warning: #fde68a;
-    --pwa-warning-bg: #3a2e15;
-
-    --pwa-danger: #fca5a5;
-    --pwa-danger-bg: #401e24;
-
-    --pwa-info: #bfdbfe;
-    --pwa-info-bg: #172d4b;
-
-    --pwa-shadow:
-        0 12px 36px rgba(0,0,0,0.25);
-
+#pwaMount { width: 100%; max-width: 100%; min-width: 0; }
+#merahisabPwaPanel, #merahisabPwaPanel *,
+#merahisabPwaPanel *::before, #merahisabPwaPanel *::after { box-sizing: border-box; }
+#merahisabPwaPanel[hidden], #merahisabPwaPanel [hidden] { display: none !important; }
+#merahisabPwaPanel .pwa-panel-header {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 16px; margin-bottom: 18px;
 }
-
-
-/* ==================================================
-   05. EXPLICIT LIGHT THEME
-   ================================================== */
-
-[data-theme="light"] .pwa-panel,
-[data-mode="light"] .pwa-panel,
-.light .pwa-panel,
-.light-mode .pwa-panel {
-
-    color-scheme: light;
-
-    --pwa-background: #ffffff;
-    --pwa-surface: #f7f8fa;
-    --pwa-surface-secondary: #edf1f5;
-
-    --pwa-text: #101e30;
-    --pwa-muted: #526176;
-
-    --pwa-border: #d8dfe7;
-    --pwa-accent: #85651d;
-
-    --pwa-button-background: #ffffff;
-    --pwa-button-text: #101e30;
-
-    --pwa-success: #166534;
-    --pwa-success-bg: #dcfce7;
-
-    --pwa-warning: #854d0e;
-    --pwa-warning-bg: #fef3c7;
-
-    --pwa-danger: #b91c1c;
-    --pwa-danger-bg: #fee2e2;
-
-    --pwa-info: #1e40af;
-    --pwa-info-bg: #dbeafe;
-
-    --pwa-shadow:
-        0 8px 28px rgba(8,19,33,0.08);
-
+#merahisabPwaPanel .pwa-panel-header > div { flex: 1 1 240px; min-width: 0; }
+#merahisabPwaPanel .pwa-eyebrow {
+  display: block; margin: 0 0 8px; color: var(--pwa-accent);
+  font-size: .78rem; font-weight: 750; letter-spacing: .09em;
 }
-
-
-/* ==================================================
-   06. SAFE BOX SIZING
-   ================================================== */
-
-.pwa-panel,
-.pwa-panel *,
-.pwa-panel *::before,
-.pwa-panel *::after {
-
-    box-sizing: border-box;
-
+#merahisabPwaPanel h2 { margin: 0; color: var(--pwa-text); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.35; }
+#merahisabPwaPanel h3 { color: var(--pwa-accent); font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.5; margin: 0 0 12px; }
+#merahisabPwaPanel .pwa-description { margin: 12px 0 24px; color: var(--pwa-muted); font-size: .95rem; }
+#merahisabPwaPanel .pwa-connection-status {
+  display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  min-width: 0; max-width: 100%; padding: 8px 14px;
+  border: 1px solid currentColor; border-radius: 30px;
+  background: var(--pwa-warning-bg); color: var(--pwa-warning);
+  font-size: .85rem; font-weight: 700; line-height: 1.5;
 }
-
-
-/* ==================================================
-   07. HIDDEN ELEMENT PROTECTION
-   ================================================== */
-
-.pwa-panel[hidden],
-.pwa-panel [hidden] {
-
-    display: none !important;
-
+#merahisabPwaPanel .pwa-connection-status::before {
+  content: ""; width: 9px; height: 9px; flex: 0 0 9px;
+  border-radius: 50%; background: currentColor;
 }
-
-
-/* ==================================================
-   08. PWA MOUNT CONTAINER
-   ================================================== */
-
-#pwaMount {
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
+#merahisabPwaPanel .pwa-connection-status[data-state="online"] { background: var(--pwa-success-bg); color: var(--pwa-success); }
+#merahisabPwaPanel .pwa-connection-status[data-state="offline"] { background: var(--pwa-danger-bg); color: var(--pwa-danger); }
+#merahisabPwaPanel .pwa-action-row { display: flex; align-items: stretch; flex-wrap: wrap; gap: 12px; margin: 18px 0; min-width: 0; }
+#merahisabPwaPanel .pwa-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; max-width: 100%; min-width: 0; min-height: 48px;
+  padding: 12px 18px; border: 1px solid var(--pwa-control-border);
+  border-radius: 12px; background: var(--pwa-surface-secondary);
+  color: var(--pwa-text); font: inherit; font-size: .9rem; font-weight: 650;
+  line-height: 1.5; text-align: center; text-decoration: none;
+  white-space: normal; overflow-wrap: anywhere; cursor: pointer;
+  touch-action: manipulation; transition: background-color .15s, border-color .15s;
 }
-
-
-/* ==================================================
-   09. MAIN PWA PANEL
-   ================================================== */
-
-.pwa-panel {
-
-    position: relative;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin: 32px auto;
-
-    padding: clamp(
-        18px,
-        4vw,
-        36px
-    );
-
-    background: var(--pwa-background);
-
-    color: var(--pwa-text);
-
-    border: 1px solid var(--pwa-border);
-
-    border-top: 3px solid var(--pwa-gold);
-
-    border-radius: var(--pwa-radius-large);
-
-    box-shadow: var(--pwa-shadow);
-
-    overflow-wrap: anywhere;
-
-    line-height: 1.65;
-
+#merahisabPwaPanel .pwa-button.primary { background: linear-gradient(135deg,#f0d9a6,#d8b878); color: #101827; border-color: #b59452; font-weight: 750; }
+#merahisabPwaPanel .pwa-button.danger { background: var(--pwa-danger-bg); color: var(--pwa-danger); border-color: var(--pwa-danger); }
+#merahisabPwaPanel .pwa-button:disabled,
+#merahisabPwaPanel .pwa-button[aria-disabled="true"] { opacity: .6; cursor: not-allowed; box-shadow: none; }
+@media (hover: hover) and (pointer: fine) {
+  #merahisabPwaPanel .pwa-button:not(:disabled):not([aria-disabled="true"]):hover { border-color: var(--pwa-accent); text-decoration: underline; text-underline-offset: .18em; }
+  #merahisabPwaPanel .pwa-button.primary:not(:disabled):hover { background: #f8e6bc; color: #101827; }
 }
-
-
-/* ==================================================
-   10. PWA HEADER
-   ================================================== */
-
-.pwa-panel-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    flex-wrap: wrap;
-
-    gap: 18px;
-
-    margin-bottom: 20px;
-
+#merahisabPwaPanel :is(button,a,[tabindex]):focus-visible { outline: 3px solid var(--pwa-focus); outline-offset: 3px; }
+#merahisabPwaPanel #pwaInstallButton, #merahisabPwaPanel #pwaSettingsButton { min-height: 52px; }
+#merahisabPwaPanel #pwaSettingsButton::after { content: ""; flex: 0 0 8px; width: 8px; height: 8px; margin-inline-start: 4px; border-inline-end: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); }
+#merahisabPwaPanel #pwaSettingsButton[aria-expanded="true"]::after { transform: rotate(225deg); }
+#merahisabPwaPanel #pwaReloadButton { margin-top: 18px; }
+#merahisabPwaPanel .pwa-notice, #merahisabPwaPanel .pwa-update-banner {
+  margin: 22px 0; padding: clamp(14px, 2vw, 24px); min-width: 0;
+  border: 1px solid var(--pwa-border); border-radius: 16px;
+  background: var(--pwa-surface); color: var(--pwa-text);
 }
-
-.pwa-panel-header > div {
-
-    flex: 1 1 240px;
-
-    min-width: 0;
-
+#merahisabPwaPanel #pwaInstallGuide { border-inline-start: 4px solid var(--pwa-gold); }
+#merahisabPwaPanel .pwa-notice strong { display: block; color: var(--pwa-accent); margin-bottom: 10px; }
+#merahisabPwaPanel .pwa-notice p, #merahisabPwaPanel .pwa-update-banner p { margin: 10px 0; color: var(--pwa-muted); }
+#merahisabPwaPanel #pwaInstallInstructions { color: var(--pwa-text); }
+#merahisabPwaPanel .pwa-update-banner { border-inline-start: 4px solid var(--pwa-gold); background: var(--pwa-surface-secondary); }
+#merahisabPwaPanel .pwa-settings-content { min-width: 0; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--pwa-border); }
+#merahisabPwaPanel .pwa-settings-content > h3:not(:first-child) { margin-top: 24px; }
+#merahisabPwaPanel .pwa-info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,210px),1fr));
+  gap: 12px; min-width: 0; margin: 14px 0 24px;
 }
-
-.pwa-eyebrow {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: var(--pwa-accent);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-}
-
-.pwa-panel-header h2 {
-
-    margin: 0;
-
-    color: var(--pwa-text);
-
-    font-size: clamp(
-        23px,
-        3.5vw,
-        34px
-    );
-
-    font-weight: 700;
-
-    line-height: 1.3;
-
-}
-
-
-/* ==================================================
-   11. DESCRIPTION DESIGN
-   ================================================== */
-
-.pwa-description {
-
-    margin: 12px 0 24px;
-
-    color: var(--pwa-muted);
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-}
-
-
-/* ==================================================
-   12. CONNECTION STATUS INDICATOR
-   ================================================== */
-
-.pwa-connection-status {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    max-width: 100%;
-
-    padding: 8px 14px;
-
-    border: 1px solid currentColor;
-
-    border-radius: 30px;
-
-    background: var(--pwa-warning-bg);
-
-    color: var(--pwa-warning);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    line-height: 1.4;
-
-}
-
-.pwa-connection-status::before {
-
-    content: "";
-
-    display: inline-block;
-
-    flex-shrink: 0;
-
-    width: 9px;
-
-    height: 9px;
-
-    border-radius: 50%;
-
-    background: currentColor;
-
-}
-
-
-/* ==================================================
-   13. ONLINE CONNECTION STATUS
-   ================================================== */
-
-.pwa-connection-status[data-state="online"] {
-
-    background: var(--pwa-success-bg);
-
-    color: var(--pwa-success);
-
-}
-
-
-/* ==================================================
-   14. OFFLINE CONNECTION STATUS
-   ================================================== */
-
-.pwa-connection-status[data-state="offline"] {
-
-    background: var(--pwa-danger-bg);
-
-    color: var(--pwa-danger);
-
-}
-
-
-/* ==================================================
-   15. CHECKING CONNECTION STATUS
-   ================================================== */
-
-.pwa-connection-status[data-state="checking"] {
-
-    background: var(--pwa-warning-bg);
-
-    color: var(--pwa-warning);
-
-}
-
-.pwa-connection-status[data-state="checking"]::before {
-
-    animation:
-        pwa-status-pulse 1.6s ease-in-out infinite;
-
-}
-
-@keyframes pwa-status-pulse {
-
-    0%,
-    100% {
-
-        opacity: 1;
-
-    }
-
-    50% {
-
-        opacity: 0.4;
-
-    }
-
-}
-
-
-/* ==================================================
-   16. BUTTON ROW LAYOUT
-   ================================================== */
-
-.pwa-action-row {
-
-    display: flex;
-
-    align-items: stretch;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    width: 100%;
-
-    min-width: 0;
-
-    margin: 18px 0;
-
-}
-
-
-/* ==================================================
-   17. PREMIUM BUTTON DESIGN
-   ================================================== */
-
-.pwa-panel .pwa-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    min-width: 0;
-
-    max-width: 100%;
-
-    min-height: 48px;
-
-    padding: 12px 20px;
-
-    border: 1px solid var(--pwa-border);
-
-    border-radius: var(--pwa-radius-small);
-
-    background: var(--pwa-button-background);
-
-    color: var(--pwa-button-text);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    line-height: 1.5;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    white-space: normal;
-
-    overflow-wrap: anywhere;
-
-    cursor: pointer;
-
-    touch-action: manipulation;
-
-    transition:
-
-        background var(--pwa-transition),
-
-        border-color var(--pwa-transition),
-
-        box-shadow var(--pwa-transition),
-
-        transform var(--pwa-transition);
-
-}
-
-
-/* ==================================================
-   18. PREMIUM GOLD PRIMARY BUTTON
-   ================================================== */
-
-.pwa-panel .pwa-button.primary {
-
-    background: linear-gradient(
-
-        135deg,
-
-        #e5c788,
-
-        #d4af37
-
-    );
-
-    color: #081321;
-
-    border-color: #b99529;
-
-    font-weight: 700;
-
-    box-shadow:
-
-        0 4px 14px rgba(
-            212,175,55,0.18
-        );
-
-}
-
-
-/* ==================================================
-   19. DANGER BUTTON
-   ================================================== */
-
-.pwa-panel .pwa-button.danger {
-
-    background: var(--pwa-danger-bg);
-
-    color: var(--pwa-danger);
-
-    border-color: var(--pwa-danger);
-
-}
-
-
-/* ==================================================
-   20. BUTTON HOVER EFFECTS
-   ================================================== */
-
-@media (hover: hover) {
-
-    .pwa-panel .pwa-button:not(:disabled):hover {
-
-        border-color: var(--pwa-gold);
-
-        transform: translateY(-2px);
-
-        box-shadow:
-
-            0 5px 15px rgba(
-                0,0,0,0.12
-            );
-
-    }
-
-    .pwa-panel .pwa-button.primary:not(:disabled):hover {
-
-        background: #e5c788;
-
-    }
-
-    .pwa-panel .pwa-button.danger:not(:disabled):hover {
-
-        border-color: var(--pwa-danger);
-
-    }
-
-}
-
-
-/* ==================================================
-   21. BUTTON ACTIVE STATE
-   ================================================== */
-
-.pwa-panel .pwa-button:not(:disabled):active {
-
-    transform: translateY(0);
-
-    box-shadow: none;
-
-}
-
-
-/* ==================================================
-   22. DISABLED BUTTON PROTECTION
-   ================================================== */
-
-.pwa-panel .pwa-button:disabled {
-
-    opacity: 0.55;
-
-    cursor: not-allowed;
-
-    box-shadow: none;
-
-    transform: none;
-
-}
-
-
-/* ==================================================
-   23. KEYBOARD FOCUS ACCESSIBILITY
-   ================================================== */
-
-.pwa-panel .pwa-button:focus-visible,
-
-.pwa-panel a:focus-visible,
-
-.pwa-panel button:focus-visible {
-
-    outline: 3px solid var(--pwa-accent);
-
-    outline-offset: 4px;
-
-}
-
-
-/* ==================================================
-   24. INSTALLATION GUIDE
-   ================================================== */
-
-#pwaInstallGuide {
-
-    margin-top: 22px;
-
-    padding: 20px;
-
-    background: var(--pwa-surface);
-
-    border: 1px solid var(--pwa-border);
-
-    border-left: 4px solid var(--pwa-gold);
-
-    border-radius: var(--pwa-radius-medium);
-
-}
-
-#pwaInstallGuide h3 {
-
-    margin: 0 0 12px;
-
-    color: var(--pwa-accent);
-
-    font-size: 19px;
-
-}
-
-#pwaInstallInstructions {
-
-    color: var(--pwa-text);
-
-    line-height: 1.8;
-
-}
-
-
-/* ==================================================
-   25. UPDATE NOTIFICATION BANNER
-   ================================================== */
-
-.pwa-update-banner {
-
-    margin: 24px 0;
-
-    padding: clamp(
-        18px,
-        3vw,
-        26px
-    );
-
-    background: linear-gradient(
-
-        135deg,
-
-        #081321,
-
-        #15263c
-
-    );
-
-    color: #f1f5f9;
-
-    border: 1px solid #a58a52;
-
-    border-left: 4px solid #d4af37;
-
-    border-radius: var(--pwa-radius-medium);
-
-}
-
-.pwa-update-banner h3 {
-
-    margin: 0 0 10px;
-
-    color: #e5c788;
-
-    font-size: 20px;
-
-}
-
-.pwa-update-banner p {
-
-    color: #d1dbe8;
-
-    margin: 10px 0 18px;
-
-    line-height: 1.7;
-
-}
-
-
-/* ==================================================
-   26. PWA SETTINGS CONTENT
-   ================================================== */
-
-.pwa-settings-content {
-
-    width: 100%;
-
-    min-width: 0;
-
-    margin-top: 26px;
-
-    padding-top: 24px;
-
-    border-top: 1px solid var(--pwa-border);
-
-}
-
-.pwa-settings-content h3 {
-
-    margin: 26px 0 16px;
-
-    color: var(--pwa-accent);
-
-    font-size: clamp(
-        18px,
-        2.5vw,
-        23px
-    );
-
-    font-weight: 700;
-
-}
-
-.pwa-settings-content h3:first-child {
-
-    margin-top: 0;
-
-}
-
-
-/* ==================================================
-   27. INFORMATION GRID
-   ================================================== */
-
-.pwa-info-grid {
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(
-
-            auto-fit,
-
-            minmax(
-
-                min(100%, 220px),
-
-                1fr
-
-            )
-
-        );
-
-    gap: 14px;
-
-    width: 100%;
-
-    min-width: 0;
-
-    margin: 16px 0 24px;
-
-}
-
-
-/* ==================================================
-   28. INFORMATION CARD
-   ================================================== */
-
-.pwa-info-grid > div {
-
-    min-width: 0;
-
-    max-width: 100%;
-
-    padding: 18px;
-
-    background: var(--pwa-surface);
-
-    border: 1px solid var(--pwa-border);
-
-    border-radius: var(--pwa-radius-medium);
-
-    overflow-wrap: anywhere;
-
-    transition:
-
-        border-color var(--pwa-transition),
-
-        background var(--pwa-transition);
-
-}
-
-
-/* ==================================================
-   29. INFORMATION LABEL
-   ================================================== */
-
-.pwa-info-grid dt {
-
-    margin: 0 0 8px;
-
-    color: var(--pwa-muted);
-
-    font-size: 13px;
-
-    font-weight: 500;
-
-    line-height: 1.5;
-
-}
-
-
-/* ==================================================
-   30. INFORMATION VALUE
-   ================================================== */
-
-.pwa-info-grid dd {
-
-    margin: 0;
-
-    color: var(--pwa-text);
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    line-height: 1.6;
-
-    font-variant-numeric: tabular-nums;
-
-    overflow-wrap: anywhere;
-
-}
-
-
-/* ==================================================
-   31. CACHE STATISTICS DESIGN
-   ================================================== */
-
-#pwaCacheEntries,
-
-#pwaCacheGroups,
-
-#pwaCacheVersion {
-
-    color: var(--pwa-accent);
-
-    font-size: clamp(
-        20px,
-        3vw,
-        28px
-    );
-
-    font-weight: 700;
-
-    font-variant-numeric: tabular-nums;
-
-}
-
-
-/* ==================================================
-   32. STORAGE STATISTICS DESIGN
-   ================================================== */
-
-#pwaStorageUsed,
-
-#pwaStorageQuota,
-
-#pwaStoragePercentage {
-
-    color: var(--pwa-accent);
-
-    font-size: 19px;
-
-    font-weight: 700;
-
-    font-variant-numeric: tabular-nums;
-
-}
-
-
-/* ==================================================
-   33. VERSION INFORMATION
-   ================================================== */
-
-#pwaEngineVersion,
-
-#pwaWorkerVersion {
-
-    font-family:
-
-        ui-monospace,
-
-        SFMono-Regular,
-
-        Consolas,
-
-        monospace;
-
-    font-variant-numeric: tabular-nums;
-
-}
-
-
-/* ==================================================
-   34. PRIVACY AND STORAGE NOTICE
-   ================================================== */
-
-.pwa-notice {
-
-    margin: 22px 0;
-
-    padding: 20px;
-
-    background: var(--pwa-surface);
-
-    color: var(--pwa-text);
-
-    border: 1px solid var(--pwa-border);
-
-    border-radius: var(--pwa-radius-medium);
-
-    line-height: 1.8;
-
-}
-
-.pwa-notice strong {
-
-    display: block;
-
-    margin-bottom: 10px;
-
-    color: var(--pwa-accent);
-
-    font-size: 16px;
-
-}
-
-.pwa-notice p {
-
-    margin: 10px 0;
-
-    color: var(--pwa-muted);
-
-}
-
-.pwa-notice p:last-child {
-
-    margin-bottom: 0;
-
-}
-
-
-/* ==================================================
-   35. STATUS MESSAGE CONTAINER
-   ================================================== */
-
-.pwa-message {
-
-    width: 100%;
-
-    margin: 20px 0 0;
-
-    padding: 14px 18px;
-
-    border: 1px solid var(--pwa-border);
-
-    border-radius: var(--pwa-radius-small);
-
-    background: var(--pwa-info-bg);
-
-    color: var(--pwa-info);
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    line-height: 1.7;
-
-    overflow-wrap: anywhere;
-
-}
-
-.pwa-message:empty {
-
-    margin: 0;
-
-    padding: 0;
-
-    border: 0;
-
-    background: transparent;
-
-}
-
-
-/* ==================================================
-   36. SUCCESS MESSAGE
-   ================================================== */
-
-.pwa-message[data-type="success"] {
-
-    background: var(--pwa-success-bg);
-
-    color: var(--pwa-success);
-
-    border-color: var(--pwa-success);
-
-}
-
-
-/* ==================================================
-   37. WARNING MESSAGE
-   ================================================== */
-
-.pwa-message[data-type="warning"] {
-
-    background: var(--pwa-warning-bg);
-
-    color: var(--pwa-warning);
-
-    border-color: var(--pwa-warning);
-
-}
-
-
-/* ==================================================
-   38. ERROR MESSAGE
-   ================================================== */
-
-.pwa-message[data-type="error"] {
-
-    background: var(--pwa-danger-bg);
-
-    color: var(--pwa-danger);
-
-    border-color: var(--pwa-danger);
-
-}
-
-
-/* ==================================================
-   39. INFORMATION MESSAGE
-   ================================================== */
-
-.pwa-message[data-type="info"] {
-
-    background: var(--pwa-info-bg);
-
-    color: var(--pwa-info);
-
-    border-color: var(--pwa-info);
-
-}
-
-
-/* ==================================================
-   40. RELOAD WEBSITE BUTTON
-   ================================================== */
-
-#pwaReloadButton {
-
-    margin-top: 20px;
-
-    border-color: var(--pwa-gold);
-
-}
-
-
-/* ==================================================
-   41. INSTALL BUTTON
-   ================================================== */
-
-#pwaInstallButton {
-
-    min-height: 52px;
-
-    min-width: min(100%, 210px);
-
-}
-
-
-/* ==================================================
-   42. SETTINGS BUTTON
-   ================================================== */
-
-#pwaSettingsButton {
-
-    min-height: 52px;
-
-}
-
-#pwaSettingsButton::after {
-
-    content: "";
-
-    display: inline-block;
-
-    flex-shrink: 0;
-
-    width: 8px;
-
-    height: 8px;
-
-    margin-left: 4px;
-
-    border-right: 2px solid currentColor;
-
-    border-bottom: 2px solid currentColor;
-
-    transform: rotate(45deg);
-
-    transition:
-
-        transform var(--pwa-transition);
-
-}
-
-#pwaSettingsButton[aria-expanded="true"]::after {
-
-    transform: rotate(225deg);
-
-}
-
-
-/* ==================================================
-   43. INSTALLED APPLICATION MODE
-   ================================================== */
-
-@media (display-mode: standalone) {
-
-    .pwa-panel {
-
-        margin-top: 24px;
-
-        margin-bottom: 24px;
-
-        scroll-margin-top: 20px;
-
-    }
-
-}
-
-@media (display-mode: fullscreen) {
-
-    .pwa-panel {
-
-        margin-bottom: 24px;
-
-    }
-
-}
-
-
-/* ==================================================
-   44. TABLET RESPONSIVE DESIGN
-   ================================================== */
-
-@media (max-width: 900px) {
-
-    .pwa-panel {
-
-        padding: 24px;
-
-    }
-
-    .pwa-info-grid {
-
-        grid-template-columns:
-
-            repeat(
-
-                2,
-
-                minmax(0, 1fr)
-
-            );
-
-    }
-
-    .pwa-action-row {
-
-        gap: 10px;
-
-    }
-
-}
-
-
-/* ==================================================
-   45. MOBILE RESPONSIVE DESIGN
-   ================================================== */
-
+#merahisabPwaPanel .pwa-info-grid > div { min-width: 0; padding: clamp(12px,2vw,18px); border: 1px solid var(--pwa-border); border-radius: 14px; background: var(--pwa-surface); }
+#merahisabPwaPanel .pwa-info-grid dt { color: var(--pwa-muted); font-size: .85rem; line-height: 1.55; margin: 0 0 8px; }
+#merahisabPwaPanel .pwa-info-grid dd { margin: 0; color: var(--pwa-text); font-size: 1rem; font-weight: 650; line-height: 1.55; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+#merahisabPwaPanel :is(#pwaCacheEntries,#pwaCacheGroups,#pwaCacheVersion,#pwaStorageUsed,#pwaStorageQuota,#pwaStoragePercentage) { color: var(--pwa-accent); font-size: 1.15rem; font-weight: 750; }
+#merahisabPwaPanel :is(#pwaEngineVersion,#pwaWorkerVersion) { font-family: ui-monospace,Consolas,monospace; }
+#merahisabPwaPanel #pwaLanguageCache { overflow-wrap: anywhere; line-height: 1.65; }
+#merahisabPwaPanel .pwa-message { margin: 18px 0 0; padding: 14px 16px; border: 1px solid var(--pwa-info); border-radius: 12px; background: var(--pwa-info-bg); color: var(--pwa-info); font-size: .9rem; }
+#merahisabPwaPanel .pwa-message:empty { margin: 0; padding: 0; border: 0; background: transparent; }
+#merahisabPwaPanel .pwa-message[data-type="success"] { background: var(--pwa-success-bg); color: var(--pwa-success); border-color: var(--pwa-success); }
+#merahisabPwaPanel .pwa-message[data-type="warning"] { background: var(--pwa-warning-bg); color: var(--pwa-warning); border-color: var(--pwa-warning); }
+#merahisabPwaPanel .pwa-message[data-type="error"] { background: var(--pwa-danger-bg); color: var(--pwa-danger); border-color: var(--pwa-danger); }
+html[data-language="hi"] #merahisabPwaPanel { line-height: 1.8; }
+html[data-language="hi"] #merahisabPwaPanel .pwa-eyebrow { letter-spacing: normal; }
+/* Match the shared homepage gutters, without widening other mounts. */
+main#home > #merahisabPwaPanel { width: calc(100% - 48px); max-width: 1152px; }
+@media (max-width: 760px) { main#home > #merahisabPwaPanel { width: calc(100% - 32px); } }
+@media (max-width: 430px) { main#home > #merahisabPwaPanel { width: calc(100% - 28px); } }
 @media (max-width: 600px) {
-
-    .pwa-panel {
-
-        margin: 24px auto;
-
-        padding: 18px;
-
-        border-radius: 18px;
-
-    }
-
-    .pwa-panel-header {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 14px;
-
-    }
-
-    .pwa-panel-header > div {
-
-        flex: 0 1 auto;
-
-        width: 100%;
-
-    }
-
-    .pwa-panel-header h2 {
-
-        font-size: 24px;
-
-    }
-
-    .pwa-eyebrow {
-
-        font-size: 11px;
-
-        letter-spacing: 1.5px;
-
-    }
-
-    .pwa-description {
-
-        font-size: 14px;
-
-    }
-
-    .pwa-action-row {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-    }
-
-    .pwa-panel .pwa-button {
-
-        width: 100%;
-
-        min-height: 50px;
-
-    }
-
-    .pwa-info-grid {
-
-        grid-template-columns:
-
-            repeat(
-
-                2,
-
-                minmax(0, 1fr)
-
-            );
-
-        gap: 10px;
-
-    }
-
-    .pwa-info-grid > div {
-
-        padding: 14px;
-
-    }
-
-    .pwa-info-grid dt {
-
-        font-size: 12px;
-
-    }
-
-    .pwa-info-grid dd {
-
-        font-size: 14px;
-
-    }
-
-    #pwaCacheEntries,
-
-    #pwaCacheGroups,
-
-    #pwaCacheVersion {
-
-        font-size: 22px;
-
-    }
-
-    #pwaStorageUsed,
-
-    #pwaStorageQuota,
-
-    #pwaStoragePercentage {
-
-        font-size: 16px;
-
-    }
-
-    .pwa-notice,
-
-    #pwaInstallGuide,
-
-    .pwa-update-banner {
-
-        padding: 16px;
-
-    }
-
-    .pwa-message {
-
-        padding: 12px 14px;
-
-        font-size: 13px;
-
-    }
-
+  #merahisabPwaPanel { margin-block: 24px; padding: 16px; border-radius: 18px; }
+  #merahisabPwaPanel .pwa-panel-header { flex-direction: column; align-items: flex-start; }
+  #merahisabPwaPanel .pwa-panel-header > div { flex: 0 1 auto; width: 100%; }
+  #merahisabPwaPanel .pwa-action-row { flex-direction: column; }
+  #merahisabPwaPanel .pwa-button { width: 100%; }
 }
-
-
-/* ==================================================
-   46. SMALL MOBILE SCREEN PROTECTION
-   ================================================== */
-
-@media (max-width: 360px) {
-
-    .pwa-panel {
-
-        padding: 14px;
-
-    }
-
-    .pwa-info-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .pwa-panel-header h2 {
-
-        font-size: 21px;
-
-    }
-
-    .pwa-panel .pwa-button {
-
-        padding: 12px;
-
-        font-size: 13px;
-
-    }
-
-    .pwa-connection-status {
-
-        font-size: 12px;
-
-    }
-
+@container (max-width: 420px) {
+  #merahisabPwaPanel .pwa-panel-header > div { flex: 0 1 100%; }
+  #merahisabPwaPanel .pwa-action-row { flex-direction: column; }
+  #merahisabPwaPanel .pwa-button { width: 100%; }
+  #merahisabPwaPanel .pwa-info-grid { grid-template-columns: 1fr; }
 }
-
-
-/* ==================================================
-   47. LARGE DESKTOP DESIGN
-   ================================================== */
-
-@media (min-width: 1200px) {
-
-    .pwa-info-grid {
-
-        grid-template-columns:
-
-            repeat(
-
-                3,
-
-                minmax(0, 1fr)
-
-            );
-
-    }
-
-    .pwa-panel {
-
-        padding: 36px;
-
-    }
-
-}
-
-
-/* ==================================================
-   48. ULTRA-WIDE DESKTOP PROTECTION
-   ================================================== */
-
-@media (min-width: 1600px) {
-
-    .pwa-panel {
-
-        max-width: 1440px;
-
-    }
-
-    .pwa-info-grid {
-
-        grid-template-columns:
-
-            repeat(
-
-                4,
-
-                minmax(0, 1fr)
-
-            );
-
-    }
-
-}
-
-
-/* ==================================================
-   49. REDUCED MOTION ACCESSIBILITY
-   ================================================== */
-
 @media (prefers-reduced-motion: reduce) {
-
-    .pwa-panel,
-
-    .pwa-panel *,
-
-    .pwa-panel *::before,
-
-    .pwa-panel *::after {
-
-        animation: none !important;
-
-        transition: none !important;
-
-        scroll-behavior: auto !important;
-
-    }
-
-    .pwa-panel .pwa-button:hover {
-
-        transform: none;
-
-    }
-
+  #merahisabPwaPanel, #merahisabPwaPanel *, #merahisabPwaPanel *::before, #merahisabPwaPanel *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-
-
-/* ==================================================
-   50. HIGH CONTRAST PREFERENCE
-   ================================================== */
-
 @media (prefers-contrast: more) {
-
-    .pwa-panel,
-
-    .pwa-info-grid > div,
-
-    .pwa-notice,
-
-    .pwa-panel .pwa-button {
-
-        border-width: 2px;
-
-    }
-
-    .pwa-panel .pwa-button:focus-visible {
-
-        outline-width: 4px;
-
-    }
-
-    .pwa-panel .pwa-button:disabled {
-
-        opacity: 0.75;
-
-    }
-
+  #merahisabPwaPanel, #merahisabPwaPanel .pwa-info-grid > div, #merahisabPwaPanel .pwa-button { border-width: 2px; }
 }
-
-
-/* ==================================================
-   51. FORCED COLORS ACCESSIBILITY
-   ================================================== */
-
 @media (forced-colors: active) {
-
-    .pwa-panel,
-
-    .pwa-info-grid > div,
-
-    .pwa-notice,
-
-    .pwa-update-banner,
-
-    .pwa-message {
-
-        background: Canvas;
-
-        color: CanvasText;
-
-        border: 1px solid CanvasText;
-
-        box-shadow: none;
-
-    }
-
-    .pwa-panel h2,
-
-    .pwa-panel h3,
-
-    .pwa-panel dt,
-
-    .pwa-panel dd,
-
-    .pwa-panel p,
-
-    .pwa-eyebrow {
-
-        color: CanvasText;
-
-    }
-
-    .pwa-panel .pwa-button {
-
-        background: ButtonFace;
-
-        color: ButtonText;
-
-        border: 1px solid ButtonText;
-
-        box-shadow: none;
-
-    }
-
-    .pwa-panel .pwa-button:disabled {
-
-        color: GrayText;
-
-        border-color: GrayText;
-
-    }
-
-    .pwa-connection-status {
-
-        background: Canvas;
-
-        color: CanvasText;
-
-    }
-
-    .pwa-panel .pwa-button:focus-visible {
-
-        outline: 3px solid Highlight;
-
-    }
-
+  #merahisabPwaPanel, #merahisabPwaPanel .pwa-info-grid > div, #merahisabPwaPanel .pwa-notice, #merahisabPwaPanel .pwa-update-banner, #merahisabPwaPanel .pwa-message, #merahisabPwaPanel .pwa-connection-status { background: Canvas; color: CanvasText; border-color: CanvasText; box-shadow: none; }
+  #merahisabPwaPanel :is(h2,h3,dt,dd,p,strong,.pwa-eyebrow) { color: CanvasText; }
+  #merahisabPwaPanel .pwa-button { background: ButtonFace; color: ButtonText; border-color: ButtonText; }
+  #merahisabPwaPanel .pwa-button:disabled { color: GrayText; border-color: GrayText; }
+  #merahisabPwaPanel :is(button,a,[tabindex]):focus-visible { outline-color: Highlight !important; }
 }
-
-
-/* ==================================================
-   52. PRINT-FRIENDLY WEBSITE
-   ================================================== */
-
-@media print {
-
-    .pwa-panel {
-
-        display: none !important;
-
-    }
-
-}
-
-
-/* ==================================================
-   END OF MERAHISAB PREMIUM PWA DESIGN ENGINE
-   ================================================== */
+@media print { #merahisabPwaPanel { display: none !important; } }
