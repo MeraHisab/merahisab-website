@@ -1,12 +1,14 @@
 /* ==================================================
    MERAHISAB ADVANCED PWA ENGINE
    Official Website: https://merahisab.store/
-   Engine Version: 1.0.0
+   Engine Version: 2.0.0
    ================================================== */
 
 (() => {
 
     "use strict";
+
+    if (window.MeraHisabPWA) return;
 
     // ==================================================
     // 01. PWA CONFIGURATION
@@ -14,7 +16,7 @@
 
     const CONFIG = Object.freeze({
 
-        version: "1.0.0",
+        version: "2.0.0",
 
         serviceWorker: "/sw.js",
 
@@ -78,17 +80,66 @@
     // 03. DOM UTILITIES
     // ==================================================
 
+    let diagnosticsTask = null;
+    let registrationTask = null;
+    let activationTimer = null;
+    let installBusy = false;
+    let persistentBusy = false;
+    let cacheStatusRequest = 0;
+    let workerStatusRequest = 0;
+    const observedWorkers = new WeakSet();
+    const observedRegistrations = new WeakSet();
+    const expectedReplies = Object.freeze({
+        GET_VERSION: "SW_VERSION",
+        GET_CACHE_STATUS: "CACHE_STATUS",
+        REFRESH_OFFLINE_CACHE: "OFFLINE_CACHE_REFRESHED",
+        CLEAR_PWA_CACHE: "CACHE_CLEARED",
+        SKIP_WAITING: "UPDATE_ACTIVATION_REQUESTED"
+    });
+
     const get = (id) =>
         document.getElementById(id);
 
+    const liveHindi = Object.freeze({
+        "Unknown": "अज्ञात", "Checking...": "जांच जारी है...", "Offline": "ऑफलाइन",
+        "Online": "ऑनलाइन", "Checking Connection": "कनेक्शन की जांच", "Website Unreachable": "वेबसाइट उपलब्ध नहीं",
+        "Network Available": "नेटवर्क उपलब्ध", "Not checked": "जांच नहीं हुई", "Not verified": "सत्यापित नहीं",
+        "Unable to verify": "सत्यापन नहीं हो सका", "Not supported": "समर्थित नहीं",
+        "Cache information available": "कैश की जानकारी उपलब्ध", "Cache information not verified": "कैश की जानकारी सत्यापित नहीं",
+        "Cache storage unavailable": "कैश स्टोरेज उपलब्ध नहीं", "Granted": "अनुमति प्राप्त", "Not granted": "अनुमति नहीं मिली",
+        "Active and controlling page": "सक्रिय और पेज नियंत्रित कर रहा है", "Not controlling this page yet": "अभी पेज नियंत्रित नहीं कर रहा",
+        "New update available": "नया अपडेट उपलब्ध", "No waiting update detected": "कोई प्रतीक्षारत अपडेट नहीं",
+        "Registration failed": "पंजीकरण असफल", "Registering service worker": "सर्विस वर्कर का पंजीकरण",
+        "Install MeraHisab": "MeraHisab इंस्टॉल करें", "Installation Guide": "इंस्टॉलेशन गाइड",
+        "Installation available": "इंस्टॉलेशन उपलब्ध", "Installed App Mode": "इंस्टॉल किया गया ऐप मोड",
+        "Running in installed app mode": "इंस्टॉल किए गए ऐप मोड में चल रहा है",
+        "Browser installation options may be available": "ब्राउजर में इंस्टॉलेशन विकल्प उपलब्ध हो सकते हैं",
+        "PWA Settings": "PWA सेटिंग्स", "Close PWA Settings": "PWA सेटिंग्स बंद करें",
+        "Estimated website origin storage": "वेबसाइट का अनुमानित स्टोरेज",
+        "Storage information unavailable": "स्टोरेज की जानकारी उपलब्ध नहीं",
+        "Unable to verify storage information": "स्टोरेज की जानकारी सत्यापित नहीं हो सकी",
+        "Offline resource refresh completed.": "ऑफलाइन संसाधनों का अपडेट पूरा हुआ।",
+        "Offline refresh completed with missing optional resources.": "ऑफलाइन अपडेट पूरा हुआ, लेकिन कुछ वैकल्पिक संसाधन उपलब्ध नहीं हैं।",
+        "Website offline cache cleared. Refresh offline resources when connected.": "ऑफलाइन कैश साफ किया गया। इंटरनेट मिलने पर संसाधन दोबारा सहेजें।",
+        "Update activation is not confirmed. Refresh diagnostics before retrying.": "अपडेट सक्रिय होने की पुष्टि नहीं हुई। दोबारा प्रयास से पहले तकनीकी जांच करें।",
+        "Website update activated. Reload the page when you are ready.": "वेबसाइट अपडेट सक्रिय है। तैयार होने पर पेज रीलोड करें।"
+    });
+    const liveValues = new Map();
+    function localText(value) {
+        const text = String(value);
+        const hi = document.documentElement.dataset.language === "hi";
+        return hi && Object.prototype.hasOwnProperty.call(liveHindi, text) ? liveHindi[text] : text;
+    }
     function setText(id, value) {
 
         const element = get(id);
 
         if (element) {
 
-            element.textContent =
-                String(value);
+            liveValues.set(id, String(value));
+            element.setAttribute("data-no-translate", "true");
+            const text = localText(value);
+            if (element.textContent !== text) element.textContent = text;
 
         }
 
@@ -153,8 +204,7 @@
 
         }
 
-        element.textContent =
-            String(message);
+        setText("pwaMessage", message);
 
         element.dataset.type = type;
 
@@ -223,8 +273,6 @@
 
             "standalone",
 
-            "fullscreen",
-
             "minimal-ui",
 
             "window-controls-overlay"
@@ -275,8 +323,7 @@
 
             if (button) {
 
-                button.textContent =
-                    "Installed App Mode";
+                setText("pwaInstallButton", "Installed App Mode");
 
                 button.disabled = true;
 
@@ -288,7 +335,7 @@
 
         if (button) {
 
-            button.disabled = false;
+            button.disabled = installBusy;
 
         }
 
@@ -443,6 +490,7 @@
     // ==================================================
 
     async function installApplication() {
+        if (installBusy) return;
 
         if (detectInstalledMode()) {
 
@@ -466,6 +514,7 @@
 
         }
 
+        installBusy = true;
         const promptEvent =
             state.installPrompt;
 
@@ -518,6 +567,7 @@
 
         } finally {
 
+            installBusy = false;
             updateInstallUI();
 
         }
@@ -583,7 +633,7 @@
 
         if (status) {
 
-            status.textContent = label;
+            setText("pwaConnectionStatus", label);
 
             status.dataset.state =
                 statusType;
@@ -799,6 +849,7 @@
 
                     );
 
+                    if (!state.registration) await registerServiceWorker();
                     checkForUpdates(false);
 
                 }
@@ -867,6 +918,10 @@
 
             (resolve, reject) => {
 
+                if (!Object.prototype.hasOwnProperty.call(expectedReplies, type)) {
+                    reject(new Error("Unsupported worker command"));
+                    return;
+                }
                 if (!supportsServiceWorker()) {
 
                     reject(
@@ -953,7 +1008,8 @@
 
                             !result ||
 
-                            result.success !== true
+                            result.success !== true ||
+                            result.type !== expectedReplies[type]
 
                         ) {
 
@@ -1046,7 +1102,7 @@
             !state.updateAvailable ||
 
             state.updateRequested ||
-
+            state.checkingUpdate ||
             state.cacheBusy
 
         );
@@ -1071,11 +1127,8 @@
 
     function observeWorker(worker) {
 
-        if (!worker) {
-
-            return;
-
-        }
+        if (!worker || observedWorkers.has(worker)) return;
+        observedWorkers.add(worker);
 
         function handleState() {
 
@@ -1168,93 +1221,36 @@
     // ==================================================
 
     async function registerServiceWorker() {
-
         if (!supportsServiceWorker()) {
-
-            setText(
-
-                "pwaWorkerStatus",
-
-                "Unavailable in this browser or context"
-
-            );
-
-            return;
-
+            setText("pwaWorkerStatus", "Unavailable in this browser or context");
+            return false;
         }
-
-        try {
-
-            setText(
-
-                "pwaWorkerStatus",
-
-                "Registering service worker"
-
-            );
-
-            state.registration =
-
-                await navigator.serviceWorker.register(
-
-                    CONFIG.serviceWorker,
-
-                    {
-
-                        scope: CONFIG.scope,
-
-                        updateViaCache: "none"
-
-                    }
-
-                );
-
-            state.registration.addEventListener(
-
-                "updatefound",
-
-                () => {
-
-                    observeWorker(
-
-                        state.registration.installing
-
+        if (registrationTask) return registrationTask;
+        registrationTask = (async () => {
+            try {
+                if (!state.registration) {
+                    setText("pwaWorkerStatus", "Registering service worker");
+                    state.registration = await navigator.serviceWorker.register(
+                        CONFIG.serviceWorker, { scope: CONFIG.scope, updateViaCache: "none" }
                     );
-
                 }
-
-            );
-
-            observeWorker(
-
-                state.registration.installing
-
-            );
-
-            updateAvailableUI();
-
-            await refreshWorkerStatus();
-
-        } catch (error) {
-
-            setText(
-
-                "pwaWorkerStatus",
-
-                "Registration failed"
-
-            );
-
-            showMessage(
-
-                "Offline service could not be initialized. Normal website access remains available.",
-
-                "warning"
-
-            );
-
-        }
-
+                const registration = state.registration;
+                if (!observedRegistrations.has(registration)) {
+                    observedRegistrations.add(registration);
+                    registration.addEventListener("updatefound", () => observeWorker(registration.installing));
+                }
+                observeWorker(registration.installing);
+                updateAvailableUI();
+                await refreshWorkerStatus();
+                return true;
+            } catch {
+                setText("pwaWorkerStatus", "Registration failed");
+                showMessage("Offline service could not be initialized. Normal website access remains available.", "warning");
+                return false;
+            }
+        })();
+        try { return await registrationTask; }
+        finally { registrationTask = null; }
     }
 
     // ==================================================
@@ -1262,103 +1258,26 @@
     // ==================================================
 
     async function refreshWorkerStatus() {
-
+        const request = ++workerStatusRequest;
         if (!supportsServiceWorker()) {
-
-            setText(
-
-                "pwaWorkerStatus",
-
-                "Not supported"
-
-            );
-
+            setText("pwaWorkerStatus", "Not supported");
+            setText("pwaWorkerVersion", "Not verified");
             return;
-
         }
-
-        const controller =
-
-            navigator.serviceWorker.controller;
-
+        const controller = navigator.serviceWorker.controller;
         if (!controller) {
-
-            setText(
-
-                "pwaWorkerStatus",
-
-                "Not controlling this page yet"
-
-            );
-
-            setText(
-
-                "pwaWorkerVersion",
-
-                "Not verified"
-
-            );
-
+            setText("pwaWorkerStatus", "Not controlling this page yet");
+            setText("pwaWorkerVersion", "Not verified");
             return;
-
         }
-
-        setText(
-
-            "pwaWorkerStatus",
-
-            "Active and controlling page"
-
-        );
-
+        setText("pwaWorkerStatus", "Active and controlling page");
         try {
-
-            const result =
-
-                await sendWorkerMessage(
-
-                    "GET_VERSION"
-
-                );
-
-            if (
-
-                result.type === "SW_VERSION" &&
-
-                typeof result.version === "string"
-
-            ) {
-
-                setText(
-
-                    "pwaWorkerVersion",
-
-                    result.version
-
-                );
-
-            } else {
-
-                throw new Error(
-
-                    "Unexpected worker response"
-
-                );
-
-            }
-
-        } catch (error) {
-
-            setText(
-
-                "pwaWorkerVersion",
-
-                "Unable to verify"
-
-            );
-
+            const result = await sendWorkerMessage("GET_VERSION", controller);
+            if (request !== workerStatusRequest || controller !== navigator.serviceWorker.controller) return;
+            setText("pwaWorkerVersion", typeof result.version === "string" ? result.version : "Unable to verify");
+        } catch {
+            if (request === workerStatusRequest) setText("pwaWorkerVersion", "Unable to verify");
         }
-
     }
 
     // ==================================================
@@ -1376,7 +1295,6 @@
             state.checkingUpdate ||
 
             state.cacheBusy ||
-
             state.updateRequested
 
         ) {
@@ -1385,6 +1303,8 @@
 
         }
 
+        if (!state.registration && manual && navigator.onLine) await registerServiceWorker();
+        if (state.checkingUpdate || state.cacheBusy || state.updateRequested) return;
         if (!state.registration) {
 
             if (manual) {
@@ -1422,6 +1342,7 @@
         }
 
         state.checkingUpdate = true;
+        updateAvailableUI();
 
         setDisabled(
 
@@ -1453,7 +1374,7 @@
                 "pwaLastUpdateCheck",
 
                 state.lastUpdateCheck
-                    .toLocaleString("en-IN")
+                    .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
 
             );
 
@@ -1492,14 +1413,8 @@
         } finally {
 
             state.checkingUpdate = false;
-
-            setDisabled(
-
-                "pwaCheckUpdateButton",
-
-                false
-
-            );
+            setDisabled("pwaCheckUpdateButton", state.cacheBusy);
+            updateAvailableUI();
 
         }
 
@@ -1514,7 +1429,7 @@
         if (
 
             state.updateRequested ||
-
+            state.checkingUpdate ||
             state.cacheBusy
 
         ) {
@@ -1562,6 +1477,13 @@
         }
 
         state.updateRequested = true;
+        clearTimeout(activationTimer);
+        activationTimer = setTimeout(() => {
+            if (!state.updateRequested) return;
+            state.updateRequested = false;
+            updateAvailableUI();
+            showMessage("Update activation is not confirmed. Refresh diagnostics before retrying.", "warning");
+        }, 30000);
 
         setDisabled(
 
@@ -1589,6 +1511,7 @@
 
             );
 
+            if (!state.updateRequested) return;
             showMessage(
 
                 "Update activation requested. Waiting for the new service worker.",
@@ -1599,6 +1522,7 @@
 
         } catch (error) {
 
+            clearTimeout(activationTimer);
             state.updateRequested = false;
 
             updateAvailableUI();
@@ -1636,6 +1560,7 @@
                 const requested =
                     state.updateRequested;
 
+                clearTimeout(activationTimer);
                 state.updateRequested = false;
 
                 updateAvailableUI();
@@ -1693,122 +1618,31 @@
     // ==================================================
 
     async function refreshCacheStatus() {
-
-        if (!supportsCacheStorage()) {
-
-            setText(
-
-                "pwaCacheStatus",
-
-                "Cache storage unavailable"
-
-            );
-
+        const request = ++cacheStatusRequest;
+        const reset = (message) => {
+            setText("pwaCacheStatus", message);
+            ["pwaCacheEntries", "pwaCacheVersion", "pwaCacheGroups", "pwaLanguageCache"].forEach(id => setText(id, "Unknown"));
+        };
+        if (!supportsCacheStorage() || !supportsServiceWorker()) {
+            reset("Cache storage unavailable");
             return;
-
         }
-
+        const controller = navigator.serviceWorker.controller;
         try {
-
-            const response =
-
-                await sendWorkerMessage(
-
-                    "GET_CACHE_STATUS"
-
-                );
-
-            if (
-
-                response.type !== "CACHE_STATUS" ||
-
-                !response.data
-
-            ) {
-
-                throw new Error(
-
-                    "Invalid cache status"
-
-                );
-
-            }
-
-            const data =
-                response.data;
-
-            setText(
-
-                "pwaCacheStatus",
-
-                "Cache information available"
-
-            );
-
-            setText(
-
-                "pwaCacheEntries",
-
-                data.totalEntries
-
-            );
-
-            setText(
-
-                "pwaCacheVersion",
-
-                data.version
-
-            );
-
-            setText(
-
-                "pwaCacheGroups",
-
-                Array.isArray(data.caches)
-
-                    ? data.caches.length
-
-                    : "Unknown"
-
-            );
-
-        } catch (error) {
-
-            setText(
-
-                "pwaCacheStatus",
-
-                "Cache information not verified"
-
-            );
-
-            setText(
-
-                "pwaCacheEntries",
-
-                "Unknown"
-
-            );
-
-            setText(
-
-                "pwaCacheVersion",
-
-                "Unknown"
-
-            );
-
-            setText(
-
-                "pwaCacheGroups",
-
-                "Unknown"
-
-            );
-
+            const response = await sendWorkerMessage("GET_CACHE_STATUS", controller);
+            if (request !== cacheStatusRequest || controller !== navigator.serviceWorker.controller) return;
+            const data = response.data;
+            if (!data || !Number.isSafeInteger(data.totalEntries) || data.totalEntries < 0 || typeof data.version !== "string") throw new Error("Invalid cache data");
+            setText("pwaCacheStatus", "Cache information available");
+            setText("pwaCacheEntries", data.totalEntries);
+            setText("pwaCacheVersion", data.version);
+            setText("pwaCacheGroups", Array.isArray(data.caches) ? data.caches.length : "Unknown");
+            const lang = data.language;
+            setText("pwaLanguageCache", lang && Number.isSafeInteger(lang.cachedResources) && Number.isSafeInteger(lang.totalResources) && lang.totalResources > 0 && lang.cachedResources >= 0 && lang.cachedResources <= lang.totalResources
+                ? `${lang.cachedResources} / ${lang.totalResources}` : "Unknown");
+        } catch {
+            if (request === cacheStatusRequest) reset("Cache information not verified");
         }
-
     }
 
     // ==================================================
@@ -1818,6 +1652,7 @@
     function setCacheBusy(busy) {
 
         state.cacheBusy = busy;
+        if (busy) cacheStatusRequest++;
 
         setDisabled(
 
@@ -1858,7 +1693,7 @@
         if (
 
             state.cacheBusy ||
-
+            state.checkingUpdate ||
             state.updateRequested
 
         ) {
@@ -1921,9 +1756,10 @@
 
             showMessage(
 
-                "Essential offline resources refreshed. Optional resources depend on availability.",
-
-                "success"
+                response.partial === true
+                    ? "Offline refresh completed with missing optional resources."
+                    : "Offline resource refresh completed.",
+                response.partial === true ? "warning" : "success"
 
             );
 
@@ -1939,11 +1775,8 @@
 
         } finally {
 
-            setCacheBusy(false);
-
-            await refreshCacheStatus();
-
-            await refreshStorageStatus();
+            try { await Promise.allSettled([refreshCacheStatus(), refreshStorageStatus()]); }
+            finally { setCacheBusy(false); }
 
         }
 
@@ -1958,7 +1791,7 @@
         if (
 
             state.cacheBusy ||
-
+            state.checkingUpdate ||
             state.updateRequested
 
         ) {
@@ -2033,11 +1866,8 @@
 
         } finally {
 
-            setCacheBusy(false);
-
-            await refreshCacheStatus();
-
-            await refreshStorageStatus();
+            try { await Promise.allSettled([refreshCacheStatus(), refreshStorageStatus()]); }
+            finally { setCacheBusy(false); }
 
         }
 
@@ -2128,6 +1958,7 @@
     // ==================================================
 
     async function refreshStorageStatus() {
+        ["pwaStorageUsed", "pwaStorageQuota", "pwaStoragePercentage", "pwaPersistentStorage"].forEach(id => setText(id, "Unknown"));
 
         if (!supportsStorageManager()) {
 
@@ -2270,6 +2101,7 @@
     // ==================================================
 
     async function requestPersistentStorage() {
+        if (persistentBusy) return;
 
         if (
 
@@ -2292,6 +2124,8 @@
 
         }
 
+        persistentBusy = true;
+        setDisabled("pwaPersistentButton", true);
         try {
 
             const granted =
@@ -2326,7 +2160,8 @@
 
         }
 
-        await refreshStorageStatus();
+        try { await refreshStorageStatus(); }
+        finally { persistentBusy = false; setDisabled("pwaPersistentButton", false); }
 
     }
 
@@ -2615,6 +2450,10 @@
 
                     </div>
 
+                    <div>
+                        <dt>Offline Language Resources (English / Hindi)</dt>
+                        <dd id="pwaLanguageCache">Unknown</dd>
+                    </div>
                 </dl>
 
                 <div class="pwa-action-row">
@@ -2841,13 +2680,7 @@
 
         );
 
-        button.textContent =
-
-            content.hidden
-
-                ? "PWA Settings"
-
-                : "Close PWA Settings";
+        setText("pwaSettingsButton", content.hidden ? "PWA Settings" : "Close PWA Settings");
 
         if (!content.hidden) {
 
@@ -2862,45 +2695,18 @@
     // ==================================================
 
     async function refreshDiagnostics() {
-
-        setDisabled(
-
-            "pwaDiagnosticsButton",
-
-            true
-
-        );
-
-        try {
-
+        if (diagnosticsTask) return diagnosticsTask;
+        setDisabled("pwaDiagnosticsButton", true);
+        diagnosticsTask = (async () => {
+            if (!state.registration && navigator.onLine) await registerServiceWorker();
             await Promise.allSettled([
-
-                refreshWorkerStatus(),
-
-                refreshCacheStatus(),
-
-                refreshStorageStatus(),
-
-                verifyConnection()
-
+                refreshWorkerStatus(), refreshCacheStatus(), refreshStorageStatus(), verifyConnection()
             ]);
-
             updateInstallUI();
-
             updateAvailableUI();
-
-        } finally {
-
-            setDisabled(
-
-                "pwaDiagnosticsButton",
-
-                false
-
-            );
-
-        }
-
+        })();
+        try { await diagnosticsTask; }
+        finally { diagnosticsTask = null; setDisabled("pwaDiagnosticsButton", false); }
     }
 
     // ==================================================
@@ -3147,6 +2953,10 @@
         createPWAInterface();
 
         bindInterfaceEvents();
+        setText("pwaSettingsButton", "PWA Settings");
+        window.addEventListener("merahisab:languagechange", () => {
+            liveValues.forEach((value, id) => setText(id, value));
+        });
 
         initializeConnectionEvents();
 
@@ -3214,9 +3024,11 @@
 
                 reachable: state.reachable,
 
-                updateAvailable:
-
-                    state.updateAvailable,
+                updateAvailable: state.updateAvailable,
+                initialized: state.initialized,
+                cacheBusy: state.cacheBusy,
+                updateRequested: state.updateRequested,
+                checkingUpdate: state.checkingUpdate,
 
                 serviceWorkerSupported:
 
