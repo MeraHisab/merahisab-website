@@ -1,76 +1,1413 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About MeraHisab</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#071426;color:#f4f6fb;font-family:Arial,sans-serif;line-height:1.7}
-header{padding:20px 5%;border-bottom:1px solid #263d59}
-header a{color:#e6bd69;text-decoration:none;font-size:22px;font-weight:bold}
-main{max-width:900px;margin:auto;padding:35px 20px}
-h1,h2{color:#e6bd69}
-.card{background:#10233b;border:1px solid #263d59;border-radius:14px;padding:22px;margin:18px 0}
-p,li{color:#c4cfdf}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-footer{text-align:center;border-top:1px solid #263d59;padding:25px}
-footer a{color:#e6bd69;text-decoration:none}
-.btn{display:inline-block;background:#e6bd69;color:#071426;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:bold}
-@media(max-width:600px){.grid{grid-template-columns:1fr}}
-</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>About Us | MeraHisab & Royal Khata</title>
+
+    <meta name="description"
+          content="Learn about MeraHisab, Royal Khata, our mission, vision and approach to personal finance and digital khata management.">
+
+    <meta name="theme-color" content="#081321">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title"
+          content="About MeraHisab">
+
+    <meta property="og:description"
+          content="Personal Finance and Digital Khata Solutions.">
+
+    <meta property="og:url"
+          content="https://merahisab.store/about.html">
+
+    <link rel="canonical"
+          href="https://merahisab.store/about.html">
+
+    <link rel="stylesheet" href="upgrade.css">
+
+    <script defer src="upgrade.js"></script>
+
+    <style>
+
+        .about-hero {
+            background: linear-gradient(
+                135deg,
+                #081321,
+                #182b43,
+                #26364d
+            );
+            border: 1px solid #d4af37;
+            border-radius: 24px;
+            padding: clamp(24px, 5vw, 64px);
+            text-align: center;
+            color: #f5f5f7;
+            margin-bottom: 28px;
+        }
+
+        .about-hero h1 {
+            color: #e5c788;
+            font-size: clamp(32px, 5vw, 54px);
+            overflow-wrap: anywhere;
+        }
+
+        .about-label {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #d4af37;
+            border-radius: 20px;
+            color: #e5c788;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .about-section {
+            margin-top: 28px;
+            line-height: 1.9;
+            overflow-wrap: anywhere;
+            scroll-margin-top: 100px;
+        }
+
+        .about-section h2 {
+            margin-bottom: 16px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .about-card {
+            min-width: 0;
+            box-sizing: border-box;
+            overflow-wrap: anywhere;
+        }
+
+        .about-symbol {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(212,175,55,0.12);
+            border: 1px solid #a58a52;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .about-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .about-notice {
+            padding: 18px;
+            border: 1px solid #a58a52;
+            border-radius: 12px;
+            background: rgba(212,175,55,0.08);
+            margin: 20px 0;
+        }
+
+        .about-card ul {
+            padding-left: 22px;
+            line-height: 1.9;
+        }
+
+        .about-card li {
+            margin-bottom: 8px;
+        }
+
+        .about-status {
+            display: inline-block;
+            border: 1px solid #a58a52;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .about-roadmap {
+            border-left: 2px solid #a58a52;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .about-roadmap article {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .about-roadmap article::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d4af37;
+        }
+
+        @media (max-width: 600px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-actions {
+                flex-direction: column;
+            }
+
+            .about-hero {
+                padding: 28px 18px;
+            }
+
+            .about-section {
+                scroll-margin-top: 80px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-<header>
-<a href="index.html">MeraHisab</a>
-</header>
+    <header class="site">
 
-<main>
-<h1>About MeraHisab</h1>
-<p>Your Money. Your Control.</p>
+        <div class="container">
 
-<div class="card">
-<h2>Our Purpose</h2>
-<p>MeraHisab is a personal finance and expense tracking application created to help people organise their daily income, expenses, savings and financial records in one place.</p>
-<p>Our goal is to make money management simple, clear and convenient through an easy-to-use experience.</p>
-</div>
+            <strong>MeraHisab</strong>
 
-<div class="card">
-<h2>Designed for Everyday Life</h2>
-<p>Whether you want to record a daily expense, track income, manage different accounts or review your financial activity, MeraHisab aims to make the process organised and easy to understand.</p>
-</div>
+            <nav aria-label="Main navigation">
 
-<h2>Key Features</h2>
+                <a href="index.html">Home</a>
 
-<div class="grid">
-<div class="card"><h2>💰</h2><strong>Income & Expense Tracking</strong><p>Record and organise your financial transactions.</p></div>
-<div class="card"><h2>🏦</h2><strong>Account Management</strong><p>Organise records into dedicated accounts and categories.</p></div>
-<div class="card"><h2>📊</h2><strong>Reports & Analytics</strong><p>Understand your financial activity through summaries and graphs.</p></div>
-<div class="card"><h2>🔒</h2><strong>Privacy Focus</strong><p>Designed with local data storage and privacy in mind.</p></div>
-<div class="card"><h2>💾</h2><strong>Backup & Restore</strong><p>Manage your own backup files.</p></div>
-<div class="card"><h2>📝</h2><strong>Notes & Planning</strong><p>Organise notes, tasks and reminders.</p></div>
-</div>
+                <a href="downloads.html">Apps</a>
 
-<div class="card">
-<h2>Our Vision</h2>
-<p>We aim to build a reliable, simple and privacy-conscious personal finance tool that helps users stay organised and make better-informed decisions about their money.</p>
-</div>
+                <a href="compare.html">Compare</a>
 
-<div class="card">
-<h2>App Status</h2>
-<p>MeraHisab is currently under development. Features and availability may change as development progresses.</p>
-</div>
+                <a href="index.html#features">Features</a>
 
-<p><a class="btn" href="index.html">← Back to Home</a></p>
+                <a href="tools.html">Tools</a>
 
-</main>
+                <a href="privacy.html">Privacy</a>
 
-<footer>
-<p>© 2026 MeraHisab</p>
-<a href="privacy.html">Privacy Policy</a>
-</footer>
+                <a href="about.html"
+                   aria-current="page">
+
+                    About
+
+                </a>
+
+                <a href="contact.html">Support</a>
+
+                <button id="theme" type="button">
+
+                    Theme
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="shell">
+
+        <p>
+
+            <a href="index.html">Home</a>
+
+            / About Us
+
+        </p>
+
+        <!-- BRAND HERO -->
+
+        <section class="about-hero">
+
+            <span class="about-label">
+
+                PERSONAL FINANCE &amp; DIGITAL KHATA
+
+            </span>
+
+            <h1>About MeraHisab</h1>
+
+            <h2>Your Money. Your Control.</h2>
+
+            <p>
+
+                Simplifying financial management
+                through practical, accessible
+                and user-focused digital tools.
+
+            </p>
+
+            <p>
+
+                MeraHisab &amp; Royal Khata
+
+            </p>
+
+            <p>
+
+                Official Website: merahisab.store
+
+            </p>
+
+            <div class="about-actions"
+                 style="justify-content:center;">
+
+                <a class="action"
+                   href="downloads.html">
+
+                    Explore Our Apps
+
+                </a>
+
+                <a class="action"
+                   href="compare.html">
+
+                    Compare Applications
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT BRAND -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Who We Are</h2>
+
+            <p>
+
+                MeraHisab is a digital financial
+                management project focused on
+                simplifying everyday financial
+                record keeping.
+
+            </p>
+
+            <p>
+
+                Our goal is to help individuals,
+                families, shopkeepers and small
+                businesses organize their
+                financial information through
+                practical digital solutions.
+
+            </p>
+
+            <p>
+
+                Our application portfolio
+                includes MeraHisab for personal
+                finance management and Royal Khata
+                for digital ledger and credit-debit
+                management.
+
+            </p>
+
+            <p>
+
+                We aim to combine simplicity,
+                accessibility, privacy-conscious
+                design and responsible financial
+                record management.
+
+            </p>
+
+        </section>
+
+        <!-- MISSION VISION VALUES -->
+
+        <section class="about-section">
+
+            <h2>Our Mission, Vision &amp; Values</h2>
+
+            <div class="about-grid">
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#127919;
+
+                    </span>
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+
+                        To make everyday financial
+                        record management simple,
+                        accessible and convenient
+                        for individuals and
+                        small businesses.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128161;
+
+                    </span>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+
+                        To develop reliable digital
+                        financial management tools
+                        that help users understand,
+                        organize and manage their
+                        financial records.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128142;
+
+                    </span>
+
+                    <h3>Our Values</h3>
+
+                    <ul>
+
+                        <li>User privacy</li>
+
+                        <li>Data protection</li>
+
+                        <li>Simplicity</li>
+
+                        <li>Transparency</li>
+
+                        <li>Accessibility</li>
+
+                        <li>Continuous improvement</li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- APPLICATION PORTFOLIO -->
+
+        <section class="about-section">
+
+            <h2>Our Applications</h2>
+
+            <div class="about-grid">
+
+                <!-- MERAHISAB -->
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128176;
+
+                    </span>
+
+                    <h3>MeraHisab</h3>
+
+                    <span class="about-status">
+
+                        Personal Finance Management
+
+                    </span>
+
+                    <p>
+
+                        A financial management
+                        application designed to help
+                        users organize their personal
+                        financial records.
+
+                    </p>
+
+                    <h4>Primary Focus</h4>
+
+                    <ul>
+
+                        <li>Personal finance tracking</li>
+
+                        <li>Income and expense management</li>
+
+                        <li>Financial record organization</li>
+
+                        <li>Financial summaries</li>
+
+                        <li>Everyday money management</li>
+
+                    </ul>
+
+                    <div class="about-actions">
+
+                        <a class="action"
+                           href="merahisab.html">
+
+                            Learn More
+
+                        </a>
+
+                        <a class="action"
+                           href="download.html?app=merahisab">
+
+                            Download App
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- ROYAL KHATA -->
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128210;
+
+                    </span>
+
+                    <h3>Royal Khata</h3>
+
+                    <span class="about-status">
+
+                        Digital Khata Management
+
+                    </span>
+
+                    <p>
+
+                        A digital ledger project
+                        designed for organized
+                        credit-debit management
+                        and account record keeping.
+
+                    </p>
+
+                    <h4>Primary Focus</h4>
+
+                    <ul>
+
+                        <li>Digital khata records</li>
+
+                        <li>Credit and debit tracking</li>
+
+                        <li>Customer account management</li>
+
+                        <li>Transaction history</li>
+
+                        <li>Business ledger organization</li>
+
+                    </ul>
+
+                    <div class="about-actions">
+
+                        <a class="action"
+                           href="royal-khata.html">
+
+                            Learn More
+
+                        </a>
+
+                        <a class="action"
+                           href="download.html?app=royal-khata">
+
+                            Check Availability
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="about-notice">
+
+                Application features and
+                availability may vary depending
+                on the release version and
+                development status.
+
+            </div>
+
+                      </section>
+
+              <!-- PRIVACY AND SECURITY -->
+
+        <section class="about-section">
+
+            <h2>Privacy &amp; Security Commitment</h2>
+
+            <div class="about-grid">
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128274;
+
+                    </span>
+
+                    <h3>Privacy-Conscious Design</h3>
+
+                    <p>
+
+                        We aim to respect user privacy
+                        and minimize unnecessary
+                        exposure of personal and
+                        financial information.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128737;
+
+                    </span>
+
+                    <h3>Data Protection</h3>
+
+                    <p>
+
+                        We prioritize responsible
+                        data handling and the
+                        development of appropriate
+                        security safeguards.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128190;
+
+                    </span>
+
+                    <h3>Backup &amp; Recovery</h3>
+
+                    <p>
+
+                        We encourage secure financial
+                        backups and responsible
+                        management of recovery
+                        information.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <span class="about-symbol"
+                          aria-hidden="true">
+
+                        &#128273;
+
+                    </span>
+
+                    <h3>User Control</h3>
+
+                    <p>
+
+                        Our development approach
+                        emphasizes giving users
+                        meaningful control over
+                        their financial records.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <div class="about-actions">
+
+                <a class="action"
+                   href="privacy.html">
+
+                    Read Privacy &amp; Security Policy
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- DEVELOPMENT PHILOSOPHY -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Our Development Philosophy</h2>
+
+            <p>
+
+                Financial management should
+                be practical, understandable
+                and accessible.
+
+            </p>
+
+            <p>
+
+                Our development approach
+                focuses on balancing useful
+                features with simplicity,
+                performance and responsible
+                data management.
+
+            </p>
+
+            <ul>
+
+                <li>Simple and intuitive interfaces.</li>
+
+                <li>Responsible data handling.</li>
+
+                <li>Performance optimization.</li>
+
+                <li>Reliable financial calculations.</li>
+
+                <li>Accessible application design.</li>
+
+                <li>Secure backup and recovery goals.</li>
+
+                <li>Continuous security improvements.</li>
+
+                <li>Regular maintenance and updates.</li>
+
+                <li>User feedback and improvement.</li>
+
+            </ul>
+
+        </section>
+
+        <!-- USER EXPERIENCE -->
+
+        <section class="about-section">
+
+            <h2>User Experience &amp; Accessibility</h2>
+
+            <div class="about-grid">
+
+                <article class="upgrade-card about-card">
+
+                    <h3>Simple Financial Management</h3>
+
+                    <p>
+
+                        Designed around everyday
+                        financial record keeping
+                        and practical user needs.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <h3>Responsive Experience</h3>
+
+                    <p>
+
+                        Our website aims to provide
+                        a comfortable browsing
+                        experience across mobile,
+                        tablet and desktop devices.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <h3>Visual Comfort</h3>
+
+                    <p>
+
+                        Theme preferences and
+                        readable interfaces are
+                        part of our approach
+                        to visual accessibility.
+
+                    </p>
+
+                </article>
+
+                <article class="upgrade-card about-card">
+
+                    <h3>Language Accessibility</h3>
+
+                    <p>
+
+                        We aim to improve Hindi
+                        and English language
+                        accessibility across
+                        supported features.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- FINANCIAL TOOLS -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Free Financial Tools</h2>
+
+            <p>
+
+                Alongside our applications,
+                the MeraHisab website provides
+                browser-based financial
+                calculators and everyday utilities.
+
+            </p>
+
+            <div class="about-grid">
+
+                <article class="about-card">
+
+                    <h3>Interest &amp; Loans</h3>
+
+                    <ul>
+
+                        <li>Simple Interest Calculator</li>
+
+                        <li>Compound Interest Calculator</li>
+
+                        <li>Loan EMI Calculator</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="about-card">
+
+                    <h3>Investment &amp; Savings</h3>
+
+                    <ul>
+
+                        <li>SIP Calculator</li>
+
+                        <li>Lumpsum Calculator</li>
+
+                        <li>Fixed Deposit Calculator</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="about-card">
+
+                    <h3>Business &amp; Everyday Tools</h3>
+
+                    <ul>
+
+                        <li>GST Calculator</li>
+
+                        <li>Percentage Calculator</li>
+
+                        <li>Discount Calculator</li>
+
+                        <li>Profit &amp; Loss Calculator</li>
+
+                        <li>Monthly Budget Calculator</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="about-card">
+
+                    <h3>Daily Utilities</h3>
+
+                    <ul>
+
+                        <li>Live Indian Standard Time</li>
+
+                        <li>Automatic Date Display</li>
+
+                        <li>Digital Stopwatch</li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+            <div class="about-actions">
+
+                <a class="action"
+                   href="tools.html">
+
+                    Explore All Financial Tools
+
+                </a>
+
+            </div>
+
+            <p>
+
+                Calculator results are estimates
+                and should not be treated as
+                professional financial advice.
+
+            </p>
+
+        </section>
+
+        <!-- DEVELOPMENT ROADMAP -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Our Development Roadmap</h2>
+
+            <p>
+
+                Our future development priorities
+                focus on improving functionality,
+                reliability, accessibility
+                and data protection.
+
+            </p>
+
+            <div class="about-roadmap">
+
+                <article>
+
+                    <h3>01. Website Experience</h3>
+
+                    <p>
+
+                        Improve website navigation,
+                        responsive design, application
+                        information and download
+                        accessibility.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>02. Application Improvements</h3>
+
+                    <p>
+
+                        Continue improving personal
+                        finance and digital khata
+                        management capabilities.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>03. Security &amp; Privacy</h3>
+
+                    <p>
+
+                        Evaluate and strengthen
+                        application security,
+                        privacy controls and
+                        data protection mechanisms.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>04. Backup &amp; Recovery</h3>
+
+                    <p>
+
+                        Improve backup reliability,
+                        restoration workflows
+                        and recovery key management
+                        where applicable.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>05. Performance &amp; Stability</h3>
+
+                    <p>
+
+                        Optimize application
+                        performance, resource
+                        usage and compatibility.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>06. Accessibility &amp; Language</h3>
+
+                    <p>
+
+                        Improve language support,
+                        visual accessibility
+                        and overall usability.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>07. Testing &amp; Quality Assurance</h3>
+
+                    <p>
+
+                        Conduct functional,
+                        compatibility, security
+                        and reliability testing
+                        before appropriate releases.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>08. Continuous Improvement</h3>
+
+                    <p>
+
+                        Evaluate user feedback
+                        and introduce improvements
+                        according to development
+                        priorities.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <div class="about-notice">
+
+                Roadmap items represent development
+                goals and do not guarantee specific
+                features, completion dates or
+                release schedules.
+
+            </div>
+
+        </section>
+
+        <!-- IMPORTANT INFORMATION -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Important Information</h2>
+
+            <p>
+
+                MeraHisab and Royal Khata
+                are financial record management
+                tools.
+
+            </p>
+
+            <p>
+
+                They are not intended to replace
+                professional financial, investment,
+                legal or accounting advice.
+
+            </p>
+
+            <p>
+
+                Users should independently verify
+                important financial calculations
+                and maintain appropriate backups
+                of their records.
+
+            </p>
+
+        </section>
+
+        <!-- OFFICIAL WEBSITE -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Official Website &amp; Distribution</h2>
+
+            <p>
+
+                <strong>Brand:</strong>
+                MeraHisab
+
+            </p>
+
+            <p>
+
+                <strong>Applications:</strong>
+                MeraHisab and Royal Khata
+
+            </p>
+
+            <p>
+
+                <strong>Official Website:</strong>
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <p>
+
+                <strong>Application Platform:</strong>
+                Android
+
+            </p>
+
+            <p>
+
+                <strong>Website Hosting:</strong>
+                GitHub Pages
+
+            </p>
+
+            <p>
+
+                Always use trusted official
+                distribution channels to
+                obtain application files
+                and release information.
+
+            </p>
+
+            <div class="about-actions">
+
+                <a class="action"
+                   href="downloads.html">
+
+                    Official Download Center
+
+                </a>
+
+                <button class="action"
+                        id="copyWebsite"
+                        type="button">
+
+                    Copy Website Link
+
+                </button>
+
+            </div>
+
+            <p id="aboutActionStatus"
+               role="status"
+               aria-live="polite">
+
+            </p>
+
+        </section>
+
+        <!-- CONTACT AND SUPPORT -->
+
+        <section class="upgrade-card about-section">
+
+            <h2>Contact &amp; Support</h2>
+
+            <p>
+
+                We welcome constructive
+                feedback, feature suggestions
+                and technical issue reports.
+
+            </p>
+
+            <ul>
+
+                <li>Application support</li>
+
+                <li>Website support</li>
+
+                <li>Feature suggestions</li>
+
+                <li>Bug reports</li>
+
+                <li>Privacy-related questions</li>
+
+                <li>Security vulnerability reports</li>
+
+                <li>Download and installation assistance</li>
+
+            </ul>
+
+            <div class="about-notice">
+
+                Never include passwords,
+                application PINs, OTPs,
+                recovery keys or confidential
+                financial records in support
+                requests.
+
+            </div>
+
+            <div class="about-actions">
+
+                <a class="action"
+                   href="contact.html">
+
+                    Contact Support
+
+                </a>
+
+                <a class="action"
+                   href="privacy.html">
+
+                    Privacy Information
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- FINAL CALL TO ACTION -->
+
+        <section class="about-hero about-section">
+
+            <span class="about-label">
+
+                MERAHISAB
+
+            </span>
+
+            <h2>Your Money. Your Control.</h2>
+
+            <p>
+
+                Organize your finances.
+                Understand your records.
+                Make informed decisions.
+
+            </p>
+
+            <div class="about-actions"
+                 style="justify-content:center;">
+
+                <a class="action"
+                   href="downloads.html">
+
+                    Explore Our Applications
+
+                </a>
+
+                <a class="action"
+                   href="tools.html">
+
+                    Use Free Financial Tools
+
+                </a>
+
+                <a class="action"
+                   href="index.html">
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PREMIUM FOOTER -->
+
+    <footer class="site">
+
+        <div class="container">
+
+            <h2>MeraHisab</h2>
+
+            <p>Your Money. Your Control.</p>
+
+            <p>
+
+                Personal Finance &amp;
+                Digital Khata Solutions
+
+            </p>
+
+            <nav aria-label="Footer navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="merahisab.html">MeraHisab</a>
+
+                <a href="royal-khata.html">Royal Khata</a>
+
+                <a href="compare.html">Compare</a>
+
+                <a href="tools.html">Tools</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html"
+                   aria-current="page">
+
+                    About
+
+                </a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <p>
+
+                Official Website:
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <p>
+
+                &copy; <span data-year></span>
+
+                MeraHisab. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ABOUT PAGE ENGINE -->
+
+    <script>
+
+        (() => {
+
+            "use strict";
+
+            const copyButton =
+                document.getElementById(
+                    "copyWebsite"
+                );
+
+            const status =
+                document.getElementById(
+                    "aboutActionStatus"
+                );
+
+            const website =
+                "https://merahisab.store/";
+
+            copyButton.addEventListener(
+                "click",
+                async () => {
+
+                    try {
+
+                        if (!navigator.clipboard) {
+
+                            throw new Error(
+                                "Clipboard unavailable"
+                            );
+
+                        }
+
+                        await navigator.clipboard
+                            .writeText(website);
+
+                        status.textContent =
+                            "Official website link copied.";
+
+                    } catch (error) {
+
+                        status.textContent =
+                            "Please copy this link manually: " +
+                            website;
+
+                    }
+
+                }
+            );
+
+        })();
+
+    </script>
 
 </body>
-</html>
+
+  </html>
