@@ -1,8 +1,10 @@
+
 /* ==================================================
    MERAHISAB ADVANCED SERVICE WORKER
    Official Website: https://merahisab.store/
-   Service Worker Version: 1.0.0
-   ================================================== */
+   Service Worker Version: 1.1.0
+   Hindi & English Offline Language Support
+================================================== */
 
 "use strict";
 
@@ -10,7 +12,7 @@
 // 01. SERVICE WORKER CONFIGURATION
 // ==================================================
 
-const SW_VERSION = "1.0.0";
+const SW_VERSION = "1.1.0";
 
 const CACHE_PREFIX = "merahisab-pwa-";
 
@@ -21,8 +23,11 @@ const PAGE_CACHE =
     CACHE_PREFIX + "pages-" + SW_VERSION;
 
 const ACTIVE_CACHES = [
+
     STATIC_CACHE,
+
     PAGE_CACHE
+
 ];
 
 const OFFLINE_PAGE = "/offline.html";
@@ -35,7 +40,23 @@ const MAX_RESOURCE_BYTES =
     5 * 1024 * 1024;
 
 // ==================================================
-// 02. PUBLIC WEBSITE PAGE ALLOWLIST
+// 02. LANGUAGE SYSTEM RESOURCES
+// ==================================================
+
+const LANGUAGE_RESOURCES = [
+
+    "/language.css",
+
+    "/language.js",
+
+    "/language-content.js",
+
+    "/language-integration.js"
+
+];
+
+// ==================================================
+// 03. PUBLIC WEBSITE PAGE ALLOWLIST
 // ==================================================
 
 const PUBLIC_PAGES = new Set([
@@ -65,7 +86,7 @@ const PUBLIC_PAGES = new Set([
 ]);
 
 // ==================================================
-// 03. STATIC RESOURCE ALLOWLIST
+// 04. STATIC RESOURCE ALLOWLIST
 // ==================================================
 
 const STATIC_RESOURCES = new Set([
@@ -81,6 +102,10 @@ const STATIC_RESOURCES = new Set([
     "/manifest.json",
 
     "/favicon.ico",
+
+    "/merahisab-dashboard.png",
+
+    ...LANGUAGE_RESOURCES,
 
     "/icons/icon-192.png",
 
@@ -101,7 +126,7 @@ const STATIC_RESOURCES = new Set([
 ]);
 
 // ==================================================
-// 04. ESSENTIAL OFFLINE RESOURCES
+// 05. ESSENTIAL OFFLINE RESOURCES
 // ==================================================
 
 const CORE_RESOURCES = [
@@ -115,7 +140,7 @@ const CORE_RESOURCES = [
 ];
 
 // ==================================================
-// 05. OPTIONAL OFFLINE RESOURCES
+// 06. OPTIONAL OFFLINE RESOURCES
 // ==================================================
 
 const OPTIONAL_RESOURCES = [
@@ -146,6 +171,12 @@ const OPTIONAL_RESOURCES = [
 
     "/pwa.js",
 
+    "/favicon.ico",
+
+    "/merahisab-dashboard.png",
+
+    ...LANGUAGE_RESOURCES,
+
     "/icons/icon-192.png",
 
     "/icons/icon-512.png",
@@ -165,7 +196,7 @@ const OPTIONAL_RESOURCES = [
 ];
 
 // ==================================================
-// 06. SENSITIVE RESOURCE PROTECTION
+// 07. SENSITIVE RESOURCE PROTECTION
 // ==================================================
 
 const BLOCKED_PATH_PATTERN =
@@ -185,7 +216,7 @@ const EXCLUDED_PAGES = new Set([
 ]);
 
 // ==================================================
-// 07. SAFE URL VALIDATION
+// 08. SAFE URL VALIDATION
 // ==================================================
 
 function isSafePublicURL(url) {
@@ -245,7 +276,7 @@ function isSafePublicURL(url) {
 }
 
 // ==================================================
-// 08. REQUEST CACHE ELIGIBILITY
+// 09. REQUEST CACHE ELIGIBILITY
 // ==================================================
 
 function isCacheableRequest(request) {
@@ -257,9 +288,7 @@ function isCacheableRequest(request) {
     }
 
     if (
-        request.headers.has(
-            "Authorization"
-        )
+        request.headers.has("Authorization")
     ) {
 
         return false;
@@ -298,11 +327,11 @@ function isCacheableRequest(request) {
 
     try {
 
-        const url = new URL(
-            request.url
-        );
+        return isSafePublicURL(
 
-        return isSafePublicURL(url);
+            new URL(request.url)
+
+        );
 
     } catch (error) {
 
@@ -313,7 +342,7 @@ function isCacheableRequest(request) {
 }
 
 // ==================================================
-// 09. RESPONSE VALIDATION
+// 10. RESPONSE VALIDATION
 // ==================================================
 
 function isCacheableResponse(
@@ -429,7 +458,7 @@ function isCacheableResponse(
 }
 
 // ==================================================
-// 10. CONTENT TYPE VALIDATION
+// 11. CONTENT TYPE VALIDATION
 // ==================================================
 
 function hasExpectedContentType(
@@ -481,10 +510,8 @@ function hasExpectedContentType(
 
     if (path.endsWith(".json")) {
 
-        return (
-
-            contentType.includes("json")
-
+        return contentType.includes(
+            "json"
         );
 
     }
@@ -510,7 +537,7 @@ function hasExpectedContentType(
 }
 
 // ==================================================
-// 11. CACHE ENTRY LIMIT MANAGEMENT
+// 12. CACHE ENTRY LIMIT MANAGEMENT
 // ==================================================
 
 async function trimCache(
@@ -546,8 +573,15 @@ async function trimCache(
             request.url
         ).pathname;
 
+        // Protect essential offline files
+        // and language system resources.
+
         if (
-            CORE_RESOURCES.includes(path)
+
+            CORE_RESOURCES.includes(path) ||
+
+            LANGUAGE_RESOURCES.includes(path)
+
         ) {
 
             continue;
@@ -569,7 +603,7 @@ async function trimCache(
 }
 
 // ==================================================
-// 12. SAFE CACHE WRITE ENGINE
+// 13. SAFE CACHE WRITE ENGINE
 // ==================================================
 
 async function safeCachePut(
@@ -614,10 +648,6 @@ async function safeCachePut(
 
         }
 
-        // Validate actual response size,
-        // including responses without
-        // Content-Length headers.
-
         const sizeCheck = response.clone();
 
         const reader =
@@ -654,9 +684,6 @@ async function safeCachePut(
                     MAX_RESOURCE_BYTES
                 ) {
 
-                    // Do not wait for the other
-                    // cloned stream to finish.
-
                     reader.cancel().catch(
                         () => {}
                     );
@@ -678,8 +705,11 @@ async function safeCachePut(
         );
 
         await cache.put(
+
             request,
+
             response
+
         );
 
         await trimCache(
@@ -705,14 +735,17 @@ async function safeCachePut(
 }
 
 // ==================================================
-// 13. PUBLIC RESOURCE PRECACHING
+// 14. PUBLIC RESOURCE PRECACHING
 // ==================================================
 
 async function precacheResource(path) {
 
     const url = new URL(
+
         path,
+
         self.location.origin
+
     );
 
     if (!isSafePublicURL(url)) {
@@ -764,7 +797,7 @@ async function precacheResource(path) {
 }
 
 // ==================================================
-// 14. CORE CACHE INSTALLATION
+// 15. CORE CACHE INSTALLATION
 // ==================================================
 
 async function installCoreResources() {
@@ -792,12 +825,14 @@ async function installCoreResources() {
 }
 
 // ==================================================
-// 15. OPTIONAL CACHE INSTALLATION
+// 16. OPTIONAL CACHE INSTALLATION
 // ==================================================
 
 async function installOptionalResources() {
 
     const batchSize = 4;
+
+    const failedResources = [];
 
     for (
 
@@ -819,23 +854,51 @@ async function installOptionalResources() {
 
             );
 
-        await Promise.allSettled(
+        const results =
 
-            batch.map(
+            await Promise.allSettled(
 
-                (path) =>
-                    precacheResource(path)
+                batch.map(
 
-            )
+                    (path) =>
+                        precacheResource(path)
+
+                )
+
+            );
+
+        results.forEach(
+
+            (result,index) => {
+
+                if (
+
+                    result.status !== "fulfilled" ||
+
+                    result.value !== true
+
+                ) {
+
+                    failedResources.push(
+
+                        batch[index]
+
+                    );
+
+                }
+
+            }
 
         );
 
     }
 
+    return failedResources;
+
 }
 
 // ==================================================
-// 16. SERVICE WORKER INSTALL EVENT
+// 17. SERVICE WORKER INSTALL EVENT
 // ==================================================
 
 self.addEventListener(
@@ -852,10 +915,8 @@ self.addEventListener(
 
                 await installOptionalResources();
 
-                // Do not automatically activate
-                // updates over an existing worker.
-                // Activation is controlled by
-                // the website update interface.
+                // Updates remain controlled
+                // by the website interface.
 
             })()
 
@@ -866,7 +927,7 @@ self.addEventListener(
 );
 
 // ==================================================
-// 17. OLD CACHE CLEANUP
+// 18. OLD CACHE CLEANUP
 // ==================================================
 
 async function cleanupOldCaches() {
@@ -902,7 +963,7 @@ async function cleanupOldCaches() {
 }
 
 // ==================================================
-// 18. SERVICE WORKER ACTIVATE EVENT
+// 19. SERVICE WORKER ACTIVATE EVENT
 // ==================================================
 
 self.addEventListener(
@@ -928,7 +989,7 @@ self.addEventListener(
 );
 
 // ==================================================
-// 19. EMERGENCY OFFLINE RESPONSE
+// 20. BILINGUAL EMERGENCY OFFLINE RESPONSE
 // ==================================================
 
 function emergencyOfflineResponse() {
@@ -936,43 +997,112 @@ function emergencyOfflineResponse() {
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport"
-      content="width=device-width,initial-scale=1">
+content="width=device-width,initial-scale=1">
+
+<meta name="robots"
+content="noindex,nofollow">
+
 <title>MeraHisab - Offline</title>
-</head>
-<body style="
+
+<style>
+
+body {
+
     background:#081321;
+
     color:#f5f5f7;
-    font-family:Arial,sans-serif;
-    padding:30px;
+
+    font-family:system-ui,
+    "Nirmala UI",sans-serif;
+
+    padding:25px;
+
     text-align:center;
-">
-    <main>
-        <h1 style="color:#d4af37">
-            MeraHisab
-        </h1>
 
-        <h2>You are offline</h2>
+    line-height:1.7;
 
-        <p>
-            This page is currently unavailable.
-        </p>
+}
 
-        <p>
-            Connect to the internet and try again.
-        </p>
+main {
 
-        <p>
-            Official website: merahisab.store
-        </p>
+    max-width:650px;
 
-        <a href="/"
-           style="color:#e5c788">
-            Return to Home
-        </a>
-    </main>
+    margin:40px auto;
+
+    padding:25px;
+
+    border:1px solid #d4af37;
+
+    border-radius:22px;
+
+}
+
+h1 {
+
+    color:#d4af37;
+
+}
+
+a {
+
+    display:inline-block;
+
+    color:#081321;
+
+    background:#d4af37;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main>
+
+<h1>MeraHisab</h1>
+
+<h2>You are offline</h2>
+
+<h2 lang="hi">
+आप ऑफलाइन हैं
+</h2>
+
+<p>
+This page is currently unavailable.
+Connect to the internet and try again.
+</p>
+
+<p lang="hi">
+यह पेज अभी उपलब्ध नहीं है।
+इंटरनेट से कनेक्ट करके पुनः प्रयास करें।
+</p>
+
+<p>
+Official Website: merahisab.store
+</p>
+
+<a href="/">
+Return to Home / होम पेज
+</a>
+
+</main>
+
 </body>
+
 </html>`;
 
     return new Response(
@@ -994,7 +1124,10 @@ function emergencyOfflineResponse() {
                     "no-store",
 
                 "X-Content-Type-Options":
-                    "nosniff"
+                    "nosniff",
+
+                "X-Robots-Tag":
+                    "noindex, nofollow"
 
             }
 
@@ -1005,7 +1138,7 @@ function emergencyOfflineResponse() {
 }
 
 // ==================================================
-// 20. OFFLINE PAGE FALLBACK
+// 21. OFFLINE PAGE FALLBACK
 // ==================================================
 
 async function getOfflinePage() {
@@ -1022,6 +1155,36 @@ async function getOfflinePage() {
 
         if (offline) {
 
+            const headers = new Headers(
+
+                offline.headers
+
+            );
+
+            headers.delete(
+                "Content-Length"
+            );
+
+            headers.delete(
+                "Content-Encoding"
+            );
+
+            headers.set(
+
+                "Cache-Control",
+
+                "no-store"
+
+            );
+
+            headers.set(
+
+                "X-Robots-Tag",
+
+                "noindex, nofollow"
+
+            );
+
             return new Response(
 
                 offline.body,
@@ -1033,7 +1196,7 @@ async function getOfflinePage() {
                     statusText:
                         "Service Unavailable",
 
-                    headers: offline.headers
+                    headers: headers
 
                 }
 
@@ -1052,7 +1215,7 @@ async function getOfflinePage() {
 }
 
 // ==================================================
-// 21. NETWORK-FIRST PAGE STRATEGY
+// 22. NETWORK-FIRST PAGE STRATEGY
 // ==================================================
 
 async function networkFirstPage(
@@ -1092,9 +1255,6 @@ async function networkFirstPage(
 
         }
 
-        // Preserve actual server responses,
-        // including HTTP 404 and access errors.
-
         return response;
 
     } catch (error) {
@@ -1128,7 +1288,7 @@ async function networkFirstPage(
 }
 
 // ==================================================
-// 22. CACHE-FIRST STATIC RESOURCE STRATEGY
+// 23. CACHE-FIRST STATIC RESOURCE STRATEGY
 // ==================================================
 
 async function cacheFirstStatic(
@@ -1195,7 +1355,10 @@ async function cacheFirstStatic(
                         "text/plain; charset=UTF-8",
 
                     "Cache-Control":
-                        "no-store"
+                        "no-store",
+
+                    "X-Content-Type-Options":
+                        "nosniff"
 
                 }
 
@@ -1208,7 +1371,7 @@ async function cacheFirstStatic(
 }
 
 // ==================================================
-// 23. UNCACHED NAVIGATION STRATEGY
+// 24. UNCACHED NAVIGATION STRATEGY
 // ==================================================
 
 async function networkOnlyNavigation(
@@ -1228,7 +1391,7 @@ async function networkOnlyNavigation(
 }
 
 // ==================================================
-// 24. FETCH EVENT ROUTING
+// 25. FETCH EVENT ROUTING
 // ==================================================
 
 self.addEventListener(
@@ -1257,8 +1420,7 @@ self.addEventListener(
 
         }
 
-        // External resources are never
-        // intercepted or stored.
+        // External resources are not cached.
 
         if (
             url.origin !==
@@ -1269,9 +1431,8 @@ self.addEventListener(
 
         }
 
-        // APK files, archives, database
-        // files and other excluded downloads
-        // are handled by the browser.
+        // APK, archives, private files
+        // and range downloads are excluded.
 
         if (
 
@@ -1286,9 +1447,6 @@ self.addEventListener(
             return;
 
         }
-
-        // Sensitive or unapproved URLs
-        // must not enter PWA caches.
 
         if (
             !isCacheableRequest(request)
@@ -1312,8 +1470,7 @@ self.addEventListener(
 
         }
 
-        // Public HTML pages:
-        // Prefer current network content.
+        // Public website navigation.
 
         if (
 
@@ -1333,8 +1490,8 @@ self.addEventListener(
 
         }
 
-        // Approved CSS, JavaScript,
-        // manifest and application icons.
+        // Approved static files,
+        // language scripts and styles.
 
         if (
             STATIC_RESOURCES.has(
@@ -1355,7 +1512,72 @@ self.addEventListener(
 );
 
 // ==================================================
-// 25. CACHE STATUS INFORMATION
+// 26. LANGUAGE CACHE DIAGNOSTICS
+// ==================================================
+
+async function getLanguageCacheStatus() {
+
+    const resources = [];
+
+    const cacheExists = await caches.has(
+
+        STATIC_CACHE
+
+    );
+
+    const cache = cacheExists
+
+        ? await caches.open(STATIC_CACHE)
+
+        : null;
+
+    for (const path of LANGUAGE_RESOURCES) {
+
+        const cached = cache
+
+            ? Boolean(await cache.match(path))
+
+            : false;
+
+        resources.push({
+
+            path: path,
+
+            cached: cached
+
+        });
+
+    }
+
+    const cachedCount = resources.filter(
+
+        (resource) => resource.cached
+
+    ).length;
+
+    return {
+
+        languages: ["en","hi"],
+
+        totalResources:
+            LANGUAGE_RESOURCES.length,
+
+        cachedResources:
+            cachedCount,
+
+        offlineReady:
+
+            cachedCount ===
+            LANGUAGE_RESOURCES.length,
+
+        resources: resources
+
+    };
+
+}
+
+// ==================================================
+// 27. CACHE STATUS INFORMATION
 // ==================================================
 
 async function getCacheStatus() {
@@ -1394,27 +1616,31 @@ async function getCacheStatus() {
 
         totalEntries: result.reduce(
 
-            (total, item) =>
+            (total,item) =>
 
                 total + item.entries,
 
             0
 
-        )
+        ),
+
+        language:
+
+            await getLanguageCacheStatus()
 
     };
 
 }
 
 // ==================================================
-// 26. MANUAL PWA CACHE RESET
+// 28. MANUAL PWA CACHE RESET
 // ==================================================
 
 async function resetPWACaches() {
 
-    // Clear only this worker version's caches.
-    // Preserve unrelated caches and any
-    // pending service worker update.
+    // Clear only this worker version.
+    // Do not delete application records,
+    // localStorage or IndexedDB.
 
     await Promise.all(
 
@@ -1431,7 +1657,64 @@ async function resetPWACaches() {
 }
 
 // ==================================================
-// 27. TRUSTED CLIENT VALIDATION
+// 29. LANGUAGE CACHE REFRESH
+// ==================================================
+
+async function refreshLanguageCache() {
+
+    const results = await Promise.allSettled(
+
+        LANGUAGE_RESOURCES.map(
+
+            (path) => precacheResource(path)
+
+        )
+
+    );
+
+    const failedResources = [];
+
+    results.forEach(
+
+        (result,index) => {
+
+            if (
+
+                result.status !== "fulfilled" ||
+
+                result.value !== true
+
+            ) {
+
+                failedResources.push(
+
+                    LANGUAGE_RESOURCES[index]
+
+                );
+
+            }
+
+        }
+
+    );
+
+    return {
+
+        success:
+            failedResources.length === 0,
+
+        failedResources:
+            failedResources,
+
+        status:
+            await getLanguageCacheStatus()
+
+    };
+
+}
+
+// ==================================================
+// 30. TRUSTED CLIENT VALIDATION
 // ==================================================
 
 function isTrustedClient(source) {
@@ -1464,7 +1747,7 @@ function isTrustedClient(source) {
 }
 
 // ==================================================
-// 28. CLIENT RESPONSE HANDLER
+// 31. CLIENT RESPONSE HANDLER
 // ==================================================
 
 function replyToClient(
@@ -1502,7 +1785,7 @@ function replyToClient(
 }
 
 // ==================================================
-// 29. SERVICE WORKER MESSAGE ENGINE
+// 32. SERVICE WORKER MESSAGE ENGINE
 // ==================================================
 
 self.addEventListener(
@@ -1593,7 +1876,7 @@ self.addEventListener(
 
                             break;
 
-                        // Cache status.
+                        // Complete cache status.
 
                         case "GET_CACHE_STATUS":
 
@@ -1616,6 +1899,64 @@ self.addEventListener(
                             );
 
                             break;
+
+                        // Language cache status.
+
+                        case "GET_LANGUAGE_CACHE_STATUS":
+
+                            replyToClient(
+
+                                event,
+
+                                {
+
+                                    type:
+                                        "LANGUAGE_CACHE_STATUS",
+
+                                    success: true,
+
+                                    data:
+                                        await getLanguageCacheStatus()
+
+                                }
+
+                            );
+
+                            break;
+
+                        // Refresh language files.
+
+                        case "REFRESH_LANGUAGE_CACHE": {
+
+                            const result =
+
+                                await refreshLanguageCache();
+
+                            replyToClient(
+
+                                event,
+
+                                {
+
+                                    type:
+                                        "LANGUAGE_CACHE_REFRESHED",
+
+                                    success:
+                                        result.success,
+
+                                    data:
+                                        result.status,
+
+                                    failedResources:
+                                        result.failedResources
+
+                                }
+
+                            );
+
+                            break;
+
+                        }
 
                         // Manual cache reset.
 
@@ -1640,13 +1981,15 @@ self.addEventListener(
 
                             break;
 
-                        // Restore offline files.
+                        // Restore offline resources.
 
-                        case "REFRESH_OFFLINE_CACHE":
+                        case "REFRESH_OFFLINE_CACHE": {
 
                             await installCoreResources();
 
-                            await installOptionalResources();
+                            const failedResources =
+
+                                await installOptionalResources();
 
                             replyToClient(
 
@@ -1659,6 +2002,13 @@ self.addEventListener(
 
                                     success: true,
 
+                                    partial:
+
+                                        failedResources.length > 0,
+
+                                    failedResources:
+                                        failedResources,
+
                                     data:
                                         await getCacheStatus()
 
@@ -1667,6 +2017,8 @@ self.addEventListener(
                             );
 
                             break;
+
+                        }
 
                         default:
 
@@ -1718,5 +2070,6 @@ self.addEventListener(
 );
 
 /* ==================================================
-   END OF MERAHISAB SERVICE WORKER
-   ================================================== */
+   END OF MERAHISAB ADVANCED SERVICE WORKER
+   VERSION 1.1.0
+================================================== */
