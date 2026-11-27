@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #080f20;
+    color: #f8f6f0;
+    font: 16px/1.65 system-ui, sans-serif;
+    min-width: 0;
+}
+
+a {
+    color: #e5c788;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container,
+.shell {
+    width: min(1160px, calc(100% - 32px));
+    margin: auto;
+    min-width: 0;
+}
+
+.hero-grid,
+.time-tools-grid,
+.upgrade-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    gap: 24px;
+}
+
+.hero-grid > *,
+.time-tools-grid > * {
+    min-width: 0;
+}
+
+.upgrade-card {
+    background: #14243b;
+    border: 1px solid #806b45;
+    border-radius: 22px;
+    padding: clamp(18px, 4vw, 40px);
+    overflow-wrap: anywhere;
+}
+
+.shell {
+    padding: 36px 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.15;
+}
+
+h2,
+h3 {
+    color: #e5c788;
+}
+
+button,
+.action {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #d8b878;
+    border-radius: 12px;
+    background: #d8b878;
+    color: #101a29;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+header.site {
+    border-bottom: 1px solid #806b45;
+}
+
+footer.site {
+    border-top: 1px solid #806b45;
+    padding: 24px 0;
+}
+
+input,
+select {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    font: inherit;
+}
+
+label {
+    display: block;
+    margin: 12px 0;
+}
+
+details {
+    padding: 12px;
+    border-bottom: 1px solid #806b45;
+}
+
+summary {
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+
+/* Royal Light Theme */
+
+html[data-theme=light] body {
+    background: #faf6ed;
+    color: #14243b;
+}
+
+html[data-theme=light] .upgrade-card {
+    background: #fff;
+    color: #14243b;
+}
+
+html[data-theme=light] h2,
+html[data-theme=light] h3,
+html[data-theme=light] a {
+    color: #78551a;
+}
+
+html[data-theme=light] a.action {
+    color: #101a29;
+}
+
+/* Mobile Responsive Layout */
+
+@media (max-width: 760px) {
+
+    .hero-grid,
+    .time-tools-grid,
+    .upgrade-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    nav {
+        gap: 10px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
