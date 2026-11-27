@@ -1,2887 +1,1683 @@
+
 <!DOCTYPE html>
 <html lang="en-IN">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Compare MeraHisab & Royal Khata — Choose the Right Application</title>
-
-  <meta name="description"
-        content="Compare MeraHisab personal finance management and Royal Khata digital credit-debit management applications, features and release information.">
-
-  <meta name="author" content="MeraHisab">
-
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical"
-        href="https://merahisab.store/compare.html">
-
-  <!-- SOCIAL MEDIA SEO -->
-
-  <meta property="og:type" content="website">
-
-  <meta property="og:site_name" content="MeraHisab">
-
-  <meta property="og:title"
-        content="Compare MeraHisab and Royal Khata">
-
-  <meta property="og:description"
-        content="Choose the right application for personal finance or digital khata management.">
-
-  <meta property="og:url"
-        content="https://merahisab.store/compare.html">
-
-  <meta property="og:image"
-        content="https://merahisab.store/icons/icon-512.png">
-
-  <meta name="twitter:card" content="summary">
-
-  <!-- PWA INTEGRATION -->
-
-  <link rel="manifest" href="/manifest.json">
-
-  <meta name="application-name" content="MeraHisab">
-
-  <meta name="theme-color" content="#080f20">
-
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-status-bar-style"
-        content="default">
-
-  <meta name="apple-mobile-web-app-title"
-        content="MeraHisab">
-
-  <link rel="apple-touch-icon"
-        href="/icons/icon-192.png">
-
-  <link rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/icons/icon-192.png">
-
-  <!-- SHARED WEBSITE ENGINE -->
-
-  <link rel="stylesheet" href="/upgrade.css">
-
-  <link rel="stylesheet" href="/pwa.css">
-
-  <script defer src="/upgrade.js"></script>
-
-  <script defer src="/pwa.js"></script>
-
-  <!-- PREMIUM COMPARISON DESIGN -->
-
-  <style>
-
-    .cp-page {
-      width: 100%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 28px 18px;
-      box-sizing: border-box;
-    }
-
-    .cp-page * {
-      box-sizing: border-box;
-    }
-
-    .cp-breadcrumb {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-      font-size: 13px;
-      opacity: 0.85;
-    }
-
-    .cp-hero {
-      padding: 45px 24px;
-      margin-bottom: 30px;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 24px;
-
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(212,175,55,0.13),
-          transparent 65%
-        ),
-        linear-gradient(
-          145deg,
-          #172640,
-          #080f20
-        );
-
-      color: #f8f6f0;
-      text-align: center;
-    }
-
-    .cp-hero h1 {
-      margin: 15px 0;
-      color: #f0d9a6;
-      font-size: clamp(30px,5vw,50px);
-      line-height: 1.2;
-    }
-
-    .cp-hero p {
-      max-width: 700px;
-      margin: 15px auto;
-      color: #c4cddd;
-      line-height: 1.8;
-    }
-
-    .cp-eyebrow {
-      display: inline-block;
-      padding: 7px 15px;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 30px;
-      color: #f0d9a6;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .cp-versus {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 22px;
-      margin: 25px 0;
-    }
-
-    .cp-versus img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 20px;
-    }
-
-    .cp-versus span {
-      color: #f0d9a6;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .cp-section {
-      margin: 38px 0;
-    }
-
-    .cp-title {
-      margin-bottom: 12px;
-      font-size: clamp(24px,4vw,34px);
-      text-align: center;
-    }
-
-    .cp-description {
-      max-width: 740px;
-      margin: 0 auto 25px;
-      text-align: center;
-      line-height: 1.8;
-      opacity: 0.85;
-    }
-
-    .cp-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(2,minmax(0,1fr));
-      gap: 20px;
-    }
-
-    .cp-grid-three {
-      display: grid;
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-      gap: 16px;
-    }
-
-    .cp-card {
-      min-width: 0;
-      padding: 24px;
-      border: 1px solid rgba(212,175,55,0.25);
-      border-radius: 18px;
-      overflow-wrap: break-word;
-    }
-
-    .cp-card h3 {
-      margin: 12px 0;
-    }
-
-    .cp-card p {
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .cp-app-heading {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    .cp-app-icon {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 17px;
-    }
-
-    .cp-app-name {
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    .cp-app-category {
-      margin-top: 5px;
-      font-size: 12px;
-      opacity: 0.8;
-    }
-
-    .cp-status {
-      display: inline-block;
-      padding: 6px 12px;
-      margin: 10px 0;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 30px;
-      background: rgba(212,175,55,0.08);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .cp-status-available {
-      border-color: rgba(101,201,154,0.4);
-      background: rgba(101,201,154,0.1);
-    }
-
-    .cp-list {
-      padding-left: 22px;
-      line-height: 1.9;
-      font-size: 14px;
-    }
-
-    .cp-list li {
-      padding: 4px 0;
-    }
-
-    .cp-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .cp-button {
-      display: inline-flex;
-      min-height: 46px;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 22px;
-      border: 1px solid #d4af37;
-      border-radius: 30px;
-      font: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .cp-button-primary {
-      background: linear-gradient(
-        135deg,
-        #f0d9a6,
-        #d4af37
-      );
-      color: #101827;
-    }
-
-    .cp-button-secondary {
-      background: transparent;
-      color: inherit;
-    }
-
-    .cp-button:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
-    }
-
-    /* COMPARISON TABLE */
-
-    .cp-table-wrap {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      border: 1px solid rgba(212,175,55,0.3);
-      border-radius: 16px;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .cp-table {
-      width: 100%;
-      min-width: 620px;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 14px;
-    }
-
-    .cp-table caption {
-      padding: 15px;
-      font-weight: 700;
-      text-align: left;
-    }
-
-    .cp-table th,
-    .cp-table td {
-      padding: 15px;
-      border-bottom: 1px solid rgba(128,128,128,0.2);
-      vertical-align: middle;
-      overflow-wrap: break-word;
-    }
-
-    .cp-table thead th {
-      background: #172640;
-      color: #f0d9a6;
-      font-size: 14px;
-    }
-
-    .cp-table tbody th {
-      width: 36%;
-      font-weight: 600;
-    }
-
-    .cp-table tbody tr:nth-child(even) {
-      background: rgba(128,128,128,0.05);
-    }
-
-    .cp-table tbody tr:hover {
-      background: rgba(212,175,55,0.07);
-    }
-
-    .cp-table tbody tr:last-child th,
-    .cp-table tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    .cp-table-note {
-      margin-top: 12px;
-      font-size: 12px;
-      line-height: 1.8;
-      opacity: 0.85;
-    }
-
-    .cp-table-category th {
-      background: rgba(212,175,55,0.1);
-      font-weight: 700;
-    }
-
-    /* COMPARISON FILTERS */
-
-    .cp-filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0;
-    }
-
-    .cp-filter {
-      padding: 10px 16px;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 25px;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    .cp-filter[aria-pressed="true"] {
-      background: #d4af37;
-      color: #101827;
-      font-weight: 700;
-    }
-
-    .cp-search {
-      width: 100%;
-      padding: 13px 15px;
-      margin: 8px 0;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 12px;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-    }
-
-    .cp-result-count {
-      margin: 10px 0;
-      font-size: 13px;
-      opacity: 0.85;
-    }
-
-    /* APPLICATION SELECTOR */
-
-    .cp-question {
-      margin: 20px 0;
-      padding: 18px;
-      border: 1px solid rgba(212,175,55,0.25);
-      border-radius: 14px;
-    }
-
-    .cp-question legend {
-      padding: 0 8px;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .cp-option {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 13px 10px;
-      margin: 8px 0;
-      border: 1px solid rgba(128,128,128,0.2);
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .cp-option input {
-      flex-shrink: 0;
-      margin-top: 4px;
-      accent-color: #d4af37;
-    }
-
-    .cp-option:focus-within {
-      border-color: #d4af37;
-    }
-
-    .cp-result {
-      padding: 22px;
-      margin-top: 22px;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 15px;
-      background: rgba(212,175,55,0.07);
-    }
-
-    .cp-result h3 {
-      margin-top: 0;
-    }
-
-    .cp-result p {
-      line-height: 1.8;
-    }
-
-    .cp-feature-icon {
-      display: grid;
-      width: 45px;
-      height: 45px;
-      place-items: center;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 12px;
-      background: rgba(212,175,55,0.08);
-      font-size: 22px;
-    }
-
-    .cp-notice {
-      padding: 17px;
-      margin-top: 20px;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 13px;
-      background: rgba(212,175,55,0.07);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    /* FAQ */
-
-    .cp-faq details {
-      padding: 16px;
-      margin-bottom: 12px;
-      border: 1px solid rgba(212,175,55,0.25);
-      border-radius: 13px;
-    }
-
-    .cp-faq summary {
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .cp-faq details p {
-      margin-top: 12px;
-      line-height: 1.8;
-    }
-
-    .cp-page a:focus-visible,
-    .cp-page button:focus-visible,
-    .cp-page input:focus-visible,
-    .cp-page summary:focus-visible,
-    .cp-table-wrap:focus-visible {
-      outline: 3px solid #d4af37;
-      outline-offset: 4px;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
-    /* LIGHT THEME */
-
-    html[data-theme="light"] .cp-hero,
-    body[data-theme="light"] .cp-hero {
-      background: linear-gradient(
-        145deg,
-        #ffffff,
-        #f3ead7
-      );
-      color: #172033;
-    }
-
-    html[data-theme="light"] .cp-hero h1,
-    body[data-theme="light"] .cp-hero h1,
-    html[data-theme="light"] .cp-eyebrow,
-    body[data-theme="light"] .cp-eyebrow,
-    html[data-theme="light"] .cp-versus span,
-    body[data-theme="light"] .cp-versus span {
-      color: #765018;
-    }
-
-    html[data-theme="light"] .cp-hero p,
-    body[data-theme="light"] .cp-hero p {
-      color: #46546a;
-    }
-
-    html[data-theme="light"] .cp-table thead th,
-    body[data-theme="light"] .cp-table thead th {
-      background: #f3ead7;
-      color: #56390e;
-    }
-
-    /* TABLET RESPONSIVE */
-
-    @media (max-width: 900px) {
-
-      .cp-grid-three {
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-      }
-
-    }
-
-    /* MOBILE RESPONSIVE */
-
-    @media (max-width: 650px) {
-
-      .cp-page {
-        padding: 18px 14px;
-      }
-
-      .cp-grid,
-      .cp-grid-three {
-        grid-template-columns:
-          minmax(0,1fr);
-      }
-
-      .cp-hero {
-        padding: 30px 18px;
-      }
-
-      .cp-card {
-        padding: 18px;
-      }
-
-      .cp-buttons {
-        flex-direction: column;
-      }
-
-      .cp-button {
-        width: 100%;
-      }
-
-      .cp-versus {
-        gap: 15px;
-      }
-
-      .cp-versus img {
-        width: 65px;
-        height: 65px;
-      }
-
-      .cp-table th,
-      .cp-table td {
-        padding: 12px;
-        font-size: 13px;
-      }
-
-      .cp-question {
-        padding: 12px;
-        min-width: 0;
-      }
-
-    }
-
-    /* PRINT SUPPORT */
-
-    @media print {
-
-      header.site,
-      footer.site,
-      .cp-filter-bar,
-      .cp-search,
-      .cp-buttons,
-      #app-selector,
-      #pwaMount,
-      .pwa-panel {
-        display: none !important;
-      }
-
-      .cp-page {
-        max-width: none;
-        padding: 0;
-        background: white;
-        color: black;
-      }
-
-      .cp-hero,
-      .cp-card,
-      .cp-table thead th {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-      }
-
-      .cp-hero h1,
-      .cp-hero p,
-      .cp-eyebrow,
-      .cp-versus span {
-        color: black !important;
-      }
-
-      .cp-table-wrap {
-        overflow: visible;
-      }
-
-      .cp-table {
-        min-width: 0;
-        font-size: 10px;
-      }
-
-      .cp-table th,
-      .cp-table td {
-        padding: 7px;
-      }
-
-      .cp-table tr {
-        break-inside: avoid;
-      }
-
-    }
-
-  </style>
-
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-kuJZlzex2lP3WAVlKGX2kDK67idnfa84BSdrA07hCdY='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Compare MeraHisab &amp; Royal Khata | MeraHisab</title>
+<meta name="description" content="Compare MeraHisab personal finance and Royal Khata digital credit-debit management. Explore features, privacy, release information and find the right application.">
+<meta name="author" content="MeraHisab">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#080f20">
+<meta name="application-name" content="MeraHisab">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MeraHisab">
+
+<link rel="canonical" href="https://merahisab.store/compare.html">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MeraHisab">
+<meta property="og:title" content="Compare MeraHisab and Royal Khata">
+<meta property="og:description" content="Find the right application for personal finance and digital khata management.">
+<meta property="og:url" content="https://merahisab.store/compare.html">
+<meta property="og:image" content="https://merahisab.store/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/upgrade.css">
+<link rel="stylesheet" href="/pwa.css">
+
+<script src="/upgrade.js" defer></script>
+<script src="/pwa.js" defer></script>
+
+<style>
+/* MERAHISAB COMPARISON PAGE
+   Final Master Version 2.0.0 */
+
+.cp-page {
+  width: min(1200px, calc(100% - 32px));
+  margin: auto;
+  padding: 26px 0 48px;
+  min-width: 0;
+}
+
+.cp-page * {
+  box-sizing: border-box;
+}
+
+.cp-page h1,
+.cp-page h2,
+.cp-page h3 {
+  color: var(--mh-accent, #f0d9a6);
+  overflow-wrap: anywhere;
+}
+
+.cp-page p {
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.cp-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.cp-hero {
+  padding: clamp(24px, 6vw, 60px) 20px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 26px;
+  background: var(--mh-surface, #14243b);
+  color: var(--mh-text, #f8f6f0);
+  text-align: center;
+  box-shadow: var(--mh-shadow);
+}
+
+.cp-hero h1 {
+  margin: 20px 0;
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.2;
+}
+
+.cp-hero p {
+  max-width: 760px;
+  margin: 12px auto 22px;
+  color: var(--mh-muted, #b9c5d6);
+}
+
+.cp-eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mh-accent, #f0d9a6);
+}
+
+.cp-versus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.cp-versus img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 20px;
+}
+
+.cp-versus strong {
+  color: var(--mh-accent, #f0d9a6);
+}
+
+.cp-section {
+  margin: 44px 0;
+  min-width: 0;
+  scroll-margin-top: 16px;
+}
+
+.cp-title {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 34px);
+  margin-bottom: 12px;
+}
+
+.cp-description {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 24px;
+  color: var(--mh-muted, #b9c5d6);
+}
+
+.cp-grid,
+.cp-grid-three {
+  display: grid;
+  gap: 20px;
+}
+
+.cp-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cp-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cp-card {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 22px;
+  background: var(--mh-surface, #14243b);
+  color: var(--mh-text, #f8f6f0);
+  box-shadow: var(--mh-shadow);
+}
+
+.cp-card h3 {
+  margin-top: 8px;
+}
+
+.cp-app-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 18px;
+  margin-bottom: 16px;
+}
+
+.cp-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cp-available {
+  color: var(--mh-success, #86efac);
+}
+
+.cp-planned {
+  color: var(--mh-warning, #fde68a);
+}
+
+.cp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.cp-hero .cp-actions {
+  justify-content: center;
+}
+
+.cp-button,
+.cp-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 12px;
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-text, #f8f6f0);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.cp-button-primary {
+  background: linear-gradient(135deg, #f0d9a6, #d8b878);
+  color: #101827;
+  border-color: #b59452;
+}
+
+.cp-button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.cp-filter[aria-pressed="true"] {
+  background: #f0d9a6;
+  color: #101827;
+}
+
+.cp-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.cp-search {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 12px;
+  background: var(--mh-surface, #14243b);
+  color: var(--mh-text, #f8f6f0);
+  font: inherit;
+}
+
+.cp-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.cp-count {
+  color: var(--mh-muted, #b9c5d6);
+  font-size: 14px;
+}
+
+.cp-table-wrap {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 16px;
+  overscroll-behavior-inline: contain;
+}
+
+.cp-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  text-align: left;
+  table-layout: fixed;
+}
+
+.cp-table th,
+.cp-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--mh-border, #44536a);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.cp-table thead th {
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-accent, #f0d9a6);
+  font-weight: 800;
+}
+
+.cp-table tbody th[scope="row"] {
+  width: 34%;
+  font-weight: 650;
+}
+
+.cp-table tr[data-group] th {
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-accent, #f0d9a6);
+  font-weight: 800;
+}
+
+.cp-table tr[data-cat]:hover {
+  background: var(--mh-hover, rgba(216,184,120,.09));
+}
+
+.cp-table tr:last-child td,
+.cp-table tr:last-child th {
+  border-bottom: 0;
+}
+
+.cp-notice {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 14px;
+  background: var(--mh-surface-raised, #172640);
+  color: var(--mh-text, #f8f6f0);
+}
+
+.cp-form fieldset {
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 18px;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 16px;
+}
+
+.cp-form legend {
+  max-width: 100%;
+  padding: 0 8px;
+  color: var(--mh-accent, #f0d9a6);
+  font-weight: 800;
+}
+
+.cp-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  margin: 9px 0;
+  padding: 12px;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cp-option input {
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  accent-color: var(--mh-accent, #f0d9a6);
+}
+
+.cp-option:focus-within {
+  border-color: var(--mh-focus, #94c7ff);
+}
+
+.cp-option:has(input:checked) {
+  background: var(--mh-hover, rgba(216,184,120,.09));
+  border-color: var(--mh-control-border, #a08a5d);
+}
+
+.cp-result {
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid var(--mh-control-border, #a08a5d);
+  border-radius: 18px;
+  background: var(--mh-surface-raised, #172640);
+}
+
+.cp-result h3 {
+  margin-top: 0;
+}
+
+.cp-faq details {
+  margin: 12px 0;
+  padding: 16px;
+  border: 1px solid var(--mh-border, #44536a);
+  border-radius: 14px;
+  background: var(--mh-surface, #14243b);
+}
+
+.cp-faq summary {
+  min-height: 36px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cp-faq details p {
+  margin-bottom: 4px;
+  color: var(--mh-muted, #b9c5d6);
+}
+
+.cp-small {
+  font-size: 14px;
+  color: var(--mh-muted, #b9c5d6);
+}
+
+.cp-page [hidden] {
+  display: none !important;
+}
+
+.cp-page :is(a, button, input, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--mh-focus, #94c7ff);
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .cp-grid-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .cp-grid,
+  .cp-grid-three {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cp-page {
+    width: calc(100% - 24px);
+    padding-top: 18px;
+  }
+
+  .cp-hero {
+    border-radius: 20px;
+  }
+
+  .cp-actions > .cp-button {
+    flex: 1 1 100%;
+  }
+
+  .cp-filter {
+    flex: 1 1 auto;
+    padding: 10px 12px;
+  }
+
+  .cp-versus img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cp-search {
+    font-size: 16px;
+  }
+
+  .cp-table th,
+  .cp-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cp-page *,
+  .cp-page *::before,
+  .cp-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .cp-filter[aria-pressed="true"],
+  .cp-option:has(input:checked) {
+    outline: 2px solid Highlight;
+  }
+}
+
+@media print {
+  .cp-page {
+    width: 100%;
+    padding: 0;
+  }
+
+  .cp-actions,
+  .cp-filter-row,
+  .cp-search-area,
+  .cp-breadcrumb,
+  .cp-form,
+  #pwaMount,
+  header.site,
+  footer.site {
+    display: none !important;
+  }
+
+  .cp-table-wrap {
+    overflow: visible;
+  }
+
+  .cp-table {
+    min-width: 0;
+    width: 100%;
+    font-size: 10pt;
+  }
+
+  .cp-table th,
+  .cp-table td {
+    padding: 7px;
+  }
+
+  .cp-table thead {
+    display: table-header-group;
+  }
+
+  .cp-table tr {
+    break-inside: avoid;
+  }
+
+  .cp-card {
+    box-shadow: none;
+  }
+
+  .cp-section h2 {
+    break-after: avoid;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- WEBSITE HEADER -->
-
-  <header class="site">
-
-    <div class="container">
-
-      <strong>MeraHisab</strong>
-
-      <nav aria-label="Main navigation">
-
-        <a href="/index.html">Home</a>
-
-        <a href="/downloads.html">Apps</a>
-
-        <a href="/compare.html"
-           aria-current="page">Compare</a>
-
-        <a href="/index.html#features">Features</a>
-
-        <a href="/tools.html">Tools</a>
-
-        <a href="/privacy.html">Privacy</a>
-
-        <a href="/about.html">About</a>
-
-        <a href="/contact.html">Support</a>
-
-        <button id="theme"
-                type="button"
-                aria-label="Change website theme">
-
-          Theme
-
-        </button>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-  <!-- MAIN COMPARISON PAGE -->
-
-  <main class="shell cp-page">
-
-    <nav class="cp-breadcrumb"
-         aria-label="Breadcrumb">
-
-      <a href="/index.html">Home</a>
-
-      <span>›</span>
-
-      <span aria-current="page">
-
-        Compare Applications
-
-      </span>
-
-    </nav>
-
-    <!-- COMPARISON HERO -->
-
-    <section class="cp-hero">
-
-      <span class="cp-eyebrow">
-
-        APPLICATION COMPARISON
-
-      </span>
-
-      <div class="cp-versus">
-
-        <img
-          src="/icons/shortcut-merahisab.png"
-          alt="MeraHisab icon"
-          width="80"
-          height="80">
-
-        <span>VS</span>
-
-        <img
-          src="/icons/shortcut-royal-khata.png"
-          alt="Royal Khata icon"
-          width="80"
-          height="80">
-
-      </div>
-
-      <h1>MeraHisab vs Royal Khata</h1>
-
-      <p>
-
-        Two applications with different purposes.
-
-        Discover the differences between
-        personal finance management and
-        digital khata management to choose
-        the right solution for your needs.
-
-      </p>
-
-      <div class="cp-buttons">
-
-        <a href="#comparison-table"
-           class="cp-button cp-button-primary">
-
-          Compare Features
-
-        </a>
-
-        <a href="#app-selector"
-           class="cp-button cp-button-secondary">
-
-          Find My Application
-
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- APPLICATION OVERVIEW -->
-
-    <section class="cp-section">
-
-      <h2 class="cp-title">
-
-        Meet Our Applications
-
-      </h2>
-
-      <div class="cp-grid">
-
-        <!-- MERAHISAB -->
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-app-heading">
-
-            <img
-              src="/icons/shortcut-merahisab.png"
-              alt="MeraHisab icon"
-              class="cp-app-icon"
-              width="70"
-              height="70">
-
-            <div>
-
-              <div class="cp-app-name">
-
-                MeraHisab
-
-              </div>
-
-              <div class="cp-app-category">
-
-                Personal Finance Management
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <span class="cp-status cp-status-available">
-
-            Android Download
-
-          </span>
-
-          <p>
-
-            Designed for individuals and
-            families who want to organize
-            personal income, expenses,
-            savings and financial accounts.
-
-          </p>
-
-          <h3>Primary Purpose</h3>
-
-          <ul class="cp-list">
-
-            <li>Personal income tracking</li>
-
-            <li>Daily expense management</li>
-
-            <li>Savings organization</li>
-
-            <li>Multiple financial accounts</li>
-
-            <li>Personal financial reports</li>
-
-            <li>Notes and task organization</li>
-
-          </ul>
-
-          <div class="cp-buttons">
-
-            <a href="/merahisab.html"
-               class="cp-button cp-button-secondary">
-
-              Application Details
-
-            </a>
-
-            <a href="/download.html"
-               class="cp-button cp-button-primary">
-
-              Download MeraHisab
-
-            </a>
-
-          </div>
-
-        </article>
-
-        <!-- ROYAL KHATA -->
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-app-heading">
-
-            <img
-              src="/icons/shortcut-royal-khata.png"
-              alt="Royal Khata icon"
-              class="cp-app-icon"
-              width="70"
-              height="70">
-
-            <div>
-
-              <div class="cp-app-name">
-
-                Royal Khata
-
-              </div>
-
-              <div class="cp-app-category">
-
-                Digital Khata Management
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <span class="cp-status">
-
-            Official Release Pending
-
-          </span>
-
-          <p>
-
-            Designed for users, shopkeepers
-            and small businesses who want
-            organized credit, debit and
-            customer account records.
-
-          </p>
-
-          <h3>Planned Primary Purpose</h3>
-
-          <ul class="cp-list">
-
-            <li>Digital khata management</li>
-
-            <li>Credit transaction records</li>
-
-            <li>Debit transaction records</li>
-
-            <li>Customer account management</li>
-
-            <li>Account statements</li>
-
-            <li>Backup and recovery options</li>
-
-          </ul>
-
-          <div class="cp-buttons">
-
-            <a href="/royal-khata.html"
-               class="cp-button cp-button-secondary">
-
-              Application Details
-
-            </a>
-
-            <button type="button"
-                    class="cp-button cp-button-primary"
-                    disabled>
-
-              Download Pending
-
-            </button>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- DETAILED COMPARISON TABLE -->
-
-    <section class="cp-section"
-             id="comparison-table">
-
-      <h2 class="cp-title">
-
-        Detailed Feature Comparison
-
-      </h2>
-
-      <p class="cp-description">
-
-        Compare application purposes,
-        financial features, data protection
-        and release information.
-
-      </p>
-
-      <article class="upgrade-card cp-card">
-
-        <label for="comparisonSearch">
-
-          <strong>Search Features</strong>
-
-        </label>
-
-        <input type="search"
-               id="comparisonSearch"
-               class="cp-search"
-               autocomplete="off"
-               placeholder="Search income, backup, credit, reports...">
-
-        <!-- CATEGORY FILTERS -->
-
-        <div class="cp-filter-bar"
-             role="group"
-             aria-label="Filter comparison features">
-
-          <button type="button"
-                  class="cp-filter"
-                  data-filter="all"
-                  aria-pressed="true">
-
-            All Features
-
-          </button>
-
-          <button type="button"
-                  class="cp-filter"
-                  data-filter="general"
-                  aria-pressed="false">
-
-            General
-
-          </button>
-
-          <button type="button"
-                  class="cp-filter"
-                  data-filter="finance"
-                  aria-pressed="false">
-
-            Finance
-
-          </button>
-
-          <button type="button"
-                  class="cp-filter"
-                  data-filter="reports"
-                  aria-pressed="false">
-
-            Reports
-
-          </button>
-
-          <button type="button"
-                  class="cp-filter"
-                  data-filter="security"
-                  aria-pressed="false">
-
-            Security
-
-          </button>
-
-          <button type="button"
-                  class="cp-filter"
-                  data-filter="release"
-                  aria-pressed="false">
-
-            Release
-
-          </button>
-
-        </div>
-
-        <div class="cp-result-count"
-             id="comparisonCount"
-             aria-live="polite">
-
-          Showing all comparison features.
-
-        </div>
-
-        <div class="cp-table-wrap"
-             tabindex="0"
-             role="region"
-             aria-label="Scrollable application comparison table">
-
-          <table class="cp-table"
-                 id="comparisonTable">
-
-            <caption>
-
-              MeraHisab and Royal Khata
-              feature comparison
-
-            </caption>
-
-            <thead>
-
-              <tr>
-
-                <th scope="col">Feature</th>
-
-                <th scope="col">MeraHisab</th>
-
-                <th scope="col">Royal Khata</th>
-
-              </tr>
-
-            </thead>
-
-            <tbody>
-
-              <!-- GENERAL -->
-
-              <tr class="cp-table-category"
-                  data-heading="general">
-
-                <th colspan="3" scope="rowgroup">
-
-                  General Information
-
-                </th>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Primary Purpose</th>
-
-                <td>Personal Finance</td>
-
-                <td>Digital Khata</td>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Target Users</th>
-
-                <td>Individuals and families</td>
-
-                <td>Khata users and businesses</td>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Platform</th>
-
-                <td>Android</td>
-
-                <td>Android — planned</td>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Dashboard</th>
-
-                <td>Personal finance dashboard</td>
-
-                <td>Credit-debit dashboard — planned</td>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Offline Management</th>
-
-                <td>Designed for offline use</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Hindi & English</th>
-
-                <td>Availability to be verified</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="general">
-
-                <th scope="row">Application Themes</th>
-
-                <td>Availability to be verified</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <!-- FINANCE -->
-
-              <tr class="cp-table-category"
-                  data-heading="finance">
-
-                <th colspan="3" scope="rowgroup">
-
-                  Financial Management
-
-                </th>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Income Tracking</th>
-
-                <td>Core feature</td>
-
-                <td>Not the primary focus</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Expense Tracking</th>
-
-                <td>Core feature</td>
-
-                <td>Not the primary focus</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Savings Management</th>
-
-                <td>Core feature</td>
-
-                <td>Not the primary focus</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Multiple Accounts</th>
-
-                <td>Personal financial accounts</td>
-
-                <td>Khata accounts — planned</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Credit Management</th>
-
-                <td>Not the primary focus</td>
-
-                <td>Core planned feature</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Debit Management</th>
-
-                <td>Not the primary focus</td>
-
-                <td>Core planned feature</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Customer Accounts</th>
-
-                <td>Not the primary focus</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Monthly Summary</th>
-
-                <td>Income and expenses</td>
-
-                <td>Credit and debit — planned</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Balance Management</th>
-
-                <td>Personal account balances</td>
-
-                <td>Khata balances — planned</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Transaction History</th>
-
-                <td>Personal transactions</td>
-
-                <td>Khata transactions — planned</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Payment Reminders</th>
-
-                <td>Availability to be verified</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="finance">
-
-                <th scope="row">Notes & Tasks</th>
-
-                <td>Described feature</td>
-
-                <td>Transaction notes — planned</td>
-
-              </tr>
-
-              <!-- REPORTS -->
-
-              <tr class="cp-table-category"
-                  data-heading="reports">
-
-                <th colspan="3" scope="rowgroup">
-
-                  Reports & Productivity
-
-                </th>
-
-              </tr>
-
-              <tr data-category="reports">
-
-                <th scope="row">Financial Reports</th>
-
-                <td>Personal financial reports</td>
-
-                <td>Khata reports — planned</td>
-
-              </tr>
-
-              <tr data-category="reports">
-
-                <th scope="row">PDF Export</th>
-
-                <td>Described feature</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="reports">
-
-                <th scope="row">Excel Export</th>
-
-                <td>Described feature</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="reports">
-
-                <th scope="row">Search & Filters</th>
-
-                <td>Described feature</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="reports">
-
-                <th scope="row">Customer Statements</th>
-
-                <td>Not the primary focus</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <!-- SECURITY -->
-
-              <tr class="cp-table-category"
-                  data-heading="security">
-
-                <th colspan="3" scope="rowgroup">
-
-                  Security & Data Protection
-
-                </th>
-
-              </tr>
-
-              <tr data-category="security">
-
-                <th scope="row">Local Data Storage</th>
-
-                <td>Design objective</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="security">
-
-                <th scope="row">Backup & Restore</th>
-
-                <td>Described feature</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="security">
-
-                <th scope="row">Application Lock</th>
-
-                <td>Verification pending</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="security">
-
-                <th scope="row">Recovery Key</th>
-
-                <td>Verification pending</td>
-
-                <td>Planned</td>
-
-              </tr>
-
-              <tr data-category="security">
-
-                <th scope="row">Data Encryption</th>
-
-                <td>Verification pending</td>
-
-                <td>Implementation to be verified</td>
-
-              </tr>
-
-              <tr data-category="security">
-
-                <th scope="row">Backup Protection</th>
-
-                <td>Verification pending</td>
-
-                <td>Implementation to be verified</td>
-
-              </tr>
-
-              <!-- RELEASE -->
-
-              <tr class="cp-table-category"
-                  data-heading="release">
-
-                <th colspan="3" scope="rowgroup">
-
-                  Download & Release Information
-
-                </th>
-
-              </tr>
-
-              <tr data-category="release">
-
-                <th scope="row">APK Download</th>
-
-                <td>Download page available</td>
-
-                <td>Release pending</td>
-
-              </tr>
-
-              <tr data-category="release">
-
-                <th scope="row">Application Version</th>
-
-                <td>Verification pending</td>
-
-                <td>Not published</td>
-
-              </tr>
-
-              <tr data-category="release">
-
-                <th scope="row">APK File Size</th>
-
-                <td>Verification pending</td>
-
-                <td>Not available</td>
-
-              </tr>
-
-              <tr data-category="release">
-
-                <th scope="row">Android Compatibility</th>
-
-                <td>Verification pending</td>
-
-                <td>Pending release</td>
-
-              </tr>
-
-              <tr data-category="release">
-
-                <th scope="row">SHA-256 Checksum</th>
-
-                <td>Verification pending</td>
-
-                <td>Pending release</td>
-
-              </tr>
-
-              <tr data-category="release">
-
-                <th scope="row">Signing Certificate</th>
-
-                <td>Verification pending</td>
-
-                <td>Pending release</td>
-
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-        <p class="cp-table-note">
-
-          On smaller screens, scroll the
-          comparison table horizontally.
-
-        </p>
-
-        <div class="cp-notice">
-
-          <strong>Feature Status:</strong>
-
-          MeraHisab feature descriptions
-          represent the stated application
-          design and capabilities.
-
-          Royal Khata features are planned
-          and must not be treated as
-          confirmed released functionality.
-
-          Final feature availability,
-          compatibility and security
-          require verification.
-
-        </div>
-
-        <div class="cp-buttons">
-
-          <button type="button"
-                  id="resetComparison"
-                  class="cp-button cp-button-secondary">
-
-            Reset Filters
-
-          </button>
-
-          <button type="button"
-                  id="printComparison"
-                  class="cp-button cp-button-primary">
-
-            Print / Save as PDF
-
-          </button>
-
-        </div>
-
-      </article>
-
-    </section>
-
-    <!-- INTERACTIVE APPLICATION SELECTOR -->
-
-    <section class="cp-section"
-             id="app-selector">
-
-      <h2 class="cp-title">
-
-        Which Application Is Right for You?
-
-      </h2>
-
-      <p class="cp-description">
-
-        Answer three simple questions
-        to find the application that
-        best matches your intended use.
-
-      </p>
-
-      <article class="upgrade-card cp-card">
-
-        <form id="appSelectorForm">
-
-          <!-- QUESTION ONE -->
-
-          <fieldset class="cp-question">
-
-            <legend>
-
-              1. What do you want to manage?
-
-            </legend>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="purpose"
-                     value="personal"
-                     required>
-
-              <span>
-
-                Personal income, expenses
-                and savings
-
-              </span>
-
-            </label>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="purpose"
-                     value="khata">
-
-              <span>
-
-                Customer credit, debit
-                and digital khata
-
-              </span>
-
-            </label>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="purpose"
-                     value="both">
-
-              <span>
-
-                Both personal finances
-                and digital khata
-
-              </span>
-
-            </label>
-
-          </fieldset>
-
-          <!-- QUESTION TWO -->
-
-          <fieldset class="cp-question">
-
-            <legend>
-
-              2. Who will use the application?
-
-            </legend>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="userType"
-                     value="personal"
-                     required>
-
-              <span>
-
-                Individual or family
-
-              </span>
-
-            </label>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="userType"
-                     value="khata">
-
-              <span>
-
-                Shopkeeper or small business
-
-              </span>
-
-            </label>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="userType"
-                     value="both">
-
-              <span>
-
-                Personal and business use
-
-              </span>
-
-            </label>
-
-          </fieldset>
-
-          <!-- QUESTION THREE -->
-
-          <fieldset class="cp-question">
-
-            <legend>
-
-              3. Which reports are most important?
-
-            </legend>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="reports"
-                     value="personal"
-                     required>
-
-              <span>
-
-                Income, expenses and savings reports
-
-              </span>
-
-            </label>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="reports"
-                     value="khata">
-
-              <span>
-
-                Credit, debit and customer statements
-
-              </span>
-
-            </label>
-
-            <label class="cp-option">
-
-              <input type="radio"
-                     name="reports"
-                     value="both">
-
-              <span>
-
-                Both types of financial reports
-
-              </span>
-
-            </label>
-
-          </fieldset>
-
-          <div class="cp-buttons">
-
-            <button type="submit"
-                    class="cp-button cp-button-primary">
-
-              Find My Application
-
-            </button>
-
-            <button type="reset"
-                    class="cp-button cp-button-secondary">
-
-              Reset Answers
-
-            </button>
-
-          </div>
-
-        </form>
-
-        <!-- APPLICATION SELECTOR RESULT -->
-
-        <div class="cp-result"
-             id="selectorResult"
-             aria-live="polite"
-             hidden>
-
-          <h3 id="selectorTitle"></h3>
-
-          <p id="selectorDescription"></p>
-
-          <div class="cp-buttons">
-
-            <a href="/merahisab.html"
-               id="selectorMeraHisab"
-               class="cp-button cp-button-primary"
-               hidden>
-
-              Explore MeraHisab
-
-            </a>
-
-            <a href="/royal-khata.html"
-               id="selectorRoyalKhata"
-               class="cp-button cp-button-secondary"
-               hidden>
-
-              Explore Royal Khata
-
-            </a>
-
-          </div>
-
-        </div>
-
-        <div class="cp-notice">
-
-          This selector uses simple
-          application-purpose matching.
-
-          Your answers are processed locally
-          by this selector and are not
-          submitted to a server.
-
-          The recommendation does not
-          confirm feature availability
-          or application suitability
-          for regulated accounting.
-
-        </div>
-
-      </article>
-
-    </section>
-
-    <!-- COMMON USE CASES -->
-
-    <section class="cp-section">
-
-      <h2 class="cp-title">
-
-        Common Use Cases
-
-      </h2>
-
-      <div class="cp-grid-three">
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">🏠</div>
-
-          <h3>Household Expenses</h3>
-
-          <p>
-
-            Track everyday household
-            spending and family finances.
-
-          </p>
-
-          <strong>Suggested: MeraHisab</strong>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">💰</div>
-
-          <h3>Personal Savings</h3>
-
-          <p>
-
-            Organize savings and
-            personal financial accounts.
-
-          </p>
-
-          <strong>Suggested: MeraHisab</strong>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">₹</div>
-
-          <h3>Salary & Income</h3>
-
-          <p>
-
-            Maintain records of salary,
-            income and personal expenses.
-
-          </p>
-
-          <strong>Suggested: MeraHisab</strong>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">🏪</div>
-
-          <h3>Shopkeeper Khata</h3>
-
-          <p>
-
-            Maintain organized credit
-            and debit customer records.
-
-          </p>
-
-          <strong>
-
-            Planned Solution: Royal Khata
-
-          </strong>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">👥</div>
-
-          <h3>Customer Accounts</h3>
-
-          <p>
-
-            Organize individual customer
-            balances and transaction history.
-
-          </p>
-
-          <strong>
-
-            Planned Solution: Royal Khata
-
-          </strong>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">📒</div>
-
-          <h3>Credit & Debit Records</h3>
-
-          <p>
-
-            Maintain separate digital
-            khata transaction records.
-
-          </p>
-
-          <strong>
-
-            Planned Solution: Royal Khata
-
-          </strong>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- SECURITY COMPARISON -->
-
-    <section class="cp-section">
-
-      <h2 class="cp-title">
-
-        Privacy & Data Protection
-
-      </h2>
-
-      <div class="cp-grid">
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">🔐</div>
-
-          <h3>MeraHisab</h3>
-
-          <p>
-
-            Designed around personal
-            financial record management,
-            local storage and backup control.
-
-            Actual security implementation
-            requires verification.
-
-          </p>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <div class="cp-feature-icon">🛡</div>
-
-          <h3>Royal Khata</h3>
-
-          <p>
-
-            Planned security capabilities
-            include access protection,
-            backup management and
-            recovery-key functionality.
-
-            Final implementation must be
-            verified before release.
-
-          </p>
-
-        </article>
-
-      </div>
-
-      <div class="cp-notice">
-
-        Neither application should be
-        considered independently security-audited
-        without documented verification.
-
-        Keep important financial backups
-        secure and review the Privacy Policy.
-
-      </div>
-
-      <div class="cp-buttons">
-
-        <a href="/privacy.html"
-           class="cp-button cp-button-secondary">
-
-          Read Privacy Policy
-
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- FREQUENTLY ASKED QUESTIONS -->
-
-    <section class="cp-section cp-faq">
-
-      <h2 class="cp-title">
-
-        Frequently Asked Questions
-
-      </h2>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          What is the main difference?
-
-        </summary>
-
-        <p>
-
-          MeraHisab focuses on personal
-          income, expenses and savings.
-
-          Royal Khata focuses on credit,
-          debit and digital khata records.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Which application is better for personal finance?
-
-        </summary>
-
-        <p>
-
-          MeraHisab is designed specifically
-          for personal finance management.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Which application is better for shopkeepers?
-
-        </summary>
-
-        <p>
-
-          Royal Khata is designed around
-          digital khata and customer
-          account management.
-
-          Its official release is pending.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Can I use both applications?
-
-        </summary>
-
-        <p>
-
-          The applications are intended
-          for different financial purposes.
-
-          You may choose to use both
-          when both applications are available.
-
-          Cross-application data synchronization
-          has not been confirmed.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Do both applications support backup?
-
-        </summary>
-
-        <p>
-
-          Backup and restore are described
-          MeraHisab features and planned
-          Royal Khata capabilities.
-
-          Backup formats and recovery
-          behavior require verification.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Can I transfer data between the applications?
-
-        </summary>
-
-        <p>
-
-          Direct data migration and
-          cross-application compatibility
-          have not been confirmed.
-
-          Do not assume that one application's
-          backup can be restored in the other.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Are all listed Royal Khata features available?
-
-        </summary>
-
-        <p>
-
-          No. Royal Khata features listed
-          on this page are planned capabilities
-          and require development and testing.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Are both applications available for download?
-
-        </summary>
-
-        <p>
-
-          MeraHisab has a dedicated download page.
-
-          Royal Khata's official APK
-          release is pending.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Can I save this comparison as PDF?
-
-        </summary>
-
-        <p>
-
-          Yes. Use the Print / Save as PDF
-          button and choose Save as PDF
-          if your browser or operating
-          system supports that option.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
-
-          Where can I find more information?
-
-        </summary>
-
-        <p>
-
-          Visit the individual application
-          pages, Download Center or
-          Contact & Support page.
-
-        </p>
-
-      </details>
-
-    </section>
-
-    <!-- FINAL APPLICATION LINKS -->
-
-    <section class="cp-section">
-
-      <h2 class="cp-title">
-
-        Choose Your Application
-
-      </h2>
-
-      <div class="cp-grid">
-
-        <article class="upgrade-card cp-card">
-
-          <h3>MeraHisab</h3>
-
-          <p>
-
-            Organize your personal
-            financial life.
-
-          </p>
-
-          <div class="cp-buttons">
-
-            <a href="/merahisab.html"
-               class="cp-button cp-button-secondary">
-
-              Learn More
-
-            </a>
-
-            <a href="/download.html"
-               class="cp-button cp-button-primary">
-
-              Download MeraHisab
-
-            </a>
-
-          </div>
-
-        </article>
-
-        <article class="upgrade-card cp-card">
-
-          <h3>Royal Khata</h3>
-
-          <p>
-
-            Explore the planned digital
-            khata management experience.
-
-          </p>
-
-          <div class="cp-buttons">
-
-            <a href="/royal-khata.html"
-               class="cp-button cp-button-primary">
-
-              Explore Royal Khata
-
-            </a>
-
-            <button type="button"
-                    class="cp-button cp-button-secondary"
-                    disabled>
-
-              Release Pending
-
-            </button>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- PWA INSTALLATION PANEL -->
-
-    <section class="cp-section"
-             id="pwaMount">
-
-      <!--
-        PWA installation, updates,
-        cache management and diagnostics
-        are generated by pwa.js.
-      -->
-
-    </section>
-
-  </main>
-
-  <!-- WEBSITE FOOTER -->
-
-  <footer class="site">
-
-    <div class="container">
-
-      © <span data-year>2026</span>
-
-      MeraHisab. All rights reserved.
-
-      <br>
-
-      <a href="/index.html">Home</a>
-
-      ·
-
-      <a href="/privacy.html">Privacy</a>
-
-      ·
-
-      <a href="/contact.html">Contact</a>
-
-      ·
-
-      <a href="/downloads.html">Downloads</a>
-
-      <br>
-
-      <a href="https://merahisab.store/">
-
-        merahisab.store
-
-      </a>
-
-    </div>
-
-  </footer>
-
-  <!-- INTERACTIVE COMPARISON ENGINE -->
-
-  <script>
-
-    (function () {
-
-      "use strict";
-
-      if (window.__merahisabCompareInitialized) {
-
-        return;
-
-      }
-
-      window.__merahisabCompareInitialized = true;
-
-
-      /* COMPARISON TABLE FILTERS */
-
-      const searchInput =
-        document.getElementById(
-          "comparisonSearch"
-        );
-
-      const countElement =
-        document.getElementById(
-          "comparisonCount"
-        );
-
-      const featureRows =
-        Array.from(
-          document.querySelectorAll(
-            "#comparisonTable tr[data-category]"
-          )
-        );
-
-      const categoryHeadings =
-        Array.from(
-          document.querySelectorAll(
-            "#comparisonTable tr[data-heading]"
-          )
-        );
-
-      const filterButtons =
-        Array.from(
-          document.querySelectorAll(
-            ".cp-filter[data-filter]"
-          )
-        );
-
-      const resetComparison =
-        document.getElementById(
-          "resetComparison"
-        );
-
-      const printComparison =
-        document.getElementById(
-          "printComparison"
-        );
-
-      let activeCategory = "all";
-
-
-      function updateComparison() {
-
-        const query =
-          searchInput.value
-            .trim()
-            .toLowerCase();
-
-        let visibleCount = 0;
-
-        const visibleCategories =
-          new Set();
-
-        featureRows.forEach(
-          function (row) {
-
-            const category =
-              row.dataset.category;
-
-            const categoryMatches =
-
-              activeCategory === "all" ||
-
-              category === activeCategory;
-
-            const searchMatches =
-
-              row.textContent
-                .toLowerCase()
-                .replace(/\s+/g, " ")
-                .includes(query);
-
-            const visible =
-
-              categoryMatches &&
-              searchMatches;
-
-            row.hidden = !visible;
-
-            if (visible) {
-
-              visibleCount++;
-
-              visibleCategories.add(
-                category
-              );
-
-            }
-
-          }
-        );
-
-        categoryHeadings.forEach(
-          function (heading) {
-
-            heading.hidden =
-
-              !visibleCategories.has(
-                heading.dataset.heading
-              );
-
-          }
-        );
-
-        filterButtons.forEach(
-          function (button) {
-
-            button.setAttribute(
-
-              "aria-pressed",
-
-              String(
-
-                button.dataset.filter ===
-                activeCategory
-
-              )
-
-            );
-
-          }
-        );
-
-        if (visibleCount === 0) {
-
-          countElement.textContent =
-
-            "No matching features found. " +
-            "Try another search or reset filters.";
-
-        } else {
-
-          countElement.textContent =
-
-            "Showing " +
-
-            visibleCount +
-
-            " of " +
-
-            featureRows.length +
-
-            " comparison features.";
-
-        }
-
-      }
-
-
-      filterButtons.forEach(
-        function (button) {
-
-          button.addEventListener(
-
-            "click",
-
-            function () {
-
-              activeCategory =
-                button.dataset.filter;
-
-              updateComparison();
-
-            }
-
-          );
-
-        }
-      );
-
-
-      searchInput.addEventListener(
-
-        "input",
-
-        updateComparison
-
-      );
-
-
-      resetComparison.addEventListener(
-
-        "click",
-
-        function () {
-
-          activeCategory = "all";
-
-          searchInput.value = "";
-
-          updateComparison();
-
-        }
-
-      );
-
-
-      printComparison.addEventListener(
-
-        "click",
-
-        function () {
-
-          window.print();
-
-        }
-
-      );
-
-
-      updateComparison();
-
-
-      /* APPLICATION RECOMMENDATION ENGINE */
-
-      const selectorForm =
-        document.getElementById(
-          "appSelectorForm"
-        );
-
-      const selectorResult =
-        document.getElementById(
-          "selectorResult"
-        );
-
-      const selectorTitle =
-        document.getElementById(
-          "selectorTitle"
-        );
-
-      const selectorDescription =
-        document.getElementById(
-          "selectorDescription"
-        );
-
-      const meraHisabLink =
-        document.getElementById(
-          "selectorMeraHisab"
-        );
-
-      const royalKhataLink =
-        document.getElementById(
-          "selectorRoyalKhata"
-        );
-
-
-      function clearRecommendation() {
-
-        selectorResult.hidden = true;
-
-        selectorTitle.textContent = "";
-
-        selectorDescription.textContent = "";
-
-        meraHisabLink.hidden = true;
-
-        royalKhataLink.hidden = true;
-
-      }
-
-
-      selectorForm.addEventListener(
-
-        "submit",
-
-        function (event) {
-
-          event.preventDefault();
-
-          if (!selectorForm.checkValidity()) {
-
-            selectorForm.reportValidity();
-
-            return;
-
-          }
-
-          const answers =
-            new FormData(selectorForm);
-
-          const purpose =
-            answers.get("purpose");
-
-          const userType =
-            answers.get("userType");
-
-          const reports =
-            answers.get("reports");
-
-          let personalScore = 0;
-
-          let khataScore = 0;
-
-
-          function addScore(value, weight) {
-
-            if (value === "personal") {
-
-              personalScore += weight;
-
-            } else if (value === "khata") {
-
-              khataScore += weight;
-
-            } else if (value === "both") {
-
-              personalScore += weight;
-
-              khataScore += weight;
-
-            }
-
-          }
-
-
-          addScore(purpose, 3);
-
-          addScore(userType, 1);
-
-          addScore(reports, 2);
-
-
-          clearRecommendation();
-
-
-          if (purpose === "both" ||
-              personalScore === khataScore) {
-
-            selectorTitle.textContent =
-
-              "Both Applications May Be Useful";
-
-            selectorDescription.textContent =
-
-              "MeraHisab matches your personal " +
-              "finance needs, while Royal Khata " +
-              "is intended for credit-debit and " +
-              "customer account management. " +
-              "Royal Khata is not yet available " +
-              "for official download.";
-
-            meraHisabLink.hidden = false;
-
-            royalKhataLink.hidden = false;
-
-          } else if (
-            personalScore > khataScore
-          ) {
-
-            selectorTitle.textContent =
-
-              "Suggested Application: MeraHisab";
-
-            selectorDescription.textContent =
-
-              "Your answers indicate that " +
-              "personal income, expenses, " +
-              "savings and financial accounts " +
-              "are your main priorities. " +
-              "Explore MeraHisab and verify " +
-              "that its available features " +
-              "meet your requirements.";
-
-            meraHisabLink.hidden = false;
-
-          } else {
-
-            selectorTitle.textContent =
-
-              "Suggested Planned Application: Royal Khata";
-
-            selectorDescription.textContent =
-
-              "Your answers indicate that " +
-              "credit, debit and customer " +
-              "account management are your " +
-              "main priorities. Royal Khata " +
-              "is designed for this purpose, " +
-              "but its official release " +
-              "is still pending.";
-
-            royalKhataLink.hidden = false;
-
-          }
-
-          selectorResult.hidden = false;
-
-        }
-
-      );
-
-
-      selectorForm.addEventListener(
-
-        "reset",
-
-        clearRecommendation
-
-      );
-
-
-      selectorForm.addEventListener(
-
-        "change",
-
-        clearRecommendation
-
-      );
-
-    })();
-
-  </script>
-
-  <!-- JAVASCRIPT DISABLED FALLBACK -->
-
-  <noscript>
-
-    <div style="
-      padding:20px;
-      text-align:center;
-      background:#172640;
-      color:#f0d9a6;
-    ">
-
-      JavaScript is disabled.
-
-      The comparison table remains readable,
-      but interactive filters, application
-      recommendations, theme controls and
-      PWA features require JavaScript.
-
-    </div>
-
-  </noscript>
+<a class="skip-link" href="#mainContent">
+Skip to main content
+</a>
+
+<header class="site">
+<div class="container">
+
+<strong>
+<a href="/" aria-label="MeraHisab Home">MeraHisab</a>
+</strong>
+
+<nav aria-label="Main navigation">
+<a href="/">Home</a>
+<a href="/merahisab.html">MeraHisab</a>
+<a href="/royal-khata.html">Royal Khata</a>
+<a href="/compare.html" aria-current="page">Compare</a>
+<a href="/downloads.html">Downloads</a>
+<a href="/tools.html">Tools</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Support</a>
+<button type="button" id="theme">Dark Mode</button>
+</nav>
+
+</div>
+</header>
+
+<main class="cp-page" id="mainContent">
+
+<div id="compareContent" data-no-translate="true">
+
+<div class="cp-breadcrumb">
+<a href="/" data-hi="होम">Home</a>
+<span aria-hidden="true">/</span>
+<span data-hi="ऐप्स की तुलना">Application Comparison</span>
+</div>
+
+<section class="cp-hero" aria-labelledby="comparisonTitle">
+
+<span class="cp-eyebrow" data-hi="सही ऐप चुनें">
+CHOOSE THE RIGHT APPLICATION
+</span>
+
+<h1 id="comparisonTitle" data-hi="MeraHisab और Royal Khata की तुलना">
+MeraHisab vs Royal Khata
+</h1>
+
+<div class="cp-versus">
+<img src="/icons/shortcut-merahisab.png"
+alt="MeraHisab"
+width="80"
+height="80"
+decoding="async">
+
+<strong>VS</strong>
+
+<img src="/icons/shortcut-royal-khata.png"
+alt="Royal Khata"
+width="80"
+height="80"
+decoding="async">
+</div>
+
+<p data-hi="दो अलग उद्देश्यों के लिए दो ऐप। व्यक्तिगत वित्त और डिजिटल खाते की तुलना करें तथा अपनी जरूरत के अनुसार सही ऐप चुनें।">
+Two applications with different purposes. Compare personal finance and digital khata management to choose the right application for your needs.
+</p>
+
+<div class="cp-actions">
+<a class="cp-button cp-button-primary"
+href="#comparison-table"
+data-hi="विशेषताओं की तुलना करें">
+Compare Features
+</a>
+
+<a class="cp-button"
+href="#app-selector"
+data-hi="मेरे लिए सही ऐप चुनें">
+Find My Application
+</a>
+</div>
+
+</section>
+
+<section class="cp-section">
+
+<h2 class="cp-title" data-hi="हमारे ऐप्स के बारे में जानें">
+Meet Our Applications
+</h2>
+
+<div class="cp-grid">
+
+<article class="cp-card">
+
+<img class="cp-app-icon"
+src="/icons/shortcut-merahisab.png"
+alt="MeraHisab"
+width="72"
+height="72"
+loading="lazy">
+
+<h3>MeraHisab</h3>
+
+<span class="cp-status cp-available"
+data-hi="रिपॉजिटरी में APK उपलब्ध">
+APK Available in Repository
+</span>
+
+<h4 data-hi="मुख्य उद्देश्य">Primary Purpose</h4>
+
+<p data-hi="व्यक्तियों और परिवारों की आय, खर्च, बचत तथा व्यक्तिगत वित्तीय खातों का प्रबंधन।">
+Designed for individuals and families who want to organize personal income, expenses, savings and financial accounts.
+</p>
+
+<div class="cp-actions">
+<a class="cp-button"
+href="/merahisab.html"
+data-hi="ऐप का विवरण">
+Application Details
+</a>
+
+<a class="cp-button cp-button-primary"
+href="/download.html"
+data-hi="MeraHisab डाउनलोड करें">
+Download MeraHisab
+</a>
+</div>
+
+</article>
+
+<article class="cp-card">
+
+<img class="cp-app-icon"
+src="/icons/shortcut-royal-khata.png"
+alt="Royal Khata"
+width="72"
+height="72"
+loading="lazy">
+
+<h3>Royal Khata</h3>
+
+<span class="cp-status cp-planned"
+data-hi="आधिकारिक रिलीज बाकी">
+Official Release Pending
+</span>
+
+<h4 data-hi="प्रस्तावित मुख्य उद्देश्य">
+Planned Primary Purpose
+</h4>
+
+<p data-hi="दुकानदारों, छोटे व्यवसायों और खाता उपयोगकर्ताओं के लिए क्रेडिट, डेबिट तथा ग्राहक खातों का व्यवस्थित प्रबंधन।">
+Designed for users, shopkeepers and small businesses who want organized credit, debit and customer account records.
+</p>
+
+<div class="cp-actions">
+<a class="cp-button"
+href="/royal-khata.html"
+data-hi="ऐप का विवरण">
+Application Details
+</a>
+
+<button class="cp-button"
+type="button"
+disabled
+data-hi="डाउनलोड अभी उपलब्ध नहीं">
+Download Pending
+</button>
+</div>
+
+</article>
+
+</div>
+</section>
+
+<section class="cp-section" id="comparison-table">
+
+<h2 class="cp-title" data-hi="विशेषताओं की विस्तृत तुलना">
+Detailed Feature Comparison
+</h2>
+
+<p class="cp-description"
+data-hi="दोनों ऐप्स के उद्देश्य, वित्तीय सुविधाओं, डेटा सुरक्षा तथा रिलीज की जानकारी की तुलना करें।">
+Compare application purposes, financial features, data protection and release information.
+</p>
+
+<div class="cp-card">
+
+<div class="cp-notice">
+<p data-hi="MeraHisab की वर्णित सुविधाओं का ऐप में सत्यापन आवश्यक है। Royal Khata की सुविधाएं प्रस्तावित हैं। इस तालिका को पूर्ण ऐप परीक्षण या सुरक्षा प्रमाणन न समझें।">
+MeraHisab's described features require verification in the application. Royal Khata features are planned. This table is not an application audit or security certification.
+</p>
+</div>
+
+<div class="cp-search-area">
+
+<label class="cp-label"
+for="comparisonSearch"
+data-hi="विशेषताएं खोजें">
+Search Features
+</label>
+
+<input class="cp-search"
+id="comparisonSearch"
+type="search"
+maxlength="150"
+autocomplete="off"
+spellcheck="false"
+placeholder="Search features in English or Hindi">
+
+</div>
+
+<div class="cp-filter-row"
+role="group"
+aria-label="Comparison categories">
+
+<button type="button" class="cp-filter"
+data-filter="all" aria-pressed="true"
+data-hi="सभी विशेषताएं">All Features</button>
+
+<button type="button" class="cp-filter"
+data-filter="general" aria-pressed="false"
+data-hi="सामान्य">General</button>
+
+<button type="button" class="cp-filter"
+data-filter="finance" aria-pressed="false"
+data-hi="वित्तीय">Finance</button>
+
+<button type="button" class="cp-filter"
+data-filter="reports" aria-pressed="false"
+data-hi="रिपोर्ट">Reports</button>
+
+<button type="button" class="cp-filter"
+data-filter="security" aria-pressed="false"
+data-hi="सुरक्षा">Security</button>
+
+<button type="button" class="cp-filter"
+data-filter="release" aria-pressed="false"
+data-hi="रिलीज">Release</button>
+
+</div>
+
+<p id="comparisonCount"
+class="cp-count"
+role="status"
+aria-live="polite"
+aria-atomic="true">
+Showing 36 comparison features.
+</p>
+
+<p class="cp-small"
+data-hi="छोटी स्क्रीन पर पूरी तुलना देखने के लिए तालिका को दाएं-बाएं स्क्रॉल करें।">
+On smaller screens, scroll the comparison table horizontally.
+</p>
+
+<div class="cp-table-wrap"
+tabindex="0"
+role="region"
+aria-labelledby="comparisonCaption">
+
+<table class="cp-table" id="comparisonTable">
+
+<caption id="comparisonCaption"
+class="cp-small"
+data-hi="MeraHisab और Royal Khata की विशेषताएं">
+MeraHisab and Royal Khata features
+</caption>
+
+<thead>
+<tr>
+<th scope="col" data-hi="विशेषता">Feature</th>
+<th scope="col">MeraHisab</th>
+<th scope="col">Royal Khata</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr data-group="general">
+<th colspan="3" scope="rowgroup"
+data-hi="सामान्य जानकारी">General Information</th>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="मुख्य उद्देश्य">Primary Purpose</th>
+<td data-hi="व्यक्तिगत वित्त">Personal Finance</td>
+<td data-hi="डिजिटल खाता">Digital Khata</td>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="लक्षित उपयोगकर्ता">Target Users</th>
+<td data-hi="व्यक्ति और परिवार">Individuals and families</td>
+<td data-hi="खाता उपयोगकर्ता और व्यवसाय">Khata users and businesses</td>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="प्लेटफॉर्म">Platform</th>
+<td>Android</td>
+<td data-hi="Android — प्रस्तावित">Android — planned</td>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="डैशबोर्ड">Dashboard</th>
+<td data-hi="व्यक्तिगत वित्त डैशबोर्ड">Personal finance dashboard</td>
+<td data-hi="क्रेडिट-डेबिट डैशबोर्ड — प्रस्तावित">Credit-debit dashboard — planned</td>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="ऑफलाइन प्रबंधन">Offline Management</th>
+<td data-hi="ऑफलाइन उपयोग के लिए डिजाइन">Designed for offline use</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="हिन्दी और अंग्रेजी">Hindi &amp; English</th>
+<td data-hi="उपलब्धता का सत्यापन बाकी">Availability to be verified</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="general">
+<th scope="row" data-hi="ऐप की थीम">Application Themes</th>
+<td data-hi="उपलब्धता का सत्यापन बाकी">Availability to be verified</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-group="finance">
+<th colspan="3" scope="rowgroup"
+data-hi="वित्तीय प्रबंधन">Financial Management</th>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="आय का रिकॉर्ड">Income Tracking</th>
+<td data-hi="वर्णित मुख्य सुविधा">Described core feature</td>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="खर्च का रिकॉर्ड">Expense Tracking</th>
+<td data-hi="वर्णित मुख्य सुविधा">Described core feature</td>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="बचत प्रबंधन">Savings Management</th>
+<td data-hi="वर्णित मुख्य सुविधा">Described core feature</td>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="एक से अधिक खाते">Multiple Accounts</th>
+<td data-hi="व्यक्तिगत वित्तीय खाते">Personal financial accounts</td>
+<td data-hi="खाता प्रबंधन — प्रस्तावित">Khata accounts — planned</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="क्रेडिट प्रबंधन">Credit Management</th>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+<td data-hi="मुख्य प्रस्तावित सुविधा">Core planned feature</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="डेबिट प्रबंधन">Debit Management</th>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+<td data-hi="मुख्य प्रस्तावित सुविधा">Core planned feature</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="ग्राहक खाते">Customer Accounts</th>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="मासिक सारांश">Monthly Summary</th>
+<td data-hi="आय और खर्च">Income and expenses</td>
+<td data-hi="क्रेडिट और डेबिट — प्रस्तावित">Credit and debit — planned</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="शेष राशि प्रबंधन">Balance Management</th>
+<td data-hi="व्यक्तिगत खाते की शेष राशि">Personal account balances</td>
+<td data-hi="खाते की शेष राशि — प्रस्तावित">Khata balances — planned</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="लेनदेन का इतिहास">Transaction History</th>
+<td data-hi="व्यक्तिगत लेनदेन">Personal transactions</td>
+<td data-hi="खाते के लेनदेन — प्रस्तावित">Khata transactions — planned</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="भुगतान रिमाइंडर">Payment Reminders</th>
+<td data-hi="उपलब्धता का सत्यापन बाकी">Availability to be verified</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="finance">
+<th scope="row" data-hi="नोट्स और कार्य">Notes &amp; Tasks</th>
+<td data-hi="वर्णित सुविधा">Described feature</td>
+<td data-hi="लेनदेन नोट्स — प्रस्तावित">Transaction notes — planned</td>
+</tr>
+
+<tr data-group="reports">
+<th colspan="3" scope="rowgroup"
+data-hi="रिपोर्ट और उत्पादकता">Reports &amp; Productivity</th>
+</tr>
+
+<tr data-cat="reports">
+<th scope="row" data-hi="वित्तीय रिपोर्ट">Financial Reports</th>
+<td data-hi="व्यक्तिगत वित्तीय रिपोर्ट">Personal financial reports</td>
+<td data-hi="खाता रिपोर्ट — प्रस्तावित">Khata reports — planned</td>
+</tr>
+
+<tr data-cat="reports">
+<th scope="row" data-hi="PDF एक्सपोर्ट">PDF Export</th>
+<td data-hi="वर्णित सुविधा">Described feature</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="reports">
+<th scope="row" data-hi="Excel एक्सपोर्ट">Excel Export</th>
+<td data-hi="वर्णित सुविधा">Described feature</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="reports">
+<th scope="row" data-hi="खोज और फिल्टर">Search &amp; Filters</th>
+<td data-hi="वर्णित सुविधा">Described feature</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="reports">
+<th scope="row" data-hi="ग्राहक स्टेटमेंट">Customer Statements</th>
+<td data-hi="मुख्य उद्देश्य नहीं">Not the primary focus</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-group="security">
+<th colspan="3" scope="rowgroup"
+data-hi="सुरक्षा और डेटा संरक्षण">Security &amp; Data Protection</th>
+</tr>
+
+<tr data-cat="security">
+<th scope="row" data-hi="स्थानीय डेटा स्टोरेज">Local Data Storage</th>
+<td data-hi="डिजाइन का उद्देश्य">Design objective</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="security">
+<th scope="row" data-hi="बैकअप और रिस्टोर">Backup &amp; Restore</th>
+<td data-hi="वर्णित सुविधा">Described feature</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="security">
+<th scope="row" data-hi="ऐप लॉक">Application Lock</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="security">
+<th scope="row" data-hi="रिकवरी कुंजी">Recovery Key</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="प्रस्तावित">Planned</td>
+</tr>
+
+<tr data-cat="security">
+<th scope="row" data-hi="डेटा एन्क्रिप्शन">Data Encryption</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="कार्यान्वयन का सत्यापन बाकी">Implementation to be verified</td>
+</tr>
+
+<tr data-cat="security">
+<th scope="row" data-hi="बैकअप सुरक्षा">Backup Protection</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="कार्यान्वयन का सत्यापन बाकी">Implementation to be verified</td>
+</tr>
+
+<tr data-group="release">
+<th colspan="3" scope="rowgroup"
+data-hi="डाउनलोड और रिलीज जानकारी">Download &amp; Release Information</th>
+</tr>
+
+<tr data-cat="release">
+<th scope="row" data-hi="APK डाउनलोड">APK Download</th>
+<td data-hi="रिपॉजिटरी में उपलब्ध">Available in repository</td>
+<td data-hi="रिलीज बाकी">Release pending</td>
+</tr>
+
+<tr data-cat="release">
+<th scope="row" data-hi="ऐप संस्करण">Application Version</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="प्रकाशित नहीं">Not published</td>
+</tr>
+
+<tr data-cat="release">
+<th scope="row" data-hi="APK फाइल का आकार">APK File Size</th>
+<td data-hi="12.18 MiB — रिपॉजिटरी ZIP के अनुसार">12.18 MiB — repository ZIP</td>
+<td data-hi="उपलब्ध नहीं">Not available</td>
+</tr>
+
+<tr data-cat="release">
+<th scope="row" data-hi="Android अनुकूलता">Android Compatibility</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="रिलीज बाकी">Pending release</td>
+</tr>
+
+<tr data-cat="release">
+<th scope="row" data-hi="SHA-256 चेकसम">SHA-256 Checksum</th>
+<td data-hi="रिपॉजिटरी APK से निकाला गया; डाउनलोड पेज देखें">Calculated from repository APK; see download page</td>
+<td data-hi="रिलीज बाकी">Pending release</td>
+</tr>
+
+<tr data-cat="release">
+<th scope="row" data-hi="साइनिंग प्रमाणपत्र">Signing Certificate</th>
+<td data-hi="सत्यापन बाकी">Verification pending</td>
+<td data-hi="रिलीज बाकी">Pending release</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<div class="cp-actions">
+
+<button type="button"
+class="cp-button"
+id="resetComparison"
+data-hi="फिल्टर रीसेट करें">
+Reset Filters
+</button>
+
+<button type="button"
+class="cp-button cp-button-primary"
+id="printComparison"
+data-hi="प्रिंट करें / PDF में सहेजें">
+Print / Save as PDF
+</button>
+
+</div>
+
+<p class="cp-small"
+data-hi="PDF में वर्तमान फिल्टर के अनुसार दिखाई देने वाली तुलना शामिल होगी।">
+The printed comparison includes features visible under the current filters.
+</p>
+
+</div>
+</section>
+
+<section class="cp-section" id="app-selector">
+
+<h2 class="cp-title"
+data-hi="आपके लिए कौन-सा ऐप सही है?">
+Which Application Is Right for You?
+</h2>
+
+<p class="cp-description"
+data-hi="तीन आसान सवालों का जवाब देकर अपनी जरूरत के अनुसार ऐप चुनें। आपके जवाब वेबसाइट पर अपलोड नहीं किए जाते।">
+Answer three simple questions to find an application matching your intended use. Your answers are not uploaded.
+</p>
+
+<div class="cp-card">
+
+<form class="cp-form"
+id="appSelectorForm"
+autocomplete="off">
+
+<fieldset>
+
+<legend data-hi="1. आप किसका प्रबंधन करना चाहते हैं?">
+1. What do you want to manage?
+</legend>
+
+<label class="cp-option">
+<input type="radio"
+name="purpose"
+value="personal"
+required>
+<span data-hi="व्यक्तिगत आय, खर्च और बचत">
+Personal income, expenses and savings
+</span>
+</label>
+
+<label class="cp-option">
+<input type="radio"
+name="purpose"
+value="khata"
+required>
+<span data-hi="ग्राहक क्रेडिट, डेबिट और डिजिटल खाता">
+Customer credit, debit and digital khata
+</span>
+</label>
+
+<label class="cp-option">
+<input type="radio"
+name="purpose"
+value="both"
+required>
+<span data-hi="व्यक्तिगत वित्त और डिजिटल खाता दोनों">
+Both personal finances and digital khata
+</span>
+</label>
+
+</fieldset>
+
+<fieldset>
+
+<legend data-hi="2. ऐप का उपयोग कौन करेगा?">
+2. Who will use the application?
+</legend>
+
+<label class="cp-option">
+<input type="radio"
+name="userType"
+value="personal"
+required>
+<span data-hi="व्यक्ति या परिवार">
+Individual or family
+</span>
+</label>
+
+<label class="cp-option">
+<input type="radio"
+name="userType"
+value="khata"
+required>
+<span data-hi="दुकानदार या छोटा व्यवसाय">
+Shopkeeper or small business
+</span>
+</label>
+
+<label class="cp-option">
+<input type="radio"
+name="userType"
+value="both"
+required>
+<span data-hi="व्यक्तिगत और व्यावसायिक उपयोग">
+Personal and business use
+</span>
+</label>
+
+</fieldset>
+
+<fieldset>
+
+<legend data-hi="3. कौन-सी रिपोर्ट सबसे जरूरी हैं?">
+3. Which reports are most important?
+</legend>
+
+<label class="cp-option">
+<input type="radio"
+name="reports"
+value="personal"
+required>
+<span data-hi="आय, खर्च और बचत की रिपोर्ट">
+Income, expenses and savings reports
+</span>
+</label>
+
+<label class="cp-option">
+<input type="radio"
+name="reports"
+value="khata"
+required>
+<span data-hi="क्रेडिट, डेबिट और ग्राहक स्टेटमेंट">
+Credit, debit and customer statements
+</span>
+</label>
+
+<label class="cp-option">
+<input type="radio"
+name="reports"
+value="both"
+required>
+<span data-hi="दोनों प्रकार की वित्तीय रिपोर्ट">
+Both types of financial reports
+</span>
+</label>
+
+</fieldset>
+
+<div class="cp-actions">
+
+<button type="submit"
+class="cp-button cp-button-primary"
+data-hi="मेरे लिए सही ऐप चुनें">
+Find My Application
+</button>
+
+<button type="reset"
+class="cp-button"
+data-hi="जवाब रीसेट करें">
+Reset Answers
+</button>
+
+</div>
+
+</form>
+
+<div class="cp-result"
+id="selectorResult"
+hidden>
+
+<div role="status"
+aria-live="polite"
+aria-atomic="true">
+
+<h3 id="selectorTitle"></h3>
+<p id="selectorDescription"></p>
+
+</div>
+
+<div class="cp-actions">
+
+<a class="cp-button cp-button-primary"
+id="selectorMeraHisab"
+href="/merahisab.html"
+data-hi="MeraHisab के बारे में जानें">
+Explore MeraHisab
+</a>
+
+<a class="cp-button"
+id="selectorRoyalKhata"
+href="/royal-khata.html"
+data-hi="Royal Khata के बारे में जानें">
+Explore Royal Khata
+</a>
+
+</div>
+
+</div>
+
+<p class="cp-small"
+data-hi="यह सुझाव आपके चुने गए जवाबों और ऐप्स के निर्धारित उद्देश्यों पर आधारित है। यह व्यक्तिगत वित्तीय सलाह नहीं है।">
+This recommendation is based on your selected answers and the intended application purposes. It is not personalized financial advice.
+</p>
+
+<noscript>
+<p>JavaScript is required for the recommendation tool and interactive filters.</p>
+</noscript>
+
+</div>
+</section>
+
+<section class="cp-section">
+
+<h2 class="cp-title" data-hi="सामान्य उपयोग">
+Common Use Cases
+</h2>
+
+<div class="cp-grid-three">
+
+<article class="cp-card">
+
+<h3 data-hi="घर का खर्च">Household Expenses</h3>
+
+<p data-hi="रोजमर्रा के घरेलू खर्च और परिवार के वित्तीय रिकॉर्ड व्यवस्थित करें।">
+Track everyday household spending and family finances.
+</p>
+
+<a href="/merahisab.html">MeraHisab</a>
+
+</article>
+
+<article class="cp-card">
+
+<h3 data-hi="व्यक्तिगत बचत">Personal Savings</h3>
+
+<p data-hi="बचत और व्यक्तिगत वित्तीय खातों को व्यवस्थित करें।">
+Organize savings and personal financial accounts.
+</p>
+
+<a href="/merahisab.html">MeraHisab</a>
+
+</article>
+
+<article class="cp-card">
+
+<h3 data-hi="वेतन और आय">Salary &amp; Income</h3>
+
+<p data-hi="वेतन, आय और व्यक्तिगत खर्च का रिकॉर्ड रखें।">
+Maintain records of salary, income and personal expenses.
+</p>
+
+<a href="/merahisab.html">MeraHisab</a>
+
+</article>
+
+<article class="cp-card">
+
+<h3 data-hi="दुकानदार का खाता">Shopkeeper Khata</h3>
+
+<p data-hi="ग्राहकों के क्रेडिट और डेबिट रिकॉर्ड व्यवस्थित करने की प्रस्तावित सुविधा।">
+Planned management of organized customer credit and debit records.
+</p>
+
+<a href="/royal-khata.html">Royal Khata</a>
+
+</article>
+
+<article class="cp-card">
+
+<h3 data-hi="ग्राहक खाते">Customer Accounts</h3>
+
+<p data-hi="प्रत्येक ग्राहक की शेष राशि और लेनदेन इतिहास के प्रबंधन की प्रस्तावित सुविधा।">
+Planned management of individual customer balances and transaction history.
+</p>
+
+<a href="/royal-khata.html">Royal Khata</a>
+
+</article>
+
+<article class="cp-card">
+
+<h3 data-hi="क्रेडिट और डेबिट रिकॉर्ड">
+Credit &amp; Debit Records
+</h3>
+
+<p data-hi="अलग डिजिटल खाता लेनदेन रिकॉर्ड रखने की प्रस्तावित सुविधा।">
+Planned maintenance of separate digital khata transaction records.
+</p>
+
+<a href="/royal-khata.html">Royal Khata</a>
+
+</article>
+
+</div>
+</section>
+
+<section class="cp-section">
+
+<h2 class="cp-title"
+data-hi="गोपनीयता और डेटा संरक्षण">
+Privacy &amp; Data Protection
+</h2>
+
+<div class="cp-grid">
+
+<article class="cp-card">
+
+<h3>MeraHisab</h3>
+
+<p data-hi="व्यक्तिगत वित्तीय रिकॉर्ड प्रबंधन, स्थानीय स्टोरेज और बैकअप नियंत्रण इसके डिजाइन के उद्देश्य हैं। वास्तविक सुरक्षा कार्यान्वयन का सत्यापन आवश्यक है।">
+Designed around personal financial record management, local storage and backup control. Actual security implementation requires verification.
+</p>
+
+</article>
+
+<article class="cp-card">
+
+<h3>Royal Khata</h3>
+
+<p data-hi="प्रस्तावित सुरक्षा सुविधाओं में ऐप लॉक, बैकअप प्रबंधन और रिकवरी कुंजी शामिल हैं। रिलीज से पहले इनका सत्यापन आवश्यक है।">
+Planned security capabilities include access protection, backup management and recovery-key functionality. Final implementation must be verified before release.
+</p>
+
+</article>
+
+</div>
+
+<div class="cp-notice">
+
+<strong data-hi="महत्वपूर्ण सुरक्षा सूचना">
+Important Security Notice
+</strong>
+
+<p data-hi="अपना पासवर्ड, PIN, OTP, रिकवरी कुंजी, निजी बैकअप या ग्राहक वित्तीय रिकॉर्ड किसी के साथ साझा न करें। महत्वपूर्ण डेटा का सुरक्षित बैकअप रखें।">
+Never share passwords, PINs, OTPs, recovery keys, private backups or customer financial records. Maintain secure backups of important data.
+</p>
+
+</div>
+
+<div class="cp-actions">
+
+<a class="cp-button cp-button-primary"
+href="/privacy.html"
+data-hi="गोपनीयता नीति पढ़ें">
+Read Privacy Policy
+</a>
+
+</div>
+
+</section>
+
+<section class="cp-section cp-faq">
+
+<h2 class="cp-title"
+data-hi="अक्सर पूछे जाने वाले सवाल">
+Frequently Asked Questions
+</h2>
+
+<details>
+<summary data-hi="दोनों ऐप्स में मुख्य अंतर क्या है?">
+What is the main difference?
+</summary>
+<p data-hi="MeraHisab व्यक्तिगत आय, खर्च और बचत के लिए है। Royal Khata क्रेडिट, डेबिट और डिजिटल खाता रिकॉर्ड के लिए प्रस्तावित है।">
+MeraHisab focuses on personal income, expenses and savings. Royal Khata is intended for credit, debit and digital khata records.
+</p>
+</details>
+
+<details>
+<summary data-hi="व्यक्तिगत वित्त के लिए कौन-सा ऐप बेहतर है?">
+Which application is better for personal finance?
+</summary>
+<p data-hi="MeraHisab विशेष रूप से व्यक्तिगत वित्त प्रबंधन के लिए डिजाइन किया गया है। उपयोग से पहले उपलब्ध सुविधाओं की जांच करें।">
+MeraHisab is designed specifically for personal finance management. Verify its available features before use.
+</p>
+</details>
+
+<details>
+<summary data-hi="दुकानदारों के लिए कौन-सा ऐप बेहतर है?">
+Which application is better for shopkeepers?
+</summary>
+<p data-hi="Royal Khata डिजिटल खाता और ग्राहक खाता प्रबंधन के लिए प्रस्तावित है। इसकी आधिकारिक रिलीज अभी बाकी है।">
+Royal Khata is designed around digital khata and customer account management. Its official release is pending.
+</p>
+</details>
+
+<details>
+<summary data-hi="क्या मैं दोनों ऐप्स उपयोग कर सकता हूं?">
+Can I use both applications?
+</summary>
+<p data-hi="दोनों ऐप अलग वित्तीय उद्देश्यों के लिए हैं। दोनों उपलब्ध होने पर आप अपनी जरूरत के अनुसार उनका उपयोग कर सकते हैं। इनके बीच डेटा सिंक की पुष्टि नहीं हुई है।">
+The applications are intended for different financial purposes. You may use both when both are available. Cross-application data synchronization has not been confirmed.
+</p>
+</details>
+
+<details>
+<summary data-hi="क्या दोनों ऐप्स में बैकअप की सुविधा है?">
+Do both applications support backup?
+</summary>
+<p data-hi="बैकअप और रिस्टोर MeraHisab की वर्णित तथा Royal Khata की प्रस्तावित सुविधाएं हैं। बैकअप फॉर्मेट और रिकवरी व्यवहार का सत्यापन बाकी है।">
+Backup and restore are described MeraHisab features and planned Royal Khata capabilities. Backup formats and recovery behavior require verification.
+</p>
+</details>
+
+<details>
+<summary data-hi="क्या दोनों ऐप्स के बीच डेटा ट्रांसफर कर सकता हूं?">
+Can I transfer data between the applications?
+</summary>
+<p data-hi="सीधे डेटा ट्रांसफर और दोनों ऐप्स की अनुकूलता की पुष्टि नहीं हुई है। एक ऐप का बैकअप दूसरे ऐप में रिस्टोर होने की धारणा न रखें।">
+Direct data migration and cross-application compatibility have not been confirmed. Do not assume that one application's backup can be restored in the other.
+</p>
+</details>
+
+<details>
+<summary data-hi="क्या Royal Khata की सभी बताई गई सुविधाएं उपलब्ध हैं?">
+Are all listed Royal Khata features available?
+</summary>
+<p data-hi="नहीं। इस पेज पर बताई गई Royal Khata की सुविधाएं प्रस्तावित हैं और इनके विकास तथा परीक्षण की आवश्यकता है।">
+No. Royal Khata features listed on this page are planned capabilities and require development and testing.
+</p>
+</details>
+
+<details>
+<summary data-hi="क्या दोनों ऐप डाउनलोड के लिए उपलब्ध हैं?">
+Are both applications available for download?
+</summary>
+<p data-hi="MeraHisab का APK रिपॉजिटरी में उपलब्ध है और उसका अलग डाउनलोड पेज है। Royal Khata की आधिकारिक APK रिलीज बाकी है।">
+MeraHisab has a dedicated download page and an APK in the repository. Royal Khata's official APK release is pending.
+</p>
+</details>
+
+<details>
+<summary data-hi="क्या तुलना को PDF में सहेज सकते हैं?">
+Can I save this comparison as PDF?
+</summary>
+<p data-hi="हां। Print / Save as PDF बटन दबाएं और आपके ब्राउजर में उपलब्ध होने पर Save as PDF विकल्प चुनें।">
+Yes. Use the Print / Save as PDF button and choose Save as PDF if your browser or operating system supports that option.
+</p>
+</details>
+
+<details>
+<summary data-hi="अधिक जानकारी कहां मिलेगी?">
+Where can I find more information?
+</summary>
+<p data-hi="दोनों ऐप्स के अलग पेज, डाउनलोड केंद्र या संपर्क और सहायता पेज देखें।">
+Visit the individual application pages, Download Center or Contact &amp; Support page.
+</p>
+</details>
+
+</section>
+
+<section class="cp-section">
+
+<h2 class="cp-title" data-hi="अपना ऐप चुनें">
+Choose Your Application
+</h2>
+
+<div class="cp-grid">
+
+<article class="cp-card">
+
+<h3>MeraHisab</h3>
+
+<p data-hi="अपने व्यक्तिगत वित्तीय जीवन को व्यवस्थित करें।">
+Organize your personal financial life.
+</p>
+
+<div class="cp-actions">
+
+<a class="cp-button"
+href="/merahisab.html"
+data-hi="अधिक जानें">
+Learn More
+</a>
+
+<a class="cp-button cp-button-primary"
+href="/download.html"
+data-hi="MeraHisab डाउनलोड करें">
+Download MeraHisab
+</a>
+
+</div>
+</article>
+
+<article class="cp-card">
+
+<h3>Royal Khata</h3>
+
+<p data-hi="प्रस्तावित डिजिटल खाता प्रबंधन अनुभव के बारे में जानें।">
+Explore the planned digital khata management experience.
+</p>
+
+<div class="cp-actions">
+
+<a class="cp-button"
+href="/royal-khata.html"
+data-hi="Royal Khata के बारे में जानें">
+Explore Royal Khata
+</a>
+
+<button type="button"
+class="cp-button"
+disabled
+data-hi="रिलीज बाकी">
+Release Pending
+</button>
+
+</div>
+</article>
+
+</div>
+
+<div class="cp-actions">
+
+<a class="cp-button"
+href="/downloads.html"
+data-hi="डाउनलोड केंद्र">
+Download Center
+</a>
+
+<a class="cp-button"
+href="/tools.html"
+data-hi="वित्तीय उपकरण">
+Financial Tools
+</a>
+
+<a class="cp-button"
+href="/contact.html"
+data-hi="संपर्क और सहायता">
+Contact &amp; Support
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+<div id="pwaMount"></div>
+
+</main>
+
+<footer class="site">
+
+<div class="container">
+
+<strong>MeraHisab</strong>
+
+<p>Your Money, Your Hisab</p>
+
+<nav aria-label="Footer navigation">
+
+<a href="/">Home</a>
+<a href="/downloads.html">Downloads</a>
+<a href="/compare.html">Compare</a>
+<a href="/tools.html">Tools</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Support</a>
+
+</nav>
+
+<p class="cp-small">
+&copy; <span data-year>2026</span> MeraHisab.
+<span data-i18n="footer.rights">All rights reserved.</span>
+</p>
+
+</div>
+
+</footer>
+
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id), root=$('compareContent');
+const words=[...root.querySelectorAll('[data-hi]')], originals=new Map(words.map(e=>[e,e.textContent]));
+const rows=[...root.querySelectorAll('tr[data-cat]')], headings=[...root.querySelectorAll('tr[data-group]')], filters=[...root.querySelectorAll('[data-filter]')];
+const form=$('appSelectorForm'), search=$('comparisonSearch');
+let category='all', recommendation='';
+const hi=()=>document.documentElement.dataset.language==='hi'||/^hi(?:-|$)/i.test(document.documentElement.lang);
+const t=(en,hindi)=>hi()?hindi:en;
+const norm=s=>s.toLowerCase().replace(/\s+/g,' ').trim();
+function update(){
+ const terms=norm(search.value).split(' ').filter(Boolean), visible=new Set(); let count=0;
+ rows.forEach(row=>{const text=norm([...row.cells].map(c=>[originals.get(c)||c.textContent,c.dataset.hi||''].join(' ')).join(' '));const show=(category==='all'||row.dataset.cat===category)&&terms.every(q=>text.includes(q));row.hidden=!show;if(show){count++;visible.add(row.dataset.cat);}});
+ headings.forEach(h=>h.hidden=!visible.has(h.dataset.group));
+ filters.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===category)));
+ $('comparisonCount').textContent=count?t(`Showing ${count} of ${rows.length} features.`,`${rows.length} में से ${count} विशेषताएं।`):t('No matching features. Reset filters or try another search.','कोई मेल नहीं मिला। फ़िल्टर रीसेट करें या दूसरी खोज करें।');
+}
+function render(){
+ $('selectorResult').hidden=!recommendation;
+ $('selectorMeraHisab').hidden=recommendation==='khata';$('selectorRoyalKhata').hidden=recommendation==='personal';
+ const messages={personal:['Suggested application: MeraHisab','सुझाया गया ऐप: MeraHisab','Your answers prioritize personal finances. Verify the available app features before use.','आपके उत्तर व्यक्तिगत वित्त को प्राथमिकता देते हैं। उपयोग से पहले उपलब्ध सुविधाएं जांचें।'],khata:['Suggested planned application: Royal Khata','सुझाया गया प्रस्तावित ऐप: Royal Khata','Your answers prioritize credit, debit and customer accounts. Official release is pending.','आपके उत्तर क्रेडिट, डेबिट और ग्राहक खातों को प्राथमिकता देते हैं। आधिकारिक रिलीज बाकी है।'],both:['Both applications may be useful','दोनों ऐप उपयोगी हो सकते हैं','MeraHisab is intended for personal finance; Royal Khata is intended for digital khata and is not yet released.','MeraHisab व्यक्तिगत वित्त के लिए है; Royal Khata डिजिटल खाते के लिए प्रस्तावित है और अभी रिलीज नहीं हुआ है।']};
+ if(recommendation){const m=messages[recommendation];$('selectorTitle').textContent=t(m[0],m[1]);$('selectorDescription').textContent=t(m[2],m[3]);}
+}
+function language(){words.forEach(e=>e.textContent=t(originals.get(e),e.dataset.hi));search.placeholder=t('Search features in English or Hindi','हिन्दी या English में खोजें');document.title=t('Compare MeraHisab & Royal Khata | MeraHisab','MeraHisab और Royal Khata की तुलना');update();render();}
+filters.forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;update();}));
+search.addEventListener('input',update);
+$('resetComparison').addEventListener('click',()=>{category='all';search.value='';update();});
+$('printComparison').addEventListener('click',()=>window.print());
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const a=new FormData(form);let p=0,k=0;for(const [key,w] of [['purpose',3],['userType',1],['reports',2]]){const v=a.get(key);if(v==='personal'||v==='both')p+=w;if(v==='khata'||v==='both')k+=w;}recommendation=a.get('purpose')==='both'||p===k?'both':p>k?'personal':'khata';render();});
+function clear(){recommendation='';render();}
+form.addEventListener('reset',clear);form.addEventListener('change',clear);
+window.addEventListener('merahisab:languagechange',language);window.addEventListener('merahisab:languageready',language);language();
+})();
+</script>
 
 </body>
-
 </html>
