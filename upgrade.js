@@ -1,7 +1,7 @@
 
 /* ==========================================
    MERAHISAB SHARED WEBSITE ENGINE
-   Version: 2.0.0
+   Version: 2.1.0
    Official: https://merahisab.store/
 ========================================== */
 
@@ -19,7 +19,9 @@ if (window.MeraHisabUpgrade) {
 
 const CONFIG = Object.freeze({
 
-  version: "2.0.0",
+  version: "2.1.0",
+
+  securityScript: "/security.js",
 
   themeStorageKey: "mh-theme",
 
@@ -44,6 +46,8 @@ let languageStatus = "pending";
 let languagePromise = null;
 
 let initialized = false;
+let securityStatus = "pending";
+let securityPromise = null;
 
 /* ==========================================
    SAFE LOCAL STORAGE
@@ -650,6 +654,11 @@ function loadStylesheet(path) {
 
 function isScriptReady(path) {
 
+  if (path === CONFIG.securityScript) {
+    return Boolean(window.MeraHisabSecurity &&
+      typeof window.MeraHisabSecurity.initialize === "function");
+  }
+
   if (path === "/language.js") {
 
     return Boolean(
@@ -774,7 +783,7 @@ function loadScript(path) {
 
         reject(
 
-          new Error("Language API unavailable")
+          new Error("Required script API unavailable")
 
         );
 
@@ -822,6 +831,32 @@ function loadScript(path) {
 
   });
 
+}
+
+/* ==========================================
+   SHARED SECURITY SYSTEM
+========================================== */
+
+function loadSecuritySystem() {
+  if (securityPromise) return securityPromise;
+
+  securityStatus = "loading";
+  securityPromise = (async function () {
+    try {
+      await loadScript(CONFIG.securityScript);
+      const security = window.MeraHisabSecurity;
+      if (security.initialize() !== true) {
+        throw new Error("Security initialization failed");
+      }
+      securityStatus = "ready";
+      return true;
+    } catch (error) {
+      securityStatus = "unavailable";
+      console.warn("MeraHisab security system:", error.message);
+      return false;
+    }
+  })();
+  return securityPromise;
 }
 
 /* ==========================================
@@ -1156,6 +1191,8 @@ window.MeraHisabUpgrade = Object.freeze({
 
   loadLanguageSystem: loadLanguageSystem,
 
+  loadSecuritySystem: loadSecuritySystem,
+
   getStatus: function () {
 
     return {
@@ -1169,6 +1206,8 @@ window.MeraHisabUpgrade = Object.freeze({
       resolvedTheme: getResolvedTheme(),
 
       languageStatus: languageStatus,
+
+      securityStatus: securityStatus,
 
       language:
 
@@ -1213,6 +1252,8 @@ function initialize() {
   initializeLegacyCalculator();
 
   loadLanguageSystem();
+
+  loadSecuritySystem();
 
 }
 
