@@ -1,0 +1,104 @@
+
+# ==================================================
+# MERAHISAB SECURITY INFORMATION
+# Official Website: https://merahisab.store/
+# Configuration Version: 1.0.0
+# Status: Development Draft
+# ==================================================
+
+# SECURITY REPORTING STATUS
+# A verified private security reporting channel
+# is pending configuration.
+#
+# Do not submit confidential vulnerability details
+# through public GitHub issues.
+#
+# The website contact page currently prepares
+# local support requests only.
+
+# OFFICIAL SECURITY POLICY
+
+Policy: https://github.com/merahisab/merahisab-website/blob/main/SECURITY.md
+
+# PREFERRED REPORTING LANGUAGES
+
+Preferred-Languages: en, hi
+
+# CANONICAL SECURITY FILE LOCATION
+
+Canonical: https://merahisab.store/.well-known/security.txt
+
+# CONFIGURATION EXPIRATION
+
+Expires: 2027-05-27T00:00:00Z
+
+# ==================================================
+# SECURITY REPORTING GUIDELINES
+# ==================================================
+
+# Include the affected application or website page.
+# Include relevant version information.
+# Include sanitized steps to reproduce the issue.
+# Describe the potential security impact.
+# Remove confidential information from reports.
+
+# NEVER DISCLOSE:
+
+# Passwords
+# PINs
+# OTPs
+# Recovery keys
+# Encryption keys
+# Authentication tokens
+# Private signing keys
+# Financial records
+# Customer information
+# Confidential backup files
+
+# ==================================================
+# OFFICIAL RESOURCES
+# ==================================================
+
+# Website:
+# https://merahisab.store/
+
+# Privacy Policy:
+# https://merahisab.store/privacy.html
+
+# Support Information:
+# https://merahisab.store/contact.html
+
+# Official Download Center:
+# https://merahisab.store/downloads.html
+
+# Official Repository:
+# https://github.com/merahisab/merahisab-website
+
+# ==================================================
+# RESPONSIBLE DISCLOSURE
+# ==================================================
+
+# Respect user privacy.
+# Avoid unauthorized access.
+# Avoid accessing private user information.
+# Avoid modifying or deleting user data.
+# Avoid disrupting website availability.
+# Follow applicable laws and regulations.
+
+# No official paid bug bounty program
+# is currently announced.
+
+# ==================================================
+# MAINTENANCE REQUIREMENTS
+# ==================================================
+
+# Configure a verified private security contact.
+# Add the mandatory Contact field.
+# Review this file before its expiration date.
+# Verify HTTPS availability.
+# Verify the canonical file location.
+# Review security reporting procedures.
+
+# ==================================================
+# END OF MERAHISAB SECURITY INFORMATION
+# ==================================================
