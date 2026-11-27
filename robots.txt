@@ -1,19 +1,8 @@
 
-# ==========================================
-# MERAHISAB OFFICIAL WEBSITE
-# Search Engine Crawling Configuration
-# Official Domain: https://merahisab.store/
-# ==========================================
-
-# Allow search engine crawlers
+# MeraHisab Official Website
+# https://merahisab.store/
 
 User-agent: *
 Allow: /
 
-# Official XML Sitemap
-
 Sitemap: https://merahisab.store/sitemap.xml
-
-# ==========================================
-# END OF ROBOTS.TXT
-# ==========================================
