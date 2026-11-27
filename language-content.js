@@ -1,7 +1,7 @@
 
 /* ==========================================
    MERAHISAB LANGUAGE CONTENT DICTIONARY
-   Version: 1.1.0
+   Version: 2.0.0
    Official: https://merahisab.store/
 ========================================== */
 
@@ -19,6 +19,227 @@ if (window.MeraHisabLanguageContent) {
 ========================================== */
 
 const content = [
+/* Master update: exact text from the uploaded website snapshot. */
+["master.text001", "Homepage", "मुख्य पेज"],
+["master.text002", "Offline or Cached Content", "ऑफलाइन या कैश में सहेजी सामग्री"],
+["master.text003", "Help Improve Website Navigation", "वेबसाइट नेविगेशन बेहतर बनाने में मदद करें"],
+["master.text004", "What does a 404 error mean?", "404 त्रुटि का क्या अर्थ है?"],
+["master.text005", "Is the entire website unavailable?", "क्या पूरी वेबसाइट अनुपलब्ध है?"],
+["master.text006", "Will this error delete my financial records?", "क्या इस त्रुटि से मेरे वित्तीय रिकॉर्ड मिट जाएंगे?"],
+["master.text007", "Can I still download MeraHisab?", "क्या मैं अभी भी MeraHisab डाउनलोड कर सकता हूं?"],
+["master.text008", "Where can I find Royal Khata?", "Royal Khata कहां मिलेगा?"],
+["master.text009", "Why is an offline page unavailable?", "ऑफलाइन पेज उपलब्ध क्यों नहीं है?"],
+["master.text010", "Should I clear my browser cache?", "क्या मुझे ब्राउजर कैश साफ करना चाहिए?"],
+["master.text011", "How can I report an incorrect link?", "गलत लिंक की रिपोर्ट कैसे करें?"],
+["master.text012", "Primary Focus", "मुख्य उद्देश्य"],
+["master.text013", "Planned Focus", "नियोजित उद्देश्य"],
+["master.text014", "APK Release Pending", "APK जारी होना बाकी है"],
+["master.text015", "Professionals", "पेशेवर"],
+["master.text016", "Independent Workers", "स्वतंत्र कामगार"],
+["master.text017", "Security", "सुरक्षा"],
+["master.text018", "Accessibility", "सुगम्यता"],
+["master.text019", "Progressive Web App", "प्रोग्रेसिव वेब ऐप"],
+["master.text020", "Are MeraHisab and Royal Khata the same application?", "क्या MeraHisab और Royal Khata एक ही ऐप हैं?"],
+["master.text021", "What is the official website?", "आधिकारिक वेबसाइट कौन सी है?"],
+["master.text022", "Where can I read about privacy?", "गोपनीयता की जानकारी कहां पढ़ें?"],
+["master.text023", "Does MeraHisab provide financial advice?", "क्या MeraHisab वित्तीय सलाह देता है?"],
+["master.text024", "How can I suggest an improvement?", "सुधार का सुझाव कैसे दें?"],
+["master.text025", "Copy Website Link", "वेबसाइट लिंक कॉपी करें"],
+["master.text026", "MeraHisab vs Royal Khata", "MeraHisab बनाम Royal Khata"],
+["master.text027", "Download Pending", "डाउनलोड लंबित"],
+["master.text028", "All Features", "सभी सुविधाएं"],
+["master.text029", "General", "सामान्य"],
+["master.text030", "Finance", "वित्त"],
+["master.text031", "Release", "रिलीज"],
+["master.text032", "Feature", "सुविधा"],
+["master.text033", "General Information", "सामान्य जानकारी"],
+["master.text034", "Platform", "प्लेटफॉर्म"],
+["master.text035", "Hindi & English", "हिन्दी और अंग्रेजी"],
+["master.text036", "Application Themes", "ऐप की थीम"],
+["master.text037", "Financial Management", "वित्तीय प्रबंधन"],
+["master.text038", "Payment Reminders", "भुगतान अनुस्मारक"],
+["master.text039", "Reports & Productivity", "रिपोर्ट और उत्पादकता"],
+["master.text040", "Customer Statements", "ग्राहक खाता विवरण"],
+["master.text041", "Security & Data Protection", "सुरक्षा और डेटा संरक्षण"],
+["master.text042", "Local Data Storage", "स्थानीय डेटा संग्रहण"],
+["master.text043", "Data Encryption", "डेटा एन्क्रिप्शन"],
+["master.text044", "Backup Protection", "बैकअप सुरक्षा"],
+["master.text045", "Download & Release Information", "डाउनलोड और रिलीज की जानकारी"],
+["master.text046", "APK Download", "APK डाउनलोड"],
+["master.text047", "APK File Size", "APK फाइल का आकार"],
+["master.text048", "Signing Certificate", "साइनिंग प्रमाणपत्र"],
+["master.text049", "Reset Filters", "फिल्टर रीसेट करें"],
+["master.text050", "Print / Save as PDF", "प्रिंट करें / PDF के रूप में सहेजें"],
+["master.text051", "1. What do you want to manage?", "1. आप क्या प्रबंधित करना चाहते हैं?"],
+["master.text052", "Personal income, expenses and savings", "व्यक्तिगत आय, खर्च और बचत"],
+["master.text053", "Customer credit, debit and digital khata", "ग्राहकों के क्रेडिट, डेबिट और डिजिटल खाते"],
+["master.text054", "Both personal finances and digital khata", "व्यक्तिगत वित्त और डिजिटल खाते दोनों"],
+["master.text055", "2. Who will use the application?", "2. ऐप का उपयोग कौन करेगा?"],
+["master.text056", "Individual or family", "व्यक्ति या परिवार"],
+["master.text057", "Shopkeeper or small business", "दुकानदार या छोटा व्यवसाय"],
+["master.text058", "Personal and business use", "व्यक्तिगत और व्यावसायिक उपयोग"],
+["master.text059", "3. Which reports are most important?", "3. कौन सी रिपोर्ट सबसे महत्वपूर्ण हैं?"],
+["master.text060", "Income, expenses and savings reports", "आय, खर्च और बचत की रिपोर्ट"],
+["master.text061", "Credit, debit and customer statements", "क्रेडिट, डेबिट और ग्राहक खाता विवरण"],
+["master.text062", "Both types of financial reports", "दोनों प्रकार की वित्तीय रिपोर्ट"],
+["master.text063", "Find My Application", "मेरे लिए ऐप खोजें"],
+["master.text064", "Reset Answers", "उत्तर रीसेट करें"],
+["master.text065", "What is the main difference?", "मुख्य अंतर क्या है?"],
+["master.text066", "Which application is better for personal finance?", "व्यक्तिगत वित्त के लिए कौन सा ऐप बेहतर है?"],
+["master.text067", "Which application is better for shopkeepers?", "दुकानदारों के लिए कौन सा ऐप बेहतर है?"],
+["master.text068", "Can I use both applications?", "क्या मैं दोनों ऐप इस्तेमाल कर सकता हूं?"],
+["master.text069", "Do both applications support backup?", "क्या दोनों ऐप में बैकअप की सुविधा है?"],
+["master.text070", "Can I transfer data between the applications?", "क्या मैं दोनों ऐप के बीच डेटा स्थानांतरित कर सकता हूं?"],
+["master.text071", "Are all listed Royal Khata features available?", "क्या Royal Khata की सभी सूचीबद्ध सुविधाएं उपलब्ध हैं?"],
+["master.text072", "Are both applications available for download?", "क्या दोनों ऐप डाउनलोड के लिए उपलब्ध हैं?"],
+["master.text073", "Can I save this comparison as PDF?", "क्या इस तुलना को PDF में सहेज सकते हैं?"],
+["master.text074", "Where can I find more information?", "अधिक जानकारी कहां मिलेगी?"],
+["master.text075", "Release Pending", "रिलीज लंबित"],
+["master.text076", "Your Name (Optional)", "आपका नाम (वैकल्पिक)"],
+["master.text077", "Email Address (Optional)", "ईमेल पता (वैकल्पिक)"],
+["master.text078", "Select Application *", "ऐप चुनें *"],
+["master.text079", "MeraHisab Website", "MeraHisab वेबसाइट"],
+["master.text080", "Request Category *", "अनुरोध की श्रेणी *"],
+["master.text081", "Download and Installation", "डाउनलोड और इंस्टॉलेशन"],
+["master.text082", "Bug Report", "बग रिपोर्ट"],
+["master.text083", "Backup and Recovery", "बैकअप और रिकवरी"],
+["master.text084", "Website and PWA", "वेबसाइट और PWA"],
+["master.text085", "Application Version (Optional)", "ऐप संस्करण (वैकल्पिक)"],
+["master.text086", "Device Model (Optional)", "डिवाइस मॉडल (वैकल्पिक)"],
+["master.text087", "Operating System (Optional)", "ऑपरेटिंग सिस्टम (वैकल्पिक)"],
+["master.text088", "Subject *", "विषय *"],
+["master.text089", "Describe Your Request *", "अपने अनुरोध का विवरण दें *"],
+["master.text090", "Steps to Reproduce (Optional)", "समस्या दोहराने के चरण (वैकल्पिक)"],
+["master.text091", "I understand that this request is generated locally and is not automatically sent to MeraHisab. I have reviewed the information for unnecessary sensitive data.", "मैं समझता हूं कि यह अनुरोध स्थानीय रूप से तैयार होता है और MeraHisab को अपने आप नहीं भेजा जाता। मैंने अनावश्यक संवेदनशील डेटा के लिए जानकारी की समीक्षा कर ली है।"],
+["master.text092", "Website Installation", "वेबसाइट इंस्टॉलेशन"],
+["master.text093", "How can I contact MeraHisab?", "MeraHisab से संपर्क कैसे करें?"],
+["master.text094", "Why is my APK not downloading?", "मेरा APK डाउनलोड क्यों नहीं हो रहा है?"],
+["master.text095", "Why is the application not installing?", "ऐप इंस्टॉल क्यों नहीं हो रहा है?"],
+["master.text096", "Can I recover deleted financial records?", "क्या मिटाए गए वित्तीय रिकॉर्ड वापस मिल सकते हैं?"],
+["master.text097", "How do I report a bug?", "बग की रिपोर्ट कैसे करें?"],
+["master.text098", "How can I suggest a new feature?", "नई सुविधा का सुझाव कैसे दें?"],
+["master.text099", "Can I report a security vulnerability?", "क्या सुरक्षा संबंधी कमजोरी की रिपोर्ट कर सकते हैं?"],
+["master.text100", "Can I submit a privacy or deletion request?", "क्या गोपनीयता या डेटा हटाने का अनुरोध भेज सकते हैं?"],
+["master.text101", "How do I install the website as a PWA?", "वेबसाइट को PWA के रूप में कैसे इंस्टॉल करें?"],
+["master.text102", "MeraHisab Help & Support", "MeraHisab सहायता और समर्थन"],
+["master.text103", "Expected SHA-256 Checksum (Optional)", "अपेक्षित SHA-256 चेकसम (वैकल्पिक)"],
+["master.text104", "Does the APK checker upload my file?", "क्या APK जांच उपकरण मेरी फाइल अपलोड करता है?"],
+["master.text105", "Can I download an APK without internet?", "क्या इंटरनेट के बिना APK डाउनलोड कर सकते हैं?"],
+["master.text106", "Should I uninstall the old app before updating?", "क्या अपडेट से पहले पुराना ऐप हटाना चाहिए?"],
+["master.text107", "Is website installation the same as Android installation?", "क्या वेबसाइट इंस्टॉल करना Android ऐप इंस्टॉल करने जैसा है?"],
+["master.text108", "Where can I get installation help?", "इंस्टॉलेशन में सहायता कहां मिलेगी?"],
+["master.text109", "Copy SHA-256", "SHA-256 कॉपी करें"],
+["master.text110", "Select Downloaded APK", "डाउनलोड की गई APK चुनें"],
+["master.text111", "Verify APK File", "APK फाइल सत्यापित करें"],
+["master.text112", "Reset Verification", "सत्यापन रीसेट करें"],
+["master.text113", "Can I install this APK on iPhone?", "क्या यह APK iPhone पर इंस्टॉल हो सकती है?"],
+["master.text114", "Is my selected APK uploaded for verification?", "क्या चुनी गई APK सत्यापन के लिए अपलोड होती है?"],
+["master.text115", "Does the checksum guarantee application safety?", "क्या चेकसम ऐप की सुरक्षा की गारंटी देता है?"],
+["master.text116", "Can I download the APK offline?", "क्या APK ऑफलाइन डाउनलोड हो सकती है?"],
+["master.text117", "Will updating delete my financial data?", "क्या अपडेट से मेरा वित्तीय डेटा मिट जाएगा?"],
+["master.text118", "Is installing the website the same as installing the APK?", "क्या वेबसाइट इंस्टॉल करना APK इंस्टॉल करने जैसा है?"],
+["master.text119", "Where can I get help?", "सहायता कहां मिलेगी?"],
+["master.text120", "Install MeraHisab Website", "MeraHisab वेबसाइट इंस्टॉल करें"],
+["master.text121", "Financial Calculators", "वित्तीय कैलकुलेटर"],
+["master.text122", "Can I track income and expenses?", "क्या मैं आय और खर्च का हिसाब रख सकता हूं?"],
+["master.text123", "Does MeraHisab support multiple accounts?", "क्या MeraHisab में कई खातों की सुविधा है?"],
+["master.text124", "Can I create a backup?", "क्या मैं बैकअप बना सकता हूं?"],
+["master.text125", "Where is my personal data stored?", "मेरा निजी डेटा कहां संग्रहित होता है?"],
+["master.text126", "Can I use the website without internet?", "क्या इंटरनेट के बिना वेबसाइट इस्तेमाल कर सकते हैं?"],
+["master.text127", "Where can I download the applications?", "ऐप कहां से डाउनलोड करें?"],
+["master.text128", "Are financial calculators available?", "क्या वित्तीय कैलकुलेटर उपलब्ध हैं?"],
+["master.text129", "How can I contact MeraHisab support?", "MeraHisab सहायता से संपर्क कैसे करें?"],
+["master.text130", "Applications", "ऐप्स"],
+["master.text131", "Is MeraHisab available for Android?", "क्या MeraHisab Android के लिए उपलब्ध है?"],
+["master.text132", "Does MeraHisab work offline?", "क्या MeraHisab ऑफलाइन काम करता है?"],
+["master.text133", "Can I create financial backups?", "क्या वित्तीय डेटा का बैकअप बना सकते हैं?"],
+["master.text134", "What is the difference between MeraHisab and Royal Khata?", "MeraHisab और Royal Khata में क्या अंतर है?"],
+["master.text135", "How can I get support?", "सहायता कैसे प्राप्त करें?"],
+["master.text136", "Reload Page", "पेज दोबारा लोड करें"],
+["master.text137", "App Comparison", "ऐप की तुलना"],
+["master.text138", "Search Privacy Policy", "गोपनीयता नीति में खोजें"],
+["master.text139", "Copy Privacy Policy", "गोपनीयता नीति कॉपी करें"],
+["master.text140", "1. Scope of This Policy", "1. इस नीति का दायरा"],
+["master.text141", "2. Information and Data", "2. जानकारी और डेटा"],
+["master.text142", "Data Category", "डेटा की श्रेणी"],
+["master.text143", "Examples", "उदाहरण"],
+["master.text144", "Processing Information", "प्रोसेसिंग की जानकारी"],
+["master.text145", "3. Financial Records", "3. वित्तीय रिकॉर्ड"],
+["master.text146", "4. Purposes of Data Processing", "4. डेटा प्रोसेसिंग के उद्देश्य"],
+["master.text147", "5. Application Permissions", "5. ऐप की अनुमतियां"],
+["master.text148", "6. Cookies and Browser Storage", "6. कुकीज और ब्राउजर स्टोरेज"],
+["master.text149", "Storage Type", "स्टोरेज का प्रकार"],
+["master.text150", "Possible Purpose", "संभावित उद्देश्य"],
+["master.text151", "7. PWA and Offline Storage", "7. PWA और ऑफलाइन स्टोरेज"],
+["master.text152", "8. Data Security", "8. डेटा सुरक्षा"],
+["master.text153", "9. Backups and Data Recovery", "9. बैकअप और डेटा रिकवरी"],
+["master.text154", "10. Third-Party Services", "10. तृतीय पक्ष की सेवाएं"],
+["master.text155", "11. Data Sharing and Disclosure", "11. डेटा साझा करना और प्रकटीकरण"],
+["master.text156", "12. Data Retention", "12. डेटा रखने की अवधि"],
+["master.text157", "13. Your Data Rights", "13. आपके डेटा संबंधी अधिकार"],
+["master.text158", "14. Data Deletion", "14. डेटा हटाना"],
+["master.text159", "15. Children's Privacy", "15. बच्चों की गोपनीयता"],
+["master.text160", "16. International Data Processing", "16. अंतरराष्ट्रीय डेटा प्रोसेसिंग"],
+["master.text161", "17. Security Incidents", "17. सुरक्षा संबंधी घटनाएं"],
+["master.text162", "18. Indian Privacy Framework", "18. भारतीय गोपनीयता ढांचा"],
+["master.text163", "19. Changes to This Policy", "19. इस नीति में बदलाव"],
+["master.text164", "20. Privacy Contact and Grievances", "20. गोपनीयता संपर्क और शिकायतें"],
+["master.text165", "Are my financial records uploaded to a server?", "क्या मेरे वित्तीय रिकॉर्ड सर्वर पर अपलोड होते हैं?"],
+["master.text166", "Does the website save calculator inputs?", "क्या वेबसाइट कैलकुलेटर में दर्ज जानकारी सहेजती है?"],
+["master.text167", "Will clearing website cache delete Android app records?", "क्या वेबसाइट का कैश साफ करने से Android ऐप के रिकॉर्ड मिट जाएंगे?"],
+["master.text168", "Does APK checksum verification guarantee safety?", "क्या APK चेकसम सत्यापन सुरक्षा की गारंटी देता है?"],
+["master.text169", "Can I use the website offline?", "क्या वेबसाइट ऑफलाइन इस्तेमाल कर सकते हैं?"],
+["master.text170", "About Royal Khata", "Royal Khata के बारे में"],
+["master.text171", "Digital Khata", "डिजिटल खाता"],
+["master.text172", "PDF & Excel Export", "PDF और Excel में एक्सपोर्ट"],
+["master.text173", "Royal Khata Download Pending", "Royal Khata डाउनलोड लंबित"],
+["master.text174", "Who is Royal Khata designed for?", "Royal Khata किसके लिए बनाया जा रहा है?"],
+["master.text175", "Will Royal Khata support offline management?", "क्या Royal Khata में ऑफलाइन प्रबंधन की सुविधा होगी?"],
+["master.text176", "Will backup and restore be available?", "क्या बैकअप और डेटा वापस लाने की सुविधा होगी?"],
+["master.text177", "Will Royal Khata have a recovery key?", "क्या Royal Khata में रिकवरी कुंजी होगी?"],
+["master.text178", "What is the difference between Royal Khata and MeraHisab?", "Royal Khata और MeraHisab में क्या अंतर है?"],
+["master.text179", "Where can I find official release information?", "आधिकारिक रिलीज की जानकारी कहां मिलेगी?"],
+["master.text180", "Split", "अंतराल"],
+["master.text181", "Total", "कुल"],
+["master.text182", "Search Calculators", "कैलकुलेटर खोजें"],
+["master.text183", "All Tools", "सभी उपकरण"],
+["master.text184", "Loans", "ऋण"],
+["master.text185", "Investments", "निवेश"],
+["master.text186", "Tax & Shopping", "कर और खरीदारी"],
+["master.text187", "Financial Planning", "वित्तीय योजना"],
+["master.text188", "Reset All Calculators", "सभी कैलकुलेटर रीसेट करें"],
+["master.text189", "It means that the requested website resource could not be found.", "इसका अर्थ है कि मांगा गया वेबसाइट संसाधन नहीं मिला।"],
+["master.text190", "Not necessarily. A single page may be unavailable while other website pages continue to work. Try opening the homepage.", "जरूरी नहीं। कोई एक पेज अनुपलब्ध हो सकता है जबकि अन्य पेज काम करते रहें। मुख्य पेज खोलकर देखें।"],
+["master.text191", "Displaying this website error does not itself delete native Android application records. Do not clear application storage without securing a backup.", "वेबसाइट पर यह त्रुटि दिखने से Android ऐप के रिकॉर्ड अपने आप नहीं मिटते। बैकअप सुरक्षित किए बिना ऐप का स्टोरेज साफ न करें।"],
+["master.text192", "MeraHisab is a financial management project that includes a personal finance application and an official website with financial tools.", "MeraHisab एक वित्तीय प्रबंधन परियोजना है, जिसमें व्यक्तिगत वित्त ऐप और वित्तीय उपकरणों वाली आधिकारिक वेबसाइट शामिल है।"],
+["master.text193", "Royal Khata is a digital ledger application project focused on credit, debit and business financial records.", "Royal Khata क्रेडिट, डेबिट और व्यावसायिक वित्तीय रिकॉर्ड पर केंद्रित डिजिटल खाता ऐप परियोजना है।"],
+["master.text194", "No. They are separate application projects with different financial management objectives.", "नहीं। ये अलग-अलग वित्तीय प्रबंधन उद्देश्यों वाली स्वतंत्र ऐप परियोजनाएं हैं।"],
+["master.text195", "MeraHisab focuses on personal income, expenses and savings. Royal Khata focuses on credit, debit and digital khata records.", "MeraHisab व्यक्तिगत आय, खर्च और बचत पर केंद्रित है। Royal Khata क्रेडिट, डेबिट और डिजिटल खाता रिकॉर्ड पर केंद्रित है।"],
+["master.text196", "MeraHisab is designed specifically for personal finance management.", "MeraHisab विशेष रूप से व्यक्तिगत वित्त प्रबंधन के लिए बनाया गया है।"],
+["master.text197", "Royal Khata is designed around digital khata and customer account management. Its official release is pending.", "Royal Khata डिजिटल खाता और ग्राहक खाते के प्रबंधन के लिए बनाया जा रहा है। इसकी आधिकारिक रिलीज लंबित है।"],
+["master.text198", "Use the available support information on this page. Direct support email and ticket submission are pending configuration.", "इस पेज पर उपलब्ध सहायता जानकारी का उपयोग करें। सीधे सहायता ईमेल और टिकट भेजने की व्यवस्था अभी स्थापित नहीं हुई है।"],
+["master.text199", "No. The request builder creates a local draft that you can copy or download.", "नहीं। अनुरोध उपकरण एक स्थानीय ड्राफ्ट बनाता है, जिसे आप कॉपी या डाउनलोड कर सकते हैं।"],
+["master.text200", "Check your internet connection, available storage and browser download settings. Visit the APK Download page for guidance.", "इंटरनेट कनेक्शन, उपलब्ध स्टोरेज और ब्राउजर डाउनलोड सेटिंग जांचें। मार्गदर्शन के लिए APK डाउनलोड पेज देखें।"],
+["master.text201", "Visit the MeraHisab download page through this official Download Center.", "इस आधिकारिक डाउनलोड केंद्र से MeraHisab के डाउनलोड पेज पर जाएं।"],
+["master.text202", "Not yet. The official Royal Khata APK release is pending.", "अभी नहीं। Royal Khata की आधिकारिक APK रिलीज लंबित है।"],
+["master.text203", "An APK is an Android application package used to distribute and install Android applications.", "APK एक Android ऐप पैकेज है, जिसका उपयोग Android ऐप वितरित और इंस्टॉल करने के लिए होता है।"],
+["master.text204", "Check your internet connection, available device storage and browser download permissions. Open the Download Center and try again.", "इंटरनेट कनेक्शन, डिवाइस में उपलब्ध स्टोरेज और ब्राउजर की डाउनलोड अनुमतियां जांचें। डाउनलोड केंद्र खोलकर फिर प्रयास करें।"],
+["master.text205", "Possible causes include Android compatibility, insufficient storage, an incomplete APK or a conflicting application signing certificate. Do not uninstall an existing application without securing its data first.", "संभावित कारणों में Android अनुकूलता, कम स्टोरेज, अधूरी APK या ऐप साइनिंग प्रमाणपत्र का मेल न खाना शामिल हैं। पहले डेटा सुरक्षित किए बिना मौजूदा ऐप न हटाएं।"],
+["master.text206", "Do not install the selected file. Delete the mismatched download and download a fresh copy from the official website. If verification still fails, contact the website operator.", "चुनी हुई फाइल इंस्टॉल न करें। मेल न खाने वाली डाउनलोड फाइल हटाकर आधिकारिक वेबसाइट से नई कॉपी डाउनलोड करें। सत्यापन फिर भी असफल हो तो वेबसाइट संचालक से संपर्क करें।"],
+["master.text207", "MeraHisab is a personal finance management application designed to organize income, expenses, savings and accounts.", "MeraHisab व्यक्तिगत वित्त प्रबंधन ऐप है, जिसे आय, खर्च, बचत और खातों को व्यवस्थित करने के लिए बनाया गया है।"],
+["master.text208", "MeraHisab is distributed as an Android APK. Minimum supported Android version is pending verification.", "MeraHisab Android APK के रूप में वितरित होता है। न्यूनतम समर्थित Android संस्करण का सत्यापन लंबित है।"],
+["master.text209", "The Android application is designed for offline financial tracking. Some website resources and application downloads may require an internet connection.", "Android ऐप ऑफलाइन वित्तीय हिसाब रखने के लिए बनाया गया है। वेबसाइट के कुछ संसाधनों और ऐप डाउनलोड के लिए इंटरनेट आवश्यक हो सकता है।"],
+["master.text210", "The website calculator engine processes inputs locally. Native application data flows require separate verification.", "वेबसाइट का कैलकुलेटर दर्ज जानकारी को स्थानीय रूप से प्रोसेस करता है। मूल ऐप में डेटा के प्रवाह का अलग से सत्यापन आवश्यक है।"],
+["master.text211", "The calculator engine does not intentionally persist entered amounts or calculation results. Browser behavior may vary according to browser settings.", "कैलकुलेटर जानबूझकर दर्ज राशियों या गणना के परिणामों को स्थायी रूप से नहीं सहेजता। ब्राउजर का व्यवहार उसकी सेटिंग के अनुसार बदल सकता है।"],
+["master.text212", "Website preferences may use browser storage. Hosting or external services may have their own storage practices. A complete cookie audit is pending.", "वेबसाइट की प्राथमिकताएं ब्राउजर स्टोरेज का उपयोग कर सकती हैं। होस्टिंग या बाहरी सेवाओं के अपने स्टोरेज तरीके हो सकते हैं। कुकीज की पूरी जांच लंबित है।"],
+["master.text213", "Royal Khata is a digital khata application designed around credit, debit and organized account management.", "Royal Khata क्रेडिट, डेबिट और व्यवस्थित खाता प्रबंधन के लिए बनाया जा रहा डिजिटल खाता ऐप है।"],
+["master.text214", "Not yet. Official APK download information is pending.", "अभी नहीं। आधिकारिक APK डाउनलोड की जानकारी लंबित है।"],
+["master.text215", "An official release date has not been announced.", "आधिकारिक रिलीज की तारीख घोषित नहीं हुई है।"],
+["master.text216", "The calculators on this website can be used without a calculator subscription.", "इस वेबसाइट के कैलकुलेटर बिना कैलकुलेटर सदस्यता के इस्तेमाल किए जा सकते हैं।"],
+["master.text217", "EMI means Equated Monthly Instalment. The EMI calculator estimates fixed monthly loan repayments using the reducing-balance interest formula.", "EMI का अर्थ समान मासिक किस्त है। EMI कैलकुलेटर घटती बकाया राशि पर ब्याज के सूत्र से निश्चित मासिक ऋण किस्त का अनुमान लगाता है।"],
+["master.text218", "SIP means Systematic Investment Plan. The calculator estimates the future value of regular monthly investments using an assumed annual return. Actual market returns are not guaranteed.", "SIP का अर्थ व्यवस्थित निवेश योजना है। कैलकुलेटर अनुमानित वार्षिक रिटर्न के आधार पर नियमित मासिक निवेश के भविष्य के मूल्य का अनुमान लगाता है। वास्तविक बाजार रिटर्न की गारंटी नहीं है।"],
+
+
 
 /* Additional exact text from current website pages */
 ["coverage.text001", "Find the Right Page", "सही पेज खोजें"],
@@ -1550,11 +1771,14 @@ content.forEach(function (entry) {
 
   if (
     typeof key !== "string" ||
+    key.length > 128 ||
     !/^[a-zA-Z0-9_.-]+$/.test(key) ||
+    key.split(/[.-]/).some(part => ["__proto__", "constructor", "prototype"].includes(part)) ||
     typeof en !== "string" ||
     typeof hi !== "string" ||
     !en.trim() ||
-    !hi.trim()
+    !hi.trim() ||
+    en.length > 20000 || hi.length > 20000
   ) {
 
     invalidCount++;
@@ -1584,17 +1808,17 @@ content.forEach(function (entry) {
 ========================================== */
 
 let registered = false;
+let registeredEngine = null;
 
 function registerTranslations() {
 
-  if (registered) {
+  const engine = window.MeraHisabLanguage;
 
+  if (registered && engine === registeredEngine) {
     return true;
-
   }
 
-  const engine =
-    window.MeraHisabLanguage;
+  registered = false;
 
   if (
     !engine ||
@@ -1621,6 +1845,7 @@ function registerTranslations() {
   }
 
   registered = true;
+  registeredEngine = engine;
 
   if (typeof engine.apply === "function") {
 
@@ -1638,7 +1863,7 @@ function registerTranslations() {
 
         detail: {
 
-          version: "1.1.0",
+          version: "2.0.0",
 
           languages: ["en","hi"],
 
@@ -1667,7 +1892,7 @@ function registerTranslations() {
 window.MeraHisabLanguageContent =
   Object.freeze({
 
-    version: "1.1.0",
+    version: "2.0.0",
 
     register: registerTranslations,
 
@@ -1675,7 +1900,7 @@ window.MeraHisabLanguageContent =
 
       return {
 
-        version: "1.1.0",
+        version: "2.0.0",
 
         registered: registered,
 
