@@ -2270,3 +2270,323 @@ iframe {
 
     const stopwatchDisplay =
 
+      document.getElementById("stopwatchDisplay");
+
+    const startStopwatchButton =
+      document.getElementById("startStopwatch");
+
+    const lapStopwatchButton =
+      document.getElementById("lapStopwatch");
+
+    const resetStopwatchButton =
+      document.getElementById("resetStopwatch");
+
+    const lapList =
+      document.getElementById("lapList");
+
+    const lapEmpty =
+      document.getElementById("lapEmpty");
+
+    let stopwatchRunning = false;
+    let stopwatchStartTime = 0;
+    let elapsedBeforeStart = 0;
+    let animationFrameId = null;
+    let lapNumber = 0;
+
+    function formatStopwatchTime(milliseconds) {
+      const totalCentiseconds = Math.floor(milliseconds / 10);
+
+      const centiseconds = totalCentiseconds % 100;
+
+      const totalSeconds = Math.floor(totalCentiseconds / 100);
+
+      const seconds = totalSeconds % 60;
+
+      const totalMinutes = Math.floor(totalSeconds / 60);
+
+      const minutes = totalMinutes % 60;
+
+      const hours = Math.floor(totalMinutes / 60);
+
+      return (
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0") + "." +
+        String(centiseconds).padStart(2, "0")
+      );
+    }
+
+    function getElapsedTime() {
+      if (stopwatchRunning) {
+        return elapsedBeforeStart +
+          (performance.now() - stopwatchStartTime);
+      }
+
+      return elapsedBeforeStart;
+    }
+
+    function updateStopwatchDisplay() {
+      if (stopwatchDisplay) {
+        stopwatchDisplay.textContent =
+          formatStopwatchTime(getElapsedTime());
+      }
+    }
+
+    function stopwatchAnimation() {
+      if (!stopwatchRunning) return;
+
+      updateStopwatchDisplay();
+
+      animationFrameId =
+        requestAnimationFrame(stopwatchAnimation);
+    }
+
+    function startStopwatch() {
+      if (stopwatchRunning) {
+        // Pause
+        elapsedBeforeStart = getElapsedTime();
+        stopwatchRunning = false;
+
+        if (animationFrameId !== null) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+
+        startStopwatchButton.textContent = "Resume";
+        startStopwatchButton.setAttribute(
+          "aria-label",
+          "Resume stopwatch"
+        );
+
+        updateStopwatchDisplay();
+        return;
+      }
+
+      // Start or Resume
+      stopwatchStartTime = performance.now();
+      stopwatchRunning = true;
+
+      startStopwatchButton.textContent = "Pause";
+      startStopwatchButton.setAttribute(
+        "aria-label",
+        "Pause stopwatch"
+      );
+
+      stopwatchAnimation();
+    }
+
+    function addStopwatchLap() {
+      if (!stopwatchRunning) return;
+
+      lapNumber++;
+
+      const currentTime = getElapsedTime();
+
+      const previousLapTime =
+        window.lastLapElapsedTime || 0;
+
+      const lapDuration =
+        currentTime - previousLapTime;
+
+      window.lastLapElapsedTime = currentTime;
+
+      if (lapEmpty) {
+        lapEmpty.style.display = "none";
+      }
+
+      const lapRow = document.createElement("div");
+      lapRow.className = "lap-row";
+
+      const lapIndex = document.createElement("span");
+      lapIndex.textContent = "Lap " + lapNumber;
+
+      const lapTime = document.createElement("span");
+      lapTime.textContent =
+        formatStopwatchTime(lapDuration);
+
+      const totalTime = document.createElement("span");
+      totalTime.textContent =
+        formatStopwatchTime(currentTime);
+
+      lapRow.appendChild(lapIndex);
+      lapRow.appendChild(lapTime);
+      lapRow.appendChild(totalTime);
+
+      if (lapList) {
+        lapList.prepend(lapRow);
+      }
+    }
+
+    function resetStopwatch() {
+      stopwatchRunning = false;
+      elapsedBeforeStart = 0;
+      stopwatchStartTime = 0;
+      lapNumber = 0;
+
+      window.lastLapElapsedTime = 0;
+
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+
+      if (startStopwatchButton) {
+        startStopwatchButton.textContent = "Start";
+        startStopwatchButton.setAttribute(
+          "aria-label",
+          "Start stopwatch"
+        );
+      }
+
+      if (lapList) {
+        lapList
+          .querySelectorAll(".lap-row")
+          .forEach(row => row.remove());
+      }
+
+      if (lapEmpty) {
+        lapEmpty.style.display = "block";
+      }
+
+      updateStopwatchDisplay();
+    }
+
+    if (startStopwatchButton) {
+      startStopwatchButton.addEventListener(
+        "click",
+        startStopwatch
+      );
+    }
+
+    if (lapStopwatchButton) {
+      lapStopwatchButton.addEventListener(
+        "click",
+        addStopwatchLap
+      );
+    }
+
+    if (resetStopwatchButton) {
+      resetStopwatchButton.addEventListener(
+        "click",
+        resetStopwatch
+      );
+    }
+
+    updateStopwatchDisplay();
+    // PREMIUM RANDOM MOTIVATIONAL LINES
+
+const motivationLines = [
+  "हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।",
+  "आज की समझदारी, कल की आर्थिक आजादी है।",
+  "अपने पैसों को समझिए, अपने भविष्य को संवारिए।",
+  "छोटी शुरुआत ही बड़ी सफलता की नींव होती है।",
+  "अनुशासन आपकी सफलता की सबसे बड़ी ताकत है।",
+  "हर दिन एक नया अवसर लेकर आता है।",
+  "सपने बड़े रखिए और शुरुआत आज से कीजिए।",
+  "आपकी मेहनत ही आपकी असली पूंजी है।",
+  "समय और पैसा दोनों की कद्र करना सीखिए।",
+  "सही योजना, सफलता का पहला कदम है।",
+  "बचत एक आदत है, जो भविष्य बदल सकती है।",
+  "धीरे चलिए, लेकिन लगातार आगे बढ़ते रहिए।",
+  "आज का एक सही फैसला कल की बड़ी खुशी बन सकता है।",
+  "आर्थिक समझदारी जीवन को आसान बनाती है।",
+  "खर्च पर नियंत्रण, सपनों पर नहीं।",
+  "हर रुपया एक जिम्मेदारी और एक अवसर है।",
+  "सफलता रातों-रात नहीं, रोज़ के प्रयासों से आती है।",
+  "अपने लक्ष्य को याद रखिए और आगे बढ़ते रहिए।",
+  "Consistency is the key to success.",
+  "Small steps create big achievements.",
+  "Your future is built by today's decisions.",
+  "Make every rupee count.",
+  "Smart habits create a better tomorrow.",
+  "Dream big. Plan wisely. Stay consistent.",
+  "Success begins with discipline.",
+  "Believe in progress, not perfection.",
+  "Every day is a fresh opportunity.",
+  "Financial discipline brings peace of mind.",
+  "Stay focused on what truly matters.",
+  "Your goals deserve your consistency.",
+  "Progress is better than perfection.",
+  "Build habits that build your future.",
+  "A better future starts today.",
+  "Keep learning. Keep growing. Keep moving.",
+  "Patience and discipline create success.",
+  "The best investment is a better habit.",
+  "Plan today. Achieve tomorrow.",
+  "Your journey is your strength.",
+  "Be consistent, even on difficult days.",
+  "Great things begin with small steps.",
+  "सकारात्मक सोच और निरंतर प्रयास सफलता की राह बनाते हैं।",
+  "आपका आज, आपके कल की कहानी लिख रहा है।",
+  "हर दिन कुछ बेहतर करने का मौका है।",
+  "अपने लक्ष्य के प्रति ईमानदार रहिए।",
+  "खुद पर विश्वास रखिए और प्रयास जारी रखिए।",
+  "सही दिशा में उठाया छोटा कदम भी महत्वपूर्ण है।",
+  "समझदारी से लिया फैसला आपकी ताकत है।",
+  "अपनी प्रगति को पहचानिए और आगे बढ़िए।",
+  "आपकी आदतें आपके भविष्य का निर्माण करती हैं।",
+  "आज बेहतर बनिए, कल और बेहतर होगा।"
+];
+
+const motivationElement =
+  document.getElementById("motivationText");
+
+let previousMotivationIndex = -1;
+
+function showRandomMotivation() {
+
+  if (!motivationElement) return;
+
+  let randomIndex;
+
+  do {
+    randomIndex = Math.floor(
+      Math.random() * motivationLines.length
+    );
+  } while (
+    randomIndex === previousMotivationIndex
+    );
+
+  previousMotivationIndex = randomIndex;
+
+  motivationElement.classList.add("fade-out");
+
+  setTimeout(() => {
+
+    motivationElement.textContent =
+      motivationLines[randomIndex];
+
+    motivationElement.classList.remove("fade-out");
+
+  }, 550);
+}
+
+// First line
+showRandomMotivation();
+
+// Change line continuously
+setInterval(showRandomMotivation, 7000);
+
+
+    // =====================================
+    // AUTOMATIC COPYRIGHT YEAR
+    // =====================================
+
+    const currentYearElement =
+      document.getElementById("currentYear");
+
+    if (currentYearElement) {
+      currentYearElement.textContent =
+        new Date().getFullYear();
+    }
+
+  </script>
+
+</body>
+</html>
+
+
+   
+     
+     
+     
