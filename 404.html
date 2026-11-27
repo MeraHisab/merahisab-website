@@ -1,1524 +1,1956 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-IN">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>404 — Page Not Found | MeraHisab</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+<meta name="description" content="The requested page could not be found. Explore the official MeraHisab website, applications, financial tools and support resources.">
 
-    <title>404 - Page Not Found | MeraHisab</title>
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="MeraHisab">
+<meta name="theme-color" content="#080f20">
+<meta name="application-name" content="MeraHisab">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MeraHisab">
+<meta name="referrer" content="no-referrer">
 
-    <meta name="description"
-          content="The requested page could not be found. Explore MeraHisab, Royal Khata and our official website resources.">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="icon" type="image/png" href="/icons/icon-192.png">
 
-    <meta name="robots"
-          content="noindex, follow">
+<link rel="stylesheet" href="/upgrade.css">
 
-    <meta name="theme-color"
-          content="#081321">
+<script defer src="/upgrade.js"></script>
 
-    <link rel="stylesheet"
-          href="/upgrade.css">
+<style>
 
-    <script defer
-            src="/upgrade.js"></script>
+.er-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 18px;
+  box-sizing: border-box;
+}
 
-    <style>
+.er-page * {
+  box-sizing: border-box;
+}
 
-        .error-hero {
-            background: linear-gradient(
-                135deg,
-                #081321,
-                #182b43,
-                #26364d
-            );
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            padding: clamp(24px, 5vw, 64px);
-            text-align: center;
-            color: #f5f5f7;
-            margin-bottom: 28px;
-            overflow: hidden;
-        }
+.er-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 24px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 26px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(212,175,55,.18),
+      transparent 65%
+    ),
+    linear-gradient(145deg,#172640,#080f20);
+  color: #f8f6f0;
+  text-align: center;
+}
 
-        .error-label {
-            display: inline-block;
-            padding: 8px 18px;
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            color: #e5c788;
-            font-size: 13px;
-            letter-spacing: 2px;
-        }
+.er-logo {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,.4);
+}
 
-        .error-number {
-            font-size: clamp(90px, 20vw, 200px);
-            font-weight: 800;
-            line-height: 1.1;
-            margin: 24px 0;
-            color: #d4af37;
-            text-shadow:
-                0 0 24px rgba(212,175,55,0.25);
-            animation: errorFloat 4s ease-in-out infinite;
-        }
+.er-number {
+  margin: 10px 0;
+  font-size: clamp(90px,20vw,190px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #d4af37;
+  letter-spacing: -4px;
+  text-shadow: 0 0 35px rgba(212,175,55,.15);
+}
 
-        @keyframes errorFloat {
+.er-hero h1 {
+  font-size: clamp(26px,5vw,44px);
+  color: #f0d9a6;
+  margin: 12px 0;
+}
 
-            0%, 100% {
-                transform: translateY(0);
-            }
+.er-hero p {
+  max-width: 700px;
+  margin: 15px auto;
+  color: #c4cddd;
+  line-height: 1.85;
+}
 
-            50% {
-                transform: translateY(-8px);
-            }
+.er-eyebrow {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 30px;
+  color: #f0d9a6;
+  font-size: 12px;
+  font-weight: 700;
+}
 
-        }
+.er-section {
+  margin: 34px 0;
+  scroll-margin-top: 100px;
+}
 
-        .error-hero h1 {
-            font-size: clamp(26px, 5vw, 48px);
-            color: #e5c788;
-        }
+.er-title {
+  font-size: clamp(23px,4vw,32px);
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-        .error-section {
-            margin-top: 28px;
-            line-height: 1.8;
-            overflow-wrap: anywhere;
-        }
+.er-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
 
-        .error-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
+.er-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
 
-        .error-card {
-            min-width: 0;
-            box-sizing: border-box;
-            overflow-wrap: anywhere;
-        }
+.er-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
 
-        .error-symbol {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: rgba(212,175,55,0.12);
-            border: 1px solid #a58a52;
-            font-size: 26px;
-            margin-bottom: 12px;
-        }
+.er-card h3 {
+  margin: 12px 0;
+}
 
-        .error-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
+.er-card p {
+  font-size: 14px;
+  line-height: 1.8;
+}
 
-        .error-actions button {
-            cursor: pointer;
-        }
+.er-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  background: rgba(212,175,55,.08);
+  font-size: 24px;
+}
 
-        .error-notice {
-            padding: 18px;
-            border: 1px solid #a58a52;
-            border-radius: 12px;
-            background: rgba(212,175,55,0.08);
-            margin: 20px 0;
-        }
+.er-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
 
-        .broken-url {
-            display: block;
-            padding: 16px;
-            border: 1px solid #a58a52;
-            border-radius: 10px;
-            background: rgba(212,175,55,0.06);
-            overflow-wrap: anywhere;
-            word-break: break-word;
-            font-family: monospace;
-            margin: 16px 0;
-        }
+.er-center {
+  justify-content: center;
+}
 
-        .page-search {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 15px;
-            border: 1px solid #a58a52;
-            border-radius: 12px;
-            background: #101c2d;
-            color: #f5f5f7;
-            font: inherit;
-            margin: 12px 0;
-        }
+.er-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid #d4af37;
+  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-        html[data-theme="light"] .page-search {
-            background: #ffffff;
-            color: #14253d;
-        }
+.er-primary {
+  background: linear-gradient(
+    135deg,#f0d9a6,#d4af37
+  );
+  color: #101827;
+}
 
-        .page-search:focus-visible,
-        .error-actions button:focus-visible,
-        .error-actions a:focus-visible,
-        .search-result a:focus-visible {
-            outline: 2px solid #d4af37;
-            outline-offset: 3px;
-        }
+.er-button:hover {
+  border-color: #f0d9a6;
+  box-shadow: 0 0 14px rgba(212,175,55,.12);
+}
 
-        .search-result {
-            border: 1px solid #a58a52;
-            border-radius: 12px;
-            padding: 16px;
-            margin: 12px 0;
-        }
+.er-input {
+  width: 100%;
+  min-height: 50px;
+  padding: 14px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
 
-        .search-result a {
-            font-weight: 600;
-        }
+.er-search-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
 
-        .search-result p {
-            margin-bottom: 0;
-        }
+.er-notice {
+  padding: 18px;
+  margin: 18px 0;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 14px;
+  background: rgba(212,175,55,.07);
+  font-size: 13px;
+  line-height: 1.85;
+}
 
-        .error-status {
-            margin-top: 14px;
-            overflow-wrap: anywhere;
-        }
+.er-path {
+  display: block;
+  padding: 14px;
+  margin-top: 12px;
+  border: 1px solid rgba(128,128,128,.3);
+  border-radius: 10px;
+  background: rgba(128,128,128,.07);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-family: monospace;
+  font-size: 13px;
+}
 
-        [hidden] {
-            display: none !important;
-        }
+.er-list {
+  padding-left: 22px;
+  line-height: 1.9;
+  font-size: 14px;
+}
 
-        @media (max-width: 600px) {
+.er-list li {
+  margin: 7px 0;
+}
 
-            .error-grid {
-                grid-template-columns: 1fr;
-            }
+.er-result {
+  display: block;
+  padding: 16px;
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+}
 
-            .error-actions {
-                flex-direction: column;
-            }
+.er-result:hover {
+  border-color: #d4af37;
+  background: rgba(212,175,55,.07);
+}
 
-            .error-hero {
-                padding: 28px 18px;
-            }
+.er-result strong {
+  display: block;
+  margin-bottom: 6px;
+}
 
-            .page-search {
-                font-size: 16px;
-            }
+.er-result span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.7;
+  opacity: .85;
+}
 
-        }
+.er-results {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
 
-        @media (prefers-reduced-motion: reduce) {
+.er-status {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.8;
+}
 
-            .error-number {
-                animation: none;
-            }
+.er-info-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(128,128,128,.22);
+  font-size: 13px;
+}
 
-        }
+.er-info-row:last-child {
+  border-bottom: 0;
+}
 
-    </style>
+.er-faq details {
+  padding: 17px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 13px;
+}
+
+.er-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.er-faq p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.er-page :focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* LIGHT THEME */
+
+html[data-theme="light"] .er-hero,
+body[data-theme="light"] .er-hero {
+  background: linear-gradient(
+    145deg,#ffffff,#f3ead7
+  );
+  color: #172033;
+}
+
+html[data-theme="light"] .er-number,
+html[data-theme="light"] .er-hero h1,
+html[data-theme="light"] .er-eyebrow,
+body[data-theme="light"] .er-number,
+body[data-theme="light"] .er-hero h1,
+body[data-theme="light"] .er-eyebrow {
+  color: #765018;
+}
+
+html[data-theme="light"] .er-hero p,
+body[data-theme="light"] .er-hero p {
+  color: #46546a;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:900px) {
+
+  .er-grid-three {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:650px) {
+
+  .er-page {
+    padding: 18px 12px;
+  }
+
+  .er-grid,
+  .er-grid-three,
+  .er-results {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .er-hero {
+    padding: 28px 16px;
+  }
+
+  .er-card {
+    padding: 17px;
+  }
+
+  .er-buttons {
+    flex-direction: column;
+  }
+
+  .er-button {
+    width: 100%;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  .er-page *,
+  .er-page *::before,
+  .er-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- WEBSITE HEADER -->
+<!-- WEBSITE HEADER -->
 
-    <header class="site">
+<header class="site">
 
-        <div class="container">
+<div class="container">
 
-            <strong>MeraHisab</strong>
+<strong>MeraHisab</strong>
 
-            <nav aria-label="Main navigation">
+<nav aria-label="Main navigation">
 
-                <a href="/">Home</a>
+<a href="/index.html">Home</a>
+<a href="/downloads.html">Apps</a>
+<a href="/compare.html">Compare</a>
+<a href="/index.html#features">Features</a>
+<a href="/tools.html">Tools</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Support</a>
 
-                <a href="/downloads.html">Apps</a>
+<button id="theme"
+type="button"
+aria-label="Change website theme">
+Theme
+</button>
 
-                <a href="/compare.html">Compare</a>
+</nav>
 
-                <a href="/index.html#features">Features</a>
+</div>
 
-                <a href="/tools.html">Tools</a>
+</header>
 
-                <a href="/privacy.html">Privacy</a>
+<main class="shell er-page">
 
-                <a href="/about.html">About</a>
+<!-- ERROR HERO -->
 
-                <a href="/contact.html">Support</a>
+<section class="er-hero">
 
-                <button id="theme"
-                        type="button">
+<img
+id="brandLogo"
+src="/icons/icon-192.png"
+class="er-logo"
+alt="MeraHisab logo"
+width="82"
+height="82">
 
-                    Theme
+<div style="margin-top:18px">
 
-                </button>
+<span class="er-eyebrow">
 
-            </nav>
+MERAHISAB • WEBSITE NAVIGATION
 
-        </div>
+</span>
 
-    </header>
+</div>
 
-    <main class="shell">
+<div class="er-number" aria-hidden="true">
 
-        <!-- PREMIUM ERROR HERO -->
+404
 
-        <section class="error-hero">
+</div>
 
-            <span class="error-label">
+<h1>Page Not Found</h1>
 
-                PAGE RECOVERY CENTER
+<p>
 
-            </span>
+The page you are looking for could
+not be found. It may have been moved,
+renamed, removed or entered incorrectly.
 
-            <div class="error-number"
-                 aria-hidden="true">
+</p>
 
-                404
+<p>
 
-            </div>
+आप जिस पेज को खोज रहे हैं, वह उपलब्ध
+नहीं है। आप नीचे दिए गए विकल्पों से
+सही पेज पर जा सकते हैं।
 
-            <h1>Page Not Found</h1>
+</p>
 
-            <p>
+<div class="er-buttons er-center">
 
-                The page you are looking for
-                could not be found.
+<a href="/index.html"
+class="er-button er-primary">
 
-            </p>
+Return Home
 
-            <p>
+</a>
 
-                It may have been moved,
-                renamed, removed or entered
-                incorrectly.
+<button
+id="goBack"
+type="button"
+class="er-button">
 
-            </p>
+Go Back
 
-            <div class="error-actions"
-                 style="justify-content:center;">
+</button>
 
-                <a class="action"
-                   href="/">
+<a href="#pageSearchSection"
+class="er-button">
 
-                    Back to Home
+Find a Page
 
-                </a>
+</a>
 
-                <button class="action"
-                        id="goBack"
-                        type="button"
-                        disabled>
+</div>
 
-                    Previous Page
+</section>
 
-                </button>
+<!-- ERROR INFORMATION -->
 
-                <a class="action"
-                   href="#page-search-section">
+<section class="er-section">
 
-                    Find a Page
+<article class="upgrade-card er-card">
 
-                </a>
+<h2>Requested Page Information</h2>
 
-            </div>
+<div class="er-info-row">
 
-        </section>
+<span>Error Type</span>
 
-        <!-- BROKEN URL INFORMATION -->
+<strong>Page Not Found</strong>
 
-        <section class="upgrade-card error-section">
+</div>
 
-            <h2>Requested Page</h2>
+<div class="er-info-row">
 
-            <p>
+<span>Official Domain</span>
 
-                The following page address
-                could not be located.
+<strong>merahisab.store</strong>
 
-            </p>
+</div>
 
-            <code id="brokenURL"
-                  class="broken-url">
+<div class="er-info-row">
 
-                Page address unavailable
+<span>Browser Network Status</span>
 
-            </code>
+<strong id="networkStatus">Checking...</strong>
 
-            <div class="error-actions">
+</div>
 
-                <button class="action"
-                        id="copyBrokenURL"
-                        type="button"
-                        disabled>
+<p>Requested path:</p>
 
-                    Copy Page Address
+<code class="er-path" id="requestedPath">
 
-                </button>
+Unavailable
 
-                <a class="action"
-                   href="/contact.html?app=website&amp;category=website#support-form">
+</code>
 
-                    Prepare Broken Link Report
+<p class="er-status">
 
-                </a>
+Query parameters and URL fragments
+are excluded from this display.
 
-            </div>
+Avoid sharing paths that contain
+personal or confidential information.
 
-            <p id="brokenURLStatus"
-               class="error-status"
-               role="status"
-               aria-live="polite">
+</p>
 
-            </p>
+<div class="er-buttons">
 
-            <p>
+<button
+id="copyPath"
+type="button"
+class="er-button">
 
-                Query parameters and URL fragments
-                are excluded from the displayed
-                address for privacy.
+Copy Page Path
 
-            </p>
+</button>
 
-            <p>
+<button
+id="retryPage"
+type="button"
+class="er-button">
 
-                Review the address before sharing.
-                URL paths may still contain
-                sensitive information.
+Try Again
 
-            </p>
+</button>
 
-        </section>
+<a href="/contact.html"
+class="er-button">
 
-        <!-- SMART PAGE SUGGESTIONS -->
+Contact & Support
 
-        <section id="suggestionSection"
-                 class="upgrade-card error-section"
-                 hidden>
+</a>
 
-            <h2>Suggested Pages</h2>
+</div>
 
-            <p>
+<p
+id="pathStatus"
+class="er-status"
+role="status"
+aria-live="polite">
 
-                You may have been looking
-                for one of these pages.
+</p>
 
-            </p>
+</article>
 
-            <div id="suggestedPages"></div>
+</section>
 
-        </section>
+<!-- SMART PAGE SEARCH -->
 
-        <!-- WEBSITE PAGE SEARCH -->
+<section class="er-section"
+id="pageSearchSection">
 
-        <section id="page-search-section"
-                 class="upgrade-card error-section">
+<h2 class="er-title">
 
-            <h2>Find a Website Page</h2>
+Find the Right Page
 
-            <label for="websiteSearch">
+</h2>
 
-                Search website pages
+<article class="upgrade-card er-card">
 
-            </label>
+<label for="pageSearch"
+class="er-search-label">
 
-            <input id="websiteSearch"
-                   class="page-search"
-                   type="search"
-                   maxlength="100"
-                   autocomplete="off"
-                   placeholder="Search apps, downloads, tools, privacy..."
-                   disabled>
+Search MeraHisab Website
 
-            <p id="searchStatus"
-               class="error-status"
-               role="status"
-               aria-live="polite">
+</label>
 
-                Search available website pages.
+<input
+id="pageSearch"
+class="er-input"
+type="search"
+maxlength="100"
+autocomplete="off"
+placeholder="Search apps, downloads, calculator, privacy...">
 
-            </p>
+<div class="er-buttons">
 
-            <div id="searchResults"></div>
+<button
+id="clearSearch"
+type="button"
+class="er-button">
 
-            <noscript>
+Clear Search
 
-                <p>
+</button>
 
-                    JavaScript is required for
-                    automatic page suggestions
-                    and website search.
+</div>
 
-                    You can still use the
-                    navigation links below.
+<p
+id="searchStatus"
+class="er-status"
+role="status"
+aria-live="polite">
 
-                </p>
+Explore available website pages.
 
-            </noscript>
+</p>
 
-        </section>
+<div
+id="searchResults"
+class="er-results">
 
-        <!-- QUICK NAVIGATION -->
+</div>
 
-        <section class="error-section">
+<div
+id="noResults"
+class="er-notice"
+hidden>
 
-            <h2>Quick Navigation</h2>
+No matching pages found.
 
-            <div class="error-grid">
+Try searching for MeraHisab,
+Royal Khata, tools, download,
+privacy or support.
 
-                <article class="upgrade-card error-card">
+</div>
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+</article>
 
-                        &#127968;
+</section>
 
-                    </span>
+<!-- SUGGESTED PAGES -->
 
-                    <h3>Home Page</h3>
+<section class="er-section"
+id="suggestedSection"
+hidden>
 
-                    <p>
+<h2 class="er-title">
 
-                        Explore the official
-                        MeraHisab website.
+Suggested Pages
 
-                    </p>
+</h2>
 
-                    <a class="action"
-                       href="/">
+<article class="upgrade-card er-card">
 
-                        Open Home
+<p>
 
-                    </a>
+These pages may be related to
+the address you requested.
 
-                </article>
+</p>
 
-                <article class="upgrade-card error-card">
+<div
+id="suggestedResults"
+class="er-results">
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+</div>
 
-                        &#128176;
+</article>
 
-                    </span>
+</section>
 
-                    <h3>MeraHisab</h3>
+<!-- QUICK NAVIGATION -->
 
-                    <p>
+<section class="er-section">
 
-                        Personal finance
-                        management application.
+<h2 class="er-title">
 
-                    </p>
+Quick Navigation
 
-                    <a class="action"
-                       href="/merahisab.html">
+</h2>
 
-                        Explore MeraHisab
+<div class="er-grid-three">
 
-                    </a>
+<article class="upgrade-card er-card">
 
-                </article>
+<div class="er-icon">🏠</div>
 
-                <article class="upgrade-card error-card">
+<h3>Homepage</h3>
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+<p>
 
-                        &#128210;
+Explore the official MeraHisab
+website and its main features.
 
-                    </span>
+</p>
 
-                    <h3>Royal Khata</h3>
+<a href="/index.html"
+class="er-button">
 
-                    <p>
+Open Home
 
-                        Digital khata and
-                        credit-debit management.
+</a>
 
-                    </p>
+</article>
 
-                    <a class="action"
-                       href="/royal-khata.html">
+<article class="upgrade-card er-card">
 
-                        Explore Royal Khata
+<div class="er-icon">📱</div>
 
-                    </a>
+<h3>MeraHisab</h3>
 
-                </article>
+<p>
 
-                <article class="upgrade-card error-card">
+Explore the personal financial
+management application.
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+</p>
 
-                        &#128229;
+<a href="/merahisab.html"
+class="er-button">
 
-                    </span>
+View MeraHisab
 
-                    <h3>Download Center</h3>
+</a>
 
-                    <p>
+</article>
 
-                        Check official application
-                        download availability.
+<article class="upgrade-card er-card">
 
-                    </p>
+<div class="er-icon">📒</div>
 
-                    <a class="action"
-                       href="/downloads.html">
+<h3>Royal Khata</h3>
 
-                        Open Download Center
+<p>
 
-                    </a>
+Explore the digital credit
+and debit ledger project.
 
-                </article>
+</p>
 
-                <article class="upgrade-card error-card">
+<a href="/royal-khata.html"
+class="er-button">
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+View Royal Khata
 
-                        &#9878;
+</a>
 
-                    </span>
+</article>
 
-                    <h3>Compare Applications</h3>
+<article class="upgrade-card er-card">
 
-                    <p>
+<div class="er-icon">⬇</div>
 
-                        Compare MeraHisab
-                        and Royal Khata.
+<h3>Download Center</h3>
 
-                    </p>
+<p>
 
-                    <a class="action"
-                       href="/compare.html">
+Find application download
+and installation information.
 
-                        Compare Apps
+</p>
 
-                    </a>
+<a href="/downloads.html"
+class="er-button">
 
-                </article>
+Open Downloads
 
-                <article class="upgrade-card error-card">
+</a>
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+</article>
 
-                        &#129518;
+<article class="upgrade-card er-card">
 
-                    </span>
+<div class="er-icon">⚖</div>
 
-                    <h3>Financial Tools</h3>
+<h3>Compare Applications</h3>
 
-                    <p>
+<p>
 
-                        Explore financial calculators
-                        and everyday utilities.
+Understand the differences
+between both application projects.
 
-                    </p>
+</p>
 
-                    <a class="action"
-                       href="/tools.html">
+<a href="/compare.html"
+class="er-button">
 
-                        Open Financial Tools
+Compare Apps
 
-                    </a>
+</a>
 
-                </article>
+</article>
 
-                <article class="upgrade-card error-card">
+<article class="upgrade-card er-card">
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+<div class="er-icon">🧮</div>
 
-                        &#128274;
+<h3>Financial Tools</h3>
 
-                    </span>
+<p>
 
-                    <h3>Privacy &amp; Security</h3>
+Explore financial calculators
+and everyday utilities.
 
-                    <p>
+</p>
 
-                        Read privacy and
-                        data protection information.
+<a href="/tools.html"
+class="er-button">
 
-                    </p>
+Open Tools
 
-                    <a class="action"
-                       href="/privacy.html">
+</a>
 
-                        Read Privacy Information
+</article>
 
-                    </a>
+<article class="upgrade-card er-card">
 
-                </article>
+<div class="er-icon">🔒</div>
 
-                <article class="upgrade-card error-card">
+<h3>Privacy Center</h3>
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+<p>
 
-                        &#8505;
+Read privacy and data
+protection information.
 
-                    </span>
+</p>
 
-                    <h3>About MeraHisab</h3>
+<a href="/privacy.html"
+class="er-button">
 
-                    <p>
+Open Privacy
 
-                        Learn about our project,
-                        mission and development goals.
+</a>
 
-                    </p>
+</article>
 
-                    <a class="action"
-                       href="/about.html">
+<article class="upgrade-card er-card">
 
-                        About Us
+<div class="er-icon">ℹ</div>
 
-                    </a>
+<h3>About MeraHisab</h3>
 
-                </article>
+<p>
 
-                <article class="upgrade-card error-card">
+Learn about our applications,
+mission and development roadmap.
 
-                    <span class="error-symbol"
-                          aria-hidden="true">
+</p>
 
-                        &#128172;
+<a href="/about.html"
+class="er-button">
 
-                    </span>
+About Us
 
-                    <h3>Contact &amp; Support</h3>
+</a>
 
-                    <p>
+</article>
 
-                        Find troubleshooting guidance
-                        and prepare support requests.
+<article class="upgrade-card er-card">
 
-                    </p>
+<div class="er-icon">💬</div>
 
-                    <a class="action"
-                       href="/contact.html">
+<h3>Help & Support</h3>
 
-                        Open Support Center
+<p>
 
-                    </a>
+Explore support information
+and prepare a local request.
 
-                </article>
+</p>
 
-            </div>
+<a href="/contact.html"
+class="er-button">
 
-        </section>
+Open Support
 
-        <!-- TROUBLESHOOTING -->
+</a>
 
-        <section class="upgrade-card error-section">
+</article>
 
-            <h2>Why Did This Happen?</h2>
+</div>
 
-            <ul>
+</section>
 
-                <li>
+<!-- TROUBLESHOOTING -->
 
-                    The page address may
-                    contain a typing error.
+<section class="er-section">
 
-                </li>
+<h2 class="er-title">
 
-                <li>
+Why Did This Happen?
 
-                    The page may have been
-                    moved or renamed.
+</h2>
 
-                </li>
+<div class="er-grid">
 
-                <li>
+<article class="upgrade-card er-card">
 
-                    An old bookmark may
-                    no longer be valid.
+<div class="er-icon">🔗</div>
 
-                </li>
+<h3>Incorrect Address</h3>
 
-                <li>
+<p>
 
-                    An external website may
-                    contain an outdated link.
+The website address may contain
+a spelling error or an incorrect
+file name.
 
-                </li>
+</p>
 
-                <li>
+</article>
 
-                    A requested resource may
-                    not currently be available.
+<article class="upgrade-card er-card">
 
-                </li>
+<div class="er-icon">📁</div>
 
-            </ul>
+<h3>Page Moved or Removed</h3>
 
-            <div class="error-notice">
+<p>
 
-                <strong>What You Can Do</strong>
+The requested page may have been
+renamed or removed during a
+website update.
 
-                <p>
+</p>
 
-                    Check the page address,
-                    use the website search,
-                    return to the homepage
-                    or prepare a broken link report.
+</article>
 
-                </p>
+<article class="upgrade-card er-card">
 
-            </div>
+<div class="er-icon">🔄</div>
 
-        </section>
+<h3>Outdated Bookmark</h3>
 
-        <!-- SECURITY INFORMATION -->
+<p>
 
-        <section class="upgrade-card error-section">
+A previously saved bookmark
+or external link may no longer
+point to an available page.
 
-            <h2>Stay Safe Online</h2>
+</p>
 
-            <p>
+</article>
 
-                Always verify that you are
-                visiting the official
-                MeraHisab website.
+<article class="upgrade-card er-card">
 
-            </p>
+<div class="er-icon">🌐</div>
 
-            <p>
+<h3>Offline or Cached Content</h3>
 
-                Official Domain:
+<p>
 
-                <strong>merahisab.store</strong>
+Network conditions or outdated
+cached resources may affect
+website navigation.
 
-            </p>
+A 404 error alone does not
+establish a network problem.
 
-            <p>
+</p>
 
-                Avoid downloading application
-                files from unknown websites
-                or suspicious links.
+</article>
 
-            </p>
+</div>
 
-            <p>
+</section>
 
-                Never share passwords,
-                application PINs, OTPs,
-                recovery keys or confidential
-                financial information when
-                reporting a broken page.
+<!-- PWA INFORMATION -->
 
-            </p>
+<section class="er-section">
 
-            <a class="action"
-               href="/downloads.html">
+<article class="upgrade-card er-card">
 
-                Official Download Center
+<div class="er-icon">📲</div>
 
-            </a>
+<h2>Website Installation & Offline Access</h2>
 
-        </section>
+<p>
 
-        <!-- FINAL RECOVERY SECTION -->
+MeraHisab includes Progressive
+Web App functionality for
+supported browsers.
 
-        <section class="error-hero error-section">
+</p>
 
-            <span class="error-label">
+<p>
 
-                MERAHISAB
+Selected public website pages
+may be available offline after
+successful service worker setup
+and caching.
 
-            </span>
+</p>
 
-            <h2>Let's Get You Back on Track</h2>
+<div class="er-info-row">
 
-            <p>
+<span>Service Worker Support</span>
 
-                Your Money. Your Control.
+<strong id="workerSupport">
 
-            </p>
+Checking...
 
-            <div class="error-actions"
-                 style="justify-content:center;">
+</strong>
 
-                <a class="action"
-                   href="/">
+</div>
 
-                    Return to Homepage
+<div class="er-info-row">
 
-                </a>
+<span>Service Worker Controller</span>
 
-                <a class="action"
-                   href="/contact.html">
+<strong id="workerController">
 
-                    Support Center
+Checking...
 
-                </a>
+</strong>
 
-            </div>
+</div>
 
-        </section>
+<div class="er-notice">
 
-    </main>
+This error page does not register
+a new service worker or start
+automatic website installation.
 
-    <!-- PREMIUM FOOTER -->
+Use the homepage to access PWA
+installation, updates and storage
+management controls.
 
-    <footer class="site">
+</div>
 
-        <div class="container">
+<div class="er-buttons">
 
-            <h2>MeraHisab</h2>
+<a href="/index.html"
+class="er-button er-primary">
 
-            <p>Your Money. Your Control.</p>
+Open Website Homepage
 
-            <p>
+</a>
 
-                Personal Finance &amp;
-                Digital Khata Solutions
+<a href="/offline.html"
+class="er-button">
 
-            </p>
+Offline Help
 
-            <nav aria-label="Footer navigation">
+</a>
 
-                <a href="/">Home</a>
+</div>
 
-                <a href="/downloads.html">Apps</a>
+</article>
 
-                <a href="/merahisab.html">MeraHisab</a>
+</section>
 
-                <a href="/royal-khata.html">Royal Khata</a>
+<!-- BROKEN LINK REPORTING -->
 
-                <a href="/compare.html">Compare</a>
+<section class="er-section">
 
-                <a href="/tools.html">Tools</a>
+<h2 class="er-title">
 
-                <a href="/privacy.html">Privacy</a>
+Report a Broken Link
 
-                <a href="/about.html">About</a>
+</h2>
 
-                <a href="/contact.html">Contact</a>
+<article class="upgrade-card er-card">
 
-            </nav>
+<div class="er-icon">🐞</div>
 
-            <p>
+<h3>Help Improve Website Navigation</h3>
 
-                Official Website:
+<p>
 
-                <a href="https://merahisab.store/">
+If you reached this page through
+an incorrect website link, you
+can prepare a local error report.
 
-                    merahisab.store
+</p>
 
-                </a>
+<p>
 
-            </p>
+The report includes only the
+requested path, current timestamp
+and basic error information.
 
-            <p>
+Query parameters and URL fragments
+are not included.
 
-                &copy; <span data-year></span>
+</p>
 
-                MeraHisab. All Rights Reserved.
+<div class="er-notice">
 
-            </p>
+Review the requested path before
+copying a report. URL paths can
+sometimes contain private information.
 
-        </div>
+Copying a report does not send it
+to MeraHisab automatically.
 
-    </footer>
+</div>
 
-    <!-- PAGE RECOVERY JAVASCRIPT ENGINE -->
+<div class="er-buttons">
 
-    <script>
+<button
+id="copyReport"
+type="button"
+class="er-button er-primary">
 
-        (() => {
+Copy Error Report
 
-            "use strict";
+</button>
 
-            // =================================
-            // 01. ELEMENT REFERENCES
-            // =================================
+<a href="/contact.html"
+class="er-button">
 
-            const get = (id) =>
-                document.getElementById(id);
+Open Support Center
 
-            const brokenURL =
-                get("brokenURL");
+</a>
 
-            const copyButton =
-                get("copyBrokenURL");
+</div>
 
-            const backButton =
-                get("goBack");
+<p
+id="reportStatus"
+class="er-status"
+role="status"
+aria-live="polite">
 
-            const brokenURLStatus =
-                get("brokenURLStatus");
+</p>
 
-            const searchInput =
-                get("websiteSearch");
+</article>
 
-            const searchStatus =
-                get("searchStatus");
+</section>
 
-            const searchResults =
-                get("searchResults");
+<!-- FREQUENTLY ASKED QUESTIONS -->
 
-            const suggestionSection =
-                get("suggestionSection");
+<section class="er-section er-faq">
 
-            const suggestedPages =
-                get("suggestedPages");
+<h2 class="er-title">
 
-            // =================================
-            // 02. WEBSITE PAGE DIRECTORY
-            // =================================
+Frequently Asked Questions
 
-            const pages = [
+</h2>
 
-                {
+<details class="upgrade-card">
 
-                    title: "Home",
+<summary>
 
-                    url: "/",
+What does a 404 error mean?
 
-                    description:
-                        "Official MeraHisab homepage.",
+</summary>
 
-                    keywords:
-                        "home index main homepage होम मुख्य पेज"
+<p>
 
-                },
+It means that the requested
+website resource could not be found.
 
-                {
+</p>
 
-                    title: "MeraHisab",
+</details>
 
-                    url: "/merahisab.html",
+<details class="upgrade-card">
 
-                    description:
-                        "Personal finance management application.",
+<summary>
 
-                    keywords:
-                        "mera hisab merahisab money finance income expense मेरा हिसाब आय खर्च"
+Is the entire website unavailable?
 
-                },
+</summary>
 
-                {
+<p>
 
-                    title: "Royal Khata",
+Not necessarily. A single page
+may be unavailable while other
+website pages continue to work.
 
-                    url: "/royal-khata.html",
+Try opening the homepage.
 
-                    description:
-                        "Digital ledger and credit-debit management.",
+</p>
 
-                    keywords:
-                        "royal khata royalkhata ledger credit debit customer business रॉयल खाता उधार जमा"
+</details>
 
-                },
+<details class="upgrade-card">
 
-                {
+<summary>
 
-                    title: "Download Center",
+Will this error delete my financial records?
 
-                    url: "/downloads.html",
+</summary>
 
-                    description:
-                        "Official application download availability.",
+<p>
 
-                    keywords:
-                        "download downloads apk android install update डाउनलोड ऐप"
+Displaying this website error
+does not itself delete native
+Android application records.
 
-                },
+Do not clear application storage
+without securing a backup.
 
-                {
+</p>
 
-                    title: "MeraHisab Download",
+</details>
 
-                    url: "/download.html?app=merahisab",
+<details class="upgrade-card">
 
-                    description:
-                        "MeraHisab application download information.",
+<summary>
 
-                    keywords:
-                        "merahisab apk download installation release मेरा हिसाब डाउनलोड"
+Can I still download MeraHisab?
 
-                },
+</summary>
 
-                {
+<p>
 
-                    title: "Compare Applications",
+Visit the official Download Center
+for available APK download and
+installation information.
 
-                    url: "/compare.html",
+</p>
 
-                    description:
-                        "Compare MeraHisab and Royal Khata.",
+</details>
 
-                    keywords:
-                        "compare comparison difference apps तुलना अंतर"
+<details class="upgrade-card">
 
-                },
+<summary>
 
-                {
+Where can I find Royal Khata?
 
-                    title: "Features",
+</summary>
 
-                    url: "/index.html#features",
+<p>
 
-                    description:
-                        "Explore application and website features.",
+Visit the Royal Khata application
+information page.
 
-                    keywords:
-                        "features functionality benefits सुविधाएं फीचर्स"
+Its official APK release is pending.
 
-                },
+</p>
 
-                {
+</details>
 
-                    title: "Financial Tools",
+<details class="upgrade-card">
 
-                    url: "/tools.html",
+<summary>
 
-                    description:
-                        "Financial calculators, clock and stopwatch.",
+Why is an offline page unavailable?
 
-                    keywords:
-                        "tools calculator emi sip gst interest fd budget clock stopwatch कैलकुलेटर ब्याज समय"
+</summary>
 
-                },
+<p>
 
-                {
+Offline access depends on successful
+service worker installation and
+previously cached resources.
 
-                    title: "Privacy & Security",
+Not every website page is available
+offline.
 
-                    url: "/privacy.html",
+</p>
 
-                    description:
-                        "Privacy and data protection information.",
+</details>
 
-                    keywords:
-                        "privacy policy security encryption backup recovery data गोपनीयता सुरक्षा बैकअप"
+<details class="upgrade-card">
 
-                },
+<summary>
 
-                {
+Should I clear my browser cache?
 
-                    title: "About Us",
+</summary>
 
-                    url: "/about.html",
+<p>
 
-                    description:
-                        "Brand information, mission and vision.",
+First try opening the homepage
+or refreshing the requested page.
 
-                    keywords:
-                        "about mission vision brand roadmap जानकारी परिचय"
+Clearing website storage may remove
+preferences and offline resources.
 
-                },
+</p>
 
-                {
+</details>
 
-                    title: "Contact & Support",
+<details class="upgrade-card">
 
-                    url: "/contact.html",
+<summary>
 
-                    description:
-                        "Support request preparation and troubleshooting.",
+How can I report an incorrect link?
 
-                    keywords:
-                        "contact support help faq bug report feedback संपर्क सहायता शिकायत"
+</summary>
 
-                }
+<p>
 
-            ];
+Copy the local error report and
+visit the Contact & Support page
+to prepare a support request.
 
-            // =================================
-            // 03. SAFE REQUESTED URL
-            // =================================
+Direct support submission is
+pending configuration.
 
-            const safeURL =
-                window.location.origin +
-                window.location.pathname;
+</p>
 
-            brokenURL.textContent =
-                safeURL;
+</details>
 
-            copyButton.disabled = false;
+</section>
 
-            // =================================
-            // 04. NORMALIZE SEARCH TEXT
-            // =================================
+<!-- FINAL NAVIGATION -->
 
-            function normalize(value) {
+<section class="er-section er-hero">
 
-                return String(value || "")
-                    .normalize("NFKC")
-                    .toLowerCase()
-                    .replace(
-                        /[\/_.?=&-]+/g,
-                        " "
-                    )
-                    .replace(/\s+/g, " ")
-                    .trim();
+<h2>Continue Exploring MeraHisab</h2>
 
-            }
+<p>
 
-            // =================================
-            // 05. SEARCH SCORING ENGINE
-            // =================================
+Return to the official website
+and explore our applications,
+financial tools and support resources.
 
-            function searchPages(query) {
+</p>
 
-                const normalizedQuery =
-                    normalize(query);
+<div class="er-buttons er-center">
 
-                if (!normalizedQuery) {
+<a href="/index.html"
+class="er-button er-primary">
 
-                    return pages.slice();
+Return to Homepage
 
-                }
+</a>
 
-                const tokens =
-                    normalizedQuery
-                        .split(" ")
-                        .filter(Boolean);
+<a href="/downloads.html"
+class="er-button">
 
-                return pages.map((page) => {
+Explore Applications
 
-                    const title =
-                        normalize(page.title);
+</a>
 
-                    const content =
-                        normalize(
-                            page.title + " " +
-                            page.url + " " +
-                            page.description + " " +
-                            page.keywords
-                        );
+<a href="/tools.html"
+class="er-button">
 
-                    let score = 0;
+Financial Tools
 
-                    if (
-                        title === normalizedQuery
-                    ) {
+</a>
 
-                        score += 30;
+</div>
 
-                    }
+</section>
 
-                    if (
-                        title.includes(
-                            normalizedQuery
-                        )
-                    ) {
+</main>
 
-                        score += 15;
+<!-- FOOTER -->
 
-                    }
+<footer class="site">
 
-                    if (
-                        content.includes(
-                            normalizedQuery
-                        )
-                    ) {
+<div class="container">
 
-                        score += 10;
+© <span data-year>2026</span>
+MeraHisab. All rights reserved.
 
-                    }
+<br>
 
-                    tokens.forEach((token) => {
+<a href="/index.html">Home</a> ·
+<a href="/privacy.html">Privacy</a> ·
+<a href="/about.html">About</a> ·
+<a href="/contact.html">Support</a>
 
-                        if (
-                            title.includes(token)
-                        ) {
+<br>
 
-                            score += 5;
+<a href="https://merahisab.store/">
 
-                        } else if (
-                            content.includes(token)
-                        ) {
+merahisab.store
 
-                            score += 2;
+</a>
 
-                        }
+</div>
 
-                    });
+</footer>
 
-                    return {
+<!-- ERROR PAGE ENGINE -->
 
-                        page,
+<script>
 
-                        score
+(function () {
 
-                    };
+"use strict";
 
-                })
-                .filter(
-                    (result) => result.score > 0
-                )
-                .sort(
-                    (a, b) => b.score - a.score
-                )
-                .map(
-                    (result) => result.page
-                );
+if (window.__merahisabErrorInitialized) {
+  return;
+}
 
-            }
+window.__merahisabErrorInitialized = true;
 
-            // =================================
-            // 06. SAFE RESULT RENDERING
-            // =================================
+function el(id) {
+  return document.getElementById(id);
+}
 
-            function renderPages(container, items) {
+/* SAFE REQUESTED PATH */
 
-                container.textContent = "";
+const requestedPath =
+  window.location.pathname
+    .slice(0,1000);
 
-                items.forEach((page) => {
+el("requestedPath").textContent =
+  requestedPath || "/";
 
-                    const article =
-                        document.createElement(
-                            "article"
-                        );
+/* LOCAL PAGE DIRECTORY */
 
-                    article.className =
-                        "search-result";
+const pages = [
 
-                    const link =
-                        document.createElement("a");
+  {
+    title: "Homepage",
+    url: "/index.html",
+    description: "Official MeraHisab website.",
+    keywords: "home main index website homepage मुख्य होम"
+  },
 
-                    link.href =
-                        page.url;
+  {
+    title: "MeraHisab",
+    url: "/merahisab.html",
+    description: "Personal financial management application.",
+    keywords: "merahisab mera hisab finance income expense savings account मेरा हिसाब"
+  },
 
-                    link.textContent =
-                        page.title;
+  {
+    title: "Royal Khata",
+    url: "/royal-khata.html",
+    description: "Digital credit and debit ledger project.",
+    keywords: "royal khata ledger credit debit customer business udhar खाता उधार"
+  },
 
-                    const description =
-                        document.createElement("p");
+  {
+    title: "Download Center",
+    url: "/downloads.html",
+    description: "Application downloads and release information.",
+    keywords: "downloads apps android apk installation डाउनलोड"
+  },
 
-                    description.textContent =
-                        page.description;
+  {
+    title: "APK Download",
+    url: "/download.html",
+    description: "MeraHisab Android installation information.",
+    keywords: "download apk install android checksum sha256"
+  },
 
-                    article.appendChild(link);
+  {
+    title: "Compare Applications",
+    url: "/compare.html",
+    description: "Compare MeraHisab and Royal Khata.",
+    keywords: "compare comparison difference features तुलना"
+  },
 
-                    article.appendChild(description);
+  {
+    title: "Financial Tools",
+    url: "/tools.html",
+    description: "Financial calculators and useful utilities.",
+    keywords: "tools calculator emi loan sip gst interest clock stopwatch कैलकुलेटर ब्याज"
+  },
 
-                    container.appendChild(article);
+  {
+    title: "Privacy & Data Protection",
+    url: "/privacy.html",
+    description: "Privacy, storage and security information.",
+    keywords: "privacy policy security data protection backup recovery गोपनीयता सुरक्षा"
+  },
 
-                });
+  {
+    title: "About MeraHisab",
+    url: "/about.html",
+    description: "Brand information, mission and roadmap.",
+    keywords: "about mission vision brand roadmap जानकारी"
+  },
 
-            }
+  {
+    title: "Contact & Support",
+    url: "/contact.html",
+    description: "Help, feedback and support request preparation.",
+    keywords: "contact support help bug report feedback email सहायता संपर्क"
+  },
 
-            // =================================
-            // 07. LIVE WEBSITE SEARCH
-            // =================================
+  {
+    title: "Offline Help",
+    url: "/offline.html",
+    description: "Offline access and connection guidance.",
+    keywords: "offline pwa internet network connection cache"
+  }
 
-            function updateSearch() {
+];
 
-                const query =
-                    searchInput.value.trim();
+/* CREATE SAFE SEARCH RESULT */
 
-                const results =
-                    searchPages(query);
+function createResult(page) {
 
-                renderPages(
-                    searchResults,
-                    results
-                );
+  const link =
+    document.createElement("a");
 
-                if (!query) {
+  link.className = "er-result";
 
-                    searchStatus.textContent =
-                        "Showing all " +
-                        results.length +
-                        " website resources.";
+  link.href = page.url;
 
-                } else if (
-                    results.length === 0
-                ) {
+  const title =
+    document.createElement("strong");
 
-                    searchStatus.textContent =
-                        "No matching pages found. Try another search.";
+  title.textContent = page.title;
 
-                } else {
+  const description =
+    document.createElement("span");
 
-                    searchStatus.textContent =
-                        results.length +
-                        " matching resource(s) found.";
+  description.textContent =
+    page.description;
 
-                }
+  link.appendChild(title);
+  link.appendChild(description);
 
-            }
+  return link;
 
-            searchInput.disabled = false;
+}
 
-            searchInput.addEventListener(
-                "input",
-                updateSearch
-            );
+/* SMART SEARCH */
 
-            // =================================
-            // 08. SMART PAGE SUGGESTIONS
-            // =================================
+const search = el("pageSearch");
 
-            function generateSuggestions() {
+function normalize(text) {
 
-                let path =
-                    window.location.pathname;
+  return String(text)
+    .toLowerCase()
+    .trim();
 
-                try {
+}
 
-                    path =
-                        decodeURIComponent(path);
+function filterPages() {
 
-                } catch (error) {
+  const query =
+    normalize(search.value);
 
-                    // Keep the original path
-                    // if URL decoding fails.
+  const words =
+    query.split(/\s+/).filter(Boolean);
 
-                }
+  const matches =
+    pages.filter(function (page) {
 
-                const segments =
-                    path.split("/")
-                        .filter(Boolean);
+      const searchable = normalize(
 
-                const lastSegment =
-                    segments.length
-                        ? segments[
-                            segments.length - 1
-                        ]
-                        : "";
+        page.title + " " +
+        page.description + " " +
+        page.url + " " +
+        page.keywords
 
-                const query =
-                    lastSegment
-                        .replace(
-                            /\.(html?|php|aspx?)$/i,
-                            ""
-                        )
-                        .slice(0, 100);
+      );
 
-                if (!query) {
+      return words.every(function (word) {
 
-                    return;
+        return searchable.includes(word);
 
-                }
+      });
 
-                const matches =
-                    searchPages(query)
-                        .slice(0, 3);
+    });
 
-                if (matches.length) {
+  const results =
+    el("searchResults");
 
-                    renderPages(
-                        suggestedPages,
-                        matches
-                    );
+  results.replaceChildren();
 
-                    suggestionSection.hidden =
-                        false;
+  matches.forEach(function (page) {
 
-                }
+    results.appendChild(
+      createResult(page)
+    );
 
-            }
+  });
 
-            // =================================
-            // 09. SAFE BACK NAVIGATION
-            // =================================
+  el("searchStatus").textContent =
 
-            backButton.disabled = false;
+    matches.length +
+    " of " +
+    pages.length +
+    " pages found.";
 
-            backButton.addEventListener(
-                "click",
-                () => {
+  el("noResults").hidden =
+    matches.length !== 0;
 
-                    try {
+}
 
-                        if (document.referrer) {
+search.addEventListener(
+  "input",
+  filterPages
+);
 
-                            const previous =
-                                new URL(
-                                    document.referrer
-                                );
+el("clearSearch").addEventListener(
+  "click",
+  function () {
 
-                            if (
-                                previous.origin ===
-                                    window.location.origin &&
-                                previous.pathname !==
-                                    window.location.pathname &&
-                                window.history.length > 1
-                            ) {
+    search.value = "";
 
-                                window.history.back();
+    filterPages();
 
-                                return;
+    search.focus();
 
-                            }
+  }
+);
 
-                        }
+/* SUGGEST RELATED PAGES */
 
-                    } catch (error) {
+function suggestPages() {
 
-                        // Fall back to homepage.
+  const tokens = normalize(requestedPath)
+    .replace(/\.html?$/i,"")
+    .split(/[^a-z0-9]+/)
+    .filter(function (token) {
 
-                    }
+      return token.length >= 3;
 
-                    window.location.assign("/");
+    });
 
-                }
-            );
+  if (!tokens.length) {
+    return;
+  }
 
-            // =================================
-            // 10. COPY BROKEN PAGE ADDRESS
-            // =================================
+  const ranked = pages.map(function (page) {
 
-            copyButton.addEventListener(
-                "click",
-                async () => {
+    const content = normalize(
+      page.title + " " +
+      page.url + " " +
+      page.keywords
+    );
 
-                    try {
+    const score = tokens.reduce(
+      function (total,token) {
 
-                        if (!navigator.clipboard) {
+        return total +
+          (content.includes(token) ? 1 : 0);
 
-                            throw new Error(
-                                "Clipboard unavailable"
-                            );
+      },
+      0
+    );
 
-                        }
+    return {
+      page: page,
+      score: score
+    };
 
-                        await navigator.clipboard
-                            .writeText(safeURL);
+  })
+  .filter(function (item) {
 
-                        brokenURLStatus.textContent =
-                            "Page address copied. Review it before sharing.";
+    return item.score > 0;
 
-                    } catch (error) {
+  })
+  .sort(function (a,b) {
 
-                        brokenURLStatus.textContent =
-                            "Automatic copying is unavailable. Please copy the displayed address manually.";
+    return b.score - a.score;
 
-                    }
+  })
+  .slice(0,3);
 
-                }
-            );
+  if (!ranked.length) {
+    return;
+  }
 
-            // =================================
-            // 11. INITIALIZE RECOVERY ENGINE
-            // =================================
+  const container =
+    el("suggestedResults");
 
-            generateSuggestions();
+  container.replaceChildren();
 
-            updateSearch();
+  ranked.forEach(function (item) {
 
-        })();
+    container.appendChild(
+      createResult(item.page)
+    );
 
-    </script>
+  });
+
+  el("suggestedSection").hidden = false;
+
+}
+
+/* SAFE BACK NAVIGATION */
+
+el("goBack").addEventListener(
+  "click",
+  function () {
+
+    try {
+
+      if (document.referrer) {
+
+        const previous =
+          new URL(document.referrer);
+
+        if (
+          previous.origin ===
+            window.location.origin &&
+          previous.pathname !==
+            window.location.pathname &&
+          window.history.length > 1
+        ) {
+
+          window.history.back();
+
+          return;
+
+        }
+
+      }
+
+    } catch (error) {
+
+      // Use homepage fallback.
+
+    }
+
+    window.location.assign("/index.html");
+
+  }
+);
+
+/* RETRY REQUEST */
+
+el("retryPage").addEventListener(
+  "click",
+  function () {
+
+    window.location.reload();
+
+  }
+);
+
+/* CLIPBOARD HELPER */
+
+async function copyText(text) {
+
+  if (
+    !navigator.clipboard ||
+    !navigator.clipboard.writeText
+  ) {
+
+    throw new Error("Clipboard unavailable.");
+
+  }
+
+  await navigator.clipboard.writeText(text);
+
+}
+
+/* COPY REQUESTED PATH */
+
+el("copyPath").addEventListener(
+  "click",
+  async function () {
+
+    try {
+
+      await copyText(requestedPath);
+
+      el("pathStatus").textContent =
+        "Requested path copied.";
+
+    } catch (error) {
+
+      el("pathStatus").textContent =
+        "Automatic copying is unavailable. Copy the displayed path manually.";
+
+    }
+
+  }
+);
+
+/* COPY ERROR REPORT */
+
+el("copyReport").addEventListener(
+  "click",
+  async function () {
+
+    if (!window.confirm(
+
+      "Review the requested path for private information before copying the report. Continue?"
+
+    )) {
+
+      return;
+
+    }
+
+    const report = [
+
+      "MERAHISAB BROKEN LINK REPORT",
+      "================================",
+      "Status: Local draft - not submitted",
+      "Error: 404 Page Not Found",
+      "Website: https://merahisab.store/",
+      "Requested Path: " + requestedPath,
+      "Created: " + new Date().toISOString(),
+      "",
+      "Query parameters and URL fragments excluded.",
+      "This report has not been submitted."
+
+    ].join("\n");
+
+    try {
+
+      await copyText(report);
+
+      el("reportStatus").textContent =
+        "Error report copied. No report has been sent.";
+
+    } catch (error) {
+
+      el("reportStatus").textContent =
+        "Automatic copying is unavailable. Copy the requested path manually.";
+
+    }
+
+  }
+);
+
+/* NETWORK AND PWA DIAGNOSTICS */
+
+function updateDiagnostics() {
+
+  el("networkStatus").textContent =
+
+    navigator.onLine === false
+
+      ? "Offline reported"
+
+      : "Online reported";
+
+  el("workerSupport").textContent =
+
+    "serviceWorker" in navigator
+
+      ? "Supported"
+
+      : "Unavailable";
+
+  el("workerController").textContent =
+
+    "serviceWorker" in navigator &&
+    navigator.serviceWorker.controller
+
+      ? "Active controller"
+
+      : "Not controlled";
+
+}
+
+window.addEventListener(
+  "online",
+  updateDiagnostics
+);
+
+window.addEventListener(
+  "offline",
+  updateDiagnostics
+);
+
+if ("serviceWorker" in navigator) {
+
+  navigator.serviceWorker.addEventListener(
+    "controllerchange",
+    updateDiagnostics
+  );
+
+}
+
+/* BRAND LOGO FALLBACK */
+
+const logo = el("brandLogo");
+
+function hideBrokenLogo() {
+
+  logo.hidden = true;
+
+}
+
+logo.addEventListener(
+  "error",
+  hideBrokenLogo
+);
+
+if (
+  logo.complete &&
+  logo.naturalWidth === 0
+) {
+
+  hideBrokenLogo();
+
+}
+
+/* AUTOMATIC COPYRIGHT YEAR */
+
+document.querySelectorAll("[data-year]")
+.forEach(function (element) {
+
+  element.textContent =
+    String(new Date().getFullYear());
+
+});
+
+/* INITIALIZE */
+
+filterPages();
+
+suggestPages();
+
+updateDiagnostics();
+
+})();
+
+</script>
+
+<noscript>
+
+<div style="padding:20px;text-align:center;background:#172640;color:#f0d9a6">
+
+JavaScript is disabled.
+
+You can still navigate using
+the available website links.
+
+Smart search, diagnostics and
+copy controls require JavaScript.
+
+</div>
+
+</noscript>
 
 </body>
-
-  </html>
+</html>
