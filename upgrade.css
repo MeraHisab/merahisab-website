@@ -1,183 +1,741 @@
-* {
-    box-sizing: border-box;
+/* MeraHisab shared design — version 3.0.0
+ * Official website: https://merahisab.store/
+ * Replace upgrade.css beside index.html. Keep page-specific styles in place.
+ */
+
+/* 1. Independent theme tokens; legacy homepage variables remain page-owned. */
+:root,
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --mh-bg: #080f20;
+  --mh-surface: #14243b;
+  --mh-surface-raised: #172640;
+  --mh-text: #f8f6f0;
+  --mh-muted: #b9c5d6;
+  --mh-accent: #f0d9a6;
+  --mh-border: #44536a;
+  --mh-control-border: #a08a5d;
+  --mh-focus: #94c7ff;
+  --mh-success: #86efac;
+  --mh-danger: #fca5a5;
+  --mh-warning: #fde68a;
+  --mh-hover: rgba(216, 184, 120, .09);
+  --mh-shadow: 0 14px 36px rgba(0, 0, 0, .16);
+  --mh-button-start: #f0d9a6;
+  --mh-button-end: #d8b878;
+  --mh-button-text: #101827;
+  --mh-content-width: 1160px;
+  --mh-gutter: 16px;
+  --mh-radius: 22px;
+  --mh-radius-small: 12px;
+  --mh-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+html[data-theme="light"],
+body[data-theme="light"] {
+  color-scheme: light;
+  --mh-bg: #faf6ed;
+  --mh-surface: #ffffff;
+  --mh-surface-raised: #f3ead7;
+  --mh-text: #14243b;
+  --mh-muted: #46546a;
+  --mh-accent: #765018;
+  --mh-border: #cfc3ac;
+  --mh-control-border: #8b754e;
+  --mh-focus: #155a9c;
+  --mh-success: #166534;
+  --mh-danger: #b91c1c;
+  --mh-warning: #854d0e;
+  --mh-hover: rgba(118, 80, 24, .07);
+  --mh-shadow: 0 12px 32px rgba(20, 36, 59, .07);
+}
+
+/* 2. Shared foundations. No global horizontal clipping or fixed page height. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* The shared script may supply the measured sticky-header offset. */
+html:root {
+  scroll-padding-top: var(--mh-scroll-offset, 110px);
 }
 
 body {
-    margin: 0;
-    background: #080f20;
-    color: #f8f6f0;
-    font: 16px/1.65 system-ui, sans-serif;
-    min-width: 0;
+  margin: 0;
+  min-width: 0;
+  background: var(--mh-bg);
+  color: var(--mh-text);
+  font: 16px/1.7 var(--mh-font);
+  overflow-wrap: break-word;
 }
 
-a {
-    color: #e5c788;
+:where(a) {
+  color: var(--mh-accent);
+  text-underline-offset: .2em;
+  text-decoration-thickness: .08em;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+:where(h1, h2, h3, h4) {
+  overflow-wrap: break-word;
 }
 
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.15;
+}
+
+:where(h2, h3) {
+  color: var(--mh-accent);
+}
+
+:where(p, li) {
+  overflow-wrap: break-word;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
+
+/* 3. Existing page containers retain their own padding and breakpoints. */
 .container,
 .shell {
-    width: min(1160px, calc(100% - 32px));
-    margin: auto;
-    min-width: 0;
+  width: min(
+    var(--mh-content-width),
+    calc(100% - var(--mh-gutter) - var(--mh-gutter))
+  );
+  margin-inline: auto;
+  min-width: 0;
+}
+
+.shell {
+  padding-block: 36px;
 }
 
 .hero-grid,
 .time-tools-grid,
 .upgrade-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    display: grid;
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.hero-grid > *,
-.time-tools-grid > * {
-    min-width: 0;
+:where(
+  .hero-grid,
+  .time-tools-grid,
+  .upgrade-grid,
+  .features-grid,
+  .mh-grid,
+  .mh-features,
+  .rk-grid,
+  .rk-features,
+  .rk-dashboard-grid,
+  .cp-grid,
+  .dc-grid,
+  .dl-grid,
+  .ct-grid,
+  .ft-grid,
+  .pp-grid,
+  .ab-grid,
+  .er-grid,
+  .offline-grid
+) > * {
+  min-width: 0;
 }
 
 .upgrade-card {
-    background: #14243b;
-    border: 1px solid #806b45;
-    border-radius: 22px;
-    padding: clamp(18px, 4vw, 40px);
-    overflow-wrap: anywhere;
+  padding: clamp(18px, 4vw, 40px);
+  border: 1px solid var(--mh-border);
+  border-radius: var(--mh-radius);
+  background: var(--mh-surface);
+  color: var(--mh-text);
+  overflow-wrap: anywhere;
+  box-shadow: var(--mh-shadow);
 }
 
-.shell {
-    padding: 36px 0;
+/* These page cards already own their dimensions and internal layouts. */
+body :is(
+  .mh-card,
+  .rk-card,
+  .cp-card,
+  .dc-card,
+  .dl-card,
+  .ct-card,
+  .ft-card,
+  .pp-card,
+  .ab-card,
+  .er-card,
+  .offline-card
+) {
+  background: var(--mh-surface);
+  border-color: var(--mh-border);
+  box-shadow: var(--mh-shadow);
 }
 
-h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.15;
+/* Only the homepage's directly appended PWA panel needs an outer gutter. */
+main#home > #merahisabPwaPanel {
+  width: calc(100% - 48px);
+  max-width: 1152px;
+  margin-inline: auto;
 }
 
-h2,
-h3 {
-    color: #e5c788;
+/* 4. Secondary-page navigation; the homepage keeps its existing header. */
+header.site {
+  border-bottom: 1px solid var(--mh-border);
+  background: var(--mh-bg);
 }
 
-button,
-.action {
-    display: inline-block;
-    padding: 12px 20px;
-    border: 1px solid #d8b878;
-    border-radius: 12px;
-    background: #d8b878;
-    color: #101a29;
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
+header.site > .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-block: 16px;
 }
 
-button:disabled {
-    opacity: .55;
-    cursor: not-allowed;
+header.site > .container > strong {
+  color: var(--mh-text);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -.025em;
 }
 
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-header.site {
-    border-bottom: 1px solid #806b45;
+header.site nav {
+  flex: 1 1 600px;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  max-width: 100%;
+  gap: 6px 12px;
+  padding: 0;
+}
+
+header.site nav > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--mh-muted);
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+header.site nav > a[aria-current="page"] {
+  background: var(--mh-hover);
+  color: var(--mh-accent);
+  text-decoration: underline;
+  text-underline-offset: .35em;
+}
+
+header.site #theme,
+.header #theme {
+  min-height: 44px;
+  max-width: 100%;
+  border-color: var(--mh-control-border);
+  background: var(--mh-surface);
+  color: var(--mh-accent);
+  white-space: normal;
+}
+
+.header .nav > a,
+.header .nav-cta {
+  min-height: 44px;
+}
+
+.header .nav > a {
+  display: inline-flex;
+  align-items: center;
 }
 
 footer.site {
-    border-top: 1px solid #806b45;
-    padding: 24px 0;
+  margin-top: 32px;
+  padding-block: 28px;
+  border-top: 1px solid var(--mh-border);
+  color: var(--mh-muted);
 }
 
-input,
-select {
-    max-width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    font: inherit;
+footer.site > .container {
+  overflow-wrap: anywhere;
 }
 
-label {
-    display: block;
-    margin: 12px 0;
+footer.site nav {
+  align-items: center;
+  gap: 8px 18px;
 }
 
-details {
-    padding: 12px;
-    border-bottom: 1px solid #806b45;
+footer.site a {
+  color: var(--mh-accent);
 }
 
-summary {
-    cursor: pointer;
+/* 5. Controls: low-specificity defaults respect the existing button families. */
+:where(button, .action) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--mh-control-border);
+  border-radius: var(--mh-radius-small);
+  background: linear-gradient(
+    135deg,
+    var(--mh-button-start),
+    var(--mh-button-end)
+  );
+  color: var(--mh-button-text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 4px;
+html :is(
+  .btn,
+  .timer-btn,
+  .mh-button,
+  .rk-button,
+  .cp-button,
+  .dc-button,
+  .dl-button,
+  .ct-button,
+  .ft-button,
+  .pp-button,
+  .ab-button,
+  .er-button,
+  .offline-button,
+  .cp-filter
+) {
+  min-height: 44px;
+  max-width: 100%;
+  white-space: normal;
 }
 
-/* Royal Light Theme */
-
-html[data-theme=light] body {
-    background: #faf6ed;
-    color: #14243b;
+/* Gold fills and dark ink are independent of decorative Light-theme gold. */
+html :is(
+  .btn-primary,
+  .timer-btn.start,
+  .mh-button-primary,
+  .rk-button-primary,
+  .cp-button-primary,
+  .dc-button-primary,
+  .dl-primary,
+  .ct-primary,
+  .ft-primary,
+  .pp-primary,
+  .ab-primary,
+  .er-primary,
+  .offline-button.primary
+) {
+  background: linear-gradient(
+    135deg,
+    var(--mh-button-start),
+    var(--mh-button-end)
+  );
+  color: var(--mh-button-text);
+  border-color: #b59452;
 }
 
-html[data-theme=light] .upgrade-card {
-    background: #fff;
-    color: #14243b;
+:where(button, input, select, textarea):disabled {
+  opacity: .55;
+  cursor: not-allowed;
 }
 
-html[data-theme=light] h2,
-html[data-theme=light] h3,
-html[data-theme=light] a {
-    color: #78551a;
+:where(a, button)[aria-disabled="true"] {
+  opacity: .55;
+  cursor: not-allowed;
 }
 
-html[data-theme=light] a.action {
-    color: #101a29;
+@media (hover: hover) and (pointer: fine) {
+  header.site nav > a:hover {
+    color: var(--mh-accent);
+    background: var(--mh-hover);
+  }
 }
 
-/* Mobile Responsive Layout */
+/* Touch browsers can also retain :hover after a tap. Keep the fill readable. */
+html :is(
+  .btn-primary,
+  .timer-btn.start,
+  .mh-button-primary,
+  .rk-button-primary,
+  .cp-button-primary,
+  .dc-button-primary,
+  .dl-primary,
+  .ct-primary,
+  .ft-primary,
+  .pp-primary,
+  .ab-primary,
+  .er-primary,
+  .offline-button.primary
+):hover:not(:disabled):not([aria-disabled="true"]) {
+  background: linear-gradient(135deg, #f8e6bc, #e5c88d);
+  color: var(--mh-button-text);
+  border-color: #b59452;
+}
+
+/* 6. Forms. Checkboxes/radios keep their native proportions. */
+:where(input, select, textarea) {
+  max-width: 100%;
+  min-width: 0;
+}
+
+:where(label) {
+  display: block;
+  margin-block: 12px;
+}
+
+:where(textarea) {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+html :is(
+  .ct-input,
+  .ft-input,
+  .ft-select,
+  .ft-search,
+  .cp-search,
+  .dc-file-input,
+  .dc-text-input,
+  .dl-input,
+  .pp-input,
+  .er-input
+) {
+  min-height: 44px;
+  background: var(--mh-surface);
+  border-color: var(--mh-control-border);
+  color: var(--mh-text);
+}
+
+:where(input, textarea)::placeholder {
+  color: var(--mh-muted);
+  opacity: 1;
+}
+
+input:is([type="checkbox"], [type="radio"]) {
+  accent-color: var(--mh-accent);
+}
+
+input[type="file"]::file-selector-button {
+  margin-inline-end: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--mh-control-border);
+  border-radius: 8px;
+  background: var(--mh-surface-raised);
+  color: var(--mh-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+html :is(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--mh-danger);
+}
+
+/* 7. Keyboard access and native FAQ behavior. */
+html :is(
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [tabindex]
+):focus-visible {
+  outline: 3px solid var(--mh-focus) !important;
+  outline-offset: 3px !important;
+}
+
+:where(details) {
+  padding: 12px;
+  border-bottom: 1px solid var(--mh-border);
+}
+
+:where(summary) {
+  cursor: pointer;
+}
+
+html .skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+  max-width: calc(100% - 24px);
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--mh-button-start);
+  color: var(--mh-button-text);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+html .skip-link:focus {
+  transform: translateY(0);
+}
+
+/* 8. Long checksums/support text stay visible and copyable. */
+.dl-hash,
+.dc-hash-output,
+.er-path,
+.ct-preview {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.ct-preview {
+  white-space: pre-wrap;
+}
+
+.dl-info-row > strong,
+.system-row > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.cp-table-wrap,
+.pp-table-wrap,
+.ft-lap-wrap {
+  min-width: 0;
+  max-width: 100%;
+  overscroll-behavior-inline: contain;
+}
+
+/* 9. Offline page compatibility; PWA/language panels own their own palettes. */
+html[data-theme="light"] .offline-hero,
+body[data-theme="light"] .offline-hero {
+  background: linear-gradient(135deg, #ffffff, #f3ead7);
+  color: var(--mh-text);
+  border-color: var(--mh-control-border);
+}
+
+html[data-theme="light"] :is(.offline-brand, .offline-hero h1),
+body[data-theme="light"] :is(.offline-brand, .offline-hero h1) {
+  color: var(--mh-accent);
+}
+
+html[data-theme="light"] .connection-icon,
+body[data-theme="light"] .connection-icon {
+  border-color: var(--mh-control-border);
+}
+
+html[data-theme="light"] .connection-icon svg,
+body[data-theme="light"] .connection-icon svg {
+  stroke: var(--mh-accent);
+}
+
+html[data-theme="light"] .offline-button:not(.primary),
+body[data-theme="light"] .offline-button:not(.primary) {
+  background: var(--mh-surface);
+  color: var(--mh-text);
+  border-color: var(--mh-control-border);
+}
+
+.offline-shell .resource-status[data-state="available"] {
+  color: var(--mh-success);
+}
+
+.offline-shell .resource-status[data-state="unavailable"] {
+  color: var(--mh-warning);
+}
+
+/* 10. Responsive additions preserve each page's existing grid breakpoints. */
+@media (max-width: 900px) {
+  header.site nav {
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+}
 
 @media (max-width: 760px) {
+  html:root {
+    scroll-padding-top: var(--mh-scroll-offset, 20px);
+  }
 
-    .hero-grid,
-    .time-tools-grid,
-    .upgrade-grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
+  .hero-grid,
+  .time-tools-grid,
+  .upgrade-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-    .container {
-        width: calc(100% - 32px);
-    }
+  header.site > .container {
+    gap: 8px;
+    padding-block: 14px;
+  }
 
-    nav {
-        gap: 10px;
-    }
+  header.site nav {
+    gap: 4px 6px;
+  }
+
+  header.site nav > a {
+    padding-inline: 8px;
+  }
+
+  main#home > #merahisabPwaPanel {
+    width: calc(100% - 32px);
+  }
+
+  html :is(
+    .ct-input,
+    .ft-input,
+    .ft-select,
+    .ft-search,
+    .cp-search,
+    .dc-file-input,
+    .dc-text-input,
+    .dl-input,
+    .pp-input,
+    .er-input
+  ) {
+    font-size: 16px;
+  }
 }
 
-/* Accessibility */
+@media (max-width: 430px) {
+  main#home > #merahisabPwaPanel {
+    width: calc(100% - 28px);
+  }
+}
 
+/* 11. Reduced motion does not remove layout/skip-link transforms. */
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
 
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-    }
+  .feature-card:hover,
+  .app-card:hover,
+  .btn:hover,
+  .dashboard-download-link:hover .real-dashboard-image {
+    transform: none !important;
+  }
+}
+
+/* 12. Respect system high-contrast colors; retain native control behavior. */
+@media (forced-colors: active) {
+  html :is(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [tabindex]
+  ):focus-visible {
+    outline-color: Highlight !important;
+  }
+
+  header.site nav > a[aria-current="page"] {
+    outline: 1px solid Highlight;
+  }
+
+  :where(button, .action, .btn) {
+    border: 1px solid ButtonText;
+  }
+}
+
+/* 13. Printing keeps results/support text and lets wide tables fit the page. */
+@media print {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    color: #111111 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  header.site,
+  footer.site,
+  .header,
+  .footer,
+  .skip-link,
+  #theme,
+  .mh-language-switcher,
+  #merahisabPwaPanel {
+    display: none !important;
+  }
+
+  .cp-table-wrap,
+  .pp-table-wrap,
+  .ft-lap-wrap {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  .cp-table,
+  .pp-table,
+  .ft-lap-table {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
 }
