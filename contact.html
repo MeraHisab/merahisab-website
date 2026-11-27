@@ -2,1970 +2,360 @@
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact & Support — MeraHisab</title>
-
-<meta name="description" content="MeraHisab and Royal Khata help center, application support, feedback, privacy requests and security reporting information.">
-
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-4gbur43ewkmIWJfftrcn4goRqjaEQetqIimWpKDX2QQ='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Contact &amp; Support | MeraHisab</title>
+<meta name="description" content="Find MeraHisab support information, installation guidance, privacy assistance and a local support request builder.">
 <meta name="author" content="MeraHisab">
 <meta name="robots" content="index, follow">
-
+<meta name="theme-color" content="#080f20">
 <link rel="canonical" href="https://merahisab.store/contact.html">
-
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="MeraHisab">
-<meta property="og:title" content="MeraHisab Contact & Support">
-<meta property="og:description" content="Application help, feedback and support request preparation.">
+<meta property="og:title" content="MeraHisab Contact &amp; Support">
+<meta property="og:description" content="Support information and local request preparation.">
 <meta property="og:url" content="https://merahisab.store/contact.html">
 <meta property="og:image" content="https://merahisab.store/icons/icon-512.png">
 <meta name="twitter:card" content="summary">
-
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#080f20">
-<meta name="application-name" content="MeraHisab">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="MeraHisab">
-
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
-<link rel="icon" type="image/png" href="/icons/icon-192.png">
-
 <link rel="stylesheet" href="/upgrade.css">
-<script defer src="/upgrade.js"></script>
-
+<script src="/upgrade.js" defer></script>
 <style>
-
-.ct-page {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 28px 18px;
-  box-sizing: border-box;
-}
-
-.ct-page * {
-  box-sizing: border-box;
-}
-
-.ct-breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 22px;
-  font-size: 13px;
-}
-
-.ct-hero {
-  padding: 42px 24px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 24px;
-  background: radial-gradient(
-    circle at top,
-    rgba(212,175,55,.15),
-    transparent 65%
-  ), linear-gradient(145deg,#172640,#080f20);
-  color: #f8f6f0;
-  text-align: center;
-}
-
-.ct-hero h1 {
-  color: #f0d9a6;
-  font-size: clamp(30px,5vw,48px);
-  line-height: 1.2;
-}
-
-.ct-hero p {
-  max-width: 750px;
-  margin: 15px auto;
-  color: #c4cddd;
-  line-height: 1.8;
-}
-
-.ct-eyebrow {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 30px;
-  color: #f0d9a6;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.ct-section {
-  margin: 36px 0;
-  scroll-margin-top: 100px;
-}
-
-.ct-title {
-  font-size: clamp(24px,4vw,34px);
-  text-align: center;
-  margin-bottom: 22px;
-}
-
-.ct-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 18px;
-}
-
-.ct-grid-three {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 16px;
-}
-
-.ct-card {
-  min-width: 0;
-  padding: 22px;
-  border: 1px solid rgba(212,175,55,.28);
-  border-radius: 18px;
-  overflow-wrap: anywhere;
-}
-
-.ct-card h3 {
-  margin: 12px 0;
-}
-
-.ct-card p {
-  font-size: 14px;
-  line-height: 1.85;
-}
-
-.ct-icon {
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border: 1px solid rgba(212,175,55,.35);
-  border-radius: 12px;
-  background: rgba(212,175,55,.08);
-  font-size: 24px;
-}
-
-.ct-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.ct-button {
-  display: inline-flex;
-  min-height: 46px;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 22px;
-  border: 1px solid #d4af37;
-  border-radius: 30px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-}
-
-.ct-primary {
-  background: linear-gradient(
-    135deg,#f0d9a6,#d4af37
-  );
-  color: #101827;
-}
-
-.ct-button:disabled {
-  opacity: .5;
-  cursor: not-allowed;
-}
-
-.ct-notice {
-  padding: 18px;
-  margin: 18px 0;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 14px;
-  background: rgba(212,175,55,.07);
-  font-size: 13px;
-  line-height: 1.85;
-}
-
-.ct-field {
-  margin-bottom: 18px;
-  min-width: 0;
-}
-
-.ct-field label {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.ct-input {
-  display: block;
-  width: 100%;
-  min-height: 46px;
-  padding: 12px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 10px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-}
-
-.ct-input option {
-  background: #172640;
-  color: #ffffff;
-}
-
-textarea.ct-input {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.ct-help {
-  font-size: 12px;
-  line-height: 1.7;
-  opacity: .85;
-}
-
-.ct-counter {
-  text-align: right;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.ct-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-.ct-check input {
-  flex-shrink: 0;
-  margin-top: 4px;
-  accent-color: #d4af37;
-}
-
-.ct-status {
-  padding: 15px;
-  margin-top: 15px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 12px;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.ct-status[data-state="success"] {
-  border-color: #32976b;
-  background: rgba(50,151,107,.1);
-}
-
-.ct-status[data-state="error"] {
-  border-color: #d95757;
-  background: rgba(217,87,87,.1);
-}
-
-.ct-preview {
-  width: 100%;
-  min-height: 220px;
-  padding: 15px;
-  border: 1px solid rgba(212,175,55,.3);
-  border-radius: 12px;
-  background: rgba(128,128,128,.06);
-  color: inherit;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  font-family: monospace;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.ct-list {
-  padding-left: 22px;
-  line-height: 1.9;
-  font-size: 14px;
-}
-
-.ct-list li {
-  margin: 7px 0;
-}
-
-.ct-info-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(128,128,128,.2);
-  font-size: 13px;
-}
-
-.ct-info-row:last-child {
-  border-bottom: 0;
-}
-
-.ct-faq details {
-  padding: 17px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(212,175,55,.25);
-  border-radius: 13px;
-}
-
-.ct-faq summary {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.ct-faq p {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.ct-page :focus-visible {
-  outline: 3px solid #d4af37;
-  outline-offset: 3px;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-html[data-theme="light"] .ct-hero,
-body[data-theme="light"] .ct-hero {
-  background: linear-gradient(
-    145deg,#ffffff,#f3ead7
-  );
-  color: #172033;
-}
-
-html[data-theme="light"] .ct-hero h1,
-body[data-theme="light"] .ct-hero h1,
-html[data-theme="light"] .ct-eyebrow,
-body[data-theme="light"] .ct-eyebrow {
-  color: #765018;
-}
-
-html[data-theme="light"] .ct-hero p,
-body[data-theme="light"] .ct-hero p {
-  color: #46546a;
-}
-
-html[data-theme="light"] .ct-input option {
-  background: #ffffff;
-  color: #172033;
-}
-
-@media(max-width:900px) {
-  .ct-grid-three {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:650px) {
-
-  .ct-page {
-    padding: 18px 12px;
-  }
-
-  .ct-grid,
-  .ct-grid-three {
-    grid-template-columns: minmax(0,1fr);
-  }
-
-  .ct-hero {
-    padding: 28px 16px;
-  }
-
-  .ct-card {
-    padding: 17px;
-  }
-
-  .ct-buttons {
-    flex-direction: column;
-  }
-
-  .ct-button {
-    width: 100%;
-  }
-
-}
-
+/* MeraHisab Support — Final Master 2.0.0 */
+.ct-page{width:min(1200px,calc(100% - 32px));margin:auto;padding:26px 0 48px;min-width:0}
+.ct-page h1,.ct-page h2,.ct-page h3{color:var(--mh-accent,#f0d9a6);overflow-wrap:anywhere}
+.ct-page p,.ct-page li{line-height:1.75}
+.ct-hero,.ct-card{border:1px solid var(--mh-border,#44536a);border-radius:22px;background:var(--mh-surface,#14243b);color:var(--mh-text,#f8f6f0);padding:clamp(18px,4vw,32px);box-shadow:var(--mh-shadow);min-width:0;overflow-wrap:anywhere}
+.ct-hero{text-align:center;padding:clamp(28px,6vw,60px) 20px}
+.ct-hero h1{font-size:clamp(30px,6vw,50px);line-height:1.2}
+.ct-hero p{max-width:780px;margin:16px auto;color:var(--mh-muted,#b9c5d6)}
+.ct-section{margin:40px 0;scroll-margin-top:16px}
+.ct-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ct-grid-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ct-card h3{margin-top:0}
+.ct-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.ct-hero .ct-actions{justify-content:center}
+.ct-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid var(--mh-control-border,#a08a5d);border-radius:12px;background:var(--mh-surface-raised,#172640);color:var(--mh-text,#f8f6f0);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;max-width:100%;text-align:center;white-space:normal}
+.ct-primary{background:linear-gradient(135deg,#f0d9a6,#d8b878);color:#101827}
+.ct-input{display:block;width:100%;min-width:0;max-width:100%;min-height:48px;padding:12px;border:1px solid var(--mh-control-border,#a08a5d);border-radius:10px;background:var(--mh-surface-raised,#172640);color:var(--mh-text,#f8f6f0);font:inherit}
+.ct-form label{display:block;margin:12px 0}
+.ct-form label>span{display:block;font-weight:650;margin-bottom:6px}
+.ct-form textarea{min-height:130px;resize:vertical}
+.ct-check{display:flex!important;align-items:flex-start;gap:12px}
+.ct-check input{width:22px;height:22px;flex-shrink:0;margin:3px 0}
+.ct-note{padding:18px;border:1px solid var(--mh-warning,#fde68a);border-radius:14px;margin:20px 0;background:var(--mh-surface-raised,#172640)}
+.ct-small{font-size:14px;color:var(--mh-muted,#b9c5d6)}
+.ct-preview{white-space:pre-wrap;overflow-wrap:anywhere;padding:18px;border-radius:12px;border:1px solid var(--mh-border,#44536a);background:var(--mh-bg,#080f20);color:var(--mh-text,#f8f6f0);font:14px/1.7 monospace;max-width:100%;max-height:520px;overflow:auto}
+.ct-diagnostic{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:13px 0;border-bottom:1px solid var(--mh-border,#44536a)}
+.ct-diagnostic strong{color:var(--mh-accent,#f0d9a6)}
+.ct-faq details{padding:16px;margin:12px 0;border:1px solid var(--mh-border,#44536a);border-radius:14px;background:var(--mh-surface,#14243b)}
+.ct-faq summary{font-weight:700;min-height:36px;cursor:pointer}
+.ct-page [hidden]{display:none!important}
+.ct-page :focus-visible{outline:3px solid var(--mh-focus,#94c7ff);outline-offset:3px}
+@media(max-width:900px){.ct-grid-three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.ct-page{width:calc(100% - 24px)}.ct-grid,.ct-grid-three{grid-template-columns:minmax(0,1fr)}.ct-actions>.ct-button{flex:1 1 100%}.ct-input{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.ct-page *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.ct-page{width:100%;padding:0}.ct-actions,header.site,footer.site,.ct-form{display:none!important}.ct-grid,.ct-grid-three{display:block}.ct-preview{max-height:none;overflow:visible}}
 </style>
 </head>
-
 <body>
 
+<a class="skip-link" href="#mainContent">Skip to main content</a>
 <header class="site">
 <div class="container">
-
-<strong>MeraHisab</strong>
-
+<strong><a href="/">MeraHisab</a></strong>
 <nav aria-label="Main navigation">
-
-<a href="/index.html">Home</a>
-<a href="/downloads.html">Apps</a>
+<a href="/">Home</a>
+<a href="/merahisab.html">MeraHisab</a>
+<a href="/royal-khata.html">Royal Khata</a>
 <a href="/compare.html">Compare</a>
-<a href="/index.html#features">Features</a>
+<a href="/downloads.html">Downloads</a>
 <a href="/tools.html">Tools</a>
 <a href="/privacy.html">Privacy</a>
 <a href="/about.html">About</a>
 <a href="/contact.html" aria-current="page">Support</a>
-
-<button id="theme" type="button"
-aria-label="Change website theme">
-Theme
-</button>
-
+<button id="theme" type="button">Dark Mode</button>
 </nav>
 </div>
 </header>
 
-<main class="shell ct-page">
-
-<nav class="ct-breadcrumb" aria-label="Breadcrumb">
-
-<a href="/index.html">Home</a>
-<span>›</span>
-<span aria-current="page">Contact & Support</span>
-
-</nav>
-
-<!-- SUPPORT HERO -->
+<main id="mainContent" class="ct-page">
+<div id="content" data-no-translate="true">
 
 <section class="ct-hero">
-
-<span class="ct-eyebrow">
-HELP • SUPPORT • FEEDBACK
-</span>
-
-<h1>Contact & Support</h1>
-
-<p>
-Find application assistance, installation
-guidance, privacy information and support
-resources for MeraHisab and Royal Khata.
-</p>
-
-<div class="ct-buttons" style="justify-content:center">
-
-<a href="#supportForm" class="ct-button ct-primary">
-Prepare Support Request
-</a>
-
-<a href="#helpCenter" class="ct-button">
-Help Center
-</a>
-
-<a href="#supportFAQ" class="ct-button">
-Frequently Asked Questions
-</a>
-
+<p data-hi="आधिकारिक सहायता जानकारी">OFFICIAL SUPPORT INFORMATION</p>
+<h1 data-hi="संपर्क और सहायता">Contact &amp; Support</h1>
+<p data-hi="ऐप, डाउनलोड, इंस्टॉलेशन, वित्तीय उपकरण, सुरक्षा और गोपनीयता से संबंधित सहायता जानकारी प्राप्त करें।">Find assistance information for applications, downloads, installation, financial tools, security and privacy.</p>
+<div class="ct-actions">
+<a class="ct-button ct-primary" href="#supportForm" data-hi="सहायता अनुरोध तैयार करें">Prepare Support Request</a>
+<a class="ct-button" href="#helpCenter" data-hi="सहायता केंद्र">Help Center</a>
 </div>
 </section>
 
-<!-- SUPPORT CATEGORIES -->
-
 <section class="ct-section">
-
-<h2 class="ct-title">How Can We Help?</h2>
-
+<h2 data-hi="हम कैसे सहायता कर सकते हैं?">How Can We Help?</h2>
 <div class="ct-grid-three">
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">📱</div>
-<h3>Application Support</h3>
-
-<p>
-Get guidance for application functionality
-and technical issues.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Application Support">
-Prepare Request
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">📦</div>
-<h3>Download & Installation</h3>
-
-<p>
-Explore APK download and Android
-installation information.
-</p>
-
-<a href="/download.html" class="ct-button">
-Installation Guide
-</a>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🐞</div>
-<h3>Report a Bug</h3>
-
-<p>
-Prepare information about an application
-or website issue.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Bug Report">
-Report Issue
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">💡</div>
-<h3>Feature Suggestions</h3>
-
-<p>
-Prepare suggestions for new features
-and product improvements.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Feature Suggestion">
-Suggest Feature
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🔒</div>
-<h3>Privacy & Data Protection</h3>
-
-<p>
-Explore privacy information and
-prepare privacy-related requests.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Privacy Request">
-Privacy Request
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🛡</div>
-<h3>Security Reporting</h3>
-
-<p>
-Prepare a description of a suspected
-security issue without exposing secrets.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Security Report">
-Prepare Report
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">💾</div>
-<h3>Backup & Recovery</h3>
-
-<p>
-Prepare questions about backup,
-data restoration and recovery.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Backup and Recovery">
-Get Guidance
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🌐</div>
-<h3>Website & PWA</h3>
-
-<p>
-Get guidance for website installation,
-offline resources and browser storage.
-</p>
-
-<button type="button" class="ct-button"
-data-category="Website and PWA">
-Website Support
-</button>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">💬</div>
-<h3>General Feedback</h3>
-
-<p>
-Share ideas and feedback about
-the MeraHisab project.
-</p>
-
-<button type="button" class="ct-button"
-data-category="General Feedback">
-Prepare Feedback
-</button>
-
-</article>
-
+<article class="ct-card"><h3 data-hi="ऐप सहायता">Application Support</h3><p data-hi="ऐप के उपयोग से संबंधित प्रश्न।">Application usage questions.</p></article>
+<article class="ct-card"><h3 data-hi="डाउनलोड और इंस्टॉलेशन">Download &amp; Installation</h3><p data-hi="APK डाउनलोड और इंस्टॉलेशन जानकारी।">APK download and installation guidance.</p></article>
+<article class="ct-card"><h3 data-hi="समस्या की रिपोर्ट">Report a Bug</h3><p data-hi="तकनीकी समस्या का सुरक्षित विवरण।">Prepare a sanitized technical issue description.</p></article>
+<article class="ct-card"><h3 data-hi="नई सुविधा का सुझाव">Feature Suggestions</h3><p data-hi="उत्पाद सुधार के सुझाव।">Suggest product improvements.</p></article>
+<article class="ct-card"><h3 data-hi="गोपनीयता और डेटा संरक्षण">Privacy &amp; Data Protection</h3><p data-hi="गोपनीयता अधिकार और डेटा संबंधी प्रश्न।">Privacy rights and data questions.</p></article>
+<article class="ct-card"><h3 data-hi="सुरक्षा रिपोर्ट">Security Reporting</h3><p data-hi="संवेदनशील जानकारी हटाकर रिपोर्ट तैयार करें।">Prepare a report without confidential information.</p></article>
+<article class="ct-card"><h3 data-hi="बैकअप और रिकवरी">Backup &amp; Recovery</h3><p data-hi="बैकअप तथा रिकॉर्ड पुनर्स्थापन की जानकारी।">Backup and recovery guidance.</p></article>
+<article class="ct-card"><h3 data-hi="वेबसाइट और PWA">Website &amp; PWA</h3><p data-hi="वेबसाइट इंस्टॉलेशन और ऑफलाइन समस्याएं।">Installation and offline issues.</p></article>
+<article class="ct-card"><h3 data-hi="सामान्य प्रतिक्रिया">General Feedback</h3><p data-hi="वेबसाइट और ऐप के बारे में प्रतिक्रिया।">Feedback about applications and website.</p></article>
 </div>
 </section>
-
-<!-- SUPPORT AVAILABILITY -->
 
 <section class="ct-section">
-
-<h2 class="ct-title">Official Support Information</h2>
-
-<div class="ct-grid">
-
-<article class="upgrade-card ct-card">
-
-<h3>Contact Channels</h3>
-
-<div class="ct-info-row">
-<span>Official Website</span>
-<a href="https://merahisab.store/">
-merahisab.store
-</a>
+<div class="ct-card">
+<h2 data-hi="आधिकारिक सहायता जानकारी">Official Support Information</h2>
+<p>Website: <a href="https://merahisab.store/">merahisab.store</a></p>
+<p data-hi="आधिकारिक सहायता ईमेल: निर्धारित करना बाकी है।">Official support email: Pending configuration.</p>
+<p data-hi="टिकट सिस्टम: अभी उपलब्ध नहीं है।">Ticket system: Not yet available.</p>
+<div class="ct-note">
+<strong data-hi="महत्वपूर्ण सूचना">Important Notice</strong>
+<p data-hi="यह पेज केवल स्थानीय सहायता अनुरोध तैयार करता है। अनुरोध अपने आप भेजा नहीं जाता और कोई आधिकारिक टिकट नहीं बनता।">This page only creates a local support request draft. It does not submit requests or create official support tickets.</p>
 </div>
-
-<div class="ct-info-row">
-<span>Support Email</span>
-<strong>Configuration Pending</strong>
-</div>
-
-<div class="ct-info-row">
-<span>Support Phone</span>
-<strong>Not Configured</strong>
-</div>
-
-<div class="ct-info-row">
-<span>Online Ticket System</span>
-<strong>Not Connected</strong>
-</div>
-
-<div class="ct-info-row">
-<span>Live Chat</span>
-<strong>Not Available</strong>
-</div>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<h3>Support Request Status</h3>
-
-<p>
-The support request builder on this page
-creates a local text document.
-</p>
-
-<p>
-It does not automatically send email,
-submit a ticket or contact a support agent.
-</p>
-
-<p>
-A verified contact channel must be
-configured before direct online support
-can become available.
-</p>
-
-</article>
-
 </div>
 </section>
-
-<!-- SUPPORT FORM -->
 
 <section class="ct-section" id="supportForm">
-
-<h2 class="ct-title">Prepare a Support Request</h2>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-notice">
-
-<strong>Local Request Builder:</strong>
-
-Your request is prepared inside your
-browser. Nothing is automatically
-submitted to a support server.
-
-You can preview, copy or download
-the prepared request.
-
-</div>
-
-<form id="requestForm" autocomplete="off">
+<div class="ct-card">
+<h2 data-hi="सहायता अनुरोध तैयार करें">Prepare a Support Request</h2>
+<form id="requestForm" class="ct-form" autocomplete="off">
 
 <div class="ct-grid">
-
-<div class="ct-field">
 
 <label for="userName">
-Your Name (Optional)
+<span data-hi="आपका नाम (वैकल्पिक)">Your Name (Optional)</span>
+<input class="ct-input" id="userName" type="text" maxlength="80">
 </label>
-
-<input
-id="userName"
-class="ct-input"
-type="text"
-maxlength="80"
-placeholder="Enter your name">
-
-</div>
-
-<div class="ct-field">
 
 <label for="userEmail">
-Email Address (Optional)
+<span data-hi="ईमेल (वैकल्पिक)">Email (Optional)</span>
+<input class="ct-input" id="userEmail" type="email" maxlength="150">
 </label>
-
-<input
-id="userEmail"
-class="ct-input"
-type="email"
-maxlength="150"
-placeholder="Enter email if needed">
-
-</div>
-
-</div>
-
-<div class="ct-grid">
-
-<div class="ct-field">
 
 <label for="application">
-Select Application *
-</label>
-
-<select id="application" class="ct-input" required>
-
-<option value="">Select application</option>
-<option>MeraHisab</option>
-<option>Royal Khata</option>
-<option>MeraHisab Website</option>
-<option>Financial Tools</option>
-<option>Other</option>
-
+<span data-hi="ऐप चुनें *">Select Application *</span>
+<select class="ct-input" id="application" required>
+<option value="" data-hi="ऐप चुनें">Select application</option>
+<option value="MeraHisab">MeraHisab</option>
+<option value="Royal Khata">Royal Khata</option>
+<option value="MeraHisab Website" data-hi="MeraHisab वेबसाइट">MeraHisab Website</option>
+<option value="Financial Tools" data-hi="वित्तीय उपकरण">Financial Tools</option>
+<option value="Other" data-hi="अन्य">Other</option>
 </select>
-
-</div>
-
-<div class="ct-field">
+</label>
 
 <label for="category">
-Request Category *
-</label>
-
-<select id="category" class="ct-input" required>
-
-<option value="">Select category</option>
-<option>Application Support</option>
-<option>Download and Installation</option>
-<option>Bug Report</option>
-<option>Feature Suggestion</option>
-<option>Privacy Request</option>
-<option>Security Report</option>
-<option>Backup and Recovery</option>
-<option>Website and PWA</option>
-<option>General Feedback</option>
-<option>Other</option>
-
+<span data-hi="अनुरोध की श्रेणी *">Request Category *</span>
+<select class="ct-input" id="category" required>
+<option value="" data-hi="श्रेणी चुनें">Select category</option>
+<option value="Application Support" data-hi="ऐप सहायता">Application Support</option>
+<option value="Download and Installation" data-hi="डाउनलोड और इंस्टॉलेशन">Download and Installation</option>
+<option value="Bug Report" data-hi="समस्या रिपोर्ट">Bug Report</option>
+<option value="Feature Suggestion" data-hi="नई सुविधा का सुझाव">Feature Suggestion</option>
+<option value="Privacy Request" data-hi="गोपनीयता अनुरोध">Privacy Request</option>
+<option value="Security Report" data-hi="सुरक्षा रिपोर्ट">Security Report</option>
+<option value="Backup and Recovery" data-hi="बैकअप और रिकवरी">Backup and Recovery</option>
+<option value="Website and PWA" data-hi="वेबसाइट और PWA">Website and PWA</option>
+<option value="General Feedback" data-hi="सामान्य प्रतिक्रिया">General Feedback</option>
+<option value="Other" data-hi="अन्य">Other</option>
 </select>
-
-</div>
-
-</div>
-
-<div class="ct-grid">
-
-<div class="ct-field">
+</label>
 
 <label for="priority">
-Issue Priority
-</label>
-
-<select id="priority" class="ct-input">
-
-<option>Normal</option>
-<option>Low</option>
-<option>High</option>
-<option>Critical</option>
-
+<span data-hi="प्राथमिकता">Priority</span>
+<select class="ct-input" id="priority">
+<option value="Normal" data-hi="सामान्य">Normal</option>
+<option value="Low" data-hi="कम">Low</option>
+<option value="High" data-hi="अधिक">High</option>
+<option value="Critical" data-hi="गंभीर">Critical</option>
 </select>
-
-<p class="ct-help">
-Priority is descriptive only.
-It does not guarantee a response time.
-</p>
-
-</div>
-
-<div class="ct-field">
+</label>
 
 <label for="appVersion">
-Application Version (Optional)
+<span data-hi="ऐप संस्करण (वैकल्पिक)">Application Version (Optional)</span>
+<input class="ct-input" id="appVersion" maxlength="40">
 </label>
-
-<input
-id="appVersion"
-class="ct-input"
-type="text"
-maxlength="40"
-placeholder="Enter installed version">
-
-</div>
-
-</div>
-
-<div class="ct-grid">
-
-<div class="ct-field">
 
 <label for="device">
-Device Model (Optional)
+<span data-hi="डिवाइस मॉडल (वैकल्पिक)">Device Model (Optional)</span>
+<input class="ct-input" id="device" maxlength="100">
 </label>
-
-<input
-id="device"
-class="ct-input"
-type="text"
-maxlength="100"
-placeholder="Example: Android phone">
-
-</div>
-
-<div class="ct-field">
 
 <label for="osVersion">
-Operating System (Optional)
+<span data-hi="ऑपरेटिंग सिस्टम (वैकल्पिक)">Operating System (Optional)</span>
+<input class="ct-input" id="osVersion" maxlength="80">
 </label>
 
-<input
-id="osVersion"
-class="ct-input"
-type="text"
-maxlength="80"
-placeholder="Example: Android 15">
-
 </div>
 
-</div>
-
-<div class="ct-field">
+<p class="ct-small" data-hi="प्राथमिकता चुनने से उत्तर मिलने की समय-सीमा की गारंटी नहीं मिलती।">Priority is descriptive only and does not guarantee a response time.</p>
 
 <label for="subject">
-Subject *
+<span data-hi="विषय *">Subject *</span>
+<input class="ct-input" id="subject" maxlength="120" required>
 </label>
-
-<input
-id="subject"
-class="ct-input"
-type="text"
-required
-minlength="5"
-maxlength="120"
-placeholder="Briefly describe your request">
-
-</div>
-
-<div class="ct-field">
 
 <label for="message">
-Describe Your Request *
+<span data-hi="अपना अनुरोध लिखें *">Describe Your Request *</span>
+<textarea class="ct-input" id="message" maxlength="3000" required></textarea>
 </label>
 
-<textarea
-id="message"
-class="ct-input"
-required
-minlength="10"
-maxlength="3000"
-placeholder="Describe the issue, expected behavior and relevant information. Do not include sensitive financial data."></textarea>
-
-<div class="ct-counter">
-<span id="messageCount">0</span> / 3000
-</div>
-
-</div>
-
-<div class="ct-field">
+<p class="ct-small" id="messageCount">0 / 3000</p>
 
 <label for="reproduce">
-Steps to Reproduce (Optional)
+<span data-hi="समस्या दोबारा उत्पन्न करने के चरण (वैकल्पिक)">Steps to Reproduce (Optional)</span>
+<textarea class="ct-input" id="reproduce" maxlength="1500"></textarea>
 </label>
 
-<textarea
-id="reproduce"
-class="ct-input"
-maxlength="1500"
-placeholder="1. Open application&#10;2. Select feature&#10;3. Describe what happens"></textarea>
-
-</div>
-
-<div class="ct-notice">
-
-<strong>Protect Your Information</strong>
-
-<ul class="ct-list">
-
-<li>Never include passwords or OTPs.</li>
-<li>Never include recovery keys.</li>
-<li>Do not include bank or card credentials.</li>
-<li>Do not include Aadhaar or PAN numbers.</li>
-<li>Do not include customer financial records.</li>
-<li>Remove sensitive information from error descriptions.</li>
-
+<div class="ct-note">
+<h3 data-hi="अपनी जानकारी सुरक्षित रखें">Protect Your Information</h3>
+<ul>
+<li data-hi="पासवर्ड, PIN या OTP शामिल न करें।">Never include passwords, PINs or OTPs.</li>
+<li data-hi="रिकवरी कुंजी शामिल न करें।">Never include recovery keys.</li>
+<li data-hi="बैंक, कार्ड या लॉगिन जानकारी साझा न करें।">Do not include banking, card or login credentials.</li>
+<li data-hi="आधार या PAN नंबर शामिल न करें।">Do not include Aadhaar or PAN numbers.</li>
+<li data-hi="ग्राहकों के वित्तीय रिकॉर्ड शामिल न करें।">Do not include customer financial records.</li>
+<li data-hi="समस्या विवरण से गोपनीय जानकारी हटा दें।">Remove sensitive information from issue descriptions.</li>
 </ul>
-
 </div>
 
-<label class="ct-check">
-
-<input id="consent" type="checkbox" required>
-
-<span>
-I understand that this request is generated
-locally and is not automatically sent to
-MeraHisab. I have reviewed the information
-for unnecessary sensitive data.
-</span>
-
+<label class="ct-check" for="consent">
+<input type="checkbox" id="consent" required>
+<span data-hi="मैं समझता हूं कि यह स्थानीय ड्राफ्ट है और अपने आप नहीं भेजा जाएगा। मैंने संवेदनशील जानकारी की समीक्षा की है।">I understand this is a local draft and will not be submitted automatically. I have reviewed it for sensitive information.</span>
 </label>
 
-<p class="ct-help">
+<p><a href="/privacy.html" data-hi="गोपनीयता नीति पढ़ें">Read Privacy Policy</a></p>
 
-Read our
-<a href="/privacy.html">Privacy Information</a>
-before preparing a request.
-
-</p>
-
-<div class="ct-buttons">
-
-<button type="submit" class="ct-button ct-primary">
-Generate Request Preview
-</button>
-
-<button type="button" id="resetForm" class="ct-button">
-Clear Form
-</button>
-
+<div class="ct-actions">
+<button class="ct-button ct-primary" type="submit" data-hi="अनुरोध का पूर्वावलोकन बनाएं">Generate Request Preview</button>
+<button class="ct-button" type="reset" data-hi="फॉर्म साफ करें">Clear Form</button>
 </div>
 
+<p id="formStatus" role="status" aria-live="polite"></p>
 </form>
 
-<p id="formStatus" class="ct-status"
-role="status" aria-live="polite" hidden></p>
-
-</article>
+<noscript>
+<p>JavaScript is required for the request builder. No request will be submitted.</p>
+</noscript>
+</div>
 </section>
-
-<!-- REQUEST PREVIEW -->
 
 <section class="ct-section" id="previewSection" hidden>
-
-<h2 class="ct-title">Support Request Preview</h2>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-notice">
-
-This is a locally generated draft,
-not a submitted support ticket.
-
-Review the contents before copying,
-downloading or sharing.
-
+<div class="ct-card">
+<h2 data-hi="सहायता अनुरोध का पूर्वावलोकन">Support Request Preview</h2>
+<p data-hi="स्थानीय ड्राफ्ट — भेजा नहीं गया।">Local Draft — Not Submitted.</p>
+<pre class="ct-preview" id="requestPreview" tabindex="0" translate="no"></pre>
+<div class="ct-actions">
+<button type="button" id="copyRequest" class="ct-button ct-primary" data-hi="अनुरोध कॉपी करें">Copy Request</button>
+<button type="button" id="downloadRequest" class="ct-button" data-hi="TXT डाउनलोड करें">Download TXT</button>
+<button type="button" id="shareRequest" class="ct-button" data-hi="अनुरोध शेयर करें">Share Request</button>
+<button type="button" id="editRequest" class="ct-button" data-hi="अनुरोध संपादित करें">Edit Request</button>
+<button type="button" id="clearPreview" class="ct-button" data-hi="पूर्वावलोकन साफ करें">Clear Preview</button>
 </div>
-
-<pre id="requestPreview" class="ct-preview"></pre>
-
-<div class="ct-buttons">
-
-<button type="button" id="copyRequest"
-class="ct-button ct-primary">
-Copy Request
-</button>
-
-<button type="button" id="downloadRequest"
-class="ct-button">
-Download TXT
-</button>
-
-<button type="button" id="shareRequest"
-class="ct-button">
-Share Request
-</button>
-
-<button type="button" id="editRequest"
-class="ct-button">
-Edit Request
-</button>
-
-<button type="button" id="clearPreview"
-class="ct-button">
-Clear Preview
-</button>
-
+<p id="previewStatus" role="status" aria-live="polite"></p>
 </div>
-
-<p id="previewStatus" class="ct-status"
-role="status" aria-live="polite" hidden></p>
-
-</article>
 </section>
-
-<!-- HELP CENTER -->
 
 <section class="ct-section" id="helpCenter">
-
-<h2 class="ct-title">Self-Service Help Center</h2>
-
+<h2 data-hi="स्वयं सहायता केंद्र">Self-Service Help Center</h2>
 <div class="ct-grid-three">
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">📲</div>
-<h3>MeraHisab</h3>
-<p>Explore application information.</p>
-
-<a href="/merahisab.html" class="ct-button">
-Application Details
-</a>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">📒</div>
-<h3>Royal Khata</h3>
-<p>Explore digital ledger project information.</p>
-
-<a href="/royal-khata.html" class="ct-button">
-Application Details
-</a>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">⬇</div>
-<h3>Download Center</h3>
-<p>Find available application downloads.</p>
-
-<a href="/downloads.html" class="ct-button">
-Open Downloads
-</a>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🔐</div>
-<h3>Privacy Center</h3>
-<p>Read privacy and data protection information.</p>
-
-<a href="/privacy.html" class="ct-button">
-Open Privacy Center
-</a>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🧮</div>
-<h3>Financial Tools</h3>
-<p>Explore financial calculators and utilities.</p>
-
-<a href="/tools.html" class="ct-button">
-Open Tools
-</a>
-
-</article>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-icon">🌐</div>
-<h3>Website Installation</h3>
-<p>Access PWA installation and offline settings.</p>
-
-<a href="/index.html" class="ct-button">
-Open Homepage
-</a>
-
-</article>
-
+<article class="ct-card"><h3>MeraHisab</h3><a href="/merahisab.html" data-hi="ऐप जानकारी">Application Information</a></article>
+<article class="ct-card"><h3>Royal Khata</h3><a href="/royal-khata.html" data-hi="विकास जानकारी">Development Information</a></article>
+<article class="ct-card"><h3 data-hi="डाउनलोड केंद्र">Download Center</h3><a href="/downloads.html" data-hi="डाउनलोड सहायता">Download Help</a></article>
+<article class="ct-card"><h3 data-hi="गोपनीयता केंद्र">Privacy Center</h3><a href="/privacy.html" data-hi="गोपनीयता जानकारी">Privacy Information</a></article>
+<article class="ct-card"><h3 data-hi="वित्तीय उपकरण">Financial Tools</h3><a href="/tools.html" data-hi="कैलकुलेटर खोलें">Open Calculators</a></article>
+<article class="ct-card"><h3 data-hi="वेबसाइट इंस्टॉलेशन">Website Installation</h3><a href="/" data-hi="वेबसाइट होम पेज">Website Homepage</a></article>
 </div>
 </section>
-
-<!-- BASIC DIAGNOSTICS -->
 
 <section class="ct-section">
-
-<h2 class="ct-title">Website Diagnostics</h2>
-
-<article class="upgrade-card ct-card">
-
-<div class="ct-info-row">
-<span>Network Status</span>
-<strong id="networkStatus">Checking...</strong>
+<div class="ct-card">
+<h2 data-hi="वेबसाइट तकनीकी जाँच">Website Diagnostics</h2>
+<div class="ct-diagnostic"><span data-hi="ऑनलाइन स्थिति">Online Reported</span><strong id="networkStatus">Checking...</strong></div>
+<div class="ct-diagnostic"><span data-hi="सुरक्षित संदर्भ">Secure Context</span><strong id="secureStatus">Checking...</strong></div>
+<div class="ct-diagnostic"><span data-hi="Service Worker समर्थन">Service Worker Support</span><strong id="workerStatus">Checking...</strong></div>
+<div class="ct-diagnostic"><span data-hi="Service Worker नियंत्रण">Service Worker Controller</span><strong id="controllerStatus">Checking...</strong></div>
+<div class="ct-diagnostic"><span data-hi="क्लिपबोर्ड समर्थन">Clipboard API</span><strong id="clipboardStatus">Checking...</strong></div>
+<div class="ct-diagnostic"><span data-hi="शेयर समर्थन">Share API</span><strong id="sharingStatus">Checking...</strong></div>
+<div class="ct-actions">
+<button id="refreshDiagnostics" class="ct-button" type="button" data-hi="जाँच दोबारा करें">Refresh Diagnostics</button>
+<button id="copyDiagnostics" class="ct-button" type="button" data-hi="जाँच परिणाम कॉपी करें">Copy Diagnostics</button>
 </div>
-
-<div class="ct-info-row">
-<span>Secure Browser Context</span>
-<strong id="secureStatus">Checking...</strong>
+<p id="diagnosticsStatus" role="status" aria-live="polite"></p>
+<p class="ct-small" data-hi="यह जाँच ब्राउजर की क्षमताएं बताती है, संपूर्ण इंटरनेट या ऐप सुरक्षा की पुष्टि नहीं।">Diagnostics report browser capabilities, not independent internet reachability or application security.</p>
 </div>
-
-<div class="ct-info-row">
-<span>Service Worker Support</span>
-<strong id="workerStatus">Checking...</strong>
-</div>
-
-<div class="ct-info-row">
-<span>Service Worker Controller</span>
-<strong id="controllerStatus">Checking...</strong>
-</div>
-
-<div class="ct-info-row">
-<span>Clipboard Support</span>
-<strong id="clipboardStatus">Checking...</strong>
-</div>
-
-<div class="ct-info-row">
-<span>Native Sharing Support</span>
-<strong id="sharingStatus">Checking...</strong>
-</div>
-
-<div class="ct-buttons">
-
-<button type="button" id="refreshDiagnostics"
-class="ct-button ct-primary">
-Refresh Diagnostics
-</button>
-
-<button type="button" id="copyDiagnostics"
-class="ct-button">
-Copy Diagnostics
-</button>
-
-</div>
-
-<p id="diagnosticsStatus" role="status"
-class="ct-help"></p>
-
-<p class="ct-help">
-Diagnostics describe browser capabilities.
-They do not certify application security
-or confirm that a support server is online.
-</p>
-
-</article>
 </section>
 
-<!-- FAQ -->
-
-<section class="ct-section ct-faq" id="supportFAQ">
-
-<h2 class="ct-title">Frequently Asked Questions</h2>
-
-<details class="upgrade-card">
-
-<summary>How can I contact MeraHisab?</summary>
-
-<p>
-Use the available support information
-on this page. Direct support email
-and ticket submission are pending configuration.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Does generating a request submit a ticket?</summary>
-
-<p>
-No. The request builder creates a local
-draft that you can copy or download.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Why is my APK not downloading?</summary>
-
-<p>
-Check your internet connection,
-available storage and browser download settings.
-Visit the APK Download page for guidance.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Why is the application not installing?</summary>
-
-<p>
-Possible causes include an incomplete
-download, incompatible Android version,
-insufficient storage or signing conflicts.
-Do not bypass Android security warnings.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Can I recover deleted financial records?</summary>
-
-<p>
-Recovery depends on available backups
-and the application's recovery features.
-Avoid clearing storage or uninstalling
-before securing existing records.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>How do I report a bug?</summary>
-
-<p>
-Select Bug Report in the request builder.
-Describe the problem and steps to reproduce it.
-Do not include private financial information.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>How can I suggest a new feature?</summary>
-
-<p>
-Select Feature Suggestion and prepare
-a description of the proposed improvement.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Is Royal Khata available for download?</summary>
-
-<p>
-The official Royal Khata APK release
-is pending. Visit its application page
-for development information.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Can I report a security vulnerability?</summary>
-
-<p>
-Prepare a Security Report containing
-a safe description of the issue.
-Do not include credentials, recovery keys
-or other sensitive records.
-A verified reporting channel is pending.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Does this page save my support information?</summary>
-
-<p>
-The request builder does not intentionally
-save form information to browser databases
-or send it to a server. Browser behavior
-and downloaded copies are managed separately.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>Can I submit a privacy or deletion request?</summary>
-
-<p>
-You can prepare a Privacy Request locally.
-Official request delivery and handling
-procedures still require configuration.
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>How do I install the website as a PWA?</summary>
-
-<p>
-Open the homepage and use the available
-website installation controls in a
-supported browser.
-</p>
-
-</details>
-
+<section class="ct-section ct-faq">
+<h2 data-hi="अक्सर पूछे जाने वाले प्रश्न">Frequently Asked Questions</h2>
+<details><summary data-hi="MeraHisab से संपर्क कैसे करें?">How can I contact MeraHisab?</summary><p data-hi="इस पेज की सहायता जानकारी देखें। आधिकारिक ईमेल निर्धारित करना बाकी है।">Review this page. A verified support email is pending.</p></details>
+<details><summary data-hi="क्या ड्राफ्ट बनाने से टिकट बनता है?">Does generating a request submit a ticket?</summary><p data-hi="नहीं, केवल स्थानीय ड्राफ्ट बनता है।">No. It creates only a local draft.</p></details>
+<details><summary data-hi="APK डाउनलोड क्यों नहीं हो रहा?">Why is the APK not downloading?</summary><p data-hi="इंटरनेट, उपलब्ध स्टोरेज और डाउनलोड सेटिंग जांचें।">Check internet access, storage and download settings.</p></details>
+<details><summary data-hi="ऐप इंस्टॉल क्यों नहीं हो रहा?">Why is the application not installing?</summary><p data-hi="अधूरा डाउनलोड, Android अनुकूलता, स्टोरेज या साइनिंग समस्या कारण हो सकती है। सुरक्षा चेतावनियां नजरअंदाज न करें।">Possible causes include incomplete downloads, compatibility, storage or signing conflicts. Do not bypass security warnings.</p></details>
+<details><summary data-hi="क्या मिटा हुआ डेटा वापस मिल सकता है?">Can deleted records be recovered?</summary><p data-hi="रिकवरी उपलब्ध बैकअप और ऐप सुविधाओं पर निर्भर है।">Recovery depends on available backups and application features.</p></details>
+<details><summary data-hi="समस्या की रिपोर्ट कैसे करें?">How do I report a bug?</summary><p data-hi="Bug Report चुनकर सुरक्षित विवरण तैयार करें।">Choose Bug Report and prepare a sanitized description.</p></details>
+<details><summary data-hi="नई सुविधा का सुझाव कैसे दें?">How can I suggest a feature?</summary><p data-hi="Feature Suggestion श्रेणी चुनें।">Choose the Feature Suggestion category.</p></details>
+<details><summary data-hi="क्या Royal Khata उपलब्ध है?">Is Royal Khata available?</summary><p data-hi="आधिकारिक APK रिलीज बाकी है।">The official APK release is pending.</p></details>
+<details><summary data-hi="सुरक्षा समस्या कैसे रिपोर्ट करें?">How can I report a security issue?</summary><p data-hi="संवेदनशील डेटा हटाकर ड्राफ्ट बनाएं। सत्यापित निजी रिपोर्टिंग माध्यम बाकी है।">Prepare a sanitized draft. A verified private reporting channel is pending.</p></details>
+<details><summary data-hi="क्या फॉर्म की जानकारी सहेजी जाती है?">Does this page save form information?</summary><p data-hi="फॉर्म का कोड जानबूझकर जानकारी को स्थायी रूप से नहीं सहेजता या अपलोड नहीं करता। ब्राउजर का व्यवहार अलग हो सकता है।">The form code does not intentionally persist or upload information. Browser behavior may differ.</p></details>
+<details><summary data-hi="क्या डेटा हटाने का अनुरोध भेज सकते हैं?">Can I submit a deletion request?</summary><p data-hi="स्थानीय गोपनीयता ड्राफ्ट तैयार कर सकते हैं। आधिकारिक अनुरोध प्रक्रिया बाकी है।">A local privacy draft can be prepared. Official delivery and handling procedures remain pending.</p></details>
+<details><summary data-hi="PWA कैसे इंस्टॉल करें?">How do I install the PWA?</summary><p data-hi="समर्थित ब्राउजर में होम पेज पर इंस्टॉलेशन विकल्प देखें।">Open the homepage and use available installation controls in a supported browser.</p></details>
 </section>
 
-<!-- FINAL SUPPORT SECTION -->
-
-<section class="ct-section ct-hero">
-
-<h2>MeraHisab Help & Support</h2>
-
-<p>
-Explore official application information,
-financial tools and privacy resources.
-</p>
-
-<div class="ct-buttons" style="justify-content:center">
-
-<a href="/index.html" class="ct-button ct-primary">
-Return Home
-</a>
-
-<a href="/about.html" class="ct-button">
-About MeraHisab
-</a>
-
-<a href="/privacy.html" class="ct-button">
-Privacy Information
-</a>
-
+<div class="ct-actions">
+<a class="ct-button ct-primary" href="/" data-hi="होम पेज">Return Home</a>
+<a class="ct-button" href="/about.html" data-hi="हमारे बारे में">About MeraHisab</a>
+<a class="ct-button" href="/privacy.html" data-hi="गोपनीयता नीति">Privacy Policy</a>
 </div>
 
-</section>
-
+</div>
 </main>
 
 <footer class="site">
-
 <div class="container">
-
-© <span data-year>2026</span>
-MeraHisab. All rights reserved.
-
-<br>
-
-<a href="/index.html">Home</a> ·
-<a href="/privacy.html">Privacy</a> ·
-<a href="/about.html">About</a> ·
-<a href="/downloads.html">Downloads</a>
-
-<br>
-
-<a href="https://merahisab.store/">
-merahisab.store
-</a>
-
+<strong>MeraHisab</strong>
+<p>Your Money, Your Hisab</p>
+<nav aria-label="Footer navigation">
+<a href="/">Home</a><a href="/downloads.html">Downloads</a><a href="/privacy.html">Privacy</a><a href="/about.html">About</a>
+</nav>
+<p>&copy; <span data-year>2026</span> MeraHisab. <span data-i18n="footer.rights">All rights reserved.</span></p>
 </div>
-
 </footer>
 
-<!-- SUPPORT REQUEST ENGINE -->
-
 <script>
-
-(function () {
-
-"use strict";
-
-if (window.__merahisabContactInitialized) {
-  return;
-}
-
-window.__merahisabContactInitialized = true;
-
-function el(id) {
-  return document.getElementById(id);
-}
-
-const form = el("requestForm");
-const message = el("message");
-const previewSection = el("previewSection");
-const preview = el("requestPreview");
-
-let requestText = "";
-let requestId = "";
-
-function status(id,text,state) {
-
-  const target = el(id);
-
-  target.textContent = text;
-  target.dataset.state = state || "info";
-  target.hidden = false;
-
-}
-
-function value(id) {
-  return el(id).value.trim();
-}
-
-function updateCount() {
-  el("messageCount").textContent =
-    String(message.value.length);
-}
-
-message.addEventListener("input",updateCount);
-
-function clearGeneratedRequest() {
-
-  requestText = "";
-  requestId = "";
-
-  preview.textContent = "";
-  previewSection.hidden = true;
-
-  el("previewStatus").hidden = true;
-  el("formStatus").hidden = true;
-
-}
-
-form.addEventListener("input",function () {
-
-  if (requestText) {
-
-    clearGeneratedRequest();
-
-    status(
-      "formStatus",
-      "Request changed. Generate a new preview.",
-      "info"
-    );
-
-  }
-
-});
-
-/* CATEGORY SHORTCUTS */
-
-document.querySelectorAll("[data-category]")
-.forEach(function (button) {
-
-  button.addEventListener("click",function () {
-
-    clearGeneratedRequest();
-
-    el("category").value =
-      button.dataset.category;
-
-    el("supportForm").scrollIntoView({
-      block: "start"
-    });
-
-    el("application").focus({
-      preventScroll: true
-    });
-
-  });
-
-});
-
-/* LOCAL REFERENCE NUMBER */
-
-function createReference() {
-
-  if (
-    window.crypto &&
-    typeof window.crypto.randomUUID === "function"
-  ) {
-
-    return "MH-DRAFT-" +
-      window.crypto.randomUUID().toUpperCase();
-
-  }
-
-  return "MH-DRAFT-" + Date.now();
-
-}
-
-/* GENERATE SUPPORT REQUEST */
-
-form.addEventListener("submit",function (event) {
-
-  event.preventDefault();
-
-  if (!form.reportValidity()) {
-    return;
-  }
-
-  if (
-    value("subject").length < 5 ||
-    value("message").length < 10
-  ) {
-
-    status(
-      "formStatus",
-      "Enter a meaningful subject and request description.",
-      "error"
-    );
-
-    return;
-
-  }
-
-  requestId = createReference();
-
-  const lines = [
-
-    "MERAHISAB SUPPORT REQUEST",
-    "================================",
-    "",
-    "Status: LOCAL DRAFT — NOT SUBMITTED",
-    "Draft Reference: " + requestId,
-    "Created: " + new Date().toISOString(),
-    "Website: https://merahisab.store/",
-    "",
-    "Name: " + (value("userName") || "Not provided"),
-    "Email: " + (value("userEmail") || "Not provided"),
-    "Application: " + value("application"),
-    "Category: " + value("category"),
-    "Priority: " + value("priority"),
-    "App Version: " + (value("appVersion") || "Not provided"),
-    "Device: " + (value("device") || "Not provided"),
-    "Operating System: " + (value("osVersion") || "Not provided"),
-    "",
-    "SUBJECT",
-    value("subject"),
-    "",
-    "REQUEST DESCRIPTION",
-    value("message"),
-    "",
-    "STEPS TO REPRODUCE",
-    value("reproduce") || "Not provided",
-    "",
-    "================================",
-    "This request was generated locally.",
-    "It has not been submitted to MeraHisab."
-
-  ];
-
-  requestText = lines.join("\n");
-
-  preview.textContent = requestText;
-  previewSection.hidden = false;
-
-  el("previewStatus").hidden = true;
-
-  status(
-    "formStatus",
-    "Local request draft generated successfully. No request has been sent.",
-    "success"
-  );
-
-  previewSection.scrollIntoView({
-    block: "start"
-  });
-
-});
-
-/* COPY HELPER */
-
-async function copyText(text) {
-
-  if (
-    !navigator.clipboard ||
-    !navigator.clipboard.writeText
-  ) {
-
-    throw new Error("Clipboard unavailable.");
-
-  }
-
-  await navigator.clipboard.writeText(text);
-
-}
-
-/* COPY SUPPORT REQUEST */
-
-el("copyRequest").addEventListener(
-  "click",
-  async function () {
-
-    if (!requestText) {
-      return;
-    }
-
-    try {
-
-      await copyText(requestText);
-
-      status(
-        "previewStatus",
-        "Request copied. It has not been submitted.",
-        "success"
-      );
-
-    } catch (error) {
-
-      status(
-        "previewStatus",
-        "Automatic copying is unavailable. Select and copy the preview manually.",
-        "error"
-      );
-
-    }
-
-  }
-);
-
-/* DOWNLOAD REQUEST */
-
-el("downloadRequest").addEventListener(
-  "click",
-  function () {
-
-    if (!requestText) {
-      return;
-    }
-
-    let url;
-
-    try {
-
-      const blob = new Blob(
-        [requestText],
-        {type: "text/plain;charset=utf-8"}
-      );
-
-      url = URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-
-      link.href = url;
-      link.download = requestId + ".txt";
-
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-
-      status(
-        "previewStatus",
-        "Download requested. Check your browser downloads.",
-        "success"
-      );
-
-    } catch (error) {
-
-      status(
-        "previewStatus",
-        "Unable to prepare the download.",
-        "error"
-      );
-
-    } finally {
-
-      if (url) {
-
-        setTimeout(function () {
-          URL.revokeObjectURL(url);
-        },30000);
-
-      }
-
-    }
-
-  }
-);
-
-/* SHARE REQUEST */
-
-el("shareRequest").addEventListener(
-  "click",
-  async function () {
-
-    if (!requestText) {
-      return;
-    }
-
-    if (!window.confirm(
-      "Review the request for private information before sharing. Continue?"
-    )) {
-      return;
-    }
-
-    if (typeof navigator.share !== "function") {
-
-      status(
-        "previewStatus",
-        "Native sharing is unavailable. Use Copy Request or Download TXT.",
-        "info"
-      );
-
-      return;
-
-    }
-
-    const button = el("shareRequest");
-    button.disabled = true;
-
-    try {
-
-      await navigator.share({
-
-        title: "MeraHisab Support Draft",
-        text: requestText
-
-      });
-
-      status(
-        "previewStatus",
-        "Sharing action completed. Support delivery is not confirmed.",
-        "info"
-      );
-
-    } catch (error) {
-
-      status(
-        "previewStatus",
-        error.name === "AbortError"
-          ? "Sharing cancelled."
-          : "Unable to share the request.",
-        "info"
-      );
-
-    } finally {
-
-      button.disabled = false;
-
-    }
-
-  }
-);
-
-/* EDIT REQUEST */
-
-el("editRequest").addEventListener(
-  "click",
-  function () {
-
-    el("supportForm").scrollIntoView({
-      block: "start"
-    });
-
-    el("subject").focus({
-      preventScroll: true
-    });
-
-  }
-);
-
-/* CLEAR PREVIEW */
-
-el("clearPreview").addEventListener(
-  "click",
-  function () {
-
-    clearGeneratedRequest();
-
-    status(
-      "formStatus",
-      "Preview cleared. Form information remains available.",
-      "info"
-    );
-
-  }
-);
-
-/* RESET FORM */
-
-el("resetForm").addEventListener(
-  "click",
-  function () {
-
-    if (!window.confirm(
-      "Clear all entered support information?"
-    )) {
-      return;
-    }
-
-    form.reset();
-
-    clearGeneratedRequest();
-
-    updateCount();
-
-    status(
-      "formStatus",
-      "Form and local preview cleared. Previously copied or downloaded files are not deleted.",
-      "info"
-    );
-
-  }
-);
-
-/* WEBSITE DIAGNOSTICS */
-
-function refreshDiagnostics() {
-
-  el("networkStatus").textContent =
-    navigator.onLine === false
-      ? "Offline reported"
-      : "Online reported";
-
-  el("secureStatus").textContent =
-    window.isSecureContext
-      ? "Secure context"
-      : "Not secure";
-
-  el("workerStatus").textContent =
-    "serviceWorker" in navigator
-      ? "Supported"
-      : "Unavailable";
-
-  el("controllerStatus").textContent =
-    "serviceWorker" in navigator &&
-    navigator.serviceWorker.controller
-      ? "Active controller"
-      : "Not controlled";
-
-  el("clipboardStatus").textContent =
-    navigator.clipboard &&
-    navigator.clipboard.writeText
-      ? "API available"
-      : "Unavailable";
-
-  el("sharingStatus").textContent =
-    typeof navigator.share === "function"
-      ? "API available"
-      : "Unavailable";
-
-}
-
-el("refreshDiagnostics").addEventListener(
-  "click",
-  function () {
-
-    refreshDiagnostics();
-
-    el("diagnosticsStatus").textContent =
-      "Browser diagnostics refreshed.";
-
-  }
-);
-
-el("copyDiagnostics").addEventListener(
-  "click",
-  async function () {
-
-    refreshDiagnostics();
-
-    const text = [
-
-      "MERAHISAB WEBSITE DIAGNOSTICS",
-      "Network: " + el("networkStatus").textContent,
-      "Secure Context: " + el("secureStatus").textContent,
-      "Service Worker: " + el("workerStatus").textContent,
-      "Controller: " + el("controllerStatus").textContent,
-      "Clipboard: " + el("clipboardStatus").textContent,
-      "Sharing: " + el("sharingStatus").textContent
-
-    ].join("\n");
-
-    try {
-
-      await copyText(text);
-
-      el("diagnosticsStatus").textContent =
-        "Diagnostics copied.";
-
-    } catch (error) {
-
-      el("diagnosticsStatus").textContent =
-        "Automatic copying is unavailable.";
-
-    }
-
-  }
-);
-
-window.addEventListener(
-  "online",
-  refreshDiagnostics
-);
-
-window.addEventListener(
-  "offline",
-  refreshDiagnostics
-);
-
-if ("serviceWorker" in navigator) {
-
-  navigator.serviceWorker.addEventListener(
-    "controllerchange",
-    refreshDiagnostics
-  );
-
-}
-
-/* COPYRIGHT YEAR */
-
-document.querySelectorAll("[data-year]")
-.forEach(function (element) {
-
-  element.textContent =
-    String(new Date().getFullYear());
-
-});
-
-/* INITIALIZE */
-
-updateCount();
-refreshDiagnostics();
-
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id),root=$('content'),form=$('requestForm'),labels=[...root.querySelectorAll('[data-hi]')].map(e=>[e,e.textContent]);
+const hi=()=>document.documentElement.dataset.language==='hi'||/^hi(?:-|$)/i.test(document.documentElement.lang),t=(en,h)=>hi()?h:en;
+let draft='',reference='',notice='',diagText='';
+const messages={ready:['Local draft ready. Nothing was sent.','स्थानीय ड्राफ्ट तैयार। कुछ भेजा नहीं गया।'],copied:['Copied.','कॉपी हो गया।'],download:['Download requested.','डाउनलोड अनुरोध किया गया।'],shared:['Share completed.','शेयर प्रक्रिया पूरी हुई।'],cancel:['Cancelled.','रद्द किया गया।'],error:['Action unavailable. Select the text manually.','सुविधा उपलब्ध नहीं। टेक्स्ट स्वयं चुनें।'],cleared:['Draft cleared.','ड्राफ्ट साफ किया गया।']};
+function show(){ $('previewStatus').textContent=messages[notice]?t(...messages[notice]):''; }
+function count(){ $('messageCount').textContent=$('message').value.length+' / 3000'; }
+function clearPreview(){draft='';reference='';notice='';$('requestPreview').textContent='';$('previewSection').hidden=true;}
+function createRef(){try{return 'MH-DRAFT-'+crypto.randomUUID();}catch{return 'MH-DRAFT-'+Date.now().toString(36);}}
+function val(id){return $(id).value.trim();}
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity()||!val('subject')||!val('message')){ $('formStatus').textContent=t('Enter a subject and message.','विषय और संदेश भरें।');return;}const fields=[['Name','userName'],['Email','userEmail'],['Application','application'],['Category','category'],['Priority','priority'],['App version','appVersion'],['Device','device'],['Operating system','osVersion'],['Subject','subject'],['Message','message'],['Steps to reproduce','reproduce']];reference=createRef();draft=['MERAHISAB — LOCAL SUPPORT DRAFT (NOT SUBMITTED)',reference,new Date().toISOString(),...fields.map(([name,id])=>name+': '+(val(id)||'—'))].join('\n');$('requestPreview').textContent=draft;$('previewSection').hidden=false;notice='ready';$('formStatus').textContent='';show();$('previewSection').scrollIntoView({block:'start'});});
+form.addEventListener('input',()=>{count();clearPreview();$('formStatus').textContent='';});form.addEventListener('change',clearPreview);form.addEventListener('reset',()=>{clearPreview();$('formStatus').textContent='';queueMicrotask(count);});
+function approve(){return !!draft&&confirm(t('Review the draft. Export only if it contains no confidential data. Continue?','ड्राफ्ट जांचें। गोपनीय डेटा न होने पर ही आगे बढ़ें। जारी रखें?'));}
+async function copy(text){try{await navigator.clipboard.writeText(text);return true;}catch{return false;}}
+$('copyRequest').addEventListener('click',async()=>{if(!approve())return;notice=await copy(draft)?'copied':'error';show();});
+$('downloadRequest').addEventListener('click',()=>{if(!approve())return;try{const url=URL.createObjectURL(new Blob([draft],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.download=reference+'.txt';a.href=url;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);notice='download';}catch{notice='error';}show();});
+$('shareRequest').addEventListener('click',async()=>{if(!approve())return;try{if(!navigator.share)throw Error('unsupported');await navigator.share({title:'MeraHisab local support draft',text:draft});notice='shared';}catch(e){notice=e.name==='AbortError'?'cancel':'error';}show();});
+$('editRequest').addEventListener('click',()=>{$('subject').focus();});$('clearPreview').addEventListener('click',clearPreview);
+function diagnostics(){let worker=false,controller=false;try{worker='serviceWorker'in navigator;controller=!!navigator.serviceWorker?.controller;}catch{}const values=[['networkStatus','Network reported',navigator.onLine!==false],['secureStatus','Secure context',window.isSecureContext===true],['workerStatus','Service Worker supported',worker],['controllerStatus','Service Worker controller',controller],['clipboardStatus','Clipboard API',!!navigator.clipboard],['sharingStatus','Share API',typeof navigator.share==='function']];values.forEach(([id,,ok])=>$(id).textContent=ok?t('Yes','हाँ'):t('No / unavailable','नहीं / अनुपलब्ध'));diagText=['MeraHisab browser diagnostics',new Date().toISOString(),...values.map(([,label,ok])=>label+': '+(ok?'Yes':'No / unavailable'))].join('\n');}
+$('refreshDiagnostics').addEventListener('click',diagnostics);$('copyDiagnostics').addEventListener('click',async()=>{$('diagnosticsStatus').textContent=await copy(diagText)?t('Copied.','कॉपी हो गया।'):t('Copy unavailable.','कॉपी उपलब्ध नहीं।');});
+window.addEventListener('online',diagnostics);window.addEventListener('offline',diagnostics);try{navigator.serviceWorker?.addEventListener('controllerchange',diagnostics);}catch{}
+function language(){labels.forEach(([e,en])=>e.textContent=t(en,e.dataset.hi));document.title=t('Contact & Support | MeraHisab','संपर्क और सहायता | MeraHisab');count();show();diagnostics();}
+window.addEventListener('merahisab:languagechange',language);window.addEventListener('merahisab:languageready',language);language();
 })();
-
 </script>
-
-<noscript>
-
-<div style="padding:20px;text-align:center;background:#172640;color:#f0d9a6">
-
-JavaScript is disabled.
-
-Support information remains readable.
-The request builder and browser diagnostics
-require JavaScript.
-
-</div>
-
-</noscript>
-
 </body>
 </html>
