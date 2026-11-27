@@ -1,473 +1,1399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>MeraHisab - Official App Download</title>
+  <title>MeraHisab App — Personal Finance Management</title>
 
-    <meta name="description"
-          content="Explore MeraHisab features, screenshots, privacy information and official Android APK download.">
+  <meta name="description"
+        content="Explore MeraHisab for personal finance management, income, expenses, savings, accounts and financial records.">
 
-    <link rel="canonical"
-          href="https://merahisab.store/merahisab.html">
+  <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="upgrade.css">
+  <meta name="author" content="MeraHisab">
 
-    <script defer src="upgrade.js"></script>
+  <link rel="canonical"
+        href="https://merahisab.store/merahisab.html">
+
+  <!-- SOCIAL MEDIA SEO -->
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:site_name" content="MeraHisab">
+
+  <meta property="og:title"
+        content="MeraHisab — Personal Finance, Simplified">
+
+  <meta property="og:description"
+        content="Manage your everyday income, expenses, savings and financial accounts.">
+
+  <meta property="og:url"
+        content="https://merahisab.store/merahisab.html">
+
+  <meta property="og:image"
+        content="https://merahisab.store/merahisab-dashboard.png">
+
+  <meta name="twitter:card"
+        content="summary_large_image">
+
+  <!-- PWA INTEGRATION -->
+
+  <link rel="manifest" href="/manifest.json">
+
+  <meta name="application-name" content="MeraHisab">
+
+  <meta name="theme-color" content="#080f20">
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="default">
+
+  <meta name="apple-mobile-web-app-title"
+        content="MeraHisab">
+
+  <link rel="apple-touch-icon"
+        href="/icons/icon-192.png">
+
+  <link rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/icons/icon-192.png">
+
+  <!-- SHARED WEBSITE ENGINE -->
+
+  <link rel="stylesheet" href="/upgrade.css">
+
+  <link rel="stylesheet" href="/pwa.css">
+
+  <script defer src="/upgrade.js"></script>
+
+  <script defer src="/pwa.js"></script>
+
+  <!-- PREMIUM PAGE DESIGN -->
+
+  <style>
+
+    .mh-page {
+
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 18px;
+      box-sizing: border-box;
+
+    }
+
+    .mh-page * {
+
+      box-sizing: border-box;
+
+    }
+
+    .mh-breadcrumb {
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 25px;
+      font-size: 13px;
+      opacity: 0.85;
+
+    }
+
+    .mh-hero {
+
+      padding: 35px 24px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 22px;
+      background: linear-gradient(
+        145deg,
+        #172640,
+        #080f20
+      );
+      color: #f8f6f0;
+      text-align: center;
+
+    }
+
+    .mh-app-icon {
+
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      border-radius: 22px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(212,175,55,0.4);
+
+    }
+
+    .mh-hero h1 {
+
+      color: #f0d9a6;
+      font-size: clamp(32px,5vw,52px);
+      margin: 10px 0;
+
+    }
+
+    .mh-hero p {
+
+      max-width: 650px;
+      margin: 15px auto;
+      color: #c4cddd;
+      line-height: 1.8;
+
+    }
+
+    .mh-status {
+
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 30px;
+      background: rgba(101,201,154,0.1);
+      border: 1px solid rgba(101,201,154,0.3);
+      color: #65c99a;
+      font-size: 12px;
+      font-weight: bold;
+
+    }
+
+    .mh-buttons {
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+
+    }
+
+    .mh-button {
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 23px;
+      border-radius: 30px;
+      border: 1px solid #d4af37;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+
+    }
+
+    .mh-button-primary {
+
+      background: linear-gradient(
+        135deg,
+        #f0d9a6,
+        #d4af37
+      );
+      color: #101827;
+
+    }
+
+    .mh-button-secondary {
+
+      background: transparent;
+      color: inherit;
+
+    }
+
+    .mh-section {
+
+      margin: 35px 0;
+
+    }
+
+    .mh-section-title {
+
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: clamp(23px,4vw,32px);
+
+    }
+
+    .mh-grid {
+
+      display: grid;
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+      gap: 20px;
+
+    }
+
+    .mh-grid > * {
+
+      min-width: 0;
+
+    }
+
+    .mh-features {
+
+      display: grid;
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+      gap: 16px;
+
+    }
+
+    .mh-card {
+
+      min-width: 0;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(212,175,55,0.25);
+      overflow-wrap: break-word;
+
+    }
+
+    .mh-card h3 {
+
+      margin: 10px 0;
+
+    }
+
+    .mh-card p {
+
+      line-height: 1.8;
+      font-size: 14px;
+
+    }
+
+    .mh-feature-icon {
+
+      display: grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 12px;
+      background: rgba(212,175,55,0.09);
+      font-size: 23px;
+
+    }
+
+    .mh-dashboard {
+
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 15px;
+
+    }
+
+    .mh-caption {
+
+      margin-top: 12px;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.8;
+
+    }
+
+    .mh-info-row {
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(128,128,128,0.2);
+      font-size: 14px;
+
+    }
+
+    .mh-info-row strong {
+
+      overflow-wrap: anywhere;
+
+    }
+
+    .mh-notice {
+
+      margin-top: 20px;
+      padding: 16px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 12px;
+      background: rgba(212,175,55,0.07);
+      font-size: 13px;
+      line-height: 1.8;
+
+    }
+
+    .mh-installation {
+
+      padding-left: 22px;
+      line-height: 1.9;
+
+    }
+
+    .mh-installation li {
+
+      padding: 6px 0;
+
+    }
+
+    .mh-faq details {
+
+      margin-bottom: 12px;
+      padding: 16px;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 12px;
+
+    }
+
+    .mh-faq summary {
+
+      font-weight: 700;
+      cursor: pointer;
+
+    }
+
+    .mh-faq details p {
+
+      margin-top: 12px;
+      line-height: 1.8;
+
+    }
+
+    .mh-page a:focus-visible,
+    .mh-page button:focus-visible,
+    .mh-page summary:focus-visible {
+
+      outline: 3px solid #d4af37;
+      outline-offset: 4px;
+
+    }
+
+    html[data-theme="light"] .mh-hero {
+
+      background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f3ead7
+      );
+
+      color: #172033;
+
+    }
+
+    html[data-theme="light"] .mh-hero h1 {
+
+      color: #765018;
+
+    }
+
+    html[data-theme="light"] .mh-hero p {
+
+      color: #46546a;
+
+    }
+
+    html[data-theme="light"] .mh-status {
+
+      color: #18734c;
+
+    }
+
+    @media (max-width: 900px) {
+
+      .mh-features {
+
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .mh-page {
+
+        padding: 18px 14px;
+
+      }
+
+      .mh-grid,
+      .mh-features {
+
+        grid-template-columns: minmax(0,1fr);
+
+      }
+
+      .mh-hero {
+
+        padding: 28px 18px;
+
+      }
+
+      .mh-card {
+
+        padding: 18px;
+
+      }
+
+      .mh-buttons {
+
+        flex-direction: column;
+
+      }
+
+      .mh-button {
+
+        width: 100%;
+
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-    <header class="site">
+  <!-- WEBSITE HEADER -->
 
-        <div class="container">
+  <header class="site">
+
+    <div class="container">
+
+      <strong>MeraHisab</strong>
+
+      <nav aria-label="Main navigation">
+
+        <a href="/index.html">Home</a>
+
+        <a href="/downloads.html">Apps</a>
+
+        <a href="/compare.html">Compare</a>
+
+        <a href="/index.html#features">Features</a>
+
+        <a href="/tools.html">Tools</a>
+
+        <a href="/privacy.html">Privacy</a>
+
+        <a href="/about.html">About</a>
+
+        <a href="/contact.html">Support</a>
+
+        <button id="theme"
+                type="button"
+                aria-label="Change website theme">
+
+          Theme
+
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN APPLICATION PAGE -->
+
+  <main class="shell mh-page">
+
+    <!-- BREADCRUMB NAVIGATION -->
+
+    <nav class="mh-breadcrumb"
+         aria-label="Breadcrumb">
+
+      <a href="/index.html">Home</a>
+
+      <span>›</span>
+
+      <a href="/downloads.html">Applications</a>
+
+      <span>›</span>
+
+      <span aria-current="page">MeraHisab</span>
+
+    </nav>
+
+    <!-- APPLICATION HERO -->
+
+    <section class="mh-hero">
+
+      <img src="/icons/shortcut-merahisab.png"
+           alt="MeraHisab application icon"
+           class="mh-app-icon"
+           width="90"
+           height="90">
+
+      <div>
+
+        <span class="mh-status">
+
+          ● Android Application
+
+        </span>
+
+      </div>
+
+      <h1>MeraHisab</h1>
+
+      <h2>Personal Finance, Simplified.</h2>
+
+      <p>
+
+        Organize your income, expenses, savings
+        and financial accounts with a simple
+        personal finance management application.
+
+      </p>
+
+      <div class="mh-buttons">
+
+        <a href="/download.html"
+           class="mh-button mh-button-primary">
+
+          ↓ Download MeraHisab
+
+        </a>
+
+        <a href="#app-features"
+           class="mh-button mh-button-secondary">
+
+          Explore Features
+
+        </a>
+
+        <a href="/compare.html"
+           class="mh-button mh-button-secondary">
+
+          Compare Apps
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- APPLICATION INFORMATION -->
+
+    <section class="mh-section">
+
+      <h2 class="mh-section-title">
+
+        Application Overview
+
+      </h2>
+
+      <div class="mh-grid">
+
+        <article class="upgrade-card mh-card">
+
+          <h3>About MeraHisab</h3>
+
+          <p>
+
+            MeraHisab is designed to simplify
+            everyday personal finance management.
+
+            Organize financial transactions,
+            review account balances and maintain
+            useful financial records in one place.
+
+          </p>
+
+          <div class="mh-info-row">
+
+            <span>Application</span>
 
             <strong>MeraHisab</strong>
 
-            <nav aria-label="Main navigation">
+          </div>
 
-                <a href="index.html">Home</a>
+          <div class="mh-info-row">
 
-                <a href="downloads.html">Apps</a>
+            <span>Category</span>
 
-                <a href="compare.html">Compare</a>
+            <strong>Personal Finance</strong>
 
-                <a href="index.html#features">Features</a>
+          </div>
 
-                <a href="tools.html">Tools</a>
+          <div class="mh-info-row">
 
-                <a href="privacy.html">Privacy</a>
+            <span>Platform</span>
 
-                <a href="about.html">About</a>
+            <strong>Android</strong>
 
-                <a href="contact.html">Support</a>
+          </div>
 
-                <button id="theme" type="button">
-                    Theme
-                </button>
+          <div class="mh-info-row">
 
-            </nav>
+            <span>File Format</span>
+
+            <strong>APK</strong>
+
+          </div>
+
+          <div class="mh-info-row">
+
+            <span>Official Website</span>
+
+            <strong>
+
+              <a href="https://merahisab.store/">
+
+                merahisab.store
+
+              </a>
+
+            </strong>
+
+          </div>
+
+          <div class="mh-info-row">
+
+            <span>Application Version</span>
+
+            <strong>Verification Pending</strong>
+
+          </div>
+
+          <div class="mh-info-row">
+
+            <span>Android Compatibility</span>
+
+            <strong>Verification Pending</strong>
+
+          </div>
+
+          <div class="mh-info-row">
+
+            <span>APK SHA-256</span>
+
+            <strong>Verification Pending</strong>
+
+          </div>
+
+        </article>
+
+        <!-- REAL DASHBOARD PREVIEW -->
+
+        <article class="upgrade-card mh-card">
+
+          <h3>Application Dashboard</h3>
+
+          <a href="/merahisab-dashboard.png">
+
+            <img src="/merahisab-dashboard.png"
+                 alt="MeraHisab application dashboard screenshot"
+                 class="mh-dashboard"
+                 decoding="async">
+
+          </a>
+
+          <p class="mh-caption">
+
+            Tap the image to view the full
+            dashboard screenshot.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- APPLICATION FEATURES -->
+
+    <section class="mh-section"
+             id="app-features">
+
+      <h2 class="mh-section-title">
+
+        Powerful Features
+
+      </h2>
+
+      <div class="mh-features">
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">₹</div>
+
+          <h3>Income Management</h3>
+
+          <p>
+
+            Organize your daily income
+            and financial receipts.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">💳</div>
+
+          <h3>Expense Management</h3>
+
+          <p>
+
+            Record and review your
+            everyday expenses.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">▤</div>
+
+          <h3>Multiple Accounts</h3>
+
+          <p>
+
+            Organize financial records
+            into separate accounts.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">📊</div>
+
+          <h3>Financial Reports</h3>
+
+          <p>
+
+            Review your financial activity
+            through available reports.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">💰</div>
+
+          <h3>Savings Management</h3>
+
+          <p>
+
+            Maintain organized records
+            of your savings.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">🔎</div>
+
+          <h3>Search & Filters</h3>
+
+          <p>
+
+            Find financial transactions
+            and related records.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">💾</div>
+
+          <h3>Backup & Restore</h3>
+
+          <p>
+
+            Manage backup files and
+            restore saved financial records.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">📅</div>
+
+          <h3>Balance Management</h3>
+
+          <p>
+
+            Keep track of account balances
+            and financial activity.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">📝</div>
+
+          <h3>Notes & Tasks</h3>
+
+          <p>
+
+            Organize useful notes and
+            everyday tasks.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">📄</div>
+
+          <h3>Report Export</h3>
+
+          <p>
+
+            Prepare financial reports using
+            supported export options.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">🔒</div>
+
+          <h3>Privacy-Focused Design</h3>
+
+          <p>
+
+            Designed with responsible
+            personal data management in mind.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">📱</div>
+
+          <h3>Offline Application Design</h3>
+
+          <p>
+
+            Designed for everyday financial
+            tracking without requiring
+            a continuous internet connection.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- INSTALLATION GUIDE -->
+
+    <section class="mh-section">
+
+      <h2 class="mh-section-title">
+
+        Download & Installation Guide
+
+      </h2>
+
+      <article class="upgrade-card mh-card">
+
+        <ol class="mh-installation">
+
+          <li>
+
+            Visit the official MeraHisab
+            Download Center.
+
+          </li>
+
+          <li>
+
+            Select the MeraHisab Android
+            application.
+
+          </li>
+
+          <li>
+
+            Review available version,
+            compatibility and file information.
+
+          </li>
+
+          <li>
+
+            Download the APK from the
+            official website.
+
+          </li>
+
+          <li>
+
+            Verify the downloaded file using
+            published verification information
+            when available.
+
+          </li>
+
+          <li>
+
+            Open the downloaded APK and
+            review Android installation prompts.
+
+          </li>
+
+          <li>
+
+            Do not bypass security warnings
+            or install a suspicious file.
+
+          </li>
+
+        </ol>
+
+        <div class="mh-notice">
+
+          <strong>Security Notice:</strong>
+
+          APK version, signing certificate,
+          Android compatibility, permissions
+          and SHA-256 verification must be
+          confirmed before being published
+          as verified information.
 
         </div>
 
-    </header>
+        <div class="mh-buttons">
 
-    <main class="shell">
+          <a href="/download.html"
+             class="mh-button mh-button-primary">
 
-        <p>OFFICIAL ANDROID APPLICATION</p>
+            Download MeraHisab
 
-        <h1>MeraHisab</h1>
+          </a>
+
+          <a href="/downloads.html"
+             class="mh-button mh-button-secondary">
+
+            Download Center
+
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- PRIVACY AND DATA PROTECTION -->
+
+    <section class="mh-section">
+
+      <h2 class="mh-section-title">
+
+        Privacy & Data Protection
+
+      </h2>
+
+      <div class="mh-grid">
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">🔐</div>
+
+          <h3>Your Financial Data</h3>
+
+          <p>
+
+            MeraHisab is designed around
+            local financial record management.
+
+            Review the Privacy Policy for
+            information about data handling,
+            storage and backups.
+
+          </p>
+
+          <a href="/privacy.html"
+             class="mh-button mh-button-secondary">
+
+            Privacy Policy
+
+          </a>
+
+        </article>
+
+        <article class="upgrade-card mh-card">
+
+          <div class="mh-feature-icon">💾</div>
+
+          <h3>Backup Responsibility</h3>
+
+          <p>
+
+            Keep important backup files
+            in a secure location.
+
+            Confirm that your backups are
+            accessible before resetting
+            or changing your device.
+
+          </p>
+
+          <a href="/contact.html"
+             class="mh-button mh-button-secondary">
+
+            Help & Support
+
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+
+    <section class="mh-section mh-faq">
+
+      <h2 class="mh-section-title">
+
+        Frequently Asked Questions
+
+      </h2>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          What is MeraHisab?
+
+        </summary>
 
         <p>
-            Your Money. Your Control.
+
+          MeraHisab is a personal finance
+          management application designed
+          to organize income, expenses,
+          savings and accounts.
+
         </p>
 
-        <div class="upgrade-grid">
+      </details>
 
-            <article class="upgrade-card">
+      <details class="upgrade-card">
 
-                <h2>Personal Finance, Simplified</h2>
+        <summary>
 
-                <p>
-                    MeraHisab is designed to help you
-                    manage your personal finances
-                    and financial records.
-                </p>
+          Is MeraHisab available for Android?
 
-                <p>
-                    Manage income, expenses,
-                    savings and accounts in one place.
-                </p>
+        </summary>
 
-                <a class="action"
-                   href="MeraHisab.apk"
-                   download>
+        <p>
 
-                    Download Android APK
+          MeraHisab is distributed as an
+          Android APK. Minimum supported
+          Android version is pending verification.
 
-                </a>
+        </p>
 
-                <p>APK Size: 12.18 MiB</p>
+      </details>
 
-                <p>Platform: Android</p>
+      <details class="upgrade-card">
 
-                <p>Source: Official MeraHisab Website</p>
+        <summary>
 
-            </article>
+          Does MeraHisab work offline?
 
-            <article class="upgrade-card">
+        </summary>
 
-                <h2>App Dashboard</h2>
+        <p>
 
-                <a href="merahisab-dashboard.png">
+          The Android application is designed
+          for offline financial tracking.
 
-                    <img
-                        src="merahisab-dashboard.png"
-                        alt="MeraHisab application dashboard"
-                        loading="lazy">
+          Some website resources and
+          application downloads may require
+          an internet connection.
 
-                </a>
+        </p>
 
-                <p>
-                    Tap the screenshot to view
-                    the full-size image.
-                </p>
+      </details>
 
-            </article>
+      <details class="upgrade-card">
 
-        </div>
+        <summary>
 
-        <section style="margin-top:32px;">
+          Can I create financial backups?
 
-            <h2>Key Features</h2>
+        </summary>
 
-            <div class="upgrade-grid">
+        <p>
 
-                <article class="upgrade-card">
+          MeraHisab is designed to support
+          backup and restore functionality.
 
-                    <h3>Account Management</h3>
+          Keep your backup files secure.
 
-                    <p>
-                        Organize and manage
-                        your financial accounts.
-                    </p>
+        </p>
 
-                </article>
+      </details>
 
-                <article class="upgrade-card">
+      <details class="upgrade-card">
 
-                    <h3>Income &amp; Expenses</h3>
+        <summary>
 
-                    <p>
-                        Keep track of your income
-                        and daily expenses.
-                    </p>
+          Is website installation the same as APK installation?
 
-                </article>
+        </summary>
 
-                <article class="upgrade-card">
+        <p>
 
-                    <h3>Savings Management</h3>
+          No. Installing the MeraHisab website
+          as a Progressive Web App is separate
+          from installing the Android application.
 
-                    <p>
-                        Organize your savings
-                        and financial records.
-                    </p>
+        </p>
 
-                </article>
+      </details>
 
-                <article class="upgrade-card">
+      <details class="upgrade-card">
 
-                    <h3>Offline Experience</h3>
+        <summary>
 
-                    <p>
-                        Designed for offline use
-                        and local financial management.
-                    </p>
+          Where can I download MeraHisab?
 
-                </article>
+        </summary>
 
-            </div>
+        <p>
 
-        </section>
+          Visit the official
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+          <a href="/downloads.html">
 
-            <h2>Application Information</h2>
+            Download Center
 
-            <p>
-                <strong>App Name:</strong> MeraHisab
-            </p>
+          </a>
 
-            <p>
-                <strong>Category:</strong> Finance
-            </p>
+          for application download information.
 
-            <p>
-                <strong>Platform:</strong> Android
-            </p>
+        </p>
 
-            <p>
-                <strong>File Format:</strong> APK
-            </p>
+      </details>
 
-            <p>
-                <strong>File Size:</strong> 12.18 MiB
-            </p>
+      <details class="upgrade-card">
 
-            <p>
-                <strong>Version:</strong>
-                Verification pending
-            </p>
+        <summary>
 
-            <p>
-                <strong>Android Compatibility:</strong>
-                Verification pending
-            </p>
+          What is the difference between MeraHisab and Royal Khata?
 
-            <p>
-                <strong>Last Updated:</strong>
-                Verification pending
-            </p>
+        </summary>
 
-            <p>
-                <strong>Official Website:</strong>
+        <p>
 
-                <a href="https://merahisab.store/">
-                    merahisab.store
-                </a>
+          MeraHisab focuses on personal
+          finance management.
 
-            </p>
+          Royal Khata focuses on organized
+          digital khata and credit-debit records.
 
-        </section>
+          Visit the
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+          <a href="/compare.html">
 
-            <h2>Download Verification</h2>
+            Comparison Page
 
-            <p>
-                SHA-256 checksum for the supplied APK:
-            </p>
+          </a>
 
-            <p style="overflow-wrap:anywhere;">
+          for more information.
 
-                <code>40acd9153f051bb9cab6504c0895d5feb59466f2585068285497956b91dbf43f</code>
+        </p>
 
-            </p>
+      </details>
 
-            <p>
-                Verify the downloaded file against
-                this checksum before installation.
-            </p>
+      <details class="upgrade-card">
 
-            <p>
-                APK signing certificate and
-                application permissions are
-                pending verification.
-            </p>
+        <summary>
 
-        </section>
+          How can I get support?
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+        </summary>
 
-            <h2>How to Install</h2>
+        <p>
 
-            <ol>
+          Visit the
 
-                <li>
-                    Download the APK from the
-                    official website.
-                </li>
+          <a href="/contact.html">
 
-                <li>
-                    Verify the downloaded APK file.
-                </li>
+            Contact & Support Page
 
-                <li>
-                    Open the downloaded file
-                    on your Android device.
-                </li>
+          </a>
 
-                <li>
-                    Review Android installation
-                    prompts and permissions.
-                </li>
+          for available support options.
 
-                <li>
-                    Do not bypass security warnings.
-                </li>
+        </p>
 
-                <li>
-                    After successful installation,
-                    open MeraHisab.
-                </li>
+      </details>
 
-            </ol>
+    </section>
 
-        </section>
+    <!-- EXPLORE OTHER RESOURCES -->
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+    <section class="mh-section">
 
-            <h2>Privacy &amp; Security</h2>
+      <h2 class="mh-section-title">
 
-            <p>
-                Financial privacy is an important
-                part of MeraHisab.
-            </p>
+        Explore More
 
-            <p>
-                Read our privacy policy to learn
-                about data storage and privacy.
-            </p>
+      </h2>
 
-            <a class="action" href="privacy.html">
+      <div class="mh-grid">
 
-                Read Privacy Policy
+        <article class="upgrade-card mh-card">
 
-            </a>
+          <h3>Royal Khata</h3>
 
-        </section>
+          <p>
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+            Explore digital khata management
+            and organized credit-debit records.
 
-            <h2>Frequently Asked Questions</h2>
+          </p>
 
-            <details>
+          <a href="/royal-khata.html"
+             class="mh-button mh-button-secondary">
 
-                <summary>What is MeraHisab?</summary>
+            Explore Royal Khata
 
-                <p>
-                    MeraHisab is a personal
-                    financial management application.
-                </p>
+          </a>
 
-            </details>
+        </article>
 
-            <details>
+        <article class="upgrade-card mh-card">
 
-                <summary>Is MeraHisab available for Android?</summary>
+          <h3>Financial Tools</h3>
 
-                <p>
-                    Yes. An Android APK is available
-                    on this website.
-                </p>
+          <p>
 
-            </details>
+            Explore useful calculators
+            and time management tools.
 
-            <details>
+          </p>
 
-                <summary>Can I use MeraHisab offline?</summary>
+          <a href="/tools.html"
+             class="mh-button mh-button-secondary">
 
-                <p>
-                    MeraHisab is designed for offline use.
-                </p>
+            Explore Financial Tools
 
-            </details>
+          </a>
 
-            <details>
+        </article>
 
-                <summary>Where can I download the app?</summary>
+      </div>
 
-                <p>
-                    Download the APK from our
-                    official website.
-                </p>
+    </section>
 
-            </details>
+    <!-- PWA INSTALLATION AND DIAGNOSTICS -->
 
-            <details>
+    <section class="mh-section"
+             id="pwaMount">
 
-                <summary>How can I contact support?</summary>
+      <!--
+        PWA installation, offline settings,
+        cache management and diagnostics
+        are generated automatically by pwa.js.
+      -->
 
-                <p>
+    </section>
 
-                    Visit our
+  </main>
 
-                    <a href="contact.html">
-                        Contact &amp; Support Page
-                    </a>.
+  <!-- WEBSITE FOOTER -->
 
-                </p>
+  <footer class="site">
 
-            </details>
+    <div class="container">
 
-        </section>
+      © <span data-year>2026</span>
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+      MeraHisab. All rights reserved.
 
-            <h2>Explore Royal Khata</h2>
+      <br>
 
-            <p>
-                Discover our other application
-                and explore its information.
-            </p>
+      <a href="/index.html">Home</a>
 
-            <a class="action"
-               href="royal-khata.html">
+      ·
 
-                Explore Royal Khata
+      <a href="/privacy.html">Privacy</a>
 
-            </a>
+      ·
 
-        </section>
+      <a href="/contact.html">Contact</a>
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+      ·
 
-            <h2>Download MeraHisab</h2>
+      <a href="/downloads.html">Downloads</a>
 
-            <p>
-                Download from the official source.
-            </p>
+      <br>
 
-            <a class="action"
-               href="MeraHisab.apk"
-               download>
+      <a href="https://merahisab.store/">
 
-                Download Android APK
+        merahisab.store
 
-            </a>
+      </a>
 
-            <p>File Size: 12.18 MiB</p>
+    </div>
 
-        </section>
+  </footer>
 
-    </main>
+  <!-- JAVASCRIPT FALLBACK -->
 
-    <footer class="site">
+  <noscript>
 
-        <div class="container">
+    <div style="
+      padding:20px;
+      text-align:center;
+      background:#172640;
+      color:#f0d9a6;
+    ">
 
-            <h2>MeraHisab</h2>
+      JavaScript is disabled.
 
-            <p>Your Money. Your Control.</p>
+      Theme controls and PWA features
+      require JavaScript.
 
-            <nav aria-label="Footer navigation">
+    </div>
 
-                <a href="index.html">Home</a>
-
-                <a href="downloads.html">Apps</a>
-
-                <a href="privacy.html">Privacy</a>
-
-                <a href="about.html">About</a>
-
-                <a href="contact.html">Contact</a>
-
-            </nav>
-
-            <p>
-
-                Official Website:
-
-                <a href="https://merahisab.store/">
-                    merahisab.store
-                </a>
-
-            </p>
-
-            <p>
-
-                &copy; <span data-year></span>
-                MeraHisab. All Rights Reserved.
-
-            </p>
-
-        </div>
-
-    </footer>
+  </noscript>
 
 </body>
 
