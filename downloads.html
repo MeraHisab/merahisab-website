@@ -1,235 +1,2198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Download Center | MeraHisab</title>
+<title>Download MeraHisab APK — Official Android Download</title>
 
-    <meta name="description"
-          content="Official MeraHisab and Royal Khata App Download Center.">
+<meta name="description"
+content="Download MeraHisab Android APK from the official MeraHisab website. View installation instructions, file information and SHA-256 verification.">
 
-    <link rel="canonical"
-          href="https://merahisab.store/downloads.html">
+<meta name="author" content="MeraHisab">
 
-    <link rel="stylesheet" href="upgrade.css">
+<meta name="robots" content="index, follow">
 
-    <script defer src="upgrade.js"></script>
+<link rel="canonical"
+href="https://merahisab.store/download.html">
+
+<!-- SOCIAL MEDIA SEO -->
+
+<meta property="og:type" content="website">
+
+<meta property="og:site_name" content="MeraHisab">
+
+<meta property="og:title"
+content="Download MeraHisab Android Application">
+
+<meta property="og:description"
+content="MeraHisab APK download, installation guide and file integrity verification.">
+
+<meta property="og:url"
+content="https://merahisab.store/download.html">
+
+<meta property="og:image"
+content="https://merahisab.store/icons/icon-512.png">
+
+<meta name="twitter:card" content="summary">
+
+<!-- PWA INTEGRATION -->
+
+<link rel="manifest" href="/manifest.json">
+
+<meta name="application-name" content="MeraHisab">
+
+<meta name="theme-color" content="#080f20">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+content="default">
+
+<meta name="apple-mobile-web-app-title"
+content="MeraHisab">
+
+<link rel="apple-touch-icon"
+href="/icons/icon-192.png">
+
+<link rel="icon"
+type="image/png"
+sizes="192x192"
+href="/icons/icon-192.png">
+
+<!-- SHARED WEBSITE ENGINE -->
+
+<link rel="stylesheet" href="/upgrade.css">
+
+<script defer src="/upgrade.js"></script>
+
+<style>
+
+.dl-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 18px;
+  box-sizing: border-box;
+}
+
+.dl-page * {
+  box-sizing: border-box;
+}
+
+.dl-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  opacity: .85;
+}
+
+.dl-hero {
+  padding: 38px 25px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(212,175,55,.14),
+      transparent 65%
+    ),
+    linear-gradient(
+      145deg,
+      #172640,
+      #080f20
+    );
+  color: #f8f6f0;
+}
+
+.dl-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  align-items: center;
+  gap: 28px;
+}
+
+.dl-hero h1 {
+  color: #f0d9a6;
+  font-size: clamp(30px,5vw,48px);
+  line-height: 1.2;
+}
+
+.dl-hero p {
+  color: #c4cddd;
+  line-height: 1.8;
+}
+
+.dl-eyebrow {
+  display: inline-block;
+  padding: 8px 15px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 30px;
+  color: #f0d9a6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dl-app-icon {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 20px;
+  margin-top: 18px;
+}
+
+.dl-preview {
+  padding: 12px;
+  border: 1px solid rgba(212,175,55,.3);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.dl-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.dl-preview figcaption {
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: .85;
+}
+
+.dl-section {
+  margin: 38px 0;
+  scroll-margin-top: 100px;
+}
+
+.dl-title {
+  text-align: center;
+  font-size: clamp(24px,4vw,34px);
+  margin-bottom: 22px;
+}
+
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
+
+.dl-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
+
+.dl-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
+
+.dl-card p {
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.dl-card h3 {
+  margin: 12px 0;
+}
+
+.dl-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dl-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid #d4af37;
+  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dl-primary {
+  background: linear-gradient(
+    135deg,
+    #f0d9a6,
+    #d4af37
+  );
+  color: #101827;
+}
+
+.dl-download {
+  width: 100%;
+  min-height: 58px;
+  font-size: 17px;
+}
+
+.dl-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.dl-note {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  opacity: .85;
+}
+
+.dl-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  background: rgba(212,175,55,.08);
+  font-size: 23px;
+}
+
+.dl-info-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(128,128,128,.2);
+  font-size: 14px;
+}
+
+.dl-info-row:last-child {
+  border-bottom: 0;
+}
+
+.dl-info-row strong {
+  overflow-wrap: anywhere;
+}
+
+.dl-hash {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin: 15px 0;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 12px;
+  background: rgba(128,128,128,.08);
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.dl-input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.dl-status {
+  padding: 15px;
+  margin-top: 16px;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.dl-status[data-state="success"] {
+  border-color: #32976b;
+  background: rgba(50,151,107,.1);
+}
+
+.dl-status[data-state="error"] {
+  border-color: #d95757;
+  background: rgba(217,87,87,.1);
+}
+
+.dl-notice {
+  padding: 18px;
+  margin-top: 20px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 14px;
+  background: rgba(212,175,55,.07);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.dl-steps {
+  display: grid;
+  gap: 14px;
+}
+
+.dl-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.dl-step-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #f0d9a6,
+    #d4af37
+  );
+  color: #101827;
+  font-weight: 800;
+}
+
+.dl-step h3 {
+  margin-top: 3px;
+}
+
+.dl-list {
+  padding-left: 22px;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.dl-list li {
+  margin: 6px 0;
+}
+
+.dl-faq details {
+  padding: 17px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 13px;
+}
+
+.dl-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.dl-faq p {
+  line-height: 1.8;
+}
+
+.dl-page :focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* LIGHT THEME */
+
+html[data-theme="light"] .dl-hero,
+body[data-theme="light"] .dl-hero {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f3ead7
+  );
+  color: #172033;
+}
+
+html[data-theme="light"] .dl-hero h1,
+body[data-theme="light"] .dl-hero h1,
+html[data-theme="light"] .dl-eyebrow,
+body[data-theme="light"] .dl-eyebrow {
+  color: #765018;
+}
+
+html[data-theme="light"] .dl-hero p,
+body[data-theme="light"] .dl-hero p {
+  color: #46546a;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:900px) {
+
+  .dl-grid-three {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:650px) {
+
+  .dl-page {
+    padding: 18px 12px;
+  }
+
+  .dl-hero-grid,
+  .dl-grid,
+  .dl-grid-three {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .dl-hero {
+    padding: 24px 17px;
+  }
+
+  .dl-card {
+    padding: 17px;
+  }
+
+  .dl-buttons {
+    flex-direction: column;
+  }
+
+  .dl-button {
+    width: 100%;
+  }
+
+  .dl-preview {
+    margin: 0;
+  }
+
+}
+
+@media print {
+
+  header.site,
+  footer.site,
+  .dl-buttons,
+  #fileVerification {
+    display: none !important;
+  }
+
+  .dl-page,
+  .dl-hero,
+  .dl-card {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .dl-hero h1,
+  .dl-hero p,
+  .dl-eyebrow {
+    color: black !important;
+  }
+
+  .dl-card {
+    break-inside: avoid;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <header class="site">
+<!-- WEBSITE HEADER -->
 
-        <div class="container">
+<header class="site">
 
-            <strong>MeraHisab</strong>
+<div class="container">
 
-            <nav aria-label="Main navigation">
+<strong>MeraHisab</strong>
 
-                <a href="index.html">Home</a>
+<nav aria-label="Main navigation">
 
-                <a href="downloads.html"
-                   aria-current="page">Apps</a>
+<a href="/index.html">Home</a>
 
-                <a href="compare.html">Compare</a>
+<a href="/downloads.html">Apps</a>
 
-                <a href="index.html#features">Features</a>
+<a href="/compare.html">Compare</a>
 
-                <a href="tools.html">Tools</a>
+<a href="/index.html#features">Features</a>
 
-                <a href="privacy.html">Privacy</a>
+<a href="/tools.html">Tools</a>
 
-                <a href="about.html">About</a>
+<a href="/privacy.html">Privacy</a>
 
-                <a href="contact.html">Support</a>
+<a href="/about.html">About</a>
 
-                <button id="theme" type="button">
-                    Theme
-                </button>
+<a href="/contact.html">Support</a>
 
-            </nav>
+<button id="theme"
+type="button"
+aria-label="Change website theme">
 
-        </div>
+Theme
 
-    </header>
+</button>
 
-    <main class="shell">
+</nav>
 
-        <section>
+</div>
 
-            <p>OFFICIAL APPLICATIONS</p>
+</header>
 
-            <h1>App Download Center</h1>
+<main class="shell dl-page">
 
-            <p>
-                Discover our applications and explore
-                their features, privacy information,
-                installation guides and official downloads.
-            </p>
+<nav class="dl-breadcrumb"
+aria-label="Breadcrumb">
 
-        </section>
+<a href="/index.html">Home</a>
 
-        <div class="upgrade-grid">
+<span>›</span>
 
-            <article class="upgrade-card">
+<a href="/downloads.html">Downloads</a>
 
-                <p>APPLICATION 01</p>
+<span>›</span>
 
-                <h2>MeraHisab</h2>
+<span aria-current="page">MeraHisab APK</span>
 
-                <p>
-                    Personal Finance Management
-                </p>
+</nav>
 
-                <p>
-                    Explore MeraHisab and discover
-                    its financial management features.
-                </p>
+<!-- DOWNLOAD HERO -->
 
-                <a class="action"
-                   href="merahisab.html">
+<section class="dl-hero">
 
-                    Explore &amp; Download
+<div class="dl-hero-grid">
 
-                </a>
+<div>
 
-            </article>
+<span class="dl-eyebrow">
 
-            <article class="upgrade-card">
+OFFICIAL WEBSITE DOWNLOAD
 
-                <p>APPLICATION 02</p>
+</span>
 
-                <h2>Royal Khata</h2>
+<div>
 
-                <p>
-                    Discover Royal Khata
-                </p>
+<img
+src="/icons/shortcut-merahisab.png"
+class="dl-app-icon"
+alt="MeraHisab application icon"
+width="85"
+height="85">
 
-                <p>
-                    Explore application information
-                    and upcoming release details.
-                </p>
+</div>
 
-                <a class="action"
-                   href="royal-khata.html">
+<h1>Download MeraHisab</h1>
 
-                    Explore App
+<p>
 
-                </a>
+Manage your personal income,
+expenses, savings and financial
+records with MeraHisab for Android.
 
-            </article>
+</p>
 
-        </div>
+<div class="dl-buttons">
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+<a
+id="downloadApk"
+href="/MeraHisab.apk"
+download="MeraHisab.apk"
+class="dl-button dl-primary dl-download">
 
-            <h2>Compare Our Applications</h2>
+↓ Download Android APK
 
-            <p>
-                Explore both applications and choose
-                the one that suits your requirements.
-            </p>
+</a>
 
-            <a class="action" href="compare.html">
+</div>
 
-                Compare Applications
+<p class="dl-note">
 
-            </a>
+Android APK · 12.18 MiB
 
-        </section>
+<br>
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+Internet connection required for download.
 
-            <h2>Official &amp; Trusted Downloads</h2>
+</p>
 
-            <p>
-                Download applications only from
-                our official website or verified
-                distribution channels.
-            </p>
+<p id="downloadStatus"
+class="dl-status"
+role="status"
+hidden>
 
-            <p>
-                Check application version,
-                compatibility and available
-                verification information before
-                installing an APK.
-            </p>
+</p>
 
-            <a href="privacy.html">
+<div class="dl-buttons">
 
-                Privacy &amp; Security
+<a href="#installation"
+class="dl-button">
 
-            </a>
+Installation Guide
 
-        </section>
+</a>
 
-        <section class="upgrade-card"
-                 style="margin-top:24px;">
+<a href="#fileVerification"
+class="dl-button">
 
-            <h2>Need Assistance?</h2>
+Verify APK
 
-            <p>
-                Contact us for application information,
-                installation assistance and support.
-            </p>
+</a>
 
-            <a class="action" href="contact.html">
+</div>
 
-                Contact Support
+</div>
 
-            </a>
+<figure class="dl-preview">
 
-        </section>
+<img
+id="dashboardPreview"
+src="/merahisab-dashboard.png"
+alt="MeraHisab application dashboard preview"
+loading="eager">
 
-    </main>
+<figcaption>
 
-    <footer class="site">
+MeraHisab Application Preview
 
-        <div class="container">
+</figcaption>
 
-            <h2>MeraHisab</h2>
+</figure>
 
-            <p>
-                Your Money. Your Control.
-            </p>
+</div>
 
-            <nav aria-label="Footer navigation">
+</section>
 
-                <a href="index.html">Home</a>
+<!-- DOWNLOAD HIGHLIGHTS -->
 
-                <a href="downloads.html">Apps</a>
+<section class="dl-section">
 
-                <a href="privacy.html">Privacy</a>
+<h2 class="dl-title">
 
-                <a href="about.html">About</a>
+Download Information
 
-                <a href="contact.html">Contact</a>
+</h2>
 
-            </nav>
+<div class="dl-grid-three">
 
-            <p>
-                Official Website:
-                <a href="https://merahisab.store/">
-                    merahisab.store
-                </a>
-            </p>
+<article class="upgrade-card dl-card">
 
-            <p>
-                &copy; <span data-year></span>
-                MeraHisab. All Rights Reserved.
-            </p>
+<div class="dl-icon">📱</div>
 
-        </div>
+<h3>Android Application</h3>
 
-    </footer>
+<p>
+
+Download the Android APK
+directly from merahisab.store.
+
+</p>
+
+</article>
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-icon">🔍</div>
+
+<h3>File Integrity</h3>
+
+<p>
+
+Compare the downloaded file
+with the published SHA-256 checksum.
+
+</p>
+
+</article>
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-icon">📦</div>
+
+<h3>Direct Download</h3>
+
+<p>
+
+Use the APK download link
+without a third-party download service.
+
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- APPLICATION DETAILS -->
+
+<section class="dl-section">
+
+<h2 class="dl-title">
+
+Application File Details
+
+</h2>
+
+<div class="dl-grid">
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-info-row">
+
+<span>Application Name</span>
+
+<strong>MeraHisab</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Platform</span>
+
+<strong>Android</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>File Name</span>
+
+<strong>MeraHisab.apk</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>File Format</span>
+
+<strong>APK</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>File Size</span>
+
+<strong>12.18 MiB</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Exact File Size</span>
+
+<strong>12,766,801 Bytes</strong>
+
+</div>
+
+</article>
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-info-row">
+
+<span>Application Category</span>
+
+<strong>Personal Finance</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Download Source</span>
+
+<strong>merahisab.store</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Application Version</span>
+
+<strong>Verification Pending</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Minimum Android Version</span>
+
+<strong>Verification Pending</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Signing Certificate</span>
+
+<strong>Verification Pending</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Integrity Algorithm</span>
+
+<strong>SHA-256</strong>
+
+</div>
+
+</article>
+
+</div>
+
+<div class="dl-notice">
+
+The published file size and checksum
+refer to the APK included in the
+website package inspected during development.
+
+The deployed APK must match that file.
+
+Application version, Android compatibility
+and signing certificate details require
+separate verification.
+
+</div>
+
+</section>
+
+<!-- APK INTEGRITY VERIFICATION -->
+
+<section class="dl-section"
+id="fileVerification">
+
+<h2 class="dl-title">
+
+APK File Integrity Verification
+
+</h2>
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-icon">🛡</div>
+
+<h3>Expected SHA-256 Checksum</h3>
+
+<p>
+
+Use this checksum to compare the
+downloaded APK against the expected file.
+
+</p>
+
+<code class="dl-hash" id="expectedHash">40acd9153f051bb9cab6504c0895d5feb59466f2585068285497956b91dbf43f</code>
+
+<div class="dl-buttons">
+
+<button
+type="button"
+id="copyChecksum"
+class="dl-button">
+
+Copy SHA-256
+
+</button>
+
+</div>
+
+<p id="copyStatus"
+role="status"
+class="dl-note">
+
+</p>
+
+<hr>
+
+<h3>Verify Your Downloaded APK</h3>
+
+<p>
+
+Select the APK file downloaded
+to your device.
+
+The verification tool calculates
+its SHA-256 checksum locally.
+
+Your selected file is not uploaded
+to a server by this tool.
+
+</p>
+
+<label for="apkFile">
+
+<strong>Select Downloaded APK</strong>
+
+</label>
+
+<input
+type="file"
+id="apkFile"
+class="dl-input"
+accept=".apk,application/vnd.android.package-archive">
+
+<div class="dl-buttons">
+
+<button
+type="button"
+id="verifyButton"
+class="dl-button dl-primary"
+disabled>
+
+Verify APK File
+
+</button>
+
+<button
+type="button"
+id="resetVerification"
+class="dl-button">
+
+Reset Verification
+
+</button>
+
+</div>
+
+<div
+id="verificationStatus"
+class="dl-status"
+role="status"
+aria-live="polite"
+hidden>
+
+</div>
+
+<div id="verificationDetails" hidden>
+
+<h3>Calculated SHA-256</h3>
+
+<code
+class="dl-hash"
+id="calculatedHash">
+
+</code>
+
+<div class="dl-info-row">
+
+<span>Selected File Size</span>
+
+<strong id="selectedSize">—</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>Checksum Comparison</span>
+
+<strong id="hashMatch">—</strong>
+
+</div>
+
+<div class="dl-info-row">
+
+<span>File Size Comparison</span>
+
+<strong id="sizeMatch">—</strong>
+
+</div>
+
+</div>
+
+<div class="dl-notice">
+
+<strong>Important:</strong>
+
+A matching SHA-256 checksum confirms
+that the selected file matches the
+published reference checksum.
+
+It does not independently prove that
+the APK is free from malware or that
+its developer signature is authentic.
+
+Do not install a file if verification
+fails or Android displays a security warning.
+
+</div>
+
+</article>
+
+</section>
+
+<!-- INSTALLATION GUIDE -->
+
+<section class="dl-section"
+id="installation">
+
+<h2 class="dl-title">
+
+How to Install MeraHisab
+
+</h2>
+
+<div class="dl-steps">
+
+<article class="upgrade-card dl-card dl-step">
+
+<div class="dl-step-number">1</div>
+
+<div>
+
+<h3>Download the APK</h3>
+
+<p>
+
+Tap the Download Android APK button
+and wait until the browser completes
+the download.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="upgrade-card dl-card dl-step">
+
+<div class="dl-step-number">2</div>
+
+<div>
+
+<h3>Verify the Download</h3>
+
+<p>
+
+Use the APK verification tool above
+to compare the file size and SHA-256
+checksum before installation.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="upgrade-card dl-card dl-step">
+
+<div class="dl-step-number">3</div>
+
+<div>
+
+<h3>Open the Downloaded File</h3>
+
+<p>
+
+Open your Android Downloads folder
+and select MeraHisab.apk.
+
+Review the installation information
+and any Android security warnings.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="upgrade-card dl-card dl-step">
+
+<div class="dl-step-number">4</div>
+
+<div>
+
+<h3>Review Installation Permission</h3>
+
+<p>
+
+Android may require permission to
+install applications from your browser
+or file manager.
+
+Only allow this if you trust the
+application and its source.
+
+Do not bypass Play Protect warnings.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="upgrade-card dl-card dl-step">
+
+<div class="dl-step-number">5</div>
+
+<div>
+
+<h3>Complete Installation</h3>
+
+<p>
+
+Follow Android's installation prompts.
+
+After successful installation,
+open MeraHisab from your application list.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="upgrade-card dl-card dl-step">
+
+<div class="dl-step-number">6</div>
+
+<div>
+
+<h3>Restore Installation Protection</h3>
+
+<p>
+
+If you enabled installation from
+unknown sources, disable that
+permission after installation.
+
+Keep Google Play Protect enabled.
+
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- UPDATE AND BACKUP GUIDE -->
+
+<section class="dl-section">
+
+<h2 class="dl-title">
+
+Application Updates & Data Protection
+
+</h2>
+
+<div class="dl-grid">
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-icon">💾</div>
+
+<h3>Before Updating</h3>
+
+<ul class="dl-list">
+
+<li>
+Create a backup using the application's
+available backup options.
+</li>
+
+<li>
+Keep a separate copy of important
+financial records.
+</li>
+
+<li>
+Verify the new APK checksum.
+</li>
+
+<li>
+Do not uninstall the existing
+application unnecessarily.
+</li>
+
+<li>
+Confirm that the update is compatible
+with your existing application.
+</li>
+
+</ul>
+
+</article>
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-icon">🔐</div>
+
+<h3>Download Safety</h3>
+
+<ul class="dl-list">
+
+<li>
+Use the official website address.
+</li>
+
+<li>
+Check the website uses HTTPS.
+</li>
+
+<li>
+Avoid modified or unofficial APK files.
+</li>
+
+<li>
+Review Android application permissions.
+</li>
+
+<li>
+Keep your device security features enabled.
+</li>
+
+<li>
+Store financial backups securely.
+</li>
+
+</ul>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- TROUBLESHOOTING -->
+
+<section class="dl-section dl-faq">
+
+<h2 class="dl-title">
+
+Installation Troubleshooting
+
+</h2>
+
+<details class="upgrade-card">
+
+<summary>APK download is not starting</summary>
+
+<p>
+
+Check your internet connection,
+available device storage and browser
+download permissions.
+
+Open the Download Center and try again.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Application not installed</summary>
+
+<p>
+
+Possible causes include Android
+compatibility, insufficient storage,
+an incomplete APK or a conflicting
+application signing certificate.
+
+Do not uninstall an existing application
+without securing its data first.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>APK checksum does not match</summary>
+
+<p>
+
+Do not install the selected file.
+
+Delete the mismatched download and
+download a fresh copy from the
+official website.
+
+If verification still fails,
+contact the website operator.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Android displays a security warning</summary>
+
+<p>
+
+Stop the installation and investigate
+the warning.
+
+Do not disable Play Protect or bypass
+security warnings to force installation.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Application update fails</summary>
+
+<p>
+
+Android updates generally require
+a compatible package name, version
+and signing certificate.
+
+Preserve your existing financial data
+and seek assistance before uninstalling.
+
+</p>
+
+</details>
+
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+
+<section class="dl-section dl-faq">
+
+<h2 class="dl-title">
+
+Frequently Asked Questions
+
+</h2>
+
+<details class="upgrade-card">
+
+<summary>What is an APK file?</summary>
+
+<p>
+
+APK stands for Android Package.
+
+It is a file format used to distribute
+and install Android applications.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Can I install this APK on iPhone?</summary>
+
+<p>
+
+No. Android APK files cannot be
+installed as native iPhone applications.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>What is SHA-256?</summary>
+
+<p>
+
+SHA-256 is a cryptographic hash
+algorithm that produces a digital
+fingerprint of a file.
+
+It helps detect whether the selected
+file differs from the reference file.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Is my selected APK uploaded for verification?</summary>
+
+<p>
+
+No. The verification engine on this
+page reads the selected file locally
+and calculates its checksum using
+the browser's Web Crypto API.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Does the checksum guarantee application safety?</summary>
+
+<p>
+
+No. A checksum match establishes
+file integrity against the reference.
+
+Application authenticity and security
+require additional verification.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Can I download the APK offline?</summary>
+
+<p>
+
+An internet connection is required
+to download the APK from this website.
+
+The website's service worker is designed
+not to cache APK downloads.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Will updating delete my financial data?</summary>
+
+<p>
+
+Data preservation depends on application
+compatibility and update behavior.
+
+Always create a backup before updating.
+Data preservation is not guaranteed
+by this download page.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Is Royal Khata available for download?</summary>
+
+<p>
+
+Royal Khata's official APK release
+is currently pending.
+
+Visit its application page for information.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Is installing the website the same as installing the APK?</summary>
+
+<p>
+
+No. Installing the MeraHisab website
+as a PWA creates a website experience.
+
+The Android APK installs the separate
+native MeraHisab application.
+
+</p>
+
+</details>
+
+<details class="upgrade-card">
+
+<summary>Where can I get help?</summary>
+
+<p>
+
+Visit the Contact & Support page
+for available assistance options.
+
+</p>
+
+</details>
+
+</section>
+
+<!-- WEBSITE PWA INFORMATION -->
+
+<section class="dl-section">
+
+<article class="upgrade-card dl-card">
+
+<div class="dl-icon">🌐</div>
+
+<h3>Install MeraHisab Website</h3>
+
+<p>
+
+You can explore website installation,
+offline resources and PWA diagnostics
+from the MeraHisab homepage.
+
+Website installation is separate
+from the Android APK installation.
+
+</p>
+
+<div class="dl-buttons">
+
+<a href="/index.html"
+class="dl-button dl-primary">
+
+Open Website Installation
+
+</a>
+
+<a href="/tools.html"
+class="dl-button">
+
+Explore Financial Tools
+
+</a>
+
+</div>
+
+</article>
+
+</section>
+
+<!-- FINAL DOWNLOAD SECTION -->
+
+<section class="dl-section">
+
+<article class="upgrade-card dl-card">
+
+<h2>Ready to Download?</h2>
+
+<p>
+
+Download MeraHisab from the
+official website and verify the
+file before installation.
+
+</p>
+
+<div class="dl-buttons">
+
+<a
+href="/MeraHisab.apk"
+download="MeraHisab.apk"
+class="dl-button dl-primary">
+
+↓ Download MeraHisab APK
+
+</a>
+
+<a href="/merahisab.html"
+class="dl-button">
+
+Application Details
+
+</a>
+
+<a href="/downloads.html"
+class="dl-button">
+
+Download Center
+
+</a>
+
+<a href="/contact.html"
+class="dl-button">
+
+Get Support
+
+</a>
+
+</div>
+
+</article>
+
+</section>
+
+</main>
+
+<!-- WEBSITE FOOTER -->
+
+<footer class="site">
+
+<div class="container">
+
+© <span data-year>2026</span>
+
+MeraHisab. All rights reserved.
+
+<br>
+
+<a href="/index.html">Home</a>
+
+·
+
+<a href="/privacy.html">Privacy</a>
+
+·
+
+<a href="/contact.html">Contact</a>
+
+·
+
+<a href="/downloads.html">Downloads</a>
+
+<br>
+
+<a href="https://merahisab.store/">
+
+merahisab.store
+
+</a>
+
+</div>
+
+</footer>
+
+<!-- DOWNLOAD VERIFICATION ENGINE -->
+
+<script>
+
+(function () {
+
+"use strict";
+
+if (window.__merahisabDownloadInitialized) {
+
+  return;
+
+}
+
+window.__merahisabDownloadInitialized = true;
+
+
+/* APK REFERENCE INFORMATION */
+
+const CONFIG = Object.freeze({
+
+  filename: "MeraHisab.apk",
+
+  expectedSize: 12766801,
+
+  expectedHash:
+    "40acd9153f051bb9cab6504c0895d5feb59466f2585068285497956b91dbf43f",
+
+  maximumVerificationSize:
+    100 * 1024 * 1024
+
+});
+
+
+/* PAGE ELEMENTS */
+
+const downloadStatus =
+  document.getElementById("downloadStatus");
+
+const fileInput =
+  document.getElementById("apkFile");
+
+const verifyButton =
+  document.getElementById("verifyButton");
+
+const resetButton =
+  document.getElementById("resetVerification");
+
+const verificationStatus =
+  document.getElementById("verificationStatus");
+
+const verificationDetails =
+  document.getElementById("verificationDetails");
+
+const calculatedHash =
+  document.getElementById("calculatedHash");
+
+const selectedSize =
+  document.getElementById("selectedSize");
+
+const hashMatch =
+  document.getElementById("hashMatch");
+
+const sizeMatch =
+  document.getElementById("sizeMatch");
+
+const copyStatus =
+  document.getElementById("copyStatus");
+
+let verificationRunning = false;
+
+let verificationRequest = 0;
+
+
+/* FILE SIZE FORMATTER */
+
+function formatBytes(bytes) {
+
+  return new Intl.NumberFormat("en-IN")
+    .format(bytes) +
+    " Bytes (" +
+    (bytes / 1048576).toFixed(2) +
+    " MiB)";
+
+}
+
+
+/* STATUS MESSAGE */
+
+function showStatus(message,state) {
+
+  verificationStatus.textContent = message;
+
+  verificationStatus.dataset.state =
+    state || "info";
+
+  verificationStatus.hidden = false;
+
+}
+
+
+/* DOWNLOAD LINK STATUS */
+
+document.querySelectorAll(
+  'a[download="MeraHisab.apk"]'
+).forEach(function (link) {
+
+  link.addEventListener("click",function (event) {
+
+    downloadStatus.hidden = false;
+
+    if (navigator.onLine === false) {
+
+      event.preventDefault();
+
+      downloadStatus.textContent =
+        "You appear to be offline. Connect to the internet before downloading.";
+
+      downloadStatus.dataset.state = "error";
+
+      return;
+
+    }
+
+    downloadStatus.textContent =
+      "Download requested. Check your browser's download manager for progress and completion.";
+
+    downloadStatus.dataset.state = "info";
+
+  });
+
+});
+
+
+/* COPY SHA-256 CHECKSUM */
+
+document.getElementById("copyChecksum")
+.addEventListener("click",async function () {
+
+  try {
+
+    if (
+      !navigator.clipboard ||
+      !navigator.clipboard.writeText
+    ) {
+
+      throw new Error("Clipboard unavailable.");
+
+    }
+
+    await navigator.clipboard.writeText(
+      CONFIG.expectedHash
+    );
+
+    copyStatus.textContent =
+      "SHA-256 checksum copied.";
+
+  } catch (error) {
+
+    copyStatus.textContent =
+      "Automatic copying is unavailable. Select and copy the checksum manually.";
+
+  }
+
+});
+
+
+/* CLEAR VERIFICATION RESULTS */
+
+function clearResults() {
+
+  verificationDetails.hidden = true;
+
+  verificationStatus.hidden = true;
+
+  verificationStatus.textContent = "";
+
+  calculatedHash.textContent = "";
+
+  selectedSize.textContent = "—";
+
+  hashMatch.textContent = "—";
+
+  sizeMatch.textContent = "—";
+
+}
+
+
+/* UPDATE VERIFICATION CONTROLS */
+
+function updateControls() {
+
+  verifyButton.disabled =
+    verificationRunning ||
+    !fileInput.files ||
+    fileInput.files.length !== 1;
+
+  verifyButton.textContent =
+    verificationRunning
+      ? "Verifying..."
+      : "Verify APK File";
+
+}
+
+
+/* FILE SELECTION */
+
+fileInput.addEventListener("change",function () {
+
+  verificationRequest++;
+
+  clearResults();
+
+  const file =
+    fileInput.files && fileInput.files[0];
+
+  if (!file) {
+
+    updateControls();
+
+    return;
+
+  }
+
+  if (!file.name.toLowerCase().endsWith(".apk")) {
+
+    fileInput.value = "";
+
+    showStatus(
+      "Please select a file with the .apk extension.",
+      "error"
+    );
+
+    updateControls();
+
+    return;
+
+  }
+
+  if (
+    file.size === 0 ||
+    file.size > CONFIG.maximumVerificationSize
+  ) {
+
+    fileInput.value = "";
+
+    showStatus(
+      "Select a non-empty APK file no larger than 100 MiB.",
+      "error"
+    );
+
+    updateControls();
+
+    return;
+
+  }
+
+  showStatus(
+    "Selected file: " +
+    file.name +
+    " — " +
+    formatBytes(file.size),
+    "info"
+  );
+
+  updateControls();
+
+});
+
+
+/* LOCAL SHA-256 VERIFICATION */
+
+verifyButton.addEventListener(
+  "click",
+  async function () {
+
+    if (verificationRunning) {
+
+      return;
+
+    }
+
+    const file =
+      fileInput.files && fileInput.files[0];
+
+    if (!file) {
+
+      showStatus(
+        "Select an APK file first.",
+        "error"
+      );
+
+      return;
+
+    }
+
+    if (
+      !window.isSecureContext ||
+      !window.crypto ||
+      !window.crypto.subtle
+    ) {
+
+      showStatus(
+        "SHA-256 verification requires a supported browser and secure HTTPS connection.",
+        "error"
+      );
+
+      return;
+
+    }
+
+    if (
+      file.size === 0 ||
+      file.size > CONFIG.maximumVerificationSize
+    ) {
+
+      showStatus(
+        "The selected file exceeds verification limits.",
+        "error"
+      );
+
+      return;
+
+    }
+
+    const requestId =
+      ++verificationRequest;
+
+    verificationRunning = true;
+
+    clearResults();
+
+    updateControls();
+
+    showStatus(
+      "Calculating SHA-256 locally. Please wait...",
+      "info"
+    );
+
+    try {
+
+      const buffer =
+        await file.arrayBuffer();
+
+      const digest =
+        await window.crypto.subtle.digest(
+          "SHA-256",
+          buffer
+        );
+
+      const actualHash =
+        Array.from(new Uint8Array(digest))
+          .map(function (byte) {
+
+            return byte
+              .toString(16)
+              .padStart(2,"0");
+
+          })
+          .join("");
+
+      if (requestId !== verificationRequest) {
+
+        return;
+
+      }
+
+      const checksumMatches =
+        actualHash === CONFIG.expectedHash;
+
+      const fileSizeMatches =
+        file.size === CONFIG.expectedSize;
+
+      calculatedHash.textContent =
+        actualHash;
+
+      selectedSize.textContent =
+        formatBytes(file.size);
+
+      hashMatch.textContent =
+        checksumMatches
+          ? "MATCH"
+          : "MISMATCH";
+
+      sizeMatch.textContent =
+        fileSizeMatches
+          ? "MATCH"
+          : "MISMATCH";
+
+      verificationDetails.hidden = false;
+
+      if (checksumMatches && fileSizeMatches) {
+
+        showStatus(
+
+          "File integrity verified. The selected APK matches the published reference checksum and file size. This is not an independent malware or signing certificate check.",
+
+          "success"
+
+        );
+
+      } else {
+
+        showStatus(
+
+          "Verification failed. The selected file does not match the expected APK. Do not install it. Download a fresh copy from the official website.",
+
+          "error"
+
+        );
+
+      }
+
+    } catch (error) {
+
+      if (requestId === verificationRequest) {
+
+        showStatus(
+
+          "Unable to verify the selected file. Try again using a supported browser.",
+
+          "error"
+
+        );
+
+      }
+
+    } finally {
+
+      verificationRunning = false;
+
+      updateControls();
+
+    }
+
+  }
+
+);
+
+
+/* RESET VERIFICATION */
+
+resetButton.addEventListener("click",function () {
+
+  verificationRequest++;
+
+  fileInput.value = "";
+
+  clearResults();
+
+  updateControls();
+
+});
+
+
+/* DASHBOARD IMAGE FALLBACK */
+
+const preview =
+  document.getElementById("dashboardPreview");
+
+if (preview) {
+
+  function hideBrokenPreview() {
+
+    preview.hidden = true;
+
+    const caption =
+      preview.parentElement.querySelector(
+        "figcaption"
+      );
+
+    if (caption) {
+
+      caption.textContent =
+        "Application preview is currently unavailable.";
+
+    }
+
+  }
+
+  preview.addEventListener(
+    "error",
+    hideBrokenPreview
+  );
+
+  if (
+    preview.complete &&
+    preview.naturalWidth === 0
+  ) {
+
+    hideBrokenPreview();
+
+  }
+
+}
+
+updateControls();
+
+})();
+
+</script>
+
+<noscript>
+
+<div style="
+padding:20px;
+text-align:center;
+background:#172640;
+color:#f0d9a6;
+">
+
+JavaScript is disabled.
+
+Direct APK downloading remains available.
+
+Automatic file verification and
+theme controls require JavaScript.
+
+</div>
+
+</noscript>
 
 </body>
 
