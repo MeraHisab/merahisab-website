@@ -2,1955 +2,246 @@
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>404 — Page Not Found | MeraHisab</title>
-
-<meta name="description" content="The requested page could not be found. Explore the official MeraHisab website, applications, financial tools and support resources.">
-
-<meta name="robots" content="noindex, follow">
-<meta name="author" content="MeraHisab">
-<meta name="theme-color" content="#080f20">
-<meta name="application-name" content="MeraHisab">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="MeraHisab">
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-SSfqutOwHHiX7aKw0TYTASco3vZiBVvdOhP95u0mwlY='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="no-referrer">
-
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#080f20">
+<title>404 — Page Not Found | MeraHisab</title>
+<meta name="description" content="Find the correct MeraHisab website page, explore navigation and prepare a local broken link report.">
 <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="/icons/icon-192.png">
-<link rel="icon" type="image/png" href="/icons/icon-192.png">
-
 <link rel="stylesheet" href="/upgrade.css">
-
-<script defer src="/upgrade.js"></script>
-
+<script src="/upgrade.js" defer></script>
 <style>
-
-.er-page {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 28px 18px;
-  box-sizing: border-box;
-}
-
-.er-page * {
-  box-sizing: border-box;
-}
-
-.er-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 48px 24px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 26px;
-  background:
-    radial-gradient(
-      circle at top,
-      rgba(212,175,55,.18),
-      transparent 65%
-    ),
-    linear-gradient(145deg,#172640,#080f20);
-  color: #f8f6f0;
-  text-align: center;
-}
-
-.er-logo {
-  width: 82px;
-  height: 82px;
-  object-fit: contain;
-  border-radius: 20px;
-  border: 1px solid rgba(212,175,55,.4);
-}
-
-.er-number {
-  margin: 10px 0;
-  font-size: clamp(90px,20vw,190px);
-  font-weight: 900;
-  line-height: 1.1;
-  color: #d4af37;
-  letter-spacing: -4px;
-  text-shadow: 0 0 35px rgba(212,175,55,.15);
-}
-
-.er-hero h1 {
-  font-size: clamp(26px,5vw,44px);
-  color: #f0d9a6;
-  margin: 12px 0;
-}
-
-.er-hero p {
-  max-width: 700px;
-  margin: 15px auto;
-  color: #c4cddd;
-  line-height: 1.85;
-}
-
-.er-eyebrow {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 30px;
-  color: #f0d9a6;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.er-section {
-  margin: 34px 0;
-  scroll-margin-top: 100px;
-}
-
-.er-title {
-  font-size: clamp(23px,4vw,32px);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.er-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 18px;
-}
-
-.er-grid-three {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 16px;
-}
-
-.er-card {
-  min-width: 0;
-  padding: 22px;
-  border: 1px solid rgba(212,175,55,.28);
-  border-radius: 18px;
-  overflow-wrap: anywhere;
-}
-
-.er-card h3 {
-  margin: 12px 0;
-}
-
-.er-card p {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.er-icon {
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border: 1px solid rgba(212,175,55,.35);
-  border-radius: 12px;
-  background: rgba(212,175,55,.08);
-  font-size: 24px;
-}
-
-.er-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.er-center {
-  justify-content: center;
-}
-
-.er-button {
-  display: inline-flex;
-  min-height: 46px;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 22px;
-  border: 1px solid #d4af37;
-  border-radius: 30px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.er-primary {
-  background: linear-gradient(
-    135deg,#f0d9a6,#d4af37
-  );
-  color: #101827;
-}
-
-.er-button:hover {
-  border-color: #f0d9a6;
-  box-shadow: 0 0 14px rgba(212,175,55,.12);
-}
-
-.er-input {
-  width: 100%;
-  min-height: 50px;
-  padding: 14px;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 12px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-}
-
-.er-search-label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.er-notice {
-  padding: 18px;
-  margin: 18px 0;
-  border: 1px solid rgba(212,175,55,.4);
-  border-radius: 14px;
-  background: rgba(212,175,55,.07);
-  font-size: 13px;
-  line-height: 1.85;
-}
-
-.er-path {
-  display: block;
-  padding: 14px;
-  margin-top: 12px;
-  border: 1px solid rgba(128,128,128,.3);
-  border-radius: 10px;
-  background: rgba(128,128,128,.07);
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  font-family: monospace;
-  font-size: 13px;
-}
-
-.er-list {
-  padding-left: 22px;
-  line-height: 1.9;
-  font-size: 14px;
-}
-
-.er-list li {
-  margin: 7px 0;
-}
-
-.er-result {
-  display: block;
-  padding: 16px;
-  border: 1px solid rgba(212,175,55,.28);
-  border-radius: 12px;
-  color: inherit;
-  text-decoration: none;
-}
-
-.er-result:hover {
-  border-color: #d4af37;
-  background: rgba(212,175,55,.07);
-}
-
-.er-result strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.er-result span {
-  display: block;
-  font-size: 13px;
-  line-height: 1.7;
-  opacity: .85;
-}
-
-.er-results {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.er-status {
-  margin-top: 14px;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.er-info-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(128,128,128,.22);
-  font-size: 13px;
-}
-
-.er-info-row:last-child {
-  border-bottom: 0;
-}
-
-.er-faq details {
-  padding: 17px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(212,175,55,.25);
-  border-radius: 13px;
-}
-
-.er-faq summary {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.er-faq p {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.er-page :focus-visible {
-  outline: 3px solid #d4af37;
-  outline-offset: 3px;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-/* LIGHT THEME */
-
-html[data-theme="light"] .er-hero,
-body[data-theme="light"] .er-hero {
-  background: linear-gradient(
-    145deg,#ffffff,#f3ead7
-  );
-  color: #172033;
-}
-
-html[data-theme="light"] .er-number,
-html[data-theme="light"] .er-hero h1,
-html[data-theme="light"] .er-eyebrow,
-body[data-theme="light"] .er-number,
-body[data-theme="light"] .er-hero h1,
-body[data-theme="light"] .er-eyebrow {
-  color: #765018;
-}
-
-html[data-theme="light"] .er-hero p,
-body[data-theme="light"] .er-hero p {
-  color: #46546a;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media(max-width:900px) {
-
-  .er-grid-three {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-
-}
-
-@media(max-width:650px) {
-
-  .er-page {
-    padding: 18px 12px;
-  }
-
-  .er-grid,
-  .er-grid-three,
-  .er-results {
-    grid-template-columns: minmax(0,1fr);
-  }
-
-  .er-hero {
-    padding: 28px 16px;
-  }
-
-  .er-card {
-    padding: 17px;
-  }
-
-  .er-buttons {
-    flex-direction: column;
-  }
-
-  .er-button {
-    width: 100%;
-  }
-
-}
-
-@media(prefers-reduced-motion:reduce) {
-
-  .er-page *,
-  .er-page *::before,
-  .er-page *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-
-}
-
+/* MeraHisab Error Center — Final Master 2.0.0 */
+.er-page{width:min(1100px,calc(100% - 32px));margin:auto;padding:26px 0 48px;min-width:0}
+.er-page h1,.er-page h2,.er-page h3{color:var(--mh-accent,#f0d9a6);overflow-wrap:anywhere}
+.er-page p{line-height:1.75}
+.er-hero,.er-card{padding:clamp(18px,4vw,32px);border:1px solid var(--mh-border,#44536a);border-radius:22px;background:var(--mh-surface,#14243b);color:var(--mh-text,#f8f6f0);min-width:0;overflow-wrap:anywhere;box-shadow:var(--mh-shadow)}
+.er-hero{text-align:center;padding:clamp(28px,6vw,60px) 20px}
+.er-number{display:block;color:var(--mh-accent,#f0d9a6);font-size:clamp(80px,18vw,160px);line-height:1.1;font-weight:900}
+.er-hero h1{font-size:clamp(28px,5vw,46px)}
+.er-hero p{max-width:760px;margin:12px auto}
+.er-section{margin:40px 0}
+.er-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.er-grid-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.er-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.er-hero .er-actions{justify-content:center}
+.er-button,.er-page .action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border:1px solid var(--mh-control-border,#a08a5d);border-radius:12px;background:var(--mh-surface-raised,#172640);color:var(--mh-text,#f8f6f0);font:inherit;font-weight:700;text-decoration:none;text-align:center;cursor:pointer;max-width:100%;white-space:normal}
+.er-primary{background:linear-gradient(135deg,#f0d9a6,#d8b878);color:#101827}
+.er-input{display:block;width:100%;min-height:48px;padding:12px;border:1px solid var(--mh-control-border,#a08a5d);border-radius:12px;background:var(--mh-surface-raised,#172640);color:var(--mh-text,#f8f6f0);font:inherit}
+.er-path{display:block;padding:16px;border:1px solid var(--mh-border,#44536a);border-radius:12px;background:var(--mh-bg,#080f20);color:var(--mh-accent,#f0d9a6);white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;font:14px/1.6 monospace}
+.er-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.er-note{padding:18px;border:1px solid var(--mh-control-border,#a08a5d);border-radius:14px;background:var(--mh-surface-raised,#172640);margin:20px 0}
+.er-diagnostic{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px 0;border-bottom:1px solid var(--mh-border,#44536a)}
+.er-diagnostic strong{color:var(--mh-accent,#f0d9a6)}
+.er-small{font-size:14px;color:var(--mh-muted,#b9c5d6)}
+.er-faq details{padding:16px;margin:12px 0;border:1px solid var(--mh-border,#44536a);border-radius:14px;background:var(--mh-surface,#14243b)}
+.er-faq summary{font-weight:700;cursor:pointer;min-height:36px}
+.er-page [hidden]{display:none!important}
+.er-page :focus-visible{outline:3px solid var(--mh-focus,#94c7ff);outline-offset:3px}
+@media(max-width:900px){.er-grid-three,.er-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.er-page{width:calc(100% - 24px)}.er-grid,.er-grid-three,.er-links{grid-template-columns:minmax(0,1fr)}.er-actions>.er-button{flex:1 1 100%}.er-input{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.er-page *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{header.site,footer.site,.er-actions{display:none!important}.er-page{width:100%;padding:0}}
 </style>
-
 </head>
-
 <body>
 
-<!-- WEBSITE HEADER -->
-
+<a class="skip-link" href="#mainContent">Skip to main content</a>
 <header class="site">
-
 <div class="container">
-
-<strong>MeraHisab</strong>
-
+<strong><a href="/">MeraHisab</a></strong>
 <nav aria-label="Main navigation">
-
-<a href="/index.html">Home</a>
-<a href="/downloads.html">Apps</a>
+<a href="/">Home</a>
+<a href="/merahisab.html">MeraHisab</a>
+<a href="/royal-khata.html">Royal Khata</a>
 <a href="/compare.html">Compare</a>
-<a href="/index.html#features">Features</a>
+<a href="/downloads.html">Downloads</a>
 <a href="/tools.html">Tools</a>
 <a href="/privacy.html">Privacy</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Support</a>
-
-<button id="theme"
-type="button"
-aria-label="Change website theme">
-Theme
-</button>
-
+<button type="button" id="theme">Dark Mode</button>
 </nav>
-
 </div>
-
 </header>
 
-<main class="shell er-page">
-
-<!-- ERROR HERO -->
+<main class="er-page" id="mainContent">
+<div id="content" data-no-translate="true">
 
 <section class="er-hero">
-
-<img
-id="brandLogo"
-src="/icons/icon-192.png"
-class="er-logo"
-alt="MeraHisab logo"
-width="82"
-height="82">
-
-<div style="margin-top:18px">
-
-<span class="er-eyebrow">
-
-MERAHISAB • WEBSITE NAVIGATION
-
-</span>
-
+<p>MERAHISAB</p>
+<span class="er-number">404</span>
+<h1 data-hi="पेज नहीं मिला">Page Not Found</h1>
+<p data-hi="आप जिस पेज को खोज रहे हैं वह उपलब्ध नहीं है। उसका नाम बदला गया हो सकता है या वेबसाइट का पता गलत हो सकता है।">The requested page could not be found. It may have been moved, renamed, removed or entered incorrectly.</p>
+<div class="er-actions">
+<a class="er-button er-primary" href="/" data-hi="होम पेज पर जाएं">Return Home</a>
+<button class="er-button" id="goBack" type="button" data-hi="वापस जाएं">Go Back</button>
+<a class="er-button" href="#pageSearchSection" data-hi="सही पेज खोजें">Find a Page</a>
 </div>
-
-<div class="er-number" aria-hidden="true">
-
-404
-
-</div>
-
-<h1>Page Not Found</h1>
-
-<p>
-
-The page you are looking for could
-not be found. It may have been moved,
-renamed, removed or entered incorrectly.
-
-</p>
-
-<p>
-
-आप जिस पेज को खोज रहे हैं, वह उपलब्ध
-नहीं है। आप नीचे दिए गए विकल्पों से
-सही पेज पर जा सकते हैं।
-
-</p>
-
-<div class="er-buttons er-center">
-
-<a href="/index.html"
-class="er-button er-primary">
-
-Return Home
-
-</a>
-
-<button
-id="goBack"
-type="button"
-class="er-button">
-
-Go Back
-
-</button>
-
-<a href="#pageSearchSection"
-class="er-button">
-
-Find a Page
-
-</a>
-
-</div>
-
 </section>
-
-<!-- ERROR INFORMATION -->
 
 <section class="er-section">
-
-<article class="upgrade-card er-card">
-
-<h2>Requested Page Information</h2>
-
-<div class="er-info-row">
-
-<span>Error Type</span>
-
-<strong>Page Not Found</strong>
-
+<article class="er-card">
+<h2 data-hi="अनुरोधित पेज की जानकारी">Requested Page Information</h2>
+<div class="er-diagnostic"><span data-hi="त्रुटि प्रकार">Error Type</span><strong>404</strong></div>
+<div class="er-diagnostic"><span data-hi="आधिकारिक डोमेन">Official Domain</span><strong>merahisab.store</strong></div>
+<div class="er-diagnostic"><span data-hi="ब्राउजर नेटवर्क स्थिति">Browser Network Status</span><strong id="networkStatus">Checking...</strong></div>
+<p data-hi="अनुरोधित पथ">Requested Path</p>
+<code class="er-path" id="requestedPath" translate="no">Unavailable</code>
+<p class="er-small" data-hi="URL के query parameters और fragments शामिल नहीं हैं। पथ में निजी जानकारी हो सकती है, इसलिए कॉपी करने से पहले जांचें।">Query parameters and URL fragments are excluded. Review the path for private information before copying it.</p>
+<div class="er-actions">
+<button type="button" class="er-button" id="copyPath" data-hi="पेज पथ कॉपी करें">Copy Page Path</button>
+<button type="button" class="er-button" id="retryPage" data-hi="दोबारा प्रयास करें">Try Again</button>
+<a class="er-button" href="/contact.html" data-hi="संपर्क और सहायता">Contact &amp; Support</a>
 </div>
-
-<div class="er-info-row">
-
-<span>Official Domain</span>
-
-<strong>merahisab.store</strong>
-
-</div>
-
-<div class="er-info-row">
-
-<span>Browser Network Status</span>
-
-<strong id="networkStatus">Checking...</strong>
-
-</div>
-
-<p>Requested path:</p>
-
-<code class="er-path" id="requestedPath">
-
-Unavailable
-
-</code>
-
-<p class="er-status">
-
-Query parameters and URL fragments
-are excluded from this display.
-
-Avoid sharing paths that contain
-personal or confidential information.
-
-</p>
-
-<div class="er-buttons">
-
-<button
-id="copyPath"
-type="button"
-class="er-button">
-
-Copy Page Path
-
-</button>
-
-<button
-id="retryPage"
-type="button"
-class="er-button">
-
-Try Again
-
-</button>
-
-<a href="/contact.html"
-class="er-button">
-
-Contact & Support
-
-</a>
-
-</div>
-
-<p
-id="pathStatus"
-class="er-status"
-role="status"
-aria-live="polite">
-
-</p>
-
+<p id="pathStatus" role="status" aria-live="polite"></p>
 </article>
-
 </section>
 
-<!-- SMART PAGE SEARCH -->
-
-<section class="er-section"
-id="pageSearchSection">
-
-<h2 class="er-title">
-
-Find the Right Page
-
-</h2>
-
-<article class="upgrade-card er-card">
-
-<label for="pageSearch"
-class="er-search-label">
-
-Search MeraHisab Website
-
-</label>
-
-<input
-id="pageSearch"
-class="er-input"
-type="search"
-maxlength="100"
-autocomplete="off"
-placeholder="Search apps, downloads, calculator, privacy...">
-
-<div class="er-buttons">
-
-<button
-id="clearSearch"
-type="button"
-class="er-button">
-
-Clear Search
-
-</button>
-
+<section class="er-section" id="pageSearchSection">
+<article class="er-card">
+<h2 data-hi="सही पेज खोजें">Find the Right Page</h2>
+<label for="pageSearch" data-hi="वेबसाइट में खोजें">Search MeraHisab Website</label>
+<input class="er-input" id="pageSearch" type="search" maxlength="120" autocomplete="off" spellcheck="false" placeholder="Search in English or Hindi">
+<div class="er-actions">
+<button class="er-button" id="clearSearch" type="button" data-hi="खोज साफ करें">Clear Search</button>
 </div>
-
-<p
-id="searchStatus"
-class="er-status"
-role="status"
-aria-live="polite">
-
-Explore available website pages.
-
-</p>
-
-<div
-id="searchResults"
-class="er-results">
-
-</div>
-
-<div
-id="noResults"
-class="er-notice"
-hidden>
-
-No matching pages found.
-
-Try searching for MeraHisab,
-Royal Khata, tools, download,
-privacy or support.
-
-</div>
-
+<p id="searchStatus" role="status" aria-live="polite"></p>
+<div class="er-links" id="searchResults"></div>
+<p id="noResults" hidden data-hi="कोई पेज नहीं मिला। डाउनलोड, कैलकुलेटर, गोपनीयता या सहायता खोजें।">No matching pages found. Try downloads, calculators, privacy or support.</p>
 </article>
-
 </section>
 
-<!-- SUGGESTED PAGES -->
-
-<section class="er-section"
-id="suggestedSection"
-hidden>
-
-<h2 class="er-title">
-
-Suggested Pages
-
-</h2>
-
-<article class="upgrade-card er-card">
-
-<p>
-
-These pages may be related to
-the address you requested.
-
-</p>
-
-<div
-id="suggestedResults"
-class="er-results">
-
-</div>
-
+<section class="er-section" id="suggestedSection" hidden>
+<article class="er-card">
+<h2 data-hi="सुझाए गए पेज">Suggested Pages</h2>
+<p data-hi="ये पेज आपके अनुरोधित पथ से संबंधित हो सकते हैं।">These pages may be related to the requested path.</p>
+<div id="suggestedResults" class="er-links"></div>
 </article>
-
 </section>
-
-<!-- QUICK NAVIGATION -->
 
 <section class="er-section">
-
-<h2 class="er-title">
-
-Quick Navigation
-
-</h2>
-
-<div class="er-grid-three">
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🏠</div>
-
-<h3>Homepage</h3>
-
-<p>
-
-Explore the official MeraHisab
-website and its main features.
-
-</p>
-
-<a href="/index.html"
-class="er-button">
-
-Open Home
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">📱</div>
-
-<h3>MeraHisab</h3>
-
-<p>
-
-Explore the personal financial
-management application.
-
-</p>
-
-<a href="/merahisab.html"
-class="er-button">
-
-View MeraHisab
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">📒</div>
-
-<h3>Royal Khata</h3>
-
-<p>
-
-Explore the digital credit
-and debit ledger project.
-
-</p>
-
-<a href="/royal-khata.html"
-class="er-button">
-
-View Royal Khata
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">⬇</div>
-
-<h3>Download Center</h3>
-
-<p>
-
-Find application download
-and installation information.
-
-</p>
-
-<a href="/downloads.html"
-class="er-button">
-
-Open Downloads
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">⚖</div>
-
-<h3>Compare Applications</h3>
-
-<p>
-
-Understand the differences
-between both application projects.
-
-</p>
-
-<a href="/compare.html"
-class="er-button">
-
-Compare Apps
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🧮</div>
-
-<h3>Financial Tools</h3>
-
-<p>
-
-Explore financial calculators
-and everyday utilities.
-
-</p>
-
-<a href="/tools.html"
-class="er-button">
-
-Open Tools
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🔒</div>
-
-<h3>Privacy Center</h3>
-
-<p>
-
-Read privacy and data
-protection information.
-
-</p>
-
-<a href="/privacy.html"
-class="er-button">
-
-Open Privacy
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">ℹ</div>
-
-<h3>About MeraHisab</h3>
-
-<p>
-
-Learn about our applications,
-mission and development roadmap.
-
-</p>
-
-<a href="/about.html"
-class="er-button">
-
-About Us
-
-</a>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">💬</div>
-
-<h3>Help & Support</h3>
-
-<p>
-
-Explore support information
-and prepare a local request.
-
-</p>
-
-<a href="/contact.html"
-class="er-button">
-
-Open Support
-
-</a>
-
-</article>
-
+<article class="er-card">
+<h2 data-hi="त्वरित नेविगेशन">Quick Navigation</h2>
+<div class="er-links" id="quickNavigation">
+<a class="action" href="/">Home</a>
+<a class="action" href="/merahisab.html">MeraHisab</a>
+<a class="action" href="/royal-khata.html">Royal Khata</a>
+<a class="action" href="/downloads.html">Downloads</a>
+<a class="action" href="/compare.html">Compare</a>
+<a class="action" href="/tools.html">Tools</a>
+<a class="action" href="/privacy.html">Privacy</a>
+<a class="action" href="/about.html">About</a>
+<a class="action" href="/contact.html">Support</a>
 </div>
-
+</article>
 </section>
 
-<!-- TROUBLESHOOTING -->
-
 <section class="er-section">
-
-<h2 class="er-title">
-
-Why Did This Happen?
-
-</h2>
-
+<h2 data-hi="यह समस्या क्यों हुई?">Why Did This Happen?</h2>
 <div class="er-grid">
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🔗</div>
-
-<h3>Incorrect Address</h3>
-
-<p>
-
-The website address may contain
-a spelling error or an incorrect
-file name.
-
-</p>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">📁</div>
-
-<h3>Page Moved or Removed</h3>
-
-<p>
-
-The requested page may have been
-renamed or removed during a
-website update.
-
-</p>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🔄</div>
-
-<h3>Outdated Bookmark</h3>
-
-<p>
-
-A previously saved bookmark
-or external link may no longer
-point to an available page.
-
-</p>
-
-</article>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🌐</div>
-
-<h3>Offline or Cached Content</h3>
-
-<p>
-
-Network conditions or outdated
-cached resources may affect
-website navigation.
-
-A 404 error alone does not
-establish a network problem.
-
-</p>
-
-</article>
-
+<article class="er-card"><h3 data-hi="गलत वेबसाइट पता">Incorrect Address</h3><p data-hi="पेज के नाम में वर्तनी की त्रुटि हो सकती है।">The address may contain a spelling error.</p></article>
+<article class="er-card"><h3 data-hi="पेज बदला या हटाया गया">Page Moved or Removed</h3><p data-hi="वेबसाइट अपडेट के दौरान पेज का नाम बदला हो सकता है।">The page may have been renamed or removed during an update.</p></article>
+<article class="er-card"><h3 data-hi="पुराना बुकमार्क">Outdated Bookmark</h3><p data-hi="पहले से सहेजा गया लिंक पुराना हो सकता है।">A previously saved link may be outdated.</p></article>
+<article class="er-card"><h3 data-hi="ऑफलाइन या कैश सामग्री">Offline or Cached Content</h3><p data-hi="नेटवर्क और पुरानी कैश सामग्री नेविगेशन को प्रभावित कर सकते हैं। 404 अपने आप नेटवर्क समस्या साबित नहीं करता।">Network and cached content may affect navigation. A 404 alone does not establish a network problem.</p></article>
 </div>
-
 </section>
-
-<!-- PWA INFORMATION -->
 
 <section class="er-section">
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">📲</div>
-
-<h2>Website Installation & Offline Access</h2>
-
-<p>
-
-MeraHisab includes Progressive
-Web App functionality for
-supported browsers.
-
-</p>
-
-<p>
-
-Selected public website pages
-may be available offline after
-successful service worker setup
-and caching.
-
-</p>
-
-<div class="er-info-row">
-
-<span>Service Worker Support</span>
-
-<strong id="workerSupport">
-
-Checking...
-
-</strong>
-
+<article class="er-card">
+<h2 data-hi="वेबसाइट इंस्टॉलेशन और ऑफलाइन उपयोग">Website Installation &amp; Offline Access</h2>
+<p data-hi="समर्थित ब्राउजर में सफल PWA सेटअप और कैशिंग के बाद कुछ सार्वजनिक पेज ऑफलाइन उपलब्ध हो सकते हैं।">Selected public pages may be available offline after successful PWA setup and caching.</p>
+<div class="er-diagnostic"><span data-hi="Service Worker समर्थन">Service Worker Support</span><strong id="workerSupport">Checking...</strong></div>
+<div class="er-diagnostic"><span data-hi="Service Worker नियंत्रण">Service Worker Controller</span><strong id="workerController">Checking...</strong></div>
+<p data-hi="यह त्रुटि पेज नया Service Worker रजिस्टर नहीं करता। इंस्टॉलेशन और कैश प्रबंधन के लिए होम पेज खोलें।">This error page does not register a new service worker. Open the homepage for installation and cache management.</p>
+<div class="er-actions">
+<a class="er-button er-primary" href="/" data-hi="वेबसाइट होम पेज">Website Homepage</a>
+<a class="er-button" href="/offline.html" data-hi="ऑफलाइन सहायता">Offline Help</a>
 </div>
-
-<div class="er-info-row">
-
-<span>Service Worker Controller</span>
-
-<strong id="workerController">
-
-Checking...
-
-</strong>
-
-</div>
-
-<div class="er-notice">
-
-This error page does not register
-a new service worker or start
-automatic website installation.
-
-Use the homepage to access PWA
-installation, updates and storage
-management controls.
-
-</div>
-
-<div class="er-buttons">
-
-<a href="/index.html"
-class="er-button er-primary">
-
-Open Website Homepage
-
-</a>
-
-<a href="/offline.html"
-class="er-button">
-
-Offline Help
-
-</a>
-
-</div>
-
 </article>
-
 </section>
-
-<!-- BROKEN LINK REPORTING -->
 
 <section class="er-section">
-
-<h2 class="er-title">
-
-Report a Broken Link
-
-</h2>
-
-<article class="upgrade-card er-card">
-
-<div class="er-icon">🐞</div>
-
-<h3>Help Improve Website Navigation</h3>
-
-<p>
-
-If you reached this page through
-an incorrect website link, you
-can prepare a local error report.
-
-</p>
-
-<p>
-
-The report includes only the
-requested path, current timestamp
-and basic error information.
-
-Query parameters and URL fragments
-are not included.
-
-</p>
-
-<div class="er-notice">
-
-Review the requested path before
-copying a report. URL paths can
-sometimes contain private information.
-
-Copying a report does not send it
-to MeraHisab automatically.
-
+<article class="er-card">
+<h2 data-hi="खराब लिंक की रिपोर्ट">Report a Broken Link</h2>
+<p data-hi="स्थानीय रिपोर्ट में त्रुटि प्रकार, अनुरोधित पथ और समय शामिल होता है। Query parameters और fragments शामिल नहीं होते।">A local report includes the error type, requested path and timestamp. Query parameters and fragments are excluded.</p>
+<div class="er-note">
+<p data-hi="पथ में निजी जानकारी होने पर उसे साझा न करें। रिपोर्ट कॉपी करने से वह अपने आप भेजी नहीं जाती।">Do not share paths containing private information. Copying the report does not automatically submit it.</p>
 </div>
-
-<div class="er-buttons">
-
-<button
-id="copyReport"
-type="button"
-class="er-button er-primary">
-
-Copy Error Report
-
-</button>
-
-<a href="/contact.html"
-class="er-button">
-
-Open Support Center
-
-</a>
-
+<div class="er-actions">
+<button class="er-button er-primary" id="copyReport" type="button" data-hi="त्रुटि रिपोर्ट कॉपी करें">Copy Error Report</button>
+<a class="er-button" href="/contact.html" data-hi="सहायता केंद्र खोलें">Open Support Center</a>
 </div>
-
-<p
-id="reportStatus"
-class="er-status"
-role="status"
-aria-live="polite">
-
-</p>
-
+<p id="reportStatus" role="status" aria-live="polite"></p>
 </article>
-
 </section>
-
-<!-- FREQUENTLY ASKED QUESTIONS -->
 
 <section class="er-section er-faq">
+<h2 data-hi="अक्सर पूछे जाने वाले प्रश्न">Frequently Asked Questions</h2>
 
-<h2 class="er-title">
+<details><summary data-hi="404 त्रुटि क्या है?">What does a 404 error mean?</summary><p data-hi="अनुरोधित वेबसाइट पेज नहीं मिला।">The requested website resource could not be found.</p></details>
 
-Frequently Asked Questions
+<details><summary data-hi="क्या पूरी वेबसाइट बंद है?">Is the entire website unavailable?</summary><p data-hi="जरूरी नहीं। होम पेज खोलकर देखें।">Not necessarily. Try opening the homepage.</p></details>
 
-</h2>
+<details><summary data-hi="क्या इससे मेरे वित्तीय रिकॉर्ड मिट जाएंगे?">Will this delete financial records?</summary><p data-hi="केवल इस वेबसाइट त्रुटि को दिखाने से Android ऐप के रिकॉर्ड नहीं मिटते।">Displaying this website error does not itself delete native Android application records.</p></details>
 
-<details class="upgrade-card">
+<details><summary data-hi="क्या MeraHisab डाउनलोड कर सकते हैं?">Can I still download MeraHisab?</summary><p><a href="/downloads.html" data-hi="डाउनलोड केंद्र देखें">Visit Download Center</a></p></details>
 
-<summary>
+<details><summary data-hi="Royal Khata कहां मिलेगा?">Where can I find Royal Khata?</summary><p data-hi="Royal Khata का ऐप जानकारी पेज देखें। APK रिलीज बाकी है।">Visit the Royal Khata information page. APK release is pending.</p></details>
 
-What does a 404 error mean?
+<details><summary data-hi="ऑफलाइन पेज क्यों नहीं खुल रहा?">Why is an offline page unavailable?</summary><p data-hi="ऑफलाइन उपयोग सफल कैशिंग और जरूरी फाइलों पर निर्भर है।">Offline access depends on successful caching and required dependencies.</p></details>
 
-</summary>
+<details><summary data-hi="क्या ब्राउजर कैश साफ करना चाहिए?">Should I clear browser cache?</summary><p data-hi="पहले होम पेज या रीलोड विकल्प आजमाएं। कैश साफ करने से ऑफलाइन संसाधन हट सकते हैं।">Try the homepage or reload first. Clearing cache may remove offline resources.</p></details>
 
-<p>
-
-It means that the requested
-website resource could not be found.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-Is the entire website unavailable?
-
-</summary>
-
-<p>
-
-Not necessarily. A single page
-may be unavailable while other
-website pages continue to work.
-
-Try opening the homepage.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-Will this error delete my financial records?
-
-</summary>
-
-<p>
-
-Displaying this website error
-does not itself delete native
-Android application records.
-
-Do not clear application storage
-without securing a backup.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-Can I still download MeraHisab?
-
-</summary>
-
-<p>
-
-Visit the official Download Center
-for available APK download and
-installation information.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-Where can I find Royal Khata?
-
-</summary>
-
-<p>
-
-Visit the Royal Khata application
-information page.
-
-Its official APK release is pending.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-Why is an offline page unavailable?
-
-</summary>
-
-<p>
-
-Offline access depends on successful
-service worker installation and
-previously cached resources.
-
-Not every website page is available
-offline.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-Should I clear my browser cache?
-
-</summary>
-
-<p>
-
-First try opening the homepage
-or refreshing the requested page.
-
-Clearing website storage may remove
-preferences and offline resources.
-
-</p>
-
-</details>
-
-<details class="upgrade-card">
-
-<summary>
-
-How can I report an incorrect link?
-
-</summary>
-
-<p>
-
-Copy the local error report and
-visit the Contact & Support page
-to prepare a support request.
-
-Direct support submission is
-pending configuration.
-
-</p>
-
-</details>
+<details><summary data-hi="गलत लिंक की रिपोर्ट कैसे करें?">How can I report an incorrect link?</summary><p data-hi="स्थानीय त्रुटि रिपोर्ट कॉपी करें। आधिकारिक रिपोर्ट भेजने का माध्यम निर्धारित करना बाकी है।">Copy the local error report. Official report delivery remains pending configuration.</p></details>
 
 </section>
 
-<!-- FINAL NAVIGATION -->
-
-<section class="er-section er-hero">
-
-<h2>Continue Exploring MeraHisab</h2>
-
-<p>
-
-Return to the official website
-and explore our applications,
-financial tools and support resources.
-
-</p>
-
-<div class="er-buttons er-center">
-
-<a href="/index.html"
-class="er-button er-primary">
-
-Return to Homepage
-
-</a>
-
-<a href="/downloads.html"
-class="er-button">
-
-Explore Applications
-
-</a>
-
-<a href="/tools.html"
-class="er-button">
-
-Financial Tools
-
-</a>
-
+<div class="er-actions">
+<a class="er-button er-primary" href="/" data-hi="होम पेज पर जाएं">Return to Homepage</a>
+<a class="er-button" href="/compare.html" data-hi="ऐप्स देखें">Explore Applications</a>
+<a class="er-button" href="/tools.html" data-hi="वित्तीय उपकरण">Financial Tools</a>
 </div>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer class="site">
-
-<div class="container">
-
-© <span data-year>2026</span>
-MeraHisab. All rights reserved.
-
-<br>
-
-<a href="/index.html">Home</a> ·
-<a href="/privacy.html">Privacy</a> ·
-<a href="/about.html">About</a> ·
-<a href="/contact.html">Support</a>
-
-<br>
-
-<a href="https://merahisab.store/">
-
-merahisab.store
-
-</a>
-
-</div>
-
-</footer>
-
-<!-- ERROR PAGE ENGINE -->
-
-<script>
-
-(function () {
-
-"use strict";
-
-if (window.__merahisabErrorInitialized) {
-  return;
-}
-
-window.__merahisabErrorInitialized = true;
-
-function el(id) {
-  return document.getElementById(id);
-}
-
-/* SAFE REQUESTED PATH */
-
-const requestedPath =
-  window.location.pathname
-    .slice(0,1000);
-
-el("requestedPath").textContent =
-  requestedPath || "/";
-
-/* LOCAL PAGE DIRECTORY */
-
-const pages = [
-
-  {
-    title: "Homepage",
-    url: "/index.html",
-    description: "Official MeraHisab website.",
-    keywords: "home main index website homepage मुख्य होम"
-  },
-
-  {
-    title: "MeraHisab",
-    url: "/merahisab.html",
-    description: "Personal financial management application.",
-    keywords: "merahisab mera hisab finance income expense savings account मेरा हिसाब"
-  },
-
-  {
-    title: "Royal Khata",
-    url: "/royal-khata.html",
-    description: "Digital credit and debit ledger project.",
-    keywords: "royal khata ledger credit debit customer business udhar खाता उधार"
-  },
-
-  {
-    title: "Download Center",
-    url: "/downloads.html",
-    description: "Application downloads and release information.",
-    keywords: "downloads apps android apk installation डाउनलोड"
-  },
-
-  {
-    title: "APK Download",
-    url: "/download.html",
-    description: "MeraHisab Android installation information.",
-    keywords: "download apk install android checksum sha256"
-  },
-
-  {
-    title: "Compare Applications",
-    url: "/compare.html",
-    description: "Compare MeraHisab and Royal Khata.",
-    keywords: "compare comparison difference features तुलना"
-  },
-
-  {
-    title: "Financial Tools",
-    url: "/tools.html",
-    description: "Financial calculators and useful utilities.",
-    keywords: "tools calculator emi loan sip gst interest clock stopwatch कैलकुलेटर ब्याज"
-  },
-
-  {
-    title: "Privacy & Data Protection",
-    url: "/privacy.html",
-    description: "Privacy, storage and security information.",
-    keywords: "privacy policy security data protection backup recovery गोपनीयता सुरक्षा"
-  },
-
-  {
-    title: "About MeraHisab",
-    url: "/about.html",
-    description: "Brand information, mission and roadmap.",
-    keywords: "about mission vision brand roadmap जानकारी"
-  },
-
-  {
-    title: "Contact & Support",
-    url: "/contact.html",
-    description: "Help, feedback and support request preparation.",
-    keywords: "contact support help bug report feedback email सहायता संपर्क"
-  },
-
-  {
-    title: "Offline Help",
-    url: "/offline.html",
-    description: "Offline access and connection guidance.",
-    keywords: "offline pwa internet network connection cache"
-  }
-
-];
-
-/* CREATE SAFE SEARCH RESULT */
-
-function createResult(page) {
-
-  const link =
-    document.createElement("a");
-
-  link.className = "er-result";
-
-  link.href = page.url;
-
-  const title =
-    document.createElement("strong");
-
-  title.textContent = page.title;
-
-  const description =
-    document.createElement("span");
-
-  description.textContent =
-    page.description;
-
-  link.appendChild(title);
-  link.appendChild(description);
-
-  return link;
-
-}
-
-/* SMART SEARCH */
-
-const search = el("pageSearch");
-
-function normalize(text) {
-
-  return String(text)
-    .toLowerCase()
-    .trim();
-
-}
-
-function filterPages() {
-
-  const query =
-    normalize(search.value);
-
-  const words =
-    query.split(/\s+/).filter(Boolean);
-
-  const matches =
-    pages.filter(function (page) {
-
-      const searchable = normalize(
-
-        page.title + " " +
-        page.description + " " +
-        page.url + " " +
-        page.keywords
-
-      );
-
-      return words.every(function (word) {
-
-        return searchable.includes(word);
-
-      });
-
-    });
-
-  const results =
-    el("searchResults");
-
-  results.replaceChildren();
-
-  matches.forEach(function (page) {
-
-    results.appendChild(
-      createResult(page)
-    );
-
-  });
-
-  el("searchStatus").textContent =
-
-    matches.length +
-    " of " +
-    pages.length +
-    " pages found.";
-
-  el("noResults").hidden =
-    matches.length !== 0;
-
-}
-
-search.addEventListener(
-  "input",
-  filterPages
-);
-
-el("clearSearch").addEventListener(
-  "click",
-  function () {
-
-    search.value = "";
-
-    filterPages();
-
-    search.focus();
-
-  }
-);
-
-/* SUGGEST RELATED PAGES */
-
-function suggestPages() {
-
-  const tokens = normalize(requestedPath)
-    .replace(/\.html?$/i,"")
-    .split(/[^a-z0-9]+/)
-    .filter(function (token) {
-
-      return token.length >= 3;
-
-    });
-
-  if (!tokens.length) {
-    return;
-  }
-
-  const ranked = pages.map(function (page) {
-
-    const content = normalize(
-      page.title + " " +
-      page.url + " " +
-      page.keywords
-    );
-
-    const score = tokens.reduce(
-      function (total,token) {
-
-        return total +
-          (content.includes(token) ? 1 : 0);
-
-      },
-      0
-    );
-
-    return {
-      page: page,
-      score: score
-    };
-
-  })
-  .filter(function (item) {
-
-    return item.score > 0;
-
-  })
-  .sort(function (a,b) {
-
-    return b.score - a.score;
-
-  })
-  .slice(0,3);
-
-  if (!ranked.length) {
-    return;
-  }
-
-  const container =
-    el("suggestedResults");
-
-  container.replaceChildren();
-
-  ranked.forEach(function (item) {
-
-    container.appendChild(
-      createResult(item.page)
-    );
-
-  });
-
-  el("suggestedSection").hidden = false;
-
-}
-
-/* SAFE BACK NAVIGATION */
-
-el("goBack").addEventListener(
-  "click",
-  function () {
-
-    try {
-
-      if (document.referrer) {
-
-        const previous =
-          new URL(document.referrer);
-
-        if (
-          previous.origin ===
-            window.location.origin &&
-          previous.pathname !==
-            window.location.pathname &&
-          window.history.length > 1
-        ) {
-
-          window.history.back();
-
-          return;
-
-        }
-
-      }
-
-    } catch (error) {
-
-      // Use homepage fallback.
-
-    }
-
-    window.location.assign("/index.html");
-
-  }
-);
-
-/* RETRY REQUEST */
-
-el("retryPage").addEventListener(
-  "click",
-  function () {
-
-    window.location.reload();
-
-  }
-);
-
-/* CLIPBOARD HELPER */
-
-async function copyText(text) {
-
-  if (
-    !navigator.clipboard ||
-    !navigator.clipboard.writeText
-  ) {
-
-    throw new Error("Clipboard unavailable.");
-
-  }
-
-  await navigator.clipboard.writeText(text);
-
-}
-
-/* COPY REQUESTED PATH */
-
-el("copyPath").addEventListener(
-  "click",
-  async function () {
-
-    try {
-
-      await copyText(requestedPath);
-
-      el("pathStatus").textContent =
-        "Requested path copied.";
-
-    } catch (error) {
-
-      el("pathStatus").textContent =
-        "Automatic copying is unavailable. Copy the displayed path manually.";
-
-    }
-
-  }
-);
-
-/* COPY ERROR REPORT */
-
-el("copyReport").addEventListener(
-  "click",
-  async function () {
-
-    if (!window.confirm(
-
-      "Review the requested path for private information before copying the report. Continue?"
-
-    )) {
-
-      return;
-
-    }
-
-    const report = [
-
-      "MERAHISAB BROKEN LINK REPORT",
-      "================================",
-      "Status: Local draft - not submitted",
-      "Error: 404 Page Not Found",
-      "Website: https://merahisab.store/",
-      "Requested Path: " + requestedPath,
-      "Created: " + new Date().toISOString(),
-      "",
-      "Query parameters and URL fragments excluded.",
-      "This report has not been submitted."
-
-    ].join("\n");
-
-    try {
-
-      await copyText(report);
-
-      el("reportStatus").textContent =
-        "Error report copied. No report has been sent.";
-
-    } catch (error) {
-
-      el("reportStatus").textContent =
-        "Automatic copying is unavailable. Copy the requested path manually.";
-
-    }
-
-  }
-);
-
-/* NETWORK AND PWA DIAGNOSTICS */
-
-function updateDiagnostics() {
-
-  el("networkStatus").textContent =
-
-    navigator.onLine === false
-
-      ? "Offline reported"
-
-      : "Online reported";
-
-  el("workerSupport").textContent =
-
-    "serviceWorker" in navigator
-
-      ? "Supported"
-
-      : "Unavailable";
-
-  el("workerController").textContent =
-
-    "serviceWorker" in navigator &&
-    navigator.serviceWorker.controller
-
-      ? "Active controller"
-
-      : "Not controlled";
-
-}
-
-window.addEventListener(
-  "online",
-  updateDiagnostics
-);
-
-window.addEventListener(
-  "offline",
-  updateDiagnostics
-);
-
-if ("serviceWorker" in navigator) {
-
-  navigator.serviceWorker.addEventListener(
-    "controllerchange",
-    updateDiagnostics
-  );
-
-}
-
-/* BRAND LOGO FALLBACK */
-
-const logo = el("brandLogo");
-
-function hideBrokenLogo() {
-
-  logo.hidden = true;
-
-}
-
-logo.addEventListener(
-  "error",
-  hideBrokenLogo
-);
-
-if (
-  logo.complete &&
-  logo.naturalWidth === 0
-) {
-
-  hideBrokenLogo();
-
-}
-
-/* AUTOMATIC COPYRIGHT YEAR */
-
-document.querySelectorAll("[data-year]")
-.forEach(function (element) {
-
-  element.textContent =
-    String(new Date().getFullYear());
-
-});
-
-/* INITIALIZE */
-
-filterPages();
-
-suggestPages();
-
-updateDiagnostics();
-
-})();
-
-</script>
 
 <noscript>
-
-<div style="padding:20px;text-align:center;background:#172640;color:#f0d9a6">
-
-JavaScript is disabled.
-
-You can still navigate using
-the available website links.
-
-Smart search, diagnostics and
-copy controls require JavaScript.
-
-</div>
-
+<p>JavaScript is unavailable. Use the visible navigation links.</p>
 </noscript>
 
+</div>
+</main>
+
+<footer class="site">
+<div class="container">
+<strong>MeraHisab</strong>
+<p>Your Money, Your Hisab</p>
+<nav aria-label="Footer navigation">
+<a href="/">Home</a><a href="/privacy.html">Privacy</a><a href="/about.html">About</a><a href="/contact.html">Support</a>
+</nav>
+<p>&copy; <span data-year>2026</span> MeraHisab. <span data-i18n="footer.rights">All rights reserved.</span></p>
+</div>
+</footer>
+
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id),root=$('content'),labels=[...root.querySelectorAll('[data-hi]')].map(e=>[e,e.textContent]);
+const hi=()=>document.documentElement.dataset.language==='hi'||/^hi(?:-|$)/i.test(document.documentElement.lang),t=(en,h)=>hi()?h:en;
+const pages=[['/','Homepage','होम','main home मुख्य'],['/merahisab.html','MeraHisab','MeraHisab','personal finance income expense आय खर्च'],['/royal-khata.html','Royal Khata','Royal Khata','ledger credit debit खाता उधार'],['/downloads.html','Download Center','डाउनलोड केंद्र','apk install application डाउनलोड'],['/download.html','MeraHisab APK','MeraHisab APK','apk install file डाउनलोड'],['/compare.html','Compare Applications','ऐप्स की तुलना','compare features तुलना'],['/tools.html','Financial Tools','वित्तीय उपकरण','emi sip gst calculator clock stopwatch गणना ब्याज'],['/privacy.html','Privacy Center','गोपनीयता केंद्र','privacy security data सुरक्षा गोपनीयता'],['/about.html','About MeraHisab','हमारे बारे में','about mission roadmap जानकारी'],['/contact.html','Help & Support','संपर्क और सहायता','contact support bug help शिकायत सहायता'],['/offline.html','Offline Help','ऑफलाइन सहायता','offline connection network इंटरनेट']];
+const path=location.pathname.slice(0,1000),norm=s=>s.normalize('NFC').toLowerCase().trim();$('requestedPath').textContent=path||'/';
+function links(target,items){const box=$(target);box.replaceChildren(...items.map(([href,en,h])=>{const a=document.createElement('a');a.href=href;a.textContent=t(en,h);a.className='action';return a;}));}
+function search(){const terms=norm($('pageSearch').value).split(/\s+/).filter(Boolean),items=pages.filter(p=>terms.every(q=>norm(p.join(' ')).includes(q)));links('searchResults',items);$('searchStatus').textContent=t(`${items.length} pages found.`,`${items.length} पेज मिले।`);$('noResults').hidden=items.length!==0;}
+function suggest(){const tokens=norm(path).split(/[^a-z0-9\u0900-\u097f]+/).filter(v=>v.length>=3&&v!=='html');const ranked=pages.map(p=>[p,tokens.reduce((n,v)=>n+Number(norm(p.join(' ')).includes(v)),0)]).filter(([,n])=>n>0).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([p])=>p);$('suggestedSection').hidden=!ranked.length;links('suggestedResults',ranked);}
+function diagnostics(){let support=false,control=false;try{support='serviceWorker'in navigator;control=!!navigator.serviceWorker?.controller;}catch{}$('networkStatus').textContent=navigator.onLine===false?t('Offline reported','डिवाइस ऑफलाइन बताता है'):t('Online reported','डिवाइस ऑनलाइन बताता है');$('workerSupport').textContent=support?t('Supported','समर्थित'):t('Unavailable','उपलब्ध नहीं');$('workerController').textContent=control?t('Controlled','नियंत्रित'):t('Not controlled','नियंत्रित नहीं');}
+async function copy(text,id){if(!confirm(t('Review the path for private information before copying. Continue?','कॉपी से पहले पथ में निजी जानकारी जांचें। जारी रखें?')))return;try{await navigator.clipboard.writeText(text);$(id).textContent=t('Copied. Nothing was sent.','कॉपी हो गया। कुछ भेजा नहीं गया।');}catch{$(id).textContent=t('Copy unavailable. Select the text manually.','कॉपी उपलब्ध नहीं। स्वयं टेक्स्ट चुनें।');}}
+$('copyPath').addEventListener('click',()=>copy(path,'pathStatus'));$('copyReport').addEventListener('click',()=>copy(['MeraHisab local error report','Error: 404','Path: '+path,'Time: '+new Date().toISOString()].join('\n'),'reportStatus'));$('retryPage').addEventListener('click',()=>location.reload());$('goBack').addEventListener('click',()=>{try{if(document.referrer&&new URL(document.referrer).origin===location.origin&&history.length>1){history.back();return;}}catch{}location.assign('/');});$('pageSearch').addEventListener('input',search);$('clearSearch').addEventListener('click',()=>{$('pageSearch').value='';search();$('pageSearch').focus();});
+function language(){labels.forEach(([e,en])=>e.textContent=t(en,e.dataset.hi));document.title=t('404 — Page Not Found | MeraHisab','404 — पेज नहीं मिला | MeraHisab');$('pageSearch').placeholder=t('Search in English or Hindi','हिन्दी या अंग्रेजी में खोजें');links('quickNavigation',pages.filter(p=>!['/download.html','/offline.html'].includes(p[0])));search();suggest();diagnostics();}
+window.addEventListener('online',diagnostics);window.addEventListener('offline',diagnostics);try{navigator.serviceWorker?.addEventListener('controllerchange',diagnostics);}catch{}window.addEventListener('merahisab:languagechange',language);window.addEventListener('merahisab:languageready',language);language();
+})();
+</script>
 </body>
 </html>
