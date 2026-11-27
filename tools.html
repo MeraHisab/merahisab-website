@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Financial Tools & Calculators | MeraHisab</title>
+
+    <meta name="description"
+          content="Free financial calculators, EMI calculator, SIP calculator, GST calculator, interest calculator and useful utilities by MeraHisab.">
+
+    <meta name="theme-color" content="#080f20">
+
+    <link rel="canonical"
+          href="https://merahisab.store/tools.html">
+
+    <link rel="stylesheet" href="upgrade.css">
+
+    <script defer src="upgrade.js"></script>
+
+    <style>
+
+        .tools-hero {
+            background: linear-gradient(
+                135deg,
+                #081322,
+                #14253d,
+                #26364d
+            );
+            border: 1px solid #d4af37;
+            border-radius: 24px;
+            padding: clamp(24px, 5vw, 60px);
+            text-align: center;
+            color: #f8f6f0;
+            margin-bottom: 28px;
+        }
+
+        .tools-hero h1 {
+            color: #e5c788;
+        }
+
+        .tools-section {
+            margin-top: 28px;
+        }
+
+        .tool-card {
+            min-width: 0;
+        }
+
+        .tool-card label {
+            display: block;
+            margin: 14px 0 6px;
+            font-weight: 600;
+        }
+
+        .tool-card input,
+        .tool-card select {
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
+            padding: 12px;
+            border: 1px solid #a58a52;
+            border-radius: 10px;
+            background: #101c2d;
+            color: #f8f6f0;
+            font: inherit;
+        }
+
+        html[data-theme=light] .tool-card input,
+        html[data-theme=light] .tool-card select {
+            background: #ffffff;
+            color: #14253d;
+        }
+
+        .tool-card button {
+            margin-top: 16px;
+            cursor: pointer;
+        }
+
+        .tool-card button:focus-visible,
+        .tool-card input:focus-visible,
+        .tool-card select:focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 3px;
+        }
+
+        .tool-result {
+            margin-top: 20px;
+            padding: 16px;
+            border: 1px solid #a58a52;
+            border-radius: 12px;
+            background: rgba(212,175,55,0.07);
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            white-space: pre-line;
+        }
+
+        .tool-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tool-note {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .digital-display {
+            font-size: clamp(26px, 5vw, 42px);
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            text-align: center;
+            margin: 24px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .tool-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .tool-navigation a {
+            padding: 8px 14px;
+            border: 1px solid #a58a52;
+            border-radius: 20px;
+            color: #e5c788;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+
+            .tool-actions button {
+                flex: 1 1 auto;
+            }
+
+            .tool-card input,
+            .tool-card select {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="site">
+
+        <div class="container">
+
+            <strong>MeraHisab</strong>
+
+            <nav aria-label="Main navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="compare.html">Compare</a>
+
+                <a href="index.html#features">Features</a>
+
+                <a href="tools.html"
+                   aria-current="page">Tools</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Support</a>
+
+                <button id="theme" type="button">
+                    Theme
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="shell">
+
+        <p>
+            <a href="index.html">Home</a>
+            / Financial Tools
+        </p>
+
+        <section class="tools-hero">
+
+            <p>SMART FINANCIAL UTILITIES</p>
+
+            <h1>Financial Tools &amp; Calculators</h1>
+
+            <p>
+
+                Calculate, plan and manage
+                your finances with convenient
+                browser-based tools.
+
+            </p>
+
+            <p>
+
+                No account required.
+                No calculator data submitted
+                to a server by these tools.
+
+            </p>
+
+            <nav class="tool-navigation"
+                 aria-label="Tools navigation">
+
+                <a href="#interest-tools">Interest</a>
+
+                <a href="#investment-tools">Investment</a>
+
+                <a href="#business-tools">Business</a>
+
+                <a href="#daily-tools">Utilities</a>
+
+            </nav>
+
+        </section>
+                <!-- INTEREST CALCULATORS -->
+
+        <section id="interest-tools"
+                 class="tools-section">
+
+            <h2>Interest &amp; Loan Calculators</h2>
+
+            <div class="upgrade-grid">
+
+                <!-- Simple Interest -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Simple Interest Calculator</h3>
+
+                    <form id="simpleForm">
+
+                        <label for="simpleAmount">
+                            Principal Amount (INR)
+                        </label>
+
+                        <input id="simpleAmount"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="100000"
+                               required>
+
+                        <label for="simpleRate">
+                            Annual Interest Rate (%)
+                        </label>
+
+                        <input id="simpleRate"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="8"
+                               required>
+
+                        <label for="simpleYears">
+                            Time Period (Years)
+                        </label>
+
+                        <input id="simpleYears"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="5"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="simpleResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <!-- Compound Interest -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Compound Interest Calculator</h3>
+
+                    <form id="compoundForm">
+
+                        <label for="compoundAmount">
+                            Principal Amount (INR)
+                        </label>
+
+                        <input id="compoundAmount"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="100000"
+                               required>
+
+                        <label for="compoundRate">
+                            Annual Interest Rate (%)
+                        </label>
+
+                        <input id="compoundRate"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="8"
+                               required>
+
+                        <label for="compoundYears">
+                            Time Period (Years)
+                        </label>
+
+                        <input id="compoundYears"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="5"
+                               required>
+
+                        <label for="compoundFrequency">
+                            Compounding Frequency
+                        </label>
+
+                        <select id="compoundFrequency">
+
+                            <option value="1">
+                                Annually
+                            </option>
+
+                            <option value="2">
+                                Half Yearly
+                            </option>
+
+                            <option value="4">
+                                Quarterly
+                            </option>
+
+                            <option value="12">
+                                Monthly
+                            </option>
+
+                        </select>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="compoundResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <!-- EMI Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Loan EMI Calculator</h3>
+
+                    <form id="emiForm">
+
+                        <label for="emiAmount">
+                            Loan Amount (INR)
+                        </label>
+
+                        <input id="emiAmount"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="500000"
+                               required>
+
+                        <label for="emiRate">
+                            Annual Interest Rate (%)
+                        </label>
+
+                        <input id="emiRate"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="10"
+                               required>
+
+                        <label for="emiMonths">
+                            Loan Duration (Months)
+                        </label>
+
+                        <input id="emiMonths"
+                               type="number"
+                               min="1"
+                               max="1200"
+                               step="1"
+                               value="60"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate EMI
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="emiResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+            </div>
+
+        </section>
+                <!-- INVESTMENT CALCULATORS -->
+
+        <section id="investment-tools"
+                 class="tools-section">
+
+            <h2>Investment &amp; Savings Calculators</h2>
+
+            <div class="upgrade-grid">
+
+                <!-- SIP Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>SIP Calculator</h3>
+
+                    <form id="sipForm">
+
+                        <label for="sipAmount">
+                            Monthly Investment (INR)
+                        </label>
+
+                        <input id="sipAmount"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="5000"
+                               required>
+
+                        <label for="sipRate">
+                            Expected Annual Return (%)
+                        </label>
+
+                        <input id="sipRate"
+                               type="number"
+                               min="-99"
+                               step="0.01"
+                               value="12"
+                               required>
+
+                        <label for="sipYears">
+                            Investment Period (Years)
+                        </label>
+
+                        <input id="sipYears"
+                               type="number"
+                               min="1"
+                               max="100"
+                               step="1"
+                               value="10"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate SIP
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="sipResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                        <p class="tool-note">
+
+                            Assumes investments at the
+                            beginning of each month
+                            and a constant return.
+                            Actual returns may vary.
+
+                        </p>
+
+                    </form>
+
+                </article>
+
+                <!-- Lumpsum Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Lumpsum Calculator</h3>
+
+                    <form id="lumpForm">
+
+                        <label for="lumpAmount">
+                            Investment Amount (INR)
+                        </label>
+
+                        <input id="lumpAmount"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="100000"
+                               required>
+
+                        <label for="lumpRate">
+                            Expected Annual Return (%)
+                        </label>
+
+                        <input id="lumpRate"
+                               type="number"
+                               min="-99"
+                               step="0.01"
+                               value="12"
+                               required>
+
+                        <label for="lumpYears">
+                            Investment Period (Years)
+                        </label>
+
+                        <input id="lumpYears"
+                               type="number"
+                               min="0"
+                               max="100"
+                               step="0.01"
+                               value="10"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="lumpResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <!-- FD Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Fixed Deposit Calculator</h3>
+
+                    <form id="fdForm">
+
+                        <label for="fdAmount">
+                            Deposit Amount (INR)
+                        </label>
+
+                        <input id="fdAmount"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="100000"
+                               required>
+
+                        <label for="fdRate">
+                            Annual Interest Rate (%)
+                        </label>
+
+                        <input id="fdRate"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="7.5"
+                               required>
+
+                        <label for="fdYears">
+                            Deposit Period (Years)
+                        </label>
+
+                        <input id="fdYears"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="5"
+                               required>
+
+                        <label for="fdFrequency">
+                            Compounding Frequency
+                        </label>
+
+                        <select id="fdFrequency">
+
+                            <option value="4">
+                                Quarterly
+                            </option>
+
+                            <option value="12">
+                                Monthly
+                            </option>
+
+                            <option value="2">
+                                Half Yearly
+                            </option>
+
+                            <option value="1">
+                                Annually
+                            </option>
+
+                        </select>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate FD
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="fdResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                        <p class="tool-note">
+
+                            Estimated cumulative deposit
+                            value before taxes.
+
+                        </p>
+
+                    </form>
+
+                </article>
+
+            </div>
+
+        </section>
+                <!-- BUSINESS CALCULATORS -->
+
+        <section id="business-tools"
+                 class="tools-section">
+
+            <h2>Business &amp; Everyday Calculators</h2>
+
+            <div class="upgrade-grid">
+
+                <!-- GST Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>GST Calculator</h3>
+
+                    <form id="gstForm">
+
+                        <label for="gstAmount">
+                            Amount (INR)
+                        </label>
+
+                        <input id="gstAmount"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="1000"
+                               required>
+
+                        <label for="gstRate">
+                            Applicable GST Rate (%)
+                        </label>
+
+                        <input id="gstRate"
+                               type="number"
+                               min="0"
+                               max="100"
+                               step="0.01"
+                               value="18"
+                               required>
+
+                        <label for="gstMode">
+                            Calculation Type
+                        </label>
+
+                        <select id="gstMode">
+
+                            <option value="add">
+                                Add GST
+                            </option>
+
+                            <option value="remove">
+                                Remove GST
+                            </option>
+
+                        </select>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate GST
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="gstResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                        <p class="tool-note">
+
+                            Enter the applicable GST rate
+                            for your product or service.
+
+                        </p>
+
+                    </form>
+
+                </article>
+
+                <!-- Percentage Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Percentage Calculator</h3>
+
+                    <form id="percentageForm">
+
+                        <label for="percentageAmount">
+                            Total Amount
+                        </label>
+
+                        <input id="percentageAmount"
+                               type="number"
+                               step="any"
+                               value="1000"
+                               required>
+
+                        <label for="percentageRate">
+                            Percentage (%)
+                        </label>
+
+                        <input id="percentageRate"
+                               type="number"
+                               step="any"
+                               value="20"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="percentageResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <!-- Discount Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Discount Calculator</h3>
+
+                    <form id="discountForm">
+
+                        <label for="discountAmount">
+                            Original Price (INR)
+                        </label>
+
+                        <input id="discountAmount"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="2000"
+                               required>
+
+                        <label for="discountRate">
+                            Discount (%)
+                        </label>
+
+                        <input id="discountRate"
+                               type="number"
+                               min="0"
+                               max="100"
+                               step="0.01"
+                               value="20"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate Discount
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="discountResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <!-- Profit Loss Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Profit &amp; Loss Calculator</h3>
+
+                    <form id="profitForm">
+
+                        <label for="costPrice">
+                            Cost Price (INR)
+                        </label>
+
+                        <input id="costPrice"
+                               type="number"
+                               min="0.01"
+                               step="0.01"
+                               value="1000"
+                               required>
+
+                        <label for="sellingPrice">
+                            Selling Price (INR)
+                        </label>
+
+                        <input id="sellingPrice"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="1200"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="profitResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <!-- Budget Calculator -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Monthly Budget Calculator</h3>
+
+                    <form id="budgetForm">
+
+                        <label for="budgetIncome">
+                            Monthly Income (INR)
+                        </label>
+
+                        <input id="budgetIncome"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="30000"
+                               required>
+
+                        <label for="budgetExpense">
+                            Monthly Expenses (INR)
+                        </label>
+
+                        <input id="budgetExpense"
+                               type="number"
+                               min="0"
+                               step="0.01"
+                               value="20000"
+                               required>
+
+                        <div class="tool-actions">
+
+                            <button class="action"
+                                    type="submit">
+                                Calculate Budget
+                            </button>
+
+                            <button type="reset">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        <div id="budgetResult"
+                             class="tool-result"
+                             aria-live="polite">
+
+                            Enter details to calculate.
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+            </div>
+
+        </section>
+                <!-- DAILY UTILITIES -->
+
+        <section id="daily-tools"
+                 class="tools-section">
+
+            <h2>Daily Utilities</h2>
+
+            <div class="upgrade-grid">
+
+                <!-- Digital Clock -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Indian Standard Time</h3>
+
+                    <div id="digitalClock"
+                         class="digital-display">
+
+                        --:--:--
+
+                    </div>
+
+                    <p id="digitalDate"
+                       style="text-align:center;">
+
+                    </p>
+
+                    <p style="text-align:center;">
+
+                        Asia/Kolkata — IST
+
+                    </p>
+
+                    <p class="tool-note">
+
+                        Based on your device clock.
+
+                    </p>
+
+                </article>
+
+                <!-- Stopwatch -->
+
+                <article class="upgrade-card tool-card">
+
+                    <h3>Digital Stopwatch</h3>
+
+                    <div id="stopwatchDisplay"
+                         class="digital-display">
+
+                        00:00:00.00
+
+                    </div>
+
+                    <div class="tool-actions">
+
+                        <button id="stopwatchStart"
+                                class="action"
+                                type="button">
+
+                            Start
+
+                        </button>
+
+                        <button id="stopwatchPause"
+                                type="button">
+
+                            Pause
+
+                        </button>
+
+                        <button id="stopwatchReset"
+                                type="button">
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- PRIVACY -->
+
+        <section class="upgrade-card tools-section">
+
+            <h2>Calculator Privacy</h2>
+
+            <p>
+
+                These calculators perform
+                calculations locally in your
+                browser using JavaScript.
+
+            </p>
+
+            <p>
+
+                The calculator code does not
+                transmit or permanently store
+                your entered financial amounts.
+
+            </p>
+
+            <p>
+
+                Please avoid entering sensitive
+                information on shared devices.
+
+            </p>
+
+            <a class="action" href="privacy.html">
+
+                Privacy Information
+
+            </a>
+
+        </section>
+
+        <!-- DISCLAIMER -->
+
+        <section class="upgrade-card tools-section">
+
+            <h2>Financial Disclaimer</h2>
+
+            <p>
+
+                These calculators are provided
+                for general information and
+                educational purposes.
+
+            </p>
+
+            <p>
+
+                Calculated results are estimates.
+                Actual loan payments, taxes,
+                investment returns and deposit
+                maturity amounts may differ.
+
+            </p>
+
+            <p>
+
+                Investment returns are not
+                guaranteed. Consult a qualified
+                financial professional before
+                making important financial decisions.
+
+            </p>
+
+        </section>
+
+        <!-- APPLICATIONS -->
+
+        <section class="tools-hero tools-section">
+
+            <h2>Explore Our Financial Apps</h2>
+
+            <p>
+
+                Discover MeraHisab and Royal Khata.
+
+            </p>
+
+            <a class="action"
+               href="downloads.html">
+
+                Visit Download Center
+
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- PREMIUM FOOTER -->
+
+    <footer class="site">
+
+        <div class="container">
+
+            <h2>MeraHisab</h2>
+
+            <p>Your Money. Your Control.</p>
+
+            <nav aria-label="Footer navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="compare.html">Compare</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <p>
+
+                Official Website:
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <p>
+
+                &copy; <span data-year></span>
+
+                MeraHisab. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+        <!-- FINANCIAL CALCULATOR ENGINE -->
+
+    <script>
+
+        (() => {
+
+            "use strict";
+
+            const get = id =>
+                document.getElementById(id);
+
+            const num = id =>
+                get(id).valueAsNumber;
+
+            const moneyFormatter =
+                new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    maximumFractionDigits: 2
+                });
+
+            const numberFormatter =
+                new Intl.NumberFormat("en-IN", {
+                    maximumFractionDigits: 2
+                });
+
+            function money(value) {
+
+                if (!Number.isFinite(value)) {
+                    throw new Error("Invalid result");
+                }
+
+                return moneyFormatter.format(value);
+
+            }
+
+            function number(value) {
+
+                if (!Number.isFinite(value)) {
+                    throw new Error("Invalid result");
+                }
+
+                return numberFormatter.format(value);
+
+            }
+
+            function show(id, lines) {
+
+                get(id).textContent =
+                    lines.join("\n");
+
+            }
+
+            function bind(formId, resultId, calculate) {
+
+                const form = get(formId);
+
+                form.addEventListener(
+                    "submit",
+                    event => {
+
+                        event.preventDefault();
+
+                        if (!form.checkValidity()) {
+                            form.reportValidity();
+                            return;
+                        }
+
+                        try {
+
+                            calculate();
+
+                        } catch (error) {
+
+                            show(resultId, [
+                                "Unable to calculate.",
+                                "Please check your input values."
+                            ]);
+
+                        }
+
+                    }
+                );
+
+                form.addEventListener(
+                    "reset",
+                    () => {
+
+                        show(resultId, [
+                            "Enter details to calculate."
+                        ]);
+
+                    }
+                );
+
+            }
+
+            // Simple Interest
+
+            bind(
+                "simpleForm",
+                "simpleResult",
+                () => {
+
+                    const p = num("simpleAmount");
+
+                    const r = num("simpleRate") / 100;
+
+                    const t = num("simpleYears");
+
+                    const interest = p * r * t;
+
+                    show("simpleResult", [
+
+                        "Principal: " + money(p),
+
+                        "Total Interest: " +
+                            money(interest),
+
+                        "Total Amount: " +
+                            money(p + interest)
+
+                    ]);
+
+                }
+            );
+
+            // Compound Interest
+
+            bind(
+                "compoundForm",
+                "compoundResult",
+                () => {
+
+                    const p = num("compoundAmount");
+
+                    const r = num("compoundRate") / 100;
+
+                    const t = num("compoundYears");
+
+                    const n = Number(
+                        get("compoundFrequency").value
+                    );
+
+                    const total =
+                        p * Math.pow(
+                            1 + r / n,
+                            n * t
+                        );
+
+                    show("compoundResult", [
+
+                        "Principal: " + money(p),
+
+                        "Compound Interest: " +
+                            money(total - p),
+
+                        "Total Amount: " +
+                            money(total)
+
+                    ]);
+
+                }
+            );
+
+            // EMI Calculator
+
+            bind(
+                "emiForm",
+                "emiResult",
+                () => {
+
+                    const p = num("emiAmount");
+
+                    const r = num("emiRate") / 1200;
+
+                    const n = num("emiMonths");
+
+                    const emi = r === 0
+                        ? p / n
+                        : p * r / (
+                            -Math.expm1(
+                                -n * Math.log1p(r)
+                            )
+                        );
+
+                    const total = emi * n;
+
+                    show("emiResult", [
+
+                        "Monthly EMI: " +
+                            money(emi),
+
+                        "Principal: " +
+                            money(p),
+
+                        "Total Interest: " +
+                            money(
+                                Math.max(0, total - p)
+                            ),
+
+                        "Total Payment: " +
+                            money(total)
+
+                    ]);
+
+                }
+            );
+
+            // SIP Calculator
+
+            bind(
+                "sipForm",
+                "sipResult",
+                () => {
+
+                    const p = num("sipAmount");
+
+                    const r = num("sipRate") / 1200;
+
+                    const n = num("sipYears") * 12;
+
+                    const invested = p * n;
+
+                    const total = r === 0
+                        ? invested
+                        : p * (
+                            Math.expm1(
+                                n * Math.log1p(r)
+                            ) / r
+                        ) * (1 + r);
+
+                    show("sipResult", [
+
+                        "Total Investment: " +
+                            money(invested),
+
+                        "Estimated Gain / Loss: " +
+                            money(total - invested),
+
+                        "Estimated Future Value: " +
+                            money(total)
+
+                    ]);
+
+                }
+            );
+
+            // Lumpsum Calculator
+
+            bind(
+                "lumpForm",
+                "lumpResult",
+                () => {
+
+                    const p = num("lumpAmount");
+
+                    const r = num("lumpRate") / 100;
+
+                    const t = num("lumpYears");
+
+                    const total =
+                        p * Math.pow(1 + r, t);
+
+                    show("lumpResult", [
+
+                        "Invested Amount: " +
+                            money(p),
+
+                        "Estimated Gain / Loss: " +
+                            money(total - p),
+
+                        "Estimated Future Value: " +
+                            money(total)
+
+                    ]);
+
+                }
+            );
+
+            // Fixed Deposit Calculator
+
+            bind(
+                "fdForm",
+                "fdResult",
+                () => {
+
+                    const p = num("fdAmount");
+
+                    const r = num("fdRate") / 100;
+
+                    const t = num("fdYears");
+
+                    const n = Number(
+                        get("fdFrequency").value
+                    );
+
+                    const total =
+                        p * Math.pow(
+                            1 + r / n,
+                            n * t
+                        );
+
+                    show("fdResult", [
+
+                        "Deposit Amount: " +
+                            money(p),
+
+                        "Estimated Interest: " +
+                            money(total - p),
+
+                        "Maturity Amount: " +
+                            money(total)
+
+                    ]);
+
+                }
+            );
+
+            // GST Calculator
+
+            bind(
+                "gstForm",
+                "gstResult",
+                () => {
+
+                    const amount = num("gstAmount");
+
+                    const rate = num("gstRate") / 100;
+
+                    const mode = get("gstMode").value;
+
+                    const base = mode === "add"
+                        ? amount
+                        : amount / (1 + rate);
+
+                    const tax = base * rate;
+
+                    const total = base + tax;
+
+                    show("gstResult", [
+
+                        "Amount Before GST: " +
+                            money(base),
+
+                        "GST Amount: " +
+                            money(tax),
+
+                        "Amount Including GST: " +
+                            money(total)
+
+                    ]);
+
+                }
+            );
+
+            // Percentage Calculator
+
+            bind(
+                "percentageForm",
+                "percentageResult",
+                () => {
+
+                    const amount =
+                        num("percentageAmount");
+
+                    const rate =
+                        num("percentageRate");
+
+                    const result =
+                        amount * rate / 100;
+
+                    show("percentageResult", [
+
+                        "Percentage Value: " +
+                            number(result),
+
+                        "After Addition: " +
+                            number(amount + result),
+
+                        "After Subtraction: " +
+                            number(amount - result)
+
+                    ]);
+
+                }
+            );
+
+            // Discount Calculator
+
+            bind(
+                "discountForm",
+                "discountResult",
+                () => {
+
+                    const price =
+                        num("discountAmount");
+
+                    const rate =
+                        num("discountRate") / 100;
+
+                    const discount = price * rate;
+
+                    show("discountResult", [
+
+                        "Original Price: " +
+                            money(price),
+
+                        "You Save: " +
+                            money(discount),
+
+                        "Final Price: " +
+                            money(price - discount)
+
+                    ]);
+
+                }
+            );
+
+            // Profit and Loss Calculator
+
+            bind(
+                "profitForm",
+                "profitResult",
+                () => {
+
+                    const cost = num("costPrice");
+
+                    const selling = num("sellingPrice");
+
+                    const difference = selling - cost;
+
+                    const percentage =
+                        Math.abs(difference) /
+                        cost * 100;
+
+                    const status = difference > 0
+                        ? "Profit"
+                        : difference < 0
+                        ? "Loss"
+                        : "Break Even";
+
+                    show("profitResult", [
+
+                        "Status: " + status,
+
+                        "Amount: " +
+                            money(Math.abs(difference)),
+
+                        "Percentage on Cost: " +
+                            number(percentage) + "%"
+
+                    ]);
+
+                }
+            );
+
+            // Monthly Budget Calculator
+
+            bind(
+                "budgetForm",
+                "budgetResult",
+                () => {
+
+                    const income = num("budgetIncome");
+
+                    const expense = num("budgetExpense");
+
+                    const balance = income - expense;
+
+                    const rate = income > 0
+                        ? balance / income * 100
+                        : null;
+
+                    show("budgetResult", [
+
+                        "Monthly Income: " +
+                            money(income),
+
+                        "Monthly Expenses: " +
+                            money(expense),
+
+                        "Monthly Balance: " +
+                            money(balance),
+
+                        "Savings Rate: " +
+                            (
+                                rate === null
+                                ? "Not applicable"
+                                : number(rate) + "%"
+                            ),
+
+                        "Status: " +
+                            (
+                                balance > 0
+                                ? "Surplus"
+                                : balance < 0
+                                ? "Deficit"
+                                : "Balanced"
+                            )
+
+                    ]);
+
+                }
+            );
+
+            // Indian Standard Time
+
+            const clockFormatter =
+                new Intl.DateTimeFormat("en-IN", {
+
+                    timeZone: "Asia/Kolkata",
+
+                    hour: "2-digit",
+
+                    minute: "2-digit",
+
+                    second: "2-digit",
+
+                    hour12: true
+
+                });
+
+            const dateFormatter =
+                new Intl.DateTimeFormat("en-IN", {
+
+                    timeZone: "Asia/Kolkata",
+
+                    weekday: "long",
+
+                    day: "numeric",
+
+                    month: "long",
+
+                    year: "numeric"
+
+                });
+
+            function updateClock() {
+
+                const now = new Date();
+
+                get("digitalClock").textContent =
+                    clockFormatter.format(now);
+
+                get("digitalDate").textContent =
+                    dateFormatter.format(now);
+
+            }
+
+            updateClock();
+
+            setInterval(updateClock, 1000);
+
+            // Stopwatch Engine
+
+            let elapsed = 0;
+
+            let startedAt = 0;
+
+            let stopwatchTimer = null;
+
+            function pad(value) {
+
+                return String(value).padStart(2, "0");
+
+            }
+
+            function renderStopwatch() {
+
+                const current = elapsed + (
+                    stopwatchTimer !== null
+                    ? performance.now() - startedAt
+                    : 0
+                );
+
+                const centiseconds =
+                    Math.floor(current / 10) % 100;
+
+                const seconds =
+                    Math.floor(current / 1000) % 60;
+
+                const minutes =
+                    Math.floor(current / 60000) % 60;
+
+                const hours =
+                    Math.floor(current / 3600000);
+
+                get("stopwatchDisplay").textContent =
+
+                    pad(hours) + ":" +
+
+                    pad(minutes) + ":" +
+
+                    pad(seconds) + "." +
+
+                    pad(centiseconds);
+
+            }
+
+            get("stopwatchStart").addEventListener(
+                "click",
+                () => {
+
+                    if (stopwatchTimer !== null) {
+                        return;
+                    }
+
+                    startedAt = performance.now();
+
+                    stopwatchTimer = setInterval(
+                        renderStopwatch,
+                        30
+                    );
+
+                    renderStopwatch();
+
+                }
+            );
+
+            get("stopwatchPause").addEventListener(
+                "click",
+                () => {
+
+                    if (stopwatchTimer === null) {
+                        return;
+                    }
+
+                    elapsed +=
+                        performance.now() - startedAt;
+
+                    clearInterval(stopwatchTimer);
+
+                    stopwatchTimer = null;
+
+                    renderStopwatch();
+
+                }
+            );
+
+            get("stopwatchReset").addEventListener(
+                "click",
+                () => {
+
+                    clearInterval(stopwatchTimer);
+
+                    stopwatchTimer = null;
+
+                    elapsed = 0;
+
+                    startedAt = 0;
+
+                    renderStopwatch();
+
+                }
+            );
+
+            renderStopwatch();
+
+        })();
+
+    </script>
+
+</body>
+
+  </html>
