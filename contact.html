@@ -1,289 +1,2929 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact & Support | MeraHisab</title>
+    <meta charset="UTF-8">
 
-<meta name="description" content="Contact MeraHisab official support for help, feedback, suggestions and assistance.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>Contact & Support | MeraHisab</title>
 
-body {
-    font-family: Arial, sans-serif;
-    background: #071426;
-    color: #f5f5f5;
-    line-height: 1.7;
-}
+    <meta name="description"
+          content="Get support for MeraHisab and Royal Khata, report technical issues, suggest features and request privacy assistance.">
 
-header {
-    background: #0b1d35;
-    border-bottom: 1px solid #d4af62;
-    padding: 20px;
-    text-align: center;
-}
+    <meta name="theme-color" content="#081321">
 
-.logo {
-    color: #e6c16e;
-    font-size: 30px;
-    font-weight: bold;
-}
+    <meta property="og:type" content="website">
 
-.subtitle {
-    color: #c6ccd5;
-    font-size: 14px;
-}
+    <meta property="og:title"
+          content="MeraHisab Contact & Support">
 
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 15px;
-    background: #10233c;
-}
+    <meta property="og:description"
+          content="Official application and website support center.">
 
-nav a {
-    color: #e6c16e;
-    text-decoration: none;
-    font-weight: bold;
-}
+    <meta property="og:url"
+          content="https://merahisab.store/contact.html">
 
-nav a:hover {
-    color: white;
-}
+    <link rel="canonical"
+          href="https://merahisab.store/contact.html">
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 25px 16px;
-}
+    <link rel="stylesheet" href="upgrade.css">
 
-.hero {
-    text-align: center;
-    padding: 35px 15px;
-}
+    <script defer src="upgrade.js"></script>
 
-.hero h1 {
-    color: #e6c16e;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
+    <style>
 
-.hero p {
-    color: #cbd5e1;
-}
+        .contact-hero {
+            background: linear-gradient(
+                135deg,
+                #081321,
+                #182b43,
+                #26364d
+            );
+            border: 1px solid #d4af37;
+            border-radius: 24px;
+            padding: clamp(24px, 5vw, 56px);
+            text-align: center;
+            color: #f5f5f7;
+            margin-bottom: 28px;
+        }
 
-.card {
-    background: #10233c;
-    border: 1px solid #b8954b;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-}
+        .contact-hero h1 {
+            color: #e5c788;
+            font-size: clamp(30px, 5vw, 52px);
+        }
 
-.card h2 {
-    color: #e6c16e;
-    margin-bottom: 12px;
-}
+        .contact-label {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #d4af37;
+            border-radius: 20px;
+            color: #e5c788;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
 
-.card p {
-    color: #e1e7ef;
-    margin-bottom: 10px;
-}
+        .contact-section {
+            margin-top: 28px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            scroll-margin-top: 100px;
+        }
 
-.email-box {
-    display: block;
-    margin-top: 15px;
-    padding: 15px;
-    text-align: center;
-    background: #071426;
-    border: 1px solid #d4af62;
-    border-radius: 12px;
-    color: #e6c16e;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 17px;
-    word-break: break-word;
-}
+        .contact-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-.email-box:hover {
-    background: #1b3555;
-}
+        .contact-card {
+            min-width: 0;
+            box-sizing: border-box;
+            overflow-wrap: anywhere;
+        }
 
-.button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 11px 22px;
-    background: #d4af62;
-    color: #071426;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-}
+        .contact-symbol {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(212,175,55,0.12);
+            border: 1px solid #a58a52;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
 
-.button:hover {
-    background: #f0d58d;
-}
+        .contact-notice {
+            padding: 18px;
+            border: 1px solid #a58a52;
+            border-radius: 12px;
+            background: rgba(212,175,55,0.08);
+            margin: 20px 0;
+        }
 
-footer {
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: 30px;
-    background: #0b1d35;
-    border-top: 1px solid #d4af62;
-    color: #b9c3d0;
-}
+        .contact-warning {
+            padding: 18px;
+            border: 1px solid #d97706;
+            border-radius: 12px;
+            background: rgba(217,119,6,0.08);
+            margin: 20px 0;
+        }
 
-footer a {
-    color: #e6c16e;
-    text-decoration: none;
-}
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
 
-.footer-links {
-    margin: 12px 0;
-}
+        .contact-actions button {
+            cursor: pointer;
+        }
 
-.footer-links a {
-    margin: 0 8px;
-}
+        .support-form {
+            max-width: 850px;
+            margin: 0 auto;
+        }
 
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 27px;
-    }
+        .support-form label {
+            display: block;
+            font-weight: 600;
+            margin: 16px 0 6px;
+        }
 
-    .logo {
-        font-size: 25px;
-    }
+        .support-form input,
+        .support-form select,
+        .support-form textarea {
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
+            padding: 13px;
+            border: 1px solid #a58a52;
+            border-radius: 10px;
+            background: #101c2d;
+            color: #f5f5f7;
+            font: inherit;
+        }
 
-    nav {
-        gap: 12px;
-    }
+        html[data-theme="light"] .support-form input,
+        html[data-theme="light"] .support-form select,
+        html[data-theme="light"] .support-form textarea {
+            background: #ffffff;
+            color: #14253d;
+        }
 
-    .card {
-        padding: 19px;
-    }
-}
-</style>
+        .support-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .support-form input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            accent-color: #d4af37;
+        }
+
+        .support-form .consent-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .support-form .consent-row label {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .support-form input:focus-visible,
+        .support-form select:focus-visible,
+        .support-form textarea:focus-visible,
+        .support-form button:focus-visible,
+        .contact-actions a:focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 3px;
+        }
+
+        .form-note {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .form-status {
+            margin-top: 16px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .character-count {
+            text-align: right;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .support-preview {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            padding: 18px;
+            border: 1px solid #a58a52;
+            border-radius: 12px;
+            background: rgba(212,175,55,0.06);
+            margin-top: 20px;
+        }
+
+        .contact-faq details {
+            border: 1px solid #a58a52;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .contact-faq summary {
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .contact-faq summary:focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 4px;
+        }
+
+        .contact-faq details[open] {
+            background: rgba(212,175,55,0.06);
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-actions {
+                flex-direction: column;
+            }
+
+            .contact-hero {
+                padding: 28px 18px;
+            }
+
+            .contact-section {
+                scroll-margin-top: 80px;
+            }
+
+            .support-form input,
+            .support-form select,
+            .support-form textarea {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<header>
-    <div class="logo">✦ MeraHisab ✦</div>
-    <div class="subtitle">Smart Money Management • Privacy First</div>
-</header>
+    <header class="site">
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#features">Features</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="contact.html">Contact</a>
-</nav>
+        <div class="container">
 
-<main class="container">
+            <strong>MeraHisab</strong>
 
-    <section class="hero">
-        <h1>Contact & Support</h1>
-        <p>We value your feedback, suggestions and support requests.</p>
-    </section>
+            <nav aria-label="Main navigation">
 
-    <section class="card">
-        <h2>📩 Email Support</h2>
+                <a href="index.html">Home</a>
 
-        <p>
-            If you have any questions, suggestions, feedback,
-            or need assistance regarding MeraHisab,
-            please contact us through our official email.
-        </p>
+                <a href="downloads.html">Apps</a>
 
-        <a class="email-box"
-           href="mailto:rmmother01rm01@gmail.com?subject=MeraHisab%20Support">
-           ✉️ rmmother01rm01@gmail.com
-        </a>
+                <a href="compare.html">Compare</a>
 
-        <p style="margin-top:15px;">
-            We welcome your feedback to help improve MeraHisab.
-        </p>
-    </section>
+                <a href="index.html#features">Features</a>
 
-    <section class="card">
-        <h2>💡 Feedback & Suggestions</h2>
+                <a href="tools.html">Tools</a>
 
-        <p>
-            Your ideas and suggestions help us improve
-            the MeraHisab experience and develop useful features.
-        </p>
+                <a href="privacy.html">Privacy</a>
 
-        <a class="button"
-           href="mailto:rmmother01rm01@gmail.com?subject=MeraHisab%20Feedback">
-           Send Feedback
-        </a>
-    </section>
+                <a href="about.html">About</a>
 
-    <section class="card">
-        <h2>🔒 Privacy & Security</h2>
+                <a href="contact.html"
+                   aria-current="page">
+
+                    Support
+
+                </a>
+
+                <button id="theme" type="button">
+
+                    Theme
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="shell">
 
         <p>
-            MeraHisab is being developed with a strong focus
-            on user privacy and secure personal financial management.
+
+            <a href="index.html">Home</a>
+
+            / Contact &amp; Support
+
         </p>
 
-        <p>
-            Please read our Privacy Policy for information
-            about our privacy approach.
-        </p>
+        <!-- CONTACT HERO -->
 
-        <a class="button" href="privacy.html">
-            Read Privacy Policy
-        </a>
-    </section>
+        <section class="contact-hero">
 
-    <section class="card">
-        <h2>📱 App Availability</h2>
+            <span class="contact-label">
 
-        <p>
-            MeraHisab is currently under development.
-            Official app availability and download information
-            will be published on this website.
-        </p>
+                OFFICIAL SUPPORT CENTER
 
-        <a class="button" href="index.html">
-            Visit Official Website
-        </a>
-    </section>
+            </span>
 
-</main>
+            <h1>Contact &amp; Support</h1>
 
-<footer>
+            <p>
 
-    <div><strong>✦ MeraHisab ✦</strong></div>
+                Application assistance,
+                technical support and
+                user feedback.
 
-    <div class="footer-links">
-        <a href="index.html">Home</a>
-        |
-        <a href="about.html">About</a>
-        |
-        <a href="privacy.html">Privacy</a>
-        |
-        <a href="contact.html">Contact</a>
-    </div>
+            </p>
 
-    <p>© 2026 MeraHisab. All rights reserved.</p>
+            <p>
 
-    <p>Made with care for smarter money management.</p>
+                MeraHisab &amp; Royal Khata
 
-</footer>
+            </p>
+
+            <p>
+
+                Official Website: merahisab.store
+
+            </p>
+
+            <div class="contact-actions"
+                 style="justify-content:center;">
+
+                <a class="action"
+                   href="#support-form">
+
+                    Prepare Support Request
+
+                </a>
+
+                <a class="action"
+                   href="#faq">
+
+                    Frequently Asked Questions
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- SUPPORT CENTER -->
+
+        <section class="contact-section">
+
+            <h2>How Can We Help You?</h2>
+
+            <div class="contact-grid">
+
+                <!-- APPLICATION SUPPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128241;
+
+                    </span>
+
+                    <h3>Application Support</h3>
+
+                    <p>
+
+                        Get guidance regarding
+                        MeraHisab and Royal Khata
+                        application features
+                        and technical issues.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="app">
+
+                        Application Assistance
+
+                    </a>
+
+                </article>
+
+                <!-- DOWNLOAD SUPPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128229;
+
+                    </span>
+
+                    <h3>Download &amp; Installation</h3>
+
+                    <p>
+
+                        Find assistance with
+                        APK downloads, Android
+                        installation and
+                        application updates.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="download">
+
+                        Download Assistance
+
+                    </a>
+
+                </article>
+
+                <!-- BUG REPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128027;
+
+                    </span>
+
+                    <h3>Report a Bug</h3>
+
+                    <p>
+
+                        Prepare a report about
+                        application crashes,
+                        unexpected behavior or
+                        website functionality.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="bug">
+
+                        Report Technical Issue
+
+                    </a>
+
+                </article>
+
+                <!-- FEATURE SUGGESTION -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128161;
+
+                    </span>
+
+                    <h3>Feature Suggestions</h3>
+
+                    <p>
+
+                        Suggest new features
+                        and improvements for
+                        our applications
+                        and website.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="feature">
+
+                        Suggest a Feature
+
+                    </a>
+
+                </article>
+
+                <!-- PRIVACY SUPPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128274;
+
+                    </span>
+
+                    <h3>Privacy &amp; Data Protection</h3>
+
+                    <p>
+
+                        Prepare privacy-related
+                        questions, personal data
+                        requests and data
+                        protection concerns.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="privacy">
+
+                        Privacy Assistance
+
+                    </a>
+
+                </article>
+
+                <!-- BACKUP SUPPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128190;
+
+                    </span>
+
+                    <h3>Backup &amp; Recovery</h3>
+
+                    <p>
+
+                        Get guidance about
+                        supported backup,
+                        restoration and
+                        recovery features.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="backup">
+
+                        Backup Assistance
+
+                    </a>
+
+                </article>
+
+                <!-- SECURITY REPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#128737;
+
+                    </span>
+
+                    <h3>Security Reporting</h3>
+
+                    <p>
+
+                        Prepare a responsible
+                        report regarding a
+                        potential security
+                        vulnerability.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="security">
+
+                        Report Security Concern
+
+                    </a>
+
+                </article>
+
+                <!-- WEBSITE SUPPORT -->
+
+                <article class="upgrade-card contact-card">
+
+                    <span class="contact-symbol"
+                          aria-hidden="true">
+
+                        &#127760;
+
+                    </span>
+
+                    <h3>Website Support</h3>
+
+                    <p>
+
+                        Report broken links,
+                        display problems,
+                        calculator issues
+                        and navigation errors.
+
+                    </p>
+
+                    <a class="action"
+                       href="#support-form"
+                       data-support-category="website">
+
+                        Website Assistance
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- SECURITY WARNING -->
+
+        <section class="upgrade-card contact-section">
+
+            <h2>Protect Your Sensitive Information</h2>
+
+            <div class="contact-warning">
+
+                <strong>Important Security Notice</strong>
+
+                <p>
+
+                    Never include the following
+                    information in a support request:
+
+                </p>
+
+                <ul>
+
+                    <li>Passwords</li>
+
+                    <li>Application PINs</li>
+
+                    <li>One-Time Passwords (OTPs)</li>
+
+                    <li>Recovery keys</li>
+
+                    <li>Encryption passwords</li>
+
+                    <li>Bank account credentials</li>
+
+                    <li>Debit or credit card details</li>
+
+                    <li>Confidential financial records</li>
+
+                    <li>Unredacted customer information</li>
+
+                </ul>
+
+                <p>
+
+                    Remove sensitive information
+                    from screenshots and technical
+                    reports before sharing them.
+
+                </p>
+
+            </div>
+
+            <a class="action"
+               href="privacy.html">
+
+                Read Privacy &amp; Security Information
+
+            </a>
+
+                    </section>
+        <!-- SUPPORT REQUEST FORM -->
+
+        <section id="support-form"
+                 class="upgrade-card contact-section">
+
+            <h2>Prepare a Support Request</h2>
+
+            <p>
+
+                Provide relevant information
+                about your question, suggestion
+                or technical issue.
+
+            </p>
+
+            <div class="contact-notice">
+
+                <strong>Support Request Information</strong>
+
+                <p>
+
+                    This form prepares a support
+                    request in your browser.
+
+                    You can preview, copy or
+                    download the prepared request.
+
+                    It does not automatically
+                    send information to a server
+                    or support representative.
+
+                </p>
+
+            </div>
+
+            <noscript>
+
+                <p>
+
+                    JavaScript is required to
+                    prepare a support request.
+
+                </p>
+
+            </noscript>
+
+            <form id="supportRequestForm"
+                  class="support-form"
+                  autocomplete="off">
+
+                <!-- APPLICATION SELECTION -->
+
+                <label for="supportProduct">
+
+                    Select Application or Service *
+
+                </label>
+
+                <select id="supportProduct"
+                        required>
+
+                    <option value="">
+
+                        Select Application or Service
+
+                    </option>
+
+                    <option value="MeraHisab">
+
+                        MeraHisab
+
+                    </option>
+
+                    <option value="Royal Khata">
+
+                        Royal Khata
+
+                    </option>
+
+                    <option value="Website">
+
+                        MeraHisab Website
+
+                    </option>
+
+                    <option value="Financial Tools">
+
+                        Financial Calculators &amp; Tools
+
+                    </option>
+
+                    <option value="Other">
+
+                        Other
+
+                    </option>
+
+                </select>
+
+                <!-- SUPPORT CATEGORY -->
+
+                <label for="supportCategory">
+
+                    Support Category *
+
+                </label>
+
+                <select id="supportCategory"
+                        required>
+
+                    <option value="">
+
+                        Select Support Category
+
+                    </option>
+
+                    <option value="app">
+
+                        Application Assistance
+
+                    </option>
+
+                    <option value="download">
+
+                        Download &amp; Installation
+
+                    </option>
+
+                    <option value="bug">
+
+                        Bug Report
+
+                    </option>
+
+                    <option value="feature">
+
+                        Feature Suggestion
+
+                    </option>
+
+                    <option value="privacy">
+
+                        Privacy &amp; Data Protection
+
+                    </option>
+
+                    <option value="deletion">
+
+                        Data Deletion Request
+
+                    </option>
+
+                    <option value="backup">
+
+                        Backup &amp; Recovery
+
+                    </option>
+
+                    <option value="security">
+
+                        Security Vulnerability Report
+
+                    </option>
+
+                    <option value="website">
+
+                        Website Issue
+
+                    </option>
+
+                    <option value="calculator">
+
+                        Financial Calculator Issue
+
+                    </option>
+
+                    <option value="feedback">
+
+                        General Feedback
+
+                    </option>
+
+                    <option value="other">
+
+                        Other
+
+                    </option>
+
+                </select>
+
+                <!-- OPTIONAL CONTACT INFORMATION -->
+
+                <div class="contact-grid">
+
+                    <div>
+
+                        <label for="supportName">
+
+                            Your Name (Optional)
+
+                        </label>
+
+                        <input id="supportName"
+                               type="text"
+                               maxlength="80"
+                               placeholder="Enter your name">
+
+                    </div>
+
+                    <div>
+
+                        <label for="supportEmail">
+
+                            Email Address (Optional)
+
+                        </label>
+
+                        <input id="supportEmail"
+                               type="email"
+                               maxlength="254"
+                               placeholder="Enter your email">
+
+                    </div>
+
+                </div>
+
+                <p class="form-note">
+
+                    Contact information is optional.
+                    Include it only if you want it
+                    to appear in the prepared
+                    support request.
+
+                </p>
+
+                <!-- TECHNICAL INFORMATION -->
+
+                <div class="contact-grid">
+
+                    <div>
+
+                        <label for="supportAppVersion">
+
+                            Application Version (Optional)
+
+                        </label>
+
+                        <input id="supportAppVersion"
+                               type="text"
+                               maxlength="40"
+                               placeholder="Example: 1.0.0">
+
+                    </div>
+
+                    <div>
+
+                        <label for="supportAndroidVersion">
+
+                            Android Version (Optional)
+
+                        </label>
+
+                        <input id="supportAndroidVersion"
+                               type="text"
+                               maxlength="40"
+                               placeholder="Example: Android 15">
+
+                    </div>
+
+                </div>
+
+                <label for="supportDevice">
+
+                    Device or Browser (Optional)
+
+                </label>
+
+                <input id="supportDevice"
+                       type="text"
+                       maxlength="100"
+                       placeholder="Device model or browser name">
+
+                <!-- SUBJECT -->
+
+                <label for="supportSubject">
+
+                    Subject *
+
+                </label>
+
+                <input id="supportSubject"
+                       type="text"
+                       minlength="5"
+                       maxlength="120"
+                       required
+                       placeholder="Briefly describe your request">
+
+                <!-- ISSUE DESCRIPTION -->
+
+                <label for="supportMessage">
+
+                    Detailed Description *
+
+                </label>
+
+                <textarea id="supportMessage"
+                          minlength="20"
+                          maxlength="3000"
+                          required
+                          aria-describedby="supportMessageNote supportCharacterCount"
+                          placeholder="Describe your issue, question or suggestion. Do not include confidential information."></textarea>
+
+                <p id="supportMessageNote"
+                   class="form-note">
+
+                    Minimum 20 characters.
+                    Maximum 3000 characters.
+
+                </p>
+
+                <p id="supportCharacterCount"
+                   class="character-count">
+
+                    0 / 3000 characters
+
+                </p>
+
+                <!-- REPRODUCTION STEPS -->
+
+                <label for="supportSteps">
+
+                    Steps to Reproduce (Optional)
+
+                </label>
+
+                <textarea id="supportSteps"
+                          maxlength="1500"
+                          placeholder="1. Open the application&#10;2. Select a feature&#10;3. Describe what happens"></textarea>
+
+                <!-- EXPECTED RESULT -->
+
+                <label for="supportExpected">
+
+                    Expected Result (Optional)
+
+                </label>
+
+                <textarea id="supportExpected"
+                          maxlength="1000"
+                          placeholder="Describe what you expected to happen"></textarea>
+
+                <!-- PRIVACY CONSENT -->
+
+                <div class="consent-row">
+
+                    <input id="supportConsent"
+                           type="checkbox"
+                           required>
+
+                    <label for="supportConsent">
+
+                        I have reviewed the
+
+                        <a href="privacy.html"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            Privacy Information
+
+                        </a>
+
+                        and understand that this
+                        form prepares a local
+                        support request without
+                        automatically sending it.
+
+                    </label>
+
+                </div>
+
+                <!-- SECURITY CONFIRMATION -->
+
+                <div class="consent-row">
+
+                    <input id="supportSecurityConsent"
+                           type="checkbox"
+                           required>
+
+                    <label for="supportSecurityConsent">
+
+                        I confirm that my request
+                        does not intentionally
+                        contain passwords, OTPs,
+                        application PINs, recovery
+                        keys or confidential
+                        financial records.
+
+                    </label>
+
+                </div>
+
+                <!-- FORM ACTIONS -->
+
+                <div class="contact-actions">
+
+                    <button id="prepareSupport"
+                            class="action"
+                            type="button"
+                            disabled>
+
+                        Prepare Support Request
+
+                    </button>
+
+                    <button id="resetSupport"
+                            class="action"
+                            type="reset">
+
+                        Clear Form
+
+                    </button>
+
+                </div>
+
+                <p id="supportFormStatus"
+                   class="form-status"
+                   role="status"
+                   aria-live="polite">
+
+                </p>
+
+            </form>
+
+            <!-- SUPPORT REQUEST PREVIEW -->
+
+            <section id="supportPreviewPanel"
+                     hidden>
+
+                <h3>Support Request Preview</h3>
+
+                <div class="contact-notice">
+
+                    Review the prepared request
+                    carefully before copying,
+                    downloading or sharing it.
+
+                    No support request has been
+                    automatically submitted.
+
+                </div>
+
+                <pre id="supportPreview"
+                     class="support-preview"></pre>
+
+                <div class="contact-actions">
+
+                    <button id="copySupportRequest"
+                            class="action"
+                            type="button">
+
+                        Copy Request
+
+                    </button>
+
+                    <button id="downloadSupportRequest"
+                            class="action"
+                            type="button">
+
+                        Download Request (.txt)
+
+                    </button>
+
+                    <button id="clearSupportPreview"
+                            class="action"
+                            type="button">
+
+                        Clear Preview
+
+                    </button>
+
+                </div>
+
+                <p id="supportPreviewStatus"
+                   class="form-status"
+                   role="status"
+                   aria-live="polite">
+
+                </p>
+
+            </section>
+
+        </section>
+
+        <!-- OFFICIAL SUPPORT INFORMATION -->
+
+        <section class="upgrade-card contact-section">
+
+            <h2>Official Support Information</h2>
+
+            <p>
+
+                <strong>Brand:</strong>
+
+                MeraHisab
+
+            </p>
+
+            <p>
+
+                <strong>Supported Projects:</strong>
+
+                MeraHisab and Royal Khata
+
+            </p>
+
+            <p>
+
+                <strong>Official Website:</strong>
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <div class="contact-notice">
+
+                Direct email and online support
+                submission are not currently
+                configured on this page.
+
+                Preparing a support request
+                does not create a support ticket
+                or notify a support representative.
+
+            </div>
+
+            <div class="contact-actions">
+
+                <a class="action"
+                   href="downloads.html">
+
+                    Official Download Center
+
+                </a>
+
+                <a class="action"
+                   href="about.html">
+
+                    About MeraHisab
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- SELF SERVICE TROUBLESHOOTING -->
+
+        <section class="contact-section">
+
+            <h2>Self-Service Troubleshooting</h2>
+
+            <div class="contact-grid">
+
+                <!-- DOWNLOAD PROBLEMS -->
+
+                <article class="upgrade-card contact-card">
+
+                    <h3>Download Problems</h3>
+
+                    <ul>
+
+                        <li>
+
+                            Check your internet connection.
+
+                        </li>
+
+                        <li>
+
+                            Confirm available device storage.
+
+                        </li>
+
+                        <li>
+
+                            Use the official download page.
+
+                        </li>
+
+                        <li>
+
+                            Check application availability.
+
+                        </li>
+
+                        <li>
+
+                            Avoid unofficial APK files.
+
+                        </li>
+
+                    </ul>
+
+                    <a class="action"
+                       href="downloads.html">
+
+                        Download Center
+
+                    </a>
+
+                </article>
+
+                <!-- APPLICATION PROBLEMS -->
+
+                <article class="upgrade-card contact-card">
+
+                    <h3>Application Problems</h3>
+
+                    <ul>
+
+                        <li>
+
+                            Restart the application.
+
+                        </li>
+
+                        <li>
+
+                            Restart your Android device.
+
+                        </li>
+
+                        <li>
+
+                            Check available storage.
+
+                        </li>
+
+                        <li>
+
+                            Review application permissions.
+
+                        </li>
+
+                        <li>
+
+                            Check for official updates.
+
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <!-- BACKUP PROBLEMS -->
+
+                <article class="upgrade-card contact-card">
+
+                    <h3>Backup &amp; Recovery Problems</h3>
+
+                    <ul>
+
+                        <li>
+
+                            Check the backup file location.
+
+                        </li>
+
+                        <li>
+
+                            Confirm that the file is readable.
+
+                        </li>
+
+                        <li>
+
+                            Check version compatibility.
+
+                        </li>
+
+                        <li>
+
+                            Verify required recovery information.
+
+                        </li>
+
+                        <li>
+
+                            Preserve the original backup file.
+
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <!-- WEBSITE PROBLEMS -->
+
+                <article class="upgrade-card contact-card">
+
+                    <h3>Website Problems</h3>
+
+                    <ul>
+
+                        <li>
+
+                            Refresh the website.
+
+                        </li>
+
+                        <li>
+
+                            Check your internet connection.
+
+                        </li>
+
+                        <li>
+
+                            Update your browser.
+
+                        </li>
+
+                        <li>
+
+                            Check browser zoom settings.
+
+                        </li>
+
+                        <li>
+
+                            Try another trusted browser.
+
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+            <div class="contact-warning">
+
+                <strong>Data Loss Prevention</strong>
+
+                <p>
+
+                    Do not uninstall an application,
+                    clear application storage or
+                    overwrite existing backup files
+                    while troubleshooting unless
+                    you have verified that your
+                    important records can be recovered.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- FREQUENTLY ASKED QUESTIONS -->
+
+        <section id="faq"
+                 class="upgrade-card contact-section contact-faq">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <p>
+
+                Find answers to common
+                questions about our applications
+                and website.
+
+            </p>
+
+            <!-- FAQ 01 -->
+
+            <details>
+
+                <summary>
+
+                    What is MeraHisab?
+
+                </summary>
+
+                <p>
+
+                    MeraHisab is a personal
+                    financial management application
+                    designed to help users organize
+                    their everyday financial records.
+
+                </p>
+
+                <a href="merahisab.html">
+
+                    Learn more about MeraHisab
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 02 -->
+
+            <details>
+
+                <summary>
+
+                    What is Royal Khata?
+
+                </summary>
+
+                <p>
+
+                    Royal Khata is a digital
+                    ledger project focused on
+                    credit-debit management
+                    and customer account records.
+
+                </p>
+
+                <a href="royal-khata.html">
+
+                    Learn more about Royal Khata
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 03 -->
+
+            <details>
+
+                <summary>
+
+                    Where can I download the applications?
+
+                </summary>
+
+                <p>
+
+                    Visit the official download
+                    center to check available
+                    application releases and
+                    download information.
+
+                </p>
+
+                <a href="downloads.html">
+
+                    Official Download Center
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 04 -->
+
+            <details>
+
+                <summary>
+
+                    Is Royal Khata available for download?
+
+                </summary>
+
+                <p>
+
+                    Royal Khata download availability
+                    depends on its release status.
+
+                    Check the official application
+                    page for current information.
+
+                </p>
+
+                <a href="royal-khata.html">
+
+                    Check Royal Khata Information
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 05 -->
+
+            <details>
+
+                <summary>
+
+                    How can I safely install an APK?
+
+                </summary>
+
+                <p>
+
+                    Download application files
+                    only from trusted official
+                    distribution channels.
+
+                    Review Android installation
+                    warnings and verify available
+                    release information before
+                    proceeding.
+
+                </p>
+
+                <p>
+
+                    Do not disable Play Protect
+                    or other device security
+                    safeguards to install an APK.
+
+                </p>
+
+            </details>
+
+            <!-- FAQ 06 -->
+
+            <details>
+
+                <summary>
+
+                    How can I protect my financial data?
+
+                </summary>
+
+                <p>
+
+                    Use a secure device screen lock,
+                    enable supported application
+                    security features and maintain
+                    verified financial backups.
+
+                    Keep your passwords and
+                    recovery information confidential.
+
+                </p>
+
+                <a href="privacy.html">
+
+                    Read Privacy &amp; Security Information
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 07 -->
+
+            <details>
+
+                <summary>
+
+                    What happens if I lose my recovery key?
+
+                </summary>
+
+                <p>
+
+                    Where a recovery key is required,
+                    losing it may prevent access
+                    to protected information.
+
+                    Recovery possibilities depend
+                    on the application version
+                    and security implementation.
+
+                </p>
+
+                <p>
+
+                    Never share your recovery key
+                    with another person.
+
+                </p>
+
+            </details>
+
+            <!-- FAQ 08 -->
+
+            <details>
+
+                <summary>
+
+                    Will uninstalling the app delete my data?
+
+                </summary>
+
+                <p>
+
+                    Uninstalling an application
+                    may remove locally stored
+                    application information.
+
+                    Separately stored backups
+                    may remain available depending
+                    on their storage location.
+
+                </p>
+
+                <p>
+
+                    Always verify your backup
+                    before uninstalling an app.
+
+                </p>
+
+            </details>
+
+            <!-- FAQ 09 -->
+
+            <details>
+
+                <summary>
+
+                    How can I request data deletion?
+
+                </summary>
+
+                <p>
+
+                    Use available application
+                    data management features
+                    to manage local records.
+
+                    You can also prepare a
+                    data deletion request using
+                    the support request form.
+
+                </p>
+
+                <p>
+
+                    Preparing a request does not
+                    automatically submit or
+                    complete a deletion request.
+
+                </p>
+
+                <a href="#support-form"
+                   data-support-category="deletion">
+
+                    Prepare Data Deletion Request
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 10 -->
+
+            <details>
+
+                <summary>
+
+                    Are website financial calculators free?
+
+                </summary>
+
+                <p>
+
+                    The financial calculators
+                    provided on our website
+                    are available without a
+                    payment requirement.
+
+                    Results are estimates and
+                    should be independently verified.
+
+                </p>
+
+                <a href="tools.html">
+
+                    Open Financial Tools
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 11 -->
+
+            <details>
+
+                <summary>
+
+                    How can I report a security vulnerability?
+
+                </summary>
+
+                <p>
+
+                    Select Security Vulnerability
+                    Report in the support form
+                    and prepare a responsible
+                    technical description.
+
+                </p>
+
+                <p>
+
+                    Do not include real user data,
+                    passwords, recovery keys or
+                    confidential financial information.
+
+                    Do not access or modify
+                    information belonging to
+                    other users.
+
+                </p>
+
+                <a href="#support-form"
+                   data-support-category="security">
+
+                    Prepare Security Report
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 12 -->
+
+            <details>
+
+                <summary>
+
+                    Does this contact form send messages?
+
+                </summary>
+
+                <p>
+
+                    No. The current form prepares
+                    a support request locally
+                    in your browser.
+
+                    You can review, copy or
+                    download the prepared request.
+
+                    Direct message delivery requires
+                    a configured support service.
+
+                </p>
+
+            </details>
+
+            <!-- FAQ 13 -->
+
+            <details>
+
+                <summary>
+
+                    Can I suggest new features?
+
+                </summary>
+
+                <p>
+
+                    Yes. Select Feature Suggestion
+                    in the support request form
+                    and describe your proposed
+                    improvement.
+
+                </p>
+
+                <a href="#support-form"
+                   data-support-category="feature">
+
+                    Prepare Feature Suggestion
+
+                </a>
+
+            </details>
+
+            <!-- FAQ 14 -->
+
+            <details>
+
+                <summary>
+
+                    What is the official MeraHisab website?
+
+                </summary>
+
+                <p>
+
+                    The official website is:
+
+                    <a href="https://merahisab.store/">
+
+                        https://merahisab.store/
+
+                    </a>
+
+                </p>
+
+            </details>
+
+                    <!-- FINAL SUPPORT SECTION -->
+
+        <section class="contact-hero contact-section">
+
+            <span class="contact-label">
+
+                MERAHISAB SUPPORT
+
+            </span>
+
+            <h2>Your Feedback Matters</h2>
+
+            <p>
+
+                Help us improve our applications,
+                website and financial tools
+                through constructive feedback
+                and responsible issue reporting.
+
+            </p>
+
+            <div class="contact-actions"
+                 style="justify-content:center;">
+
+                <a class="action"
+                   href="#support-form">
+
+                    Prepare Support Request
+
+                </a>
+
+                <a class="action"
+                   href="#faq">
+
+                    View FAQs
+
+                </a>
+
+                <a class="action"
+                   href="index.html">
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PREMIUM FOOTER -->
+
+    <footer class="site">
+
+        <div class="container">
+
+            <h2>MeraHisab</h2>
+
+            <p>Your Money. Your Control.</p>
+
+            <p>
+
+                Personal Finance &amp;
+                Digital Khata Solutions
+
+            </p>
+
+            <nav aria-label="Footer navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="merahisab.html">MeraHisab</a>
+
+                <a href="royal-khata.html">Royal Khata</a>
+
+                <a href="compare.html">Compare</a>
+
+                <a href="tools.html">Tools</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html"
+                   aria-current="page">
+
+                    Support
+
+                </a>
+
+            </nav>
+
+            <p>
+
+                Official Website:
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <p>
+
+                &copy; <span data-year></span>
+
+                MeraHisab. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- SUPPORT PAGE JAVASCRIPT ENGINE -->
+
+    <script>
+
+        (() => {
+
+            "use strict";
+
+            // =================================
+            // 01. ELEMENT REFERENCES
+            // =================================
+
+            const get = (id) =>
+                document.getElementById(id);
+
+            const form =
+                get("supportRequestForm");
+
+            const product =
+                get("supportProduct");
+
+            const category =
+                get("supportCategory");
+
+            const name =
+                get("supportName");
+
+            const email =
+                get("supportEmail");
+
+            const appVersion =
+                get("supportAppVersion");
+
+            const androidVersion =
+                get("supportAndroidVersion");
+
+            const device =
+                get("supportDevice");
+
+            const subject =
+                get("supportSubject");
+
+            const message =
+                get("supportMessage");
+
+            const steps =
+                get("supportSteps");
+
+            const expected =
+                get("supportExpected");
+
+            const consent =
+                get("supportConsent");
+
+            const securityConsent =
+                get("supportSecurityConsent");
+
+            const characterCount =
+                get("supportCharacterCount");
+
+            const prepareButton =
+                get("prepareSupport");
+
+            const formStatus =
+                get("supportFormStatus");
+
+            const previewPanel =
+                get("supportPreviewPanel");
+
+            const preview =
+                get("supportPreview");
+
+            const previewStatus =
+                get("supportPreviewStatus");
+
+            const copyButton =
+                get("copySupportRequest");
+
+            const downloadButton =
+                get("downloadSupportRequest");
+
+            const clearPreviewButton =
+                get("clearSupportPreview");
+
+            let currentRequest = "";
+
+            let currentRequestID = "";
+
+            // =================================
+            // 02. SUPPORT CATEGORY LABELS
+            // =================================
+
+            const categoryLabels = {
+
+                app: "Application Assistance",
+
+                download: "Download & Installation",
+
+                bug: "Bug Report",
+
+                feature: "Feature Suggestion",
+
+                privacy: "Privacy & Data Protection",
+
+                deletion: "Data Deletion Request",
+
+                backup: "Backup & Recovery",
+
+                security: "Security Vulnerability Report",
+
+                website: "Website Issue",
+
+                calculator: "Financial Calculator Issue",
+
+                feedback: "General Feedback",
+
+                other: "Other"
+
+            };
+
+            // =================================
+            // 03. SAFE TEXT HANDLING
+            // =================================
+
+            function cleanText(value) {
+
+                return String(value || "")
+                    .replace(/\r\n?/g, "\n")
+                    .replace(
+                        /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,
+                        ""
+                    )
+                    .trim();
+
+            }
+
+            function optionalText(value) {
+
+                return cleanText(value)
+                    || "Not provided";
+
+            }
+
+            // =================================
+            // 04. LIVE CHARACTER COUNTER
+            // =================================
+
+            function updateCharacterCount() {
+
+                const length =
+                    message.value.length;
+
+                characterCount.textContent =
+                    length + " / 3000 characters";
+
+            }
+
+            message.addEventListener(
+                "input",
+                updateCharacterCount
+            );
+
+            // =================================
+            // 05. FORM BUTTON STATE
+            // =================================
+
+            function updateButtonState() {
+
+                prepareButton.disabled =
+                    !product.value ||
+                    !category.value ||
+                    cleanText(subject.value).length < 5 ||
+                    cleanText(message.value).length < 20 ||
+                    !consent.checked ||
+                    !securityConsent.checked ||
+                    !form.checkValidity();
+
+            }
+
+            // =================================
+            // 06. CLEAR GENERATED PREVIEW
+            // =================================
+
+            function clearPreview() {
+
+                currentRequest = "";
+
+                currentRequestID = "";
+
+                preview.textContent = "";
+
+                previewStatus.textContent = "";
+
+                previewPanel.hidden = true;
+
+            }
+
+            // =================================
+            // 07. FORM CHANGE MONITOR
+            // =================================
+
+            function handleFormChange() {
+
+                updateCharacterCount();
+
+                updateButtonState();
+
+                formStatus.textContent = "";
+
+                if (currentRequest) {
+
+                    clearPreview();
+
+                    formStatus.textContent =
+                        "Form updated. Please prepare a new request.";
+
+                }
+
+            }
+
+            form.addEventListener(
+                "input",
+                handleFormChange
+            );
+
+            form.addEventListener(
+                "change",
+                handleFormChange
+            );
+
+            // =================================
+            // 08. AUTOMATIC CATEGORY SELECTION
+            // =================================
+
+            document.querySelectorAll(
+                "[data-support-category]"
+            ).forEach((link) => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        const selected =
+                            link.dataset.supportCategory;
+
+                        if (
+                            Object.prototype.hasOwnProperty.call(
+                                categoryLabels,
+                                selected
+                            )
+                        ) {
+
+                            category.value = selected;
+
+                            handleFormChange();
+
+                        }
+
+                    }
+                );
+
+            });
+
+            // =================================
+            // 09. URL PARAMETER SUPPORT
+            // =================================
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+            const requestedApp =
+                String(params.get("app") || "")
+                    .toLowerCase();
+
+            const requestedCategory =
+                String(params.get("category") || "")
+                    .toLowerCase();
+
+            if (requestedApp === "merahisab") {
+
+                product.value = "MeraHisab";
+
+            } else if (
+                requestedApp === "royal-khata" ||
+                requestedApp === "royalkhata"
+            ) {
+
+                product.value = "Royal Khata";
+
+            } else if (requestedApp === "website") {
+
+                product.value = "Website";
+
+            } else if (requestedApp === "tools") {
+
+                product.value = "Financial Tools";
+
+            }
+
+            if (
+                Object.prototype.hasOwnProperty.call(
+                    categoryLabels,
+                    requestedCategory
+                )
+            ) {
+
+                category.value = requestedCategory;
+
+            }
+
+            // =================================
+            // 10. INDIAN STANDARD TIME
+            // =================================
+
+            function getISTDateTime() {
+
+                return new Intl.DateTimeFormat(
+                    "en-IN",
+                    {
+
+                        timeZone: "Asia/Kolkata",
+
+                        day: "2-digit",
+
+                        month: "short",
+
+                        year: "numeric",
+
+                        hour: "2-digit",
+
+                        minute: "2-digit",
+
+                        second: "2-digit",
+
+                        hour12: true
+
+                    }
+                ).format(new Date()) + " IST";
+
+            }
+
+            // =================================
+            // 11. LOCAL REQUEST ID GENERATOR
+            // =================================
+
+            function generateRequestID() {
+
+                const dateParts =
+                    new Intl.DateTimeFormat(
+                        "en-GB",
+                        {
+
+                            timeZone: "Asia/Kolkata",
+
+                            year: "numeric",
+
+                            month: "2-digit",
+
+                            day: "2-digit"
+
+                        }
+                    ).formatToParts(new Date());
+
+                const date = {};
+
+                dateParts.forEach((part) => {
+
+                    date[part.type] = part.value;
+
+                });
+
+                const dateCode =
+                    date.year +
+                    date.month +
+                    date.day;
+
+                let randomCode;
+
+                if (
+                    window.crypto &&
+                    window.crypto.getRandomValues
+                ) {
+
+                    const random =
+                        new Uint8Array(8);
+
+                    window.crypto.getRandomValues(
+                        random
+                    );
+
+                    randomCode =
+                        Array.from(
+                            random,
+                            (byte) =>
+                                byte.toString(16)
+                                    .padStart(2, "0")
+                        ).join("").toUpperCase();
+
+                } else {
+
+                    randomCode =
+                        Date.now()
+                            .toString(36)
+                            .toUpperCase() +
+                        Math.random()
+                            .toString(36)
+                            .slice(2, 10)
+                            .toUpperCase();
+
+                }
+
+                return "MH-" +
+                    dateCode +
+                    "-" +
+                    randomCode;
+
+            }
+
+            // =================================
+            // 12. FORM VALIDATION
+            // =================================
+
+            function validateForm() {
+
+                if (!form.reportValidity()) {
+
+                    return false;
+
+                }
+
+                if (!product.value) {
+
+                    formStatus.textContent =
+                        "Please select an application or service.";
+
+                    product.focus();
+
+                    return false;
+
+                }
+
+                if (
+                    !Object.prototype.hasOwnProperty.call(
+                        categoryLabels,
+                        category.value
+                    )
+                ) {
+
+                    formStatus.textContent =
+                        "Please select a valid support category.";
+
+                    category.focus();
+
+                    return false;
+
+                }
+
+                if (
+                    cleanText(subject.value).length < 5
+                ) {
+
+                    formStatus.textContent =
+                        "Subject must contain at least 5 characters.";
+
+                    subject.focus();
+
+                    return false;
+
+                }
+
+                if (
+                    cleanText(message.value).length < 20
+                ) {
+
+                    formStatus.textContent =
+                        "Description must contain at least 20 characters.";
+
+                    message.focus();
+
+                    return false;
+
+                }
+
+                if (message.value.length > 3000) {
+
+                    formStatus.textContent =
+                        "Description cannot exceed 3000 characters.";
+
+                    message.focus();
+
+                    return false;
+
+                }
+
+                if (
+                    !consent.checked ||
+                    !securityConsent.checked
+                ) {
+
+                    formStatus.textContent =
+                        "Please review and accept both confirmations.";
+
+                    return false;
+
+                }
+
+                return true;
+
+            }
+
+            // =================================
+            // 13. SUPPORT REQUEST GENERATOR
+            // =================================
+
+            function prepareRequest() {
+
+                formStatus.textContent = "";
+
+                if (!validateForm()) {
+
+                    return;
+
+                }
+
+                currentRequestID =
+                    generateRequestID();
+
+                const requestDate =
+                    getISTDateTime();
+
+                const selectedCategory =
+                    categoryLabels[category.value];
+
+                currentRequest = [
+
+                    "========================================",
+
+                    "MERAHISAB SUPPORT REQUEST",
+
+                    "========================================",
+
+                    "",
+
+                    "Local Reference ID: " +
+                        currentRequestID,
+
+                    "Prepared On: " +
+                        requestDate,
+
+                    "Status: Prepared Locally - Not Submitted",
+
+                    "",
+
+                    "APPLICATION INFORMATION",
+
+                    "----------------------------------------",
+
+                    "Application / Service: " +
+                        cleanText(product.value),
+
+                    "Support Category: " +
+                        selectedCategory,
+
+                    "",
+
+                    "CONTACT INFORMATION",
+
+                    "----------------------------------------",
+
+                    "Name: " +
+                        optionalText(name.value),
+
+                    "Email: " +
+                        optionalText(email.value),
+
+                    "",
+
+                    "TECHNICAL INFORMATION",
+
+                    "----------------------------------------",
+
+                    "Application Version: " +
+                        optionalText(appVersion.value),
+
+                    "Android Version: " +
+                        optionalText(androidVersion.value),
+
+                    "Device / Browser: " +
+                        optionalText(device.value),
+
+                    "",
+
+                    "SUBJECT",
+
+                    "----------------------------------------",
+
+                    cleanText(subject.value),
+
+                    "",
+
+                    "DETAILED DESCRIPTION",
+
+                    "----------------------------------------",
+
+                    cleanText(message.value),
+
+                    "",
+
+                    "STEPS TO REPRODUCE",
+
+                    "----------------------------------------",
+
+                    optionalText(steps.value),
+
+                    "",
+
+                    "EXPECTED RESULT",
+
+                    "----------------------------------------",
+
+                    optionalText(expected.value),
+
+                    "",
+
+                    "PRIVACY AND SECURITY",
+
+                    "----------------------------------------",
+
+                    "Privacy information reviewed: Yes",
+
+                    "Sensitive data warning acknowledged: Yes",
+
+                    "",
+
+                    "IMPORTANT:",
+
+                    "This request was prepared locally.",
+
+                    "It has not been submitted automatically.",
+
+                    "The reference ID is not a support ticket.",
+
+                    "Review all information before sharing.",
+
+                    "",
+
+                    "Official Website:",
+
+                    "https://merahisab.store/",
+
+                    "",
+
+                    "========================================",
+
+                    "END OF SUPPORT REQUEST",
+
+                    "========================================"
+
+                ].join("\n");
+
+                preview.textContent =
+                    currentRequest;
+
+                previewPanel.hidden = false;
+
+                previewStatus.textContent = "";
+
+                formStatus.textContent =
+                    "Request prepared successfully. No message has been sent.";
+
+                previewPanel.scrollIntoView({
+
+                    behavior:
+                        window.matchMedia(
+                            "(prefers-reduced-motion: reduce)"
+                        ).matches
+                            ? "auto"
+                            : "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+
+            // =================================
+            // 14. PREPARE BUTTON
+            // =================================
+
+            prepareButton.addEventListener(
+                "click",
+                prepareRequest
+            );
+
+            // =================================
+            // 15. PREVENT NETWORK FORM SUBMISSION
+            // =================================
+
+            form.addEventListener(
+                "submit",
+                (event) => {
+
+                    event.preventDefault();
+
+                    prepareRequest();
+
+                }
+            );
+
+            // =================================
+            // 16. COPY SUPPORT REQUEST
+            // =================================
+
+            copyButton.addEventListener(
+                "click",
+                async () => {
+
+                    if (!currentRequest) {
+
+                        return;
+
+                    }
+
+                    try {
+
+                        if (!navigator.clipboard) {
+
+                            throw new Error(
+                                "Clipboard unavailable"
+                            );
+
+                        }
+
+                        await navigator.clipboard
+                            .writeText(currentRequest);
+
+                        previewStatus.textContent =
+                            "Support request copied. Review it before sharing.";
+
+                    } catch (error) {
+
+                        previewStatus.textContent =
+                            "Automatic copying is unavailable. Select and copy the preview manually, or download the TXT file.";
+
+                    }
+
+                }
+            );
+
+            // =================================
+            // 17. DOWNLOAD SUPPORT REQUEST
+            // =================================
+
+            downloadButton.addEventListener(
+                "click",
+                () => {
+
+                    if (!currentRequest) {
+
+                        return;
+
+                    }
+
+                    let objectURL = null;
+
+                    let downloadLink = null;
+
+                    try {
+
+                        const file = new Blob(
+
+                            [currentRequest],
+
+                            {
+
+                                type:
+                                    "text/plain;charset=utf-8"
+
+                            }
+
+                        );
+
+                        objectURL =
+                            URL.createObjectURL(file);
+
+                        downloadLink =
+                            document.createElement("a");
+
+                        downloadLink.href =
+                            objectURL;
+
+                        downloadLink.download =
+                            "MeraHisab-Support-" +
+                            currentRequestID +
+                            ".txt";
+
+                        document.body.appendChild(
+                            downloadLink
+                        );
+
+                        downloadLink.click();
+
+                        previewStatus.textContent =
+                            "Download requested. Check your browser downloads.";
+
+                    } catch (error) {
+
+                        previewStatus.textContent =
+                            "Download could not be started. Please copy the request manually.";
+
+                    } finally {
+
+                        if (downloadLink) {
+
+                            downloadLink.remove();
+
+                        }
+
+                        if (objectURL) {
+
+                            const urlToRelease =
+                                objectURL;
+
+                            window.setTimeout(
+                                () => {
+
+                                    URL.revokeObjectURL(
+                                        urlToRelease
+                                    );
+
+                                },
+                                1000
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+            // =================================
+            // 18. CLEAR PREVIEW BUTTON
+            // =================================
+
+            clearPreviewButton.addEventListener(
+                "click",
+                () => {
+
+                    clearPreview();
+
+                    formStatus.textContent =
+                        "Preview cleared. Your form entries are still available.";
+
+                    prepareButton.focus();
+
+                }
+            );
+
+            // =================================
+            // 19. RESET SUPPORT FORM
+            // =================================
+
+            form.addEventListener(
+                "reset",
+                () => {
+
+                    clearPreview();
+
+                    window.setTimeout(
+                        () => {
+
+                            updateCharacterCount();
+
+                            updateButtonState();
+
+                            formStatus.textContent =
+                                "Support form cleared.";
+
+                        },
+                        0
+                    );
+
+                }
+            );
+
+            // =================================
+            // 20. INITIALIZE SUPPORT ENGINE
+            // =================================
+
+            updateCharacterCount();
+
+            updateButtonState();
+
+        })();
+
+    </script>
 
 </body>
-</html>
+
+    </html>
+
+                                                                                                                         </section>
+        
