@@ -1,3457 +1,2922 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="en-IN">
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Privacy Policy & Data Security | MeraHisab</title>
+<title>Privacy Policy & Data Protection — MeraHisab</title>
 
-    <meta name="description"
-          content="Privacy policy, data protection, application security, backup and recovery information for MeraHisab and Royal Khata.">
+<meta name="description"
+content="Privacy information, data protection, application permissions, local storage, backups, website cookies and security practices for MeraHisab and Royal Khata.">
 
-    <meta name="theme-color"
-          content="#081321">
+<meta name="author" content="MeraHisab">
 
-    <meta property="og:type"
-          content="website">
+<meta name="robots" content="index, follow">
 
-    <meta property="og:title"
-          content="MeraHisab Privacy & Data Security">
+<link rel="canonical"
+href="https://merahisab.store/privacy.html">
 
-    <meta property="og:description"
-          content="Privacy, security and responsible financial data management.">
+<!-- SOCIAL MEDIA SEO -->
 
-    <meta property="og:url"
-          content="https://merahisab.store/privacy.html">
+<meta property="og:type" content="website">
 
-    <link rel="canonical"
-          href="https://merahisab.store/privacy.html">
+<meta property="og:site_name" content="MeraHisab">
 
-    <link rel="stylesheet"
-          href="upgrade.css">
+<meta property="og:title"
+content="Privacy Policy & Data Protection">
 
-    <script defer
-            src="upgrade.js"></script>
+<meta property="og:description"
+content="Understand privacy, financial data protection, backups and website storage.">
 
-    <style>
+<meta property="og:url"
+content="https://merahisab.store/privacy.html">
 
-        .privacy-hero {
-            background: linear-gradient(
-                135deg,
-                #081321,
-                #182b43,
-                #26364d
-            );
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            padding: clamp(24px, 5vw, 64px);
-            text-align: center;
-            color: #f5f5f7;
-            margin-bottom: 28px;
-        }
+<meta property="og:image"
+content="https://merahisab.store/icons/icon-512.png">
 
-        .privacy-hero h1 {
-            color: #e5c788;
-            font-size: clamp(30px, 5vw, 52px);
-            overflow-wrap: anywhere;
-        }
+<meta name="twitter:card" content="summary">
 
-        .privacy-hero h2 {
-            color: #e5c788;
-        }
+<!-- PWA INTEGRATION -->
 
-        .privacy-label {
-            display: inline-block;
-            padding: 8px 18px;
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            color: #e5c788;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
+<link rel="manifest" href="/manifest.json">
 
-        .privacy-section {
-            margin-top: 28px;
-            line-height: 1.9;
-            overflow-wrap: anywhere;
-            scroll-margin-top: 100px;
-        }
+<meta name="application-name" content="MeraHisab">
 
-        .privacy-section h2 {
-            margin-bottom: 16px;
-        }
+<meta name="theme-color" content="#080f20">
 
-        .privacy-section h3 {
-            margin-top: 24px;
-            margin-bottom: 12px;
-        }
+<meta name="mobile-web-app-capable" content="yes">
 
-        .privacy-section ul {
-            padding-left: 24px;
-        }
+<meta name="apple-mobile-web-app-capable" content="yes">
 
-        .privacy-section li {
-            margin-bottom: 8px;
-        }
+<meta name="apple-mobile-web-app-status-bar-style"
+content="default">
 
-        .privacy-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+<meta name="apple-mobile-web-app-title"
+content="MeraHisab">
 
-        .privacy-card {
-            min-width: 0;
-            box-sizing: border-box;
-            overflow-wrap: anywhere;
-        }
+<link rel="apple-touch-icon"
+href="/icons/icon-192.png">
 
-        .privacy-symbol {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: rgba(212,175,55,0.12);
-            border: 1px solid #a58a52;
-            font-size: 26px;
-            margin-bottom: 12px;
-        }
+<link rel="icon"
+type="image/png"
+sizes="192x192"
+href="/icons/icon-192.png">
 
-        .privacy-notice {
-            padding: 18px;
-            border: 1px solid #a58a52;
-            border-radius: 12px;
-            background: rgba(212,175,55,0.08);
-            margin: 20px 0;
-            overflow-wrap: anywhere;
-        }
+<link rel="stylesheet" href="/upgrade.css">
 
-        .privacy-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
+<link rel="stylesheet" href="/pwa.css">
 
-        .privacy-actions button {
-            cursor: pointer;
-        }
+<script defer src="/upgrade.js"></script>
 
-        .privacy-navigation {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
-            margin-top: 20px;
-        }
+<script defer src="/pwa.js"></script>
 
-        .privacy-navigation a {
-            display: block;
-            padding: 12px 16px;
-            border: 1px solid #a58a52;
-            border-radius: 10px;
-            text-decoration: none;
-            overflow-wrap: anywhere;
-        }
+<style>
 
-        .privacy-navigation a:hover {
-            background: rgba(212,175,55,0.10);
-        }
+.pp-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 18px;
+  box-sizing: border-box;
+}
 
-        .privacy-navigation a:focus-visible,
-        .privacy-actions a:focus-visible,
-        .privacy-actions button:focus-visible {
-            outline: 2px solid #d4af37;
-            outline-offset: 3px;
-        }
+.pp-page * {
+  box-sizing: border-box;
+}
 
-        @media (max-width: 600px) {
+.pp-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  opacity: .85;
+}
 
-            .privacy-grid,
-            .privacy-navigation {
-                grid-template-columns: 1fr;
-            }
+.pp-hero {
+  padding: 42px 24px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(212,175,55,.14),
+      transparent 65%
+    ),
+    linear-gradient(
+      145deg,
+      #172640,
+      #080f20
+    );
+  color: #f8f6f0;
+  text-align: center;
+}
 
-            .privacy-actions {
-                flex-direction: column;
-            }
+.pp-hero h1 {
+  color: #f0d9a6;
+  font-size: clamp(28px,5vw,48px);
+  line-height: 1.2;
+}
 
-            .privacy-hero {
-                padding: 28px 18px;
-            }
+.pp-hero p {
+  max-width: 760px;
+  margin: 15px auto;
+  color: #c4cddd;
+  line-height: 1.8;
+}
 
-            .privacy-section {
-                scroll-margin-top: 80px;
-            }
+.pp-eyebrow {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 30px;
+  color: #f0d9a6;
+  font-size: 12px;
+  font-weight: 700;
+}
 
-        }
+.pp-section {
+  margin: 32px 0;
+  scroll-margin-top: 100px;
+}
 
-        @media print {
+.pp-title {
+  font-size: clamp(22px,4vw,32px);
+  margin-bottom: 18px;
+}
 
-            header.site,
-            footer.site,
-            .privacy-actions,
-            .privacy-navigation,
-            button {
-                display: none !important;
-            }
+.pp-center {
+  text-align: center;
+}
 
-            html,
-            body,
-            main.shell {
-                background: #ffffff !important;
-                color: #000000 !important;
-                width: 100% !important;
-                max-width: none !important;
-                height: auto !important;
-                overflow: visible !important;
-            }
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
 
-            .privacy-hero,
-            .upgrade-card,
-            .privacy-section,
-            .privacy-notice {
-                background: #ffffff !important;
-                color: #000000 !important;
-                box-shadow: none !important;
-                border-color: #cccccc !important;
-            }
+.pp-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
 
-            .privacy-hero h1,
-            .privacy-hero h2,
-            .privacy-label,
-            h1,
-            h2,
-            h3,
-            p,
-            li,
-            a {
-                color: #000000 !important;
-            }
+.pp-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
 
-            h2,
-            h3 {
-                break-after: avoid;
-            }
+.pp-card h3 {
+  margin: 12px 0;
+}
 
-            a {
-                text-decoration: underline;
-            }
+.pp-card p {
+  font-size: 14px;
+  line-height: 1.85;
+}
 
-        }
+.pp-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 12px;
+  background: rgba(212,175,55,.08);
+  font-size: 24px;
+}
 
-    </style>
+.pp-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pp-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border: 1px solid #d4af37;
+  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pp-primary {
+  background: linear-gradient(
+    135deg,
+    #f0d9a6,
+    #d4af37
+  );
+  color: #101827;
+}
+
+.pp-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.pp-notice {
+  padding: 18px;
+  margin: 18px 0;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 14px;
+  background: rgba(212,175,55,.07);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.pp-list {
+  padding-left: 22px;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.pp-list li {
+  margin: 7px 0;
+}
+
+.pp-toc {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+}
+
+.pp-toc a {
+  display: block;
+  padding: 13px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.pp-toc a:hover {
+  border-color: #d4af37;
+}
+
+.pp-policy {
+  margin: 20px 0;
+  padding: 24px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 18px;
+  scroll-margin-top: 100px;
+}
+
+.pp-policy h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.pp-policy p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.pp-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.pp-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pp-table th,
+.pp-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(128,128,128,.25);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.7;
+}
+
+.pp-table th {
+  background: rgba(212,175,55,.1);
+}
+
+.pp-input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px;
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.pp-status {
+  padding: 15px;
+  margin-top: 16px;
+  border: 1px solid rgba(212,175,55,.3);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.pp-info-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(128,128,128,.2);
+  font-size: 13px;
+}
+
+.pp-info-row:last-child {
+  border-bottom: 0;
+}
+
+.pp-faq details {
+  padding: 17px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 13px;
+}
+
+.pp-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pp-faq p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.pp-page :focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html[data-theme="light"] .pp-hero,
+body[data-theme="light"] .pp-hero {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f3ead7
+  );
+  color: #172033;
+}
+
+html[data-theme="light"] .pp-hero h1,
+body[data-theme="light"] .pp-hero h1,
+html[data-theme="light"] .pp-eyebrow,
+body[data-theme="light"] .pp-eyebrow {
+  color: #765018;
+}
+
+html[data-theme="light"] .pp-hero p,
+body[data-theme="light"] .pp-hero p {
+  color: #46546a;
+}
+
+@media(max-width:900px) {
+
+  .pp-grid-three {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:650px) {
+
+  .pp-page {
+    padding: 18px 12px;
+  }
+
+  .pp-grid,
+  .pp-grid-three,
+  .pp-toc {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .pp-hero {
+    padding: 28px 16px;
+  }
+
+  .pp-card,
+  .pp-policy {
+    padding: 17px;
+  }
+
+  .pp-buttons > .pp-button {
+    flex: 1 1 auto;
+  }
+
+}
+
+@media print {
+
+  header.site,
+  footer.site,
+  .pp-buttons,
+  .pp-toc,
+  #privacySearch,
+  #privacySearchLabel,
+  #searchStatus,
+  #privacyDiagnostics,
+  #pwaMount,
+  .pwa-panel {
+    display: none !important;
+  }
+
+  .pp-page,
+  .pp-hero,
+  .pp-card,
+  .pp-policy {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .pp-hero h1,
+  .pp-hero p,
+  .pp-eyebrow {
+    color: black !important;
+  }
+
+  .pp-policy[hidden] {
+    display: block !important;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- WEBSITE HEADER -->
+<header class="site">
 
-    <header class="site">
+<div class="container">
 
-        <div class="container">
+<strong>MeraHisab</strong>
 
-            <strong>MeraHisab</strong>
+<nav aria-label="Main navigation">
 
-            <nav aria-label="Main navigation">
+<a href="/index.html">Home</a>
 
-                <a href="index.html">Home</a>
+<a href="/downloads.html">Apps</a>
 
-                <a href="downloads.html">Apps</a>
+<a href="/compare.html">Compare</a>
 
-                <a href="compare.html">Compare</a>
+<a href="/index.html#features">Features</a>
 
-                <a href="index.html#features">Features</a>
+<a href="/tools.html">Tools</a>
 
-                <a href="tools.html">Tools</a>
+<a href="/privacy.html" aria-current="page">
+Privacy
+</a>
 
-                <a href="privacy.html"
-                   aria-current="page">
+<a href="/about.html">About</a>
 
-                    Privacy
+<a href="/contact.html">Support</a>
 
-                </a>
+<button
+id="theme"
+type="button"
+aria-label="Change website theme">
 
-                <a href="about.html">About</a>
+Theme
 
-                <a href="contact.html">Support</a>
+</button>
 
-                <button id="theme"
-                        type="button">
+</nav>
 
-                    Theme
+</div>
 
-                </button>
+</header>
 
-            </nav>
+<main class="shell pp-page">
 
-        </div>
+<nav class="pp-breadcrumb"
+aria-label="Breadcrumb">
 
-    </header>
+<a href="/index.html">Home</a>
 
-    <main class="shell">
+<span>›</span>
 
-        <p>
+<span aria-current="page">
+Privacy & Data Protection
+</span>
 
-            <a href="index.html">Home</a>
+</nav>
 
-            / Privacy &amp; Security
+<!-- PRIVACY HERO -->
 
-        </p>
+<section class="pp-hero">
 
-        <!-- PRIVACY HERO -->
+<span class="pp-eyebrow">
 
-        <section class="privacy-hero">
+PRIVACY • SECURITY • TRANSPARENCY
 
-            <span class="privacy-label">
+</span>
 
-                PRIVACY &amp; DATA PROTECTION
+<h1>Privacy & Data Protection</h1>
 
-            </span>
+<p>
 
-            <h1>Privacy Policy</h1>
+Understand how website storage,
+application data, financial information,
+backups and privacy controls relate
+to MeraHisab and Royal Khata.
 
-            <h2>Your Money. Your Data. Your Control.</h2>
+</p>
 
-            <p>
+<div class="pp-buttons"
+style="justify-content:center">
 
-                Privacy, responsible data management
-                and financial information protection
-                are important development priorities
-                for MeraHisab and Royal Khata.
+<a href="#privacyPolicy"
+class="pp-button pp-primary">
 
-            </p>
+Read Privacy Policy
 
-            <p>
+</a>
 
-                Official Website: merahisab.store
+<a href="#privacyDiagnostics"
+class="pp-button">
 
-            </p>
+Privacy Diagnostics
 
-            <div class="privacy-actions"
-                 style="justify-content:center;">
+</a>
 
-                <a class="action"
-                   href="#privacy-contents">
+<a href="#dataRights"
+class="pp-button">
 
-                    Read Privacy Policy
+Your Data Rights
 
-                </a>
+</a>
 
-                <a class="action"
-                   href="#privacy-contact">
+</div>
 
-                    Privacy Support
+</section>
 
-                </a>
+<!-- PRIVACY OVERVIEW -->
 
-            </div>
+<section class="pp-section">
 
-        </section>
+<h2 class="pp-title pp-center">
 
-        <!-- PRIVACY POLICY OVERVIEW -->
+Privacy Principles
 
-        <section class="upgrade-card privacy-section">
+</h2>
 
-            <h2>Privacy Policy Overview</h2>
+<div class="pp-grid-three">
 
-            <p>
+<article class="upgrade-card pp-card">
 
-                This page provides information
-                about privacy, financial data
-                protection, application security
-                and responsible use of our
-                website and applications.
+<div class="pp-icon">🔒</div>
 
-            </p>
+<h3>Financial Privacy</h3>
 
-            <p>
+<p>
 
-                Our development approach aims
-                to respect user privacy and
-                encourage responsible management
-                of personal and financial records.
+Financial records should be protected
+against unauthorized access, disclosure
+and accidental loss.
 
-            </p>
+</p>
 
-            <p>
+</article>
 
-                This privacy information applies
-                to the MeraHisab website and
-                provides general privacy guidance
-                for MeraHisab and Royal Khata.
+<article class="upgrade-card pp-card">
 
-            </p>
+<div class="pp-icon">💻</div>
 
-            <div class="privacy-notice">
+<h3>Local Website Calculations</h3>
 
-                <strong>Important Information</strong>
+<p>
 
-                <p>
+The website calculator engine processes
+entered amounts locally in the browser.
 
-                    Privacy and security capabilities
-                    may vary depending on the
-                    application, installed version,
-                    device configuration, enabled
-                    features and external services.
+</p>
 
-                </p>
+</article>
 
-                <p>
+<article class="upgrade-card pp-card">
 
-                    Users should review the actual
-                    application settings and
-                    available security features
-                    before storing sensitive
-                    financial information.
+<div class="pp-icon">🛡</div>
 
-                </p>
+<h3>Data Protection</h3>
 
-            </div>
+<p>
 
-        </section>
+Security controls should be reviewed
+and verified before being represented
+as implemented safeguards.
 
-        <!-- PRIVACY PRINCIPLES -->
+</p>
 
-        <section class="privacy-section">
+</article>
 
-            <h2>Our Privacy &amp; Security Principles</h2>
+<article class="upgrade-card pp-card">
 
-            <div class="privacy-grid">
+<div class="pp-icon">💾</div>
 
-                <!-- USER PRIVACY -->
+<h3>Backup Awareness</h3>
 
-                <article class="upgrade-card privacy-card">
+<p>
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+Users should maintain secure backups
+of important financial records.
 
-                        &#128274;
+</p>
 
-                    </span>
+</article>
 
-                    <h3>User Privacy</h3>
+<article class="upgrade-card pp-card">
 
-                    <p>
+<div class="pp-icon">⚙</div>
 
-                        Respecting personal privacy
-                        and encouraging responsible
-                        handling of financial
-                        information.
+<h3>User Controls</h3>
 
-                    </p>
+<p>
 
-                </article>
+Website storage and application data
+can be managed using available browser
+and device settings.
 
-                <!-- DATA PROTECTION -->
+</p>
 
-                <article class="upgrade-card privacy-card">
+</article>
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<article class="upgrade-card pp-card">
 
-                        &#128737;
+<div class="pp-icon">📋</div>
 
-                    </span>
+<h3>Transparency</h3>
 
-                    <h3>Data Protection</h3>
+<p>
 
-                    <p>
+Unverified application privacy features
+are not presented as confirmed
+security guarantees.
 
-                        Prioritizing appropriate
-                        safeguards and continuous
-                        improvements to financial
-                        data protection.
+</p>
 
-                    </p>
+</article>
 
-                </article>
+</div>
 
-                <!-- BACKUP AND RECOVERY -->
+</section>
 
-                <article class="upgrade-card privacy-card">
+<!-- POLICY DOCUMENT -->
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<section class="pp-section"
+id="privacyPolicy">
 
-                        &#128190;
+<h2 class="pp-title">
 
-                    </span>
+Privacy Policy
 
-                    <h3>Backup &amp; Recovery</h3>
+</h2>
 
-                    <p>
+<div class="pp-notice">
 
-                        Encouraging secure backups,
-                        reliable recovery practices
-                        and protection of important
-                        financial records.
+<strong>Website:</strong> merahisab.store
 
-                    </p>
+<br>
 
-                </article>
+<strong>Applications:</strong>
+MeraHisab and Royal Khata
 
-                <!-- USER CONTROL -->
+<br>
 
-                <article class="upgrade-card privacy-card">
+<strong>Policy Version:</strong> 1.0
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<br>
 
-                        &#128273;
+<strong>Document Status:</strong>
+Draft pending operator review.
 
-                    </span>
+<br>
 
-                    <h3>User Control</h3>
+This document describes the intended
+privacy framework and known website
+functionality. Application-specific
+data practices, legal contact details
+and final policy approval remain
+subject to verification.
 
-                    <p>
+</div>
 
-                        Helping users make informed
-                        decisions about their
-                        personal and financial
-                        information.
+<!-- TABLE OF CONTENTS -->
 
-                    </p>
+<h3>Policy Contents</h3>
 
-                </article>
+<div class="pp-toc">
 
-                <!-- TRANSPARENCY -->
+<a href="#policy1">01. Scope</a>
 
-                <article class="upgrade-card privacy-card">
+<a href="#policy2">02. Information & Data</a>
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<a href="#policy3">03. Financial Records</a>
 
-                        &#128196;
+<a href="#policy4">04. Data Processing</a>
 
-                    </span>
+<a href="#policy5">05. Application Permissions</a>
 
-                    <h3>Transparency</h3>
+<a href="#policy6">06. Cookies & Storage</a>
 
-                    <p>
+<a href="#policy7">07. PWA & Offline Storage</a>
 
-                        Providing understandable
-                        information about privacy,
-                        security considerations
-                        and application capabilities.
+<a href="#policy8">08. Data Security</a>
 
-                    </p>
+<a href="#policy9">09. Backups & Recovery</a>
 
-                </article>
+<a href="#policy10">10. Third-Party Services</a>
 
-                <!-- CONTINUOUS IMPROVEMENT -->
+<a href="#policy11">11. Data Sharing</a>
 
-                <article class="upgrade-card privacy-card">
+<a href="#policy12">12. Data Retention</a>
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<a href="#dataRights">13. Your Data Rights</a>
 
-                        &#9881;
+<a href="#policy14">14. Data Deletion</a>
 
-                    </span>
+<a href="#policy15">15. Children's Privacy</a>
 
-                    <h3>Continuous Improvement</h3>
+<a href="#policy16">16. International Processing</a>
 
-                    <p>
+<a href="#policy17">17. Security Incidents</a>
 
-                        Evaluating opportunities
-                        to improve privacy,
-                        application security
-                        and data reliability.
+<a href="#policy18">18. Indian Privacy Framework</a>
 
-                    </p>
+<a href="#policy19">19. Policy Changes</a>
 
-                </article>
+<a href="#policy20">20. Privacy Contact</a>
 
-            </div>
+</div>
 
-        </section>
+<div class="pp-section">
 
-        <!-- APPLICATION PRIVACY INFORMATION -->
+<label id="privacySearchLabel"
+for="privacySearch">
 
-        <section class="privacy-section">
+<strong>Search Privacy Policy</strong>
 
-            <h2>Application Privacy Information</h2>
+</label>
 
-            <div class="privacy-grid">
+<input
+id="privacySearch"
+class="pp-input"
+type="search"
+placeholder="Search backup, security, cookies, deletion..."
+autocomplete="off">
 
-                <!-- MERAHISAB -->
+<p id="searchStatus"
+role="status"
+aria-live="polite">
 
-                <article class="upgrade-card privacy-card">
+20 policy sections available.
 
-                    <h3>MeraHisab</h3>
+</p>
 
-                    <p>
+<div class="pp-buttons">
 
-                        Personal Finance Management
+<button
+type="button"
+class="pp-button"
+id="clearSearch">
 
-                    </p>
+Clear Search
 
-                    <p>
+</button>
 
-                        Designed to help users
-                        organize personal financial
-                        records, income, expenses
-                        and everyday financial
-                        information.
+<button
+type="button"
+class="pp-button pp-primary"
+id="printPolicy">
 
-                    </p>
+Print / Save as PDF
 
-                    <a class="action"
-                       href="merahisab.html">
+</button>
 
-                        Explore MeraHisab
+<button
+type="button"
+class="pp-button"
+id="copyPolicy">
 
-                    </a>
+Copy Privacy Policy
 
-                </article>
+</button>
 
-                <!-- ROYAL KHATA -->
+</div>
 
-                <article class="upgrade-card privacy-card">
+<p id="copyStatus"
+role="status">
 
-                    <h3>Royal Khata</h3>
+</p>
 
-                    <p>
+</div>
 
-                        Digital Khata Management
+<div id="policyContent">
 
-                    </p>
+<!-- SECTION 1 -->
 
-                    <p>
+<article class="upgrade-card pp-policy"
+id="policy1">
 
-                        Designed around credit-debit
-                        management, digital ledger
-                        organization and customer
-                        account records.
+<h2>1. Scope of This Policy</h2>
 
-                    </p>
+<p>
 
-                    <a class="action"
-                       href="royal-khata.html">
+This document covers privacy information
+relating to the MeraHisab website at
+merahisab.store and the MeraHisab and
+Royal Khata applications.
 
-                        Explore Royal Khata
+</p>
 
-                    </a>
+<p>
 
-                </article>
+The website, its installed PWA version
+and the native Android applications
+are separate environments and may have
+different data processing practices.
 
-            </div>
+</p>
 
-        </section>
+<p>
 
-        <!-- PRIVACY POLICY TABLE OF CONTENTS -->
+Royal Khata application-specific
+privacy practices must be confirmed
+before its public release.
 
-        <section id="privacy-contents"
-                 class="upgrade-card privacy-section">
+</p>
 
-            <h2>Privacy Policy Contents</h2>
+</article>
 
-            <p>
+<!-- SECTION 2 -->
 
-                Select a section to learn more
-                about our privacy information
-                and recommended security practices.
+<article class="upgrade-card pp-policy"
+id="policy2">
 
-            </p>
+<h2>2. Information and Data</h2>
 
-            <nav class="privacy-navigation"
-                 aria-label="Privacy policy contents">
+<p>
 
-                <a href="#scope">
+Depending on the features used,
+information may fall into the
+following categories.
 
-                    01. Scope of Privacy Policy
+</p>
 
-                </a>
+<div class="pp-table-wrap">
 
-                <a href="#data-collection">
+<table class="pp-table">
 
-                    02. Information Collection
+<thead>
 
-                </a>
+<tr>
 
-                <a href="#data-usage">
+<th scope="col">Data Category</th>
 
-                    03. Information Usage
+<th scope="col">Examples</th>
 
-                </a>
+<th scope="col">Processing Information</th>
 
-                <a href="#data-storage">
+</tr>
 
-                    04. Data Storage
+</thead>
 
-                </a>
+<tbody>
 
-                <a href="#data-security">
+<tr>
 
-                    05. Data Security &amp; Encryption
+<td>Financial records</td>
 
-                </a>
+<td>Income, expenses, credit and debit</td>
 
-                <a href="#backup-recovery">
+<td>Application-specific verification pending</td>
 
-                    06. Backup &amp; Recovery
+</tr>
 
-                </a>
+<tr>
 
-                <a href="#permissions">
+<td>Account information</td>
 
-                    07. Application Permissions
+<td>Account names and balances</td>
 
-                </a>
+<td>Depends on application functionality</td>
 
-                <a href="#cookies">
+</tr>
 
-                    08. Cookies &amp; Local Storage
+<tr>
 
-                </a>
+<td>Customer records</td>
 
-                <a href="#third-party">
+<td>Names and transaction details</td>
 
-                    09. Third-Party Services
+<td>Royal Khata implementation pending verification</td>
 
-                </a>
+</tr>
 
-                <a href="#data-retention">
+<tr>
 
-                    10. Data Retention &amp; Deletion
+<td>Calculator inputs</td>
 
-                </a>
+<td>Amounts, rates and time periods</td>
 
-                <a href="#user-rights">
+<td>Processed by the website calculator engine locally</td>
 
-                    11. User Privacy Rights
+</tr>
 
-                </a>
+<tr>
 
-                <a href="#children">
+<td>Website preferences</td>
 
-                    12. Children's Privacy
+<td>Theme and display settings</td>
 
-                </a>
+<td>May use browser storage</td>
 
-                <a href="#user-responsibility">
+</tr>
 
-                    13. User Responsibilities
+<tr>
 
-                </a>
+<td>Technical information</td>
 
-                <a href="#policy-updates">
+<td>IP address and browser information</td>
 
-                    14. Privacy Policy Updates
+<td>May be processed by hosting infrastructure</td>
 
-                </a>
+</tr>
 
-                <a href="#privacy-contact">
+<tr>
 
-                    15. Privacy Contact &amp; Support
+<td>Support information</td>
 
-                </a>
+<td>Information voluntarily included in a support request</td>
 
-            </nav>
+<td>Depends on the support method used</td>
 
-  </section>
-        <!-- 01. POLICY SCOPE -->
+</tr>
 
-        <section id="scope"
-                 class="upgrade-card privacy-section">
+</tbody>
 
-            <h2>01. Scope of Privacy Policy</h2>
+</table>
 
-            <p>
+</div>
 
-                This privacy information covers
-                the official MeraHisab website
-                and general privacy considerations
-                relating to the following projects:
+</article>
 
-            </p>
+<!-- SECTION 3 -->
 
-            <ul>
+<article class="upgrade-card pp-policy"
+id="policy3">
 
-                <li>MeraHisab Application</li>
+<h2>3. Financial Records</h2>
 
-                <li>Royal Khata Application</li>
+<p>
 
-                <li>Official MeraHisab Website</li>
+Financial records can contain sensitive
+personal and business information.
 
-                <li>Financial Calculators and Tools</li>
+</p>
 
-                <li>Application Download Services</li>
+<p>
 
-                <li>Contact and Support Features</li>
+Users should avoid sharing complete
+financial records, account credentials,
+banking passwords or authentication
+codes through website support forms.
 
-            </ul>
+</p>
 
-            <p>
+<p>
 
-                Official Website:
+The website's financial calculator
+engine does not intentionally transmit
+calculator inputs to a server.
 
-                <a href="https://merahisab.store/">
+</p>
 
-                    https://merahisab.store/
+<p>
 
-                </a>
+The native applications require a
+separate review to establish where
+financial records are stored, whether
+they are encrypted and whether any
+information leaves the device.
 
-            </p>
+</p>
 
-            <p>
+</article>
 
-                Individual application versions
-                and optional services may have
-                additional privacy requirements
-                or separate privacy disclosures.
+<!-- SECTION 4 -->
 
-            </p>
+<article class="upgrade-card pp-policy"
+id="policy4">
 
-        </section>
+<h2>4. Purposes of Data Processing</h2>
 
-        <!-- 02. INFORMATION COLLECTION -->
+<p>
 
-        <section id="data-collection"
-                 class="upgrade-card privacy-section">
+Depending on the relevant feature
+and verified implementation, data
+processing may be necessary for:
 
-            <h2>02. Information Collection</h2>
+</p>
 
-            <p>
+<ul class="pp-list">
 
-                Information handled by our
-                applications and website may
-                depend on the features used,
-                application version and
-                user preferences.
+<li>Providing requested application functionality.</li>
 
-            </p>
+<li>Managing financial records.</li>
 
-            <h3>2.1 Personal Information</h3>
+<li>Displaying website preferences.</li>
 
-            <p>
+<li>Performing financial calculations.</li>
 
-                Depending on available features,
-                users may voluntarily provide
-                information such as:
+<li>Providing offline website resources.</li>
 
-            </p>
+<li>Preparing backups and restoring records.</li>
 
-            <ul>
+<li>Responding to support requests.</li>
 
-                <li>Name or profile information.</li>
+<li>Maintaining website reliability and security.</li>
 
-                <li>Contact information.</li>
+<li>Meeting applicable legal obligations.</li>
 
-                <li>Customer or business information.</li>
+</ul>
 
-                <li>Support request information.</li>
+<p>
 
-                <li>Application preferences.</li>
+The actual purposes and applicable
+legal grounds must be confirmed
+before final policy publication.
 
-            </ul>
+</p>
 
-            <h3>2.2 Financial Information</h3>
+</article>
 
-            <p>
+<!-- SECTION 5 -->
 
-                Financial management features
-                may process information entered
-                by users, including:
+<article class="upgrade-card pp-policy"
+id="policy5">
 
-            </p>
+<h2>5. Application Permissions</h2>
 
-            <ul>
+<p>
 
-                <li>Income and expense records.</li>
+Android applications may request
+permissions depending on their
+implemented functionality.
 
-                <li>Credit and debit transactions.</li>
+</p>
 
-                <li>Customer account records.</li>
+<p>
 
-                <li>Transaction dates and amounts.</li>
+Examples of permissions that may
+be relevant include file selection,
+notifications, camera access or
+network access.
 
-                <li>Payment descriptions and notes.</li>
+</p>
 
-                <li>Financial categories.</li>
+<p>
 
-                <li>Account balances.</li>
+This list does not establish that
+either application currently requests
+these permissions.
 
-                <li>Financial reports.</li>
+</p>
 
-                <li>Budget and savings information.</li>
+<p>
 
-            </ul>
+Users should review actual application
+permissions through Android Settings
+and grant only permissions required
+for the features they use.
 
-            <h3>2.3 Technical Information</h3>
+</p>
 
-            <p>
+<p>
 
-                Website hosting providers,
-                application services or
-                troubleshooting features
-                may process technical
-                information such as:
+The complete permission list requires
+inspection of each released APK.
 
-            </p>
+</p>
 
-            <ul>
+</article>
 
-                <li>Browser type and version.</li>
+<!-- SECTION 6 -->
 
-                <li>Operating system information.</li>
+<article class="upgrade-card pp-policy"
+id="policy6">
 
-                <li>Device information.</li>
+<h2>6. Cookies and Browser Storage</h2>
 
-                <li>IP address.</li>
+<p>
 
-                <li>Website access information.</li>
+The website may use browser storage
+for preferences and website functionality.
 
-                <li>Error and diagnostic information.</li>
+</p>
 
-                <li>Application version information.</li>
+<div class="pp-table-wrap">
 
-            </ul>
+<table class="pp-table">
 
-            <div class="privacy-notice">
+<thead>
 
-                <strong>Data Minimization</strong>
+<tr>
 
-                <p>
+<th scope="col">Storage Type</th>
 
-                    Our development approach
-                    aims to limit information
-                    handling to what is reasonably
-                    necessary for the relevant
-                    functionality.
+<th scope="col">Possible Purpose</th>
 
-                </p>
+</tr>
 
-                <p>
+</thead>
 
-                    The categories listed above
-                    describe possible information
-                    handling and do not establish
-                    that every category is collected
-                    by every application or service.
+<tbody>
 
-                </p>
+<tr>
 
-            </div>
+<td>LocalStorage</td>
 
-        </section>
+<td>Theme and website preferences</td>
 
-        <!-- 03. INFORMATION USAGE -->
+</tr>
 
-        <section id="data-usage"
-                 class="upgrade-card privacy-section">
+<tr>
 
-            <h2>03. Information Usage</h2>
+<td>SessionStorage</td>
 
-            <p>
+<td>Temporary browser-session information</td>
 
-                Where information is processed,
-                its purpose may include
-                providing requested features,
-                maintaining functionality
-                and supporting user needs.
+</tr>
 
-            </p>
+<tr>
 
-            <h3>3.1 Application Functionality</h3>
+<td>Cache Storage</td>
 
-            <ul>
+<td>Public website resources for offline access</td>
 
-                <li>Managing financial transactions.</li>
+</tr>
 
-                <li>Organizing personal financial records.</li>
+<tr>
 
-                <li>Maintaining digital khata records.</li>
+<td>Cookies</td>
 
-                <li>Calculating account balances.</li>
+<td>May be used by hosting or external services</td>
 
-                <li>Generating financial reports.</li>
+</tr>
 
-                <li>Managing application preferences.</li>
+<tr>
 
-                <li>Supporting available backup features.</li>
+<td>IndexedDB</td>
 
-            </ul>
+<td>Browser database storage, if used by a feature</td>
 
-            <h3>3.2 Website Functionality</h3>
+</tr>
 
-            <ul>
+</tbody>
 
-                <li>Providing application information.</li>
+</table>
 
-                <li>Displaying available downloads.</li>
+</div>
 
-                <li>Operating financial calculators.</li>
+<p>
 
-                <li>Maintaining website navigation.</li>
+The presence of browser storage support
+does not establish that the website
+uses every storage technology listed.
 
-                <li>Remembering supported preferences.</li>
+</p>
 
-            </ul>
+<p>
 
-            <h3>3.3 Support and Improvement</h3>
+A complete cookie and third-party
+storage audit is required before
+making definitive tracking claims.
 
-            <ul>
+</p>
 
-                <li>Understanding reported technical issues.</li>
+</article>
 
-                <li>Evaluating feature suggestions.</li>
+<!-- SECTION 7 -->
 
-                <li>Improving application reliability.</li>
+<article class="upgrade-card pp-policy"
+id="policy7">
 
-                <li>Improving website accessibility.</li>
+<h2>7. PWA and Offline Storage</h2>
 
-                <li>Evaluating security concerns.</li>
+<p>
 
-            </ul>
+The MeraHisab website includes
+Progressive Web App functionality.
 
-            <p>
+</p>
 
-                Any additional information
-                processing introduced through
-                future services should be
-                accompanied by appropriate
-                privacy disclosures.
+<p>
 
-            </p>
+Its service worker is designed to
+cache selected public website pages,
+stylesheets, scripts and icons to
+support offline access.
 
-        </section>
+</p>
 
-        <!-- 04. DATA STORAGE -->
+<ul class="pp-list">
 
-        <section id="data-storage"
-                 class="upgrade-card privacy-section">
+<li>Offline access depends on successful caching.</li>
 
-            <h2>04. Data Storage</h2>
+<li>APK downloads are excluded from the intended PWA cache.</li>
 
-            <p>
+<li>Contact and download pages are excluded from the intended page cache.</li>
 
-                Data storage arrangements
-                depend on the application
-                version, enabled features
-                and user-selected services.
+<li>Website cache storage is separate from native Android application storage.</li>
 
-            </p>
+<li>Clearing the website cache may remove offline resources.</li>
 
-            <h3>4.1 Local Device Storage</h3>
+</ul>
 
-            <p>
+<p>
 
-                Applications may use local
-                device storage to maintain
-                financial records, preferences
-                and other information required
-                for application functionality.
+Users can access available PWA storage
+controls through the installation
+and diagnostics panel on this website.
 
-            </p>
+</p>
 
-            <p>
+</article>
 
-                Locally stored information
-                may remain on the device
-                until it is deleted, modified
-                or removed through applicable
-                device or application controls.
+<!-- SECTION 8 -->
 
-            </p>
+<article class="upgrade-card pp-policy"
+id="policy8">
 
-            <h3>4.2 Backup Storage</h3>
+<h2>8. Data Security</h2>
 
-            <p>
+<p>
 
-                Where backup and export
-                functionality is available,
-                users may create copies
-                of supported application data.
+Appropriate security safeguards are
+important for financial information.
 
-            </p>
+</p>
 
-            <p>
+<p>
 
-                Backup files may be stored
-                in user-selected locations
-                depending on available features
-                and device permissions.
+Recommended safeguards include:
 
-            </p>
+</p>
 
-            <h3>4.3 Cloud Storage and Synchronization</h3>
+<ul class="pp-list">
 
-            <p>
+<li>HTTPS connections for website access.</li>
 
-                If cloud backup or synchronization
-                features are available and enabled,
-                information handling may also
-                depend on the selected cloud
-                service and its privacy practices.
+<li>Secure device authentication.</li>
 
-            </p>
+<li>Appropriate access controls.</li>
 
-            <p>
+<li>Encryption where suitable.</li>
 
-                Users should review applicable
-                storage locations, synchronization
-                settings and service policies
-                before enabling such features.
+<li>Secure backup storage.</li>
 
-            </p>
+<li>Application integrity verification.</li>
 
-            <h3>4.4 Website Storage</h3>
+<li>Regular software updates.</li>
 
-            <p>
+<li>Security vulnerability testing.</li>
 
-                The website may use browser
-                storage for supported preferences
-                such as appearance and language.
+</ul>
 
-            </p>
+<p>
 
-            <p>
+These recommendations are not a
+certification that every safeguard
+has been implemented.
 
-                Browser storage behavior may
-                vary depending on browser
-                settings and implemented
-                website features.
+</p>
 
-            </p>
+<p>
 
-            <div class="privacy-notice">
+No software or storage system can
+guarantee absolute security.
 
-                <strong>Important Storage Notice</strong>
+</p>
 
-                <p>
+</article>
 
-                    Clearing application storage,
-                    uninstalling an application
-                    or resetting a device may
-                    result in the loss of
-                    locally stored information.
+<!-- SECTION 9 -->
 
-                </p>
+<article class="upgrade-card pp-policy"
+id="policy9">
 
-                <p>
+<h2>9. Backups and Data Recovery</h2>
 
-                    Always verify that important
-                    financial records can be
-                    recovered before performing
-                    these actions.
+<p>
 
-                </p>
+Users should maintain independent
+backups of important financial records
+using available application features.
 
-            </div>
+</p>
 
-        </section>
+<ul class="pp-list">
 
-        <!-- 05. DATA SECURITY AND ENCRYPTION -->
+<li>Keep backups in a secure location.</li>
 
-        <section id="data-security"
-                 class="upgrade-card privacy-section">
+<li>Protect backup passwords and recovery keys.</li>
 
-            <h2>05. Data Security &amp; Encryption</h2>
+<li>Verify that backups can be restored.</li>
 
-            <p>
+<li>Avoid sharing unencrypted financial backups.</li>
 
-                Financial information protection
-                is an important development
-                priority for MeraHisab
-                and Royal Khata.
+<li>Create a backup before application updates.</li>
 
-            </p>
+<li>Do not assume uninstalling an application preserves its data.</li>
 
-            <p>
+</ul>
 
-                Security features may differ
-                between applications and
-                installed versions.
+<p>
 
-            </p>
+Backup formats, encryption, automated
+backup schedules and recovery features
+must be verified separately for each
+application.
 
-            <div class="privacy-grid">
+</p>
 
-                <!-- ACCESS PROTECTION -->
+</article>
 
-                <article class="upgrade-card privacy-card">
+<!-- SECTION 10 -->
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<article class="upgrade-card pp-policy"
+id="policy10">
 
-                        &#128274;
+<h2>10. Third-Party Services</h2>
 
-                    </span>
+<p>
 
-                    <h3>Access Protection</h3>
+The website is developed for hosting
+through GitHub Pages.
 
-                    <p>
+</p>
 
-                        Supported authentication
-                        and access controls may
-                        help restrict unauthorized
-                        access to application data.
+<p>
 
-                    </p>
+Hosting providers, domain services
+and network infrastructure may process
+technical information necessary to
+deliver website content.
 
-                </article>
+</p>
 
-                <!-- ENCRYPTION -->
+<p>
 
-                <article class="upgrade-card privacy-card">
+External websites and services have
+their own privacy policies and
+security practices.
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+</p>
 
-                        &#128272;
+<div class="pp-buttons">
 
-                    </span>
+<a
+href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+target="_blank"
+rel="noopener noreferrer"
+class="pp-button">
 
-                    <h3>Data Encryption</h3>
+GitHub Privacy Statement
 
-                    <p>
+</a>
 
-                        Encryption, where implemented,
-                        may help protect supported
-                        financial information
-                        and backup files.
+</div>
 
-                    </p>
+<p>
 
-                </article>
+Any additional analytics, advertising,
+cloud backup or external integrations
+must be disclosed if introduced.
 
-                <!-- DEVICE SECURITY -->
+</p>
 
-                <article class="upgrade-card privacy-card">
+</article>
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+<!-- SECTION 11 -->
 
-                        &#128241;
+<article class="upgrade-card pp-policy"
+id="policy11">
 
-                    </span>
+<h2>11. Data Sharing and Disclosure</h2>
 
-                    <h3>Device Security</h3>
+<p>
 
-                    <p>
+A final assessment of application
+data flows and third-party integrations
+is required to establish actual data
+sharing practices.
 
-                        Secure device settings,
-                        operating system updates
-                        and screen locks can help
-                        reduce unauthorized access.
+</p>
 
-                    </p>
+<p>
 
-                </article>
+Where information is processed by
+service providers, disclosed with
+authorization or required to be
+disclosed by law, the applicable
+privacy requirements should be followed.
 
-                <!-- BACKUP SECURITY -->
+</p>
 
-                <article class="upgrade-card privacy-card">
+<p>
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+No claim that all application data
+remains exclusively on the device
+is made without technical verification.
 
-                        &#128190;
+</p>
 
-                    </span>
+</article>
 
-                    <h3>Backup Security</h3>
+<!-- SECTION 12 -->
 
-                    <p>
+<article class="upgrade-card pp-policy"
+id="policy12">
 
-                        Secure backup handling
-                        and verified recovery
-                        practices can help protect
-                        important financial records.
+<h2>12. Data Retention</h2>
 
-                    </p>
+<p>
 
-                </article>
+Data retention depends on the type
+of information, storage environment,
+application functionality and applicable
+legal requirements.
 
-            </div>
+</p>
 
-            <h3>5.1 Application Authentication</h3>
+<p>
 
-            <p>
+Browser preferences and offline
+website resources may remain stored
+until removed by the user, browser
+or website storage management process.
 
-                Depending on the application
-                and version, available access
-                protection features may include:
+</p>
 
-            </p>
+<p>
 
-            <ul>
+Application records and backups may
+have different retention behavior.
 
-                <li>Application PIN protection.</li>
+</p>
 
-                <li>Password protection.</li>
+<p>
 
-                <li>Biometric authentication.</li>
+Specific retention periods for
+application data, hosting records
+and support communications require
+operator confirmation.
 
-                <li>Automatic application locking.</li>
+</p>
 
-                <li>Session protection.</li>
+</article>
 
-            </ul>
+<!-- SECTION 13 -->
 
-            <p>
+<article class="upgrade-card pp-policy"
+id="dataRights">
 
-                Users should confirm which
-                authentication features are
-                actually available and enabled
-                in their installed application.
+<h2>13. Your Data Rights</h2>
 
-            </p>
+<p>
 
-            <h3>5.2 Encryption and Recovery Information</h3>
+Subject to applicable law and the
+circumstances of processing, users
+may have rights relating to:
 
-            <p>
+</p>
 
-                Where encryption is supported,
-                users may need passwords,
-                recovery keys or other
-                authentication information
-                to access protected records.
+<ul class="pp-list">
 
-            </p>
+<li>Accessing personal information.</li>
 
-            <p>
+<li>Correcting inaccurate information.</li>
 
-                Losing required recovery
-                information may prevent
-                access to encrypted data.
+<li>Requesting deletion or erasure.</li>
 
-            </p>
+<li>Withdrawing consent where applicable.</li>
 
-            <h3>5.3 Website Connection Security</h3>
+<li>Obtaining information about processing.</li>
 
-            <p>
+<li>Submitting privacy-related grievances.</li>
 
-                Users should access the
-                official website using HTTPS
-                and verify the correct
-                website domain.
+<li>Nomination where applicable under law.</li>
 
-            </p>
+</ul>
 
-            <p>
+<p>
 
-                Official Website:
+The process for exercising these
+rights requires a verified privacy
+contact and appropriate request
+handling procedures.
 
-                <a href="https://merahisab.store/">
+</p>
 
-                    https://merahisab.store/
+<div class="pp-buttons">
 
-                </a>
+<a href="/contact.html"
+class="pp-button pp-primary">
 
-            </p>
+Privacy & Support Information
 
-            <div class="privacy-notice">
+</a>
 
-                <strong>Security Limitations</strong>
+</div>
 
-                <p>
+</article>
 
-                    No application, device,
-                    storage system or internet
-                    service can guarantee
-                    absolute security.
+<!-- SECTION 14 -->
 
-                </p>
+<article class="upgrade-card pp-policy"
+id="policy14">
 
-                <p>
+<h2>14. Data Deletion</h2>
 
-                    Security effectiveness
-                    depends on actual technical
-                    implementation, device
-                    configuration, user practices
-                    and other relevant factors.
+<p>
 
-                </p>
+Website storage can generally be
+managed through browser site settings.
 
-                <p>
+</p>
 
-                    Specific encryption standards
-                    and security guarantees
-                    should only be relied upon
-                    when verified for the
-                    relevant application version.
+<p>
 
-                </p>
+Android application data can be
+managed through available in-app
+controls and Android application
+settings.
 
-            </div>
+</p>
 
-        </section>
+<div class="pp-notice">
 
-        <!-- 06. BACKUP AND RECOVERY -->
+<strong>Warning:</strong>
 
-        <section id="backup-recovery"
-                 class="upgrade-card privacy-section">
+Clearing application storage or
+deleting an application may permanently
+remove locally stored financial records.
 
-            <h2>06. Backup &amp; Recovery</h2>
+Create and verify a backup before
+performing destructive actions.
 
-            <p>
+</div>
 
-                Maintaining reliable backups
-                is important for protecting
-                personal and business
-                financial records.
+<p>
 
-            </p>
+Deleting local data does not
+necessarily delete exported backups,
+support communications or information
+held by external service providers.
 
-            <h3>6.1 Backup Features</h3>
+</p>
 
-            <p>
+</article>
 
-                Depending on the application
-                and installed version,
-                available backup options
-                may include:
+<!-- SECTION 15 -->
 
-            </p>
+<article class="upgrade-card pp-policy"
+id="policy15">
 
-            <ul>
+<h2>15. Children's Privacy</h2>
 
-                <li>Manual data backup.</li>
+<p>
 
-                <li>Local backup files.</li>
+The applications are intended for
+personal and business financial
+record management.
 
-                <li>Scheduled backups.</li>
+</p>
 
-                <li>Encrypted backups.</li>
+<p>
 
-                <li>Data export.</li>
+Any processing of children's personal
+data must comply with applicable
+legal requirements, including parental
+or guardian consent where required.
 
-                <li>Cloud backup integration.</li>
+</p>
 
-            </ul>
+<p>
 
-            <p>
+The final application age requirements
+and relevant safeguards must be
+confirmed before publication.
 
-                Availability of these features
-                should be confirmed within
-                the installed application.
+</p>
 
-            </p>
+</article>
 
-            <h3>6.2 Recovery Information</h3>
+<!-- SECTION 16 -->
 
-            <p>
+<article class="upgrade-card pp-policy"
+id="policy16">
 
-                Users should securely maintain
-                any passwords, recovery keys
-                or other information required
-                to restore protected backups.
+<h2>16. International Data Processing</h2>
 
-            </p>
+<p>
 
-            <p>
+Website hosting and network services
+may operate infrastructure in multiple
+countries.
 
-                Recovery information should
-                not be shared through public
-                messages, screenshots or
-                support requests.
+</p>
 
-            </p>
+<p>
 
-            <h3>6.3 Backup Verification</h3>
+Users should not assume that every
+technical record is processed or
+stored exclusively in India.
 
-            <ul>
+</p>
 
-                <li>
+<p>
 
-                    Confirm that backup files
-                    have been created successfully.
+Application-specific cross-border
+processing must be assessed according
+to actual integrations and applicable
+legal requirements.
 
-                </li>
+</p>
 
-                <li>
+</article>
 
-                    Verify that backup files
-                    are readable.
+<!-- SECTION 17 -->
 
-                </li>
+<article class="upgrade-card pp-policy"
+id="policy17">
 
-                <li>
+<h2>17. Security Incidents</h2>
 
-                    Check application version
-                    compatibility.
+<p>
 
-                </li>
+Suspected vulnerabilities, unauthorized
+access and accidental disclosures
+should be investigated appropriately.
 
-                <li>
+</p>
 
-                    Maintain additional copies
-                    in secure locations.
+<p>
 
-                </li>
+Users reporting security issues
+should avoid including passwords,
+recovery keys, authentication codes
+or unnecessary financial records.
 
-                <li>
+</p>
 
-                    Preserve original backup
-                    files before attempting recovery.
+<p>
 
-                </li>
+Incident response and legally required
+notifications should follow applicable
+law and verified operational procedures.
 
-                <li>
+</p>
 
-                    Where supported, verify
-                    recovery using a safe
-                    test environment.
+<div class="pp-buttons">
 
-                </li>
+<a href="/contact.html"
+class="pp-button">
 
-            </ul>
+Security Reporting Information
 
-            <div class="privacy-notice">
+</a>
 
-                <strong>Recovery Warning</strong>
+</div>
 
-                <p>
+</article>
 
-                    Do not delete existing
-                    financial records or
-                    overwrite important backups
-                    until you have confirmed
-                    that your information
-                    can be restored.
+<!-- SECTION 18 -->
 
-                </p>
+<article class="upgrade-card pp-policy"
+id="policy18">
 
-                <p>
+<h2>18. Indian Privacy Framework</h2>
 
-                    Recovery may not be possible
-                    if required encryption keys,
-                    passwords or valid backup
-                    files are unavailable.
+<p>
 
-                </p>
+The privacy framework should be
+reviewed against applicable Indian
+laws and regulations.
 
-            </div>
+</p>
 
-        </section>
+<p>
 
-        <!-- 07. APPLICATION PERMISSIONS -->
+Relevant requirements may include
+the Digital Personal Data Protection
+Act, 2023, applicable rules and
+other legal obligations.
 
-        <section id="permissions"
-                 class="upgrade-card privacy-section">
+</p>
 
-            <h2>07. Application Permissions</h2>
+<p>
 
-            <p>
+The applicability, commencement
+and implementation of specific
+requirements must be assessed
+during legal review.
 
-                Android applications may request
-                device permissions depending
-                on their implemented features
-                and operating system requirements.
+</p>
 
-            </p>
+<p>
 
-            <h3>7.1 Possible Permission Categories</h3>
+This document does not certify
+DPDP compliance or any other
+legal or security certification.
 
-            <div class="privacy-grid">
+</p>
 
-                <article class="upgrade-card privacy-card">
+</article>
 
-                    <h3>Files &amp; Storage</h3>
+<!-- SECTION 19 -->
 
-                    <p>
+<article class="upgrade-card pp-policy"
+id="policy19">
 
-                        May be required for
-                        supported backup,
-                        restore, import or
-                        export operations.
+<h2>19. Changes to This Policy</h2>
 
-                    </p>
+<p>
 
-                </article>
+Privacy information should be updated
+when website functionality, application
+features, data practices or applicable
+legal requirements change.
 
-                <article class="upgrade-card privacy-card">
+</p>
 
-                    <h3>Internet Access</h3>
+<p>
 
-                    <p>
+The approved policy should include
+an accurate effective date and
+appropriate information about
+material changes.
 
-                        May be required for
-                        online services,
-                        application updates
-                        or supported synchronization.
+</p>
 
-                    </p>
+<p>
 
-                </article>
+A revised policy should not be
+treated as automatic consent for
+unrelated data processing.
 
-                <article class="upgrade-card privacy-card">
+</p>
 
-                    <h3>Notifications</h3>
+</article>
 
-                    <p>
+<!-- SECTION 20 -->
 
-                        May be used for supported
-                        reminders, alerts and
-                        application notifications.
+<article class="upgrade-card pp-policy"
+id="policy20">
 
-                    </p>
+<h2>20. Privacy Contact and Grievances</h2>
 
-                </article>
+<p>
 
-                <article class="upgrade-card privacy-card">
+Website:
 
-                    <h3>Biometric Authentication</h3>
+<a href="https://merahisab.store/">
 
-                    <p>
+https://merahisab.store/
 
-                        May be used for supported
-                        device-based authentication
-                        and application access
-                        protection.
+</a>
 
-                    </p>
+</p>
 
-                </article>
+<p>
 
-                <article class="upgrade-card privacy-card">
+Privacy contact email:
+Pending official configuration.
 
-                    <h3>Camera Access</h3>
+</p>
 
-                    <p>
+<p>
 
-                        May be required if
-                        document scanning,
-                        image capture or
-                        related features
-                        are implemented.
+Responsible operator and grievance
+contact details:
+Pending confirmation.
 
-                    </p>
+</p>
 
-                </article>
+<p>
 
-                <article class="upgrade-card privacy-card">
+The Contact & Support page provides
+available support information and
+local request preparation features.
 
-                    <h3>Contacts Access</h3>
+Preparing or downloading a support
+request does not automatically send
+it to the website operator.
 
-                    <p>
+</p>
 
-                        May be required if
-                        optional contact selection
-                        or contact import
-                        features are implemented.
+<div class="pp-buttons">
 
-                    </p>
+<a href="/contact.html"
+class="pp-button pp-primary">
 
-                </article>
+Contact & Support
 
-            </div>
+</a>
 
-            <h3>7.2 Managing Permissions</h3>
+</div>
 
-            <p>
+</article>
 
-                Users can review and manage
-                application permissions through
-                Android device settings.
+</div>
 
-            </p>
+<div id="noPolicyResults"
+class="pp-notice"
+hidden>
 
-            <p>
+No matching privacy sections found.
 
-                Disabling a permission may
-                affect functionality that
-                depends on that permission.
+Try a different search term.
 
-            </p>
+</div>
 
-            <div class="privacy-notice">
+</section>
 
-                <strong>Permission Transparency</strong>
+<!-- PRIVACY DIAGNOSTICS -->
 
-                <p>
+<section class="pp-section"
+id="privacyDiagnostics">
 
-                    This list describes possible
-                    permission categories and
-                    does not confirm that every
-                    listed permission is requested
-                    by MeraHisab or Royal Khata.
+<h2 class="pp-title pp-center">
 
-                </p>
+Privacy & Browser Diagnostics
 
-                <p>
+</h2>
 
-                    Review the actual permission
-                    requests of your installed
-                    application before granting
-                    access.
+<div class="pp-grid">
 
-                </p>
+<article class="upgrade-card pp-card">
 
-            </div>
+<div class="pp-icon">🔍</div>
 
-        </section>
+<h3>Browser Security Information</h3>
 
-        <!-- 08. COOKIES AND LOCAL STORAGE -->
+<div class="pp-info-row">
 
-        <section id="cookies"
-                 class="upgrade-card privacy-section">
+<span>Connection Security</span>
 
-            <h2>08. Cookies &amp; Local Storage</h2>
+<strong id="secureStatus">Checking...</strong>
 
-            <p>
+</div>
 
-                Websites may use cookies,
-                local storage, session storage
-                or similar browser technologies
-                to support functionality
-                and remember preferences.
+<div class="pp-info-row">
 
-            </p>
+<span>Web Crypto Support</span>
 
-            <h3>8.1 Website Preferences</h3>
+<strong id="cryptoStatus">Checking...</strong>
 
-            <p>
+</div>
 
-                Supported website preferences
-                may include:
+<div class="pp-info-row">
 
-            </p>
+<span>LocalStorage Availability</span>
 
-            <ul>
+<strong id="localStatus">Checking...</strong>
 
-                <li>Dark theme preference.</li>
+</div>
 
-                <li>Light theme preference.</li>
+<div class="pp-info-row">
 
-                <li>System theme preference.</li>
+<span>SessionStorage Availability</span>
 
-                <li>Language preference.</li>
+<strong id="sessionStatus">Checking...</strong>
 
-                <li>Other supported interface settings.</li>
+</div>
 
-            </ul>
+<div class="pp-info-row">
 
-            <h3>8.2 Financial Calculators</h3>
+<span>Service Worker Support</span>
 
-            <p>
+<strong id="workerStatus">Checking...</strong>
 
-                Browser-based financial
-                calculators may process
-                user-entered values directly
-                within the browser.
+</div>
 
-            </p>
+<div class="pp-info-row">
 
-            <p>
+<span>Service Worker Control</span>
 
-                Users should avoid entering
-                unnecessary confidential
-                information into general
-                financial calculation tools.
+<strong id="workerControl">Checking...</strong>
 
-            </p>
+</div>
 
-            <h3>8.3 Contact and Support Form</h3>
+<div class="pp-info-row">
 
-            <p>
+<span>Browser Cookie Setting</span>
 
-                The current support request
-                generator is designed to
-                prepare requests locally
-                in the browser without
-                automatically submitting
-                form information to a server.
+<strong id="cookieStatus">Checking...</strong>
 
-            </p>
+</div>
 
-            <p>
+<div class="pp-info-row">
 
-                Users may choose to copy
-                or download prepared requests.
+<span>Network Status</span>
 
-                Such copies may remain in
-                the clipboard or downloaded
-                files until removed by
-                the user or device.
+<strong id="networkStatus">Checking...</strong>
 
-            </p>
+</div>
 
-            <h3>8.4 Managing Browser Storage</h3>
+<div class="pp-buttons">
 
-            <p>
+<button
+type="button"
+id="refreshDiagnostics"
+class="pp-button pp-primary">
 
-                Users can manage or remove
-                website storage through
-                their browser settings.
+Refresh Diagnostics
 
-            </p>
+</button>
 
-            <p>
+</div>
 
-                Clearing browser storage
-                may reset saved website
-                preferences.
+<p class="pp-status">
 
-            </p>
+These checks report browser capabilities
+and current connection information.
+They do not certify application security
+or establish actual data collection.
 
-            <div class="privacy-notice">
+</p>
 
-                <strong>Browser Privacy</strong>
+</article>
 
-                <p>
+<article class="upgrade-card pp-card">
 
-                    Hosting providers and
-                    external services may
-                    have their own information
-                    handling practices.
+<div class="pp-icon">💾</div>
 
-                    These should be reviewed
-                    separately where applicable.
+<h3>Website Storage Information</h3>
 
-                </p>
+<div class="pp-info-row">
 
-            </div>
+<span>Estimated Origin Storage Usage</span>
 
-        </section>
+<strong id="storageUsage">Checking...</strong>
 
-        <!-- 09. THIRD-PARTY SERVICES -->
+</div>
 
-        <section id="third-party"
-                 class="upgrade-card privacy-section">
+<div class="pp-info-row">
 
-            <h2>09. Third-Party Services</h2>
+<span>Estimated Storage Quota</span>
 
-            <p>
+<strong id="storageQuota">Checking...</strong>
 
-                The website and applications
-                may depend on external
-                infrastructure or optional
-                third-party services.
+</div>
 
-            </p>
+<div class="pp-info-row">
 
-            <h3>9.1 Website Hosting</h3>
+<span>Persistent Storage</span>
 
-            <p>
+<strong id="persistentStatus">Checking...</strong>
 
-                The MeraHisab website uses
-                GitHub Pages as its website
-                hosting platform.
+</div>
 
-            </p>
+<div class="pp-info-row">
 
-            <p>
+<span>MeraHisab PWA Cache Count</span>
 
-                GitHub may process technical
-                and access information as
-                part of providing its
-                hosting services.
+<strong id="cacheCount">Checking...</strong>
 
-            </p>
+</div>
 
-            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-               target="_blank"
-               rel="noopener noreferrer">
+<div class="pp-notice">
 
-                GitHub General Privacy Statement
+Storage estimates may include
+multiple storage types used by
+this website origin.
 
-            </a>
+They do not represent the size of
+your native application financial records.
 
-            <h3>9.2 Android Platform Services</h3>
+</div>
 
-            <p>
+<div class="pp-buttons">
 
-                Android operating system
-                features and platform
-                services may be governed
-                by their respective
-                privacy policies.
+<a href="#pwaMount"
+class="pp-button pp-primary">
 
-            </p>
+Manage PWA Storage
 
-            <a href="https://policies.google.com/privacy"
-               target="_blank"
-               rel="noopener noreferrer">
+</a>
 
-                Google Privacy Policy
+</div>
 
-            </a>
+</article>
 
-            <h3>9.3 Optional Cloud Services</h3>
+</div>
 
-            <p>
+</section>
 
-                Where cloud backup,
-                synchronization or other
-                external services are
-                supported and enabled,
-                those services may process
-                information according to
-                their own privacy policies.
+<!-- SECURITY RECOMMENDATIONS -->
 
-            </p>
+<section class="pp-section">
 
-            <h3>9.4 External Website Links</h3>
+<h2 class="pp-title pp-center">
 
-            <p>
+Recommended Privacy Practices
 
-                Our website may contain
-                links to external websites,
-                documentation and resources.
+</h2>
 
-            </p>
+<div class="pp-grid">
 
-            <p>
+<article class="upgrade-card pp-card">
 
-                External websites operate
-                under their own terms,
-                privacy policies and
-                security practices.
+<div class="pp-icon">📱</div>
 
-            </p>
+<h3>Protect Your Device</h3>
 
-            <h3>9.5 Information Disclosure</h3>
+<ul class="pp-list">
 
-            <p>
+<li>Use a strong device screen lock.</li>
 
-                Information may be subject
-                to applicable legal requirements
-                and the practices of relevant
-                service providers.
+<li>Keep Android updated.</li>
 
-            </p>
+<li>Keep Play Protect enabled.</li>
 
-            <p>
+<li>Avoid installing unknown APK files.</li>
 
-                Any future integrations involving
-                analytics, advertising, payment
-                processing or other external
-                data services should be
-                appropriately disclosed
-                before implementation.
+</ul>
 
-            </p>
+</article>
 
-        </section>
+<article class="upgrade-card pp-card">
 
-        <!-- 10. DATA RETENTION AND DELETION -->
+<div class="pp-icon">🔑</div>
 
-        <section id="data-retention"
-                 class="upgrade-card privacy-section">
+<h3>Protect Your Credentials</h3>
 
-            <h2>10. Data Retention &amp; Deletion</h2>
+<ul class="pp-list">
 
-            <p>
+<li>Never disclose passwords or OTPs.</li>
 
-                Information retention depends
-                on the storage location,
-                application features,
-                user preferences and
-                applicable requirements.
+<li>Protect recovery keys.</li>
 
-            </p>
+<li>Do not reuse important passwords.</li>
 
-            <h3>10.1 Local Application Records</h3>
+<li>Avoid sharing device access unnecessarily.</li>
 
-            <p>
+</ul>
 
-                Locally stored financial
-                information may remain
-                available until modified
-                or deleted through supported
-                application or device controls.
+</article>
 
-            </p>
+<article class="upgrade-card pp-card">
 
-            <h3>10.2 Backup and Export Files</h3>
+<div class="pp-icon">💾</div>
 
-            <p>
+<h3>Protect Your Financial Records</h3>
 
-                Backup files, exported reports
-                and downloaded documents
-                may remain in their selected
-                storage locations until
-                manually deleted or removed
-                by applicable storage policies.
+<ul class="pp-list">
 
-            </p>
+<li>Maintain independent backups.</li>
 
-            <p>
+<li>Use secure backup locations.</li>
 
-                Deleting an application
-                record does not necessarily
-                delete previously created
-                backups or exported copies.
+<li>Review exported financial documents.</li>
 
-            </p>
+<li>Verify recovery before deleting data.</li>
 
-            <h3>10.3 Website Preferences</h3>
+</ul>
 
-            <p>
+</article>
 
-                Browser-based preferences
-                may remain stored until
-                cleared by the user,
-                browser or website functionality.
+<article class="upgrade-card pp-card">
 
-            </p>
+<div class="pp-icon">🌐</div>
 
-            <h3>10.4 External Service Information</h3>
+<h3>Browse Safely</h3>
 
-            <p>
+<ul class="pp-list">
 
-                Information processed by
-                external hosting providers
-                or optional third-party
-                services may be subject
-                to their respective
-                retention policies.
+<li>Check the official website domain.</li>
 
-            </p>
+<li>Use HTTPS connections.</li>
 
-            <h3>10.5 Data Deletion Requests</h3>
+<li>Avoid suspicious download links.</li>
 
-            <p>
+<li>Investigate browser security warnings.</li>
 
-                Users should use available
-                application data management
-                features to manage or
-                delete local information.
+</ul>
 
-            </p>
+</article>
 
-            <p>
+</div>
 
-                A privacy or data deletion
-                request can also be prepared
-                through the website
-                support request generator.
+</section>
 
-            </p>
+<!-- PRIVACY FAQ -->
 
-            <p>
+<section class="pp-section pp-faq">
 
-                Preparing a request does
-                not automatically submit
-                the request or complete
-                a data deletion operation.
+<h2 class="pp-title pp-center">
 
-            </p>
+Privacy Frequently Asked Questions
 
-            <div class="privacy-actions">
+</h2>
 
-                <a class="action"
-                   href="contact.html?category=deletion#support-form">
+<details class="upgrade-card">
 
-                    Prepare Data Deletion Request
+<summary>
+Are my financial records uploaded to a server?
+</summary>
 
-                </a>
+<p>
 
-                <a class="action"
-                   href="contact.html?category=privacy#support-form">
+The website calculator engine processes
+inputs locally. Native application
+data flows require separate verification.
 
-                    Privacy Assistance
+</p>
 
-                </a>
+</details>
 
-            </div>
+<details class="upgrade-card">
 
-            <div class="privacy-notice">
+<summary>
+Does the website save calculator inputs?
+</summary>
 
-                <strong>Permanent Data Deletion Warning</strong>
+<p>
 
-                <p>
+The calculator engine does not
+intentionally persist entered amounts
+or calculation results.
 
-                    Deleting financial information
-                    may be irreversible if
-                    no valid backup or recovery
-                    option is available.
+Browser behavior may vary according
+to browser settings.
 
-                </p>
+</p>
 
-                <p>
+</details>
 
-                    Review the information
-                    selected for deletion
-                    and verify any required
-                    backup before proceeding.
+<details class="upgrade-card">
 
-                </p>
+<summary>
+Does the website use cookies?
+</summary>
 
-            </div>
+<p>
 
-  </section>
+Website preferences may use browser
+storage. Hosting or external services
+may have their own storage practices.
+A complete cookie audit is pending.
 
-              <!-- 11. USER PRIVACY RIGHTS -->
+</p>
 
-        <section id="user-rights"
-                 class="upgrade-card privacy-section">
+</details>
 
-            <h2>11. User Privacy Rights</h2>
+<details class="upgrade-card">
 
-            <p>
+<summary>
+Are application records encrypted?
+</summary>
 
-                Users should have meaningful
-                control over their personal
-                and financial information,
-                subject to applicable laws
-                and available application
-                functionality.
+<p>
 
-            </p>
+Encryption implementation must be
+verified separately for each released
+application before making this claim.
 
-            <div class="privacy-grid">
+</p>
 
-                <!-- RIGHT TO ACCESS -->
+</details>
 
-                <article class="upgrade-card privacy-card">
+<details class="upgrade-card">
 
-                    <h3>Right to Access</h3>
+<summary>
+Can I clear website storage?
+</summary>
 
-                    <p>
+<p>
 
-                        Users may have the right
-                        to access personal
-                        information processed
-                        about them, subject to
-                        applicable requirements.
+Yes. Use browser site settings or
+the available PWA storage controls.
 
-                    </p>
+Clearing website cache may remove
+offline functionality until resources
+are downloaded again.
 
-                </article>
+</p>
 
-                <!-- RIGHT TO CORRECTION -->
+</details>
 
-                <article class="upgrade-card privacy-card">
+<details class="upgrade-card">
 
-                    <h3>Right to Correction</h3>
+<summary>
+Will clearing website cache delete Android app records?
+</summary>
 
-                    <p>
+<p>
 
-                        Users may request
-                        correction of inaccurate
-                        or incomplete personal
-                        information.
+The website cache and native Android
+application storage are separate.
 
-                    </p>
+Do not clear native application
+storage without securing a backup.
 
-                </article>
+</p>
 
-                <!-- RIGHT TO DELETION -->
+</details>
 
-                <article class="upgrade-card privacy-card">
+<details class="upgrade-card">
 
-                    <h3>Right to Deletion</h3>
+<summary>
+Can I request deletion of personal data?
+</summary>
 
-                    <p>
+<p>
 
-                        Users may request
-                        deletion of personal
-                        information where
-                        applicable and subject
-                        to lawful retention
-                        requirements.
+Applicable privacy rights may include
+requesting erasure.
 
-                    </p>
+The official request handling contact
+and procedures require configuration.
 
-                </article>
+</p>
 
-                <!-- DATA PORTABILITY -->
+</details>
 
-                <article class="upgrade-card privacy-card">
+<details class="upgrade-card">
 
-                    <h3>Data Portability</h3>
+<summary>
+Does APK checksum verification guarantee safety?
+</summary>
 
-                    <p>
+<p>
 
-                        Users may export
-                        supported information
-                        through available
-                        application features
-                        or exercise applicable
-                        data portability rights.
+No. A checksum comparison establishes
+file integrity against a valid reference.
+It does not independently establish
+malware safety or developer authenticity.
 
-                    </p>
+</p>
 
-                </article>
+</details>
 
-                <!-- CONSENT MANAGEMENT -->
+<details class="upgrade-card">
 
-                <article class="upgrade-card privacy-card">
+<summary>
+Can I use the website offline?
+</summary>
 
-                    <h3>Consent Management</h3>
+<p>
 
-                    <p>
+Selected public website resources
+may be available offline after
+successful PWA caching.
 
-                        Where processing relies
-                        on consent, users may
-                        withdraw that consent
-                        subject to applicable
-                        requirements.
+</p>
 
-                    </p>
+</details>
 
-                </article>
+<details class="upgrade-card">
 
-                <!-- GRIEVANCE SUPPORT -->
+<summary>
+How can I report a privacy issue?
+</summary>
 
-                <article class="upgrade-card privacy-card">
+<p>
 
-                    <h3>Privacy Grievances</h3>
+Visit the Contact & Support page
+for available reporting information.
 
-                    <p>
+Do not include unnecessary sensitive
+financial information.
 
-                        Users may raise concerns
-                        regarding personal data
-                        handling and exercise
-                        applicable grievance
-                        redressal rights.
+</p>
 
-                    </p>
+</details>
 
-                </article>
+</section>
 
-            </div>
+<!-- PWA MANAGEMENT -->
 
-            <h3>11.1 Managing Your Information</h3>
+<section class="pp-section"
+id="pwaMount">
 
-            <p>
+<!-- PWA controls generated by pwa.js -->
 
-                Users should review available
-                application settings and
-                data management features
-                to access, modify, export
-                or delete supported records.
+</section>
 
-            </p>
+<!-- FINAL PRIVACY CONTACT -->
 
-            <h3>11.2 Applicable Privacy Requirements</h3>
+<section class="pp-section">
 
-            <p>
+<article class="upgrade-card pp-card">
 
-                Privacy rights and obligations
-                may depend on applicable
-                laws, jurisdiction and
-                the nature of information
-                processing.
+<h2>Privacy Questions & Support</h2>
 
-            </p>
+<p>
 
-            <p>
+Review the available support information
+if you have questions about website
+privacy, data protection or application
+security.
 
-                Relevant requirements may
-                include applicable provisions
-                of India's Digital Personal
-                Data Protection Act, 2023,
-                and associated rules as
-                they become applicable.
+</p>
 
-            </p>
+<div class="pp-buttons">
 
-            <div class="privacy-notice">
+<a href="/contact.html"
+class="pp-button pp-primary">
 
-                <strong>Privacy Request Information</strong>
+Contact & Support
 
-                <p>
+</a>
 
-                    The website currently
-                    provides a local support
-                    request preparation tool.
+<a href="/about.html"
+class="pp-button">
 
-                    Preparing a request does
-                    not automatically submit
-                    it to a privacy representative.
+About MeraHisab
 
-                </p>
+</a>
 
-            </div>
+<a href="/index.html"
+class="pp-button">
 
-            <div class="privacy-actions">
+Return Home
 
-                <a class="action"
-                   href="contact.html?category=privacy#support-form">
+</a>
 
-                    Prepare Privacy Request
+</div>
 
-                </a>
+</article>
 
-                <a class="action"
-                   href="contact.html?category=deletion#support-form">
+</section>
 
-                    Prepare Data Deletion Request
+</main>
 
-                </a>
+<!-- FOOTER -->
 
-            </div>
+<footer class="site">
 
-        </section>
+<div class="container">
 
-        <!-- 12. CHILDREN'S PRIVACY -->
+© <span data-year>2026</span>
+MeraHisab. All rights reserved.
 
-        <section id="children"
-                 class="upgrade-card privacy-section">
+<br>
 
-            <h2>12. Children's Privacy</h2>
+<a href="/index.html">Home</a>
 
-            <p>
+·
 
-                MeraHisab and Royal Khata
-                are financial management
-                projects and are not
-                specifically designed
-                as services for children.
+<a href="/privacy.html">Privacy</a>
 
-            </p>
+·
 
-            <p>
+<a href="/contact.html">Contact</a>
 
-                Parents and legal guardians
-                should supervise children's
-                use of financial management
-                applications and online
-                services where appropriate.
+·
 
-            </p>
+<a href="/downloads.html">Downloads</a>
 
-            <p>
+<br>
 
-                Where applicable laws
-                require parental or
-                guardian consent for
-                processing children's
-                personal information,
-                the relevant requirements
-                must be followed.
+<a href="https://merahisab.store/">
 
-            </p>
+merahisab.store
 
-            <p>
+</a>
 
-                Users should avoid entering
-                unnecessary personal
-                information relating
-                to children.
+</div>
 
-            </p>
+</footer>
 
-            <div class="privacy-notice">
+<!-- PRIVACY PAGE ENGINE -->
 
-                <strong>Parent and Guardian Guidance</strong>
+<script>
 
-                <p>
+(function () {
 
-                    Parents or legal guardians
-                    with concerns regarding
-                    children's personal
-                    information may prepare
-                    a privacy-related request
-                    through the support center.
+"use strict";
 
-                </p>
+if (window.__merahisabPrivacyInitialized) {
 
-            </div>
+  return;
 
-            <a class="action"
-               href="contact.html?category=privacy#support-form">
+}
 
-                Privacy Assistance
+window.__merahisabPrivacyInitialized = true;
 
-            </a>
 
-        </section>
+/* ELEMENT HELPER */
 
-        <!-- 13. USER RESPONSIBILITIES -->
+function element(id) {
 
-        <section id="user-responsibility"
-                 class="upgrade-card privacy-section">
+  return document.getElementById(id);
 
-            <h2>13. User Responsibilities</h2>
+}
 
-            <p>
 
-                Users play an important role
-                in protecting their personal,
-                business and financial
-                information.
+/* POLICY SEARCH */
 
-            </p>
+const search = element("privacySearch");
 
-            <div class="privacy-grid">
+const sections = Array.from(
 
-                <!-- DEVICE PROTECTION -->
+  document.querySelectorAll(
+    "#policyContent .pp-policy"
+  )
 
-                <article class="upgrade-card privacy-card">
+);
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+function filterPolicy() {
 
-                        &#128241;
+  const query =
+    search.value.trim().toLowerCase();
 
-                    </span>
+  let visible = 0;
 
-                    <h3>Device Protection</h3>
+  sections.forEach(function (section) {
 
-                    <ul>
+    const matches =
+      section.textContent
+        .toLowerCase()
+        .includes(query);
 
-                        <li>
+    section.hidden = !matches;
 
-                            Use a secure device
-                            screen lock.
+    if (matches) {
 
-                        </li>
+      visible++;
 
-                        <li>
+    }
 
-                            Install trusted
-                            operating system updates.
+  });
 
-                        </li>
+  element("searchStatus").textContent =
 
-                        <li>
+    "Showing " +
+    visible +
+    " of " +
+    sections.length +
+    " policy sections.";
 
-                            Avoid untrusted
-                            applications.
+  element("noPolicyResults").hidden =
+    visible !== 0;
 
-                        </li>
+}
 
-                        <li>
+search.addEventListener(
+  "input",
+  filterPolicy
+);
 
-                            Restrict unauthorized
-                            device access.
+element("clearSearch")
+.addEventListener("click",function () {
 
-                        </li>
+  search.value = "";
 
-                    </ul>
+  filterPolicy();
 
-                </article>
+  search.focus();
 
-                <!-- PASSWORD PROTECTION -->
+});
 
-                <article class="upgrade-card privacy-card">
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+/* TABLE OF CONTENTS NAVIGATION */
 
-                        &#128273;
+document.querySelectorAll(
+  ".pp-toc a"
+).forEach(function (link) {
 
-                    </span>
+  link.addEventListener("click",function () {
 
-                    <h3>Password Protection</h3>
+    search.value = "";
 
-                    <ul>
+    filterPolicy();
 
-                        <li>
+  });
 
-                            Use strong and
-                            unique passwords.
+});
 
-                        </li>
 
-                        <li>
+/* PRINT POLICY */
 
-                            Protect application PINs.
+element("printPolicy")
+.addEventListener("click",function () {
 
-                        </li>
+  window.print();
 
-                        <li>
+});
 
-                            Never share OTPs.
 
-                        </li>
+/* COPY COMPLETE POLICY */
 
-                        <li>
+element("copyPolicy")
+.addEventListener("click",async function () {
 
-                            Keep recovery keys
-                            confidential.
+  const content = [
 
-                        </li>
+    "MERAHISAB PRIVACY POLICY",
 
-                    </ul>
+    "Website: https://merahisab.store/",
 
-                </article>
+    "Version: 1.0",
 
-                <!-- BACKUP PROTECTION -->
+    "Status: Draft pending operator review",
 
-                <article class="upgrade-card privacy-card">
+    ""
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+  ];
 
-                        &#128190;
+  sections.forEach(function (section) {
 
-                    </span>
+    content.push(
+      section.textContent.trim()
+    );
 
-                    <h3>Backup Protection</h3>
+    content.push("");
 
-                    <ul>
+  });
 
-                        <li>
+  try {
 
-                            Maintain regular
-                            verified backups.
+    if (
+      !navigator.clipboard ||
+      !navigator.clipboard.writeText
+    ) {
 
-                        </li>
+      throw new Error("Clipboard unavailable.");
 
-                        <li>
+    }
 
-                            Store backups securely.
+    await navigator.clipboard.writeText(
+      content.join("\n")
+    );
 
-                        </li>
+    element("copyStatus").textContent =
+      "Complete privacy policy copied.";
 
-                        <li>
+  } catch (error) {
 
-                            Protect backup passwords.
+    element("copyStatus").textContent =
+      "Automatic copying is unavailable. Use Print / Save as PDF or copy the policy manually.";
 
-                        </li>
+  }
 
-                        <li>
+});
 
-                            Verify recovery
-                            before deleting data.
 
-                        </li>
+/* BROWSER STORAGE AVAILABILITY */
 
-                    </ul>
+function storageAvailable(type) {
 
-                </article>
+  try {
 
-                <!-- DOWNLOAD PROTECTION -->
+    const storage = window[type];
 
-                <article class="upgrade-card privacy-card">
+    return storage
+      ? "Accessible"
+      : "Unavailable";
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+  } catch (error) {
 
-                        &#128229;
+    return "Blocked or unavailable";
 
-                    </span>
+  }
 
-                    <h3>Safe Downloads</h3>
+}
 
-                    <ul>
 
-                        <li>
+/* FORMAT STORAGE SIZE */
 
-                            Use official
-                            download sources.
+function formatBytes(bytes) {
 
-                        </li>
+  if (
+    typeof bytes !== "number" ||
+    !Number.isFinite(bytes) ||
+    bytes < 0
+  ) {
 
-                        <li>
+    return "Unavailable";
 
-                            Review release information.
+  }
 
-                        </li>
+  const units = [
+    "B",
+    "KiB",
+    "MiB",
+    "GiB",
+    "TiB"
+  ];
 
-                        <li>
+  let value = bytes;
 
-                            Avoid modified APK files.
+  let unit = 0;
 
-                        </li>
+  while (
+    value >= 1024 &&
+    unit < units.length - 1
+  ) {
 
-                        <li>
+    value /= 1024;
 
-                            Keep device security
-                            safeguards enabled.
+    unit++;
 
-                        </li>
+  }
 
-                    </ul>
+  return value.toFixed(
+    unit === 0 ? 0 : 2
+  ) + " " + units[unit];
 
-                </article>
+}
 
-                <!-- FINANCIAL RECORD PROTECTION -->
 
-                <article class="upgrade-card privacy-card">
+/* NETWORK INFORMATION */
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+function updateNetwork() {
 
-                        &#128176;
+  element("networkStatus").textContent =
 
-                    </span>
+    navigator.onLine === false
 
-                    <h3>Financial Record Protection</h3>
+      ? "Offline reported"
 
-                    <ul>
+      : "Online reported";
 
-                        <li>
+}
 
-                            Review financial
-                            records regularly.
+window.addEventListener(
+  "online",
+  updateNetwork
+);
 
-                        </li>
+window.addEventListener(
+  "offline",
+  updateNetwork
+);
 
-                        <li>
 
-                            Avoid unnecessary
-                            sensitive information.
+/* PRIVACY DIAGNOSTICS */
 
-                        </li>
+let diagnosticsRunning = false;
 
-                        <li>
+async function refreshDiagnostics() {
 
-                            Protect exported
-                            financial reports.
+  if (diagnosticsRunning) {
 
-                        </li>
+    return;
 
-                        <li>
+  }
 
-                            Share records only
-                            with authorized persons.
+  diagnosticsRunning = true;
 
-                        </li>
+  const button =
+    element("refreshDiagnostics");
 
-                    </ul>
+  button.disabled = true;
 
-                </article>
+  button.textContent = "Checking...";
 
-                <!-- CUSTOMER PRIVACY -->
+  try {
 
-                <article class="upgrade-card privacy-card">
+    element("secureStatus").textContent =
 
-                    <span class="privacy-symbol"
-                          aria-hidden="true">
+      window.isSecureContext
 
-                        &#128101;
+        ? "Secure context"
 
-                    </span>
+        : "Not secure";
 
-                    <h3>Customer Privacy</h3>
+    element("cryptoStatus").textContent =
 
-                    <ul>
+      window.crypto &&
+      window.crypto.subtle
 
-                        <li>
+        ? "Supported"
 
-                            Respect customer privacy.
+        : "Unavailable";
 
-                        </li>
+    element("localStatus").textContent =
+      storageAvailable("localStorage");
 
-                        <li>
+    element("sessionStatus").textContent =
+      storageAvailable("sessionStorage");
 
-                            Collect only necessary
-                            customer information.
+    element("workerStatus").textContent =
 
-                        </li>
+      "serviceWorker" in navigator
 
-                        <li>
+        ? "Supported"
 
-                            Handle customer records
-                            lawfully.
+        : "Unavailable";
 
-                        </li>
+    element("workerControl").textContent =
 
-                        <li>
+      "serviceWorker" in navigator &&
+      navigator.serviceWorker.controller
 
-                            Prevent unauthorized
-                            disclosure.
+        ? "Active controller"
 
-                        </li>
+        : "Not controlled";
 
-                    </ul>
+    element("cookieStatus").textContent =
 
-                </article>
+      navigator.cookieEnabled
 
-            </div>
+        ? "Enabled"
 
-            <div class="privacy-notice">
+        : "Disabled or restricted";
 
-                <strong>Important Security Reminder</strong>
+    updateNetwork();
 
-                <p>
 
-                    Never include passwords,
-                    application PINs, OTPs,
-                    recovery keys, encryption
-                    passwords or confidential
-                    financial records in
-                    support requests.
+    /* STORAGE ESTIMATE */
 
-                </p>
+    element("storageUsage").textContent =
+      "Unavailable";
 
-                <p>
+    element("storageQuota").textContent =
+      "Unavailable";
 
-                    Remove sensitive information
-                    from screenshots, exported
-                    documents and technical
-                    reports before sharing.
+    if (
+      navigator.storage &&
+      navigator.storage.estimate
+    ) {
 
-                </p>
+      try {
 
-            </div>
+        const estimate =
+          await navigator.storage.estimate();
 
-        </section>
+        element("storageUsage").textContent =
+          formatBytes(estimate.usage);
 
-        <!-- 14. PRIVACY POLICY UPDATES -->
+        element("storageQuota").textContent =
+          formatBytes(estimate.quota);
 
-        <section id="policy-updates"
-                 class="upgrade-card privacy-section">
+      } catch (error) {
 
-            <h2>14. Privacy Policy Updates</h2>
+        element("storageUsage").textContent =
+          "Unable to estimate";
 
-            <p>
+      }
 
-                Privacy information may
-                be revised as applications,
-                website features, technical
-                infrastructure and applicable
-                legal requirements evolve.
+    }
 
-            </p>
 
-            <h3>14.1 Reasons for Updates</h3>
+    /* PERSISTENT STORAGE */
 
-            <ul>
+    element("persistentStatus").textContent =
+      "Unavailable";
 
-                <li>
+    if (
+      navigator.storage &&
+      navigator.storage.persisted
+    ) {
 
-                    Introduction of new
-                    application features.
+      try {
 
-                </li>
+        const persisted =
+          await navigator.storage.persisted();
 
-                <li>
+        element("persistentStatus").textContent =
 
-                    Changes to data
-                    processing practices.
+          persisted
 
-                </li>
+            ? "Granted"
 
-                <li>
+            : "Not granted";
 
-                    Security and privacy
-                    improvements.
+      } catch (error) {
 
-                </li>
+        element("persistentStatus").textContent =
+          "Unable to check";
 
-                <li>
+      }
 
-                    Changes to backup
-                    and recovery systems.
+    }
 
-                </li>
 
-                <li>
+    /* MERAHISAB PWA CACHE COUNT */
 
-                    Integration of external
-                    service providers.
+    element("cacheCount").textContent =
+      "Unavailable";
 
-                </li>
+    if ("caches" in window) {
 
-                <li>
+      try {
 
-                    Changes to applicable
-                    legal requirements.
+        const names =
+          await window.caches.keys();
 
-                </li>
+        const ownCaches =
+          names.filter(function (name) {
 
-            </ul>
-
-            <h3>14.2 Reviewing Policy Changes</h3>
-
-            <p>
-
-                Users should periodically
-                review the official
-                privacy information to
-                understand relevant changes.
-
-            </p>
-
-            <p>
-
-                Where required by applicable
-                law, material changes should
-                be communicated through
-                appropriate notices and
-                consent should be obtained
-                when necessary.
-
-            </p>
-
-            <div class="privacy-notice">
-
-                <strong>Document Status</strong>
-
-                <p>
-
-                    This privacy information
-                    is a preliminary disclosure
-                    pending verification against
-                    the actual application and
-                    website data processing
-                    practices.
-
-                </p>
-
-                <p>
-
-                    Policy Version: 1.0 Draft
-
-                </p>
-
-                <p>
-
-                    Effective Date:
-                    Pending Final Approval
-
-                </p>
-
-                <p>
-
-                    Official Policy Location:
-
-                    <a href="https://merahisab.store/privacy.html">
-
-                        merahisab.store/privacy.html
-
-                    </a>
-
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- 15. PRIVACY CONTACT AND SUPPORT -->
-
-        <section id="privacy-contact"
-                 class="upgrade-card privacy-section">
-
-            <h2>15. Privacy Contact &amp; Support</h2>
-
-            <p>
-
-                Users may prepare questions
-                and concerns regarding
-                privacy, information
-                protection and application
-                security through the
-                website support center.
-
-            </p>
-
-            <div class="privacy-grid">
-
-                <!-- GENERAL PRIVACY -->
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Privacy Questions</h3>
-
-                    <p>
-
-                        Prepare questions about
-                        personal information,
-                        privacy practices and
-                        data protection.
-
-                    </p>
-
-                    <a class="action"
-                       href="contact.html?category=privacy#support-form">
-
-                        Privacy Assistance
-
-                    </a>
-
-                </article>
-
-                <!-- DATA DELETION -->
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Data Deletion Requests</h3>
-
-                    <p>
-
-                        Prepare a request
-                        concerning deletion
-                        of personal information
-                        where applicable.
-
-                    </p>
-
-                    <a class="action"
-                       href="contact.html?category=deletion#support-form">
-
-                        Prepare Deletion Request
-
-                    </a>
-
-                </article>
-
-                <!-- SECURITY REPORTING -->
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Security Vulnerability Reporting</h3>
-
-                    <p>
-
-                        Prepare a responsible
-                        technical report
-                        concerning a potential
-                        security vulnerability.
-
-                    </p>
-
-                    <a class="action"
-                       href="contact.html?category=security#support-form">
-
-                        Prepare Security Report
-
-                    </a>
-
-                </article>
-
-                <!-- BACKUP SUPPORT -->
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Backup &amp; Recovery Support</h3>
-
-                    <p>
-
-                        Prepare questions
-                        concerning supported
-                        backup and recovery
-                        functionality.
-
-                    </p>
-
-                    <a class="action"
-                       href="contact.html?category=backup#support-form">
-
-                        Backup Assistance
-
-                    </a>
-
-                </article>
-
-            </div>
-
-            <div class="privacy-notice">
-
-                <strong>Support Availability</strong>
-
-                <p>
-
-                    Direct privacy request
-                    submission, a verified
-                    privacy contact email
-                    and a designated grievance
-                    contact are not currently
-                    configured on this website.
-
-                </p>
-
-                <p>
-
-                    The support form prepares
-                    a local request and does
-                    not automatically deliver
-                    it to a representative.
-
-                </p>
-
-                <p>
-
-                    Preparing a request does
-                    not initiate a formal
-                    grievance or data deletion
-                    process.
-
-                </p>
-
-            </div>
-
-            <p>
-
-                <strong>Brand:</strong>
-
-                MeraHisab
-
-            </p>
-
-            <p>
-
-                <strong>Applications:</strong>
-
-                MeraHisab and Royal Khata
-
-            </p>
-
-            <p>
-
-                <strong>Official Website:</strong>
-
-                <a href="https://merahisab.store/">
-
-                    merahisab.store
-
-                </a>
-
-            </p>
-
-        </section>
-
-        <!-- PRIVACY SUMMARY -->
-
-        <section class="upgrade-card privacy-section">
-
-            <h2>Privacy &amp; Security Summary</h2>
-
-            <div class="privacy-grid">
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Your Information</h3>
-
-                    <p>
-
-                        Understand what information
-                        you enter and how available
-                        features handle it.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Your Security</h3>
-
-                    <p>
-
-                        Enable supported security
-                        features and protect
-                        your device and credentials.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Your Backups</h3>
-
-                    <p>
-
-                        Maintain secure and
-                        verified backups of
-                        important financial records.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card privacy-card">
-
-                    <h3>Your Privacy Choices</h3>
-
-                    <p>
-
-                        Review permissions,
-                        privacy settings and
-                        available data management
-                        options.
-
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- PRIVACY POLICY UTILITIES -->
-
-        <section class="upgrade-card privacy-section">
-
-            <h2>Privacy Policy Utilities</h2>
-
-            <p>
-
-                Print this privacy information,
-                save a PDF copy using your
-                browser's print options or
-                copy the official policy link.
-
-            </p>
-
-            <div class="privacy-actions">
-
-                <button id="printPrivacyPolicy"
-                        class="action"
-                        type="button"
-                        disabled>
-
-                    Print Privacy Policy
-
-                </button>
-
-                <button id="savePrivacyPDF"
-                        class="action"
-                        type="button"
-                        disabled>
-
-                    Save as PDF
-
-                </button>
-
-                <button id="copyPrivacyLink"
-                        class="action"
-                        type="button"
-                        disabled>
-
-                    Copy Policy Link
-
-                </button>
-
-                <a class="action"
-                   href="#privacy-contents">
-
-                    Back to Contents
-
-                </a>
-
-            </div>
-
-            <p id="privacyUtilityStatus"
-               role="status"
-               aria-live="polite">
-
-            </p>
-
-            <noscript>
-
-                <p>
-
-                    JavaScript is required
-                    for these utility buttons.
-
-                    You can still use your
-                    browser's print and
-                    copy options.
-
-                </p>
-
-            </noscript>
-
-        </section>
-
-        <!-- FINAL PRIVACY HERO -->
-
-        <section class="privacy-hero privacy-section">
-
-            <span class="privacy-label">
-
-                MERAHISAB PRIVACY
-
-            </span>
-
-            <h2>Your Money. Your Data. Your Control.</h2>
-
-            <p>
-
-                Responsible financial management,
-                privacy awareness and continuous
-                security improvement.
-
-            </p>
-
-            <div class="privacy-actions"
-                 style="justify-content:center;">
-
-                <a class="action"
-                   href="index.html">
-
-                    Back to Home
-
-                </a>
-
-                <a class="action"
-                   href="downloads.html">
-
-                    Official Download Center
-
-                </a>
-
-                <a class="action"
-                   href="contact.html">
-
-                    Contact &amp; Support
-
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- PREMIUM FOOTER -->
-
-    <footer class="site">
-
-        <div class="container">
-
-            <h2>MeraHisab</h2>
-
-            <p>Your Money. Your Control.</p>
-
-            <p>
-
-                Personal Finance &amp;
-                Digital Khata Solutions
-
-            </p>
-
-            <nav aria-label="Footer navigation">
-
-                <a href="index.html">Home</a>
-
-                <a href="downloads.html">Apps</a>
-
-                <a href="merahisab.html">MeraHisab</a>
-
-                <a href="royal-khata.html">Royal Khata</a>
-
-                <a href="compare.html">Compare</a>
-
-                <a href="tools.html">Tools</a>
-
-                <a href="privacy.html"
-                   aria-current="page">
-
-                    Privacy
-
-                </a>
-
-                <a href="about.html">About</a>
-
-                <a href="contact.html">Support</a>
-
-            </nav>
-
-            <p>
-
-                Official Website:
-
-                <a href="https://merahisab.store/">
-
-                    merahisab.store
-
-                </a>
-
-            </p>
-
-            <p>
-
-                &copy; <span data-year></span>
-
-                MeraHisab. All Rights Reserved.
-
-            </p>
-
-        </div>
-
-    </footer>
-
-    <!-- PRIVACY PAGE JAVASCRIPT ENGINE -->
-
-    <script>
-
-        (() => {
-
-            "use strict";
-
-            // =================================
-            // 01. ELEMENT REFERENCES
-            // =================================
-
-            const get = (id) =>
-                document.getElementById(id);
-
-            const printButton =
-                get("printPrivacyPolicy");
-
-            const pdfButton =
-                get("savePrivacyPDF");
-
-            const copyButton =
-                get("copyPrivacyLink");
-
-            const status =
-                get("privacyUtilityStatus");
-
-            const policyURL =
-                "https://merahisab.store/privacy.html";
-
-            // =================================
-            // 02. STATUS MESSAGE HANDLER
-            // =================================
-
-            function showStatus(message) {
-
-                if (status) {
-
-                    status.textContent = message;
-
-                }
-
-            }
-
-            // =================================
-            // 03. PRINT PRIVACY POLICY
-            // =================================
-
-            if (printButton) {
-
-                printButton.disabled = false;
-
-                printButton.addEventListener(
-                    "click",
-                    () => {
-
-                        try {
-
-                            showStatus(
-                                "Opening browser print options."
-                            );
-
-                            window.print();
-
-                        } catch (error) {
-
-                            showStatus(
-                                "Printing is unavailable. Please use your browser print menu."
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-
-            // =================================
-            // 04. SAVE PRIVACY POLICY AS PDF
-            // =================================
-
-            if (pdfButton) {
-
-                pdfButton.disabled = false;
-
-                pdfButton.addEventListener(
-                    "click",
-                    () => {
-
-                        try {
-
-                            showStatus(
-                                "Select Save as PDF in your browser print options, if available."
-                            );
-
-                            window.print();
-
-                        } catch (error) {
-
-                            showStatus(
-                                "PDF saving is unavailable through this button. Please use your browser print or export options."
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-
-            // =================================
-            // 05. COPY OFFICIAL POLICY LINK
-            // =================================
-
-            if (copyButton) {
-
-                copyButton.disabled = false;
-
-                copyButton.addEventListener(
-                    "click",
-                    async () => {
-
-                        try {
-
-                            if (!navigator.clipboard) {
-
-                                throw new Error(
-                                    "Clipboard unavailable"
-                                );
-
-                            }
-
-                            await navigator.clipboard
-                                .writeText(policyURL);
-
-                            showStatus(
-                                "Official privacy policy link copied successfully."
-                            );
-
-                        } catch (error) {
-
-                            showStatus(
-                                "Automatic copying is unavailable. Copy this address manually: " +
-                                policyURL
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-
-            // =================================
-            // 06. PRINT COMPLETION HANDLER
-            // =================================
-
-            window.addEventListener(
-                "afterprint",
-                () => {
-
-                    showStatus(
-                        "Print dialog closed."
-                    );
-
-                }
+            return name.startsWith(
+              "merahisab-pwa-"
             );
 
-            // =================================
-            // 07. COPYRIGHT YEAR FALLBACK
-            // =================================
+          });
 
-            document.querySelectorAll(
-                "[data-year]"
-            ).forEach((element) => {
+        element("cacheCount").textContent =
+          String(ownCaches.length);
 
-                if (!element.textContent.trim()) {
+      } catch (error) {
 
-                    element.textContent =
-                        new Date().getFullYear();
+        element("cacheCount").textContent =
+          "Unable to check";
 
-                }
+      }
 
-            });
+    }
 
-        })();
+  } finally {
 
-    </script>
+    diagnosticsRunning = false;
+
+    button.disabled = false;
+
+    button.textContent =
+      "Refresh Diagnostics";
+
+  }
+
+}
+
+element("refreshDiagnostics")
+.addEventListener(
+  "click",
+  refreshDiagnostics
+);
+
+if ("serviceWorker" in navigator) {
+
+  navigator.serviceWorker.addEventListener(
+    "controllerchange",
+    refreshDiagnostics
+  );
+
+}
+
+filterPolicy();
+
+refreshDiagnostics();
+
+})();
+
+</script>
+
+<noscript>
+
+<div style="
+padding:20px;
+text-align:center;
+background:#172640;
+color:#f0d9a6;
+">
+
+JavaScript is disabled.
+
+The privacy policy remains readable.
+
+Search, copy, browser diagnostics,
+theme controls and PWA management
+require JavaScript.
+
+</div>
+
+</noscript>
 
 </body>
 
-  </html>
-      
+</html>
