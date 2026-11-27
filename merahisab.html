@@ -1,88 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en-IN">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>MeraHisab App — Personal Finance Management</title>
-
-  <meta name="description"
-        content="Explore MeraHisab for personal finance management, income, expenses, savings, accounts and financial records.">
-
-  <meta name="robots" content="index, follow">
-
-  <meta name="author" content="MeraHisab">
-
-  <link rel="canonical"
-        href="https://merahisab.store/merahisab.html">
-
-  <!-- SOCIAL MEDIA SEO -->
-
-  <meta property="og:type" content="website">
-
-  <meta property="og:site_name" content="MeraHisab">
-
-  <meta property="og:title"
-        content="MeraHisab — Personal Finance, Simplified">
-
-  <meta property="og:description"
-        content="Manage your everyday income, expenses, savings and financial accounts.">
-
-  <meta property="og:url"
-        content="https://merahisab.store/merahisab.html">
-
-  <meta property="og:image"
-        content="https://merahisab.store/merahisab-dashboard.png">
-
-  <meta name="twitter:card"
-        content="summary_large_image">
-
-  <!-- PWA INTEGRATION -->
-
-  <link rel="manifest" href="/manifest.json">
-
-  <meta name="application-name" content="MeraHisab">
-
-  <meta name="theme-color" content="#080f20">
-
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-status-bar-style"
-        content="default">
-
-  <meta name="apple-mobile-web-app-title"
-        content="MeraHisab">
-
-  <link rel="apple-touch-icon"
-        href="/icons/icon-192.png">
-
-  <link rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/icons/icon-192.png">
-
-  <!-- SHARED WEBSITE ENGINE -->
-
-  <link rel="stylesheet" href="/upgrade.css">
-
-  <link rel="stylesheet" href="/pwa.css">
-
-  <script defer src="/upgrade.js"></script>
-
-  <script defer src="/pwa.js"></script>
-
-  <!-- PREMIUM PAGE DESIGN -->
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="default-src 'self'; script-src 'self' 'sha256-ebGXolPlMaK5JtK2HOotQ8E1wGii+TkVPwmkNlcENHU=' 'sha256-egQ+tYRwxKr8qQ08UIuItxsGsniU5LcG4fdEtEVDFIE='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/><meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MeraHisab App — Personal Finance Management</title>
+<meta content="Explore MeraHisab for personal finance management, income, expenses, savings, accounts and financial records." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="MeraHisab" name="author"/>
+<link href="https://merahisab.store/merahisab.html" rel="canonical"/>
+<!-- SOCIAL MEDIA SEO -->
+<meta content="website" property="og:type"/>
+<meta content="MeraHisab" property="og:site_name"/>
+<meta content="MeraHisab — Personal Finance, Simplified" property="og:title"/>
+<meta content="Manage your everyday income, expenses, savings and financial accounts." property="og:description"/>
+<meta content="https://merahisab.store/merahisab.html" property="og:url"/>
+<meta content="https://merahisab.store/merahisab-dashboard.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- PWA INTEGRATION -->
+<link href="/manifest.json" rel="manifest"/>
+<meta content="MeraHisab" name="application-name"/>
+<meta content="#080f20" name="theme-color"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="MeraHisab" name="apple-mobile-web-app-title"/>
+<link href="/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="/icons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<!-- SHARED WEBSITE ENGINE -->
+<link href="/upgrade.css" rel="stylesheet"/>
+<link href="/pwa.css" rel="stylesheet"/>
+<script defer="" src="/upgrade.js"></script>
+<script defer="" src="/pwa.js"></script>
+<!-- PREMIUM PAGE DESIGN -->
+<style>
 
     .mh-page {
 
@@ -463,604 +415,357 @@
 
     }
 
-  </style>
-
-</head>
-
-<body>
-
-  <!-- WEBSITE HEADER -->
-
-  <header class="site">
-
-    <div class="container">
-
-      <strong>MeraHisab</strong>
-
-      <nav aria-label="Main navigation">
-
-        <a href="/index.html">Home</a>
-
-        <a href="/downloads.html">Apps</a>
-
-        <a href="/compare.html">Compare</a>
-
-        <a href="/index.html#features">Features</a>
-
-        <a href="/tools.html">Tools</a>
-
-        <a href="/privacy.html">Privacy</a>
-
-        <a href="/about.html">About</a>
-
-        <a href="/contact.html">Support</a>
-
-        <button id="theme"
-                type="button"
-                aria-label="Change website theme">
+  
+    .mh-hero h2 { color: #f0d9a6; }
+    html[data-theme="light"] .mh-hero h2 { color: #765018; }
+    .mh-page .mh-button { max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+    .mh-info-row > * { min-width:0; max-width:100%; }
+    .mh-checksum { font-family: ui-monospace,monospace; font-size:.8rem; overflow-wrap:anywhere; }
+    .mh-dashboard { aspect-ratio: 1024 / 1536; object-fit:contain; }
+    .mh-faq summary { min-height:44px; padding-block:8px; }
+    @media print { .mh-hero { border:1px solid #aaa; } .mh-dashboard { max-height: 18cm; width:auto; margin:auto; } }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://merahisab.store/"},{"@type":"ListItem","position":2,"name":"Applications","item":"https://merahisab.store/downloads.html"},{"@type":"ListItem","position":3,"name":"MeraHisab","item":"https://merahisab.store/merahisab.html"}]}</script></head>
+<body><a class="skip-link" data-mh-hi="मुख्य सामग्री पर जाएँ" data-no-translate="true" href="#main-content">Skip to main content</a>
+<!-- WEBSITE HEADER -->
+<header class="site">
+<div class="container">
+<strong>MeraHisab</strong>
+<nav aria-label="Main navigation" data-mh-aria-hi="मुख्य नेविगेशन">
+<a data-mh-hi="होम" data-no-translate="true" href="/index.html">Home</a>
+<a data-mh-hi="ऐप्स" data-no-translate="true" href="/downloads.html">Apps</a>
+<a data-mh-hi="तुलना" data-no-translate="true" href="/compare.html">Compare</a>
+<a data-mh-hi="विशेषताएँ" data-no-translate="true" href="/index.html#features">Features</a>
+<a data-mh-hi="उपकरण" data-no-translate="true" href="/tools.html">Tools</a>
+<a data-mh-hi="गोपनीयता" data-no-translate="true" href="/privacy.html">Privacy</a>
+<a data-mh-hi="हमारे बारे में" data-no-translate="true" href="/about.html">About</a>
+<a data-mh-hi="सहायता" data-no-translate="true" href="/contact.html">Support</a>
+<button aria-label="Change website theme" id="theme" type="button">
 
           Theme
 
         </button>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-  <!-- MAIN APPLICATION PAGE -->
-
-  <main class="shell mh-page">
-
-    <!-- BREADCRUMB NAVIGATION -->
-
-    <nav class="mh-breadcrumb"
-         aria-label="Breadcrumb">
-
-      <a href="/index.html">Home</a>
-
-      <span>›</span>
-
-      <a href="/downloads.html">Applications</a>
-
-      <span>›</span>
-
-      <span aria-current="page">MeraHisab</span>
-
-    </nav>
-
-    <!-- APPLICATION HERO -->
-
-    <section class="mh-hero">
-
-      <img src="/icons/shortcut-merahisab.png"
-           alt="MeraHisab application icon"
-           class="mh-app-icon"
-           width="90"
-           height="90">
-
-      <div>
-
-        <span class="mh-status">
+</nav>
+</div>
+</header>
+<!-- MAIN APPLICATION PAGE -->
+<main class="shell mh-page" id="main-content" tabindex="-1">
+<!-- BREADCRUMB NAVIGATION -->
+<nav aria-label="Breadcrumb" class="mh-breadcrumb" data-mh-aria-hi="पेज का मार्ग">
+<a data-mh-hi="होम" data-no-translate="true" href="/index.html">Home</a>
+<span aria-hidden="true">›</span>
+<a data-mh-hi="ऐप्स" data-no-translate="true" href="/downloads.html">Applications</a>
+<span aria-hidden="true">›</span>
+<span aria-current="page">MeraHisab</span>
+</nav>
+<!-- APPLICATION HERO -->
+<section class="mh-hero">
+<img alt="MeraHisab application icon" class="mh-app-icon" data-mh-alt-hi="MeraHisab ऐप का आइकन" height="90" src="/icons/shortcut-merahisab.png" width="90"/>
+<div>
+<span class="mh-status" data-mh-hi="● Android ऐप" data-no-translate="true">
 
           ● Android Application
 
         </span>
-
-      </div>
-
-      <h1>MeraHisab</h1>
-
-      <h2>Personal Finance, Simplified.</h2>
-
-      <p>
+</div>
+<h1>MeraHisab</h1>
+<h2 data-mh-hi="व्यक्तिगत वित्त, आसान तरीके से।" data-no-translate="true">Personal Finance, Simplified.</h2>
+<p data-mh-hi="एक सरल व्यक्तिगत वित्त प्रबंधन ऐप के साथ अपनी आय, खर्च, बचत और वित्तीय खाते व्यवस्थित करें।" data-no-translate="true">
 
         Organize your income, expenses, savings
         and financial accounts with a simple
         personal finance management application.
 
       </p>
-
-      <div class="mh-buttons">
-
-        <a href="/download.html"
-           class="mh-button mh-button-primary">
+<div class="mh-buttons">
+<a class="mh-button mh-button-primary" data-mh-hi="↓ MeraHisab डाउनलोड करें" data-no-translate="true" href="/download.html">
 
           ↓ Download MeraHisab
 
         </a>
-
-        <a href="#app-features"
-           class="mh-button mh-button-secondary">
+<a class="mh-button mh-button-secondary" data-mh-hi="विशेषताएँ देखें" data-no-translate="true" href="#app-features">
 
           Explore Features
 
         </a>
-
-        <a href="/compare.html"
-           class="mh-button mh-button-secondary">
+<a class="mh-button mh-button-secondary" data-mh-hi="ऐप्स की तुलना करें" data-no-translate="true" href="/compare.html">
 
           Compare Apps
 
         </a>
-
-      </div>
-
-    </section>
-
-    <!-- APPLICATION INFORMATION -->
-
-    <section class="mh-section">
-
-      <h2 class="mh-section-title">
+</div>
+</section>
+<!-- APPLICATION INFORMATION -->
+<section class="mh-section">
+<h2 class="mh-section-title" data-mh-hi="ऐप का परिचय" data-no-translate="true">
 
         Application Overview
 
       </h2>
-
-      <div class="mh-grid">
-
-        <article class="upgrade-card mh-card">
-
-          <h3>About MeraHisab</h3>
-
-          <p>
-
-            MeraHisab is designed to simplify
-            everyday personal finance management.
-
-            Organize financial transactions,
-            review account balances and maintain
-            useful financial records in one place.
-
-          </p>
-
-          <div class="mh-info-row">
-
-            <span>Application</span>
-
-            <strong>MeraHisab</strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>Category</span>
-
-            <strong>Personal Finance</strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>Platform</span>
-
-            <strong>Android</strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>File Format</span>
-
-            <strong>APK</strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>Official Website</span>
-
-            <strong>
-
-              <a href="https://merahisab.store/">
+<div class="mh-grid">
+<article class="upgrade-card mh-card">
+<h3 data-mh-hi="MeraHisab के बारे में" data-no-translate="true">About MeraHisab</h3>
+<p data-mh-hi="MeraHisab का उद्देश्य रोजमर्रा के व्यक्तिगत वित्त प्रबंधन को सरल बनाना है। वित्तीय लेनदेन, खातों की शेष राशि और उपयोगी वित्तीय रिकॉर्ड एक जगह व्यवस्थित करने पर इसका ध्यान है।" data-no-translate="true">MeraHisab is designed to simplify everyday personal finance management. Its focus is organizing financial transactions, account balances and useful records in one place.</p>
+<div class="mh-info-row">
+<span data-mh-hi="ऐप" data-no-translate="true">Application</span>
+<strong>MeraHisab</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="श्रेणी" data-no-translate="true">Category</span>
+<strong data-mh-hi="व्यक्तिगत वित्त" data-no-translate="true">Personal Finance</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="प्लेटफॉर्म" data-no-translate="true">Platform</span>
+<strong>Android</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="फ़ाइल प्रारूप" data-no-translate="true">File Format</span>
+<strong>APK</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="आधिकारिक वेबसाइट" data-no-translate="true">Official Website</span>
+<strong>
+<a href="https://merahisab.store/">
 
                 merahisab.store
 
               </a>
-
-            </strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>Application Version</span>
-
-            <strong>Verification Pending</strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>Android Compatibility</span>
-
-            <strong>Verification Pending</strong>
-
-          </div>
-
-          <div class="mh-info-row">
-
-            <span>APK SHA-256</span>
-
-            <strong>Verification Pending</strong>
-
-          </div>
-
-        </article>
-
-        <!-- REAL DASHBOARD PREVIEW -->
-
-        <article class="upgrade-card mh-card">
-
-          <h3>Application Dashboard</h3>
-
-          <a href="/merahisab-dashboard.png">
-
-            <img src="/merahisab-dashboard.png"
-                 alt="MeraHisab application dashboard screenshot"
-                 class="mh-dashboard"
-                 decoding="async">
-
-          </a>
-
-          <p class="mh-caption">
+</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="ऐप का संस्करण" data-no-translate="true">Application Version</span>
+<strong data-mh-hi="सत्यापन लंबित" data-no-translate="true">Verification Pending</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="Android अनुकूलता" data-no-translate="true">Android Compatibility</span>
+<strong data-mh-hi="सत्यापन लंबित" data-no-translate="true">Verification Pending</strong>
+</div>
+<div class="mh-info-row">
+<span data-mh-hi="APK SHA-256" data-no-translate="true">APK SHA-256</span>
+<strong class="mh-checksum" data-no-translate="true">40acd9153f051bb9cab6504c0895d5feb59466f2585068285497956b91dbf43f</strong>
+</div><div class="mh-info-row"><span data-mh-hi="APK फ़ाइल का आकार (रिपॉज़िटरी की प्रति)" data-no-translate="true">APK file size (repository copy)</span><strong data-no-translate="true">12,766,801 bytes (12.18 MiB)</strong></div>
+</article>
+<!-- REAL DASHBOARD PREVIEW -->
+<article class="upgrade-card mh-card">
+<h3 data-mh-hi="ऐप का डैशबोर्ड" data-no-translate="true">Application Dashboard</h3>
+<a href="/merahisab-dashboard.png">
+<img alt="MeraHisab application dashboard screenshot" class="mh-dashboard" data-mh-alt-hi="MeraHisab ऐप के डैशबोर्ड का स्क्रीनशॉट" decoding="async" height="1536" loading="lazy" src="/merahisab-dashboard.png" width="1024"/>
+</a>
+<p class="mh-caption" data-mh-hi="पूरा डैशबोर्ड स्क्रीनशॉट देखने के लिए चित्र पर टैप करें।" data-no-translate="true">
 
             Tap the image to view the full
             dashboard screenshot.
 
           </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- APPLICATION FEATURES -->
-
-    <section class="mh-section"
-             id="app-features">
-
-      <h2 class="mh-section-title">
-
-        Powerful Features
-
-      </h2>
-
-      <div class="mh-features">
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">₹</div>
-
-          <h3>Income Management</h3>
-
-          <p>
+</article>
+</div>
+</section>
+<!-- APPLICATION FEATURES -->
+<section class="mh-section" id="app-features">
+<h2 class="mh-section-title" data-mh-hi="ऐप की लक्षित विशेषताएँ" data-no-translate="true">Application Feature Goals</h2><p class="mh-notice" data-mh-hi="नीचे दी गई विशेषताएँ ऐप के लक्षित कार्यों का वर्णन करती हैं। वर्तमान APK में सभी सुविधाओं, सुरक्षा और ऑफलाइन व्यवहार का सत्यापन अभी बाकी है।" data-no-translate="true">The features below describe intended application capabilities. All features, security and offline behavior in the current APK remain to be verified.</p>
+<div class="mh-features">
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">₹</div>
+<h3 data-mh-hi="आय प्रबंधन" data-no-translate="true">Income Management</h3>
+<p data-mh-hi="दैनिक आय और वित्तीय प्राप्तियों को व्यवस्थित करना।" data-no-translate="true">
 
             Organize your daily income
             and financial receipts.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">💳</div>
-
-          <h3>Expense Management</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">💳</div>
+<h3 data-mh-hi="खर्च प्रबंधन" data-no-translate="true">Expense Management</h3>
+<p data-mh-hi="रोजमर्रा के खर्च दर्ज करना और उनकी समीक्षा करना।" data-no-translate="true">
 
             Record and review your
             everyday expenses.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">▤</div>
-
-          <h3>Multiple Accounts</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">▤</div>
+<h3 data-mh-hi="एक से अधिक खाते" data-no-translate="true">Multiple Accounts</h3>
+<p data-mh-hi="वित्तीय रिकॉर्ड अलग-अलग खातों में व्यवस्थित करना।" data-no-translate="true">
 
             Organize financial records
             into separate accounts.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">📊</div>
-
-          <h3>Financial Reports</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">📊</div>
+<h3 data-mh-hi="वित्तीय रिपोर्ट" data-no-translate="true">Financial Reports</h3>
+<p data-mh-hi="उपलब्ध रिपोर्ट से वित्तीय गतिविधियों की समीक्षा करना।" data-no-translate="true">
 
             Review your financial activity
             through available reports.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">💰</div>
-
-          <h3>Savings Management</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">💰</div>
+<h3 data-mh-hi="बचत प्रबंधन" data-no-translate="true">Savings Management</h3>
+<p data-mh-hi="बचत के व्यवस्थित रिकॉर्ड रखना।" data-no-translate="true">
 
             Maintain organized records
             of your savings.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">🔎</div>
-
-          <h3>Search & Filters</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">🔎</div>
+<h3 data-mh-hi="खोज और फ़िल्टर" data-no-translate="true">Search &amp; Filters</h3>
+<p data-mh-hi="वित्तीय लेनदेन और संबंधित रिकॉर्ड खोजना।" data-no-translate="true">
 
             Find financial transactions
             and related records.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">💾</div>
-
-          <h3>Backup & Restore</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">💾</div>
+<h3 data-mh-hi="बैकअप और पुनर्स्थापना" data-no-translate="true">Backup &amp; Restore</h3>
+<p data-mh-hi="बैकअप फ़ाइलें प्रबंधित करना और सहेजे गए वित्तीय रिकॉर्ड पुनर्स्थापित करना।" data-no-translate="true">
 
             Manage backup files and
             restore saved financial records.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">📅</div>
-
-          <h3>Balance Management</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">📅</div>
+<h3 data-mh-hi="शेष राशि प्रबंधन" data-no-translate="true">Balance Management</h3>
+<p data-mh-hi="खातों की शेष राशि और वित्तीय गतिविधियों का हिसाब रखना।" data-no-translate="true">
 
             Keep track of account balances
             and financial activity.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">📝</div>
-
-          <h3>Notes & Tasks</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">📝</div>
+<h3 data-mh-hi="नोट्स और कार्य" data-no-translate="true">Notes &amp; Tasks</h3>
+<p data-mh-hi="उपयोगी नोट्स और रोजमर्रा के कार्य व्यवस्थित करना।" data-no-translate="true">
 
             Organize useful notes and
             everyday tasks.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">📄</div>
-
-          <h3>Report Export</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">📄</div>
+<h3 data-mh-hi="रिपोर्ट एक्सपोर्ट" data-no-translate="true">Report Export</h3>
+<p data-mh-hi="समर्थित विकल्पों से वित्तीय रिपोर्ट तैयार करना।" data-no-translate="true">
 
             Prepare financial reports using
             supported export options.
 
           </p>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">🔒</div>
-
-          <h3>Privacy-Focused Design</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">🔒</div>
+<h3 data-mh-hi="गोपनीयता-केंद्रित डिज़ाइन" data-no-translate="true">Privacy-Focused Design</h3>
+<p data-mh-hi="जिम्मेदार व्यक्तिगत डेटा प्रबंधन को ध्यान में रखना।" data-no-translate="true">
 
             Designed with responsible
             personal data management in mind.
 
           </p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">📱</div>
+<h3 data-mh-hi="ऑफलाइन ऐप डिज़ाइन" data-no-translate="true">Offline Application Design</h3>
+<p data-mh-hi="लगातार इंटरनेट कनेक्शन के बिना रोजमर्रा का वित्तीय हिसाब रखना इसका डिज़ाइन लक्ष्य है।" data-no-translate="true">Designed for financial tracking without a continuous internet connection; current APK behavior is not yet verified.</p>
+</article>
+</div>
+</section>
+<!-- INSTALLATION GUIDE -->
+<section class="mh-section">
+<h2 class="mh-section-title" data-mh-hi="डाउनलोड और इंस्टॉलेशन गाइड" data-no-translate="true">
 
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">📱</div>
-
-          <h3>Offline Application Design</h3>
-
-          <p>
-
-            Designed for everyday financial
-            tracking without requiring
-            a continuous internet connection.
-
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- INSTALLATION GUIDE -->
-
-    <section class="mh-section">
-
-      <h2 class="mh-section-title">
-
-        Download & Installation Guide
+        Download &amp; Installation Guide
 
       </h2>
-
-      <article class="upgrade-card mh-card">
-
-        <ol class="mh-installation">
-
-          <li>
+<article class="upgrade-card mh-card">
+<ol class="mh-installation">
+<li data-mh-hi="आधिकारिक MeraHisab डाउनलोड केंद्र पर जाएँ।" data-no-translate="true">
 
             Visit the official MeraHisab
             Download Center.
 
           </li>
-
-          <li>
+<li data-mh-hi="MeraHisab Android ऐप चुनें।" data-no-translate="true">
 
             Select the MeraHisab Android
             application.
 
           </li>
-
-          <li>
+<li data-mh-hi="उपलब्ध संस्करण, अनुकूलता और फ़ाइल की जानकारी देखें।" data-no-translate="true">
 
             Review available version,
             compatibility and file information.
 
           </li>
-
-          <li>
+<li data-mh-hi="आधिकारिक वेबसाइट से APK डाउनलोड करें।" data-no-translate="true">
 
             Download the APK from the
             official website.
 
           </li>
-
-          <li>
-
-            Verify the downloaded file using
-            published verification information
-            when available.
-
-          </li>
-
-          <li>
+<li data-mh-hi="प्रकाशित सत्यापन जानकारी से डाउनलोड की गई फ़ाइल का मिलान करें।" data-no-translate="true">Compare the downloaded file with the published verification information.</li>
+<li data-mh-hi="डाउनलोड किया APK खोलें और Android के इंस्टॉलेशन संदेश ध्यान से पढ़ें।" data-no-translate="true">
 
             Open the downloaded APK and
             review Android installation prompts.
 
           </li>
-
-          <li>
+<li data-mh-hi="सुरक्षा चेतावनियों को नज़रअंदाज़ न करें और संदिग्ध फ़ाइल इंस्टॉल न करें।" data-no-translate="true">
 
             Do not bypass security warnings
             or install a suspicious file.
 
           </li>
-
-        </ol>
-
-        <div class="mh-notice">
-
-          <strong>Security Notice:</strong>
-
-          APK version, signing certificate,
-          Android compatibility, permissions
-          and SHA-256 verification must be
-          confirmed before being published
-          as verified information.
-
-        </div>
-
-        <div class="mh-buttons">
-
-          <a href="/download.html"
-             class="mh-button mh-button-primary">
+</ol>
+<div class="mh-notice">
+<strong data-mh-hi="सुरक्षा सूचना:" data-no-translate="true">Security Notice:</strong><span data-mh-hi=" नीचे दिया संदर्भ चेकसम उपलब्ध रिपॉज़िटरी APK से निकाला गया है। लाइव डाउनलोड, APK संस्करण, हस्ताक्षर प्रमाणपत्र, Android अनुकूलता और अनुमतियों का स्वतंत्र सत्यापन अभी बाकी है। चेकसम मिलना मैलवेयर जाँच नहीं है।" data-no-translate="true"> The reference checksum on this page is calculated from the supplied repository APK. Live download integrity, APK version, signing certificate, Android compatibility and permissions are not yet independently verified. A checksum match is not a malware scan.</span></div>
+<div class="mh-buttons">
+<a class="mh-button mh-button-primary" data-mh-hi="MeraHisab डाउनलोड करें" data-no-translate="true" href="/download.html">
 
             Download MeraHisab
 
           </a>
-
-          <a href="/downloads.html"
-             class="mh-button mh-button-secondary">
+<a class="mh-button mh-button-secondary" data-mh-hi="डाउनलोड केंद्र" data-no-translate="true" href="/downloads.html">
 
             Download Center
 
           </a>
+</div>
+</article>
+</section>
+<!-- PRIVACY AND DATA PROTECTION -->
+<section class="mh-section">
+<h2 class="mh-section-title" data-mh-hi="गोपनीयता और डेटा संरक्षण" data-no-translate="true">
 
-        </div>
-
-      </article>
-
-    </section>
-
-    <!-- PRIVACY AND DATA PROTECTION -->
-
-    <section class="mh-section">
-
-      <h2 class="mh-section-title">
-
-        Privacy & Data Protection
+        Privacy &amp; Data Protection
 
       </h2>
-
-      <div class="mh-grid">
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">🔐</div>
-
-          <h3>Your Financial Data</h3>
-
-          <p>
-
-            MeraHisab is designed around
-            local financial record management.
-
-            Review the Privacy Policy for
-            information about data handling,
-            storage and backups.
-
-          </p>
-
-          <a href="/privacy.html"
-             class="mh-button mh-button-secondary">
+<div class="mh-grid">
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">🔐</div>
+<h3 data-mh-hi="आपका वित्तीय डेटा" data-no-translate="true">Your Financial Data</h3>
+<p data-mh-hi="स्थानीय वित्तीय रिकॉर्ड प्रबंधन MeraHisab का डिज़ाइन लक्ष्य है। डेटा प्रबंधन, स्टोरेज और बैकअप संबंधी जानकारी के लिए गोपनीयता नीति देखें। ऐप के वास्तविक डेटा व्यवहार का सत्यापन बाकी है।" data-no-translate="true">Local financial record management is a design goal of MeraHisab. Review the Privacy Policy for information about data handling, storage and backups. Actual application data practices remain to be verified.</p>
+<a class="mh-button mh-button-secondary" data-mh-hi="गोपनीयता नीति" data-no-translate="true" href="/privacy.html">
 
             Privacy Policy
 
           </a>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <div class="mh-feature-icon">💾</div>
-
-          <h3>Backup Responsibility</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<div aria-hidden="true" class="mh-feature-icon">💾</div>
+<h3 data-mh-hi="बैकअप की जिम्मेदारी" data-no-translate="true">Backup Responsibility</h3>
+<p data-mh-hi="महत्वपूर्ण बैकअप फ़ाइलें सुरक्षित जगह रखें। डिवाइस रीसेट या बदलने से पहले सुनिश्चित करें कि बैकअप उपलब्ध हैं।" data-no-translate="true">
 
             Keep important backup files
             in a secure location.
@@ -1070,39 +775,28 @@
             or changing your device.
 
           </p>
+<a class="mh-button mh-button-secondary" data-mh-hi="मदद और सहायता" data-no-translate="true" href="/contact.html">
 
-          <a href="/contact.html"
-             class="mh-button mh-button-secondary">
-
-            Help & Support
+            Help &amp; Support
 
           </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- FREQUENTLY ASKED QUESTIONS -->
-
-    <section class="mh-section mh-faq">
-
-      <h2 class="mh-section-title">
+</article>
+</div>
+</section>
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section class="mh-section mh-faq">
+<h2 class="mh-section-title" data-mh-hi="अक्सर पूछे जाने वाले प्रश्न" data-no-translate="true">
 
         Frequently Asked Questions
 
       </h2>
-
-      <details class="upgrade-card">
-
-        <summary>
+<details class="upgrade-card">
+<summary data-mh-hi="MeraHisab क्या है?" data-no-translate="true">
 
           What is MeraHisab?
 
         </summary>
-
-        <p>
+<p data-mh-hi="MeraHisab एक व्यक्तिगत वित्त प्रबंधन ऐप है जिसका उद्देश्य आय, खर्च, बचत और खाते व्यवस्थित करना है।" data-no-translate="true">
 
           MeraHisab is a personal finance
           management application designed
@@ -1110,294 +804,175 @@
           savings and accounts.
 
         </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="क्या MeraHisab Android के लिए उपलब्ध है?" data-no-translate="true">
 
           Is MeraHisab available for Android?
 
         </summary>
-
-        <p>
+<p data-mh-hi="MeraHisab Android APK के रूप में उपलब्ध कराया जाता है। न्यूनतम समर्थित Android संस्करण का सत्यापन बाकी है।" data-no-translate="true">
 
           MeraHisab is distributed as an
           Android APK. Minimum supported
           Android version is pending verification.
 
         </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="क्या MeraHisab ऑफलाइन काम करता है?" data-no-translate="true">
 
           Does MeraHisab work offline?
 
         </summary>
-
-        <p>
-
-          The Android application is designed
-          for offline financial tracking.
-
-          Some website resources and
-          application downloads may require
-          an internet connection.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+<p data-mh-hi="ऑफलाइन वित्तीय हिसाब रखना ऐप का डिज़ाइन लक्ष्य है। वर्तमान APK में इसकी पुष्टि बाकी है। वेबसाइट के कुछ संसाधनों और ऐप डाउनलोड के लिए इंटरनेट की जरूरत हो सकती है।" data-no-translate="true">Offline financial tracking is a design goal. It has not yet been verified in the current APK. Some website resources and application downloads may require an internet connection.</p>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="क्या मैं वित्तीय बैकअप बना सकता हूँ?" data-no-translate="true">
 
           Can I create financial backups?
 
         </summary>
-
-        <p>
-
-          MeraHisab is designed to support
-          backup and restore functionality.
-
-          Keep your backup files secure.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+<p data-mh-hi="बैकअप और पुनर्स्थापना ऐप के डिज़ाइन लक्ष्य हैं। वर्तमान APK में इनकी पुष्टि बाकी है। अपनी बैकअप फ़ाइलें सुरक्षित रखें।" data-no-translate="true">Backup and restore are design goals. They have not yet been verified in the current APK. Keep your backup files secure.</p>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="क्या वेबसाइट इंस्टॉल करना और APK इंस्टॉल करना एक जैसा है?" data-no-translate="true">
 
           Is website installation the same as APK installation?
 
         </summary>
-
-        <p>
+<p data-mh-hi="नहीं। MeraHisab वेबसाइट को Progressive Web App के रूप में इंस्टॉल करना Android ऐप इंस्टॉल करने से अलग है।" data-no-translate="true">
 
           No. Installing the MeraHisab website
           as a Progressive Web App is separate
           from installing the Android application.
 
         </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="MeraHisab कहाँ से डाउनलोड कर सकता हूँ?" data-no-translate="true">
 
           Where can I download MeraHisab?
 
         </summary>
-
-        <p>
-
-          Visit the official
-
-          <a href="/downloads.html">
+<p><span data-mh-hi="आधिकारिक " data-no-translate="true">Visit the official </span><a data-mh-hi="डाउनलोड केंद्र" data-no-translate="true" href="/downloads.html">
 
             Download Center
 
-          </a>
-
-          for application download information.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+          </a><span data-mh-hi=" पर ऐप डाउनलोड की जानकारी देखें।" data-no-translate="true"> for application download information.</span></p>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="MeraHisab और Royal Khata में क्या अंतर है?" data-no-translate="true">
 
           What is the difference between MeraHisab and Royal Khata?
 
         </summary>
-
-        <p>
-
-          MeraHisab focuses on personal
-          finance management.
-
-          Royal Khata focuses on organized
-          digital khata and credit-debit records.
-
-          Visit the
-
-          <a href="/compare.html">
+<p><span data-mh-hi="MeraHisab व्यक्तिगत वित्त प्रबंधन पर केंद्रित है। Royal Khata व्यवस्थित डिजिटल खाता और क्रेडिट-डेबिट रिकॉर्ड पर केंद्रित है। अधिक जानकारी के लिए " data-no-translate="true">MeraHisab focuses on personal finance management. Royal Khata focuses on organized digital khata and credit-debit records. Visit the </span><a data-mh-hi="तुलना पेज" data-no-translate="true" href="/compare.html">
 
             Comparison Page
 
-          </a>
-
-          for more information.
-
-        </p>
-
-      </details>
-
-      <details class="upgrade-card">
-
-        <summary>
+          </a><span data-mh-hi=" देखें।" data-no-translate="true"> for more information.</span></p>
+</details>
+<details class="upgrade-card">
+<summary data-mh-hi="सहायता कैसे प्राप्त कर सकता हूँ?" data-no-translate="true">
 
           How can I get support?
 
         </summary>
+<p><span data-mh-hi="उपलब्ध सहायता विकल्पों के लिए " data-no-translate="true">Visit the </span><a data-mh-hi="संपर्क और सहायता पेज" data-no-translate="true" href="/contact.html">
 
-        <p>
+            Contact &amp; Support Page
 
-          Visit the
-
-          <a href="/contact.html">
-
-            Contact & Support Page
-
-          </a>
-
-          for available support options.
-
-        </p>
-
-      </details>
-
-    </section>
-
-    <!-- EXPLORE OTHER RESOURCES -->
-
-    <section class="mh-section">
-
-      <h2 class="mh-section-title">
+          </a><span data-mh-hi=" देखें।" data-no-translate="true"> for available support options.</span></p>
+</details>
+</section>
+<!-- EXPLORE OTHER RESOURCES -->
+<section class="mh-section">
+<h2 class="mh-section-title" data-mh-hi="और देखें" data-no-translate="true">
 
         Explore More
 
       </h2>
-
-      <div class="mh-grid">
-
-        <article class="upgrade-card mh-card">
-
-          <h3>Royal Khata</h3>
-
-          <p>
+<div class="mh-grid">
+<article class="upgrade-card mh-card">
+<h3>Royal Khata</h3>
+<p data-mh-hi="डिजिटल खाता प्रबंधन और व्यवस्थित क्रेडिट-डेबिट रिकॉर्ड के बारे में जानें।" data-no-translate="true">
 
             Explore digital khata management
             and organized credit-debit records.
 
           </p>
-
-          <a href="/royal-khata.html"
-             class="mh-button mh-button-secondary">
+<a class="mh-button mh-button-secondary" data-mh-hi="Royal Khata देखें" data-no-translate="true" href="/royal-khata.html">
 
             Explore Royal Khata
 
           </a>
-
-        </article>
-
-        <article class="upgrade-card mh-card">
-
-          <h3>Financial Tools</h3>
-
-          <p>
+</article>
+<article class="upgrade-card mh-card">
+<h3 data-mh-hi="वित्तीय उपकरण" data-no-translate="true">Financial Tools</h3>
+<p data-mh-hi="उपयोगी कैलकुलेटर और समय प्रबंधन उपकरण देखें।" data-no-translate="true">
 
             Explore useful calculators
             and time management tools.
 
           </p>
-
-          <a href="/tools.html"
-             class="mh-button mh-button-secondary">
+<a class="mh-button mh-button-secondary" data-mh-hi="वित्तीय उपकरण देखें" data-no-translate="true" href="/tools.html">
 
             Explore Financial Tools
 
           </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- PWA INSTALLATION AND DIAGNOSTICS -->
-
-    <section class="mh-section"
-             id="pwaMount">
-
-      <!--
+</article>
+</div>
+</section>
+<!-- PWA INSTALLATION AND DIAGNOSTICS -->
+<section class="mh-section" id="pwaMount">
+<!--
         PWA installation, offline settings,
         cache management and diagnostics
         are generated automatically by pwa.js.
       -->
+</section>
+</main>
+<!-- WEBSITE FOOTER -->
+<footer class="site">
+<div class="container">
 
-    </section>
-
-  </main>
-
-  <!-- WEBSITE FOOTER -->
-
-  <footer class="site">
-
-    <div class="container">
-
-      © <span data-year>2026</span>
-
-      MeraHisab. All rights reserved.
-
-      <br>
-
-      <a href="/index.html">Home</a>
+      © <span data-year="">2026</span><span data-mh-hi=" MeraHisab। सर्वाधिकार सुरक्षित। " data-no-translate="true"> MeraHisab. All rights reserved. </span><br/>
+<a data-mh-hi="होम" data-no-translate="true" href="/index.html">Home</a>
 
       ·
 
-      <a href="/privacy.html">Privacy</a>
+      <a data-mh-hi="गोपनीयता" data-no-translate="true" href="/privacy.html">Privacy</a>
 
       ·
 
-      <a href="/contact.html">Contact</a>
+      <a data-mh-hi="संपर्क" data-no-translate="true" href="/contact.html">Contact</a>
 
       ·
 
-      <a href="/downloads.html">Downloads</a>
-
-      <br>
-
-      <a href="https://merahisab.store/">
+      <a data-mh-hi="डाउनलोड" data-no-translate="true" href="/downloads.html">Downloads</a>
+<br/>
+<a href="https://merahisab.store/">
 
         merahisab.store
 
       </a>
-
-    </div>
-
-  </footer>
-
-  <!-- JAVASCRIPT FALLBACK -->
-
-  <noscript>
-
-    <div style="
+</div>
+</footer>
+<!-- JAVASCRIPT FALLBACK -->
+<noscript>
+<div style="
       padding:20px;
       text-align:center;
       background:#172640;
       color:#f0d9a6;
-    ">
-
-      JavaScript is disabled.
-
-      Theme controls and PWA features
-      require JavaScript.
-
-    </div>
-
-  </noscript>
-
-</body>
-
+    ">JavaScript is disabled. Theme, language switching and PWA features require JavaScript. / JavaScript बंद है। थीम, भाषा बदलने और PWA सुविधाओं के लिए JavaScript जरूरी है।</div>
+</noscript>
+<script>(function(){"use strict";
+const texts=Array.from(document.querySelectorAll("[data-mh-hi]")).map(e=>[e,e.textContent,e.dataset.mhHi]);
+const attrs=[];for(const [attr,hook] of [["alt","data-mh-alt-hi"],["aria-label","data-mh-aria-hi"]]){document.querySelectorAll("["+hook+"]").forEach(e=>attrs.push([e,attr,e.getAttribute(attr),e.getAttribute(hook)]));}
+const title=document.title;
+function apply(){const engine=window.MeraHisabLanguage;const hi=engine&&typeof engine.getLanguage==="function"?engine.getLanguage()==="hi":document.documentElement.dataset.language==="hi";texts.forEach(([e,en,h])=>{const value=hi?h:en;if(e.textContent!==value)e.textContent=value;});attrs.forEach(([e,a,en,h])=>{const value=hi?h:en;if(e.getAttribute(a)!==value)e.setAttribute(a,value);});document.title=hi?"MeraHisab ऐप — व्यक्तिगत वित्त प्रबंधन":title;}
+window.addEventListener("merahisab:languagechange",apply);window.addEventListener("merahisab:languageready",apply);apply();
+})();</script></body>
 </html>
