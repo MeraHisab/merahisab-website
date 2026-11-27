@@ -1,848 +1,2010 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Royal Khata | Official App Information</title>
+  <title>Royal Khata — Smart Digital Khata Management</title>
 
-    <meta name="description"
-          content="Discover Royal Khata, application information, features, privacy and official release details.">
+  <meta name="description"
+        content="Explore Royal Khata, a digital khata application designed for credit, debit, customer accounts and transaction management.">
 
-    <meta name="theme-color" content="#080f20">
+  <meta name="author" content="MeraHisab">
 
-    <link rel="canonical"
-          href="https://merahisab.store/royal-khata.html">
+  <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="upgrade.css">
+  <link rel="canonical"
+        href="https://merahisab.store/royal-khata.html">
 
-    <script defer src="upgrade.js"></script>
+  <!-- SOCIAL MEDIA SEO -->
 
-    <style>
+  <meta property="og:type" content="website">
 
-        .royal-hero {
-            background: linear-gradient(
-                135deg,
-                #081322,
-                #14253d,
-                #26364d
-            );
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            padding: clamp(24px, 5vw, 60px);
-            margin-bottom: 28px;
-            color: #f8f6f0;
-        }
+  <meta property="og:site_name" content="MeraHisab">
 
-        .royal-title {
-            color: #e5c788;
-            margin: 12px 0;
-        }
+  <meta property="og:title"
+        content="Royal Khata — Smart Digital Khata">
 
-        .royal-emblem {
-            display: grid;
-            place-items: center;
-            width: 96px;
-            height: 96px;
-            border: 1px solid #d4af37;
-            border-radius: 24px;
-            background: linear-gradient(
-                145deg,
-                #14253d,
-                #081322
-            );
-            color: #e5c788;
-            font-size: 32px;
-            font-weight: 800;
-            box-shadow: 0 8px 28px #0004;
-        }
+  <meta property="og:description"
+        content="Organize credit, debit, customer accounts and digital khata records.">
 
-        .royal-status {
-            display: inline-block;
-            padding: 7px 14px;
-            border: 1px solid #d4af37;
-            border-radius: 30px;
-            color: #e5c788;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
+  <meta property="og:url"
+        content="https://merahisab.store/royal-khata.html">
 
-        .royal-section {
-            margin-top: 28px;
-        }
+  <meta property="og:image"
+        content="https://merahisab.store/icons/shortcut-royal-khata.png">
 
-        .royal-note {
-            border-left: 3px solid #d4af37;
-            padding: 12px 18px;
-            margin: 20px 0;
-        }
+  <meta name="twitter:card" content="summary">
 
-        .royal-table {
-            width: 100%;
-            border-collapse: collapse;
-            overflow-wrap: anywhere;
-        }
+  <!-- PWA INTEGRATION -->
 
-        .royal-table th,
-        .royal-table td {
-            padding: 14px 8px;
-            border-bottom: 1px solid #806b45;
-            text-align: left;
-        }
+  <link rel="manifest" href="/manifest.json">
 
-        .royal-table th {
-            width: 42%;
-        }
+  <meta name="application-name" content="MeraHisab">
 
-        .royal-hero button:disabled {
-            background: #d8b878;
-            color: #101a29;
-        }
+  <meta name="theme-color" content="#080f20">
 
-    </style>
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="default">
+
+  <meta name="apple-mobile-web-app-title"
+        content="MeraHisab">
+
+  <link rel="apple-touch-icon"
+        href="/icons/icon-192.png">
+
+  <link rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/icons/icon-192.png">
+
+  <!-- SHARED WEBSITE ENGINE -->
+
+  <link rel="stylesheet" href="/upgrade.css">
+
+  <link rel="stylesheet" href="/pwa.css">
+
+  <script defer src="/upgrade.js"></script>
+
+  <script defer src="/pwa.js"></script>
+
+  <!-- ROYAL KHATA PREMIUM DESIGN -->
+
+  <style>
+
+    .rk-page {
+
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 18px;
+      box-sizing: border-box;
+
+    }
+
+    .rk-page * {
+
+      box-sizing: border-box;
+
+    }
+
+    .rk-breadcrumb {
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      opacity: 0.85;
+
+    }
+
+    .rk-hero {
+
+      position: relative;
+      overflow: hidden;
+      padding: 45px 25px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 24px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(212,175,55,0.12),
+          transparent 65%
+        ),
+        linear-gradient(
+          145deg,
+          #172640,
+          #080f20
+        );
+
+      color: #f8f6f0;
+      text-align: center;
+
+    }
+
+    .rk-app-icon {
+
+      width: 95px;
+      height: 95px;
+      object-fit: contain;
+      border-radius: 24px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(212,175,55,0.5);
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,0.25);
+
+    }
+
+    .rk-hero h1 {
+
+      margin: 12px 0;
+      color: #f0d9a6;
+      font-size: clamp(34px,6vw,58px);
+      line-height: 1.2;
+
+    }
+
+    .rk-hero h2 {
+
+      font-size: clamp(18px,3vw,26px);
+
+    }
+
+    .rk-hero p {
+
+      max-width: 680px;
+      margin: 16px auto;
+      color: #c4cddd;
+      line-height: 1.8;
+
+    }
+
+    .rk-status {
+
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 30px;
+      background: rgba(212,175,55,0.1);
+      color: #f0d9a6;
+      font-size: 12px;
+      font-weight: 700;
+
+    }
+
+    .rk-buttons {
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+
+    }
+
+    .rk-button {
+
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 23px;
+      border: 1px solid #d4af37;
+      border-radius: 30px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+
+    }
+
+    .rk-button-primary {
+
+      background: linear-gradient(
+        135deg,
+        #f0d9a6,
+        #d4af37
+      );
+
+      color: #101827;
+
+    }
+
+    .rk-button-secondary {
+
+      background: transparent;
+      color: inherit;
+
+    }
+
+    .rk-button:disabled {
+
+      cursor: not-allowed;
+      opacity: 0.55;
+
+    }
+
+    .rk-section {
+
+      margin: 38px 0;
+
+    }
+
+    .rk-section-title {
+
+      margin-bottom: 12px;
+      font-size: clamp(24px,4vw,34px);
+      text-align: center;
+
+    }
+
+    .rk-section-description {
+
+      max-width: 720px;
+      margin: 0 auto 25px;
+      text-align: center;
+      line-height: 1.8;
+      opacity: 0.85;
+
+    }
+
+    .rk-grid {
+
+      display: grid;
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+      gap: 20px;
+
+    }
+
+    .rk-features {
+
+      display: grid;
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+      gap: 16px;
+
+    }
+
+    .rk-card {
+
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 18px;
+      overflow-wrap: break-word;
+
+    }
+
+    .rk-card h3 {
+
+      margin: 12px 0;
+
+    }
+
+    .rk-card p {
+
+      font-size: 14px;
+      line-height: 1.8;
+
+    }
+
+    .rk-feature-icon {
+
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 13px;
+      background: rgba(212,175,55,0.09);
+      font-size: 23px;
+
+    }
+
+    .rk-info-row {
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(128,128,128,0.2);
+      font-size: 14px;
+
+    }
+
+    .rk-info-row strong {
+
+      overflow-wrap: anywhere;
+
+    }
+
+    .rk-notice {
+
+      padding: 17px;
+      margin-top: 20px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 13px;
+      background: rgba(212,175,55,0.07);
+      font-size: 13px;
+      line-height: 1.8;
+
+    }
+
+    /* DASHBOARD CONCEPT PREVIEW */
+
+    .rk-dashboard {
+
+      min-width: 0;
+      padding: 20px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 20px;
+      background: #0d172b;
+      color: #f8f6f0;
+
+    }
+
+    .rk-dashboard-header {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+
+    }
+
+    .rk-dashboard-header strong {
+
+      color: #f0d9a6;
+      font-size: 20px;
+
+    }
+
+    .rk-demo-label {
+
+      padding: 5px 10px;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 20px;
+      color: #f0d9a6;
+      font-size: 10px;
+
+    }
+
+    .rk-dashboard-grid {
+
+      display: grid;
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+      gap: 12px;
+
+    }
+
+    .rk-stat {
+
+      min-width: 0;
+      padding: 17px 12px;
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 13px;
+      background: #172640;
+
+    }
+
+    .rk-stat span {
+
+      display: block;
+      margin-bottom: 7px;
+      color: #aab5c7;
+      font-size: 12px;
+
+    }
+
+    .rk-stat strong {
+
+      font-size: clamp(18px,3vw,25px);
+      font-variant-numeric: tabular-nums;
+      overflow-wrap: anywhere;
+
+    }
+
+    .rk-credit {
+
+      color: #65c99a;
+
+    }
+
+    .rk-debit {
+
+      color: #ed8585;
+
+    }
+
+    .rk-gold {
+
+      color: #f0d9a6;
+
+    }
+
+    .rk-dashboard-caption {
+
+      margin-top: 18px;
+      color: #aab5c7;
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: center;
+
+    }
+
+    .rk-transaction-title {
+
+      margin: 22px 0 10px;
+      color: #f0d9a6;
+      font-size: 14px;
+
+    }
+
+    .rk-transaction {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(212,175,55,0.12);
+      font-size: 13px;
+
+    }
+
+    .rk-transaction small {
+
+      display: block;
+      margin-top: 3px;
+      color: #aab5c7;
+
+    }
+
+    .rk-transaction strong {
+
+      flex-shrink: 0;
+
+    }
+
+    /* DEVELOPMENT STATUS */
+
+    .rk-roadmap {
+
+      display: grid;
+      gap: 13px;
+
+    }
+
+    .rk-roadmap-item {
+
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 16px;
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 13px;
+
+    }
+
+    .rk-roadmap-number {
+
+      display: grid;
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      place-items: center;
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 50%;
+      background: rgba(212,175,55,0.08);
+      font-weight: 700;
+
+    }
+
+    .rk-roadmap-item h3 {
+
+      margin: 0 0 5px;
+      font-size: 15px;
+
+    }
+
+    .rk-roadmap-item p {
+
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.7;
+
+    }
+
+    /* FAQ */
+
+    .rk-faq details {
+
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 13px;
+
+    }
+
+    .rk-faq summary {
+
+      cursor: pointer;
+      font-weight: 700;
+
+    }
+
+    .rk-faq details p {
+
+      margin-top: 12px;
+      line-height: 1.8;
+
+    }
+
+    .rk-page a:focus-visible,
+    .rk-page button:focus-visible,
+    .rk-page summary:focus-visible {
+
+      outline: 3px solid #d4af37;
+      outline-offset: 4px;
+
+    }
+
+    /* LIGHT THEME */
+
+    html[data-theme="light"] .rk-hero,
+    body[data-theme="light"] .rk-hero {
+
+      background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f3ead7
+      );
+
+      color: #172033;
+
+    }
+
+    html[data-theme="light"] .rk-hero h1,
+    body[data-theme="light"] .rk-hero h1 {
+
+      color: #765018;
+
+    }
+
+    html[data-theme="light"] .rk-hero p,
+    body[data-theme="light"] .rk-hero p {
+
+      color: #46546a;
+
+    }
+
+    html[data-theme="light"] .rk-status,
+    body[data-theme="light"] .rk-status {
+
+      color: #765018;
+
+    }
+
+    /* TABLET RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .rk-features {
+
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+
+      }
+
+    }
+
+    /* MOBILE RESPONSIVE */
+
+    @media (max-width: 650px) {
+
+      .rk-page {
+
+        padding: 18px 14px;
+
+      }
+
+      .rk-grid,
+      .rk-features {
+
+        grid-template-columns:
+          minmax(0,1fr);
+
+      }
+
+      .rk-hero {
+
+        padding: 30px 18px;
+
+      }
+
+      .rk-card {
+
+        padding: 18px;
+
+      }
+
+      .rk-buttons {
+
+        flex-direction: column;
+
+      }
+
+      .rk-button {
+
+        width: 100%;
+
+      }
+
+      .rk-dashboard {
+
+        padding: 14px;
+
+      }
+
+      .rk-stat {
+
+        padding: 13px 10px;
+
+      }
+
+    }
+
+    @media (max-width: 340px) {
+
+      .rk-dashboard-grid {
+
+        grid-template-columns:
+          minmax(0,1fr);
+
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-    <header class="site">
+  <!-- WEBSITE HEADER -->
 
-        <div class="container">
+  <header class="site">
 
-            <strong>MeraHisab</strong>
+    <div class="container">
 
-            <nav aria-label="Main navigation">
+      <strong>MeraHisab</strong>
 
-                <a href="index.html">Home</a>
+      <nav aria-label="Main navigation">
 
-                <a href="downloads.html">Apps</a>
+        <a href="/index.html">Home</a>
 
-                <a href="compare.html">Compare</a>
+        <a href="/downloads.html">Apps</a>
 
-                <a href="index.html#features">Features</a>
+        <a href="/compare.html">Compare</a>
 
-                <a href="tools.html">Tools</a>
+        <a href="/index.html#features">Features</a>
 
-                <a href="privacy.html">Privacy</a>
+        <a href="/tools.html">Tools</a>
 
-                <a href="about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
 
-                <a href="contact.html">Support</a>
+        <a href="/about.html">About</a>
 
-                <button id="theme" type="button">
-                    Theme
-                </button>
+        <a href="/contact.html">Support</a>
 
-            </nav>
+        <button id="theme"
+                type="button"
+                aria-label="Change website theme">
+
+          Theme
+
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN ROYAL KHATA PAGE -->
+
+  <main class="shell rk-page">
+
+    <nav class="rk-breadcrumb"
+         aria-label="Breadcrumb">
+
+      <a href="/index.html">Home</a>
+
+      <span>›</span>
+
+      <a href="/downloads.html">Applications</a>
+
+      <span>›</span>
+
+      <span aria-current="page">
+
+        Royal Khata
+
+      </span>
+
+    </nav>
+
+    <!-- APPLICATION HERO -->
+
+    <section class="rk-hero">
+
+      <img src="/icons/shortcut-royal-khata.png"
+           alt="Royal Khata website icon"
+           class="rk-app-icon"
+           width="95"
+           height="95">
+
+      <div>
+
+        <span class="rk-status">
+
+          ● Official Release Pending
+
+        </span>
+
+      </div>
+
+      <h1>Royal Khata</h1>
+
+      <h2>Smart Digital Khata Management</h2>
+
+      <p>
+
+        A digital khata application designed
+        to simplify credit, debit, customer
+        accounts, transaction records and
+        everyday business account management.
+
+      </p>
+
+      <div class="rk-buttons">
+
+        <button type="button"
+                class="rk-button rk-button-primary"
+                disabled>
+
+          Download Pending
+
+        </button>
+
+        <a href="#royal-features"
+           class="rk-button rk-button-secondary">
+
+          Explore Planned Features
+
+        </a>
+
+        <a href="/compare.html"
+           class="rk-button rk-button-secondary">
+
+          Compare Applications
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- APPLICATION OVERVIEW -->
+
+    <section class="rk-section">
+
+      <h2 class="rk-section-title">
+
+        Application Overview
+
+      </h2>
+
+      <div class="rk-grid">
+
+        <article class="upgrade-card rk-card">
+
+          <h3>About Royal Khata</h3>
+
+          <p>
+
+            Royal Khata is designed to bring
+            traditional khata management into
+            an organized digital experience.
+
+            Its development focuses on clear
+            credit and debit records, account
+            balances, transaction history and
+            responsible data management.
+
+          </p>
+
+          <div class="rk-info-row">
+
+            <span>Application Name</span>
+
+            <strong>Royal Khata</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>Category</span>
+
+            <strong>Digital Khata</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>Target Platform</span>
+
+            <strong>Android</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>Release Status</span>
+
+            <strong>Pending</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>Application Version</span>
+
+            <strong>Not Published</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>APK Download</span>
+
+            <strong>Not Available Yet</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>SHA-256 Verification</span>
+
+            <strong>Pending Release</strong>
+
+          </div>
+
+          <div class="rk-info-row">
+
+            <span>Official Website</span>
+
+            <strong>
+
+              <a href="https://merahisab.store/">
+
+                merahisab.store
+
+              </a>
+
+            </strong>
+
+          </div>
+
+        </article>
+
+        <!-- DASHBOARD CONCEPT -->
+
+        <article class="upgrade-card rk-card">
+
+          <h3>Dashboard Concept Preview</h3>
+
+          <div class="rk-dashboard">
+
+            <div class="rk-dashboard-header">
+
+              <strong>Royal Khata</strong>
+
+              <span class="rk-demo-label">
+
+                SAMPLE DATA
+
+              </span>
+
+            </div>
+
+            <div class="rk-dashboard-grid">
+
+              <div class="rk-stat">
+
+                <span>Monthly Credit</span>
+
+                <strong class="rk-credit">
+
+                  ₹48,500
+
+                </strong>
+
+              </div>
+
+              <div class="rk-stat">
+
+                <span>Monthly Debit</span>
+
+                <strong class="rk-debit">
+
+                  ₹32,250
+
+                </strong>
+
+              </div>
+
+              <div class="rk-stat">
+
+                <span>Net Balance</span>
+
+                <strong class="rk-gold">
+
+                  ₹16,250
+
+                </strong>
+
+              </div>
+
+              <div class="rk-stat">
+
+                <span>Total Accounts</span>
+
+                <strong class="rk-gold">
+
+                  24
+
+                </strong>
+
+              </div>
+
+            </div>
+
+            <h4 class="rk-transaction-title">
+
+              Recent Transactions
+
+            </h4>
+
+            <div class="rk-transaction">
+
+              <div>
+
+                Sample Account A
+
+                <small>Credit</small>
+
+              </div>
+
+              <strong class="rk-credit">
+
+                ₹5,000
+
+              </strong>
+
+            </div>
+
+            <div class="rk-transaction">
+
+              <div>
+
+                Sample Account B
+
+                <small>Debit</small>
+
+              </div>
+
+              <strong class="rk-debit">
+
+                ₹2,500
+
+              </strong>
+
+            </div>
+
+            <div class="rk-transaction">
+
+              <div>
+
+                Sample Account C
+
+                <small>Credit</small>
+
+              </div>
+
+              <strong class="rk-credit">
+
+                ₹3,750
+
+              </strong>
+
+            </div>
+
+            <p class="rk-dashboard-caption">
+
+              Illustrative dashboard concept.
+              All amounts and accounts are fictional.
+              This is not a live application screenshot.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PLANNED APPLICATION FEATURES -->
+
+    <section class="rk-section"
+             id="royal-features">
+
+      <h2 class="rk-section-title">
+
+        Planned Application Features
+
+      </h2>
+
+      <p class="rk-section-description">
+
+        The following features represent
+        intended development capabilities.
+        Final availability will be confirmed
+        after implementation and testing.
+
+      </p>
+
+      <div class="rk-features">
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📒</div>
+
+          <h3>Digital Khata</h3>
+
+          <p>
+
+            Maintain organized digital
+            account and khata records.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">₹</div>
+
+          <h3>Credit Management</h3>
+
+          <p>
+
+            Record and review credit
+            transactions in dedicated accounts.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">💳</div>
+
+          <h3>Debit Management</h3>
+
+          <p>
+
+            Record debit transactions
+            and maintain account histories.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">👥</div>
+
+          <h3>Customer Accounts</h3>
+
+          <p>
+
+            Organize individual customer
+            and business account records.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📊</div>
+
+          <h3>Smart Dashboard</h3>
+
+          <p>
+
+            View monthly credit, monthly debit,
+            account balances and financial summaries.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📅</div>
+
+          <h3>Transaction History</h3>
+
+          <p>
+
+            Maintain organized historical
+            records of account activity.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🔎</div>
+
+          <h3>Search & Filters</h3>
+
+          <p>
+
+            Find accounts and transactions
+            using useful search and filter options.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📄</div>
+
+          <h3>Reports & Statements</h3>
+
+          <p>
+
+            Generate organized account
+            summaries and financial statements.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📤</div>
+
+          <h3>PDF & Excel Export</h3>
+
+          <p>
+
+            Prepare supported financial
+            reports for sharing and record keeping.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">💾</div>
+
+          <h3>Backup & Restore</h3>
+
+          <p>
+
+            Provide backup and recovery
+            options for important account records.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🔐</div>
+
+          <h3>Application Lock</h3>
+
+          <p>
+
+            Planned access protection
+            for private financial records.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🔑</div>
+
+          <h3>Recovery Key</h3>
+
+          <p>
+
+            Planned recovery-key functionality
+            with a user-controlled setup process.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🛡</div>
+
+          <h3>Data Protection</h3>
+
+          <p>
+
+            Development focused on responsible
+            storage and protection of account data.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📱</div>
+
+          <h3>Offline Management</h3>
+
+          <p>
+
+            Intended support for everyday
+            khata management without continuous
+            internet access.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🌐</div>
+
+          <h3>Hindi & English</h3>
+
+          <p>
+
+            Planned multilingual support
+            for a convenient user experience.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">◐</div>
+
+          <h3>Premium Themes</h3>
+
+          <p>
+
+            Planned light, dark and system
+            appearance options.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🔔</div>
+
+          <h3>Payment Reminders</h3>
+
+          <p>
+
+            Planned reminder options
+            for pending account transactions.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">📝</div>
+
+          <h3>Notes & References</h3>
+
+          <p>
+
+            Maintain useful transaction
+            notes and related account details.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SECURITY AND PRIVACY -->
+
+    <section class="rk-section">
+
+      <h2 class="rk-section-title">
+
+        Privacy, Security & Data Protection
+
+      </h2>
+
+      <div class="rk-grid">
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🔒</div>
+
+          <h3>Privacy-Focused Development</h3>
+
+          <p>
+
+            Royal Khata development prioritizes
+            responsible handling of financial
+            and customer account information.
+
+            Actual storage and security behavior
+            will be documented after verification.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">💾</div>
+
+          <h3>Backup & Recovery Planning</h3>
+
+          <p>
+
+            Backup and restore functionality
+            is intended to help users maintain
+            control of important financial records.
+
+            Recovery options must be configured
+            and tested before relying on them.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🔑</div>
+
+          <h3>Recovery Key Protection</h3>
+
+          <p>
+
+            Recovery-key functionality is
+            planned for supported recovery workflows.
+
+            Never share a recovery key with
+            unauthorized individuals.
+
+          </p>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <div class="rk-feature-icon">🛡</div>
+
+          <h3>Security Verification</h3>
+
+          <p>
+
+            Application security, permissions,
+            backup protection and recovery
+            mechanisms require verification
+            before the official release.
+
+          </p>
+
+        </article>
+
+      </div>
+
+      <div class="rk-buttons">
+
+        <a href="/privacy.html"
+           class="rk-button rk-button-secondary">
+
+          Read Privacy Policy
+
+        </a>
+
+        <a href="/contact.html"
+           class="rk-button rk-button-secondary">
+
+          Help & Support
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- DEVELOPMENT ROADMAP -->
+
+    <section class="rk-section">
+
+      <h2 class="rk-section-title">
+
+        Application Development Roadmap
+
+      </h2>
+
+      <article class="upgrade-card rk-card">
+
+        <div class="rk-roadmap">
+
+          <div class="rk-roadmap-item">
+
+            <span class="rk-roadmap-number">1</span>
+
+            <div>
+
+              <h3>Planning & Application Design</h3>
+
+              <p>
+
+                Define application features,
+                dashboard and account workflows.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="rk-roadmap-item">
+
+            <span class="rk-roadmap-number">2</span>
+
+            <div>
+
+              <h3>Core Application Development</h3>
+
+              <p>
+
+                Build application pages,
+                credit and debit management
+                and account functionality.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="rk-roadmap-item">
+
+            <span class="rk-roadmap-number">3</span>
+
+            <div>
+
+              <h3>Security & Backup Development</h3>
+
+              <p>
+
+                Implement planned protection,
+                backup and recovery functionality.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="rk-roadmap-item">
+
+            <span class="rk-roadmap-number">4</span>
+
+            <div>
+
+              <h3>Complete Application Testing</h3>
+
+              <p>
+
+                Verify functionality, security,
+                data accuracy and compatibility.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="rk-roadmap-item">
+
+            <span class="rk-roadmap-number">5</span>
+
+            <div>
+
+              <h3>Official APK Release</h3>
+
+              <p>
+
+                Publish verified application
+                download and release information
+                when ready.
+
+              </p>
+
+            </div>
+
+          </div>
 
         </div>
 
-    </header>
+        <div class="rk-notice">
 
-    <main class="shell">
+          <strong>Release Information:</strong>
 
-        <!-- Breadcrumb Navigation -->
+          An official release date has not
+          been published. Download availability
+          will depend on successful development,
+          testing and release approval.
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- DOWNLOAD INFORMATION -->
+
+    <section class="rk-section">
+
+      <h2 class="rk-section-title">
+
+        Royal Khata Download
+
+      </h2>
+
+      <article class="upgrade-card rk-card">
+
+        <h3>Official APK Release Pending</h3>
 
         <p>
 
-            <a href="index.html">Home</a>
+          The Royal Khata APK is not currently
+          available through this website.
 
-            /
-
-            <a href="downloads.html">Apps</a>
-
-            / Royal Khata
+          Once the official release is ready,
+          application version, file size,
+          Android compatibility, release notes
+          and verification details will be
+          published in the Download Center.
 
         </p>
 
-        <!-- Premium Hero Section -->
+        <div class="rk-notice">
 
-        <section class="royal-hero">
+          <strong>Important Security Notice:</strong>
 
-            <div class="royal-emblem"
-                 aria-label="Royal Khata initials">
-
-                RK
-
-            </div>
-
-            <p>
-                OFFICIAL APPLICATION
-            </p>
-
-            <h1 class="royal-title">
-                Royal Khata
-            </h1>
-
-            <p>
-                Your Records. Your Control.
-            </p>
-
-            <span class="royal-status">
-                UNDER DEVELOPMENT
-            </span>
-
-            <p>
-
-                Discover a modern approach to
-                managing financial records
-                with Royal Khata.
-
-            </p>
-
-            <button type="button" disabled>
-
-                Download Not Yet Available
-
-            </button>
-
-            <p>
-
-                The official download link will
-                be available after release
-                verification.
-
-            </p>
-
-        </section>
-
-        <!-- Application Overview -->
-
-        <section class="upgrade-card">
-
-            <h2>About Royal Khata</h2>
-
-            <p>
-
-                Royal Khata is being developed
-                as a financial record management
-                application.
-
-            </p>
-
-            <p>
-
-                The application aims to provide
-                an organized, convenient and
-                professional experience for
-                managing financial records.
-
-            </p>
-
-            <div class="royal-note">
-
-                Application features and
-                technical specifications
-                will be confirmed before
-                the official release.
-
-            </div>
-
-        </section>
-
-        <!-- Planned Features -->
-
-        <section class="royal-section">
-
-            <h2>Planned Features</h2>
-
-            <p>
-
-                The following features are
-                proposed for Royal Khata.
-                Final availability is subject
-                to development and testing.
-
-            </p>
-
-            <div class="upgrade-grid">
-
-                <article class="upgrade-card">
-
-                    <h3>Premium Dashboard</h3>
-
-                    <p>
-
-                        An organized dashboard
-                        for viewing important
-                        financial information.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Credit &amp; Debit</h3>
-
-                    <p>
-
-                        Convenient management
-                        of credit and debit
-                        records.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Account Management</h3>
-
-                    <p>
-
-                        Organized management
-                        of accounts and
-                        financial records.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Transaction History</h3>
-
-                    <p>
-
-                        View and organize
-                        recorded transactions.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Financial Reports</h3>
-
-                    <p>
-
-                        Financial summaries
-                        and reporting tools.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Data Backup</h3>
-
-                    <p>
-
-                        Planned backup and
-                        restore capabilities.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Privacy &amp; Security</h3>
-
-                    <p>
-
-                        Privacy-focused design
-                        and data protection
-                        objectives.
-
-                    </p>
-
-                </article>
-
-                <article class="upgrade-card">
-
-                    <h3>Offline Experience</h3>
-
-                    <p>
-
-                        Planned support for
-                        managing records
-                        without continuous
-                        internet access.
-
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- Application Specifications -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Application Information</h2>
-
-            <table class="royal-table">
-
-                <tbody>
-
-                    <tr>
-                        <th scope="row">App Name</th>
-                        <td>Royal Khata</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Category</th>
-                        <td>Finance</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Platform</th>
-                        <td>Android (Planned)</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Version</th>
-                        <td>Not announced</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">APK Size</th>
-                        <td>Pending release</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Android Compatibility</th>
-                        <td>Pending verification</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Package Name</th>
-                        <td>Pending verification</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Release Date</th>
-                        <td>Not announced</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Pricing</th>
-                        <td>Not announced</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Download Status</th>
-                        <td>Not available</td>
-                    </tr>
-
-                    <tr>
-
-                        <th scope="row">
-                            Official Website
-                        </th>
-
-                        <td>
-
-                            <a href="https://merahisab.store/">
-
-                                merahisab.store
-
-                            </a>
-
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <!-- Screenshot Gallery -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>App Screenshots</h2>
-
-            <p>
-
-                Official Royal Khata screenshots
-                and application previews will
-                be published when available.
-
-            </p>
-
-        </section>
-
-        <!-- User Guide -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>User Guide</h2>
-
-            <p>
-
-                A complete user guide covering
-                account management, transactions,
-                reports and application settings
-                will be published after
-                feature verification.
-
-            </p>
-
-        </section>
-
-        <!-- Privacy and Security -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Privacy &amp; Security</h2>
-
-            <p>
-
-                Privacy and financial data
-                protection are important
-                design objectives for Royal Khata.
-
-            </p>
-
-            <p>
-
-                Verified information about
-                data storage, encryption,
-                application permissions and
-                security features will be
-                published before release.
-
-            </p>
-
-            <a class="action" href="privacy.html">
-
-                Read Privacy Information
-
-            </a>
-
-        </section>
-
-        <!-- Backup and Restore -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Backup &amp; Restore</h2>
-
-            <p>
-
-                Backup, restore and data
-                recovery capabilities are
-                planned for Royal Khata.
-
-            </p>
-
-            <p>
-
-                Complete instructions and
-                supported backup methods
-                will be published after testing.
-
-            </p>
-
-        </section>
-
-        <!-- App Permissions -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Application Permissions</h2>
-
-            <p>
-
-                The verified list of Android
-                permissions and their purposes
-                will be available with the
-                official application release.
-
-            </p>
-
-        </section>
-
-        <!-- Download Verification -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Download Verification</h2>
-
-            <p>
-
-                APK SHA-256 checksum and
-                signing certificate information
-                will be published after
-                the official APK is available.
-
-            </p>
-
-            <p>
-
-                Always download applications
-                from verified official sources.
-
-            </p>
-
-        </section>
-
-        <!-- Release History -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Version History &amp; Updates</h2>
-
-            <p>
-
-                Official version information,
-                release notes and update
-                instructions will appear here
-                after the first public release.
-
-            </p>
-
-        </section>
-
-        <!-- FAQ -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Frequently Asked Questions</h2>
-
-            <details>
-
-                <summary>
-                    What is Royal Khata?
-                </summary>
-
-                <p>
-
-                    Royal Khata is a financial
-                    record management application
-                    currently under development.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-                    Can I download Royal Khata now?
-                </summary>
-
-                <p>
-
-                    The official APK is not
-                    currently available on
-                    this website.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-                    Will Royal Khata support Android?
-                </summary>
-
-                <p>
-
-                    Android support is planned.
-                    Minimum Android requirements
-                    will be confirmed before release.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-                    Will Royal Khata work offline?
-                </summary>
-
-                <p>
-
-                    Offline functionality is
-                    planned and will be confirmed
-                    after development and testing.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-                    Will backup and restore be available?
-                </summary>
-
-                <p>
-
-                    Backup and restore capabilities
-                    are planned. Final details
-                    will be published after testing.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-                    Is Royal Khata free?
-                </summary>
-
-                <p>
-
-                    Official pricing information
-                    has not yet been announced.
-
-                </p>
-
-            </details>
-
-            <details>
-
-                <summary>
-                    How can I contact support?
-                </summary>
-
-                <p>
-
-                    Visit our
-
-                    <a href="contact.html">
-
-                        Contact &amp; Support Page
-
-                    </a>.
-
-                </p>
-
-            </details>
-
-        </section>
-
-        <!-- Other Application -->
-
-        <section class="upgrade-card royal-section">
-
-            <h2>Explore MeraHisab</h2>
-
-            <p>
-
-                Discover our personal finance
-                management application and
-                its official download page.
-
-            </p>
-
-            <a class="action"
-               href="merahisab.html">
-
-                Explore MeraHisab
-
-            </a>
-
-        </section>
-
-        <!-- Final Download Section -->
-
-        <section class="royal-hero royal-section">
-
-            <h2>Download Royal Khata</h2>
-
-            <p>
-
-                The official APK download
-                will be published here
-                when available.
-
-            </p>
-
-            <button type="button" disabled>
-
-                Download Not Yet Available
-
-            </button>
-
-            <p>
-
-                <a href="contact.html">
-
-                    Contact Support
-
-                </a>
-
-            </p>
-
-        </section>
-
-    </main>
-
-    <!-- Premium Footer -->
-
-    <footer class="site">
-
-        <div class="container">
-
-            <h2>MeraHisab</h2>
-
-            <p>
-
-                Your Money. Your Control.
-
-            </p>
-
-            <nav aria-label="Footer navigation">
-
-                <a href="index.html">Home</a>
-
-                <a href="downloads.html">Apps</a>
-
-                <a href="merahisab.html">MeraHisab</a>
-
-                <a href="royal-khata.html">Royal Khata</a>
-
-                <a href="privacy.html">Privacy</a>
-
-                <a href="about.html">About</a>
-
-                <a href="contact.html">Contact</a>
-
-            </nav>
-
-            <p>
-
-                Official Website:
-
-                <a href="https://merahisab.store/">
-
-                    merahisab.store
-
-                </a>
-
-            </p>
-
-            <p>
-
-                &copy; <span data-year></span>
-
-                MeraHisab. All Rights Reserved.
-
-            </p>
+          Do not download unofficial Royal Khata
+          APK files from unknown websites or
+          unverified sources.
 
         </div>
 
-    </footer>
+        <div class="rk-buttons">
+
+          <button type="button"
+                  class="rk-button rk-button-primary"
+                  disabled>
+
+            Royal Khata Download Pending
+
+          </button>
+
+          <a href="/downloads.html"
+             class="rk-button rk-button-secondary">
+
+            Official Download Center
+
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+
+    <section class="rk-section rk-faq">
+
+      <h2 class="rk-section-title">
+
+        Frequently Asked Questions
+
+      </h2>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          What is Royal Khata?
+
+        </summary>
+
+        <p>
+
+          Royal Khata is a digital khata
+          application designed around credit,
+          debit and organized account management.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Is Royal Khata available for download?
+
+        </summary>
+
+        <p>
+
+          Not yet. Official APK download
+          information is pending.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          What is the official release date?
+
+        </summary>
+
+        <p>
+
+          An official release date has not
+          been announced.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Who is Royal Khata designed for?
+
+        </summary>
+
+        <p>
+
+          Royal Khata is intended for users,
+          shopkeepers and small businesses
+          who maintain credit, debit and
+          account records.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Will Royal Khata support offline management?
+
+        </summary>
+
+        <p>
+
+          Offline financial record management
+          is a planned capability. Final
+          availability requires verification.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Will backup and restore be available?
+
+        </summary>
+
+        <p>
+
+          Backup and restore functionality
+          is included in the development plan.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Will Royal Khata have a recovery key?
+
+        </summary>
+
+        <p>
+
+          Recovery-key functionality is planned.
+          Its configuration and recovery behavior
+          must be tested before release.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          What is the difference between Royal Khata and MeraHisab?
+
+        </summary>
+
+        <p>
+
+          Royal Khata focuses on digital khata,
+          credit and debit account records.
+
+          MeraHisab focuses on personal income,
+          expenses, savings and financial accounts.
+
+          Visit the
+
+          <a href="/compare.html">
+
+            Comparison Page
+
+          </a>
+
+          for more information.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Is the dashboard preview real?
+
+        </summary>
+
+        <p>
+
+          The dashboard shown on this page
+          is an illustrative design concept
+          using fictional sample data.
+
+          It is not a screenshot of a released
+          Royal Khata application.
+
+        </p>
+
+      </details>
+
+      <details class="upgrade-card">
+
+        <summary>
+
+          Where can I find official release information?
+
+        </summary>
+
+        <p>
+
+          Visit the official
+
+          <a href="/downloads.html">
+
+            MeraHisab Download Center
+
+          </a>
+
+          for published release information.
+
+        </p>
+
+      </details>
+
+    </section>
+
+    <!-- OTHER APPLICATIONS AND TOOLS -->
+
+    <section class="rk-section">
+
+      <h2 class="rk-section-title">
+
+        Explore More
+
+      </h2>
+
+      <div class="rk-grid">
+
+        <article class="upgrade-card rk-card">
+
+          <h3>MeraHisab</h3>
+
+          <p>
+
+            Explore personal finance management,
+            income, expenses, savings and
+            financial account organization.
+
+          </p>
+
+          <a href="/merahisab.html"
+             class="rk-button rk-button-secondary">
+
+            Explore MeraHisab
+
+          </a>
+
+        </article>
+
+        <article class="upgrade-card rk-card">
+
+          <h3>Financial Tools</h3>
+
+          <p>
+
+            Explore useful financial calculators,
+            live clock and stopwatch.
+
+          </p>
+
+          <a href="/tools.html"
+             class="rk-button rk-button-secondary">
+
+            Explore Financial Tools
+
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PWA INSTALLATION AND DIAGNOSTICS -->
+
+    <section class="rk-section"
+             id="pwaMount">
+
+      <!--
+
+        Website installation,
+        offline cache management,
+        update management and diagnostics
+        are generated by pwa.js.
+
+        Installing the website does not
+        install the Royal Khata Android APK.
+
+      -->
+
+    </section>
+
+  </main>
+
+  <!-- WEBSITE FOOTER -->
+
+  <footer class="site">
+
+    <div class="container">
+
+      © <span data-year>2026</span>
+
+      MeraHisab. All rights reserved.
+
+      <br>
+
+      <a href="/index.html">Home</a>
+
+      ·
+
+      <a href="/privacy.html">Privacy</a>
+
+      ·
+
+      <a href="/contact.html">Contact</a>
+
+      ·
+
+      <a href="/downloads.html">Downloads</a>
+
+      <br>
+
+      <a href="https://merahisab.store/">
+
+        merahisab.store
+
+      </a>
+
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT DISABLED FALLBACK -->
+
+  <noscript>
+
+    <div style="
+      padding:20px;
+      text-align:center;
+      background:#172640;
+      color:#f0d9a6;
+    ">
+
+      JavaScript is disabled.
+
+      Theme controls and website installation
+      features require JavaScript.
+
+    </div>
+
+  </noscript>
 
 </body>
 
-  </html>
+</html>
