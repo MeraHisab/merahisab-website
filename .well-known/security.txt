@@ -1,49 +1,52 @@
 
-# ==================================================
-# MERAHISAB SECURITY INFORMATION
-# Official Website: https://merahisab.store/
-# Configuration Version: 1.0.0
+# MeraHisab Security Information
+# Version: 2.0.0
+# Official Domain: https://merahisab.store/
 # Status: Development Draft
-# ==================================================
 
-# SECURITY REPORTING STATUS
 # A verified private security reporting channel
 # is pending configuration.
 #
-# Do not submit confidential vulnerability details
-# through public GitHub issues.
+# The mandatory Contact field must be configured
+# before this file can be considered compliant.
 #
-# The website contact page currently prepares
-# local support requests only.
-
-# OFFICIAL SECURITY POLICY
-
-Policy: https://github.com/merahisab/merahisab-website/blob/main/SECURITY.md
-
-# PREFERRED REPORTING LANGUAGES
-
-Preferred-Languages: en, hi
-
-# CANONICAL SECURITY FILE LOCATION
-
-Canonical: https://merahisab.store/.well-known/security.txt
-
-# CONFIGURATION EXPIRATION
+# Do not publish confidential vulnerability
+# information in public GitHub issues.
+#
+# The website support page currently prepares
+# local request drafts only.
 
 Expires: 2027-05-27T00:00:00Z
 
-# ==================================================
-# SECURITY REPORTING GUIDELINES
-# ==================================================
+Preferred-Languages: en, hi
 
-# Include the affected application or website page.
-# Include relevant version information.
-# Include sanitized steps to reproduce the issue.
-# Describe the potential security impact.
-# Remove confidential information from reports.
+Canonical: https://merahisab.store/.well-known/security.txt
 
-# NEVER DISCLOSE:
+Policy: https://github.com/merahisab/merahisab-website/blob/main/SECURITY.md
 
+# Official Website:
+# https://merahisab.store/
+
+# Privacy Information:
+# https://merahisab.store/privacy.html
+
+# Support Information:
+# https://merahisab.store/contact.html
+
+# Download Center:
+# https://merahisab.store/downloads.html
+
+# Responsible Disclosure:
+#
+# Protect user privacy.
+# Test only authorized environments.
+# Do not access private user information.
+# Do not modify or delete user data.
+# Do not disrupt website availability.
+# Follow applicable laws.
+
+# Never include:
+#
 # Passwords
 # PINs
 # OTPs
@@ -51,54 +54,19 @@ Expires: 2027-05-27T00:00:00Z
 # Encryption keys
 # Authentication tokens
 # Private signing keys
-# Financial records
-# Customer information
+# Banking credentials
+# Customer financial records
 # Confidential backup files
-
-# ==================================================
-# OFFICIAL RESOURCES
-# ==================================================
-
-# Website:
-# https://merahisab.store/
-
-# Privacy Policy:
-# https://merahisab.store/privacy.html
-
-# Support Information:
-# https://merahisab.store/contact.html
-
-# Official Download Center:
-# https://merahisab.store/downloads.html
-
-# Official Repository:
-# https://github.com/merahisab/merahisab-website
-
-# ==================================================
-# RESPONSIBLE DISCLOSURE
-# ==================================================
-
-# Respect user privacy.
-# Avoid unauthorized access.
-# Avoid accessing private user information.
-# Avoid modifying or deleting user data.
-# Avoid disrupting website availability.
-# Follow applicable laws and regulations.
 
 # No official paid bug bounty program
 # is currently announced.
 
-# ==================================================
-# MAINTENANCE REQUIREMENTS
-# ==================================================
-
-# Configure a verified private security contact.
+# Maintenance Requirements:
+#
+# Configure a verified private reporting channel.
 # Add the mandatory Contact field.
-# Review this file before its expiration date.
 # Verify HTTPS availability.
 # Verify the canonical file location.
-# Review security reporting procedures.
+# Review before the expiration date.
 
-# ==================================================
-# END OF MERAHISAB SECURITY INFORMATION
-# ==================================================
+# End of MeraHisab Security Information
