@@ -1,8 +1,9 @@
+
 {
   "id": "/",
   "name": "MeraHisab - Personal Finance & Digital Khata",
   "short_name": "MeraHisab",
-  "description": "Official MeraHisab platform for personal finance management, digital khata, financial calculators, application downloads and support.",
+  "description": "Personal finance, digital khata, financial calculators, application downloads and support.",
   "lang": "en-IN",
   "dir": "ltr",
   "start_url": "/index.html",
@@ -53,7 +54,7 @@
     {
       "name": "MeraHisab Application",
       "short_name": "MeraHisab",
-      "description": "Explore MeraHisab personal finance management.",
+      "description": "Explore personal finance management.",
       "url": "/merahisab.html",
       "icons": [
         {
@@ -66,7 +67,7 @@
     {
       "name": "Royal Khata Application",
       "short_name": "Royal Khata",
-      "description": "Explore digital khata and credit-debit management.",
+      "description": "Explore the planned digital khata application.",
       "url": "/royal-khata.html",
       "icons": [
         {
@@ -79,7 +80,7 @@
     {
       "name": "Financial Tools",
       "short_name": "Calculators",
-      "description": "Access financial calculators and utilities.",
+      "description": "Access financial calculators and time utilities.",
       "url": "/tools.html",
       "icons": [
         {
@@ -92,7 +93,7 @@
     {
       "name": "Official Download Center",
       "short_name": "Downloads",
-      "description": "Check official application downloads.",
+      "description": "View official application download information.",
       "url": "/downloads.html",
       "icons": [
         {
