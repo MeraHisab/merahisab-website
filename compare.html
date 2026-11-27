@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Compare Apps | MeraHisab & Royal Khata</title>
+
+    <meta name="description"
+          content="Compare MeraHisab and Royal Khata applications, features and download availability.">
+
+    <meta name="theme-color" content="#080f20">
+
+    <link rel="canonical"
+          href="https://merahisab.store/compare.html">
+
+    <link rel="stylesheet" href="upgrade.css">
+
+    <script defer src="upgrade.js"></script>
+
+    <style>
+
+        .compare-hero {
+            background: linear-gradient(
+                135deg,
+                #081322,
+                #14253d,
+                #26364d
+            );
+            color: #f8f6f0;
+            border: 1px solid #d4af37;
+            border-radius: 24px;
+            padding: clamp(24px, 5vw, 60px);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .compare-hero h1 {
+            color: #e5c788;
+        }
+
+        .compare-section {
+            margin-top: 28px;
+        }
+
+        .app-emblem {
+            display: grid;
+            place-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            border: 1px solid #d4af37;
+            background: #081322;
+            color: #e5c788;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .app-status {
+            display: inline-block;
+            border: 1px solid currentColor;
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status-available {
+            color: #86efac;
+        }
+
+        .status-development {
+            color: #e5c788;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: 15px 10px;
+            border-bottom: 1px solid #806b45;
+            text-align: left;
+            vertical-align: top;
+            overflow-wrap: anywhere;
+        }
+
+        .compare-table thead th {
+            background: #081322;
+            color: #e5c788;
+        }
+
+        .compare-table tbody tr:hover {
+            background: rgba(212, 175, 55, 0.06);
+        }
+
+        .compare-note {
+            border-left: 3px solid #d4af37;
+            padding: 12px 16px;
+            margin-top: 20px;
+        }
+
+        .compare-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        html[data-theme=light] .status-available {
+            color: #166534;
+        }
+
+        html[data-theme=light] .status-development {
+            color: #78551a;
+        }
+
+        @media (max-width: 600px) {
+
+            .compare-table th,
+            .compare-table td {
+                padding: 10px 5px;
+                font-size: 12px;
+            }
+
+            .compare-actions .action {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="site">
+
+        <div class="container">
+
+            <strong>MeraHisab</strong>
+
+            <nav aria-label="Main navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="compare.html"
+                   aria-current="page">Compare</a>
+
+                <a href="index.html#features">Features</a>
+
+                <a href="tools.html">Tools</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Support</a>
+
+                <button id="theme" type="button">
+                    Theme
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="shell">
+
+        <!-- Breadcrumb -->
+
+        <p>
+
+            <a href="index.html">Home</a>
+
+            /
+
+            <a href="downloads.html">Apps</a>
+
+            / Compare
+
+        </p>
+
+        <!-- Premium Hero -->
+
+        <section class="compare-hero">
+
+            <p>CHOOSE YOUR APPLICATION</p>
+
+            <h1>Compare Our Apps</h1>
+
+            <p>
+
+                Two applications.
+                Different financial management needs.
+                One professional experience.
+
+            </p>
+
+            <div class="compare-actions">
+
+                <a class="action"
+                   href="merahisab.html">
+
+                    Explore MeraHisab
+
+                </a>
+
+                <a class="action"
+                   href="royal-khata.html">
+
+                    Explore Royal Khata
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Application Cards -->
+
+        <div class="upgrade-grid">
+
+            <article class="upgrade-card">
+
+                <div class="app-emblem"
+                     aria-hidden="true">
+
+                    MH
+
+                </div>
+
+                <span class="app-status status-available">
+
+                    APK AVAILABLE
+
+                </span>
+
+                <h2>MeraHisab</h2>
+
+                <p>
+
+                    Personal Finance Management
+
+                </p>
+
+                <p>
+
+                    Designed to help users organize
+                    personal financial records,
+                    income, expenses and accounts.
+
+                </p>
+
+                <a class="action"
+                   href="merahisab.html">
+
+                    View Details &amp; Download
+
+                </a>
+
+            </article>
+
+            <article class="upgrade-card">
+
+                <div class="app-emblem"
+                     aria-hidden="true">
+
+                    RK
+
+                </div>
+
+                <span class="app-status status-development">
+
+                    UNDER DEVELOPMENT
+
+                </span>
+
+                <h2>Royal Khata</h2>
+
+                <p>
+
+                    Financial Record Management
+
+                </p>
+
+                <p>
+
+                    Designed for organized credit,
+                    debit and financial record
+                    management.
+
+                </p>
+
+                <a class="action"
+                   href="royal-khata.html">
+
+                    View Application Details
+
+                </a>
+
+            </article>
+
+        </div>
+
+        <!-- Comparison Table -->
+
+        <section class="upgrade-card compare-section">
+
+            <h2>Application Comparison</h2>
+
+            <div class="table-wrapper">
+
+                <table class="compare-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">Feature</th>
+
+                            <th scope="col">MeraHisab</th>
+
+                            <th scope="col">Royal Khata</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <th scope="row">
+                                Primary Purpose
+                            </th>
+
+                            <td>Personal Finance</td>
+
+                            <td>Financial Records</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">Platform</th>
+
+                            <td>Android</td>
+
+                            <td>Android (Planned)</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">Dashboard</th>
+
+                            <td>Screenshot Available</td>
+
+                            <td>Planned</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Income &amp; Expenses
+                            </th>
+
+                            <td>Designed for Tracking</td>
+
+                            <td>Pending Verification</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Credit &amp; Debit
+                            </th>
+
+                            <td>Pending Verification</td>
+
+                            <td>Planned</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Account Management
+                            </th>
+
+                            <td>Designed for Management</td>
+
+                            <td>Planned</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Financial Reports
+                            </th>
+
+                            <td>Pending Verification</td>
+
+                            <td>Planned</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Offline Support
+                            </th>
+
+                            <td>Designed for Offline Use</td>
+
+                            <td>Planned</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Backup &amp; Restore
+                            </th>
+
+                            <td>Pending Verification</td>
+
+                            <td>Planned</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Data Encryption
+                            </th>
+
+                            <td>Pending Verification</td>
+
+                            <td>Pending Verification</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                App Version
+                            </th>
+
+                            <td>Pending Verification</td>
+
+                            <td>Not Announced</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                APK Size
+                            </th>
+
+                            <td>12.18 MiB</td>
+
+                            <td>Pending Release</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Pricing
+                            </th>
+
+                            <td>Pending Confirmation</td>
+
+                            <td>Not Announced</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th scope="row">
+                                Download Status
+                            </th>
+
+                            <td>APK Available</td>
+
+                            <td>Not Available</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="compare-note">
+
+                Planned features are subject to
+                development and testing.
+                Application specifications will
+                be updated after verification.
+
+            </div>
+
+        </section>
+
+        <!-- Application Selection Guide -->
+
+        <section class="compare-section">
+
+            <h2>Which App Should You Choose?</h2>
+
+            <div class="upgrade-grid">
+
+                <article class="upgrade-card">
+
+                    <h3>Choose MeraHisab</h3>
+
+                    <p>
+
+                        Explore MeraHisab if you
+                        are looking for an application
+                        focused on personal finance
+                        and financial records.
+
+                    </p>
+
+                    <a class="action"
+                       href="merahisab.html">
+
+                        Explore MeraHisab
+
+                    </a>
+
+                </article>
+
+                <article class="upgrade-card">
+
+                    <h3>Explore Royal Khata</h3>
+
+                    <p>
+
+                        Explore Royal Khata if
+                        your requirements include
+                        organized credit and debit
+                        record management.
+
+                    </p>
+
+                    <p>
+
+                        Currently under development.
+
+                    </p>
+
+                    <a class="action"
+                       href="royal-khata.html">
+
+                        Explore Royal Khata
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Privacy -->
+
+        <section class="upgrade-card compare-section">
+
+            <h2>Privacy &amp; Security</h2>
+
+            <p>
+
+                Financial privacy and data
+                protection are important
+                design objectives for our
+                applications.
+
+            </p>
+
+            <p>
+
+                Review the individual application
+                pages for verified information
+                about security, permissions
+                and data storage.
+
+            </p>
+
+            <a class="action"
+               href="privacy.html">
+
+                Read Privacy Information
+
+            </a>
+
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="upgrade-card compare-section">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+
+                <summary>
+
+                    Are MeraHisab and Royal Khata
+                    separate applications?
+
+                </summary>
+
+                <p>
+
+                    Yes. Both applications have
+                    separate information and
+                    download pages.
+
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+
+                    Which application can I
+                    download now?
+
+                </summary>
+
+                <p>
+
+                    The MeraHisab APK is available.
+                    Royal Khata is currently
+                    under development.
+
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+
+                    Where can I find official
+                    application updates?
+
+                </summary>
+
+                <p>
+
+                    Visit the official application
+                    pages on merahisab.store.
+
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+
+                    How can I contact support?
+
+                </summary>
+
+                <p>
+
+                    Visit our
+
+                    <a href="contact.html">
+
+                        Contact &amp; Support Page
+
+                    </a>.
+
+                </p>
+
+            </details>
+
+        </section>
+
+        <!-- Download Center -->
+
+        <section class="compare-hero compare-section">
+
+            <h2>Explore Our Applications</h2>
+
+            <p>
+
+                Discover application information
+                and official download options.
+
+            </p>
+
+            <a class="action"
+               href="downloads.html">
+
+                Visit Download Center
+
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="site">
+
+        <div class="container">
+
+            <h2>MeraHisab</h2>
+
+            <p>Your Money. Your Control.</p>
+
+            <nav aria-label="Footer navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="downloads.html">Apps</a>
+
+                <a href="merahisab.html">MeraHisab</a>
+
+                <a href="royal-khata.html">Royal Khata</a>
+
+                <a href="privacy.html">Privacy</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <p>
+
+                Official Website:
+
+                <a href="https://merahisab.store/">
+
+                    merahisab.store
+
+                </a>
+
+            </p>
+
+            <p>
+
+                &copy; <span data-year></span>
+
+                MeraHisab. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+                      </html>
