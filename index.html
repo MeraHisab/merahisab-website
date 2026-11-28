@@ -3,7 +3,7 @@
 <html lang="en-IN">
 <head>
 <meta charset="utf-8"/>
-<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-yNiqfJGTOxsqEYRjfOIYCIIepaO7JTmQNAStfLR5zGw='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-sPgaZWj/lDXIBk8zB+/gcVZnKePlcVBvLypA7nQVjQA='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>MeraHisab — Personal Finance &amp; Digital Khata</title>
 <meta content="Explore MeraHisab and Royal Khata, personal finance management, digital khata, expense tracking and useful financial tools." name="description"/>
@@ -1915,8 +1915,10 @@
     header.header #merahisabLanguageSelect { width:auto; min-width:104px; max-width:100%; padding-inline:12px 10px; font-size:16px; appearance:auto; cursor:pointer; }
     header.header #merahisabLanguageSelect:focus-visible { outline:3px solid var(--mh-focus,#94c7ff); outline-offset:3px; }
     header.header .home-controls > * { max-width:100%; }
-    .motivation-ticker { display:grid; grid-template-columns:auto minmax(0,1fr) auto; grid-template-areas:"label stream control"; align-items:center; gap:10px 14px; width:min(1152px,calc(100% - 32px)); margin:10px auto; padding:7px 12px; text-align:start; }
-    .motivation-ticker .motivation-label { grid-area:label; margin:0; letter-spacing:1.5px; font-size:10px; white-space:nowrap; }
+    .motivation-ticker { display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"stream control"; align-items:center; gap:10px 14px; width:min(1152px,calc(100% - 32px)); margin:10px auto; padding:7px 12px; text-align:start; }
+    .motivation-ticker .motivation-item[data-kind="heading"] { letter-spacing:1.5px; font-weight:800; }
+    .motivation-ticker .motivation-item[data-kind="date"] { font-weight:800; font-variant-numeric:tabular-nums; }
+    .motivation-ticker .motivation-item[data-kind="occasion"] { font-weight:750; }
     .motivation-viewport { grid-area:stream; position:relative; min-width:0; overflow:hidden; direction:ltr; }
     .motivation-ticker .motivation-text { margin:0; min-height:0; text-align:center; font-size:.94rem; line-height:1.65; transition:none; }
     .motivation-track { position:absolute; top:0; left:0; display:flex; align-items:center; width:max-content; height:100%; white-space:nowrap; color:var(--gold2); font-size:.94rem; font-weight:600; line-height:1.6; pointer-events:none; }
@@ -1931,7 +1933,7 @@
       header.header .home-controls { grid-column:1; grid-row:2; justify-content:center; gap:6px; }
       header.header .nav { grid-column:1; grid-row:3; justify-content:center; gap:0 12px; }
       header.header #theme, header.header .nav-cta { font-size:.75rem; padding-inline:10px; }
-      .motivation-ticker { grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"label control" "stream stream"; gap:4px 8px; padding:6px 10px; margin:8px auto; }
+      .motivation-ticker { grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"stream control"; gap:4px 8px; padding:6px 10px; margin:8px auto; }
       .motivation-track, .motivation-ticker .motivation-text { font-size:.86rem; }
       .motivation-ticker .motivation-label { white-space:normal; letter-spacing:1px; }
     }
@@ -1945,12 +1947,9 @@
     Skip to main content
   </a>
 <!-- PREMIUM MOTIVATIONAL TICKER -->
-<section aria-label="Daily motivation" class="motivation-ticker" data-home-aria-hi="दैनिक प्रेरणा">
-<div class="motivation-label" data-home-hi="✦ दैनिक प्रेरणा ✦" data-no-translate="true">
-      ✦ DAILY INSPIRATION ✦
-    </div>
+<section aria-label="Daily date, occasions and inspiration" class="motivation-ticker" data-home-aria-hi="आज की तारीख, विशेष अवसर और दैनिक प्रेरणा">
 <div class="motivation-viewport" id="motivationViewport" aria-live="off" data-no-translate="true">
-<div class="motivation-text" id="motivationText" lang="en">Make every rupee count.</div>
+<div class="motivation-text" id="motivationText" lang="en">Daily updates and inspiration</div>
 <div class="motivation-track" id="motivationTrack" aria-hidden="true" hidden></div>
 </div>
 <button class="timer-btn" id="tickerToggle" type="button" data-no-translate="true" aria-controls="motivationViewport" hidden>Pause</button>
@@ -3089,7 +3088,7 @@
     const now = new Date(); set($("liveClock"),timeFormat.format(now)); set($("liveDate"),dateFormat.format(now));
   }
   let clockTimer = null;
-  function tick() { clockTimer = null; if (document.hidden) return; updateClock(); clockTimer = setTimeout(tick, 1000 - Date.now()%1000 + 15); }
+  function tick() { clockTimer = null; if (document.hidden) return; updateClock(); if(tickerDay!==todayKey()){resetStream();tickerState();} clockTimer = setTimeout(tick, 1000 - Date.now()%1000 + 15); }
   const start = $("startStopwatch"), lap = $("lapStopwatch"), reset = $("resetStopwatch"), list = $("lapList");
   let running = false, started = 0, accumulated = 0, previous = 0, lapCount = 0, frame = null;
   function elapsed() { return accumulated + (running ? performance.now()-started : 0); }
@@ -3208,26 +3207,47 @@
         "आज बेहतर बनिए, कल और बेहतर होगा।"
 
       ];
+  // Calendar dates follow Indian Standard Time and are never shuffled.
+  // Moving festivals: 2026–2027 published calendars only, not recurring Gregorian dates.
+  // Sources: https://www.iirs.gov.in/holidaycalender/
+  // https://www.cgca.gov.in/ccaas/list-of-holiday
+  // https://cgca.gov.in/ccaneii/list-of-holiday
+  // https://surveyofindia.gov.in/UserFiles/files/List%20of%20Holidays-2027.pdf
+  const FIXED_DAYS = {"01-01": ["Happy New Year!", "नववर्ष की हार्दिक शुभकामनाएँ!"], "01-12": ["National Youth Day — celebrate the spirit of youth.", "राष्ट्रीय युवा दिवस — युवा शक्ति को नमन।"], "01-26": ["Happy Republic Day! Jai Hind.", "गणतंत्र दिवस की हार्दिक शुभकामनाएँ! जय हिन्द।"], "03-08": ["Happy International Women’s Day!", "अंतरराष्ट्रीय महिला दिवस की हार्दिक शुभकामनाएँ!"], "03-30": ["Happy Rajasthan Day!", "राजस्थान दिवस की हार्दिक शुभकामनाएँ!"], "04-14": ["Remembering Dr. B. R. Ambedkar on his birth anniversary.", "डॉ. भीमराव आंबेडकर जयंती पर सादर नमन।"], "05-01": ["International Workers’ Day — respect every worker.", "अंतरराष्ट्रीय श्रमिक दिवस — श्रम को सम्मान।"], "06-05": ["World Environment Day — protect our planet.", "विश्व पर्यावरण दिवस — प्रकृति का संरक्षण करें।"], "06-21": ["Happy International Day of Yoga!", "अंतरराष्ट्रीय योग दिवस की शुभकामनाएँ!"], "08-15": ["Happy Independence Day! Jai Hind.", "स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! जय हिन्द।"], "09-05": ["Happy Teachers’ Day!", "शिक्षक दिवस की हार्दिक शुभकामनाएँ!"], "10-02": ["Remembering Mahatma Gandhi on Gandhi Jayanti.", "गांधी जयंती पर महात्मा गांधी को सादर नमन।"], "10-31": ["National Unity Day — celebrate unity in diversity.", "राष्ट्रीय एकता दिवस — विविधता में एकता।"], "11-14": ["Happy Children’s Day!", "बाल दिवस की हार्दिक शुभकामनाएँ!"], "11-26": ["Constitution Day — honour the Constitution of India.", "संविधान दिवस — भारतीय संविधान का सम्मान करें।"], "12-25": ["Merry Christmas!", "क्रिसमस की हार्दिक शुभकामनाएँ!"]};
+  const FESTIVALS = {"2026-01-14": [["Happy Makar Sankranti!", "मकर संक्रांति की हार्दिक शुभकामनाएँ!"], ["Happy Pongal!", "पोंगल की हार्दिक शुभकामनाएँ!"]], "2027-01-14": [["Happy Makar Sankranti!", "मकर संक्रांति की हार्दिक शुभकामनाएँ!"]], "2027-01-15": [["Happy Pongal!", "पोंगल की हार्दिक शुभकामनाएँ!"]], "2026-01-23": [["Happy Basant Panchami!", "बसंत पंचमी की हार्दिक शुभकामनाएँ!"]], "2027-02-11": [["Happy Basant Panchami!", "बसंत पंचमी की हार्दिक शुभकामनाएँ!"]], "2026-02-15": [["Happy Maha Shivratri!", "महाशिवरात्रि की हार्दिक शुभकामनाएँ!"]], "2027-03-06": [["Happy Maha Shivratri!", "महाशिवरात्रि की हार्दिक शुभकामनाएँ!"]], "2026-03-03": [["Happy Holika Dahan!", "होलिका दहन की हार्दिक शुभकामनाएँ!"]], "2027-03-22": [["Happy Holika Dahan!", "होलिका दहन की हार्दिक शुभकामनाएँ!"]], "2026-03-04": [["Happy Holi!", "होली की हार्दिक शुभकामनाएँ!"]], "2027-03-23": [["Happy Holi!", "होली की हार्दिक शुभकामनाएँ!"]], "2026-03-21": [["Eid al-Fitr Mubarak! (Calendar date; subject to moon sighting.)", "ईद-उल-फ़ित्र मुबारक! (कैलेंडर की तारीख; चाँद दिखने पर निर्भर।)"]], "2027-03-10": [["Eid al-Fitr Mubarak! (Calendar date; subject to moon sighting.)", "ईद-उल-फ़ित्र मुबारक! (कैलेंडर की तारीख; चाँद दिखने पर निर्भर।)"]], "2026-03-26": [["Happy Ram Navami!", "राम नवमी की हार्दिक शुभकामनाएँ!"]], "2027-04-15": [["Happy Ram Navami!", "राम नवमी की हार्दिक शुभकामनाएँ!"]], "2026-03-31": [["Happy Mahavir Jayanti!", "महावीर जयंती की हार्दिक शुभकामनाएँ!"]], "2027-04-19": [["Happy Mahavir Jayanti!", "महावीर जयंती की हार्दिक शुभकामनाएँ!"]], "2026-04-03": [["Good Friday — wishing you peace and reflection.", "गुड फ्राइडे — शांति और आत्मचिंतन का दिन।"]], "2027-03-26": [["Good Friday — wishing you peace and reflection.", "गुड फ्राइडे — शांति और आत्मचिंतन का दिन।"]], "2026-04-05": [["Happy Easter!", "ईस्टर की हार्दिक शुभकामनाएँ!"]], "2027-03-28": [["Happy Easter!", "ईस्टर की हार्दिक शुभकामनाएँ!"]], "2026-03-19": [["Happy Gudi Padwa, Ugadi and Cheti Chand!", "गुड़ी पड़वा, उगादी और चेटीचंड की हार्दिक शुभकामनाएँ!"]], "2027-04-07": [["Happy Gudi Padwa, Ugadi and Cheti Chand!", "गुड़ी पड़वा, उगादी और चेटीचंड की हार्दिक शुभकामनाएँ!"]], "2026-04-14": [["Happy Baisakhi!", "बैसाखी की हार्दिक शुभकामनाएँ!"]], "2027-04-14": [["Happy Baisakhi!", "बैसाखी की हार्दिक शुभकामनाएँ!"]], "2026-05-01": [["Happy Buddha Purnima!", "बुद्ध पूर्णिमा की हार्दिक शुभकामनाएँ!"]], "2027-05-20": [["Happy Buddha Purnima!", "बुद्ध पूर्णिमा की हार्दिक शुभकामनाएँ!"]], "2026-05-27": [["Eid al-Adha Mubarak! (Calendar date; subject to moon sighting.)", "ईद-उल-अज़हा मुबारक! (कैलेंडर की तारीख; चाँद दिखने पर निर्भर।)"]], "2027-05-17": [["Eid al-Adha Mubarak! (Calendar date; subject to moon sighting.)", "ईद-उल-अज़हा मुबारक! (कैलेंडर की तारीख; चाँद दिखने पर निर्भर।)"]], "2026-06-26": [["Muharram — a day of remembrance. (Subject to moon sighting.)", "मुहर्रम — श्रद्धा और स्मरण का दिन। (चाँद दिखने पर निर्भर।)"]], "2027-06-16": [["Muharram — a day of remembrance. (Subject to moon sighting.)", "मुहर्रम — श्रद्धा और स्मरण का दिन। (चाँद दिखने पर निर्भर।)"]], "2026-07-16": [["Happy Rath Yatra!", "रथ यात्रा की हार्दिक शुभकामनाएँ!"]], "2027-07-05": [["Happy Rath Yatra!", "रथ यात्रा की हार्दिक शुभकामनाएँ!"]], "2026-08-26": [["Happy Onam!", "ओणम की हार्दिक शुभकामनाएँ!"], ["Milad-un-Nabi Mubarak! (Calendar date; subject to moon sighting.)", "ईद-ए-मिलाद मुबारक! (कैलेंडर की तारीख; चाँद दिखने पर निर्भर।)"]], "2027-09-12": [["Happy Onam!", "ओणम की हार्दिक शुभकामनाएँ!"]], "2027-08-15": [["Milad-un-Nabi Mubarak! (Calendar date; subject to moon sighting.)", "ईद-ए-मिलाद मुबारक! (कैलेंडर की तारीख; चाँद दिखने पर निर्भर।)"]], "2026-08-28": [["Happy Raksha Bandhan!", "रक्षाबंधन की हार्दिक शुभकामनाएँ!"]], "2027-08-17": [["Happy Raksha Bandhan!", "रक्षाबंधन की हार्दिक शुभकामनाएँ!"]], "2026-09-04": [["Happy Janmashtami!", "जन्माष्टमी की हार्दिक शुभकामनाएँ!"]], "2027-08-25": [["Happy Janmashtami!", "जन्माष्टमी की हार्दिक शुभकामनाएँ!"]], "2026-09-14": [["Happy Ganesh Chaturthi!", "गणेश चतुर्थी की हार्दिक शुभकामनाएँ!"]], "2027-09-04": [["Happy Ganesh Chaturthi!", "गणेश चतुर्थी की हार्दिक शुभकामनाएँ!"]], "2026-10-20": [["Happy Dussehra!", "दशहरा की हार्दिक शुभकामनाएँ!"]], "2027-10-09": [["Happy Dussehra!", "दशहरा की हार्दिक शुभकामनाएँ!"]], "2026-10-29": [["Happy Karwa Chauth!", "करवा चौथ की हार्दिक शुभकामनाएँ!"]], "2027-10-18": [["Happy Karwa Chauth!", "करवा चौथ की हार्दिक शुभकामनाएँ!"]], "2026-11-08": [["Happy Diwali!", "दीपावली की हार्दिक शुभकामनाएँ!"]], "2027-10-29": [["Happy Diwali!", "दीपावली की हार्दिक शुभकामनाएँ!"]], "2026-11-09": [["Happy Govardhan Puja!", "गोवर्धन पूजा की हार्दिक शुभकामनाएँ!"]], "2027-10-30": [["Happy Govardhan Puja!", "गोवर्धन पूजा की हार्दिक शुभकामनाएँ!"]], "2026-11-11": [["Happy Bhai Dooj!", "भाई दूज की हार्दिक शुभकामनाएँ!"]], "2027-10-31": [["Happy Bhai Dooj!", "भाई दूज की हार्दिक शुभकामनाएँ!"]], "2026-11-15": [["Happy Chhath Puja!", "छठ पूजा की हार्दिक शुभकामनाएँ!"]], "2027-11-04": [["Happy Chhath Puja!", "छठ पूजा की हार्दिक शुभकामनाएँ!"]], "2026-11-24": [["Happy Guru Nanak Jayanti!", "गुरु नानक जयंती की हार्दिक शुभकामनाएँ!"]], "2027-11-14": [["Happy Guru Nanak Jayanti!", "गुरु नानक जयंती की हार्दिक शुभकामनाएँ!"]]};
+  const dayFormatter = new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kolkata",calendar:"gregory",numberingSystem:"latn",year:"numeric",month:"2-digit",day:"2-digit"});
+  function todayKey(now=new Date()) { const p=Object.fromEntries(dayFormatter.formatToParts(now).map(x=>[x.type,x.value]));return `${p.year}-${p.month}-${p.day}`; }
+  function dailyPrefix(now=new Date()) {
+    const key=todayKey(now), pair=FIXED_DAYS[key.slice(5)], events=[...(pair?[pair]:[]),...(FESTIVALS[key]||[])];
+    const date=new Intl.DateTimeFormat(lang()==="hi"?"hi-IN":"en-IN",{timeZone:"Asia/Kolkata",weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(now);
+    return [{kind:"date",text:tr("Today: ","आज: ")+date},...events.map(e=>({kind:"occasion",text:tr(...e)})),{kind:"heading",text:tr("✦ DAILY INSPIRATION ✦","✦ दैनिक प्रेरणा ✦")}];
+  }
   const quote=$("motivationText"), viewport=$("motivationViewport"), track=$("motivationTrack"), tickerButton=$("tickerToggle"), motion=matchMedia("(prefers-reduced-motion: reduce)");
-  let paused=false, quoteFrame=null, stamp=null, offset=0, streamWidth=0, viewportWidth=0, quoteLang="", bag=[], lastQuote="", stream=[];
+  let paused=false, quoteFrame=null, stamp=null, offset=0, streamWidth=0, viewportWidth=0, quoteLang="", bag=[], lastQuote="", stream=[], prefix=[], tickerDay="";
   const SPEED=50; // CSS pixels per second, moving from right to left.
-  function randomQuote(){
+  function prepareBag(){
     if(!bag.length){
       const pool=quotes.filter(text=>lang()==="hi"?/[\u0900-\u097f]/.test(text):!/[\u0900-\u097f]/.test(text));
       bag=(pool.length?pool:quotes).slice();
       for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]];}
       if(bag.length>1&&bag[bag.length-1]===lastQuote)[bag[bag.length-1],bag[0]]=[bag[0],bag[bag.length-1]];
     }
-    lastQuote=bag.pop();return lastQuote;
+  }
+  function randomQuote(){prepareBag();lastQuote=bag.pop();return lastQuote;
+  }
+  function nextItem(){
+    if(!prefix.length&&!bag.length)prefix=dailyPrefix();
+    if(prefix.length){const entry=prefix.shift();if(entry.kind==="heading"&&!bag.length)prepareBag();return entry;}
+    return {kind:"quote",text:randomQuote()};
   }
   function showQuote(text){set(quote,text);quote.lang=/[\u0900-\u097f]/.test(text)?"hi":"en";}
-  function makeItem(text){const item=document.createElement("span");item.className="motivation-item";item.lang=lang();item.textContent=text;track.append(item);return {item,width:item.getBoundingClientRect().width};}
+  function makeItem(entry){const item=document.createElement("span");item.className="motivation-item";item.dataset.kind=entry.kind;item.lang=lang();item.textContent=entry.text;track.append(item);return {item,width:item.getBoundingClientRect().width};}
   function stopQuotes(){if(quoteFrame!==null)cancelAnimationFrame(quoteFrame);quoteFrame=null;stamp=null;}
   function positionTrack(){track.style.transform=`translate3d(${offset}px,0,0)`;}
-  function fillStream(){while(streamWidth+offset<viewportWidth+80&&stream.length<30){const entry=makeItem(randomQuote());stream.push(entry);streamWidth+=entry.width;if(entry.width<=0)break;}}
+  function fillStream(){while(streamWidth+offset<viewportWidth+80&&stream.length<30){const entry=makeItem(nextItem());stream.push(entry);streamWidth+=entry.width;if(entry.width<=0)break;}}
   function resetStream(){
-    stopQuotes();track.replaceChildren();stream=[];streamWidth=offset=0;viewportWidth=viewport.clientWidth;
-    if(motion.matches){track.hidden=true;viewport.classList.remove("is-streaming");showQuote(randomQuote());return;}
+    stopQuotes();track.replaceChildren();stream=[];streamWidth=offset=0;viewportWidth=viewport.clientWidth;tickerDay=todayKey();prefix=dailyPrefix();bag=[];
+    if(motion.matches){track.hidden=true;viewport.classList.remove("is-streaming");showQuote(nextItem().text);return;}
     track.hidden=false;viewport.classList.add("is-streaming");fillStream();if(stream.length)showQuote(stream[0].item.textContent);positionTrack();
   }
   function moveQuotes(now){
@@ -3237,16 +3257,16 @@
     fillStream();
     positionTrack();quoteFrame=requestAnimationFrame(moveQuotes);
   }
-  function tickerState(){stopQuotes();tickerButton.hidden=false;set(tickerButton,motion.matches?tr("Next Quote","अगला विचार"):paused?tr("Resume","जारी रखें"):tr("Pause","रोकें"));tickerButton.setAttribute("aria-label",motion.matches?tr("Show next inspiration quote","अगला प्रेरक विचार दिखाएँ"):paused?tr("Resume inspiration ticker","प्रेरक विचार जारी रखें"):tr("Pause inspiration ticker","प्रेरक विचार रोकें"));if(!paused&&!motion.matches&&!document.hidden)quoteFrame=requestAnimationFrame(moveQuotes);}
-  function quoteLanguage(){const next=lang();if(next!==quoteLang){quoteLang=next;bag=[];lastQuote="";resetStream();}tickerState();}
-  tickerButton.addEventListener("click",()=>{if(motion.matches){showQuote(randomQuote());return;}paused=!paused;tickerState();});
+  function tickerState(){stopQuotes();tickerButton.hidden=false;set(tickerButton,motion.matches?tr("Next","आगे"):paused?tr("Resume","जारी रखें"):tr("Pause","रोकें"));tickerButton.setAttribute("aria-label",motion.matches?tr("Show next daily update or quote","अगली दैनिक जानकारी या विचार दिखाएँ"):paused?tr("Resume inspiration ticker","प्रेरक विचार जारी रखें"):tr("Pause inspiration ticker","प्रेरक विचार रोकें"));if(!paused&&!motion.matches&&!document.hidden)quoteFrame=requestAnimationFrame(moveQuotes);}
+  function quoteLanguage(){const next=lang();if(next!==quoteLang||tickerDay!==todayKey()){quoteLang=next;bag=[];lastQuote="";resetStream();}tickerState();}
+  tickerButton.addEventListener("click",()=>{if(motion.matches){showQuote(nextItem().text);return;}paused=!paused;tickerState();});
   const motionChange=()=>{resetStream();tickerState();};if(motion.addEventListener)motion.addEventListener("change",motionChange);else motion.addListener?.(motionChange);
   if(typeof ResizeObserver==="function")new ResizeObserver(()=>{const width=viewport.clientWidth;if(width===viewportWidth)return;viewportWidth=width;if(!motion.matches)fillStream();}).observe(viewport);
   if(document.fonts?.ready)document.fonts.ready.then(()=>{if(!motion.matches){streamWidth=0;for(const entry of stream){entry.width=entry.item.getBoundingClientRect().width;streamWidth+=entry.width;}fillStream();positionTrack();}});
   function applyLanguage(){const hindi=lang()==="hi";translations.forEach(([el,en,hi])=>set(el,hindi?hi:en));attributes.forEach(([el,a,en,hi])=>el.setAttribute(a,hindi?hi:en));updateClock();buttons();list.querySelectorAll(".lap-row").forEach(row=>set(row.firstElementChild,tr("Lap ","लैप ")+row.dataset.lapNumber));quoteLanguage();}
   window.addEventListener("merahisab:languagechange",applyLanguage);window.addEventListener("merahisab:languageready",applyLanguage);
   document.addEventListener("visibilitychange",()=>{clearTimeout(clockTimer);clockTimer=null;stopFrame();if(!document.hidden){tick();if(running)animate();draw();}tickerState();});
-  window.addEventListener("pageshow",()=>{draw();updateClock();});
+  window.addEventListener("pageshow",()=>{draw();updateClock();quoteLanguage();});
   applyLanguage();tick();draw();
 })();
 </script>
