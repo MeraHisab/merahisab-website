@@ -3,7 +3,7 @@
 <html lang="en-IN">
 <head>
 <meta charset="utf-8"/>
-<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-2GWleX2zYQmBwb1dFORlRasjhYiy8S0Tg0TqPAZODSI='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-DKOCDwXrBxmcbflEh3D4aJSWv0WrNVi7pgnPnxBwpgs='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>MeraHisab — Personal Finance &amp; Digital Khata</title>
 <meta content="Explore MeraHisab and Royal Khata, personal finance management, digital khata, expense tracking and useful financial tools." name="description"/>
@@ -17,12 +17,12 @@
 <meta content="MeraHisab — Personal Finance, Simplified" property="og:title"/>
 <meta content="Discover MeraHisab, Royal Khata and useful financial management tools." property="og:description"/>
 <meta content="https://merahisab.store/" property="og:url"/>
-<meta content="https://merahisab.store/merahisab-dashboard.png" property="og:image"/>
+<meta content="https://merahisab.store/icons/icon-512.png" property="og:image"/>
 <meta content="en_IN" property="og:locale"/>
-<meta content="summary_large_image" name="twitter:card"/>
+<meta content="summary" name="twitter:card"/>
 <meta content="MeraHisab" name="twitter:title"/>
 <meta content="Personal Finance, Simplified" name="twitter:description"/>
-<meta content="https://merahisab.store/merahisab-dashboard.png" name="twitter:image"/>
+<meta content="https://merahisab.store/icons/icon-512.png" name="twitter:image"/>
 <!-- PWA INTEGRATION -->
 <link href="/manifest.json" rel="manifest"/>
 <meta content="MeraHisab" name="application-name"/>
@@ -758,68 +758,6 @@
 
     .hero-note span {
       color: var(--green);
-    }
-
-    /* =====================================
-       REAL MERAHISAB DASHBOARD PREVIEW
-       ===================================== */
-
-    .preview-wrap {
-      position: relative;
-      width: 100%;
-      min-width: 0;
-      max-width: 650px;
-      margin-inline: auto;
-    }
-
-    .preview-glow {
-      position: absolute;
-      inset: 12% -8%;
-      border-radius: 50%;
-      background: rgba(216,184,120,0.13);
-      filter: blur(70px);
-      pointer-events: none;
-    }
-
-    .dashboard-download-link {
-      position: relative;
-      display: block;
-      width: 100%;
-      border-radius: 18px;
-    }
-
-    .real-dashboard-image {
-      position: relative;
-      display: block;
-      width: 100%;
-      max-width: 650px;
-      height: auto;
-      margin-inline: auto;
-      border-radius: 18px;
-      border: 1px solid rgba(201,164,91,0.45);
-
-      box-shadow:
-        0 18px 50px rgba(0,0,0,0.30);
-
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    }
-
-    .dashboard-download-link:hover
-    .real-dashboard-image {
-      transform: translateY(-4px);
-
-      box-shadow:
-        0 24px 60px rgba(0,0,0,0.40);
-    }
-
-    .preview-caption {
-      position: relative;
-      margin-top: 17px;
-      color: var(--muted);
-      font-size: 0.72rem;
-      text-align: center;
     }
 
     /* =====================================
@@ -1577,10 +1515,6 @@
         justify-content: center;
       }
 
-      .preview-wrap {
-        max-width: 650px;
-      }
-
       .privacy-content {
         grid-template-columns:
           minmax(0,1fr);
@@ -1691,10 +1625,6 @@
 
       .hero-description {
         font-size: 0.93rem;
-      }
-
-      .real-dashboard-image {
-        border-radius: 14px;
       }
 
       .apps-grid {
@@ -1928,10 +1858,6 @@
       .app-card:hover,
       .btn:hover,
       .dashboard-download-link:hover
-      .real-dashboard-image {
-        transform: none;
-      }
-
     }
 
     /* END OF PART 3 */
@@ -1957,6 +1883,24 @@
     @media (max-width: 760px) { html:root { scroll-padding-top: var(--mh-scroll-offset, 20px); } }
     @media (max-width: 360px) { .container { padding-inline: 12px; } .nav { gap: 4px 10px; } .hero-buttons > *, .app-card-actions > *, .download-actions > * { max-width: 100%; } }
     @media print { .motivation-ticker, .header, .time-tools-section, #pwaMount, .footer { display:none !important; } .section { padding: 16px 0; } }
+
+
+    /* Text-first homepage hero: no dashboard image or empty column. */
+    .hero { padding: clamp(36px, 6vw, 76px) 0; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; }
+    .hero-content { width: 100%; max-width: 880px; margin-inline: auto; text-align: center; }
+    .hero-content .eyebrow { justify-content: center; margin-bottom: 16px; }
+    .hero h1 { max-width: 880px; margin: 0 auto 20px; font-size: clamp(2rem, 5vw, 4.2rem); }
+    .hero h1 > span { display: block; }
+    .hero-description { max-width: 680px; margin: 0 auto 26px; }
+    .hero-buttons { justify-content: center; margin-bottom: 18px; }
+    .hero-note { justify-content: center; flex-wrap: wrap; }
+    .hero-note > span[aria-hidden] { flex: 0 0 auto; }
+    @media (max-width: 600px) {
+      .hero { padding: 34px 0 42px; }
+      .hero h1 { font-size: clamp(1.9rem, 7vw, 2.65rem); }
+      .hero-buttons { gap: 10px; }
+    }
 
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MeraHisab", "url": "https://merahisab.store/", "inLanguage": ["en-IN", "hi-IN"]}</script></head>
@@ -2126,18 +2070,6 @@
 <span aria-hidden="true">✓</span>
 
             <span data-home-hi="गोपनीयता और सरलता को ध्यान में रखकर बनाया गया" data-no-translate="true">Designed with privacy and simplicity in mind</span>
-
-          </div>
-</div>
-<!-- REAL MERAHISAB DASHBOARD -->
-<div class="preview-wrap">
-<div class="preview-glow"></div>
-<a class="dashboard-download-link" href="/merahisab.html">
-<img alt="MeraHisab personal finance application dashboard" class="real-dashboard-image" data-home-alt-hi="MeraHisab व्यक्तिगत वित्त ऐप का डैशबोर्ड" decoding="async" fetchpriority="high" height="1536" src="/merahisab-dashboard.png" width="1024"/>
-</a>
-<div class="preview-caption" data-home-hi="MeraHisab ऐप का डैशबोर्ड देखें" data-no-translate="true">
-
-            Explore the MeraHisab Application Dashboard
 
           </div>
 </div>
@@ -3243,10 +3175,7 @@
   function tickerState(){clearInterval(quoteTimer);quoteTimer=null;set(tickerButton,paused?tr("Resume Quotes","प्रेरक विचार जारी रखें"):tr("Pause Quotes","प्रेरक विचार रोकें"));if(!paused&&!document.hidden)quoteTimer=setInterval(nextQuote,7000);}
   tickerButton.addEventListener("click",()=>{paused=!paused;if(!paused)nextQuote();tickerState();});
   const motionChange=e=>{if(e.matches){paused=true;tickerState();}};if(motion.addEventListener)motion.addEventListener("change",motionChange);else motion.addListener?.(motionChange);
-  const image=document.querySelector(".real-dashboard-image"), caption=document.querySelector(".preview-caption");let imageFailed=false;
-  function imageFallback(){imageFailed=true;image.hidden=true;const link=image.closest("a");link.classList.add("btn","btn-secondary");let fallback=link.querySelector("[data-home-fallback]");if(!fallback){fallback=document.createElement("span");fallback.dataset.homeFallback="true";fallback.setAttribute("data-no-translate","true");link.append(fallback);}set(fallback,tr("Explore MeraHisab","MeraHisab के बारे में जानें"));set(caption,tr("Dashboard preview is currently unavailable.","डैशबोर्ड का पूर्वावलोकन अभी उपलब्ध नहीं है।"));}
-  image.addEventListener("error",imageFallback,{once:true});if(image.complete&&!image.naturalWidth)imageFallback();
-  function applyLanguage(){const hindi=lang()==="hi";translations.forEach(([el,en,hi])=>set(el,hindi?hi:en));attributes.forEach(([el,a,en,hi])=>el.setAttribute(a,hindi?hi:en));updateClock();buttons();list.querySelectorAll(".lap-row").forEach(row=>set(row.firstElementChild,tr("Lap ","लैप ")+row.dataset.lapNumber));nextQuote();tickerState();if(imageFailed)imageFallback();}
+  function applyLanguage(){const hindi=lang()==="hi";translations.forEach(([el,en,hi])=>set(el,hindi?hi:en));attributes.forEach(([el,a,en,hi])=>el.setAttribute(a,hindi?hi:en));updateClock();buttons();list.querySelectorAll(".lap-row").forEach(row=>set(row.firstElementChild,tr("Lap ","लैप ")+row.dataset.lapNumber));nextQuote();tickerState();}
   window.addEventListener("merahisab:languagechange",applyLanguage);window.addEventListener("merahisab:languageready",applyLanguage);
   document.addEventListener("visibilitychange",()=>{clearTimeout(clockTimer);clockTimer=null;stopFrame();if(!document.hidden){tick();if(running)animate();draw();}tickerState();});
   window.addEventListener("pageshow",()=>{draw();updateClock();});
