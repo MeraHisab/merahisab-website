@@ -3,7 +3,7 @@
 <html lang="en-IN">
 <head>
 <meta charset="utf-8"/>
-<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-DKOCDwXrBxmcbflEh3D4aJSWv0WrNVi7pgnPnxBwpgs='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="default-src 'self'; script-src 'self' 'sha256-NHzDin9reRMbTFbS0gCNY4e1aSZeCj8RpWimzOaFMKk=' 'sha256-yNiqfJGTOxsqEYRjfOIYCIIepaO7JTmQNAStfLR5zGw='; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'" http-equiv="Content-Security-Policy"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>MeraHisab — Personal Finance &amp; Digital Khata</title>
 <meta content="Explore MeraHisab and Royal Khata, personal finance management, digital khata, expense tracking and useful financial tools." name="description"/>
@@ -1856,8 +1856,7 @@
 
       .feature-card:hover,
       .app-card:hover,
-      .btn:hover,
-      .dashboard-download-link:hover
+      .btn:hover { transform:none; }
     }
 
     /* END OF PART 3 */
@@ -1902,6 +1901,42 @@
       .hero-buttons { gap: 10px; }
     }
 
+
+    /* Compact homepage navigation and continuous inspiration strip. */
+    header.header .header-inner { display:grid; grid-template-columns:auto minmax(0,1fr); gap:8px 20px; align-items:center; min-height:0; padding-block:10px; }
+    header.header .brand { grid-column:1; grid-row:1; }
+    header.header .nav { grid-column:1/-1; grid-row:2; width:100%; justify-content:center; align-items:center; gap:4px 16px; padding:0; }
+    header.header .home-controls { grid-column:2; grid-row:1; display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:8px; min-width:0; }
+    header.header #theme, header.header .nav-cta, header.header #merahisabLanguageSelect { min-height:44px; padding:8px 12px; border:1px solid var(--mh-control-border,var(--line)); border-radius:999px; color:var(--gold2); background:var(--surface); font:600 .84rem/1.3 system-ui,"Nirmala UI",sans-serif; white-space:nowrap; margin:0; }
+    header.header #languageMount { display:inline-flex; flex:0 0 auto; align-items:center; justify-content:center; padding:0; margin:0; min-width:0; max-width:100%; }
+    header.header #merahisabLanguageSwitcher { display:inline-flex; position:relative; flex:0 0 auto; align-items:center; gap:0; width:auto; min-width:0; max-width:100%; padding:0; margin:0; border:0; border-radius:0; box-shadow:none; background:transparent; }
+    header.header #merahisabLanguageSwitcher::before { content:none; display:none; }
+    header.header #merahisabLanguageSwitcher .mh-language-label { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; clip-path:inset(50%)!important; white-space:nowrap!important; border:0!important; }
+    header.header #merahisabLanguageSelect { width:auto; min-width:104px; max-width:100%; padding-inline:12px 10px; font-size:16px; appearance:auto; cursor:pointer; }
+    header.header #merahisabLanguageSelect:focus-visible { outline:3px solid var(--mh-focus,#94c7ff); outline-offset:3px; }
+    header.header .home-controls > * { max-width:100%; }
+    .motivation-ticker { display:grid; grid-template-columns:auto minmax(0,1fr) auto; grid-template-areas:"label stream control"; align-items:center; gap:10px 14px; width:min(1152px,calc(100% - 32px)); margin:10px auto; padding:7px 12px; text-align:start; }
+    .motivation-ticker .motivation-label { grid-area:label; margin:0; letter-spacing:1.5px; font-size:10px; white-space:nowrap; }
+    .motivation-viewport { grid-area:stream; position:relative; min-width:0; overflow:hidden; direction:ltr; }
+    .motivation-ticker .motivation-text { margin:0; min-height:0; text-align:center; font-size:.94rem; line-height:1.65; transition:none; }
+    .motivation-track { position:absolute; top:0; left:0; display:flex; align-items:center; width:max-content; height:100%; white-space:nowrap; color:var(--gold2); font-size:.94rem; font-weight:600; line-height:1.6; pointer-events:none; }
+    .motivation-item { display:inline-flex; flex:none; align-items:center; gap:24px; padding-inline:18px; white-space:nowrap; }
+    .motivation-item::after { content:"\2726"; color:var(--gold); font-size:.75em; }
+    .motivation-viewport.is-streaming { height:32px; }
+    .motivation-viewport.is-streaming .motivation-text { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+    .motivation-ticker #tickerToggle { grid-area:control; min-height:44px; padding:7px 12px; margin:0; white-space:nowrap; }
+    @media (max-width:760px) {
+      header.header .header-inner { grid-template-columns:minmax(0,1fr); gap:8px; }
+      header.header .brand { grid-column:1; grid-row:1; justify-self:center; }
+      header.header .home-controls { grid-column:1; grid-row:2; justify-content:center; gap:6px; }
+      header.header .nav { grid-column:1; grid-row:3; justify-content:center; gap:0 12px; }
+      header.header #theme, header.header .nav-cta { font-size:.75rem; padding-inline:10px; }
+      .motivation-ticker { grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"label control" "stream stream"; gap:4px 8px; padding:6px 10px; margin:8px auto; }
+      .motivation-track, .motivation-ticker .motivation-text { font-size:.86rem; }
+      .motivation-ticker .motivation-label { white-space:normal; letter-spacing:1px; }
+    }
+    @media (forced-colors:active) { header.header #merahisabLanguageSelect { border-color:ButtonText; color:ButtonText; background:Canvas; } }
+
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MeraHisab", "url": "https://merahisab.store/", "inLanguage": ["en-IN", "hi-IN"]}</script></head>
 <body>
@@ -1914,9 +1949,11 @@
 <div class="motivation-label" data-home-hi="✦ दैनिक प्रेरणा ✦" data-no-translate="true">
       ✦ DAILY INSPIRATION ✦
     </div>
-<div class="motivation-text" data-no-translate="true" id="motivationText" lang="hi">
-      हर छोटी बचत, आपके बड़े सपनों की ओर एक कदम है।
-    </div>
+<div class="motivation-viewport" id="motivationViewport" aria-live="off" data-no-translate="true">
+<div class="motivation-text" id="motivationText" lang="en">Make every rupee count.</div>
+<div class="motivation-track" id="motivationTrack" aria-hidden="true" hidden></div>
+</div>
+<button class="timer-btn" id="tickerToggle" type="button" data-no-translate="true" aria-controls="motivationViewport" hidden>Pause</button>
 </section>
 <!-- PREMIUM WEBSITE HEADER -->
 <header class="header">
@@ -1941,13 +1978,16 @@
 <a data-home-hi="गोपनीयता" data-no-translate="true" href="/privacy.html">Privacy</a>
 <a data-home-hi="हमारे बारे में" data-no-translate="true" href="/about.html">About</a>
 <a data-home-hi="संपर्क" data-no-translate="true" href="/contact.html">Contact</a>
+</nav>
+<div class="home-controls">
 <button aria-label="Change website theme" class="timer-btn" data-no-translate="true" id="theme" type="button">
           Theme
         </button>
-</nav>
+<div id="languageMount"></div>
 <a class="nav-cta" data-home-hi="ऐप डाउनलोड करें" data-no-translate="true" href="/downloads.html">
         Download Apps
       </a>
+</div>
 </div>
 </header>
 <main id="home" tabindex="-1">
@@ -3168,14 +3208,42 @@
         "आज बेहतर बनिए, कल और बेहतर होगा।"
 
       ];
-  const quote=$("motivationText"), ticker=quote.closest(".motivation-ticker"), motion=matchMedia("(prefers-reduced-motion: reduce)");
-  let quoteTimer=null, last=-1, paused=motion.matches;
-  const tickerButton=document.createElement("button");tickerButton.type="button";tickerButton.className="timer-btn";tickerButton.style.marginTop="10px";tickerButton.setAttribute("data-no-translate","true");ticker.append(tickerButton);
-  function nextQuote(){const candidates=quotes.map((text,i)=>({text,i})).filter(x=>lang()==="hi" ? /[\u0900-\u097f]/.test(x.text) : !/[\u0900-\u097f]/.test(x.text));const pool=candidates.length?candidates:quotes.map((text,i)=>({text,i}));const options=pool.filter(x=>x.i!==last);const selected=(options.length?options:pool)[Math.floor(Math.random()*(options.length||pool.length))];if(selected){last=selected.i;set(quote,selected.text);quote.lang=/[\u0900-\u097f]/.test(selected.text)?"hi":"en";}}
-  function tickerState(){clearInterval(quoteTimer);quoteTimer=null;set(tickerButton,paused?tr("Resume Quotes","प्रेरक विचार जारी रखें"):tr("Pause Quotes","प्रेरक विचार रोकें"));if(!paused&&!document.hidden)quoteTimer=setInterval(nextQuote,7000);}
-  tickerButton.addEventListener("click",()=>{paused=!paused;if(!paused)nextQuote();tickerState();});
-  const motionChange=e=>{if(e.matches){paused=true;tickerState();}};if(motion.addEventListener)motion.addEventListener("change",motionChange);else motion.addListener?.(motionChange);
-  function applyLanguage(){const hindi=lang()==="hi";translations.forEach(([el,en,hi])=>set(el,hindi?hi:en));attributes.forEach(([el,a,en,hi])=>el.setAttribute(a,hindi?hi:en));updateClock();buttons();list.querySelectorAll(".lap-row").forEach(row=>set(row.firstElementChild,tr("Lap ","लैप ")+row.dataset.lapNumber));nextQuote();tickerState();}
+  const quote=$("motivationText"), viewport=$("motivationViewport"), track=$("motivationTrack"), tickerButton=$("tickerToggle"), motion=matchMedia("(prefers-reduced-motion: reduce)");
+  let paused=false, quoteFrame=null, stamp=null, offset=0, streamWidth=0, viewportWidth=0, quoteLang="", bag=[], lastQuote="", stream=[];
+  const SPEED=50; // CSS pixels per second, moving from right to left.
+  function randomQuote(){
+    if(!bag.length){
+      const pool=quotes.filter(text=>lang()==="hi"?/[\u0900-\u097f]/.test(text):!/[\u0900-\u097f]/.test(text));
+      bag=(pool.length?pool:quotes).slice();
+      for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]];}
+      if(bag.length>1&&bag[bag.length-1]===lastQuote)[bag[bag.length-1],bag[0]]=[bag[0],bag[bag.length-1]];
+    }
+    lastQuote=bag.pop();return lastQuote;
+  }
+  function showQuote(text){set(quote,text);quote.lang=/[\u0900-\u097f]/.test(text)?"hi":"en";}
+  function makeItem(text){const item=document.createElement("span");item.className="motivation-item";item.lang=lang();item.textContent=text;track.append(item);return {item,width:item.getBoundingClientRect().width};}
+  function stopQuotes(){if(quoteFrame!==null)cancelAnimationFrame(quoteFrame);quoteFrame=null;stamp=null;}
+  function positionTrack(){track.style.transform=`translate3d(${offset}px,0,0)`;}
+  function fillStream(){while(streamWidth+offset<viewportWidth+80&&stream.length<30){const entry=makeItem(randomQuote());stream.push(entry);streamWidth+=entry.width;if(entry.width<=0)break;}}
+  function resetStream(){
+    stopQuotes();track.replaceChildren();stream=[];streamWidth=offset=0;viewportWidth=viewport.clientWidth;
+    if(motion.matches){track.hidden=true;viewport.classList.remove("is-streaming");showQuote(randomQuote());return;}
+    track.hidden=false;viewport.classList.add("is-streaming");fillStream();if(stream.length)showQuote(stream[0].item.textContent);positionTrack();
+  }
+  function moveQuotes(now){
+    quoteFrame=null;if(paused||motion.matches||document.hidden)return;
+    if(stamp!==null)offset-=Math.min(now-stamp,50)*SPEED/1000;stamp=now;
+    while(stream.length&&stream[0].width>0&&offset<=-stream[0].width){const entry=stream.shift();offset+=entry.width;streamWidth-=entry.width;entry.item.remove();if(stream.length)showQuote(stream[0].item.textContent);}
+    fillStream();
+    positionTrack();quoteFrame=requestAnimationFrame(moveQuotes);
+  }
+  function tickerState(){stopQuotes();tickerButton.hidden=false;set(tickerButton,motion.matches?tr("Next Quote","अगला विचार"):paused?tr("Resume","जारी रखें"):tr("Pause","रोकें"));tickerButton.setAttribute("aria-label",motion.matches?tr("Show next inspiration quote","अगला प्रेरक विचार दिखाएँ"):paused?tr("Resume inspiration ticker","प्रेरक विचार जारी रखें"):tr("Pause inspiration ticker","प्रेरक विचार रोकें"));if(!paused&&!motion.matches&&!document.hidden)quoteFrame=requestAnimationFrame(moveQuotes);}
+  function quoteLanguage(){const next=lang();if(next!==quoteLang){quoteLang=next;bag=[];lastQuote="";resetStream();}tickerState();}
+  tickerButton.addEventListener("click",()=>{if(motion.matches){showQuote(randomQuote());return;}paused=!paused;tickerState();});
+  const motionChange=()=>{resetStream();tickerState();};if(motion.addEventListener)motion.addEventListener("change",motionChange);else motion.addListener?.(motionChange);
+  if(typeof ResizeObserver==="function")new ResizeObserver(()=>{const width=viewport.clientWidth;if(width===viewportWidth)return;viewportWidth=width;if(!motion.matches)fillStream();}).observe(viewport);
+  if(document.fonts?.ready)document.fonts.ready.then(()=>{if(!motion.matches){streamWidth=0;for(const entry of stream){entry.width=entry.item.getBoundingClientRect().width;streamWidth+=entry.width;}fillStream();positionTrack();}});
+  function applyLanguage(){const hindi=lang()==="hi";translations.forEach(([el,en,hi])=>set(el,hindi?hi:en));attributes.forEach(([el,a,en,hi])=>el.setAttribute(a,hindi?hi:en));updateClock();buttons();list.querySelectorAll(".lap-row").forEach(row=>set(row.firstElementChild,tr("Lap ","लैप ")+row.dataset.lapNumber));quoteLanguage();}
   window.addEventListener("merahisab:languagechange",applyLanguage);window.addEventListener("merahisab:languageready",applyLanguage);
   document.addEventListener("visibilitychange",()=>{clearTimeout(clockTimer);clockTimer=null;stopFrame();if(!document.hidden){tick();if(running)animate();draw();}tickerState();});
   window.addEventListener("pageshow",()=>{draw();updateClock();});
